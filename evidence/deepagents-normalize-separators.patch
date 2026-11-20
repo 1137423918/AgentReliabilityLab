@@ -1,0 +1,76 @@
+diff --git a/libs/deepagents/deepagents/backends/utils.py b/libs/deepagents/deepagents/backends/utils.py
+index a12fa67..effd136 100644
+--- a/libs/deepagents/deepagents/backends/utils.py
++++ b/libs/deepagents/deepagents/backends/utils.py
+@@ -891,7 +891,7 @@ def validate_path(path: str, *, allowed_prefixes: Sequence[str] | None = None) -
+         msg = f"Windows absolute paths are not supported: {path}. Please use virtual paths starting with / (e.g., /workspace/file.txt)"
+         raise ValueError(msg)
+ 
+-    normalized = os.path.normpath(path)
++    normalized = os.path.normpath(to_posix_path(path))
+     normalized = normalized.replace("\\", "/")
+ 
+     if not normalized.startswith("/"):
+diff --git a/libs/deepagents/tests/unit_tests/backends/test_utils.py b/libs/deepagents/tests/unit_tests/backends/test_utils.py
+index ec78492..22dc5e0 100644
+--- a/libs/deepagents/tests/unit_tests/backends/test_utils.py
++++ b/libs/deepagents/tests/unit_tests/backends/test_utils.py
+@@ -120,6 +120,12 @@ class TestValidatePath:
+             ("/./foo//bar", "/foo/bar"),
+             ("foo\\bar\\baz", "/foo/bar/baz"),
+             ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
++            (r"foo\.\bar", "/foo/bar"),
++            (r"foo\\bar", "/foo/bar"),
++            ("foo\\bar\\", "/foo/bar"),
++            (r"/workspace\.\file.txt", "/workspace/file.txt"),
++            (r"/workspace/\file.txt", "/workspace/file.txt"),
++            (r"项目\.\论文.md", "/项目/论文.md"),
+         ],
+     )
+     def test_path_normalization(self, input_path: str, expected: str) -> None:
+diff --git a/libs/deepagents/tests/unit_tests/test_file_system_tools.py b/libs/deepagents/tests/unit_tests/test_file_system_tools.py
+index 5739687..4ee8e5b 100644
+--- a/libs/deepagents/tests/unit_tests/test_file_system_tools.py
++++ b/libs/deepagents/tests/unit_tests/test_file_system_tools.py
+@@ -12,6 +12,41 @@ from deepagents.graph import create_deep_agent
+ from tests.unit_tests.chat_model import GenericFakeChatModel
+ 
+ 
++def test_mixed_separator_write_can_be_read_by_canonical_path() -> None:
++    """Writing through a mixed-separator alias must create a canonically readable file."""
++    path = "/workspace/notes.txt"
++    model = GenericFakeChatModel(
++        messages=iter(
++            [
++                AIMessage(
++                    content="",
++                    tool_calls=[
++                        {
++                            "name": "write_file",
++                            "args": {"file_path": r"/workspace\.\notes.txt", "content": "canonical marker"},
++                            "id": "write_alias",
++                            "type": "tool_call",
++                        }
++                    ],
++                ),
++                AIMessage(
++                    content="",
++                    tool_calls=[{"name": "read_file", "args": {"file_path": path}, "id": "read_canonical", "type": "tool_call"}],
++                ),
++                AIMessage(content="Done."),
++            ]
++        )
++    )
++    agent = create_deep_agent(model=model, backend=StateBackend())
++    result = agent.invoke({"messages": [HumanMessage(content="Write a note and read it back.")]})
++
++    assert set(result["files"]) == {path}
++    assert result["files"][path]["content"] == "canonical marker"
++    reply = next(message for message in result["messages"] if isinstance(message, ToolMessage) and message.tool_call_id == "read_canonical")
++    assert reply.status == "success"
++    assert "canonical marker" in reply.content
++
++
+ def test_parallel_write_file_calls_trigger_list_reducer() -> None:
+     """Verify that parallel write_file calls correctly update file state.
+ 

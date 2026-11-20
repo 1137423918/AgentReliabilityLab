@@ -1,0 +1,780 @@
+Paths sanitized for publication; test verdicts unchanged.
+uv run --group test pytest -n auto -vvv -n 2 --disable-socket --allow-unix-socket tests/unit_tests/backends/test_utils.py tests/unit_tests/test_file_system_tools.py tests/unit_tests/test_file_system_tools_async.py tests/unit_tests/test_permissions.py \
+	--benchmark-disable \
+	
+============================= test session starts ==============================
+platform linux -- Python 3.11.4, pytest-9.0.3, pluggy-1.6.0 -- <checkout>/.venv/bin/python
+codspeed: 5.0.3 (disabled, mode: walltime, callgraph: not supported, timer_resolution: 1.0ns)
+cachedir: .pytest_cache
+benchmark: 5.2.3 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: <checkout>
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, timeout-2.4.0, benchmark-5.2.3, anyio-4.14.2, codspeed-5.0.3, socket-0.7.0, recording-0.13.4, asyncio-1.4.0, xdist-3.8.0, cov-7.0.0, syrupy-5.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+created: 2/2 workers
+2 workers [380 items]
+
+scheduling tests via LoadScheduling
+
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo|bar] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[D:/data/file.txt-Windows absolute paths are not supported] 
+[gw1] [  0%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo|bar] 
+[gw0] [  0%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[D:/data/file.txt-Windows absolute paths are not supported] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[def .*model] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_enforced 
+[gw1] [  0%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[def .*model] 
+[gw0] [  1%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_enforced 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[self\\.tools] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_no_backslashes_in_output 
+[gw1] [  1%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[self\\.tools] 
+[gw0] [  1%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_no_backslashes_in_output 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[a.+b] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_root_path 
+[gw0] [  1%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_root_path 
+[gw1] [  2%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[a.+b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\bword\\b] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_double_dots_in_filename_allowed 
+[gw0] [  2%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_double_dots_in_filename_allowed 
+[gw1] [  2%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\bword\\b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\d+] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_boundary 
+[gw0] [  2%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_boundary 
+[gw1] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\d+] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_traversal_as_path_component_rejected 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\w] 
+[gw1] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\w] 
+[gw0] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_traversal_as_path_component_rejected 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\s+] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_dot_and_empty_string_normalize_to_slash_dot 
+[gw0] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_dot_and_empty_string_normalize_to_slash_dot 
+[gw1] [  4%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\s+] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo\\(bar\\)] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_slashless_basename_glob_matches_at_any_depth 
+[gw1] [  4%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo\\(bar\\)] 
+[gw0] [  4%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_slashless_basename_glob_matches_at_any_depth 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[def __init__(self):] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_globstar_matches_same_python_set 
+[gw1] [  5%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[def __init__(self):] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[self.tools] 
+[gw0] [  5%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_globstar_matches_same_python_set 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_still_matches_nested_under_root 
+[gw1] [  5%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[self.tools] 
+[gw0] [  5%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_still_matches_nested_under_root 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[arr[0]] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_nested_directory 
+[gw1] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[arr[0]] 
+[gw0] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_nested_directory 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[plain text] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_no_matches 
+[gw1] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[plain text] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[TODO] 
+[gw0] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_no_matches 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_sorted_by_modification_time 
+[gw1] [  7%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[TODO] 
+[gw0] [  7%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_sorted_by_modification_time 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a == b] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_traversal_rejected 
+[gw1] [  7%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a == b] 
+[gw0] [  7%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_traversal_rejected 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_relative_pattern 
+[gw1] [  8%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[^main] 
+[gw0] [  8%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_relative_pattern 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_anchors_to_root 
+[gw1] [  8%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[^main] 
+[gw0] [  8%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_anchors_to_root 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[cost$5] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_with_globstar 
+[gw1] [  9%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[cost$5] 
+[gw0] [  9%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_with_globstar 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[value?] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_pattern_with_subdir_path 
+[gw1] [  9%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[value?] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a*b] 
+[gw0] [ 10%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_pattern_with_subdir_path 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_missing_modified_at_does_not_raise 
+[gw1] [ 10%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a*b] 
+[gw0] [ 10%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_missing_modified_at_does_not_raise 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[c++] 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_pattern_wcmatch_refuses_raises_invalid_glob_pattern 
+[gw1] [ 10%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[c++] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_present_for_regex 
+[gw0] [ 11%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_pattern_wcmatch_refuses_raises_invalid_glob_pattern 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_refusal_is_a_value_error 
+[gw1] [ 11%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_present_for_regex 
+[gw0] [ 11%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_refusal_is_a_value_error 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_absent_for_literal 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_traversal_pattern_is_refused 
+[gw1] [ 11%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_absent_for_literal 
+[gw0] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_traversal_pattern_is_refused 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[windows-drive] 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_malformed_but_compilable_patterns_do_not_raise 
+[gw1] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[windows-drive] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[trailing-backslash] 
+[gw0] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_malformed_but_compilable_patterns_do_not_raise 
+[gw1] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[trailing-backslash] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_directory_glob_matches_nested 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[already-posix] 
+[gw0] [ 13%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_directory_glob_matches_nested 
+[gw1] [ 13%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[already-posix] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_recursive_glob_matches_all_python 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[mixed-separators] 
+[gw0] [ 13%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_recursive_glob_matches_all_python 
+[gw1] [ 13%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[mixed-separators] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_slashless_glob_matches_at_any_depth 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[unc] 
+[gw0] [ 14%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_slashless_glob_matches_at_any_depth 
+[gw1] [ 14%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[unc] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_extension_glob_matches_only_that_extension 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[empty] 
+[gw0] [ 14%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_extension_glob_matches_only_that_extension 
+[gw1] [ 15%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[empty] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_glob_relative_to_search_root 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[root] 
+[gw0] [ 15%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_glob_relative_to_search_root 
+[gw1] [ 15%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[root] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_anchors_to_root 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[bare-backslashes] 
+[gw0] [ 15%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_anchors_to_root 
+[gw1] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[bare-backslashes] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_with_globstar 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[posix-absolute] 
+[gw0] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_with_globstar 
+[gw1] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[posix-absolute] 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_returns_text_for_unknown_extensions 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar-/foo/bar] 
+[gw0] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_returns_text_for_unknown_extensions 
+[gw1] [ 17%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_does_not_recognize_mkv 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/file.txt-/workspace/file.txt] 
+[gw0] [ 17%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_does_not_recognize_mkv 
+[gw1] [ 17%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_forces_mkv_to_binary 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/./foo//bar-/foo/bar] 
+[gw0] [ 17%] PASSED tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_forces_mkv_to_binary 
+[gw1] [ 18%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/./foo//bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_matches_get_file_type_for_other_extensions 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\baz-/foo/bar/baz] 
+[gw0] [ 18%] PASSED tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_matches_get_file_type_for_other_extensions 
+[gw1] [ 18%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\baz-/foo/bar/baz] 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_non_text_values_are_valid_content_block_types 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar\\baz/qux-/foo/bar/baz/qux] 
+[gw0] [ 18%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_non_text_values_are_valid_content_block_types 
+[gw1] [ 19%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar\\baz/qux-/foo/bar/baz/qux] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_basic_single_replacement 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\.\\bar-/foo/bar] 
+[gw0] [ 19%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_basic_single_replacement 
+[gw1] [ 19%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\.\\bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_returns_error 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar-/foo/bar] 
+[gw0] [ 20%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_returns_error 
+[gw1] [ 20%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_with_replace_all_returns_error 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\-/foo/bar] 
+[gw0] [ 20%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_with_replace_all_returns_error 
+[gw1] [ 20%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_on_empty_file_returns_error 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] 
+[gw0] [ 21%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_on_empty_file_returns_error 
+[gw1] [ 21%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_not_found_returns_error_string 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] 
+[gw0] [ 21%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_not_found_returns_error_string 
+[gw1] [ 21%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_without_replace_all 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] 
+[gw0] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_without_replace_all 
+[gw1] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_with_replace_all 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[../etc/passwd-Path traversal not allowed] 
+[gw0] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_with_replace_all 
+[gw1] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[../etc/passwd-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_returns_actionable_error 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[foo/../../etc-Path traversal not allowed] 
+[gw0] [ 23%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_returns_actionable_error 
+[gw1] [ 23%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[foo/../../etc-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_reports_ambiguous_stripped_match 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[~/secret.txt-Path traversal not allowed] 
+[gw0] [ 23%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_reports_ambiguous_stripped_match 
+[gw1] [ 23%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[~/secret.txt-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_match_succeeds 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[C:\\Users\\file.txt-Windows absolute paths are not supported] 
+[gw0] [ 24%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_match_succeeds 
+[gw1] [ 24%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[C:\\Users\\file.txt-Windows absolute paths are not supported] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_lone_newline 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_interior_prefix 
+[gw0] [ 24%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_lone_newline 
+[gw1] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_interior_prefix 
+tests/unit_tests/test_file_system_tools_async.py::test_path_traversal_returns_error_message_async 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_eof_text_differs 
+[gw1] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_eof_text_differs 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_trailing_newline_when_file_has_one 
+[gw1] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_trailing_newline_when_file_has_one 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_no_trailing_newline_when_file_lacks_one 
+[gw1] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_no_trailing_newline_when_file_lacks_one 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_crlf_to_lf 
+[gw1] [ 26%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_crlf_to_lf 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_bare_cr_to_lf 
+[gw1] [ 26%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_bare_cr_to_lf 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_keeps_terminator_on_internal_lines 
+[gw1] [ 26%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_keeps_terminator_on_internal_lines 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_normalizes_crlf 
+[gw1] [ 26%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_normalizes_crlf 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_ending_on_unterminated_last_line 
+[gw1] [ 27%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_ending_on_unterminated_last_line 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_includes_pagination_metadata 
+[gw1] [ 27%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_includes_pagination_metadata 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_empty_content_returns_result_without_pagination 
+[gw1] [ 27%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_empty_content_returns_result_without_pagination 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_whitespace_only_content_returns_result_without_pagination 
+[gw1] [ 27%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_whitespace_only_content_returns_result_without_pagination 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_timestamps_on_sliced_result 
+[gw1] [ 28%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_timestamps_on_sliced_result 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_offset_beyond_file_returns_error_result 
+[gw1] [ 28%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_offset_beyond_file_returns_error_result 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[0] 
+[gw1] [ 28%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[0] 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[-3] 
+[gw1] [ 28%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[-3] 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_reads_from_first_line 
+[gw1] [ 29%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_reads_from_first_line 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_and_non_positive_limit_combine 
+[gw1] [ 29%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_and_non_positive_limit_combine 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_zero_limit_takes_precedence_over_offset_past_eof 
+[gw1] [ 29%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_zero_limit_takes_precedence_over_offset_past_eof 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_blank_content_takes_precedence_over_zero_limit 
+[gw1] [ 30%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_blank_content_takes_precedence_over_zero_limit 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_over_cap_truncates 
+[gw1] [ 30%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_over_cap_truncates 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_exact_cap_not_truncated 
+[gw1] [ 30%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_exact_cap_not_truncated 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_no_cap_returns_all 
+[gw1] [ 30%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_no_cap_returns_all 
+tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_refused_glob_returns_error 
+[gw1] [ 31%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_refused_glob_returns_error 
+tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_traversal_glob_returns_error 
+[gw1] [ 31%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_traversal_glob_returns_error 
+tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path 
+[gw0] [ 31%] PASSED tests/unit_tests/test_file_system_tools_async.py::test_path_traversal_returns_error_message_async 
+tests/unit_tests/test_file_system_tools_async.py::test_windows_absolute_path_returns_error_message_async 
+[gw1] [ 31%] PASSED tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path 
+tests/unit_tests/test_file_system_tools.py::test_parallel_write_file_calls_trigger_list_reducer 
+[gw0] [ 32%] PASSED tests/unit_tests/test_file_system_tools_async.py::test_windows_absolute_path_returns_error_message_async 
+tests/unit_tests/test_file_system_tools_async.py::test_tilde_path_returns_error_message_async 
+[gw1] [ 32%] PASSED tests/unit_tests/test_file_system_tools.py::test_parallel_write_file_calls_trigger_list_reducer 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_single_replacement 
+[gw0] [ 32%] PASSED tests/unit_tests/test_file_system_tools_async.py::test_tilde_path_returns_error_message_async 
+tests/unit_tests/test_file_system_tools_async.py::test_ls_with_invalid_path_returns_error_message_async 
+[gw1] [ 32%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_single_replacement 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_replace_all 
+[gw0] [ 33%] PASSED tests/unit_tests/test_file_system_tools_async.py::test_ls_with_invalid_path_returns_error_message_async 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_refused_when_descendant_denied 
+[gw1] [ 33%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_replace_all 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_nonexistent_file 
+[gw0] [ 33%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_refused_when_descendant_denied 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_allowed_when_whole_subtree_allowed 
+[gw0] [ 33%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_allowed_when_whole_subtree_allowed 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_denied_directory_path_itself 
+[gw1] [ 34%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_nonexistent_file 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_string_not_found 
+[gw0] [ 34%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_denied_directory_path_itself 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_refused_when_ancestor_denied 
+[gw0] [ 34%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_refused_when_ancestor_denied 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_unaffected_sibling_subtree 
+[gw1] [ 35%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_string_not_found 
+tests/unit_tests/test_file_system_tools.py::test_grep_finds_written_file 
+[gw0] [ 35%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_unaffected_sibling_subtree 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_reports_multiple_overlapping_patterns 
+[gw1] [ 35%] PASSED tests/unit_tests/test_file_system_tools.py::test_grep_finds_written_file 
+tests/unit_tests/test_file_system_tools.py::test_parallel_edit_file_calls 
+[gw0] [ 35%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_reports_multiple_overlapping_patterns 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_single_file_delete_still_works 
+[gw0] [ 36%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_single_file_delete_still_works 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation 
+[gw1] [ 36%] PASSED tests/unit_tests/test_file_system_tools.py::test_parallel_edit_file_calls 
+tests/unit_tests/test_file_system_tools.py::test_path_traversal_returns_error_message 
+[gw0] [ 36%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_still_blocked_under_workspace_isolation 
+[gw1] [ 36%] PASSED tests/unit_tests/test_file_system_tools.py::test_path_traversal_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_windows_absolute_path_returns_error_message 
+[gw0] [ 37%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_still_blocked_under_workspace_isolation 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_empty_directory_delete_still_uses_conservative_ancestor_check 
+[gw1] [ 37%] PASSED tests/unit_tests/test_file_system_tools.py::test_windows_absolute_path_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_tilde_path_returns_error_message 
+[gw0] [ 37%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_empty_directory_delete_still_uses_conservative_ancestor_check 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_on_flat_backend 
+[gw0] [ 37%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_on_flat_backend 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_flat_backend_exact_key_with_nested_descendant_still_blocked 
+[gw0] [ 38%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_flat_backend_exact_key_with_nested_descendant_still_blocked 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_on_flat_backend_async 
+[gw1] [ 38%] PASSED tests/unit_tests/test_file_system_tools.py::test_tilde_path_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_ls_with_invalid_path_returns_error_message 
+[gw0] [ 38%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_on_flat_backend_async 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_flat_backend_exact_key_with_nested_descendant_still_blocked_async 
+[gw0] [ 38%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_flat_backend_exact_key_with_nested_descendant_still_blocked_async 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_async 
+[gw0] [ 39%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_exact_file_delete_allowed_under_workspace_isolation_async 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_refused_async 
+[gw0] [ 39%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_recursive_delete_refused_async 
+tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_registered_as_bulk_interrupt 
+[gw0] [ 39%] PASSED tests/unit_tests/test_permissions.py::TestRecursiveDeletePermissions::test_delete_registered_as_bulk_interrupt 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[unrelated-subtree] 
+[gw1] [ 40%] PASSED tests/unit_tests/test_file_system_tools.py::test_ls_with_invalid_path_returns_error_message 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-blocks-matching-target] 
+[gw0] [ 40%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[unrelated-subtree] 
+[gw1] [ 40%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-blocks-matching-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-prefix-glob] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[single-wildcard-blocks-matching-child] 
+[gw0] [ 40%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-prefix-glob] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-prefix-literal] 
+[gw1] [ 41%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[single-wildcard-blocks-matching-child] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[brace-glob-blocks-matching] 
+[gw0] [ 41%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-prefix-literal] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-leaf] 
+[gw1] [ 41%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[brace-glob-blocks-matching] 
+[gw0] [ 41%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[sibling-leaf] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[charclass-glob-blocks-matching] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-does-not-block-non-matching-sibling] 
+[gw1] [ 42%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[charclass-glob-blocks-matching] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[question-glob-non-matching-sibling-allowed] 
+[gw0] [ 42%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-does-not-block-non-matching-sibling] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[wildcard-ancestor-blocks-descendant-delete] 
+[gw1] [ 42%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[question-glob-non-matching-sibling-allowed] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[exact-file] 
+[gw0] [ 42%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[wildcard-ancestor-blocks-descendant-delete] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-ancestor-blocks-descendant-delete] 
+[gw1] [ 43%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[exact-file] 
+[gw0] [ 43%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[file-glob-ancestor-blocks-descendant-delete] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[exact-dir-literal] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[wildcard-ancestor-blocks-deep-descendant-delete] 
+[gw1] [ 43%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[exact-dir-literal] 
+[gw0] [ 43%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[wildcard-ancestor-blocks-deep-descendant-delete] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[descendant-pattern-blocks-ancestor-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[dir-wildcard-blocks-ancestor-target] 
+[gw1] [ 44%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[descendant-pattern-blocks-ancestor-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[ancestor-glob-blocks-descendant-target] 
+[gw0] [ 44%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[dir-wildcard-blocks-ancestor-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[globstar-wildcard-blocks-ancestor-target] 
+[gw1] [ 44%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[ancestor-glob-blocks-descendant-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[ancestor-literal-blocks-descendant-target] 
+[gw0] [ 45%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[globstar-wildcard-blocks-ancestor-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[recursive-glob-blocks-descendant-that-contains-match] 
+[gw1] [ 45%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[ancestor-literal-blocks-descendant-target] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[bare-directory-pattern] 
+[gw0] [ 45%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[recursive-glob-blocks-descendant-that-contains-match] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_deny_still_blocks_when_it_matches_first 
+[gw1] [ 45%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[bare-directory-pattern] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[root-target-blocked-by-any-rule] 
+[gw0] [ 46%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_deny_still_blocks_when_it_matches_first 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_default_has_descendants_preserves_conservative_behavior 
+[gw1] [ 46%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[root-target-blocked-by-any-rule] 
+[gw0] [ 46%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_default_has_descendants_preserves_conservative_behavior 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[leading-wildcard-anchor-is-root] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_non_matching_rule_allows 
+[gw1] [ 46%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[leading-wildcard-anchor-is-root] 
+[gw0] [ 47%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_non_matching_rule_allows 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[target-trailing-slash] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_interrupt_rule_is_not_a_denial 
+[gw1] [ 47%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[target-trailing-slash] 
+[gw0] [ 47%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_interrupt_rule_is_not_a_denial 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[pattern-trailing-slash] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_default_effect_is_allow 
+[gw1] [ 47%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[pattern-trailing-slash] 
+[gw0] [ 48%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_default_effect_is_allow 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[both-trailing-slash] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_deny_effect 
+[gw1] [ 48%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_overlap_geometry[both-trailing-slash] 
+[gw0] [ 48%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_deny_effect 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[write-deny-blocks] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_multiple_operations 
+[gw1] [ 48%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[write-deny-blocks] 
+[gw0] [ 49%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_multiple_operations 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[readwrite-deny-blocks] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_without_leading_slash_raises 
+[gw1] [ 49%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[readwrite-deny-blocks] 
+[gw0] [ 49%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_without_leading_slash_raises 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[allow-ignored] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_mixed_paths_with_missing_slash_raises 
+[gw1] [ 50%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[allow-ignored] 
+[gw0] [ 50%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_mixed_paths_with_missing_slash_raises 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[interrupt-ignored] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_with_dotdot_raises 
+[gw1] [ 50%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[interrupt-ignored] 
+[gw0] [ 50%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_with_dotdot_raises 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[read-only-deny-ignored] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_with_tilde_raises_not_implemented 
+[gw1] [ 51%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_mode_and_operation_filtering[read-only-deny-ignored] 
+[gw0] [ 51%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_path_with_tilde_raises_not_implemented 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[no-permissions] 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_backslash_path_with_dotdot_raises 
+[gw1] [ 51%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[no-permissions] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[multiple-rules] 
+[gw0] [ 51%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_backslash_path_with_dotdot_raises 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_mixed_separator_path_with_dotdot_raises 
+[gw1] [ 52%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[multiple-rules] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[multiple-paths-one-rule-filters-non-overlapping] 
+[gw0] [ 52%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_mixed_separator_path_with_dotdot_raises 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_backslash_path_without_traversal_accepted 
+[gw1] [ 52%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[multiple-paths-one-rule-filters-non-overlapping] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[all-overlapping-no-cap] 
+[gw0] [ 52%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_backslash_path_without_traversal_accepted 
+tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_interrupt_mode_accepted 
+[gw1] [ 53%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[all-overlapping-no-cap] 
+[gw0] [ 53%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemPermission::test_interrupt_mode_accepted 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[deduplicated-first-seen-order] 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_interrupt_rule_resolution[/secrets/x.txt-interrupt] 
+[gw1] [ 53%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[deduplicated-first-seen-order] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[only-overlapping-returned] 
+[gw0] [ 53%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_interrupt_rule_resolution[/secrets/x.txt-interrupt] 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_interrupt_rule_resolution[/workspace/x.txt-allow] 
+[gw1] [ 54%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatterns::test_multiple_rule_aggregation[only-overlapping-returned] 
+[gw0] [ 54%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_interrupt_rule_resolution[/workspace/x.txt-allow] 
+tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_earlier_allow_wins_over_later_catch_all_deny 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_deny_rule_takes_precedence_when_listed_first 
+[gw1] [ 54%] PASSED tests/unit_tests/test_permissions.py::TestFindDeleteDenyPatternsExactFile::test_earlier_allow_wins_over_later_catch_all_deny 
+[gw0] [ 55%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_deny_rule_takes_precedence_when_listed_first 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args5-True] 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_filter_paths_does_not_drop_interrupt_paths 
+[gw1] [ 55%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args5-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args6-True] 
+[gw0] [ 55%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionInterrupt::test_filter_paths_does_not_drop_interrupt_paths 
+[gw1] [ 55%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args6-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_empty_when_no_rules 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args7-True] 
+[gw0] [ 56%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_empty_when_no_rules 
+[gw1] [ 56%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args7-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_empty_when_no_interrupt_rules 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args8-True] 
+[gw0] [ 56%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_empty_when_no_interrupt_rules 
+[gw1] [ 56%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args8-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_registers_only_tools_whose_op_could_interrupt 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args9-False] 
+[gw0] [ 57%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_registers_only_tools_whose_op_could_interrupt 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_registers_read_tools_for_read_interrupt 
+[gw1] [ 57%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args9-False] 
+[gw0] [ 57%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_registers_read_tools_for_read_interrupt 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args10-False] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/secrets/key.pem-True] 
+[gw1] [ 57%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args10-False] 
+[gw0] [ 58%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/secrets/key.pem-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args11-False] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/workspace/x.txt-False] 
+[gw1] [ 58%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args11-False] 
+[gw0] [ 58%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/workspace/x.txt-False] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args0-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/secrets-False] 
+[gw1] [ 58%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args0-True] 
+[gw0] [ 59%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_exact_predicate[/secrets-False] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args1-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args0-True] 
+[gw1] [ 59%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args1-True] 
+[gw0] [ 59%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args0-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args2-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args1-True] 
+[gw1] [ 60%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args2-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args3-False] 
+[gw0] [ 60%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args1-True] 
+[gw1] [ 60%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args3-False] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args2-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args4-True] 
+[gw0] [ 60%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args2-True] 
+[gw1] [ 61%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args4-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args3-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args5-True] 
+[gw0] [ 61%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args3-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args4-True] 
+[gw1] [ 61%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args5-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args6-False] 
+[gw0] [ 61%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_predicate[args4-True] 
+[gw1] [ 62%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args6-False] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a/b/c-/a/b-True] 
+tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args7-True] 
+[gw0] [ 62%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a/b/c-/a/b-True] 
+[gw1] [ 62%] PASSED tests/unit_tests/test_permissions.py::TestBuildInterruptOnFromPermissions::test_bulk_glob_pattern_arg[args7-True] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a-/a/b-True] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/secrets/**-/secrets] 
+[gw0] [ 62%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a-/a/b-True] 
+[gw1] [ 63%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/secrets/**-/secrets] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/-/anywhere-True] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/a/*/b-/a] 
+[gw0] [ 63%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/-/anywhere-True] 
+[gw1] [ 63%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/a/*/b-/a] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/anywhere-/-True] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/secrets/key.pem-/secrets/key.pem] 
+[gw0] [ 63%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/anywhere-/-True] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/secret-/secrets-False] 
+[gw1] [ 64%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/secrets/key.pem-/secrets/key.pem] 
+[gw0] [ 64%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/secret-/secrets-False] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/*/foo-/] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/secrets-/secret-False] 
+[gw1] [ 64%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/*/foo-/] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/**/secrets-/] 
+[gw0] [ 65%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/secrets-/secret-False] 
+[gw1] [ 65%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_glob_anchor[/**/secrets-/] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/workspace-/secrets-False] 
+tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a/b-/a/b-True] 
+[gw0] [ 65%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/workspace-/secrets-False] 
+[gw1] [ 65%] PASSED tests/unit_tests/test_permissions.py::TestGlobAnchorAndOverlap::test_paths_overlap[/a/b-/a/b-True] 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_sandbox_backend[False] 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_first_matching_rule_wins_at_tool_level 
+[gw0] [ 66%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_sandbox_backend[False] 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_sandbox_backend[True] 
+[gw1] [ 66%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_first_matching_rule_wins_at_tool_level 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_denied_on_restricted_path 
+[gw0] [ 66%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_sandbox_backend[True] 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_composite_with_sandbox_default 
+[gw1] [ 66%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_denied_on_restricted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_backend_error_passthrough_when_allowed 
+[gw0] [ 67%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_raises_not_implemented_for_composite_with_sandbox_default 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_allows_composite_without_sandbox_default 
+[gw1] [ 67%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_backend_error_passthrough_when_allowed 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_first_matching_rule_wins_at_tool_level 
+[gw0] [ 67%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_allows_composite_without_sandbox_default 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_allows_composite_with_sandbox_route_but_non_sandbox_default 
+[gw0] [ 67%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_allows_composite_with_sandbox_route_but_non_sandbox_default 
+[gw1] [ 68%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_write_first_matching_rule_wins_at_tool_level 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_all_paths_scoped_to_routes_helper 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_denied_on_restricted_path 
+[gw0] [ 68%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissionInit::test_all_paths_scoped_to_routes_helper 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_denied_on_restricted_path 
+[gw1] [ 68%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_denied_on_restricted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_backend_error_passthrough_when_allowed 
+[gw0] [ 68%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_denied_on_restricted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_allowed_on_permitted_path 
+[gw1] [ 69%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_backend_error_passthrough_when_allowed 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_first_matching_rule_wins_at_tool_level 
+[gw0] [ 69%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_allowed_on_permitted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_binary_allowed_on_permitted_path 
+[gw1] [ 69%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_edit_first_matching_rule_wins_at_tool_level 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_filters_denied_results 
+[gw0] [ 70%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_binary_allowed_on_permitted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_binary_denied_on_restricted_path 
+[gw1] [ 70%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_filters_denied_results 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_no_filter_when_all_allowed 
+[gw0] [ 70%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_binary_denied_on_restricted_path 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_backend_error_passthrough_when_allowed 
+[gw1] [ 70%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_no_filter_when_all_allowed 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_no_rules_allows_everything 
+[gw0] [ 71%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_read_backend_error_passthrough_when_allowed 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_multiple_paths_in_one_rule 
+[gw1] [ 71%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_no_rules_allows_everything 
+[gw0] [ 71%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_multiple_paths_in_one_rule 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_denied_on_restricted_root 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_operation_mismatch_skips_rule 
+[gw1] [ 71%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_denied_on_restricted_root 
+[gw0] [ 72%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_operation_mismatch_skips_rule 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_post_filters_denied_children 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_first_matching_rule_wins 
+[gw1] [ 72%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_ls_post_filters_denied_children 
+[gw0] [ 72%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_first_matching_rule_wins 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_deny_read_allows_write 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_no_rules_returns_allow 
+[gw1] [ 72%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_deny_read_allows_write 
+[gw0] [ 73%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_no_rules_returns_allow 
+tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_non_canonical_backend_path_bypasses_deny_rule 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_globstar_matches_deeply_nested_path 
+[gw1] [ 73%] PASSED tests/unit_tests/test_permissions.py::TestFilesystemMiddlewarePermissions::test_non_canonical_backend_path_bypasses_deny_rule 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_question_mark_matches_single_char 
+[gw0] [ 73%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_globstar_matches_deeply_nested_path 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_empty_paths_returns_empty 
+[gw1] [ 73%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_question_mark_matches_single_char 
+[gw0] [ 74%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_empty_paths_returns_empty 
+tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_brace_expansion 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_no_rules_returns_all_paths 
+[gw1] [ 74%] PASSED tests/unit_tests/test_permissions.py::TestCheckFsPermissionGlobbing::test_brace_expansion 
+[gw0] [ 74%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_no_rules_returns_all_paths 
+tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_write_traversal_blocked_by_validate_path 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_denied_paths_removed_allowed_kept 
+[gw1] [ 75%] PASSED tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_write_traversal_blocked_by_validate_path 
+[gw0] [ 75%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_denied_paths_removed_allowed_kept 
+tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_non_traversal_path_still_allowed 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_all_paths_allowed_when_rule_targets_different_op 
+[gw1] [ 75%] PASSED tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_non_traversal_path_still_allowed 
+[gw0] [ 75%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_all_paths_allowed_when_rule_targets_different_op 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_sync_glob_rejects_when_timed_out_workers_are_saturated 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_all_paths_denied 
+[gw0] [ 76%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_all_paths_denied 
+tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_multiple_deny_patterns_filter_each 
+[gw0] [ 76%] PASSED tests/unit_tests/test_permissions.py::TestFilterPathsByPermission::test_multiple_deny_patterns_filter_each 
+tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_traversal_blocked_by_validate_path 
+[gw1] [ 76%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_sync_glob_rejects_when_timed_out_workers_are_saturated 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denied_on_restricted_base_path 
+[gw0] [ 76%] PASSED tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_traversal_blocked_by_validate_path 
+tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_traversal_blocked_even_without_permission_rules 
+[gw1] [ 77%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denied_on_restricted_base_path 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_allowed_on_unrestricted_base_path 
+[gw0] [ 77%] PASSED tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_dotdot_traversal_blocked_even_without_permission_rules 
+tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_redundant_separators_normalized 
+[gw1] [ 77%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_allowed_on_unrestricted_base_path 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_pathless_denial_points_at_the_path_argument 
+[gw0] [ 77%] PASSED tests/unit_tests/test_permissions.py::TestCanonicalizationBypass::test_redundant_separators_normalized 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_filters_denied_results_async 
+[gw1] [ 78%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_pathless_denial_points_at_the_path_argument 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denial_with_explicit_path_omits_pathless_hint 
+[gw0] [ 78%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_filters_denied_results_async 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_denied_on_restricted_path 
+[gw1] [ 78%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denial_with_explicit_path_omits_pathless_hint 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_remedy_named_in_pathless_denial_succeeds 
+[gw1] [ 78%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_remedy_named_in_pathless_denial_succeeds 
+[gw0] [ 79%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_denied_on_restricted_path 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_dotdot_traversal_blocked_by_validate_path 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_filters_denied_results 
+[gw0] [ 79%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_dotdot_traversal_blocked_by_validate_path 
+[gw1] [ 79%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_filters_denied_results 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_allowed_on_unrestricted_path 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_no_filter_annotation_when_all_allowed 
+[gw0] [ 80%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_allowed_on_unrestricted_path 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_filters_denied_results_from_matches 
+[gw1] [ 80%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_no_filter_annotation_when_all_allowed 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denied_on_restricted_base_path_async 
+[gw0] [ 80%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_filters_denied_results_from_matches 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_no_filter_annotation_when_all_allowed 
+[gw1] [ 80%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_denied_on_restricted_base_path_async 
+tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_pathless_denial_points_at_the_path_argument_async 
+[gw0] [ 81%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_no_filter_annotation_when_all_allowed 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_path_none_bypasses_pre_check_but_filters_results 
+[gw1] [ 81%] PASSED tests/unit_tests/test_permissions.py::TestGlobToolPermissions::test_glob_pathless_denial_points_at_the_path_argument_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_allowed_async 
+[gw0] [ 81%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_path_none_bypasses_pre_check_but_filters_results 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_denied_on_restricted_path_async 
+[gw1] [ 81%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_allowed_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_binary_allowed_async 
+[gw0] [ 82%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_denied_on_restricted_path_async 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_filters_denied_results_async 
+[gw1] [ 82%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_binary_allowed_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_backend_error_passthrough_async 
+[gw0] [ 82%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_filters_denied_results_async 
+tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_path_none_bypasses_pre_check_but_filters_results_async 
+[gw1] [ 82%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_backend_error_passthrough_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_write_denied_async 
+[gw0] [ 83%] PASSED tests/unit_tests/test_permissions.py::TestGrepToolPermissions::test_grep_path_none_bypasses_pre_check_but_filters_results_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_denied_async 
+[gw1] [ 83%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_write_denied_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_write_allowed_async 
+[gw0] [ 83%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_read_denied_async 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_reusing_unconfigured_middleware_keeps_rules_local[True] 
+[gw1] [ 83%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_write_allowed_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_edit_denied_async 
+[gw1] [ 84%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_edit_denied_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_ls_denied_async 
+[gw1] [ 84%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_ls_denied_async 
+tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_ls_filters_denied_results_async 
+[gw1] [ 84%] PASSED tests/unit_tests/test_permissions.py::TestAsyncFilesystemMiddlewarePermissions::test_ls_filters_denied_results_async 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_reusing_unconfigured_middleware_keeps_rules_local[False] 
+[gw0] [ 85%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_reusing_unconfigured_middleware_keeps_rules_local[True] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-main] 
+[gw0] [ 85%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-main] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-general-purpose] 
+[gw1] [ 85%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_reusing_unconfigured_middleware_keeps_rules_local[False] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[general-purpose] 
+[gw1] [ 85%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[general-purpose] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[custom] 
+[gw1] [ 86%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[custom] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_private_alias_warns_and_still_enforces_rules 
+[gw0] [ 86%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-general-purpose] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-custom] 
+[gw1] [ 86%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_private_alias_warns_and_still_enforces_rules 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_rejects_both_parameter_names[rules0] 
+[gw1] [ 86%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_rejects_both_parameter_names[rules0] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_rejects_both_parameter_names[rules1] 
+[gw1] [ 87%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_rejects_both_parameter_names[rules1] 
+tests/unit_tests/test_permissions.py::TestGeneralPurposeSubagentPermissionInheritance::test_auto_added_gp_subagent_inherits_parent_permissions 
+[gw0] [ 87%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[False-custom] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-main] 
+[gw1] [ 87%] PASSED tests/unit_tests/test_permissions.py::TestGeneralPurposeSubagentPermissionInheritance::test_auto_added_gp_subagent_inherits_parent_permissions 
+tests/unit_tests/test_permissions.py::TestGeneralPurposeSubagentPermissionInheritance::test_explicit_gp_subagent_permissions_override_parent 
+[gw0] [ 87%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-main] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-general-purpose] 
+[gw1] [ 88%] PASSED tests/unit_tests/test_permissions.py::TestGeneralPurposeSubagentPermissionInheritance::test_explicit_gp_subagent_permissions_override_parent 
+tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_absolute_match_is_filtered 
+[gw1] [ 88%] PASSED tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_absolute_match_is_filtered 
+tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_relative_match_would_bypass_the_rule 
+[gw1] [ 88%] PASSED tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_relative_match_would_bypass_the_rule 
+tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_sandbox_glob_matches_are_filtered_end_to_end 
+[gw0] [ 88%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-general-purpose] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-custom] 
+[gw1] [ 89%] PASSED tests/unit_tests/test_permissions.py::TestGlobResultPermissionFiltering::test_sandbox_glob_matches_are_filtered_end_to_end 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied[/work/link/key.txt] 
+[gw1] [ 89%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied[/work/link/key.txt] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied[/work/alias.txt] 
+[gw1] [ 89%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied[/work/alias.txt] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied_async 
+[gw0] [ 90%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_enforces_agent_rules[True-custom] 
+tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[main] 
+[gw1] [ 90%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_read_through_symlink_denied_async 
+[gw0] [ 90%] PASSED tests/unit_tests/test_permissions.py::TestCustomFilesystemPermissions::test_replacement_rejects_conflicting_rules[main] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_write_and_edit_through_symlink_denied 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_delete_through_symlink_denied 
+[gw1] [ 90%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_write_and_edit_through_symlink_denied 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets/] 
+[gw0] [ 91%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_delete_through_symlink_denied 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[ls-args0] 
+[gw1] [ 91%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets/] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets] 
+[gw0] [ 91%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[ls-args0] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[glob-args1] 
+[gw1] [ 91%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets/**] 
+[gw0] [ 92%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[glob-args1] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[grep-args2] 
+[gw1] [ 92%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets/**] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets/] 
+[gw0] [ 92%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_search_scoped_to_symlink_finds_nothing[grep-args2] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets/**] 
+[gw1] [ 92%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets/] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets] 
+[gw0] [ 93%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False--/secrets/**] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets/**] 
+[gw1] [ 93%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[False-/disk-/secrets] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets/] 
+[gw0] [ 93%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets/**] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets/] 
+[gw1] [ 93%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets/] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets] 
+[gw0] [ 94%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets/] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets] 
+[gw1] [ 94%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_denied_by_alias_path_filtered 
+[gw0] [ 94%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True--/secrets] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets/**] 
+[gw1] [ 95%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_denied_by_alias_path_filtered 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_symlink_into_allowed_directory_allowed 
+[gw0] [ 95%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_results_resolving_to_denied_target_filtered[True-/disk-/secrets/**] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_allow_list_applies_to_resolved_target 
+[gw0] [ 95%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_allow_list_applies_to_resolved_target 
+[gw1] [ 95%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_symlink_into_allowed_directory_allowed 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_composite_route_resolves_through_routed_backend 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_fires_through_symlink[ls-read-path-bulk-/work/link] 
+[gw1] [ 96%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_fires_through_symlink[ls-read-path-bulk-/work/link] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_suppressed_when_resolved_target_denied 
+[gw0] [ 96%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_composite_route_resolves_through_routed_backend 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_fires_through_symlink[write_file-write-file_path-exact-/work/link/new.txt] 
+[gw1] [ 96%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_suppressed_when_resolved_target_denied 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-ls-args0] 
+[gw0] [ 96%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_interrupt_fires_through_symlink[write_file-write-file_path-exact-/work/link/new.txt] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-grep-args2] 
+[gw1] [ 97%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-ls-args0] 
+[gw0] [ 97%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-grep-args2] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-glob-args1] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-ls-args0] 
+[gw1] [ 97%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[False-glob-args1] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-glob-args1] 
+[gw0] [ 97%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-ls-args0] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-grep-args2] 
+[gw1] [ 98%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-glob-args1] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[ls-args0] 
+[gw0] [ 98%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_needing_approval_outside_search_root_dropped[True-grep-args2] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[glob-args1] 
+[gw1] [ 98%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[ls-args0] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[glob-args2] 
+[gw0] [ 98%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[glob-args1] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[grep-args3] 
+[gw1] [ 99%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[glob-args2] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[grep-args4] 
+[gw0] [ 99%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[grep-args3] 
+tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_escape_outside_root_refused 
+[gw1] [ 99%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_bulk_results_within_paused_scope_kept[grep-args4] 
+[gw0] [100%] PASSED tests/unit_tests/test_permissions.py::TestResolvedPathPermissions::test_escape_outside_root_refused 
+
+============================= 380 passed in 30.78s =============================

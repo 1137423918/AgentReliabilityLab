@@ -1,0 +1,13 @@
+test_accepts_explicit_expected_value_error (test_evidence.EvidenceTests.test_accepts_explicit_expected_value_error) ... ok
+test_detects_fixed_behavior (test_evidence.EvidenceTests.test_detects_fixed_behavior) ... ok
+test_detects_regression (test_evidence.EvidenceTests.test_detects_regression) ... ok
+test_does_not_hide_unexpected_exceptions_as_expected_value_error (test_evidence.EvidenceTests.test_does_not_hide_unexpected_exceptions_as_expected_value_error) ... ok
+test_rejects_different_case_sets (test_evidence.EvidenceTests.test_rejects_different_case_sets) ... ok
+test_rejects_different_cases_under_same_hash (test_evidence.EvidenceTests.test_rejects_different_cases_under_same_hash) ... ok
+test_rejects_duplicate_result (test_evidence.EvidenceTests.test_rejects_duplicate_result) ... ok
+test_rejects_missing_result (test_evidence.EvidenceTests.test_rejects_missing_result) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.002s
+
+OK

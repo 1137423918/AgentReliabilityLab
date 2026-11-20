@@ -1,0 +1,39 @@
+{
+  "status": "verified",
+  "upstream_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "scope": "Official package tests using scripted fake model; no model capability evaluation",
+  "same_scope": {
+    "total": 131,
+    "baseline_passed": 124,
+    "baseline_failed": 7,
+    "candidate_passed": 131
+  },
+  "expanded_candidate_suite": {
+    "total": 380,
+    "passed": 380,
+    "files": [
+      "tests/unit_tests/backends/test_utils.py",
+      "tests/unit_tests/test_file_system_tools.py",
+      "tests/unit_tests/test_file_system_tools_async.py",
+      "tests/unit_tests/test_permissions.py"
+    ]
+  },
+  "checks": {
+    "ruff_check": "passed",
+    "ruff_format": "passed",
+    "ty_check": "passed"
+  },
+  "new_regressions": [
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\.\\\\bar-/foo/bar]",
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\\\\\bar-/foo/bar]",
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar\\\\-/foo/bar]",
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\\\.\\\\file.txt-/workspace/file.txt]",
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\\\file.txt-/workspace/file.txt]",
+    "tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\\u9879\\u76ee\\\\.\\\\\\u8bba\\u6587.md-/\\u9879\\u76ee/\\u8bba\\u6587.md]",
+    "tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path"
+  ],
+  "raw_log_sha256": {
+    "package-baseline.log": "1a006b3e85af9d8ca762d12d4f7c65d20b35fc89515ec3b78b8437d991b1fca0",
+    "package-candidate.log": "4e90b099b27e1bab05c7f48a97656794ad26c6ff642fe85ad7bda4986bed564b"
+  }
+}

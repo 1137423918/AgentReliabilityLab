@@ -1,0 +1,342 @@
+{
+  "schema_version": 1,
+  "timestamp_utc": "2026-11-20T08:49:19.354610+00:00",
+  "scope": "isolated upstream path functions; no model or package integration",
+  "python": "3.11.4",
+  "platform": "Linux-5.14.0-611.5.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "module_sha256": "6af38443a23689b499a67e939952a0911a94ec209591e21c9b1d78f6ced26c29",
+  "cases_sha256": "f750b0baccfe8e05fdd4958bb692955a070d990455bf86843e7d695c3855075d",
+  "total": 28,
+  "passed": 22,
+  "failed": 6,
+  "results": [
+    {
+      "id": "relative-posix",
+      "input": "foo/bar",
+      "expected": {
+        "value": "/foo/bar"
+      },
+      "observed": {
+        "value": "/foo/bar"
+      },
+      "passed": true
+    },
+    {
+      "id": "absolute-posix",
+      "input": "/workspace/file.txt",
+      "expected": {
+        "value": "/workspace/file.txt"
+      },
+      "observed": {
+        "value": "/workspace/file.txt"
+      },
+      "passed": true
+    },
+    {
+      "id": "posix-dot-and-duplicate",
+      "input": "/./foo//bar",
+      "expected": {
+        "value": "/foo/bar"
+      },
+      "observed": {
+        "value": "/foo/bar"
+      },
+      "passed": true
+    },
+    {
+      "id": "relative-backslash",
+      "input": "foo\\bar\\baz",
+      "expected": {
+        "value": "/foo/bar/baz"
+      },
+      "observed": {
+        "value": "/foo/bar/baz"
+      },
+      "passed": true
+    },
+    {
+      "id": "mixed-separators",
+      "input": "foo/bar\\baz/qux",
+      "expected": {
+        "value": "/foo/bar/baz/qux"
+      },
+      "observed": {
+        "value": "/foo/bar/baz/qux"
+      },
+      "passed": true
+    },
+    {
+      "id": "backslash-dot-component",
+      "input": "foo\\.\\bar",
+      "expected": {
+        "value": "/foo/bar"
+      },
+      "observed": {
+        "value": "/foo/./bar"
+      },
+      "passed": false
+    },
+    {
+      "id": "backslash-repeated-separator",
+      "input": "foo\\\\bar",
+      "expected": {
+        "value": "/foo/bar"
+      },
+      "observed": {
+        "value": "/foo//bar"
+      },
+      "passed": false
+    },
+    {
+      "id": "backslash-trailing-separator",
+      "input": "foo\\bar\\",
+      "expected": {
+        "value": "/foo/bar"
+      },
+      "observed": {
+        "value": "/foo/bar/"
+      },
+      "passed": false
+    },
+    {
+      "id": "mixed-dot-component",
+      "input": "/workspace\\.\\file.txt",
+      "expected": {
+        "value": "/workspace/file.txt"
+      },
+      "observed": {
+        "value": "/workspace/./file.txt"
+      },
+      "passed": false
+    },
+    {
+      "id": "mixed-repeated-separator",
+      "input": "/workspace/\\file.txt",
+      "expected": {
+        "value": "/workspace/file.txt"
+      },
+      "observed": {
+        "value": "/workspace//file.txt"
+      },
+      "passed": false
+    },
+    {
+      "id": "root",
+      "input": "/",
+      "expected": {
+        "value": "/"
+      },
+      "observed": {
+        "value": "/"
+      },
+      "passed": true
+    },
+    {
+      "id": "empty-existing-contract",
+      "input": "",
+      "expected": {
+        "value": "/."
+      },
+      "observed": {
+        "value": "/."
+      },
+      "passed": true
+    },
+    {
+      "id": "dot-existing-contract",
+      "input": ".",
+      "expected": {
+        "value": "/."
+      },
+      "observed": {
+        "value": "/."
+      },
+      "passed": true
+    },
+    {
+      "id": "dots-in-filename",
+      "input": "foo..bar.txt",
+      "expected": {
+        "value": "/foo..bar.txt"
+      },
+      "observed": {
+        "value": "/foo..bar.txt"
+      },
+      "passed": true
+    },
+    {
+      "id": "dots-in-directory",
+      "input": "backup..2024/data.csv",
+      "expected": {
+        "value": "/backup..2024/data.csv"
+      },
+      "observed": {
+        "value": "/backup..2024/data.csv"
+      },
+      "passed": true
+    },
+    {
+      "id": "traversal-relative",
+      "input": "../etc/passwd",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path traversal not allowed: ../etc/passwd"
+      },
+      "passed": true
+    },
+    {
+      "id": "traversal-interior",
+      "input": "foo/../etc/passwd",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path traversal not allowed: foo/../etc/passwd"
+      },
+      "passed": true
+    },
+    {
+      "id": "traversal-backslash",
+      "input": "foo\\..\\etc",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path traversal not allowed: foo\\..\\etc"
+      },
+      "passed": true
+    },
+    {
+      "id": "traversal-mixed",
+      "input": "/workspace/..\\etc/passwd",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path traversal not allowed: /workspace/..\\etc/passwd"
+      },
+      "passed": true
+    },
+    {
+      "id": "home-expansion",
+      "input": "~/secret.txt",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path traversal not allowed: ~/secret.txt"
+      },
+      "passed": true
+    },
+    {
+      "id": "windows-drive-backslash",
+      "input": "C:\\Users\\file.txt",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Windows absolute paths are not supported: C:\\Users\\file.txt. Please use virtual paths starting with / (e.g., /workspace/file.txt)"
+      },
+      "passed": true
+    },
+    {
+      "id": "windows-drive-posix",
+      "input": "D:/data/file.txt",
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Windows absolute paths are not supported: D:/data/file.txt. Please use virtual paths starting with / (e.g., /workspace/file.txt)"
+      },
+      "passed": true
+    },
+    {
+      "id": "allowed-prefix",
+      "input": "/workspace/file.txt",
+      "allowed_prefixes": [
+        "/workspace/"
+      ],
+      "expected": {
+        "value": "/workspace/file.txt"
+      },
+      "observed": {
+        "value": "/workspace/file.txt"
+      },
+      "passed": true
+    },
+    {
+      "id": "forbidden-prefix",
+      "input": "/etc/passwd",
+      "allowed_prefixes": [
+        "/workspace/"
+      ],
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path must start with one of ['/workspace/']: /etc/passwd"
+      },
+      "passed": true
+    },
+    {
+      "id": "prefix-boundary",
+      "input": "/workspace-evil/file",
+      "allowed_prefixes": [
+        "/workspace/"
+      ],
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path must start with one of ['/workspace/']: /workspace-evil/file"
+      },
+      "passed": true
+    },
+    {
+      "id": "empty-allowlist",
+      "input": "/workspace/file.txt",
+      "allowed_prefixes": [],
+      "expected": {
+        "error": "ValueError"
+      },
+      "observed": {
+        "error": "ValueError",
+        "message": "Path must start with one of []: /workspace/file.txt"
+      },
+      "passed": true
+    },
+    {
+      "id": "unicode-posix",
+      "input": "/项目/论文.md",
+      "expected": {
+        "value": "/项目/论文.md"
+      },
+      "observed": {
+        "value": "/项目/论文.md"
+      },
+      "passed": true
+    },
+    {
+      "id": "unicode-backslash-dot",
+      "input": "项目\\.\\论文.md",
+      "expected": {
+        "value": "/项目/论文.md"
+      },
+      "observed": {
+        "value": "/项目/./论文.md"
+      },
+      "passed": false
+    }
+  ]
+}

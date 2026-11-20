@@ -1,0 +1,567 @@
+Paths sanitized for publication; test verdicts unchanged.
+uv run --group test pytest -n auto -vvv -n 2 --disable-socket --allow-unix-socket tests/unit_tests/backends/test_utils.py tests/unit_tests/test_file_system_tools.py \
+	--benchmark-disable \
+	
+============================= test session starts ==============================
+platform linux -- Python 3.11.4, pytest-9.0.3, pluggy-1.6.0 -- <checkout>/.venv/bin/python
+codspeed: 5.0.3 (disabled, mode: walltime, callgraph: not supported, timer_resolution: 1.0ns)
+cachedir: .pytest_cache
+benchmark: 5.2.3 (defaults: timer=time.perf_counter disable_gc=False min_rounds=5 min_time=0.000005 max_time=1.0 calibration_precision=10 warmup=False warmup_iterations=100000)
+rootdir: <checkout>
+configfile: pyproject.toml
+plugins: langsmith-0.15.1, timeout-2.4.0, benchmark-5.2.3, anyio-4.14.2, codspeed-5.0.3, socket-0.7.0, recording-0.13.4, asyncio-1.4.0, xdist-3.8.0, cov-7.0.0, syrupy-5.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+created: 2/2 workers
+2 workers [131 items]
+
+scheduling tests via LoadScheduling
+
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo|bar] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[^main] 
+[gw0] [  0%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[^main] 
+[gw1] [  1%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo|bar] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[cost$5] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[def .*model] 
+[gw0] [  2%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[cost$5] 
+[gw1] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[def .*model] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[value?] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[self\\.tools] 
+[gw1] [  3%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[self\\.tools] 
+[gw0] [  4%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[value?] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[a.+b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a*b] 
+[gw1] [  5%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[a.+b] 
+[gw0] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a*b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\bword\\b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[c++] 
+[gw0] [  6%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[c++] 
+[gw1] [  7%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\bword\\b] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\d+] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_present_for_regex 
+[gw0] [  8%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_present_for_regex 
+[gw1] [  9%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\d+] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_absent_for_literal 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\w] 
+[gw0] [  9%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_absent_for_literal 
+[gw1] [ 10%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\w] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\s+] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[windows-drive] 
+[gw1] [ 11%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[\\s+] 
+[gw0] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[windows-drive] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[trailing-backslash] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo\\(bar\\)] 
+[gw1] [ 12%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_detects_regex[foo\\(bar\\)] 
+[gw0] [ 13%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[trailing-backslash] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[def __init__(self):] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[already-posix] 
+[gw1] [ 14%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[def __init__(self):] 
+[gw0] [ 15%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[already-posix] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[self.tools] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[mixed-separators] 
+[gw1] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[self.tools] 
+[gw0] [ 16%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[mixed-separators] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[arr[0]] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[unc] 
+[gw1] [ 17%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[arr[0]] 
+[gw0] [ 18%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[unc] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[plain text] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[empty] 
+[gw1] [ 19%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[plain text] 
+[gw0] [ 19%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[empty] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[TODO] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[root] 
+[gw1] [ 20%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[TODO] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a == b] 
+[gw0] [ 21%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[root] 
+[gw1] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[a == b] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[bare-backslashes] 
+tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[] 
+[gw0] [ 22%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[bare-backslashes] 
+[gw1] [ 23%] PASSED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_ignores_literal[] 
+tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[posix-absolute] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[~/secret.txt-Path traversal not allowed] 
+[gw0] [ 24%] PASSED tests/unit_tests/backends/test_utils.py::TestToPosixPath::test_normalizes[posix-absolute] 
+[gw1] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[~/secret.txt-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[C:\\Users\\file.txt-Windows absolute paths are not supported] 
+[gw0] [ 25%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar-/foo/bar] 
+[gw1] [ 26%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[C:\\Users\\file.txt-Windows absolute paths are not supported] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[D:/data/file.txt-Windows absolute paths are not supported] 
+[gw0] [ 27%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/file.txt-/workspace/file.txt] 
+[gw1] [ 28%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[D:/data/file.txt-Windows absolute paths are not supported] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/./foo//bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_enforced 
+[gw0] [ 29%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/./foo//bar-/foo/bar] 
+[gw1] [ 29%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_enforced 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\baz-/foo/bar/baz] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_no_backslashes_in_output 
+[gw0] [ 30%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\baz-/foo/bar/baz] 
+[gw1] [ 31%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_no_backslashes_in_output 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar\\baz/qux-/foo/bar/baz/qux] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_root_path 
+[gw0] [ 32%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo/bar\\baz/qux-/foo/bar/baz/qux] 
+[gw1] [ 32%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_root_path 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\.\\bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_double_dots_in_filename_allowed 
+[gw1] [ 33%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_double_dots_in_filename_allowed 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_boundary 
+[gw1] [ 34%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_allowed_prefixes_boundary 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_traversal_as_path_component_rejected 
+[gw1] [ 35%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_traversal_as_path_component_rejected 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_dot_and_empty_string_normalize_to_slash_dot 
+[gw1] [ 35%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_dot_and_empty_string_normalize_to_slash_dot 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_slashless_basename_glob_matches_at_any_depth 
+[gw1] [ 36%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_slashless_basename_glob_matches_at_any_depth 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_globstar_matches_same_python_set 
+[gw1] [ 37%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_globstar_matches_same_python_set 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_still_matches_nested_under_root 
+[gw1] [ 38%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_still_matches_nested_under_root 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_nested_directory 
+[gw1] [ 38%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_filter_nested_directory 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_no_matches 
+[gw1] [ 39%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_no_matches 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_sorted_by_modification_time 
+[gw1] [ 40%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_sorted_by_modification_time 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_traversal_rejected 
+[gw1] [ 41%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_traversal_rejected 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_relative_pattern 
+[gw0] [ 41%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\.\\bar-/foo/bar] 
+[gw1] [ 42%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_path_relative_pattern 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_anchors_to_root 
+[gw1] [ 43%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_anchors_to_root 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_with_globstar 
+[gw0] [ 44%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar-/foo/bar] 
+[gw1] [ 45%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_with_globstar 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\-/foo/bar] 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_pattern_with_subdir_path 
+[gw1] [ 45%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_leading_slash_pattern_with_subdir_path 
+tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_missing_modified_at_does_not_raise 
+[gw0] [ 46%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\-/foo/bar] 
+[gw1] [ 47%] PASSED tests/unit_tests/backends/test_utils.py::TestGlobSearchFiles::test_missing_modified_at_does_not_raise 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_pattern_wcmatch_refuses_raises_invalid_glob_pattern 
+[gw1] [ 48%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_pattern_wcmatch_refuses_raises_invalid_glob_pattern 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_refusal_is_a_value_error 
+[gw1] [ 48%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_refusal_is_a_value_error 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_traversal_pattern_is_refused 
+[gw0] [ 49%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] 
+[gw1] [ 50%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_traversal_pattern_is_refused 
+tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_malformed_but_compilable_patterns_do_not_raise 
+[gw1] [ 51%] PASSED tests/unit_tests/backends/test_utils.py::TestCompileGrepIncludeGlobRefusals::test_malformed_but_compilable_patterns_do_not_raise 
+[gw0] [ 51%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_directory_glob_matches_nested 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] 
+[gw1] [ 52%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_directory_glob_matches_nested 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_recursive_glob_matches_all_python 
+[gw1] [ 53%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_recursive_glob_matches_all_python 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_slashless_glob_matches_at_any_depth 
+[gw1] [ 54%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_slashless_glob_matches_at_any_depth 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_extension_glob_matches_only_that_extension 
+[gw0] [ 54%] FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[../etc/passwd-Path traversal not allowed] 
+[gw1] [ 55%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_extension_glob_matches_only_that_extension 
+[gw0] [ 56%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[../etc/passwd-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_glob_relative_to_search_root 
+tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[foo/../../etc-Path traversal not allowed] 
+[gw1] [ 57%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_glob_relative_to_search_root 
+[gw0] [ 58%] PASSED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_invalid_paths_rejected[foo/../../etc-Path traversal not allowed] 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_returns_error 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_anchors_to_root 
+[gw1] [ 58%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_returns_error 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_with_replace_all_returns_error 
+[gw0] [ 59%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_anchors_to_root 
+tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_with_globstar 
+[gw1] [ 60%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_with_replace_all_returns_error 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_on_empty_file_returns_error 
+[gw0] [ 61%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepIncludeGlob::test_leading_slash_with_globstar 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_returns_text_for_unknown_extensions 
+[gw1] [ 61%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_empty_old_string_on_empty_file_returns_error 
+[gw0] [ 62%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_returns_text_for_unknown_extensions 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_not_found_returns_error_string 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_does_not_recognize_mkv 
+[gw1] [ 63%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_not_found_returns_error_string 
+[gw0] [ 64%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_does_not_recognize_mkv 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_without_replace_all 
+tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_forces_mkv_to_binary 
+[gw1] [ 64%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_without_replace_all 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_with_replace_all 
+[gw0] [ 65%] PASSED tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_forces_mkv_to_binary 
+tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_matches_get_file_type_for_other_extensions 
+[gw1] [ 66%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_multiple_matches_with_replace_all 
+[gw0] [ 67%] PASSED tests/unit_tests/backends/test_utils.py::test_get_backend_read_file_type_matches_get_file_type_for_other_extensions 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_returns_actionable_error 
+tests/unit_tests/backends/test_utils.py::test_get_file_type_non_text_values_are_valid_content_block_types 
+[gw1] [ 67%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_returns_actionable_error 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_reports_ambiguous_stripped_match 
+[gw0] [ 68%] PASSED tests/unit_tests/backends/test_utils.py::test_get_file_type_non_text_values_are_valid_content_block_types 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_basic_single_replacement 
+[gw1] [ 69%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_reports_ambiguous_stripped_match 
+[gw0] [ 70%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_basic_single_replacement 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_match_succeeds 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_crlf_to_lf 
+[gw1] [ 70%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_match_succeeds 
+[gw0] [ 71%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_crlf_to_lf 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_lone_newline 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_bare_cr_to_lf 
+[gw1] [ 72%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_lone_newline 
+[gw0] [ 73%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_normalizes_bare_cr_to_lf 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_interior_prefix 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_keeps_terminator_on_internal_lines 
+[gw1] [ 74%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_for_interior_prefix 
+[gw0] [ 74%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_keeps_terminator_on_internal_lines 
+tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_eof_text_differs 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_normalizes_crlf 
+[gw1] [ 75%] PASSED tests/unit_tests/backends/test_utils.py::TestPerformStringReplacement::test_eof_newline_mismatch_does_not_fire_when_eof_text_differs 
+[gw0] [ 76%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_normalizes_crlf 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_trailing_newline_when_file_has_one 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_ending_on_unterminated_last_line 
+[gw1] [ 77%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_trailing_newline_when_file_has_one 
+[gw0] [ 77%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_ending_on_unterminated_last_line 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_no_trailing_newline_when_file_lacks_one 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_includes_pagination_metadata 
+[gw1] [ 78%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_no_trailing_newline_when_file_lacks_one 
+[gw0] [ 79%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_partial_window_includes_pagination_metadata 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[0] 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_empty_content_returns_result_without_pagination 
+[gw1] [ 80%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[0] 
+[gw0] [ 80%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_empty_content_returns_result_without_pagination 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[-3] 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_whitespace_only_content_returns_result_without_pagination 
+[gw1] [ 81%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_non_positive_limit_returns_empty_read[-3] 
+[gw0] [ 82%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_whitespace_only_content_returns_result_without_pagination 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_reads_from_first_line 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_timestamps_on_sliced_result 
+[gw1] [ 83%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_reads_from_first_line 
+[gw0] [ 83%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_preserves_timestamps_on_sliced_result 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_and_non_positive_limit_combine 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_offset_beyond_file_returns_error_result 
+[gw1] [ 84%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_negative_offset_and_non_positive_limit_combine 
+[gw0] [ 85%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_offset_beyond_file_returns_error_result 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_zero_limit_takes_precedence_over_offset_past_eof 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_exact_cap_not_truncated 
+[gw1] [ 86%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_zero_limit_takes_precedence_over_offset_past_eof 
+[gw0] [ 87%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_exact_cap_not_truncated 
+tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_blank_content_takes_precedence_over_zero_limit 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_no_cap_returns_all 
+[gw1] [ 87%] PASSED tests/unit_tests/backends/test_utils.py::TestSliceReadResponse::test_blank_content_takes_precedence_over_zero_limit 
+[gw0] [ 88%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_no_cap_returns_all 
+tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_over_cap_truncates 
+tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_refused_glob_returns_error 
+[gw1] [ 89%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepMaxCount::test_over_cap_truncates 
+tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_traversal_glob_returns_error 
+[gw0] [ 90%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_refused_glob_returns_error 
+tests/unit_tests/test_file_system_tools.py::test_parallel_write_file_calls_trigger_list_reducer 
+[gw1] [ 90%] PASSED tests/unit_tests/backends/test_utils.py::TestGrepRefusedGlobIsAResultNotAnException::test_traversal_glob_returns_error 
+tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path 
+[gw0] [ 91%] PASSED tests/unit_tests/test_file_system_tools.py::test_parallel_write_file_calls_trigger_list_reducer 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_single_replacement 
+[gw0] [ 92%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_single_replacement 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_nonexistent_file 
+[gw0] [ 93%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_nonexistent_file 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_string_not_found 
+[gw0] [ 93%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_string_not_found 
+tests/unit_tests/test_file_system_tools.py::test_grep_finds_written_file 
+[gw0] [ 94%] PASSED tests/unit_tests/test_file_system_tools.py::test_grep_finds_written_file 
+tests/unit_tests/test_file_system_tools.py::test_parallel_edit_file_calls 
+[gw0] [ 95%] PASSED tests/unit_tests/test_file_system_tools.py::test_parallel_edit_file_calls 
+tests/unit_tests/test_file_system_tools.py::test_path_traversal_returns_error_message 
+[gw0] [ 96%] PASSED tests/unit_tests/test_file_system_tools.py::test_path_traversal_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_windows_absolute_path_returns_error_message 
+[gw0] [ 96%] PASSED tests/unit_tests/test_file_system_tools.py::test_windows_absolute_path_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_tilde_path_returns_error_message 
+[gw0] [ 97%] PASSED tests/unit_tests/test_file_system_tools.py::test_tilde_path_returns_error_message 
+tests/unit_tests/test_file_system_tools.py::test_ls_with_invalid_path_returns_error_message 
+[gw0] [ 98%] PASSED tests/unit_tests/test_file_system_tools.py::test_ls_with_invalid_path_returns_error_message 
+[gw1] [ 99%] FAILED tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path 
+tests/unit_tests/test_file_system_tools.py::test_edit_file_replace_all 
+[gw1] [100%] PASSED tests/unit_tests/test_file_system_tools.py::test_edit_file_replace_all 
+
+=================================== FAILURES ===================================
+________ TestValidatePath.test_path_normalization[foo\\.\\bar-/foo/bar] ________
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed4ed0>
+input_path = 'foo\\.\\bar', expected = '/foo/bar'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/foo/./bar' == '/foo/bar'
+E         
+E         - /foo/bar
+E         + /foo/./bar
+E         ?      ++
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+________ TestValidatePath.test_path_normalization[foo\\\\bar-/foo/bar] _________
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed5050>
+input_path = 'foo\\\\bar', expected = '/foo/bar'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/foo//bar' == '/foo/bar'
+E         
+E         - /foo/bar
+E         + /foo//bar
+E         ?      +
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+________ TestValidatePath.test_path_normalization[foo\\bar\\-/foo/bar] _________
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed5950>
+input_path = 'foo\\bar\\', expected = '/foo/bar'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/foo/bar/' == '/foo/bar'
+E         
+E         - /foo/bar
+E         + /foo/bar/
+E         ?         +
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+_ TestValidatePath.test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] _
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed57d0>
+input_path = '/workspace\\.\\file.txt', expected = '/workspace/file.txt'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/workspace/./file.txt' == '/workspace/file.txt'
+E         
+E         - /workspace/file.txt
+E         + /workspace/./file.txt
+E         ?            ++
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+_ TestValidatePath.test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] _
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed5f10>
+input_path = '/workspace/\\file.txt', expected = '/workspace/file.txt'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/workspace//file.txt' == '/workspace/file.txt'
+E         
+E         - /workspace/file.txt
+E         + /workspace//file.txt
+E         ?            +
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+_ TestValidatePath.test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] _
+[gw0] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+self = <tests.unit_tests.backends.test_utils.TestValidatePath object at 0x7fc801ed65d0>
+input_path = '项目\\.\\论文.md', expected = '/项目/论文.md'
+
+    @pytest.mark.parametrize(
+        ("input_path", "expected"),
+        [
+            ("foo/bar", "/foo/bar"),
+            ("/workspace/file.txt", "/workspace/file.txt"),
+            ("/./foo//bar", "/foo/bar"),
+            ("foo\\bar\\baz", "/foo/bar/baz"),
+            ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
+            (r"foo\.\bar", "/foo/bar"),
+            (r"foo\\bar", "/foo/bar"),
+            ("foo\\bar\\", "/foo/bar"),
+            (r"/workspace\.\file.txt", "/workspace/file.txt"),
+            (r"/workspace/\file.txt", "/workspace/file.txt"),
+            (r"项目\.\论文.md", "/项目/论文.md"),
+        ],
+    )
+    def test_path_normalization(self, input_path: str, expected: str) -> None:
+        """Test various path normalization scenarios."""
+>       assert validate_path(input_path) == expected
+E       AssertionError: assert '/项目/./论文.md' == '/项目/论文.md'
+E         
+E         - /项目/论文.md
+E         + /项目/./论文.md
+E         ?    ++
+
+tests/unit_tests/backends/test_utils.py:133: AssertionError
+___________ test_mixed_separator_write_can_be_read_by_canonical_path ___________
+[gw1] linux -- Python 3.11.4 <checkout>/.venv/bin/python
+
+    def test_mixed_separator_write_can_be_read_by_canonical_path() -> None:
+        """Writing through a mixed-separator alias must create a canonically readable file."""
+        path = "/workspace/notes.txt"
+        model = GenericFakeChatModel(
+            messages=iter(
+                [
+                    AIMessage(
+                        content="",
+                        tool_calls=[
+                            {
+                                "name": "write_file",
+                                "args": {"file_path": r"/workspace\.\notes.txt", "content": "canonical marker"},
+                                "id": "write_alias",
+                                "type": "tool_call",
+                            }
+                        ],
+                    ),
+                    AIMessage(
+                        content="",
+                        tool_calls=[{"name": "read_file", "args": {"file_path": path}, "id": "read_canonical", "type": "tool_call"}],
+                    ),
+                    AIMessage(content="Done."),
+                ]
+            )
+        )
+        agent = create_deep_agent(model=model, backend=StateBackend())
+        result = agent.invoke({"messages": [HumanMessage(content="Write a note and read it back.")]})
+    
+>       assert set(result["files"]) == {path}
+E       AssertionError: assert {'/workspace/./notes.txt'} == {'/workspace/notes.txt'}
+E         
+E         Extra items in the left set:
+E         '/workspace/./notes.txt'
+E         Extra items in the right set:
+E         '/workspace/notes.txt'
+E         
+E         Full diff:
+E           {
+E         -     '/workspace/notes.txt',
+E         +     '/workspace/./notes.txt',
+E         ?                 ++
+E           }
+
+tests/unit_tests/test_file_system_tools.py:43: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\.\\bar-/foo/bar] - AssertionError: assert '/foo/./bar' == '/foo/bar'
+  
+  - /foo/bar
+  + /foo/./bar
+  ?      ++
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\\\bar-/foo/bar] - AssertionError: assert '/foo//bar' == '/foo/bar'
+  
+  - /foo/bar
+  + /foo//bar
+  ?      +
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[foo\\bar\\-/foo/bar] - AssertionError: assert '/foo/bar/' == '/foo/bar'
+  
+  - /foo/bar
+  + /foo/bar/
+  ?         +
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace\\.\\file.txt-/workspace/file.txt] - AssertionError: assert '/workspace/./file.txt' == '/workspace/file.txt'
+  
+  - /workspace/file.txt
+  + /workspace/./file.txt
+  ?            ++
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[/workspace/\\file.txt-/workspace/file.txt] - AssertionError: assert '/workspace//file.txt' == '/workspace/file.txt'
+  
+  - /workspace/file.txt
+  + /workspace//file.txt
+  ?            +
+FAILED tests/unit_tests/backends/test_utils.py::TestValidatePath::test_path_normalization[\u9879\u76ee\\.\\\u8bba\u6587.md-/\u9879\u76ee/\u8bba\u6587.md] - AssertionError: assert '/项目/./论文.md' == '/项目/论文.md'
+  
+  - /项目/论文.md
+  + /项目/./论文.md
+  ?    ++
+FAILED tests/unit_tests/test_file_system_tools.py::test_mixed_separator_write_can_be_read_by_canonical_path - AssertionError: assert {'/workspace/./notes.txt'} == {'/workspace/notes.txt'}
+  
+  Extra items in the left set:
+  '/workspace/./notes.txt'
+  Extra items in the right set:
+  '/workspace/notes.txt'
+  
+  Full diff:
+    {
+  -     '/workspace/notes.txt',
+  +     '/workspace/./notes.txt',
+  ?                 ++
+    }
+=================== 7 failed, 124 passed in 73.66s (0:01:13) ===================
+make: *** [Makefile:21: test] Error 1

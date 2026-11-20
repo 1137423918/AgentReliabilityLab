@@ -1,0 +1,12 @@
+{
+  "upstream": "https://github.com/langchain-ai/deepagents",
+  "commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "file": "libs/deepagents/deepagents/backends/utils.py",
+  "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+  "slice_sha256": "6af38443a23689b499a67e939952a0911a94ec209591e21c9b1d78f6ced26c29",
+  "functions": [
+    "to_posix_path",
+    "validate_path"
+  ],
+  "scope": "isolated exact source functions; no package integration"
+}

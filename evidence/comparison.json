@@ -1,0 +1,17 @@
+{
+  "scope": "isolated upstream path functions; no model or package integration",
+  "cases_sha256": "f750b0baccfe8e05fdd4958bb692955a070d990455bf86843e7d695c3855075d",
+  "total": 28,
+  "baseline_passed": 22,
+  "candidate_passed": 28,
+  "fixed": [
+    "backslash-dot-component",
+    "backslash-repeated-separator",
+    "backslash-trailing-separator",
+    "mixed-dot-component",
+    "mixed-repeated-separator",
+    "unicode-backslash-dot"
+  ],
+  "regressed": [],
+  "remaining_failures": []
+}
