@@ -1,0 +1,31 @@
+{
+  "id": "cpu-f503c97b18a54d399b9851f3fd71193e",
+  "object": "chat.completion",
+  "created": 1795184758,
+  "model": "agentlab-qwen3-4b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": null,
+        "tool_calls": [
+          {
+            "id": "call_a2555d7d1da84c08ad9aac6642a03b9d",
+            "type": "function",
+            "function": {
+              "name": "read_file",
+              "arguments": "{\"file_path\": \"/sample.py\"}"
+            }
+          }
+        ]
+      },
+      "finish_reason": "tool_calls"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 180,
+    "completion_tokens": 20,
+    "total_tokens": 200
+  }
+}

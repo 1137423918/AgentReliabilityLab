@@ -1,0 +1,40 @@
+{
+  "model": "agentlab-qwen3-4b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Use the supplied tool when asked to inspect a file."
+    },
+    {
+      "role": "user",
+      "content": "Call read_file for /sample.py. Return a tool call rather than a prose answer."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "read_file",
+        "description": "Read the contents of a virtual text file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "file_path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_path"
+          ]
+        }
+      }
+    }
+  ],
+  "temperature": 0,
+  "seed": 42,
+  "max_completion_tokens": 128,
+  "stream": false,
+  "metadata": {
+    "agentlab_phase": "posthoc_tool_format_diagnostic_not_maintenance"
+  }
+}

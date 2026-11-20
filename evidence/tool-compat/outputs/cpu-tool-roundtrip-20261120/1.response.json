@@ -1,0 +1,21 @@
+{
+  "id": "cpu-2cf0c81b8b804d0688eff63e178a0ad2",
+  "object": "chat.completion",
+  "created": 1795184772,
+  "model": "agentlab-qwen3-4b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "None"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 250,
+    "completion_tokens": 2,
+    "total_tokens": 252
+  }
+}

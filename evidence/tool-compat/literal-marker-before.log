@@ -1,0 +1,24 @@
+test_literal_native_tags_inside_complete_compat_json_are_argument_text (parser_checks.CpuToolParserTests.test_literal_native_tags_inside_complete_compat_json_are_argument_text) ... FAIL
+
+======================================================================
+FAIL: test_literal_native_tags_inside_complete_compat_json_are_argument_text (parser_checks.CpuToolParserTests.test_literal_native_tags_inside_complete_compat_json_are_argument_text)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<server-workspace>/code/cpu-tool-compat/tests/test_cpu_tool_parser.py", line 111, in test_literal_native_tags_inside_complete_compat_json_are_argument_text
+    self.assertEqual((content, error), ("", None))
+AssertionError: Tuples differ: ('{"name": "read_file", "arguments": {"file[58 chars]son') != ('', None)
+
+First differing element 0:
+'{"name": "read_file", "arguments": {"file[36 chars]y"}}'
+''
+
++ ('', None)
+- ('{"name": "read_file", "arguments": {"file_path": '
+-  '"/a<tool_call></tool_call>.py"}}',
+-  'invalid_tool_json')
+
+----------------------------------------------------------------------
+Ran 1 test in 0.176s
+
+FAILED (failures=1)
+Observed expected earlier-service regression failure

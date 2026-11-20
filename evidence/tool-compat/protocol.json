@@ -1,0 +1,32 @@
+{
+  "declared_utc": "2026-11-20T14:18:55.510344+00:00",
+  "scope": "Fresh real-model read-only fixture roundtrip, not maintenance or a benchmark score",
+  "server_node": "documented GPU3 node; CPU only",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "precision": "dynamic INT8 Linear excluding lm_head; remaining FP32",
+  "threads": 4,
+  "nice": 19,
+  "service_source_sha256": "883db1be34f330f2015811e5fd6248e7a42478d95307be0995cae633fe56ea03",
+  "tool_format": "json-object-compat",
+  "first_request_canonical_sha256": "9ae72e6b7b2387b58689453dc6b036ed087f62f9e951c26f19b8cbd92f613bbc",
+  "first_request_same_as_previous_diagnostic": true,
+  "max_model_requests": 2,
+  "max_fixture_tool_executions": 1,
+  "fixture_content": "roundtrip_marker = \"content_748291\"\n",
+  "success_condition": "First fresh neural response parsed as exactly declared read_file /sample.py; one actual fixture file read; tool result returned to model; second response exactly equals tool content with no further tool call",
+  "request_seconds": 180,
+  "generation_seconds": 170,
+  "max_output_tokens": 128,
+  "service_wall_seconds": 900,
+  "no_automatic_retries": true,
+  "admission_min_memory_gib": 64,
+  "address_space_limit_gib": 48,
+  "peak_rss_limit_gib": 36,
+  "stop_after_trial": true,
+  "limitations": [
+    "Short explicitly prompted read-only fixture, not DeepAgents maintenance acceptance",
+    "Does not reinterpret four previous no-patch outcomes",
+    "No GPU inference and no model repair success claimed"
+  ]
+}

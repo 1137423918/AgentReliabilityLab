@@ -1,0 +1,223 @@
+{
+  "scope": "Declared-tool parser compatibility and one fresh real-model read-only fixture roundtrip; not maintenance",
+  "real_model_generations": 2,
+  "gpu_used": false,
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "precision": "mixed_fp32_dynamic_qint8",
+  "quantized_weights_sha256": "5805af3c36475a3bfb8425483b6b7332f143081249f9cfb172f81adbf21150f9",
+  "cpu": "Intel Xeon E5-2690 v4 @2.60GHz",
+  "torch_compute_threads": 4,
+  "jsonschema": "4.26.0",
+  "referencing": "0.37.0",
+  "tool_format": "json-object-compat",
+  "model_tested_service_source_sha256": "883db1be34f330f2015811e5fd6248e7a42478d95307be0995cae633fe56ea03",
+  "current_sources": {
+    "benchmarks/cpu_model_service.py": "5f7bd41ca575117bd7ed0e39212a488a0b79382436c79f60bf070cdcd3e329e8",
+    "benchmarks/tool_roundtrip.py": "2c47310ee17f5d6901dd516a142d1c4e460945a530f66800d29bfc6f8e8c3a73",
+    "tests/test_cpu_tool_parser.py": "ddf8d7113d6809dff181937e195d1eeabe326e1fc9d85e8af4d7505fd4f5b804"
+  },
+  "post_trial_parser_change": "Correct literal native markers inside whole JSON strings; no further neural generation claimed",
+  "parser_checks": {
+    "passed": 14,
+    "seconds": 0.218,
+    "weights_loaded": false,
+    "log": "parser-tests.log",
+    "earlier_service_literal_marker_regression": "one expected failure",
+    "before_log": "literal-marker-before.log",
+    "worker_without_optional_dependency_skipped": 14,
+    "optional_log": "worker-optional-tests.log",
+    "fresh_generated_outputs_replayed": true
+  },
+  "fresh_trial": {
+    "scope": "Fresh neural generation and one read-only fixture tool roundtrip; not maintenance",
+    "first_request_matches_recorded_diagnostic": true,
+    "first_request_sha256": "9ae72e6b7b2387b58689453dc6b036ed087f62f9e951c26f19b8cbd92f613bbc",
+    "fixture_sha256": "35b563a879b45841c6fc13e0f88fd49f5232821d5f69cbef8dfc7613a6317af9",
+    "driver_source_sha256": "2c47310ee17f5d6901dd516a142d1c4e460945a530f66800d29bfc6f8e8c3a73",
+    "model_requests": 2,
+    "tool_executions": 1,
+    "roundtrip_verified": false,
+    "maintenance_score": false,
+    "error": {
+      "type": "ValueError",
+      "message": "Final response did not reproduce the actual tool result exactly"
+    },
+    "request_0_seconds": 20.232,
+    "request_1_seconds": 14.773
+  },
+  "generated_requests": [
+    {
+      "utc": "2026-11-20T14:25:58.181586+00:00",
+      "stage": "generated",
+      "id": "f503c97b18a54d399b9851f3fd71193e",
+      "prompt_tokens": 180,
+      "completion_tokens": 20,
+      "seconds": 20.213,
+      "tool_calls": 1,
+      "parse_error": null,
+      "limit_reached": false
+    },
+    {
+      "utc": "2026-11-20T14:26:12.933514+00:00",
+      "stage": "generated",
+      "id": "2cf0c81b8b804d0688eff63e178a0ad2",
+      "prompt_tokens": 250,
+      "completion_tokens": 2,
+      "seconds": 14.69,
+      "tool_calls": 0,
+      "parse_error": null,
+      "limit_reached": false
+    }
+  ],
+  "first_request_matches_previous_diagnostic": true,
+  "rendered_followup": {
+    "weights_loaded": false,
+    "second_request_rendered_prompt_sha256": "321d198c4e4cd7543e973fb11cb81e0f11271d5f9d735bae80da54dd9f0ac427",
+    "fixture_marker_occurrences": 1,
+    "tool_response_tag_present": true,
+    "prompt_tokens": 250
+  },
+  "shutdown": {
+    "identity_checked": true,
+    "operator_requested": true,
+    "pid": 791171,
+    "start_ticks": "226134680",
+    "forced_cleanup": false
+  },
+  "model_service_exit_code": 143,
+  "model_service_terminated": true,
+  "new_task_variant": {
+    "task": "tasks/deepagents-path-model-grounded.json",
+    "canonical_task_sha256": "1303a1af897a47cc10e30798733ea6efe2deea3f1ca018c8c290e568042d939c",
+    "changed_fields": [
+      "prompt"
+    ],
+    "acceptance_and_budgets_unchanged": true,
+    "trial_run": false
+  },
+  "original_maintenance_trials_unchanged": true,
+  "files": {
+    "code/cpu-tool-compat/benchmarks/cpu_model_service.py": {
+      "raw_sha256": "883db1be34f330f2015811e5fd6248e7a42478d95307be0995cae633fe56ea03",
+      "public_sha256": "883db1be34f330f2015811e5fd6248e7a42478d95307be0995cae633fe56ea03"
+    },
+    "code/cpu-tool-compat/benchmarks/tool_roundtrip.py": {
+      "raw_sha256": "2c47310ee17f5d6901dd516a142d1c4e460945a530f66800d29bfc6f8e8c3a73",
+      "public_sha256": "2c47310ee17f5d6901dd516a142d1c4e460945a530f66800d29bfc6f8e8c3a73"
+    },
+    "outputs/cpu-tool-roundtrip-shutdown-20261120.json": {
+      "raw_sha256": "c4230cb1b74fbf08ba4d1ff53277b15eed82c38f3bc37ffd0c42f4a2a9ba89a4",
+      "public_sha256": "c4230cb1b74fbf08ba4d1ff53277b15eed82c38f3bc37ffd0c42f4a2a9ba89a4"
+    },
+    "outputs/cpu-tool-roundtrip-20261120.log": {
+      "raw_sha256": "69fc7efb6421094bccc4c11ea0b9eefe66f66cb8a48eccfbd788cfad67f40282",
+      "public_sha256": "69fc7efb6421094bccc4c11ea0b9eefe66f66cb8a48eccfbd788cfad67f40282"
+    },
+    "outputs/cpu-model-service-20261120-03.log": {
+      "raw_sha256": "5e845a253a6f833c2ca18d9ec4f5ef50b3f8f4a79fb054b7aa6826a4a95c115d",
+      "public_sha256": "7218a6a1408f1f8837debfb7eb4d4f39c9c303704a12abc88495595973202d41"
+    },
+    "outputs/cpu-model-20261120-03/2cf0c81b8b804d0688eff63e178a0ad2.response.json": {
+      "raw_sha256": "057520b9f5320be0e8995f969b9c0448ab2b4ae6e8b10a77fb95bd803137459b",
+      "public_sha256": "057520b9f5320be0e8995f969b9c0448ab2b4ae6e8b10a77fb95bd803137459b"
+    },
+    "outputs/cpu-model-20261120-03/2cf0c81b8b804d0688eff63e178a0ad2.text": {
+      "raw_sha256": "e4ff113e77c204692758069bb541133a69a56e2adb976a3b15d020bd88057b7a",
+      "public_sha256": "e4ff113e77c204692758069bb541133a69a56e2adb976a3b15d020bd88057b7a"
+    },
+    "outputs/cpu-model-20261120-03/f503c97b18a54d399b9851f3fd71193e.text": {
+      "raw_sha256": "0bb9b994f2dd3bfe486f7c335c164eba0d60cda9acf3deeccec76f1a29d512d8",
+      "public_sha256": "0bb9b994f2dd3bfe486f7c335c164eba0d60cda9acf3deeccec76f1a29d512d8"
+    },
+    "outputs/cpu-model-20261120-03/f503c97b18a54d399b9851f3fd71193e.response.json": {
+      "raw_sha256": "2a7243e7f66121e147eed7a75e30b1057e9610fcd2e1032bb7bc2d8c24285a06",
+      "public_sha256": "2a7243e7f66121e147eed7a75e30b1057e9610fcd2e1032bb7bc2d8c24285a06"
+    },
+    "outputs/cpu-model-20261120-03/service.json": {
+      "raw_sha256": "eee27e48af80ef3e533383a43f634e01dfcb293f9e996e295817fde871e568fc",
+      "public_sha256": "eee27e48af80ef3e533383a43f634e01dfcb293f9e996e295817fde871e568fc"
+    },
+    "outputs/cpu-model-20261120-03/resources.json": {
+      "raw_sha256": "64d5e83b47113f0d264edd222bd3d5b28d43d04b8bff60d55893d0413a9e57a1",
+      "public_sha256": "64d5e83b47113f0d264edd222bd3d5b28d43d04b8bff60d55893d0413a9e57a1"
+    },
+    "outputs/cpu-model-20261120-03/f503c97b18a54d399b9851f3fd71193e.request.json": {
+      "raw_sha256": "2d1071326e61c5219f1f626dfb2909a833d8c38a9171ff216fb7fcedb7995660",
+      "public_sha256": "2d1071326e61c5219f1f626dfb2909a833d8c38a9171ff216fb7fcedb7995660"
+    },
+    "outputs/cpu-model-20261120-03/events.jsonl": {
+      "raw_sha256": "bfc64e61017dcdf8aa00202f1fa7a34d2b96ac353a483f0c7daa824587ba7c00",
+      "public_sha256": "bfc64e61017dcdf8aa00202f1fa7a34d2b96ac353a483f0c7daa824587ba7c00"
+    },
+    "outputs/cpu-model-20261120-03/2cf0c81b8b804d0688eff63e178a0ad2.request.json": {
+      "raw_sha256": "093ca36b266bb68202629591ac0997e5856906ba0578c8072e3867b25b6f2b01",
+      "public_sha256": "093ca36b266bb68202629591ac0997e5856906ba0578c8072e3867b25b6f2b01"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/fixture.py": {
+      "raw_sha256": "35b563a879b45841c6fc13e0f88fd49f5232821d5f69cbef8dfc7613a6317af9",
+      "public_sha256": "35b563a879b45841c6fc13e0f88fd49f5232821d5f69cbef8dfc7613a6317af9"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/report.json": {
+      "raw_sha256": "4106b08df5f06a62fcf9ed1025a778439fe9af30ed87eb6332acc4f3b317560d",
+      "public_sha256": "4106b08df5f06a62fcf9ed1025a778439fe9af30ed87eb6332acc4f3b317560d"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/0.request.json": {
+      "raw_sha256": "2d1071326e61c5219f1f626dfb2909a833d8c38a9171ff216fb7fcedb7995660",
+      "public_sha256": "2d1071326e61c5219f1f626dfb2909a833d8c38a9171ff216fb7fcedb7995660"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/0.response.json": {
+      "raw_sha256": "2a7243e7f66121e147eed7a75e30b1057e9610fcd2e1032bb7bc2d8c24285a06",
+      "public_sha256": "2a7243e7f66121e147eed7a75e30b1057e9610fcd2e1032bb7bc2d8c24285a06"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/1.request.json": {
+      "raw_sha256": "093ca36b266bb68202629591ac0997e5856906ba0578c8072e3867b25b6f2b01",
+      "public_sha256": "093ca36b266bb68202629591ac0997e5856906ba0578c8072e3867b25b6f2b01"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/1.response.json": {
+      "raw_sha256": "057520b9f5320be0e8995f969b9c0448ab2b4ae6e8b10a77fb95bd803137459b",
+      "public_sha256": "057520b9f5320be0e8995f969b9c0448ab2b4ae6e8b10a77fb95bd803137459b"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/tool-result.json": {
+      "raw_sha256": "ce46679985b3346ea564a49ce180e63b907fa1abf53e3820deda3e546c952127",
+      "public_sha256": "ce46679985b3346ea564a49ce180e63b907fa1abf53e3820deda3e546c952127"
+    },
+    "parser-tests.log": {
+      "raw_sha256": "ea4e0cda4b6b3966180abacdf4b7c7885474a4501383c8b00cbbbaf78eaa8b0a",
+      "public_sha256": "ea4e0cda4b6b3966180abacdf4b7c7885474a4501383c8b00cbbbaf78eaa8b0a"
+    },
+    "worker-optional-tests.log": {
+      "raw_sha256": "c1eccd9fa40270b50f285c07eba838510b307a709e044c7e477f0dc2d8f56c65",
+      "public_sha256": "c1eccd9fa40270b50f285c07eba838510b307a709e044c7e477f0dc2d8f56c65"
+    },
+    "literal-marker-before.log": {
+      "raw_sha256": "863253cd1f183767d371e24e6daf38544b1f28b4be2db087ef31fde2ef841967",
+      "public_sha256": "c4dfa33b09a9ea9303bdd5585c4aafe046f81529066775612a596e2e70883e51"
+    },
+    "outputs/cpu-tool-roundtrip-20261120/rendered-followup.json": {
+      "raw_sha256": "d0199f20d9d55cc2a0cc1088c2a118e6b598f7dfe76eec3e742d9d7ed9bc709d",
+      "public_sha256": "d0199f20d9d55cc2a0cc1088c2a118e6b598f7dfe76eec3e742d9d7ed9bc709d"
+    },
+    "sources/current-service.py": {
+      "raw_sha256": "5f7bd41ca575117bd7ed0e39212a488a0b79382436c79f60bf070cdcd3e329e8",
+      "public_sha256": "5f7bd41ca575117bd7ed0e39212a488a0b79382436c79f60bf070cdcd3e329e8"
+    },
+    "sources/parser-tests.py": {
+      "raw_sha256": "ddf8d7113d6809dff181937e195d1eeabe326e1fc9d85e8af4d7505fd4f5b804",
+      "public_sha256": "ddf8d7113d6809dff181937e195d1eeabe326e1fc9d85e8af4d7505fd4f5b804"
+    },
+    "protocol.json": {
+      "raw_sha256": "3758a954566e9233c4262fab8c1dad51767f048c17a6799069be37bc43addb05",
+      "public_sha256": "3758a954566e9233c4262fab8c1dad51767f048c17a6799069be37bc43addb05"
+    }
+  },
+  "limits": [
+    "Exactly one short explicitly prompted read-only fixture; not autonomous maintenance or general model quality",
+    "One successful declared tool invocation, but final exact-content criterion failed with literal None",
+    "No checkpoint recovery or GPU inference validated by this trial",
+    "Final candidate additionally tested with offline replay; actual neural generation used archived earlier source",
+    "Default native framing preserved; both modes now require declared function and validated parameters",
+    "No remote schema retrieval, syntax repair, arbitrary command execution or sandbox guarantee",
+    "Private workspace paths redacted; raw and public file hashes distinguished"
+  ]
+}

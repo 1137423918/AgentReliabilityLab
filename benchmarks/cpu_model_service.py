@@ -8,8 +8,8 @@ import argparse
 import datetime
 import hashlib
 import json
+import math
 import os
-import re
 import resource
 import signal
 import socket
@@ -58,37 +58,149 @@ def messages_for_template(messages):
     return result
 
 
-def parse_output(text, eos):
+def strict_decoder():
+    def pairs(items):
+        result = {}
+        for key, item in items:
+            if key in result:
+                raise ValueError("Duplicate JSON key")
+            result[key] = item
+        return result
+
+    def constant(value):
+        raise ValueError("Non-finite JSON number")
+
+    def real(value):
+        number = float(value)
+        if not math.isfinite(number):
+            raise ValueError("Non-finite JSON number")
+        return number
+
+    return json.JSONDecoder(
+        object_pairs_hook=pairs, parse_constant=constant, parse_float=real
+    )
+
+
+def strict_json(value):
+    return strict_decoder().decode(value)
+
+
+def declared_tools(tools):
+    """Compile request-local schemas; no implicit tools or external schema fetching."""
+    if not tools:
+        return {}
+    from jsonschema import Draft202012Validator
+
+    def check_references(value):
+        if isinstance(value, dict):
+            for key, item in value.items():
+                if key in ("$ref", "$dynamicRef") and (
+                    not isinstance(item, str) or not item.startswith("#")
+                ):
+                    raise ValueError("Only local schema references are supported")
+                check_references(item)
+        elif isinstance(value, list):
+            for item in value:
+                check_references(item)
+
+    validators = {}
+    for tool in tools:
+        if tool.get("type") != "function":
+            raise ValueError("Only function tools are supported")
+        function = tool["function"]
+        name, schema = function["name"], function["parameters"]
+        if not isinstance(name, str) or not name or name in validators:
+            raise ValueError("Tool names must be nonempty and unique")
+        if schema.get("type") != "object" or not isinstance(
+            schema.get("properties"), dict
+        ):
+            raise ValueError("Tool parameters must declare object properties")
+        check_references(schema)
+        Draft202012Validator.check_schema(schema)
+        validators[name] = (schema, Draft202012Validator(schema))
+    return validators
+
+
+def parse_output(text, eos, validators=None, tool_format="native"):
+    """Accept only complete declared calls, atomically; never execute or repair text.
+
+    json-object-compat additionally permits a whole JSON object, optionally wrapped
+    in one pair of parentheses. Prose, Markdown fences and schema lists are not
+    scanned for embedded JSON. Default native mode keeps the baseline framing.
+    """
+    if tool_format not in ("native", "json-object-compat"):
+        raise ValueError("Unknown tool format")
+    validators = validators or {}
     content = text.rstrip()
     while eos and content.endswith(eos):
         content = content[: -len(eos)].rstrip()
-    matches = list(re.finditer(r"<tool_call>\s*(.*?)\s*</tool_call>", content, re.S))
-    if content.count("<tool_call>") != len(matches):
-        return content, [], "incomplete_tool_call"
-    calls = []
+    values, remaining = [], content
     try:
-        for match in matches:
-            value = json.loads(match.group(1))
+        if tool_format == "json-object-compat" and content.lstrip().startswith(
+            ("{", "(")
+        ):
+            candidate = content.strip()
+            if candidate.startswith("("):
+                if not candidate.endswith(")"):
+                    raise ValueError("Incomplete parenthesized object")
+                candidate = candidate[1:-1].strip()
+            values = [strict_json(candidate)]
+            remaining = ""
+        elif "<tool_call>" in content or "</tool_call>" in content:
+            # Decode JSON before looking for the closing tag, so literal tags
+            # inside string arguments do not terminate a call prematurely.
+            rest, prose = content, []
+            decoder = strict_decoder()
+            while "<tool_call>" in rest:
+                prefix, rest = rest.split("<tool_call>", 1)
+                if "</tool_call>" in prefix:
+                    raise ValueError("Unexpected closing tag")
+                prose.append(prefix)
+                rest = rest.lstrip()
+                value, end = decoder.raw_decode(rest)
+                values.append(value)
+                rest = rest[end:].lstrip()
+                if not rest.startswith("</tool_call>"):
+                    raise ValueError("Missing closing tag")
+                rest = rest[len("</tool_call>") :]
+            if "</tool_call>" in rest:
+                raise ValueError("Unexpected closing tag")
+            prose.append(rest)
+            remaining = "".join(prose).strip()
+    except (ValueError, TypeError, RecursionError):
+        return content, [], "invalid_tool_json"
+    normalized = []
+    for value in values:
+        try:
+            if not isinstance(value, dict) or set(value) != {"name", "arguments"}:
+                raise ValueError("Expected exactly name and arguments")
+            name = value["name"]
+            if not isinstance(name, str) or name not in validators:
+                return content, [], "undeclared_tool"
             arguments = value["arguments"]
             if isinstance(arguments, str):
-                arguments = json.loads(arguments)
-            if not isinstance(value["name"], str) or not isinstance(arguments, dict):
-                raise ValueError("Invalid generated tool call")
-            calls.append(
-                {
-                    "id": "call_" + uuid.uuid4().hex,
-                    "type": "function",
-                    "function": {
-                        "name": value["name"],
-                        "arguments": json.dumps(arguments, ensure_ascii=False),
-                    },
-                }
-            )
-    except (ValueError, KeyError, TypeError):
-        return content, [], "invalid_tool_json"
-    remaining = re.sub(
-        r"<tool_call>\s*.*?\s*</tool_call>", "", content, flags=re.S
-    ).strip()
+                arguments = strict_json(arguments)
+            schema, validator = validators[name]
+            if (
+                not isinstance(arguments, dict)
+                or set(arguments) - set(schema["properties"])
+                or not validator.is_valid(arguments)
+            ):
+                return content, [], "invalid_tool_arguments"
+            normalized.append((name, arguments))
+        except (ValueError, KeyError, TypeError, RecursionError):
+            return content, [], "invalid_tool_json"
+    calls = [
+        {
+            "id": "call_" + uuid.uuid4().hex,
+            "type": "function",
+            "function": {
+                "name": name,
+                "arguments": json.dumps(arguments, ensure_ascii=False),
+            },
+        }
+        for name, arguments in normalized
+    ]
     return remaining, calls, None
 
 
@@ -102,6 +214,9 @@ def main():
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument(
         "--quantization", choices=("none", "int8-dynamic"), default="none"
+    )
+    parser.add_argument(
+        "--tool-format", choices=("native", "json-object-compat"), default="native"
     )
     parser.add_argument("--wall-seconds", type=int, default=2400)
     parser.add_argument("--request-seconds", type=int, default=180)
@@ -302,6 +417,7 @@ def main():
         "context_limit": 32768,
         "max_new_tokens": 1536,
         "port": args.port,
+        "tool_format": args.tool_format,
         "service_source_sha256": hashlib.sha256(
             Path(__file__).read_bytes()
         ).hexdigest(),
@@ -363,6 +479,7 @@ def main():
                     raise ValueError("Output budget must be 1–1536 tokens")
                 save(args.output / f"{request_id}.request.json", body)
                 messages = messages_for_template(body["messages"])
+                validators = declared_tools(body.get("tools"))
                 inputs = tokenizer.apply_chat_template(
                     messages,
                     tools=body.get("tools"),
@@ -395,7 +512,9 @@ def main():
                 generated = output[0, input_count:]
                 raw = tokenizer.decode(generated, skip_special_tokens=False)
                 (args.output / f"{request_id}.text").write_text(raw)
-                content, calls, parse_error = parse_output(raw, tokenizer.eos_token)
+                content, calls, parse_error = parse_output(
+                    raw, tokenizer.eos_token, validators, args.tool_format
+                )
                 elapsed = time.monotonic() - begin
                 truncated = (
                     len(generated) >= limit or elapsed >= args.generation_seconds

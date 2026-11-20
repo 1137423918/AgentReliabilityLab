@@ -1,0 +1,4 @@
+# Standalone CPU experiment runtime; separate from the worker's frozen environment.
+torch==2.8.0
+transformers==4.57.1
+jsonschema==4.26.0

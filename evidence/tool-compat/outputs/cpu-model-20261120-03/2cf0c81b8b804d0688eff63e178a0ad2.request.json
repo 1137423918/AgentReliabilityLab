@@ -1,0 +1,63 @@
+{
+  "model": "agentlab-qwen3-4b",
+  "messages": [
+    {
+      "role": "system",
+      "content": "Use the supplied tool when asked to inspect a file."
+    },
+    {
+      "role": "user",
+      "content": "Call read_file for /sample.py. Return a tool call rather than a prose answer."
+    },
+    {
+      "role": "assistant",
+      "content": null,
+      "tool_calls": [
+        {
+          "id": "call_a2555d7d1da84c08ad9aac6642a03b9d",
+          "type": "function",
+          "function": {
+            "name": "read_file",
+            "arguments": "{\"file_path\": \"/sample.py\"}"
+          }
+        }
+      ]
+    },
+    {
+      "role": "tool",
+      "tool_call_id": "call_a2555d7d1da84c08ad9aac6642a03b9d",
+      "content": "roundtrip_marker = \"content_748291\"\n"
+    },
+    {
+      "role": "user",
+      "content": "Return only the complete file contents from that tool result. Do not call another tool."
+    }
+  ],
+  "tools": [
+    {
+      "type": "function",
+      "function": {
+        "name": "read_file",
+        "description": "Read the contents of a virtual text file.",
+        "parameters": {
+          "type": "object",
+          "properties": {
+            "file_path": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "file_path"
+          ]
+        }
+      }
+    }
+  ],
+  "temperature": 0,
+  "seed": 42,
+  "max_completion_tokens": 128,
+  "stream": false,
+  "metadata": {
+    "agentlab_phase": "tool_roundtrip_followup_not_maintenance"
+  }
+}

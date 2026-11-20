@@ -1,0 +1,17 @@
+{
+  "scope": "Fresh neural generation and one read-only fixture tool roundtrip; not maintenance",
+  "first_request_matches_recorded_diagnostic": true,
+  "first_request_sha256": "9ae72e6b7b2387b58689453dc6b036ed087f62f9e951c26f19b8cbd92f613bbc",
+  "fixture_sha256": "35b563a879b45841c6fc13e0f88fd49f5232821d5f69cbef8dfc7613a6317af9",
+  "driver_source_sha256": "2c47310ee17f5d6901dd516a142d1c4e460945a530f66800d29bfc6f8e8c3a73",
+  "model_requests": 2,
+  "tool_executions": 1,
+  "roundtrip_verified": false,
+  "maintenance_score": false,
+  "error": {
+    "type": "ValueError",
+    "message": "Final response did not reproduce the actual tool result exactly"
+  },
+  "request_0_seconds": 20.232,
+  "request_1_seconds": 14.773
+}
