@@ -1,0 +1,41 @@
+{
+  "commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "files": [
+    {
+      "path": "common/chat.h",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/common/chat.h",
+      "sha256": "d76181f567ca29c2a31204a2a77113e2f15491849650f6dfce839265840877f5",
+      "bytes": 21582
+    },
+    {
+      "path": "common/chat.cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/common/chat.cpp",
+      "sha256": "032f287a7aaf9974d28d59122f7839900b9f3fd7896c4fa7ade76f40b6a332b0",
+      "bytes": 85777
+    },
+    {
+      "path": "tools/server/server-common.h",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/tools/server/server-common.h",
+      "sha256": "9416ba76cebd411076f0060fe486800a5c02fe42d8ec4e66b8f49e994d31defa",
+      "bytes": 32147
+    },
+    {
+      "path": "tools/server/server-common.cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/tools/server/server-common.cpp",
+      "sha256": "2c6c51a25c4bb0b29c5bb936078a2f9bca7e29626471317d9e278da7f544ca0f",
+      "bytes": 85603
+    },
+    {
+      "path": "tools/server/server-context.cpp",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/tools/server/server-context.cpp",
+      "sha256": "567a0bfb47fe94c5941c48a6c07be7d9e6e2e5f4b6c50b8a5f62d29e592d1e1d",
+      "bytes": 309419
+    },
+    {
+      "path": "common/common.h",
+      "url": "https://raw.githubusercontent.com/ggml-org/llama.cpp/4783b1145c7073bb809f4c282ff4853cbfe42954/common/common.h",
+      "sha256": "3807833a808ef39202e9cbd0f4ad7784199e53fa4518432404c5b19d34a35c29",
+      "bytes": 60511
+    }
+  ]
+}

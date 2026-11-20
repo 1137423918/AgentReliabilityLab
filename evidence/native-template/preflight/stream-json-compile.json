@@ -1,0 +1,51 @@
+{
+  "argv": [
+    "gcc",
+    "-B<server-workspace>/code/native-template-audit-20261121/toolchain/usr/libexec/gcc/x86_64-redhat-linux/11/",
+    "-std=c++17",
+    "-O2",
+    "-Wall",
+    "-Wextra",
+    "-Werror",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/toolchain/usr/include/c++/11",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/toolchain/usr/include/c++/11/x86_64-redhat-linux",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/toolchain/usr/include/c++/11/backward",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/headers/common",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/headers/include",
+    "-isystem",
+    "<server-workspace>/code/native-template-audit-20261121/headers/ggml/include",
+    "<server-workspace>/code/native-template-audit-20261121/native_template.cpp",
+    "-o",
+    "<server-workspace>/code/native-template-audit-20261121/native-template",
+    "-L<server-workspace>/tools/llama-b12576/llama-b12576",
+    "-Wl,-rpath,<server-workspace>/tools/llama-b12576/llama-b12576",
+    "-Wl,-rpath-link,<server-workspace>/tools/llama-b12576/llama-b12576",
+    "-l:libllama-common.so.1",
+    "-l:libllama.so.1",
+    "-l:libstdc++.so.6",
+    "-lm"
+  ],
+  "returncode": 1,
+  "wall_seconds": 3.2789825294166803,
+  "packages": [
+    {
+      "file": "gcc-c++-11.5.0-11.el9.x86_64.rpm",
+      "url": "https://download.rockylinux.org/vault/rocky/9.7/AppStream/x86_64/os/Packages/g/gcc-c++-11.5.0-11.el9.x86_64.rpm",
+      "bytes": 13463689,
+      "sha256": "c745f806fb4ecb6931dc81fc22deeb572bdb24fc5b6563448a9b94d5b5570901"
+    },
+    {
+      "file": "libstdc++-devel-11.5.0-11.el9.x86_64.rpm",
+      "url": "https://download.rockylinux.org/vault/rocky/9.7/AppStream/x86_64/os/Packages/l/libstdc++-devel-11.5.0-11.el9.x86_64.rpm",
+      "bytes": 2327305,
+      "sha256": "6766cf5f7e95ec24c3737ed0c9004bb204150366bf1b5ea23922f83e7f117042"
+    }
+  ],
+  "headers_archive_sha256": "317ae8f527f69135752d3cc2b23099f6763e5c134e3d0bbb616de6a0706a7f79",
+  "cpp_sha256": "be48ecb52826c77e8a28274f261488cfe1d9d5f8bf1c6e3edee8e4681d5cd36d"
+}

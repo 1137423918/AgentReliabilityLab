@@ -1,0 +1,13 @@
+<server-workspace>/code/native-template-audit-20261121/native_template.cpp: In function ‘int main(int, char**)’:
+<server-workspace>/code/native-template-audit-20261121/native_template.cpp:33:48: error: cannot convert ‘std::ifstream’ {aka ‘std::basic_ifstream<char>’} to ‘const string&’ {aka ‘const std::__cxx11::basic_string<char>&’}
+   33 |         common_json cases = common_json::parse(file);
+      |                                                ^~~~
+      |                                                |
+      |                                                std::ifstream {aka std::basic_ifstream<char>}
+In file included from <server-workspace>/code/native-template-audit-20261121/headers/common/json-schema.h:3,
+                 from <server-workspace>/code/native-template-audit-20261121/headers/common/peg-parser.h:3,
+                 from <server-workspace>/code/native-template-audit-20261121/headers/common/chat.h:6,
+                 from <server-workspace>/code/native-template-audit-20261121/native_template.cpp:2:
+<server-workspace>/code/native-template-audit-20261121/headers/common/json.h:164:50: note:   initializing argument 1 of ‘static common_json common_json::parse(const string&)’
+  164 |     static common_json parse(const std::string & text);
+      |                              ~~~~~~~~~~~~~~~~~~~~^~~~

@@ -1,5 +1,7 @@
 # Full-request context budgets for source retrieval
 
+> 2026-11-21 follow-up: the [native server-converter replay](native-template.md) now matches all 14 captured prompt byte strings and full token arrays. The original reports below are unchanged; this proves equivalence only for those exact requests/settings, not observed inference usage.
+
 Three operator-planned controls run through the actual `agent_phase`, Deep Agents 0.7.41, StateBackend and ChatOpenAI 1.8.5 transport. An explicitly fake loopback HTTP service returns tool calls; no neural model is queried. All controls retain the original Qwen3.5 maintenance task prompt, source commit and file inventory. Their retrieval goal is supplied separately by the operator: the complete original `to_posix_path` and `validate_path` definitions in Deep Agents commit `744a797e3b9495539ca35571eeffd112a205f5c8`.
 
 The benchmark checks all **86 target lines verbatim** in actual tool messages and confirms the exact virtual file set and every file's text remain unchanged. It does not edit a candidate, run maintenance acceptance, establish autonomous localization, or add a model-success result.

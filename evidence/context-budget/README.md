@@ -1,5 +1,7 @@
 # Full-request context accounting: controlled source retrieval
 
+> 2026-11-21 follow-up: the [native server-converter replay](../native-template/README.md) now matches all 14 captured prompt byte strings and full token arrays. The original reports below are unchanged; this proves equivalence only for those exact requests/settings, not observed inference usage.
+
 **No model inference, autonomous search, patch or maintenance acceptance.** Three explicit operator plans run through the real worker/Deep Agents/ChatOpenAI transport against a fake loopback tool-call service. All retrieve the same 86 original source lines and preserve every virtual file's text.
 
 | Policy | Calls / HTTP requests | First / final reference tokens | Logical input sum |

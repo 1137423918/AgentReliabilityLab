@@ -77,7 +77,10 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 通过实际 worker、Deep Agents 和 ChatOpenAI HTTP 传输，对同一已知函数目标比较三种操作者检索计划，逐行核对86行目标原文与虚拟文件未改动。14份真实请求JSON体、完整提示和原生GGUF词表token序列公开；参考渲染包含系统提示、所有工具schema和历史。顺序读取、grep后读span、AST检索的累计逻辑输入分别为 **43990 / 11341 / 19054 token**，AST首请求额外286。
 
-这个已知名称的场景里grep更省。Jinja参考渲染未证明与原生server完全等价；逻辑输入重复计算可缓存前缀，不等于净推理耗时、费用或成功率。固定计划与假模型只验证真实工具和传输，不计模型自主定位或修复；运行器核心未改、63项原项目测试未重复跑。[协议与完整口径](docs/context-budget.md) · [14份请求、token序列与哈希](evidence/context-budget/README.md)。
+这个已知名称的场景里grep更省。后续CPU回放通过固定原生服务库的实际请求转换函数，14份提示字节与完整token数组均与参考结果一致（仅限这些输入和配置）。逻辑输入重复计算可缓存前缀，不等于净推理耗时、费用或成功率。固定计划与假模型只验证真实工具和传输，不计模型自主定位或修复；运行器核心未改、63项原项目测试未重复跑。[协议与完整口径](docs/context-budget.md) · [14份请求、token序列与哈希](evidence/context-budget/README.md)。
+
+
+新增[原生服务转换回放](docs/native-template.md)：不创建推理上下文，直接调用原版 `oaicompat_chat_params_parse`，核对原有14份输入；[逐请求证据](evidence/native-template/README.md)与准备失败均公开。这14项不累加到既有74项核心回归，也没有新增神经模型成绩。
 
 ## 有界的编辑、验收与修复
 

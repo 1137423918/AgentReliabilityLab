@@ -1,0 +1,14 @@
+[
+  {
+    "file": "gcc-c++-11.5.0-11.el9.x86_64.rpm",
+    "url": "https://download.rockylinux.org/vault/rocky/9.7/AppStream/x86_64/os/Packages/g/gcc-c++-11.5.0-11.el9.x86_64.rpm",
+    "bytes": 13463689,
+    "sha256": "c745f806fb4ecb6931dc81fc22deeb572bdb24fc5b6563448a9b94d5b5570901"
+  },
+  {
+    "file": "libstdc++-devel-11.5.0-11.el9.x86_64.rpm",
+    "url": "https://download.rockylinux.org/vault/rocky/9.7/AppStream/x86_64/os/Packages/l/libstdc++-devel-11.5.0-11.el9.x86_64.rpm",
+    "bytes": 2327305,
+    "sha256": "6766cf5f7e95ec24c3737ed0c9004bb204150366bf1b5ea23922f83e7f117042"
+  }
+]

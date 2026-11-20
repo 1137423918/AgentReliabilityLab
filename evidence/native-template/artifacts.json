@@ -1,0 +1,47 @@
+{
+  "normalization": "Only private server paths in logs and compile command receipts. Native prompts, token arrays and report are byte-identical; no request headers, databases, weights or toolchain binaries. Preliminary common-only success retained privately, not additional independent requests.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "524d392ddac687dabab7333b4d922e31fc8c4c1db35845c565e9a9376d803918",
+      "public_sha256": "524d392ddac687dabab7333b4d922e31fc8c4c1db35845c565e9a9376d803918",
+      "public_bytes": 15957
+    },
+    {
+      "path": "native.jsonl",
+      "original_sha256": "d2ae227290761c51b40d94a4dbb5725183e890e87a051160803ead017c7fe254",
+      "public_sha256": "d2ae227290761c51b40d94a4dbb5725183e890e87a051160803ead017c7fe254",
+      "public_bytes": 1399446
+    },
+    {
+      "path": "logs/native.log",
+      "original_sha256": "b444a24208d1cdec5e3524c14d51bef97c0242e907d81e29a10d8f3c596917e8",
+      "public_sha256": "43ade14e3746ce941a96fc44d985bac33b66311b3042feb6e4fc90b56fc6ecf6",
+      "public_bytes": 7113
+    },
+    {
+      "path": "compile.json",
+      "original_sha256": "f68c3fc4ae4d74828e0130cff8f4302992de9cf57ae9b41bcd2b18bbf91c9004",
+      "public_sha256": "fe6a73b432f1d6be7c30860fe42beea984ec1ac2b8d4da74950a55637cda0c83",
+      "public_bytes": 2627
+    },
+    {
+      "path": "logs/compile.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "preflight/stream-json-compile.log",
+      "original_sha256": "805f44e7c2ef9b4a69419592913ea177293e6b897bf7545886419e3b116cebd5",
+      "public_sha256": "3c885dc25b73f8855ceee33b89f055cdfdac76b52a7a730839eb5144f8081fa8",
+      "public_bytes": 1358
+    },
+    {
+      "path": "preflight/stream-json-compile.json",
+      "original_sha256": "1320bbd4f3d1f5c078726dd103697c0ecb7562e7f7f93bdd9051086ec456f506",
+      "public_sha256": "2cfd01f677e9022bf7411722c734f510b7c7b040b9dd6c07f9601b832f3c8f2a",
+      "public_bytes": 2186
+    }
+  ]
+}
