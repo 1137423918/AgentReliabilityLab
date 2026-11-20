@@ -1,0 +1,6 @@
+imported_subject=<repair-experiment>/uninterrupted/attempts/001/worktree/openhands-sdk/openhands/sdk/__init__.py
+imported_subject=<repair-experiment>/uninterrupted/attempts/001/worktree/openhands-tools/openhands/tools/file_editor/editor.py
+imported_subject=<repair-experiment>/uninterrupted/attempts/001/worktree/openhands-tools/openhands/tools/file_editor/utils/history.py
+[11/20/26 20:44:35] INFO     FileEditor initialized with cwd:      editor.py:125
+                             /tmp/openhands-undo-live-b3uh1q02                  
+{"failure_was_reported": true, "after_failed_undo": "value = 2\n", "retry_is_error": false, "after_retry": "value = 1\n", "older_undo_is_error": false, "after_older_undo": "value = 0\n"}

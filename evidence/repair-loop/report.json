@@ -1,0 +1,233 @@
+{
+  "scope": "Bounded repair workflow; scripted real-repository reference and fake-HTTP transport checks, not neural-model inference",
+  "base_commit": "722e5d403cf75d4e032b79296cfaf178f8678a93",
+  "reference_task_sha256": "19d4b113f1bcf6ccbd9b24e237f69e46d87da17b93f8810884854e3e7852b352",
+  "model_task_sha256": "deb99eb0ee4c81ca59da3bb9d35408a833e08d5cdc3347ac74a66e4a969bc7e5",
+  "patch_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e",
+  "patch_bytes": 1795,
+  "max_repair_attempts": 1,
+  "max_supported_extra_attempts": 3,
+  "feedback_log_tail_bytes": 8192,
+  "project_tests": {
+    "total": 33,
+    "passed": 33,
+    "evidence": 8,
+    "worker": 15,
+    "http_transport_and_repair": 10,
+    "duration_seconds": 209.493
+  },
+  "cases": [
+    {
+      "case": "uninterrupted",
+      "signal": null,
+      "first_attempt": {
+        "old_tests_passed": 184,
+        "permission_acceptance": "failed"
+      },
+      "accepted_attempt": 1,
+      "second_attempt": {
+        "old_tests_passed": 184,
+        "permission_acceptance": "passed"
+      },
+      "failure_logs_unchanged_on_resume": null,
+      "patch_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e"
+    },
+    {
+      "case": "feedback-sigkill",
+      "signal": "SIGKILL",
+      "first_attempt": {
+        "old_tests_passed": 184,
+        "permission_acceptance": "failed"
+      },
+      "accepted_attempt": 1,
+      "second_attempt": {
+        "old_tests_passed": 184,
+        "permission_acceptance": "passed"
+      },
+      "failure_logs_unchanged_on_resume": true,
+      "patch_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e"
+    }
+  ],
+  "same_patch": true,
+  "model_inference": false,
+  "implementation_sha256": {
+    "tests/test_worker.py": "207194665bc452119a3839ad3daa0eea44d9efdee700427af6bf974af3721dee",
+    "tests/test_local_model.py": "55ac513f5b1711c53007e8a188c15810214454c41565cee35f40ba477ea1f0e3",
+    "benchmarks/repair_recovery.py": "1103e1e13580770f84ee0d089cf9e1e1bff7be4ce551e8a2075ebd359c49c5f2",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "agent_lab/models.py": "6ad3f9c458e0c8ac9702678f2e34d0a553089f79c19e91df050952b818da53b5",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "agent_lab/worker.py": "d5d989872c92f5f311f41f16538cf8d2b212ac5920a711d446cc9e958d8a7384",
+    "agent_lab/repair.py": "32fdde9ddf34d2a7541d42886cd2e620d1034cd730c2b4daddb86e4eaa1bc139"
+  },
+  "files": {
+    "feedback-sigkill/attempts/000/feedback.json": {
+      "raw_sha256": "49cb87b00a017e0b5ccfbf8e84b76e259d98bba3381c647a707f41be80a65aff",
+      "public_sha256": "633633af8cbd8e56943f49788bbaa0d8bde575a44f4c486f459bddb91eae3f25"
+    },
+    "feedback-sigkill/attempts/000/patch.diff": {
+      "raw_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d",
+      "public_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d"
+    },
+    "feedback-sigkill/attempts/000/status.json": {
+      "raw_sha256": "57e1f3d1ab7ec5944ae57aad7ce1b49f09ffe4e3f280a508d29d64851c564c77",
+      "public_sha256": "57e1f3d1ab7ec5944ae57aad7ce1b49f09ffe4e3f280a508d29d64851c564c77"
+    },
+    "feedback-sigkill/attempts/000/verification-0.log": {
+      "raw_sha256": "c8df8d8179fb37bfe32628d7ec2c0ea0b0455c1160a2ff0faa9e2365d798895f",
+      "public_sha256": "cd1e30e9c782bbcb1470a6841022cb51ae250cfae0d8da3d2f889d5ed0c452e5"
+    },
+    "feedback-sigkill/attempts/000/verification-1.log": {
+      "raw_sha256": "25e96034b87103eb847828d05e25c5c18698c1ada9cb165a2d5d8dbd4b315b4e",
+      "public_sha256": "5e142a28a0d6ae4dc8e2fd773936e57bc539693422962815784e4ef5cbd7e167"
+    },
+    "feedback-sigkill/attempts/000/verification.json": {
+      "raw_sha256": "0419da9da1e9d7ac69df07ac61868ecd705d125a4575187bd4a17ac55953cf76",
+      "public_sha256": "863e80bbef81f92a18d4075afb6fbe0aafca0d0d712aee15af107581c5037611"
+    },
+    "feedback-sigkill/attempts/001/patch.diff": {
+      "raw_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e",
+      "public_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e"
+    },
+    "feedback-sigkill/attempts/001/result.json": {
+      "raw_sha256": "53a0bd2794b5571c281c4f96f86defce3d95e4090e80def3d6915dbd2454e225",
+      "public_sha256": "27d59089c09afc1ba890a38b84386c98ddd0af7e9ac225abafd73a2b6014eb29"
+    },
+    "feedback-sigkill/attempts/001/status.json": {
+      "raw_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae",
+      "public_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae"
+    },
+    "feedback-sigkill/attempts/001/verification-0.log": {
+      "raw_sha256": "262c26c1615ca6853925039e35797928b3f3899c4753ff06d7cc28aa4489034e",
+      "public_sha256": "896ca5f171be4379abc134e358524dddd504b43b3cf79bda2c50030173aa008c"
+    },
+    "feedback-sigkill/attempts/001/verification-1.log": {
+      "raw_sha256": "c51dba4e7213ef0c6996f3a182d09bf5ed5bbb2ddc1328db9029f010ec149834",
+      "public_sha256": "2968f58f8a7101aa8480098dfc70a44955529d687f715629080fab098765da01"
+    },
+    "feedback-sigkill/attempts/001/verification.json": {
+      "raw_sha256": "f86b8466bb45af8877222657f147d4d0754b81abc91ae2a04405338ec0802bec",
+      "public_sha256": "6e092db84469c3fb4140dc909a5c0da955fbfe3ac978d0bc4668a002b7403298"
+    },
+    "feedback-sigkill/interrupted.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "feedback-sigkill/interrupted.stdout.jsonl": {
+      "raw_sha256": "1f0eb2fc34b36c4cda76ed60bb9d221d9fe849a14a828fc6bff16128b7f2a934",
+      "public_sha256": "1f0eb2fc34b36c4cda76ed60bb9d221d9fe849a14a828fc6bff16128b7f2a934"
+    },
+    "feedback-sigkill/progress.json": {
+      "raw_sha256": "e3f9c184ae7be443e021b60673870ed21bd25b921576b29a8dd4f3ddb9fc33c9",
+      "public_sha256": "7f525b538033f9b4bd64b8b1a5b4f47e41abd8022e7ed28d64c2846067948908"
+    },
+    "feedback-sigkill/result.json": {
+      "raw_sha256": "cae6e13c6161309ffdaee3d65db1ecf94dcedf4b438f2bd503909be8823e614b",
+      "public_sha256": "3a4d7ef0d02f1e026224ebffcae3d0baf2616b790b968f8bbd183e919757c55f"
+    },
+    "feedback-sigkill/resumed.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "feedback-sigkill/resumed.stdout.jsonl": {
+      "raw_sha256": "5ba2c01ce1678705a421af9ea2ae77290951273d773fab02bc9e19cb9aed0b06",
+      "public_sha256": "0880438950615c76e2db20ccf69e4e7828606a7c4b42fc86cbe3f6e8cb9c1703"
+    },
+    "feedback-sigkill/status.json": {
+      "raw_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae",
+      "public_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae"
+    },
+    "logs/repair-full-tests.log": {
+      "raw_sha256": "f874d0a4176085e747ab39388440bbabe3079c593dc85fc1fdf5ba751fc09af7",
+      "public_sha256": "f874d0a4176085e747ab39388440bbabe3079c593dc85fc1fdf5ba751fc09af7"
+    },
+    "logs/repair-http-tests.log": {
+      "raw_sha256": "4f90c7cc04fbb1e1c14f4265e4d4e43ebe4231758a6cfbd02a935b3e87b3e596",
+      "public_sha256": "4f90c7cc04fbb1e1c14f4265e4d4e43ebe4231758a6cfbd02a935b3e87b3e596"
+    },
+    "logs/repair-recovery-matrix.log": {
+      "raw_sha256": "0c78e771b1e503376619fec0ffaa7e9eb0c2f4862ffa3262103c29849563602a",
+      "public_sha256": "0c78e771b1e503376619fec0ffaa7e9eb0c2f4862ffa3262103c29849563602a"
+    },
+    "uninterrupted/attempts/000/feedback.json": {
+      "raw_sha256": "f0238497612a87d2018ff3c72830649b7def3c7e2a5a2c4c1f01e25d8a9435d0",
+      "public_sha256": "526c073ad569638e5299cc2645e5a937fd4e01934e1909b8432677c353664a79"
+    },
+    "uninterrupted/attempts/000/patch.diff": {
+      "raw_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d",
+      "public_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d"
+    },
+    "uninterrupted/attempts/000/status.json": {
+      "raw_sha256": "57e1f3d1ab7ec5944ae57aad7ce1b49f09ffe4e3f280a508d29d64851c564c77",
+      "public_sha256": "57e1f3d1ab7ec5944ae57aad7ce1b49f09ffe4e3f280a508d29d64851c564c77"
+    },
+    "uninterrupted/attempts/000/verification-0.log": {
+      "raw_sha256": "e290c2505e9047642869ea3c3fa570f3654d637f95386fb37abab3e12a8752d2",
+      "public_sha256": "43b1d42de0e006452784f230e33eb0dcef98bf9e52b9924ebbfc45f18f09bd29"
+    },
+    "uninterrupted/attempts/000/verification-1.log": {
+      "raw_sha256": "68944eade1571c2337288abbeac12034c8a13a955c5866ab644f638c87b6e9cd",
+      "public_sha256": "3e3369fe53215d8dfe2391571c788d7abd397773838a57e4bc10cc05a96383ce"
+    },
+    "uninterrupted/attempts/000/verification.json": {
+      "raw_sha256": "7d1d71f9d820337447b4caae7ce20fd16cbae798a2b5107c18c06deb7c63fae9",
+      "public_sha256": "908d3d513c449baa271346b34fe3336b59dc7e35c3681c973a54f1a6b9d40188"
+    },
+    "uninterrupted/attempts/001/patch.diff": {
+      "raw_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e",
+      "public_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e"
+    },
+    "uninterrupted/attempts/001/result.json": {
+      "raw_sha256": "e0212b7217def05df372fed30dde06936ea04aff11451f1c32cad1419a6eb238",
+      "public_sha256": "101fbe236848751ce25bfda1eeb8fe111ec79799acec34fa510981696e3fc415"
+    },
+    "uninterrupted/attempts/001/status.json": {
+      "raw_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae",
+      "public_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae"
+    },
+    "uninterrupted/attempts/001/verification-0.log": {
+      "raw_sha256": "316645113d7fedfa6a9d87f7de71dddecb35f0909364ec27af937eee1cb5f774",
+      "public_sha256": "95568a140aa9423bc1cfdec0d033b8067cca90a98ca1cb71a6bfc63fd660ff76"
+    },
+    "uninterrupted/attempts/001/verification-1.log": {
+      "raw_sha256": "50d5256c822607df6b5cadc8296c873b1a95793a79283995656b693be32fd599",
+      "public_sha256": "11a4ef17fdeb39887381c98ccce4e91c9cf703cd536a31182d763246d01d2ebd"
+    },
+    "uninterrupted/attempts/001/verification.json": {
+      "raw_sha256": "4400fb5640a8bfdb05ebda325a9f2c0a93443df805e5dcff47884ad6b8c22369",
+      "public_sha256": "e2d721e47966cf621bec6d1fa9e03ba162e30a39b0c13c9bb64b92dac18063c6"
+    },
+    "uninterrupted/progress.json": {
+      "raw_sha256": "e6cd000bb46038380ad67fd0d61752ea3a59bca1630637be152785b042e8799d",
+      "public_sha256": "d1adc751ade80437644148cab629c804d79a9f7d30971a8887b44f70282007de"
+    },
+    "uninterrupted/result.json": {
+      "raw_sha256": "362acaa9dabee0d49dc47883f3eaf991cd5e4c7bac6a0326f652884a4433516b",
+      "public_sha256": "a5bf49301337a2136264eeeb5d16e1b9c06d9731449478f021c2d4df037cb826"
+    },
+    "uninterrupted/resumed.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "uninterrupted/resumed.stdout.jsonl": {
+      "raw_sha256": "cbb1d752c668221f74917f249f70a32913d49558b0565c50178c7d7a8afba9e4",
+      "public_sha256": "e03fcdbdd860044181fb020df998b99a865a7ebdb2374f284713fa7020e46cc1"
+    },
+    "uninterrupted/status.json": {
+      "raw_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae",
+      "public_sha256": "df7032f53ca5f6c4a32ecace87d84e28016e2b7c9b68ac7912da2a56bdfbc1ae"
+    },
+    "experiment.json": {
+      "raw_sha256": "a8c79d8f8cc82625b10a4e63be78a86cc1001dfc8623ef6790dfdf223a06015d",
+      "public_sha256": "b6d46ff6333f7af96d03fcba3a865314c72c929f284d8ec93834eb17b0a7a5a1"
+    }
+  },
+  "limits": [
+    "Fixed reference edits and fake HTTP, not model repair effectiveness",
+    "Graph budget is per attempt; max extra attempts is separate, not token/cost budget",
+    "Not a hostile-code sandbox or prompt-injection evaluation",
+    "Host power loss and supervisor death not tested",
+    "Completed-but-unrecorded verification can repeat across crashes",
+    "Nested raw_log_sha256 refers to original logs; public hashes bind sanitized copies"
+  ]
+}

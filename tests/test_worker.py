@@ -374,6 +374,18 @@ else:
             self.assertIn("graph-step budget", result.stderr)
         self.assertFalse((directory / "result.json").exists())
 
+    def test_initial_contents_cannot_expand_scope_or_exceed_the_text_budget(self):
+        from agent_lab.worker import RunError, validate_task
+
+        for initial in (
+            {"outside.py": "x"},
+            {"module.py": 2},
+            {"module.py": "x" * (2 * 1024 * 1024 + 1)},
+        ):
+            with self.subTest(initial_type=type(initial[next(iter(initial))]).__name__):
+                with self.assertRaises(RunError):
+                    validate_task({**self.task, "initial_contents": initial})
+
     def test_modified_completed_patch_is_not_reported_as_success(self):
         directory = self.root / "tampered"
         self.assertEqual(self.call(directory).returncode, 0)
@@ -381,6 +393,17 @@ else:
         result = self.call(directory)
         self.assertEqual(result.returncode, 2)
         self.assertIn("stale success", result.stderr)
+
+    def test_cached_verification_logs_cannot_be_replaced(self):
+        directory = self.root / "changed-log"
+        self.assertEqual(self.call(directory).returncode, 0)
+        (directory / "verification-0.log").write_text("modified evidence")
+        self.assertEqual(self.call(directory).returncode, 2)
+        (directory / "result.json").unlink()
+        result = self.call(directory)
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("Saved verification evidence changed", result.stderr)
+        self.assertEqual((directory / "worktree/.verify-count").read_text(), "1")
 
 
 if __name__ == "__main__":

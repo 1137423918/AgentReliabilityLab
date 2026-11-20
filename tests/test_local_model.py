@@ -6,10 +6,13 @@ These checks establish adapter behavior, never model-inference capability.
 import importlib.util
 import json
 import os
+import select
+import signal
 import subprocess
 import sys
 import tempfile
 import threading
+import time
 import unittest
 from http.server import BaseHTTPRequestHandler, HTTPServer
 from pathlib import Path
@@ -35,6 +38,7 @@ class LocalModelTests(unittest.TestCase):
         self.git("add", "module.py")
         self.git("commit", "-m", "baseline")
         self.requests = []
+        self.repair_value = None
         self.response_status = 200
         self.response_gate = threading.Event()
         self.response_gate.set()
@@ -56,6 +60,13 @@ class LocalModelTests(unittest.TestCase):
                     tool_done = any(
                         message["role"] == "tool" for message in body["messages"]
                     )
+                    repairing = fixture.repair_value is not None and any(
+                        message["role"] == "user"
+                        and isinstance(message.get("content"), str)
+                        and "The preceding candidate failed operator verification."
+                        in message["content"]
+                        for message in body["messages"]
+                    )
                     message = {
                         "role": "assistant",
                         "content": "Prepared for review." if tool_done else "",
@@ -70,8 +81,12 @@ class LocalModelTests(unittest.TestCase):
                                     "arguments": json.dumps(
                                         {
                                             "file_path": "/module.py",
-                                            "old_string": "value = 1",
-                                            "new_string": "value = 2",
+                                            "old_string": "value = 2"
+                                            if repairing
+                                            else "value = 1",
+                                            "new_string": f"value = {fixture.repair_value}"
+                                            if repairing
+                                            else "value = 2",
                                         }
                                     ),
                                 },
@@ -263,6 +278,153 @@ class LocalModelTests(unittest.TestCase):
         self.assertEqual(recovered["checkpoint_interruption"]["tool_results"], 1)
         self.assertEqual(recovered["result"]["tool_results"], 1)
         self.assertEqual(len(self.requests), 4)
+
+    def repair_task(self, expected=3, limit=1):
+        self.repair_value = 3
+        self.task["max_repair_attempts"] = limit
+        self.task["verify"] = [
+            {
+                "argv": [
+                    sys.executable,
+                    "-c",
+                    (
+                        "from pathlib import Path; p=Path('.checks'); "
+                        "p.write_text(str(int(p.read_text())+1) if p.exists() else '1'); "
+                        f"import module; assert module.value == {expected}, "
+                        f"f'expected {expected}, got {{module.value}}'"
+                    ),
+                ]
+            }
+        ]
+
+    def call_repair(self, paused=False):
+        task = self.root / "repair-task.json"
+        task.write_text(json.dumps(self.task))
+        environment = dict(os.environ)
+        environment.update(
+            AGENT_LAB_MODEL_URL=f"http://127.0.0.1:{self.server.server_port}/v1",
+            AGENT_LAB_MODEL_KEY="fixture-local-key",
+        )
+        argv = [
+            sys.executable,
+            "-m",
+            "agent_lab.repair",
+            "--repo",
+            str(self.repo),
+            "--task",
+            str(task),
+            "--run-dir",
+            str(self.root / "repair"),
+        ]
+        if paused:
+            return subprocess.Popen(
+                argv + ["--hold-after", "repair_feedback"],
+                env=environment,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.PIPE,
+                start_new_session=True,
+            )
+        return subprocess.run(
+            argv, env=environment, capture_output=True, text=True, timeout=120
+        )
+
+    def test_failed_candidate_is_repaired_using_http_feedback_and_replay_is_free(self):
+        self.repair_task()
+        result = self.call_repair()
+        self.assertEqual(result.returncode, 0, result.stderr)
+        root = self.root / "repair"
+        receipt = json.loads((root / "result.json").read_text())
+        self.assertEqual(receipt["accepted_attempt"], 1)
+        self.assertEqual(
+            [r["status"] for r in receipt["attempts"]],
+            ["verification_failed", "ready_for_review"],
+        )
+        self.assertEqual(
+            (root / "attempts/000/worktree/module.py").read_text(), "value = 2\n"
+        )
+        self.assertEqual(
+            (root / "attempts/001/worktree/module.py").read_text(), "value = 3\n"
+        )
+        self.assertIn(
+            "expected 3, got 2", (root / "attempts/000/feedback.json").read_text()
+        )
+        self.assertTrue(
+            any(
+                "expected 3, got 2" in str(m.get("content"))
+                for m in self.requests[2]["body"]["messages"]
+            )
+        )
+        self.assertEqual(len(self.requests), 4)
+        self.assertEqual(self.call_repair().returncode, 0)
+        self.assertEqual(len(self.requests), 4)
+        for number in ("000", "001"):
+            self.assertEqual(
+                (root / "attempts" / number / "worktree/.checks").read_text(), "1"
+            )
+
+    def test_repair_budget_exhaustion_persists_without_extra_model_or_verifier_calls(
+        self,
+    ):
+        self.repair_task(expected=4)
+        first = self.call_repair()
+        self.assertEqual(first.returncode, 2)
+        self.assertIn("Repair budget exhausted", first.stderr)
+        self.assertEqual(self.call_repair().returncode, 2)
+        self.assertEqual(len(self.requests), 4)
+        root = self.root / "repair"
+        self.assertFalse((root / "result.json").exists())
+        self.assertEqual(
+            json.loads((root / "status.json").read_text())["status"],
+            "repair_budget_exhausted",
+        )
+        for number in ("000", "001"):
+            self.assertEqual(
+                (root / "attempts" / number / "worktree/.checks").read_text(), "1"
+            )
+
+    def test_feedback_sigkill_resumes_and_a_live_parent_keeps_exclusive_ownership(self):
+        self.repair_task()
+        process = self.call_repair(paused=True)
+        buffered = b""
+        try:
+            deadline = time.monotonic() + 90
+            while b'"stage": "repair_feedback"' not in buffered:
+                self.assertLess(time.monotonic(), deadline)
+                self.assertIsNone(process.poll())
+                if select.select([process.stdout], [], [], 1)[0]:
+                    buffered += os.read(process.stdout.fileno(), 65536)
+            contender = self.call_repair()
+            self.assertEqual(contender.returncode, 2)
+            self.assertIn("Another worker owns", contender.stderr)
+            os.kill(process.pid, signal.SIGKILL)
+            process.communicate(timeout=10)
+            self.assertEqual(process.returncode, -signal.SIGKILL)
+            resumed = self.call_repair()
+            self.assertEqual(resumed.returncode, 0, resumed.stderr)
+            self.assertEqual(len(self.requests), 4)
+            self.assertEqual(
+                (self.root / "repair/attempts/000/worktree/.checks").read_text(), "1"
+            )
+        finally:
+            if process.poll() is None:
+                os.killpg(process.pid, signal.SIGKILL)
+                process.communicate(timeout=10)
+
+    def test_modified_failed_log_is_rejected_before_another_model_request(self):
+        self.repair_task(limit=0)
+        self.assertEqual(self.call_repair().returncode, 2)
+        (self.root / "repair/attempts/000/verification-0.log").write_text("changed")
+        result = self.call_repair()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("log changed", result.stderr)
+        self.assertEqual(len(self.requests), 2)
+
+    def test_single_candidate_entry_rejects_repair_tasks_before_model_requests(self):
+        self.repair_task()
+        result = self.call()
+        self.assertEqual(result.returncode, 2)
+        self.assertIn("Use agent_lab.repair", result.stderr)
+        self.assertEqual(self.requests, [])
 
 
 if __name__ == "__main__":

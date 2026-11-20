@@ -7,12 +7,12 @@
 
 `agent_lab/` 将 Deep Agents、LangGraph SQLite checkpoint 和隔离 Git worktree 接起来：固定任务与文件范围 → 虚拟文件编辑 → 导出补丁 → 显式命令验证 → `ready_for_review`。不会自动提交或合并。
 
-- **26 条测试通过**：证据一致性、运行器与本地模型传输，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时与跨重启预算。
+- **33 条测试通过**：证据一致性、运行器、本地模型传输与有界修复，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时、日志完整性与跨重启预算。
 - **真实仓库四场景通过**：正常运行，以及检查点、补丁落地后、验证前的三处 SIGKILL。恢复后均完成两次工具操作，生成相同的 1573 字节补丁，分别通过 119 条上游测试。
 - **验证进程运行中恢复通过**：观察到真实上游 pytest 进程后，仅杀 worker PID；监督进程在释放运行锁前终止旧验证。恢复后重新验证，补丁与正常运行一致，各通过 119 条测试。
 - 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 适配器已实现，真实模型调用尚待验证。
 
-[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [26 条测试日志](evidence/model-readiness/model-ready-final-tests.log)
+[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [33 条测试日志](evidence/repair-loop/repair-full-tests.log)
 
 ```sh
 uv sync
@@ -24,6 +24,12 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 故障矩阵入口：`benchmarks/recovery_matrix.py`。实验固定上游 commit 和任务哈希，先断言验证时导入的是 worktree 源码，再运行官方测试。检查点数据库与完整对话留在私人运行目录；仓库只保存检查过的结果与日志。
 
 模型试验预设：[任务与独立验收](tasks/deepagents-path-model-baseline.json)、[正常/恢复两次试验入口](benchmarks/model_pilot.py)、[接入与验收自检报告](evidence/model-readiness/report.json)。基线保留 6 个独立契约失败，参考修复通过全部 28 个；模型文件已按固定版本逐文件校验。启动检查发现 GPU 正在使用，因此实际模型推理仍未运行。HTTP 测试服务是明确的假服务，不能计为模型自主修复结果。
+
+## 有界的编辑、验收与修复
+
+`python -m agent_lab.repair` 可以把完成的验收失败反馈给下一轮，继续编辑上一份候选。默认额外修复 0 次，可显式限制为 0–3 次；每轮有独立的检查点、Git worktree、补丁与日志，失败候选保留。反馈含日志哈希和最多 8 KiB 尾部；重启不会因为重置内存计数而增加轮次或重跑已有失败验收。日志或工作区被改动会停止自动流程。
+
+[使用、预算与边界](docs/repair-loop.md) · [无固定计划的模型修复任务](tasks/openhands-undo-model-repair.json)。HTTP 测试使用假服务；真实仓库参考流程使用明确的固定计划，不是神经模型修复效果。
 
 ## OpenHands 撤销失败后的历史保留
 

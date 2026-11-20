@@ -81,6 +81,21 @@ def validate_task(task: dict) -> list[str]:
         raise RunError("Pin a full base commit SHA, not a moving branch.")
     if task.get("max_graph_steps", 200) < 1:
         raise RunError("max_graph_steps must be positive.")
+    initial = task.get("initial_contents")
+    if initial is not None:
+        if (
+            not isinstance(initial, dict)
+            or set(initial) != set(files)
+            or not all(isinstance(value, str) for value in initial.values())
+        ):
+            raise RunError(
+                "Initial contents must cover exactly the allowed text files."
+            )
+        if (
+            sum(len(value.encode("utf-8")) for value in initial.values())
+            > 2 * 1024 * 1024
+        ):
+            raise RunError("Initial contents exceed the 2 MiB text budget.")
     if not task.get("verify"):
         raise RunError("A maintenance task requires an explicit verification command.")
     for command in task.get("verify", []):
@@ -160,7 +175,7 @@ def agent_phase(
             if saver.get_tuple(config)
             else {
                 "messages": [HumanMessage(content=task["prompt"])],
-                "files": baseline_files(repo, task["base_commit"], files),
+                "files": initial_files(repo, task, files),
             }
         )
         while initial is not None or snapshot.next:
@@ -186,6 +201,13 @@ def agent_phase(
                 pending=list(snapshot.next),
             )
         return snapshot.values
+
+
+def initial_files(repo: Path, task: dict, files: list[str]) -> dict:
+    values = baseline_files(repo, task["base_commit"], files)
+    for name, content in task.get("initial_contents", {}).items():
+        values["/" + name] = create_file_data(content)
+    return values
 
 
 def materialize(
@@ -249,6 +271,13 @@ def verify(
     }
     for index, command in enumerate(task.get("verify", [])):
         if index < len(records) and records[index]["returncode"] == 0:
+            log = directory / f"verification-{index}.log"
+            if (
+                records[index]["argv"] != command["argv"]
+                or hashlib.sha256(log.read_bytes()).hexdigest()
+                != records[index]["log_sha256"]
+            ):
+                raise RunError("Saved verification evidence changed.")
             continue
         cwd = worktree / checked_path(command.get("cwd", "."))
         if not cwd.resolve().is_relative_to(worktree) or not cwd.is_dir():
@@ -285,22 +314,42 @@ def verify(
 def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dict:
     with run_lock(directory) as lock_fd:
         names = validate_task(task)
+        if task.get("max_repair_attempts", 0):
+            raise RunError("Use agent_lab.repair for tasks with extra repair attempts.")
         manifest = prepare_manifest(repo, directory, task)
         if (directory / "result.json").exists():
-            result = json.loads((directory / "result.json").read_text())
-            if result["status"] == "ready_for_review":
-                patch = (directory / "patch.diff").read_bytes()
-                current = git(
-                    directory / "worktree", "diff", "--no-ext-diff", "--binary"
-                )
-                if (
-                    hashlib.sha256(patch).hexdigest() != result["patch_sha256"]
-                    or current != patch
-                ):
-                    raise RunError(
-                        "Completed review artifacts changed; refusing a stale success."
+            try:
+                result = json.loads((directory / "result.json").read_text())
+                if result["status"] == "ready_for_review":
+                    patch = (directory / "patch.diff").read_bytes()
+                    current = git(
+                        directory / "worktree", "diff", "--no-ext-diff", "--binary"
                     )
-                return result
+                    if (
+                        hashlib.sha256(patch).hexdigest() != result["patch_sha256"]
+                        or current != patch
+                    ):
+                        raise RunError(
+                            "Completed review artifacts changed; refusing a stale success."
+                        )
+                    if len(result["verification"]) != len(task["verify"]):
+                        raise RunError("Completed verification is incomplete.")
+                    for index, record in enumerate(result["verification"]):
+                        log = directory / f"verification-{index}.log"
+                        if (
+                            record["argv"] != task["verify"][index]["argv"]
+                            or record["returncode"] != 0
+                            or hashlib.sha256(log.read_bytes()).hexdigest()
+                            != record["log_sha256"]
+                        ):
+                            raise RunError("Completed verification evidence changed.")
+                    return result
+            except Exception as error:
+                atomic_json(
+                    directory / "status.json",
+                    {"status": "failed", "error_type": type(error).__name__},
+                )
+                raise
         atomic_json(directory / "status.json", {"status": "running"})
         try:
             result = execute(repo, directory, task, names, manifest, hold, lock_fd)

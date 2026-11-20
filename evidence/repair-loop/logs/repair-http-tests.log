@@ -1,0 +1,14 @@
+test_failed_candidate_is_repaired_using_http_feedback_and_replay_is_free (test_local_model.LocalModelTests.test_failed_candidate_is_repaired_using_http_feedback_and_replay_is_free) ... ok
+test_feedback_sigkill_resumes_and_a_live_parent_keeps_exclusive_ownership (test_local_model.LocalModelTests.test_feedback_sigkill_resumes_and_a_live_parent_keeps_exclusive_ownership) ... ok
+test_http_tool_roundtrip_edits_verifies_and_replays_without_requests (test_local_model.LocalModelTests.test_http_tool_roundtrip_edits_verifies_and_replays_without_requests) ... ok
+test_modified_failed_log_is_rejected_before_another_model_request (test_local_model.LocalModelTests.test_modified_failed_log_is_rejected_before_another_model_request) ... ok
+test_non_loopback_endpoint_is_rejected_before_request (test_local_model.LocalModelTests.test_non_loopback_endpoint_is_rejected_before_request) ... ok
+test_pilot_resumes_after_last_tool_without_demanding_another_tool (test_local_model.LocalModelTests.test_pilot_resumes_after_last_tool_without_demanding_another_tool) ... ok
+test_read_timeout_does_not_retry_or_create_success (test_local_model.LocalModelTests.test_read_timeout_does_not_retry_or_create_success) ... ok
+test_repair_budget_exhaustion_persists_without_extra_model_or_verifier_calls (test_local_model.LocalModelTests.test_repair_budget_exhaustion_persists_without_extra_model_or_verifier_calls) ... ok
+test_unavailable_endpoint_does_not_retry_or_create_success (test_local_model.LocalModelTests.test_unavailable_endpoint_does_not_retry_or_create_success) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 98.171s
+
+OK

@@ -1,0 +1,7 @@
+{
+  "patch_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d",
+  "command_index": 1,
+  "returncode": 1,
+  "raw_log_sha256": "68944eade1571c2337288abbeac12034c8a13a955c5866ab644f638c87b6e9cd",
+  "log_tail": "imported_subject=<repair-experiment>/uninterrupted/attempts/000/worktree/openhands-sdk/openhands/sdk/__init__.py\nimported_subject=<repair-experiment>/uninterrupted/attempts/000/worktree/openhands-tools/openhands/tools/file_editor/editor.py\nimported_subject=<repair-experiment>/uninterrupted/attempts/000/worktree/openhands-tools/openhands/tools/file_editor/utils/history.py\n[11/20/26 20:43:38] INFO     FileEditor initialized with cwd:      editor.py:125\n                             /tmp/openhands-undo-live-afr0m2n0                  \n{\"failure_was_reported\": true, \"after_failed_undo\": \"value = 2\\n\", \"retry_is_error\": false, \"after_retry\": \"value = 0\\n\", \"older_undo_is_error\": true, \"after_older_undo\": \"value = 0\\n\"}\nTraceback (most recent call last):\n  File \"<string>\", line 56, in <module>\n    assert not retried.is_error and after_retry == \"value = 1\\n\"\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+}

@@ -1,0 +1,32 @@
+{
+  "status": "ready_for_review",
+  "task_sha256": "05840be360322a58463c582d4acd42330c4fcd2075bd619754b5568b9ce32d22",
+  "base_commit": "722e5d403cf75d4e032b79296cfaf178f8678a93",
+  "patch_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e",
+  "patch_bytes": 1795,
+  "model_mode": "scripted",
+  "retained_ai_messages": 3,
+  "tool_results": 2,
+  "verification": [
+    {
+      "argv": [
+        "python3.13",
+        "-c",
+        "import os,sys\nfrom pathlib import Path\nroot=Path.cwd().resolve()\nsys.path[:0]=[str(root/p) for p in ('openhands-tools','openhands-sdk','openhands-workspace','openhands-agent-server')]\nos.environ['OPENHANDS_SUPPRESS_BANNER']='1'\nos.environ['LITELLM_LOCAL_MODEL_COST_MAP']='True'\nimport openhands.sdk, openhands.tools.file_editor.editor, openhands.tools.file_editor.utils.history\nfor module,relative in ((openhands.sdk,'openhands-sdk/openhands/sdk/__init__.py'),(openhands.tools.file_editor.editor,'openhands-tools/openhands/tools/file_editor/editor.py'),(openhands.tools.file_editor.utils.history,'openhands-tools/openhands/tools/file_editor/utils/history.py')):\n actual=Path(module.__file__).resolve()\n assert actual==(root/relative).resolve(),str(actual)\n print('imported_subject='+str(actual),flush=True)\nimport pytest\nraise SystemExit(pytest.main(['tests/tools/file_editor','tests/tools/planning_file_editor','tests/tools/test_path_rules_file_editor.py','-q']))\n"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "raw_log_sha256": "316645113d7fedfa6a9d87f7de71dddecb35f0909364ec27af937eee1cb5f774"
+    },
+    {
+      "argv": [
+        "python3.13",
+        "-c",
+        "import os,sys\nfrom pathlib import Path\nroot=Path.cwd().resolve()\nsys.path[:0]=[str(root/p) for p in ('openhands-tools','openhands-sdk','openhands-workspace','openhands-agent-server')]\nos.environ['OPENHANDS_SUPPRESS_BANNER']='1'\nos.environ['LITELLM_LOCAL_MODEL_COST_MAP']='True'\nimport openhands.sdk, openhands.tools.file_editor.editor, openhands.tools.file_editor.utils.history\nfor module,relative in ((openhands.sdk,'openhands-sdk/openhands/sdk/__init__.py'),(openhands.tools.file_editor.editor,'openhands-tools/openhands/tools/file_editor/editor.py'),(openhands.tools.file_editor.utils.history,'openhands-tools/openhands/tools/file_editor/utils/history.py')):\n actual=Path(module.__file__).resolve()\n assert actual==(root/relative).resolve(),str(actual)\n print('imported_subject='+str(actual),flush=True)\n\"\"\"Use a real read-only directory to test undo retry through the public executor.\"\"\"\n\nimport json\nimport os\nimport tempfile\nfrom pathlib import Path\n\nfrom openhands.tools.file_editor.definition import FileEditorAction\nfrom openhands.tools.file_editor.impl import FileEditorExecutor\n\nif os.geteuid() == 0:\n    raise RuntimeError(\"Run this permission reproduction as an unprivileged user.\")\n\nwith tempfile.TemporaryDirectory(prefix=\"openhands-undo-live-\") as temporary:\n    directory = Path(temporary)\n    path = directory / \"example.py\"\n    path.write_text(\"value = 0\\n\", encoding=\"utf-8\")\n    executor = FileEditorExecutor(workspace_root=temporary)\n    for before, after in ((0, 1), (1, 2)):\n        edited = executor(FileEditorAction(\n            command=\"str_replace\", path=str(path),\n            old_str=f\"value = {before}\", new_str=f\"value = {after}\",\n        ))\n        assert not edited.is_error\n    directory.chmod(0o555)\n    try:\n        failed = executor(FileEditorAction(command=\"undo_edit\", path=str(path)))\n        after_failure = path.read_text(encoding=\"utf-8\")\n    finally:\n        directory.chmod(0o755)\n    retried = executor(FileEditorAction(command=\"undo_edit\", path=str(path)))\n    after_retry = path.read_text(encoding=\"utf-8\")\n    older = executor(FileEditorAction(command=\"undo_edit\", path=str(path)))\n    after_older = path.read_text(encoding=\"utf-8\")\n    report = {\n        \"failure_was_reported\": failed.is_error,\n        \"after_failed_undo\": after_failure,\n        \"retry_is_error\": retried.is_error,\n        \"after_retry\": after_retry,\n        \"older_undo_is_error\": older.is_error,\n        \"after_older_undo\": after_older,\n    }\n    print(json.dumps(report), flush=True)\n    assert failed.is_error and after_failure == \"value = 2\\n\"\n    assert not retried.is_error and after_retry == \"value = 1\\n\"\n    assert not older.is_error and after_older == \"value = 0\\n\"\n"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "raw_log_sha256": "50d5256c822607df6b5cadc8296c873b1a95793a79283995656b693be32fd599"
+    }
+  ]
+}

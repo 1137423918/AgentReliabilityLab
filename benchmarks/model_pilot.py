@@ -106,6 +106,10 @@ def main():
     parser.add_argument("--case-deadline-seconds", type=float, default=600)
     args = parser.parse_args()
     task = json.loads(args.task.read_text())
+    if task.get("max_repair_attempts", 0):
+        parser.error(
+            "This pilot is single-candidate; use agent_lab.repair for repair tasks."
+        )
     if task.get("model", {}).get("mode") != "local-openai":
         parser.error(
             "A local-openai model task is required; scripted responses are not accepted."

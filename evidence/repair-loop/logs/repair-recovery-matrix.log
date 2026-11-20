@@ -1,0 +1,3 @@
+{"case": "uninterrupted", "accepted_attempt": 1}
+{"case": "feedback-sigkill", "accepted_attempt": 1}
+{"cases": 2, "same_patch": true}

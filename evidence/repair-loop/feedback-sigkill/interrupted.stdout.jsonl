@@ -1,0 +1,5 @@
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 1, "pending": []}
+{"stage": "materialized", "patch_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d"}
+{"stage": "before_verification"}
+{"stage": "repair_feedback", "attempt": 0, "patch_sha256": "d7cc0c209de98738846bd724da76aad777b1e473f1791a78b7bc2f360869de1d"}
