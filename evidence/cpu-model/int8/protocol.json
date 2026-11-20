@@ -1,0 +1,58 @@
+{
+  "created_utc": "2026-11-20T13:28:46.563539+00:00",
+  "scope": "Separate optimized CPU engineering variant after preserved FP32 budget-limited failures; same task and acceptance, not a general model score",
+  "task": "tasks/deepagents-path-model-baseline.json",
+  "task_sha256": "ca52b3d3d66bbdf3df254fdafbb5359ffbe6255a5129694f0672782695a2407e",
+  "source_sha256": "d5908c549ea4ff40037895584c2a9a2abd2fc2a403cced8d0f3c1e9a9f490ca8",
+  "weights": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "original_checkpoint_dtype": "bfloat16",
+    "runtime_dtype": "mixed_fp32_dynamic_qint8",
+    "quantization": {
+      "method": "torch.ao.quantization.quantize_dynamic",
+      "dtype": "qint8",
+      "backend": "x86",
+      "scope": "nn.Linear except lm_head; embedding/norm/output head remain FP32",
+      "inplace_memory_only": true
+    }
+  },
+  "engine": {
+    "backend": "Transformers4.57.1/Torch2.8 CPU SDPA, dynamic INT8 Linear",
+    "compute_threads": 4,
+    "nice": 19,
+    "context": 32768,
+    "max_output_tokens": 1536,
+    "request_seconds": 180,
+    "generation_max_time_seconds": 170,
+    "service_wall_seconds": 2400,
+    "address_space_limit_gib": 48,
+    "peak_rss_guard_gib": 36,
+    "minimum_available_memory_gib": 64
+  },
+  "sequence": [
+    {
+      "kind": "transport_smoke",
+      "prompt": "Reply with exactly the word ready.",
+      "max_output_tokens": 32,
+      "is_maintenance_score": false
+    },
+    {
+      "kind": "normal",
+      "case_deadline_seconds": 600
+    },
+    {
+      "kind": "checkpoint-resume",
+      "case_deadline_seconds": 600,
+      "fault": "SIGKILL after first durable checkpoint"
+    }
+  ],
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "automatic_transport_retries": 0
+  },
+  "acceptance": "Unchanged original operator verification; no reference patch or scripted tool plan supplied to model",
+  "failure_policy": "Preserve failed requests, raw model output and task failures. Service/protocol/resource failures are not intrinsic model capability claims. Do not replace failed trials with selected successful samples.",
+  "preserved_previous_variant": "cpu-pilot-protocol-20261120.json"
+}

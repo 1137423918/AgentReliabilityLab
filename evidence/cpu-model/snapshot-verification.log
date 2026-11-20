@@ -1,0 +1,4 @@
+1 file reformatted
+All checks passed!
+{"helper_checks": "passed", "sha256_and_git_blob": true, "same_size_corruption_rejected": true, "traversal_rejected": true, "model_inference": false}
+{"status": "verified", "files": 12, "bytes": 8060915998}

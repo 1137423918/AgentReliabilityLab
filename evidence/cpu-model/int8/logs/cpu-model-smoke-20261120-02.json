@@ -1,0 +1,41 @@
+{
+  "scope": "Real mixed FP32/dynamic INT8 CPU transport smoke; not maintenance task score",
+  "seconds": 0.959,
+  "request": {
+    "model": "agentlab-qwen3-4b",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Reply with exactly the word ready."
+      }
+    ],
+    "temperature": 0,
+    "seed": 42,
+    "max_completion_tokens": 32,
+    "stream": false,
+    "metadata": {
+      "agentlab_phase": "transport_smoke"
+    }
+  },
+  "response": {
+    "id": "cpu-c77568f206554acbb00165f7b474f7b4",
+    "object": "chat.completion",
+    "created": 1795181623,
+    "model": "agentlab-qwen3-4b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "ready"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 15,
+      "completion_tokens": 2,
+      "total_tokens": 17
+    }
+  }
+}

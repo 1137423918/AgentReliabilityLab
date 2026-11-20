@@ -1,0 +1,21 @@
+{"utc": "2026-11-20T13:28:53.034779+00:00", "stage": "loading", "device": "cpu", "dtype": "float32", "threads": 4}
+Loading checkpoint shards:   0%|          | 0/3 [00:00<?, ?it/s]Loading checkpoint shards:  33%|███▎      | 1/3 [00:53<01:46, 53.49s/it]Loading checkpoint shards:  67%|██████▋   | 2/3 [01:42<00:50, 50.71s/it]Loading checkpoint shards: 100%|██████████| 3/3 [01:42<00:00, 34.11s/it]
+{"utc": "2026-11-20T13:30:49.227892+00:00", "stage": "weights_loaded", "model_loaded": true, "parameter_count": 4022468096}
+{"utc": "2026-11-20T13:30:49.236974+00:00", "stage": "quantizing", "method": "int8-dynamic"}
+<server-workspace>/code/durable-worker/benchmarks/cpu_model_service.py:245: DeprecationWarning: torch.ao.quantization is deprecated and will be removed in 2.10. 
+For migrations of users: 
+1. Eager mode quantization (torch.ao.quantization.quantize, torch.ao.quantization.quantize_dynamic), please migrate to use torchao eager mode quantize_ API instead 
+2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx,torch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization API instead (prepare_pt2e, convert_pt2e) 
+3. pt2e quantization has been migrated to torchao (https://github.com/pytorch/ao/tree/main/torchao/quantization/pt2e) 
+see https://github.com/pytorch/ao/issues/2259 for more details
+  model = torch.ao.quantization.quantize_dynamic(
+{"utc": "2026-11-20T13:32:14.707957+00:00", "stage": "ready", "model_loaded": true, "pid": 3704632, "pid_start_ticks": "451919655", "device": "cpu", "dtype": "mixed_fp32_dynamic_qint8", "quantization": "int8-dynamic", "quantized_linear_count": 252, "quantized_linear_weights_sha256": "5805af3c36475a3bfb8425483b6b7332f143081249f9cfb172f81adbf21150f9", "quantized_backend": "x86", "threads": 4, "nice": 19, "model": "Qwen/Qwen3-4B-Instruct-2507", "revision": "cdbee75f17c01a7cc42f958dc650907174af0554", "parameter_count": 4022468096, "torch": "2.8.0+cu128", "transformers": "4.57.1", "address_space_limit_gib": 48, "peak_rss_limit_gib": 36, "wall_seconds": 2400, "request_seconds": 180, "generation_seconds": 170, "context_limit": 32768, "max_new_tokens": 1536, "port": 18843, "service_source_sha256": "d5908c549ea4ff40037895584c2a9a2abd2fc2a403cced8d0f3c1e9a9f490ca8", "chat_template_sha256": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326"}
+{"utc": "2026-11-20T13:33:42.376390+00:00", "stage": "generation_started", "id": "c77568f206554acbb00165f7b474f7b4", "prompt_tokens": 15, "max_new_tokens": 32}
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+{"utc": "2026-11-20T13:33:43.302533+00:00", "stage": "generated", "id": "c77568f206554acbb00165f7b474f7b4", "prompt_tokens": 15, "completion_tokens": 2, "seconds": 0.889, "tool_calls": 0, "parse_error": null, "limit_reached": false}
+{"utc": "2026-11-20T13:34:53.504064+00:00", "stage": "generation_started", "id": "4b4f7fa0dd274b23b61b611680fee700", "prompt_tokens": 2262, "max_new_tokens": 1536}
+{"utc": "2026-11-20T13:37:45.145034+00:00", "stage": "generated", "id": "4b4f7fa0dd274b23b61b611680fee700", "prompt_tokens": 2262, "completion_tokens": 75, "seconds": 171.701, "tool_calls": 0, "parse_error": null, "limit_reached": true}
+{"utc": "2026-11-20T13:37:53.000205+00:00", "stage": "generation_started", "id": "20b9393d7c4b449bbe81ad4f75689e8d", "prompt_tokens": 2262, "max_new_tokens": 1536}
+{"utc": "2026-11-20T13:40:43.225718+00:00", "stage": "generated", "id": "20b9393d7c4b449bbe81ad4f75689e8d", "prompt_tokens": 2262, "completion_tokens": 63, "seconds": 170.192, "tool_calls": 0, "parse_error": null, "limit_reached": true}
+{"utc": "2026-11-20T13:44:28.343762+00:00", "stage": "generation_started", "id": "1776907efdc84a249154676e1e08a46d", "prompt_tokens": 180, "max_new_tokens": 128}
+{"utc": "2026-11-20T13:44:38.300814+00:00", "stage": "generated", "id": "1776907efdc84a249154676e1e08a46d", "prompt_tokens": 180, "completion_tokens": 20, "seconds": 11.866, "tool_calls": 0, "parse_error": null, "limit_reached": false}

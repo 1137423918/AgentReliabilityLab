@@ -1,0 +1,21 @@
+{
+  "id": "cpu-20b9393d7c4b449bbe81ad4f75689e8d",
+  "object": "chat.completion",
+  "created": 1795182043,
+  "model": "agentlab-qwen3-4b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "{\"type\": \"function\", \"name\": \"get_file_path\", \"description\": \"Get the path to a file\", \"parameters\": {\"type\": \"object\", \"properties\": {\"file_name\": {\"type\": \"string\", \"description\": \"Name of the file to get the path for\"}}}}\n{\""
+      },
+      "finish_reason": "length"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 2262,
+    "completion_tokens": 63,
+    "total_tokens": 2325
+  }
+}

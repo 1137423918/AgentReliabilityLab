@@ -10,7 +10,7 @@
 - **33 条测试通过**：证据一致性、运行器、本地模型传输与有界修复，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时、日志完整性与跨重启预算。
 - **真实仓库四场景通过**：正常运行，以及检查点、补丁落地后、验证前的三处 SIGKILL。恢复后均完成两次工具操作，生成相同的 1573 字节补丁，分别通过 119 条上游测试。
 - **验证进程运行中恢复通过**：观察到真实上游 pytest 进程后，仅杀 worker PID；监督进程在释放运行锁前终止旧验证。恢复后重新验证，补丁与正常运行一致，各通过 119 条测试。
-- 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 适配器已实现，真实模型调用尚待验证。
+- 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 已取得真实 CPU 模型响应；维护任务结果见下节。
 
 [完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [33 条测试日志](evidence/repair-loop/repair-full-tests.log)
 
@@ -23,7 +23,15 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 故障矩阵入口：`benchmarks/recovery_matrix.py`。实验固定上游 commit 和任务哈希，先断言验证时导入的是 worktree 源码，再运行官方测试。检查点数据库与完整对话留在私人运行目录；仓库只保存检查过的结果与日志。
 
-模型试验预设：[任务与独立验收](tasks/deepagents-path-model-baseline.json)、[正常/恢复两次试验入口](benchmarks/model_pilot.py)、[接入与验收自检报告](evidence/model-readiness/report.json)。基线保留 6 个独立契约失败，参考修复通过全部 28 个；模型文件已按固定版本逐文件校验。启动检查发现 GPU 正在使用，因此实际模型推理仍未运行。HTTP 测试服务是明确的假服务，不能计为模型自主修复结果。
+模型试验预设：[任务与独立验收](tasks/deepagents-path-model-baseline.json)、[正常/恢复两次试验入口](benchmarks/model_pilot.py)、[接入与验收自检报告](evidence/model-readiness/report.json)。基线保留 6 个独立契约失败，参考修复通过全部 28 个；模型文件已按固定版本逐文件校验。HTTP 测试服务是明确的假服务，不能计为模型自主修复结果。
+
+## 无空闲 GPU 时的真实模型试验
+
+在授权服务器的 CPU 上完成固定版本 Qwen3-4B-Instruct-2507 的 FP32 与动态 INT8 推理。两种配置各运行正常与检查点恢复模式：**四次维护尝试均未产出补丁，也未进入官方验收**。这是同一个公开问题的运行变体，不是四个独立基准任务。四次请求都触及生成时限且没有解析出的工具调用；恢复中断点工具结果为零，不能算模型工具进度恢复成功。
+
+独立短诊断生成了括号包裹的工具 JSON，但没有原生标签，被严格解析器当作文本。生成速度、截断和格式互操作仍需分别排查。公开两份预声明协议、七次真实生成、精度和资源限制、源码快照及原始/公开哈希；没有把失败替换为参考修复。
+
+[完整协议与复现](docs/cpu-model-pilot.md) · [全部失败记录](evidence/cpu-model/README.md) · [机器可读报告](evidence/cpu-model/report.json)。GPU 推理与模型自主修复通过结果仍待取得。新增 CPU 服务和快照校验入口已在服务器分别检查，未计入前述 33 条核心测试。
 
 ## 有界的编辑、验收与修复
 
@@ -65,7 +73,7 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 - [候选上游补丁](evidence/deepagents-normalize-separators.patch)
 - [网站与复现记录](https://1137423918.github.io/#lab)
 
-公开日志替换了服务器私人路径，测试结论保持原样。Deep Agents 候选修复尚未提交上游 PR；OpenHands 草稿 PR 状态见上节。模型自主完成维护任务的效果评测尚未运行。
+公开日志替换了服务器私人路径，测试结论保持原样。Deep Agents 候选修复尚未提交上游 PR；OpenHands 草稿 PR 状态见上节。真实 CPU 模型尝试已记录，尚无通过验收的模型补丁。
 
 包级复现：从 `langchain-ai/deepagents` 的 `744a797e3b9495539ca35571eeffd112a205f5c8` 创建独立 checkout，应用 `evidence/deepagents-normalize-separators.patch`，在 `libs/deepagents` 中执行 `uv sync --all-groups --frozen`，再运行：
 

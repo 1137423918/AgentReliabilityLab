@@ -1,0 +1,48 @@
+{
+  "scope": "One public maintenance task, two predeclared trials; operator-provided local model endpoint; not SWE-bench or a general success rate",
+  "task_sha256": "ca52b3d3d66bbdf3df254fdafbb5359ffbe6255a5129694f0672782695a2407e",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "model": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen3-4b",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 180,
+    "seed": 42
+  },
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": 2,
+      "timed_out": false,
+      "duration_seconds": 184.414,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "RunError"
+      }
+    },
+    {
+      "case": "checkpoint-resume",
+      "checkpoint_interruption": {
+        "stage": "checkpoint",
+        "model_turns": 1,
+        "tool_results": 0,
+        "pending": []
+      },
+      "returncode": 2,
+      "timed_out": false,
+      "duration_seconds": 180.145,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "RunError"
+      }
+    }
+  ],
+  "same_patch": false,
+  "verified_trials": 0
+}

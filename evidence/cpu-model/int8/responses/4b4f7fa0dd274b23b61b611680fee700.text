@@ -1,0 +1,2 @@
+{"type": "function", "name": "get_file_path", "description": "Get the path to a file", "parameters": {"type": "object", "properties": {"file_name": {"type": "string", "description": "Name of the file to get the path for"}}}}
+{"type": "function", "name": "create_directory",

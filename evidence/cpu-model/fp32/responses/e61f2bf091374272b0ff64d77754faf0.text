@@ -1,0 +1,4 @@
+I'll help you fix the path normalization issue on Linux while preserving existing traversal and allowed-prefix rejection. Let me first inspect the relevant files to understand the current implementation.
+
+<tool_call>
+{"name": "glob", "arguments": {"

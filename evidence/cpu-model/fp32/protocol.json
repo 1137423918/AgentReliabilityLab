@@ -1,0 +1,51 @@
+{
+  "created_utc": "2026-11-20T13:13:09.634557+00:00",
+  "scope": "Pinned small-model engineering CPU baseline, real generation; one public maintenance task; not SWE-bench or general success rate",
+  "task": "tasks/deepagents-path-model-baseline.json",
+  "task_sha256": "ca52b3d3d66bbdf3df254fdafbb5359ffbe6255a5129694f0672782695a2407e",
+  "source_sha256": "20bff6b1fb1d080422bd80c58bcbacd6a6cde9ad86b2d2589c08d72e663e250d",
+  "weights": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "original_checkpoint_dtype": "bfloat16",
+    "runtime_dtype": "float32",
+    "quantization": null
+  },
+  "engine": {
+    "backend": "Transformers 4.57.1 / Torch 2.8 CPU SDPA",
+    "compute_threads": 4,
+    "nice": 19,
+    "context": 32768,
+    "max_output_tokens": 1536,
+    "request_seconds": 180,
+    "generation_max_time_seconds": 170,
+    "service_wall_seconds": 2400,
+    "address_space_limit_gib": 48,
+    "peak_rss_guard_gib": 36,
+    "minimum_available_memory_gib": 64
+  },
+  "sequence": [
+    {
+      "kind": "transport_smoke",
+      "prompt": "Reply with exactly the word ready.",
+      "max_output_tokens": 32,
+      "is_maintenance_score": false
+    },
+    {
+      "kind": "normal",
+      "case_deadline_seconds": 600
+    },
+    {
+      "kind": "checkpoint-resume",
+      "case_deadline_seconds": 600,
+      "fault": "SIGKILL after first durable checkpoint"
+    }
+  ],
+  "generation": {
+    "seed": 42,
+    "do_sample": false,
+    "automatic_transport_retries": 0
+  },
+  "acceptance": "Unchanged original operator verification; no reference patch or scripted tool plan supplied to model",
+  "failure_policy": "Preserve failed requests, raw model output and task failures. Service/protocol/resource failures are not intrinsic model capability claims. Do not replace failed trials with selected successful samples."
+}

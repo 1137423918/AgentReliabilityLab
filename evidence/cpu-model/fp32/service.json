@@ -1,0 +1,23 @@
+{
+  "pid": 3472513,
+  "pid_start_ticks": "451817122",
+  "device": "cpu",
+  "dtype": "torch.float32",
+  "threads": 4,
+  "nice": 19,
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "parameter_count": 4022468096,
+  "torch": "2.8.0+cu128",
+  "transformers": "4.57.1",
+  "address_space_limit_gib": 48,
+  "peak_rss_limit_gib": 36,
+  "wall_seconds": 2400,
+  "request_seconds": 180,
+  "generation_seconds": 170,
+  "context_limit": 32768,
+  "max_new_tokens": 1536,
+  "port": 18843,
+  "service_source_sha256": "20bff6b1fb1d080422bd80c58bcbacd6a6cde9ad86b2d2589c08d72e663e250d",
+  "chat_template_sha256": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326"
+}

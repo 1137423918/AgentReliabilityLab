@@ -1,0 +1,65 @@
+{
+  "scope": "Posthoc native tool-call format diagnostic, not maintenance score; no tool executed",
+  "seconds": 11.887,
+  "request": {
+    "model": "agentlab-qwen3-4b",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Use the supplied tool when asked to inspect a file."
+      },
+      {
+        "role": "user",
+        "content": "Call read_file for /sample.py. Return a tool call rather than a prose answer."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "read_file",
+          "description": "Read the contents of a virtual text file.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "file_path": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "file_path"
+            ]
+          }
+        }
+      }
+    ],
+    "temperature": 0,
+    "seed": 42,
+    "max_completion_tokens": 128,
+    "stream": false,
+    "metadata": {
+      "agentlab_phase": "posthoc_tool_format_diagnostic_not_maintenance"
+    }
+  },
+  "response": {
+    "id": "cpu-1776907efdc84a249154676e1e08a46d",
+    "object": "chat.completion",
+    "created": 1795182278,
+    "model": "agentlab-qwen3-4b",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "({\"name\": \"read_file\", \"arguments\": {\"file_path\": \"/sample.py\"}})"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 180,
+      "completion_tokens": 20,
+      "total_tokens": 200
+    }
+  }
+}

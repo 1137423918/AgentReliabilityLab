@@ -1,0 +1,11 @@
+{
+  "created_utc": "2026-11-20T13:44:21.365734+00:00",
+  "kind": "posthoc_native_tool_format_diagnostic",
+  "is_maintenance_score": false,
+  "purpose": "Distinguish basic tool format interoperability from original maintenance failures; do not replace any failed trial",
+  "backend": "mixed FP32/dynamic INT8 CPU",
+  "source_sha256": "d5908c549ea4ff40037895584c2a9a2abd2fc2a403cced8d0f3c1e9a9f490ca8",
+  "seed": 42,
+  "max_output_tokens": 128,
+  "expected_scope": "One model-generated read_file request, no host file execution or code-maintenance claim"
+}

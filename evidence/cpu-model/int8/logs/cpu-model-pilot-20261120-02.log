@@ -1,0 +1,3 @@
+{"case": "normal", "verified_patch": false}
+{"case": "checkpoint-resume", "verified_patch": false}
+{"verified_trials": 0, "planned_trials": 2, "same_patch": false}

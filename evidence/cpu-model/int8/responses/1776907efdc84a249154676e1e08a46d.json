@@ -1,0 +1,21 @@
+{
+  "id": "cpu-1776907efdc84a249154676e1e08a46d",
+  "object": "chat.completion",
+  "created": 1795182278,
+  "model": "agentlab-qwen3-4b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "({\"name\": \"read_file\", \"arguments\": {\"file_path\": \"/sample.py\"}})"
+      },
+      "finish_reason": "stop"
+    }
+  ],
+  "usage": {
+    "prompt_tokens": 180,
+    "completion_tokens": 20,
+    "total_tokens": 200
+  }
+}
