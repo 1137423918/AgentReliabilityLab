@@ -20,6 +20,7 @@ from agent_lab.worker import (
     run,
     run_lock,
     validate_task,
+    validate_verification_record,
 )
 
 
@@ -56,6 +57,9 @@ def failed_candidate(repo, directory, task):
             log = directory / f"verification-{index}.log"
             if digest(log.read_bytes()) != record["log_sha256"]:
                 raise RunError("Failed verification log changed.")
+            validate_verification_record(
+                directory, task, index, record, require_passed=False
+            )
         record = records["commands"][failed]
         if record["timed_out"] or record["returncode"] < 0:
             raise RunError(

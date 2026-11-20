@@ -79,3 +79,6 @@ python benchmarks/active_verifier_recovery.py --repo /path/to/deepagents \
 ```
 
 证据：[修复前单项失败](../evidence/verification-supervision/parent-kill-baseline.log)、[修复后完整 21 条测试](../evidence/verification-supervision/worker-supervised-tests.log)、[真实仓库正常/恢复对照](../evidence/verification-supervision/active-report.json)。当前仍允许崩溃边界上的验证重跑，不保证任意外部副作用恰好一次。
+
+
+显式 opt-in 的原版测试视图、导出前 Python 语法检查、缓存与失败反馈完整性协议见 [验收保护](protected-grading.md)。默认任务保持原有命令工作目录，新任务增加能力标记并在旧 worker 上于验收阶段拒绝继续。

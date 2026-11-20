@@ -1,0 +1,102 @@
+{
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "files": [
+    "libs/deepagents/deepagents/backends/utils.py",
+    "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+  ],
+  "prompt": "Operator scripted grader control, not a neural maintenance result.",
+  "max_graph_steps": 40,
+  "model": {
+    "mode": "scripted",
+    "plan": [
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "old_string": "    normalized = os.path.normpath(path)",
+          "new_string": "    normalized = os.path.normpath(to_posix_path(path))"
+        }
+      },
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "old_string": "            (\"foo/bar\\\\baz/qux\", \"/foo/bar/baz/qux\"),",
+          "new_string": "            (\"foo/bar\\\\baz/qux\", \"/foo/bar/baz/qux\"),\n            (r\"foo\\.\\bar\", \"/foo/bar\"),\n            (r\"foo\\\\bar\", \"/foo/bar\"),\n            (\"foo\\\\bar\\\\\", \"/foo/bar\"),\n            (r\"/workspace\\.\\file.txt\", \"/workspace/file.txt\"),\n            (r\"/workspace/\\file.txt\", \"/workspace/file.txt\"),\n            (r\"\u9879\u76ee\\.\\\u8bba\u6587.md\", \"/\u9879\u76ee/\u8bba\u6587.md\"),"
+        }
+      },
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "old_string": "def regex_literal_hint(pattern: str) -> str | None:\n    \"\"\"Return a hint when a pattern looks like an (unsupported) regex.\n\n    `grep` matches literal text, so regex metacharacters are searched verbatim\n    and silently miss. Callers gate this on a no-match result; the function\n    itself only inspects the pattern.\n\n    Args:\n        pattern: The literal grep pattern to inspect for regex signals.\n\n    Returns:\n        A one-line hint steering the caller toward literal search, or `None`\n            when the pattern has no regex signals.\n    \"\"\"\n    if not _looks_like_regex(pattern):\n        return None\n    return (\n        \"Note: grep matches literal text, not regex, so characters like \"\n        \"`|`, `.*`, and `\\\\.` are searched verbatim. Search for the literal \"\n        \"text you need instead; for `|` alternation, run a separate search \"\n        \"per alternative.\"\n    )",
+          "new_string": "def regex_literal_hint(pattern: str) -> str | None:\n    return None\n"
+        }
+      },
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "old_string": "class TestLooksLikeRegex:\n    \"\"\"`_looks_like_regex` flags regex syntax in patterns meant for literal grep.\"\"\"\n\n    @pytest.mark.parametrize(\n        \"pattern\",\n        [\n            \"foo|bar\",\n            \"def .*model\",\n            \"self\\\\.tools\",\n            \"a.+b\",\n            \"\\\\bword\\\\b\",\n            \"\\\\d+\",\n            \"\\\\w\",\n            \"\\\\s+\",\n            \"foo\\\\(bar\\\\)\",\n        ],\n    )\n    def test_detects_regex(self, pattern: str) -> None:\n        assert _looks_like_regex(pattern) is True\n\n    @pytest.mark.parametrize(\n        \"pattern\",\n        [\n            \"def __init__(self):\",\n            \"self.tools\",\n            \"arr[0]\",\n            \"plain text\",\n            \"TODO\",\n            \"a == b\",\n            \"\",\n            # Metacharacters deliberately treated as literal (see `_REGEX_SIGNAL_RE`\n            # docstring): bare `^`, `$`, `?`, `*`, `+` are common in literal code\n            # searches and must not trip a false hint.\n            \"^main\",\n            \"cost$5\",\n            \"value?\",\n            \"a*b\",\n            \"c++\",\n        ],\n    )\n    def test_ignores_literal(self, pattern: str) -> None:\n        assert _looks_like_regex(pattern) is False\n\n    def test_hint_present_for_regex(self) -> None:\n        hint = regex_literal_hint(\"foo|bar\")\n        assert hint is not None\n        assert \"literal text, not regex\" in hint\n        assert \"execute\" not in hint\n\n    def test_hint_absent_for_literal(self) -> None:\n        assert regex_literal_hint(\"plain text\") is None",
+          "new_string": "@pytest.mark.skip(reason='controlled grading regression')\nclass TestLooksLikeRegex:\n    \"\"\"`_looks_like_regex` flags regex syntax in patterns meant for literal grep.\"\"\"\n\n    @pytest.mark.parametrize(\n        \"pattern\",\n        [\n            \"foo|bar\",\n            \"def .*model\",\n            \"self\\\\.tools\",\n            \"a.+b\",\n            \"\\\\bword\\\\b\",\n            \"\\\\d+\",\n            \"\\\\w\",\n            \"\\\\s+\",\n            \"foo\\\\(bar\\\\)\",\n        ],\n    )\n    def test_detects_regex(self, pattern: str) -> None:\n        assert _looks_like_regex(pattern) is True\n\n    @pytest.mark.parametrize(\n        \"pattern\",\n        [\n            \"def __init__(self):\",\n            \"self.tools\",\n            \"arr[0]\",\n            \"plain text\",\n            \"TODO\",\n            \"a == b\",\n            \"\",\n            # Metacharacters deliberately treated as literal (see `_REGEX_SIGNAL_RE`\n            # docstring): bare `^`, `$`, `?`, `*`, `+` are common in literal code\n            # searches and must not trip a false hint.\n            \"^main\",\n            \"cost$5\",\n            \"value?\",\n            \"a*b\",\n            \"c++\",\n        ],\n    )\n    def test_ignores_literal(self, pattern: str) -> None:\n        assert _looks_like_regex(pattern) is False\n\n    def test_hint_present_for_regex(self) -> None:\n        hint = regex_literal_hint(\"foo|bar\")\n        assert hint is not None\n        assert \"literal text, not regex\" in hint\n        assert \"execute\" not in hint\n\n    def test_hint_absent_for_literal(self) -> None:\n        assert regex_literal_hint(\"plain text\") is None"
+        }
+      }
+    ]
+  },
+  "verify": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 120
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 180,
+      "baseline_files": [
+        "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+      ]
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit_tests/backends/test_utils.py",
+        "--disable-socket",
+        "--allow-unix-socket",
+        "--benchmark-disable",
+        "-q"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 180
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import json\nfrom pathlib import Path\nfrom deepagents.backends.utils import validate_path\nimport deepagents\nassert Path(deepagents.__file__).resolve() == (Path.cwd()/'deepagents/__init__.py').resolve()\nCASES = [{'id': 'relative-posix', 'input': 'foo/bar', 'expected': {'value': '/foo/bar'}}, {'id': 'absolute-posix', 'input': '/workspace/file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'posix-dot-and-duplicate', 'input': '/./foo//bar', 'expected': {'value': '/foo/bar'}}, {'id': 'relative-backslash', 'input': 'foo\\\\bar\\\\baz', 'expected': {'value': '/foo/bar/baz'}}, {'id': 'mixed-separators', 'input': 'foo/bar\\\\baz/qux', 'expected': {'value': '/foo/bar/baz/qux'}}, {'id': 'backslash-dot-component', 'input': 'foo\\\\.\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-repeated-separator', 'input': 'foo\\\\\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-trailing-separator', 'input': 'foo\\\\bar\\\\', 'expected': {'value': '/foo/bar'}}, {'id': 'mixed-dot-component', 'input': '/workspace\\\\.\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'mixed-repeated-separator', 'input': '/workspace/\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'root', 'input': '/', 'expected': {'value': '/'}}, {'id': 'empty-existing-contract', 'input': '', 'expected': {'value': '/.'}}, {'id': 'dot-existing-contract', 'input': '.', 'expected': {'value': '/.'}}, {'id': 'dots-in-filename', 'input': 'foo..bar.txt', 'expected': {'value': '/foo..bar.txt'}}, {'id': 'dots-in-directory', 'input': 'backup..2024/data.csv', 'expected': {'value': '/backup..2024/data.csv'}}, {'id': 'traversal-relative', 'input': '../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-interior', 'input': 'foo/../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-backslash', 'input': 'foo\\\\..\\\\etc', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-mixed', 'input': '/workspace/..\\\\etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'home-expansion', 'input': '~/secret.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-backslash', 'input': 'C:\\\\Users\\\\file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-posix', 'input': 'D:/data/file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'allowed-prefix', 'input': '/workspace/file.txt', 'allowed_prefixes': ['/workspace/'], 'expected': {'value': '/workspace/file.txt'}}, {'id': 'forbidden-prefix', 'input': '/etc/passwd', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'prefix-boundary', 'input': '/workspace-evil/file', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'empty-allowlist', 'input': '/workspace/file.txt', 'allowed_prefixes': [], 'expected': {'error': 'ValueError'}}, {'id': 'unicode-posix', 'input': '/\u9879\u76ee/\u8bba\u6587.md', 'expected': {'value': '/\u9879\u76ee/\u8bba\u6587.md'}}, {'id': 'unicode-backslash-dot', 'input': '\u9879\u76ee\\\\.\\\\\u8bba\u6587.md', 'expected': {'value': '/\u9879\u76ee/\u8bba\u6587.md'}}]\nfailures=[]\nfor case in CASES:\n    kwargs={'allowed_prefixes':case['allowed_prefixes']} if 'allowed_prefixes' in case else {}\n    try:\n        value=validate_path(case['input'],**kwargs)\n        actual={'value':value}\n    except ValueError:\n        actual={'error':'ValueError'}\n    if actual != case['expected']:\n        failures.append({'id':case['id'],'expected':case['expected'],'actual':actual})\nprint(json.dumps({'total':len(CASES),'passed':len(CASES)-len(failures),'failures':failures},ensure_ascii=False))\nassert not failures, 'Independent path contracts failed'\n"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 60
+    }
+  ],
+  "verification_environment": "Prepare verification dependencies from the pinned upstream lock once. python on PATH selects that environment; the first check requires imports from the task worktree.",
+  "evaluation_notes": "Model receives a symptom-oriented prompt, no scripted edit plan or reference patch. The path-contract verifier embeds operator-owned path contracts outside the editable file set. Public task, not a contamination-free held-out benchmark; no general success-rate claim.",
+  "required_features": [
+    "python_syntax_v1",
+    "baseline_verification_v1"
+  ],
+  "python_syntax_files": [
+    "libs/deepagents/deepagents/backends/utils.py",
+    "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+  ]
+}

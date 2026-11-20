@@ -5,6 +5,7 @@ virtual files; completed changes are exported to a task-owned detached worktree.
 """
 
 import argparse
+import ast
 import contextlib
 import fcntl
 import hashlib
@@ -81,6 +82,20 @@ def validate_task(task: dict) -> list[str]:
         raise RunError("Pin a full base commit SHA, not a moving branch.")
     if task.get("max_graph_steps", 200) < 1:
         raise RunError("max_graph_steps must be positive.")
+    features = task.get("required_features", [])
+    if not isinstance(features, list) or any(
+        feature not in ("python_syntax_v1", "baseline_verification_v1")
+        for feature in features
+    ):
+        raise RunError("The task requires unsupported worker features.")
+    syntax_files = task.get("python_syntax_files", [])
+    if (
+        not isinstance(syntax_files, list)
+        or not all(isinstance(name, str) for name in syntax_files)
+        or len(set(syntax_files)) != len(syntax_files)
+        or any(name not in files for name in syntax_files)
+    ):
+        raise RunError("Python syntax checks must name unique editable files.")
     initial = task.get("initial_contents")
     if initial is not None:
         if (
@@ -106,6 +121,7 @@ def validate_task(task: dict) -> list[str]:
         if command.get("timeout_seconds", 120) <= 0:
             raise RunError("Verification timeout must be positive.")
         checked_path(command.get("cwd", "."))
+        baseline_verification_files(command)
     allowed_tools = {"ls", "read_file", "write_file", "edit_file", "glob", "grep"}
     for step in task.get("model", {}).get("plan", []):
         if step["tool"] not in allowed_tools:
@@ -224,6 +240,9 @@ def materialize(
         > 2 * 1024 * 1024
     ):
         raise RunError("Virtual output exceeds the 2 MiB text budget.")
+    validate_python_syntax(
+        task, {name: file_data_to_string(outputs["/" + name]) for name in names}
+    )
     worktree = directory / "worktree"
     if not worktree.exists():
         git(repo, "worktree", "add", "--detach", str(worktree), task["base_commit"])
@@ -253,6 +272,104 @@ def materialize(
     return patch
 
 
+def validate_python_syntax(task, contents):
+    for name in task.get("python_syntax_files", []):
+        try:
+            ast.parse(contents[name], filename=name)
+        except (SyntaxError, ValueError, RecursionError) as error:
+            line = getattr(error, "lineno", None)
+            raise RunError(
+                f"Python syntax rejected before export: {name}, line {line}: {error}"
+            ) from error
+
+
+def baseline_verification_files(command: dict) -> list[str]:
+    values = command.get("baseline_files", [])
+    if not isinstance(values, list) or not all(isinstance(v, str) for v in values):
+        raise RunError("baseline_files must be a list of tracked relative paths.")
+    names = sorted(checked_path(value) for value in values)
+    if len(set(names)) != len(names):
+        raise RunError("baseline_files must be unique.")
+    return names
+
+
+def verification_workspace(directory, task, index, command, *, restore):
+    """Build/recheck a candidate view with selected files from the pinned base."""
+    frozen = baseline_verification_files(command)
+    primary = directory / "worktree"
+    if not frozen:
+        return primary, None
+    parent = directory / "verification-worktrees"
+    view = parent / f"{index:03d}"
+    if (
+        parent.is_symlink()
+        or view.is_symlink()
+        or not view.resolve().is_relative_to(directory.resolve())
+    ):
+        raise RunError("Verification view escapes the run directory.")
+    if not view.exists():
+        if not restore:
+            raise RunError("Saved baseline verification view is missing.")
+        parent.mkdir(mode=0o700, exist_ok=True)
+        git(primary, "worktree", "add", "--detach", str(view), task["base_commit"])
+    if git(view, "rev-parse", "HEAD").decode().strip() != task["base_commit"]:
+        raise RunError("Baseline verification view HEAD changed.")
+    names = sorted({checked_path(name) for name in task["files"]} | set(frozen))
+    originals = baseline_files(primary, task["base_commit"], names)
+    changed = set(git(view, "diff", "--name-only", "HEAD").decode().splitlines())
+    if changed - set(names):
+        raise RunError("Verification view has unrelated tracked changes.")
+    for name in names:
+        target = view / name
+        if target.is_symlink() or not target.resolve().is_relative_to(view):
+            raise RunError("Refusing a symlink in the verification view.")
+        original = file_data_to_string(originals["/" + name]).encode("utf-8")
+        desired = original if name in frozen else (primary / name).read_bytes()
+        current = target.read_bytes()
+        if not restore and current != desired:
+            raise RunError("Saved baseline verification content changed.")
+        if restore and current not in (original, desired):
+            raise RunError("Verification view changed outside known export states.")
+        if current != desired:
+            temporary = target.with_name(target.name + ".agent-lab-baseline-tmp")
+            if temporary.is_symlink():
+                raise RunError("Refusing a symlink for verification export.")
+            temporary.write_bytes(desired)
+            temporary.chmod(target.stat().st_mode)
+            temporary.replace(target)
+    fingerprint = hashlib.sha256(
+        git(view, "diff", "HEAD", "--no-ext-diff", "--binary")
+    ).hexdigest()
+    return view, fingerprint
+
+
+def validate_verification_record(
+    directory, task, index, record, *, require_passed=True
+):
+    command = task["verify"][index]
+    log = directory / f"verification-{index}.log"
+    if (
+        record["argv"] != command["argv"]
+        or (require_passed and (record["returncode"] != 0 or record.get("timed_out")))
+        or record.get("view_integrity_error")
+        or hashlib.sha256(log.read_bytes()).hexdigest() != record["log_sha256"]
+    ):
+        raise RunError("Saved verification evidence changed or did not pass.")
+    frozen = baseline_verification_files(command)
+    if record.get("baseline_files", []) != frozen:
+        raise RunError("Saved baseline verification policy changed.")
+    if frozen:
+        view, fingerprint = verification_workspace(
+            directory, task, index, command, restore=False
+        )
+        if (
+            record.get("baseline_files") != frozen
+            or record.get("view_patch_sha256") != fingerprint
+            or record.get("verification_view") != str(view.relative_to(directory))
+        ):
+            raise RunError("Saved baseline verification policy or view changed.")
+
+
 def verify(
     directory: Path, task: dict, patch: bytes, hold: str | None, lock_fd: int
 ) -> list:
@@ -262,7 +379,6 @@ def verify(
         raise RunError("Saved verification belongs to another patch.")
     records = saved.get("commands", [])
     emit("before_verification", hold)
-    worktree = directory / "worktree"
     environment = {
         key: value
         for key, value in os.environ.items()
@@ -270,25 +386,29 @@ def verify(
         in ("PATH", "HOME", "LANG", "LC_ALL", "UV_CACHE_DIR", "UV_PYTHON_INSTALL_DIR")
     }
     for index, command in enumerate(task.get("verify", [])):
+        if index < len(records) and records[index].get("view_integrity_error"):
+            raise RunError(
+                "Previous verification changed its tracked view; review required."
+            )
         if index < len(records) and records[index]["returncode"] == 0:
-            log = directory / f"verification-{index}.log"
-            if (
-                records[index]["argv"] != command["argv"]
-                or hashlib.sha256(log.read_bytes()).hexdigest()
-                != records[index]["log_sha256"]
-            ):
-                raise RunError("Saved verification evidence changed.")
+            validate_verification_record(directory, task, index, records[index])
             continue
-        cwd = worktree / checked_path(command.get("cwd", "."))
-        if not cwd.resolve().is_relative_to(worktree) or not cwd.is_dir():
+        workspace, fingerprint = verification_workspace(
+            directory, task, index, command, restore=True
+        )
+        cwd = workspace / checked_path(command.get("cwd", "."))
+        if not cwd.resolve().is_relative_to(workspace) or not cwd.is_dir():
             raise RunError("Verification working directory escapes the worktree.")
+        command_environment = dict(environment)
+        if fingerprint is not None:
+            command_environment["AGENT_LAB_BASELINE_VIEW"] = "1"
         log = directory / f"verification-{index}.log"
         with log.open("wb") as stream:
             try:
                 code, timed_out = run_command(
                     command["argv"],
                     cwd=cwd,
-                    environment=environment,
+                    environment=command_environment,
                     stream=stream,
                     timeout=command.get("timeout_seconds", 120),
                     lock_fd=lock_fd,
@@ -301,12 +421,26 @@ def verify(
             "timed_out": timed_out,
             "log_sha256": hashlib.sha256(log.read_bytes()).hexdigest(),
         }
+        if fingerprint is not None:
+            try:
+                _, after = verification_workspace(
+                    directory, task, index, command, restore=False
+                )
+                integrity_error = after != fingerprint
+            except (RunError, OSError):
+                integrity_error = True
+            record.update(
+                baseline_files=baseline_verification_files(command),
+                verification_view=str(workspace.relative_to(directory)),
+                view_patch_sha256=fingerprint,
+                view_integrity_error=integrity_error,
+            )
         records = records[:index] + [record]
         atomic_json(
             records_path,
             {"patch_sha256": hashlib.sha256(patch).hexdigest(), "commands": records},
         )
-        if code:
+        if code or timed_out or record.get("view_integrity_error"):
             raise RunError(f"Verification command {index} failed; review its log.")
     return records
 
@@ -334,15 +468,15 @@ def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dic
                         )
                     if len(result["verification"]) != len(task["verify"]):
                         raise RunError("Completed verification is incomplete.")
+                    validate_python_syntax(
+                        task,
+                        {
+                            name: (directory / "worktree" / name).read_text()
+                            for name in task.get("python_syntax_files", [])
+                        },
+                    )
                     for index, record in enumerate(result["verification"]):
-                        log = directory / f"verification-{index}.log"
-                        if (
-                            record["argv"] != task["verify"][index]["argv"]
-                            or record["returncode"] != 0
-                            or hashlib.sha256(log.read_bytes()).hexdigest()
-                            != record["log_sha256"]
-                        ):
-                            raise RunError("Completed verification evidence changed.")
+                        validate_verification_record(directory, task, index, record)
                     return result
             except Exception as error:
                 atomic_json(

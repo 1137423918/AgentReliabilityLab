@@ -1,0 +1,7 @@
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 2, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 3, "tool_results": 3, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 4, "tool_results": 4, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 5, "tool_results": 4, "pending": []}
+{"stage": "materialized", "patch_sha256": "41d742b5eab96ca8aa31fbe246aaa8f20ad20c1bcf979b32334e9b74375c871b"}
+{"stage": "before_verification"}

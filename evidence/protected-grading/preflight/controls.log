@@ -1,0 +1,10 @@
+{"case": "mutable-grader-control", "worker_returncode": 0, "ready_for_review": true, "task_sha256": "e073e1bbc31cdd7ff835f5eb5a8301bcfcc22e64b50955737aa38ab5dc887c7c", "patch_sha256": "41d742b5eab96ca8aa31fbe246aaa8f20ad20c1bcf979b32334e9b74375c871b", "patch_bytes": 2807}
+{"case": "baseline-grader-control", "worker_returncode": 2, "ready_for_review": false, "task_sha256": "0e3d63e3b766813a26125f9f6d5c8730171aa37a4c8c7ad895bf523b7e4bdfd2", "patch_sha256": "41d742b5eab96ca8aa31fbe246aaa8f20ad20c1bcf979b32334e9b74375c871b", "patch_bytes": 2807}
+{"case": "protected-reference", "worker_returncode": 2, "ready_for_review": false, "task_sha256": "d2301783bee3767d479a2bc971aaf5e14c7b08be14c1337c6d5dd05b132c043b", "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406", "patch_bytes": 1573}
+Traceback (most recent call last):
+  File "<server-workspace>/code/protected-worker-20261121/benchmarks/protected_grading.py", line 240, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "<server-workspace>/code/protected-worker-20261121/benchmarks/protected_grading.py", line 175, in main
+    assert reference_case["ready_for_review"]
+AssertionError

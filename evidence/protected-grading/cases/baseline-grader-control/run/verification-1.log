@@ -1,0 +1,16 @@
+.....................F.................................................. [ 63%]
+.........................................                                [100%]
+=================================== FAILURES ===================================
+________________ TestLooksLikeRegex.test_hint_present_for_regex ________________
+
+self = <tests.unit_tests.backends.test_utils.TestLooksLikeRegex object at 0x7f0097527b50>
+
+    def test_hint_present_for_regex(self) -> None:
+        hint = regex_literal_hint("foo|bar")
+>       assert hint is not None
+E       assert None is not None
+
+tests/unit_tests/backends/test_utils.py:72: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit_tests/backends/test_utils.py::TestLooksLikeRegex::test_hint_present_for_regex
+1 failed, 112 passed in 2.71s

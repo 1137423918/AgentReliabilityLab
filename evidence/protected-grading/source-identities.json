@@ -1,0 +1,7 @@
+{
+  "agent_lab/worker.py": "d293492e3843ee91cb6f3927dcbf3a8f0ad79b89b008e0eb6b58bce37cfebcb1",
+  "agent_lab/repair.py": "796cf756380c4d136ceefa43879c380fd3876916c244c4b907f65ce479e5a957",
+  "tests/test_protected_verification.py": "f094e9bc65eaee8004f0d27083b528537c7e1a8f6a5c10e963fe908ae0c46993",
+  "benchmarks/protected_grading.py": "0582700a5c8b07e326d85309393ec5b6d0108922b5dde1de0216c55a98f440a0",
+  "tasks/deepagents-path-model-protected.json": "97b420fb3c74c33d88e173271210f2c33c4d75ef14ea5319fd1fb22ec4f48f4c"
+}

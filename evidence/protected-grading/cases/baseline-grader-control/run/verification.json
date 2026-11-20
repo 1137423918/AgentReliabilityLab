@@ -1,0 +1,31 @@
+{
+  "patch_sha256": "41d742b5eab96ca8aa31fbe246aaa8f20ad20c1bcf979b32334e9b74375c871b",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "a3e099a543e32ea88735c7470a34b85dc03eaa9d4badbd2cd40678f70935dd87"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+      ],
+      "returncode": 1,
+      "timed_out": false,
+      "log_sha256": "b5f2bb21b32cb1074ed0e9de95d893e2cd10fc5f0c78e83e49ee8d24d029d990",
+      "baseline_files": [
+        "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+      ],
+      "verification_view": "verification-worktrees/001",
+      "view_patch_sha256": "63e956584eca53c83294abfa5f3b7e009cd68a51cd47131537f318eebb36c8dd",
+      "view_integrity_error": false
+    }
+  ]
+}
