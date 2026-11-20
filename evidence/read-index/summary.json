@@ -1,0 +1,23 @@
+{
+  "full_suite": {
+    "passed": 82,
+    "skipped": 0,
+    "new_read_index_checks_included": 8
+  },
+  "reference_cases": 3,
+  "model_inference": false,
+  "gpu_used": false,
+  "initial_source_sha256_independently_checked_against_git_blob": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+  "same_patch": true,
+  "original_pages_preserved": true,
+  "source_sha256": {
+    "agent_lab/worker.py": "03450801baa290f5fd9d4ce92ae1a7298cddd51768771955cf6c0526ca6900a4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "tests/test_read_index.py": "795b4983e7fcc23b6bcc543f4e300d386a339a7abb3637a07ba2f39d1e004b81",
+    "benchmarks/read_index_recovery.py": "367b88ecf9e8a08fb1e108658533622ad540a5b93a253a5ccce8c65393ceffdd",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "tasks/deepagents-path-model-protected.json": "97b420fb3c74c33d88e173271210f2c33c4d75ef14ea5319fd1fb22ec4f48f4c",
+    "tasks/deepagents-path-maintenance.json": "b589c0cab73b1f7406d1ae5148c23b46eb7ec4e3665b6a892d3e3da9a84db4d2"
+  },
+  "matrix_wall_seconds": 532.7531613186002
+}

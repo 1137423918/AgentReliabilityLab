@@ -90,6 +90,7 @@ def validate_task(task: dict) -> list[str]:
             "python_syntax_v1",
             "baseline_verification_v1",
             "python_source_v1",
+            "python_read_index_v1",
             "model_request_budget_v1",
         )
         for feature in features
@@ -256,6 +257,11 @@ def agent_phase(
 
             options["tools"] = [make_source_tool(files)]
             prompt += " For Python files, use inspect_python to locate definitions before reading sequential chunks. Its source hashes bind pages to current virtual content; refresh the outline after edits."
+        if "python_read_index_v1" in task.get("required_features", []):
+            from agent_lab.read_index import PythonReadIndexMiddleware
+
+            options["middleware"] = [PythonReadIndexMiddleware(files)]
+            prompt += " A first read_file page of a large Python file may include a versioned declaration index. Use its one-based line ranges with read_file offset=start_line-1 to avoid irrelevant sequential pages. The requested source page remains unchanged after the index."
         agent = create_deep_agent(
             model=model,
             backend=StateBackend(),

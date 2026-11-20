@@ -1,0 +1,35 @@
+{
+  "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+  "platform": "Linux-5.14.0-611.5.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "affinity_cpu_count": 88,
+  "gpu_used": false,
+  "model_inference": false,
+  "environment_note": "Reused dedicated request-budget environment; PYTHONPATH selects new source; verification PATH selects pinned upstream test environment. No old environment mutated.",
+  "modules": {
+    "agent_lab.worker": "<server-workspace>/code/read-index-20261121/agent_lab/worker.py",
+    "agent_lab.read_index": "<server-workspace>/code/read-index-20261121/agent_lab/read_index.py"
+  },
+  "packages": {
+    "deepagents": "0.7.41",
+    "langchain": "1.5.2",
+    "langchain-core": "1.8.4",
+    "langgraph": "1.2.24",
+    "langgraph-checkpoint-sqlite": "3.1.3",
+    "jsonschema": "4.26.0"
+  },
+  "source_sha256": {
+    "agent_lab/worker.py": "03450801baa290f5fd9d4ce92ae1a7298cddd51768771955cf6c0526ca6900a4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "tests/test_read_index.py": "795b4983e7fcc23b6bcc543f4e300d386a339a7abb3637a07ba2f39d1e004b81",
+    "benchmarks/read_index_recovery.py": "367b88ecf9e8a08fb1e108658533622ad540a5b93a253a5ccce8c65393ceffdd",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "tasks/deepagents-path-model-protected.json": "97b420fb3c74c33d88e173271210f2c33c4d75ef14ea5319fd1fb22ec4f48f4c",
+    "tasks/deepagents-path-maintenance.json": "b589c0cab73b1f7406d1ae5148c23b46eb7ec4e3665b6a892d3e3da9a84db4d2"
+  },
+  "target_head": "9af2cf8d6f5f828a337c159a6aeee29a3a677ccf",
+  "case_worktree_heads": {
+    "legacy": "744a797e3b9495539ca35571eeffd112a205f5c8",
+    "indexed": "744a797e3b9495539ca35571eeffd112a205f5c8",
+    "indexed-checkpoint": "744a797e3b9495539ca35571eeffd112a205f5c8"
+  }
+}

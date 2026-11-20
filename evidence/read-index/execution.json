@@ -1,0 +1,55 @@
+[
+  {
+    "stage": "format",
+    "returncode": 0,
+    "wall_seconds": 11.567315117456019,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "format",
+      "agent_lab/read_index.py",
+      "tests/test_read_index.py"
+    ]
+  },
+  {
+    "stage": "lint",
+    "returncode": 0,
+    "wall_seconds": 0.6202119924128056,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "check",
+      "agent_lab/read_index.py",
+      "agent_lab/worker.py",
+      "tests/test_read_index.py"
+    ]
+  },
+  {
+    "stage": "focused",
+    "returncode": 0,
+    "wall_seconds": 18.26781636942178,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_read_index.py",
+      "-v"
+    ]
+  },
+  {
+    "stage": "full",
+    "returncode": 0,
+    "wall_seconds": 269.6727190837264,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  }
+]

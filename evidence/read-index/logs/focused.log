@@ -1,0 +1,13 @@
+test_async_reply_annotation_and_cancellation (test_read_index.AsyncReadIndexTests.test_async_reply_annotation_and_cancellation) ... ok
+test_actual_graph_checkpoint_retains_annotation_and_refreshes_after_edit (test_read_index.ReadIndexTests.test_actual_graph_checkpoint_retains_annotation_and_refreshes_after_edit) ... ok
+test_complete_original_page_and_message_identity_fields_preserved (test_read_index.ReadIndexTests.test_complete_original_page_and_message_identity_fields_preserved) ... ok
+test_errors_commands_and_handler_exceptions_pass_through (test_read_index.ReadIndexTests.test_errors_commands_and_handler_exceptions_pass_through) ... ok
+test_fallback_keeps_original_reply_for_unsupported_or_unproven_reads (test_read_index.ReadIndexTests.test_fallback_keeps_original_reply_for_unsupported_or_unproven_reads) ... ok
+test_index_and_combined_byte_caps_do_not_truncate_source (test_read_index.ReadIndexTests.test_index_and_combined_byte_caps_do_not_truncate_source) ... ok
+test_legacy_graph_has_no_annotation_without_middleware (test_read_index.ReadIndexTests.test_legacy_graph_has_no_annotation_without_middleware) ... ok
+test_seen_revision_and_parallel_batch_rules (test_read_index.ReadIndexTests.test_seen_revision_and_parallel_batch_rules) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.369s
+
+OK
