@@ -1,0 +1,119 @@
+{
+  "normalization": "Explicit file allowlist; private paths and terminal formatting normalized; generated fix.patch and runtime receipts included; no user artifacts or credentials.",
+  "files": [
+    {
+      "path": "logs/baseline-tests.log",
+      "original_sha256": "0ab56553965a90f6fe8354820cab13f29349cbaf850f7a9132567c372dddb457",
+      "public_sha256": "44691e40313a09d52f84c2a4d44bb20bc55fb7d78e3dd4280d06ee75f26408e2",
+      "public_bytes": 8658
+    },
+    {
+      "path": "logs/candidate-py311.log",
+      "original_sha256": "1fa98f41b2a63cfc348bc74d40394325b04f1fb13bc540d0f96e23857627599c",
+      "public_sha256": "1fa98f41b2a63cfc348bc74d40394325b04f1fb13bc540d0f96e23857627599c",
+      "public_bytes": 2354
+    },
+    {
+      "path": "logs/candidate-py313.log",
+      "original_sha256": "cd8619986decc7d5d12629f405c511bc5fa528431488ca1c8fb0a36070c49b99",
+      "public_sha256": "cd8619986decc7d5d12629f405c511bc5fa528431488ca1c8fb0a36070c49b99",
+      "public_bytes": 2354
+    },
+    {
+      "path": "logs/mypy-py311.log",
+      "original_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "public_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "public_bytes": 42
+    },
+    {
+      "path": "logs/mypy-py313.log",
+      "original_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "public_sha256": "5d4b6d285b77932e3d08212c3b4974d0a803f98ec60408ac6ccf6a063fa6c19e",
+      "public_bytes": 42
+    },
+    {
+      "path": "logs/precommit.log",
+      "original_sha256": "8ece4ab091514a61722254e86cf029c1e82c70774e3ac67f72022589396555e6",
+      "public_sha256": "8ece4ab091514a61722254e86cf029c1e82c70774e3ac67f72022589396555e6",
+      "public_bytes": 3047
+    },
+    {
+      "path": "cases/baseline.json",
+      "original_sha256": "17729380a5f5da19cc409b3011cd8a3a8d8d4191ede5ddc9913ddfef6efc912c",
+      "public_sha256": "17729380a5f5da19cc409b3011cd8a3a8d8d4191ede5ddc9913ddfef6efc912c",
+      "public_bytes": 5518
+    },
+    {
+      "path": "cases/candidate.json",
+      "original_sha256": "890ddc215fcdc2b6700333613bcc123afdb41cd74fb84d27ce9e367e05b9ff28",
+      "public_sha256": "890ddc215fcdc2b6700333613bcc123afdb41cd74fb84d27ce9e367e05b9ff28",
+      "public_bytes": 2768
+    },
+    {
+      "path": "logs/baseline-e2e.log",
+      "original_sha256": "1f68a6d37bee298a050bb0ab6e75052c02a17ec64a23cdf08a027919904d324f",
+      "public_sha256": "1f68a6d37bee298a050bb0ab6e75052c02a17ec64a23cdf08a027919904d324f",
+      "public_bytes": 1096
+    },
+    {
+      "path": "logs/candidate-e2e.log",
+      "original_sha256": "f2dbce4a89e501b7a725bec069cac2de7a26cc3ac4be27574dfd5f7bbd2b5590",
+      "public_sha256": "f2dbce4a89e501b7a725bec069cac2de7a26cc3ac4be27574dfd5f7bbd2b5590",
+      "public_bytes": 347
+    },
+    {
+      "path": "preflight/narrow-candidate.json",
+      "original_sha256": "47f769d268ee5337f96fcca23531db1dece89a25ea5ca77685a4080ce675340a",
+      "public_sha256": "47f769d268ee5337f96fcca23531db1dece89a25ea5ca77685a4080ce675340a",
+      "public_bytes": 5512
+    },
+    {
+      "path": "preflight/narrow-candidate.log",
+      "original_sha256": "a0e0c9fe25b5959ad7aa272b20b02e34d0a9001ef775d20a3c6c730efcbd3d14",
+      "public_sha256": "a0e0c9fe25b5959ad7aa272b20b02e34d0a9001ef775d20a3c6c730efcbd3d14",
+      "public_bytes": 1090
+    },
+    {
+      "path": "preflight/precommit-home-cache.log",
+      "original_sha256": "991711e1d17d51d7d9bb8d5a46c834b0de003916b7bea54454d9fdca67c8384d",
+      "public_sha256": "f4f56d188b2cc50e5616642d3eec72684afee1c6163da690e6b1330f246daa3e",
+      "public_bytes": 696
+    },
+    {
+      "path": "preflight/precommit-http2.log",
+      "original_sha256": "b32753fbaebdb8e7dbe8a0feeabd48dd07fb0a6fa2f7bff70e6ae63f80e06d31",
+      "public_sha256": "b32753fbaebdb8e7dbe8a0feeabd48dd07fb0a6fa2f7bff70e6ae63f80e06d31",
+      "public_bytes": 456
+    },
+    {
+      "path": "preflight/precommit-http11.log",
+      "original_sha256": "491b3cc6a7f83c9acb0bc10261c3a2be3a0fe07cabf386d8c1a2faa00f1e9535",
+      "public_sha256": "491b3cc6a7f83c9acb0bc10261c3a2be3a0fe07cabf386d8c1a2faa00f1e9535",
+      "public_bytes": 84
+    },
+    {
+      "path": "runtime/agentlab-adk-session-20261121.json",
+      "original_sha256": "a6e8b99cadf6a57db212913fdbba193c59916b2644af785833dd301e868563a2",
+      "public_sha256": "a6e8b99cadf6a57db212913fdbba193c59916b2644af785833dd301e868563a2",
+      "public_bytes": 6449
+    },
+    {
+      "path": "runtime/agentlab-adk-artifact-py313-20261121.json",
+      "original_sha256": "828115e3107873004c266b09d6c1988b795e1dbf06f49e3b013deb13cd12a30b",
+      "public_sha256": "828115e3107873004c266b09d6c1988b795e1dbf06f49e3b013deb13cd12a30b",
+      "public_bytes": 4738
+    },
+    {
+      "path": "runtime/tooling.json",
+      "original_sha256": "2272134b63661db13eb8f0409e9e2a603f706d49b51356bf604ddbea3455778e",
+      "public_sha256": "2272134b63661db13eb8f0409e9e2a603f706d49b51356bf604ddbea3455778e",
+      "public_bytes": 1661
+    },
+    {
+      "path": "fix.patch",
+      "original_sha256": "fbc1938e0bc8a46c0c855839e77ccfd0ec75cd981ab98da97da48786144690d8",
+      "public_sha256": "fbc1938e0bc8a46c0c855839e77ccfd0ec75cd981ab98da97da48786144690d8",
+      "public_bytes": 5901
+    }
+  ]
+}

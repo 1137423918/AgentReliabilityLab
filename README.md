@@ -67,6 +67,12 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 [近期官方工程资料与本项目的取舍](docs/research-notes.md)记录了方向来源、推论和已验证边界。
 
+## Google ADK 产物并发清理
+
+[上游草稿 PR #8278](https://github.com/google/adk-python/pull/8278) 修复两个文件产物服务并发删除时的 `FileNotFoundError`：处理递归遍历中已消失的文件和目录，保留其他错误及嵌套产物。Python 3.11 / 3.13 各通过同一组 **2021 条相关测试、26 条预期失败**；原版的四项新检查为三失败、一项权限对照通过。无调度干预的公共 API 20 轮对照：原版每轮出现错误，最终候选均成功清理父版本并保留嵌套内容；不是通用成功率或速度对比。
+
+这是第三个框架的存储贡献，未合并；没有新增 ADK 维护 Agent 运行时适配器。真实模型修复结果仍为此前的失败记录。新增复现脚本未改动运行器核心，本轮未重复执行不受影响的 42 项项目检查。[完整协议](docs/adk-artifact-cleanup.md) · [证据、初版失败和边界](evidence/adk-artifact-cleanup/README.md)。
+
 ## 工具契约验证边界
 
 `prepare.py` 从指定 Deep Agents checkout 提取 `to_posix_path` 与 `validate_path` 的**原始函数源码**，生成无第三方依赖的最小复现模块；`audit.py` 在服务器运行固定契约用例，保存逐例输入、期望、观察和判定。

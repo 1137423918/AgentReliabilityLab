@@ -1,0 +1,60 @@
+{
+  "observed_at": "2026-11-20T17:14:46.150877+00:00",
+  "url": "https://github.com/google/adk-python/pull/8278",
+  "head_sha": "c71ca6a2d993ede60f9fd873b768a6d452db116f",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "checks": [
+    {
+      "name": "zizmor-upload",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598640/job/136442055308"
+    },
+    {
+      "name": "zizmor-scan",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598640/job/136442053484"
+    },
+    {
+      "name": "zizmor-output",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598640/job/136442052928"
+    },
+    {
+      "name": "zizmor-config",
+      "status": "completed",
+      "conclusion": "skipped",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598640/job/136442051622"
+    },
+    {
+      "name": "header-check",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/googleapis/repo-automation-bots"
+    },
+    {
+      "name": "agent-triage-pull-request",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598595/job/136441949475"
+    },
+    {
+      "name": "check-changes",
+      "status": "completed",
+      "conclusion": "success",
+      "url": "https://github.com/google/adk-python/actions/runs/44780598640/job/136441949457"
+    },
+    {
+      "name": "cla/google",
+      "status": "completed",
+      "conclusion": "failure",
+      "url": "https://cla.developers.google.com/about"
+    }
+  ],
+  "cla": "Matching CLA not found by cla/google; signature or account association must be handled by the account owner",
+  "unit_ci": "not claimed as passed; local server results are separate"
+}

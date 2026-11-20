@@ -1,0 +1,2 @@
+{"scope": "Unforced concurrent public-API filesystem cleanup; not model inference or a general reliability rate", "rounds": 20, "source_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a", "all_observed_calls_succeeded_and_nested_preserved": true, "wall_seconds": 6.587051196023822}
+{"rounds_with_errors": 0, "errors": []}

@@ -1,0 +1,129 @@
+{
+  "scope": "Unforced concurrent public-API filesystem cleanup; not model inference or a general reliability rate",
+  "rounds": 20,
+  "source_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+  "all_observed_calls_succeeded_and_nested_preserved": true,
+  "wall_seconds": 6.587051196023822,
+  "results": [
+    {
+      "round": 0,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 1,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 2,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 3,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 4,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 5,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 6,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 7,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 8,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 9,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 10,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 11,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 12,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 13,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 14,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 15,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 16,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 17,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 18,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 19,
+      "errors": [],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    }
+  ]
+}

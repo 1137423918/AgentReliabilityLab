@@ -1,0 +1,229 @@
+{
+  "scope": "Unforced concurrent public-API filesystem cleanup; not model inference or a general reliability rate",
+  "rounds": 20,
+  "source_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16",
+  "all_observed_calls_succeeded_and_nested_preserved": false,
+  "wall_seconds": 8.569997256621718,
+  "results": [
+    {
+      "round": 0,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 1,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 2,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 3,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 4,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 5,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 6,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 7,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 8,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 9,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 10,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 11,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 12,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 13,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 14,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 15,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'metadata.json'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 16,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 17,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 18,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    },
+    {
+      "round": 19,
+      "errors": [
+        {
+          "type": "FileNotFoundError",
+          "message": "[Errno 2] No such file or directory: 'report'"
+        }
+      ],
+      "remaining_parent_versions": [],
+      "nested_preserved": true
+    }
+  ]
+}

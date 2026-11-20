@@ -1,0 +1,51 @@
+{
+  "addlicense_executable": null,
+  "existing_license_header_prefixes_match_base": true,
+  "precommit_hook_source_mirrors": [
+    {
+      "url": "https://github.com/pre-commit/pre-commit-hooks",
+      "rev": "v6.0.0",
+      "directory": "pre-commit-hooks.git",
+      "sha": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
+    },
+    {
+      "url": "https://github.com/tox-dev/pyproject-fmt",
+      "rev": "v2.24.0",
+      "directory": "pyproject-fmt.git",
+      "sha": "dba2db263ee43a6480cee30f8edc8752a13b06b3"
+    },
+    {
+      "url": "https://github.com/astral-sh/ruff-pre-commit",
+      "rev": "v0.15.17",
+      "directory": "ruff-pre-commit.git",
+      "sha": "3b3f7c3f57fe9925356faf5fe6230835138be230"
+    },
+    {
+      "url": "https://github.com/PyCQA/isort",
+      "rev": "8.0.1",
+      "directory": "isort.git",
+      "sha": "a333737ed43df02b18e6c95477ea1b285b3de15a"
+    },
+    {
+      "url": "https://github.com/google/pyink",
+      "rev": "25.12.0",
+      "directory": "pyink.git",
+      "sha": "29f89da02079c00d96499229ab7d3ed251308811"
+    },
+    {
+      "url": "https://github.com/executablebooks/mdformat",
+      "rev": "0.7.22",
+      "directory": "mdformat.git",
+      "sha": "83dc2ce5ca115d3390b9b5561d2898366faf0742"
+    },
+    {
+      "url": "https://github.com/codespell-project/codespell",
+      "rev": "v2.4.2",
+      "directory": "codespell.git",
+      "sha": "2ccb47ff45ad361a21071a7eedda4c37e6ae8c5a"
+    }
+  ],
+  "repository_configuration_changed": false,
+  "git_mirror_rewrites": "process environment only",
+  "precommit_result": "all applicable checks passed; unmatched-file hooks skipped normally; addlicense configured fallback"
+}

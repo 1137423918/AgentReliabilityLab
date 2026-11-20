@@ -1,0 +1,44 @@
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Initializing environment for https://github.com/tox-dev/pyproject-fmt.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Initializing environment for https://github.com/PyCQA/isort.
+[INFO] Initializing environment for https://github.com/google/pyink.
+[INFO] Initializing environment for https://github.com/executablebooks/mdformat.
+[INFO] Initializing environment for https://github.com/executablebooks/mdformat:mdformat-gfm.
+[INFO] Initializing environment for https://github.com/codespell-project/codespell.
+[INFO] Initializing environment for https://github.com/codespell-project/codespell:tomli.
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/tox-dev/pyproject-fmt.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/PyCQA/isort.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/google/pyink.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/executablebooks/mdformat.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/codespell-project/codespell.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+check yaml............................................(no files to check)Skipped
+fix end of files..........................................................Passed
+trim trailing whitespace..................................................Passed
+pyproject-fmt.........................................(no files to check)Skipped
+ruff (legacy alias).......................................................Passed
+isort.....................................................................Passed
+pyink.....................................................................Passed
+addlicense................................................................Passed
+Check new Python files have _ prefix and unit guide.......................Passed
+ADK Compliance Checks.....................................................Passed
+Check documentation links and guide index.................................Passed
+update-constraints....................................(no files to check)Skipped
+mdformat..............................................(no files to check)Skipped
+codespell.................................................................Passed

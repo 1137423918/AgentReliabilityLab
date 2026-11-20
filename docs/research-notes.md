@@ -21,3 +21,10 @@ LangChain 在 2026-04-20 的 [The runtime behind production deep agents](https:/
 对本项目的推论：不能用一个工具调用演示证明生产可用。当前只实现并验证了其中的维护任务恢复和补丁验收部分；模型效果、真实用户、多租户、远程调度与生产部署尚未验证。下一步先完成多任务模型试验，并保留失败轨迹，再决定是否扩大服务架构。
 
 这些资料提供工程方向；本仓库的测试数字只来自自己的版本固定实验，没有套用原作者的性能提升或基准成绩。
+
+
+## 2026-11-21: shared artifact cleanup as an engineering target
+
+The [Google ADK contribution guide](https://github.com/google/adk-python/blob/c81876a49911745248f2b774c02770ed211ff460/CONTRIBUTING.md) permits a complete inline bug description when no issue exists, unlike several screened projects that require prior assignment or collaborator status. The [latest observed release](https://github.com/google/adk-python/releases/tag/v2.15.0) was v2.15.0; this contribution fixes and tests pinned main `c81876a`, not an assumed released-version matrix. The repository had 22,282 stars at intake; that is a dated observation, not a technical quality measure.
+
+Artifact lifecycle is a practical boundary for multiple services sharing output storage. A real missing-entry race was reproduced, narrowed first and then expanded only after natural concurrent calls proved the root-only fix insufficient. [The final evidence](../evidence/adk-artifact-cleanup/README.md) separates deterministic tests, unforced filesystem observations, pre-commit setup failures and upstream draft status. The related cloud-adapter tests use fake storage; they do not show real cloud behavior or model task success.
