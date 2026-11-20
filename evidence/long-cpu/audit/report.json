@@ -1,0 +1,257 @@
+{
+  "scope": "Read-only checkpoint audit after declared real-model trial; graph state retrieved without invoking a model.",
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 5,
+  "tool_results": 6,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "028a564e070f3bf2154868742b3789754609a17fa9e2b46314ecca8377eb33e6",
+      "usage": {
+        "input_tokens": 2732,
+        "output_tokens": 94,
+        "total_tokens": 2826,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 123,
+      "tools": [
+        {
+          "id": "GtkkPQ1v21X0wrwgEqs5M0oyAJSnNema",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+          "path": "/libs/deepagents/deepagents/backends/utils.py",
+          "mode": null,
+          "offset": null,
+          "limit": null,
+          "symbol_id": null
+        },
+        {
+          "id": "GOfqs6CLJxoq40IAzvhfafXB8ZZsmT18",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "mode": null,
+          "offset": null,
+          "limit": null,
+          "symbol_id": null
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "f3f560790df5ab67b5ad9bce2f453a43f66ff3b2aaea6e07840e8e6308967ebb",
+      "name": "read_file",
+      "tool_call_id": "GtkkPQ1v21X0wrwgEqs5M0oyAJSnNema",
+      "status": "success",
+      "result_bytes": 3378,
+      "result_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff",
+      "result_preview": "@@ lines 1-100 of 1250 | next offset 100 @@\n\"\"\"Shared utility functions for memory backend implementations.\n\nThis module contains both user-facing string formatters and structured\nhelpers used by backends and the composite router. Structure"
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "message_sha256": "ef84339957768ebcb8216442d7b242057a312c0ff833ce5d2b65497ec3846ec8",
+      "name": "read_file",
+      "tool_call_id": "GOfqs6CLJxoq40IAzvhfafXB8ZZsmT18",
+      "status": "success",
+      "result_bytes": 2984,
+      "result_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d",
+      "result_preview": "@@ lines 1-100 of 733 | next offset 100 @@\n\"\"\"Tests for backends/utils.py utility functions.\"\"\"\n\nfrom typing import Any\n\nimport pytest\nfrom langchain_core.messages.content import ContentBlock\nfrom pydantic import TypeAdapter\n\nfrom deepagent"
+    },
+    {
+      "index": 4,
+      "role": "ai",
+      "message_sha256": "e6b63bfa90dd64559ff26ba9cc94d8e71564893a590e4f4d52bf830645636396",
+      "usage": {
+        "input_tokens": 4487,
+        "output_tokens": 82,
+        "total_tokens": 4569,
+        "input_token_details": {
+          "cache_read": 2825
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 110,
+      "tools": [
+        {
+          "id": "GUTutkUjE6TGRXEF97EOPS0uID2FyKuJ",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "00cc4ff188e2f7b6652145df2e8587219358c301fe0bce5f14e843b263d68a82",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "mode": null,
+          "offset": 100,
+          "limit": 200,
+          "symbol_id": null
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "role": "tool",
+      "message_sha256": "0ecb4c914cb70bb60a0620a304abbe6a90e5226e66bbc6c617c22dd5d930d7f2",
+      "name": "read_file",
+      "tool_call_id": "GUTutkUjE6TGRXEF97EOPS0uID2FyKuJ",
+      "status": "success",
+      "result_bytes": 8980,
+      "result_sha256": "5e13b927f831d0619f31efacd12905f5d726057a909624b4e72147725460fe9c",
+      "result_preview": "@@ lines 101-300 of 733 | next offset 300 @@\n            \"unc\",\n            \"empty\",\n            \"root\",\n            \"bare-backslashes\",\n            \"posix-absolute\",\n        ],\n    )\n    def test_normalizes(self, input_path: str, expected:"
+    },
+    {
+      "index": 6,
+      "role": "ai",
+      "message_sha256": "258a8fd5ab3ddc26760b1c2399246dc5d3706ba9d0e4b14dfb5353bcd739326b",
+      "usage": {
+        "input_tokens": 6889,
+        "output_tokens": 93,
+        "total_tokens": 6982,
+        "input_token_details": {
+          "cache_read": 4568
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 141,
+      "tools": [
+        {
+          "id": "q5SOihPWrIMPm4hUUwACbF2HcaLTDSxp",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "7f100c8e261c581c0a26f10a451c0a5a47fe7fe80805e63b561b94a393be9aaf",
+          "path": "/libs/deepagents/deepagents/backends/utils.py",
+          "mode": null,
+          "offset": 100,
+          "limit": 200,
+          "symbol_id": null
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "role": "tool",
+      "message_sha256": "61507fd48db4e5b951d8fa6874d5b6c84a188f6f0050e6509ee4b490c5a4d6dd",
+      "name": "read_file",
+      "tool_call_id": "q5SOihPWrIMPm4hUUwACbF2HcaLTDSxp",
+      "status": "success",
+      "result_bytes": 6797,
+      "result_sha256": "8e1776d35bcfc8c3b29114a2a093e960f81e4550183a78c1296cae322678ea5b",
+      "result_preview": "@@ lines 101-300 of 1250 | next offset 300 @@\n        \"text/x-ejs\",\n        \"text/x-elixir\",\n        \"text/x-erb\",\n        \"text/x-erlang\",\n        \"text/x-go\",\n        \"text/x-golang\",\n        \"text/x-gradle\",\n        \"text/x-graphql\",\n   "
+    },
+    {
+      "index": 8,
+      "role": "ai",
+      "message_sha256": "dd0110fe6fa177cd34b0b1eff846045f1d144cb0f74711c66d59fe43a4dd5e71",
+      "usage": {
+        "input_tokens": 8883,
+        "output_tokens": 82,
+        "total_tokens": 8965,
+        "input_token_details": {
+          "cache_read": 6981
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 101,
+      "tools": [
+        {
+          "id": "LYo6XobJxxzVvFkAkQfvwmmieWtYmI94",
+          "name": "grep",
+          "argument_keys": [
+            "output_mode",
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "063bbfbb6dd96c18307b87be62bd11a9a46fb95443e960c43d4dcfccb5c02fcc",
+          "path": "/libs/deepagents/deepagents/backends/utils.py",
+          "mode": null,
+          "offset": null,
+          "limit": null,
+          "symbol_id": null
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "role": "tool",
+      "message_sha256": "dc96519d308968b047de5ec55d6af3a9692ce222f792db6959d218d181ae34c8",
+      "name": "grep",
+      "tool_call_id": "LYo6XobJxxzVvFkAkQfvwmmieWtYmI94",
+      "status": "success",
+      "result_bytes": 140,
+      "result_sha256": "d764003d69f52779514466c9075a8892f93a4bb9a5cdde0b88a6772e16b9edec",
+      "result_preview": "/libs/deepagents/deepagents/backends/utils.py:\n  846: def validate_path(path: str, *, allowed_prefixes: Sequence[str] | None = None) -> str:"
+    },
+    {
+      "index": 10,
+      "role": "ai",
+      "message_sha256": "dfea84f9f3fad119a9196388521871d2dbb8bc70921a8b4b74749d91d50a5139",
+      "usage": {
+        "input_tokens": 9024,
+        "output_tokens": 64,
+        "total_tokens": 9088,
+        "input_token_details": {
+          "cache_read": 8964
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 17,
+      "tools": [
+        {
+          "id": "G2JomZJK3v6Y1yyg9gfLLhzWvkzV4Z8j",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "cb1ab1f43a22c357f934fc9927f1ddf174c8689d71ab2ed9efa7c48b8110d75b",
+          "path": "/libs/deepagents/deepagents/backends/utils.py",
+          "mode": null,
+          "offset": 840,
+          "limit": 200,
+          "symbol_id": null
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "role": "tool",
+      "message_sha256": "1f240753bae82e87cc7b6c1df2eaa9d4808037573c2e0df2e5608c2f1cfd1a70",
+      "name": "read_file",
+      "tool_call_id": "G2JomZJK3v6Y1yyg9gfLLhzWvkzV4Z8j",
+      "status": "success",
+      "result_bytes": 7426,
+      "result_sha256": "7daa0cbecaf20f527d14630060b1199d09165c31f136441da7799ba69b73a6ac",
+      "result_preview": "@@ lines 841-1040 of 1250 | next offset 1040 @@\n            Inputs that already use forward slashes are returned unchanged.\n    \"\"\"\n    return path.replace(\"\\\\\", \"/\")\n\n\ndef validate_path(path: str, *, allowed_prefixes: Sequence[str] | None "
+    }
+  ],
+  "virtual_changes": [],
+  "exported_patch": false,
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

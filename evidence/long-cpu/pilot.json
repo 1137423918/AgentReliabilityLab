@@ -1,0 +1,20 @@
+{
+  "scope": "One public Deep Agents maintenance problem, one newly declared normal CPU trial with protected original tests, independent contracts, source-navigation tools and persistent HTTP budget; not a held-out benchmark or general repair rate.",
+  "protocol_sha256": "bcb5d5670144c71099e26c832f176289215623f382eb84cd247d96efbe7e43f7",
+  "task_sha256": "1bb1b2b524fcd7628631517c26c924e46b9fa5795f31fcfb02e7a7794bc06489",
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": -9,
+      "timed_out": true,
+      "duration_seconds": 1800.069,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "running"
+      }
+    }
+  ],
+  "verified_trials": 0
+}

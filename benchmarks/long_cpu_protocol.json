@@ -1,0 +1,66 @@
+{
+  "stage": 22,
+  "scope": "One public Deep Agents maintenance problem, one newly declared normal CPU trial with protected original tests, independent contracts, source-navigation tools and persistent HTTP budget; not a held-out benchmark or general repair rate.",
+  "declared_utc": "2026-11-20T22:27:00.191616+00:00",
+  "trials": [
+    "normal"
+  ],
+  "task": "tasks/deepagents-path-model-long-cpu.json",
+  "task_file_sha256": "98e9d684af20c234b7e1957ce659f56eb1cf498a4b9733e4e6753c69f44a33f9",
+  "task_sha256": "1bb1b2b524fcd7628631517c26c924e46b9fa5795f31fcfb02e7a7794bc06489",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "source_project_base": "8023388c227658e1a1e8da322f9df723ee9f3a44",
+  "source_sha256": {
+    "agent_lab/worker.py": "932e996a54bfac5cb731c04cc7d503c392e5439c7cc1d0a3152adb72eee7729d",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939"
+  },
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "alias": "agentlab-qwen35-9b-q4km",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954"
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "service": {
+    "host": "127.0.0.1",
+    "port": 18846,
+    "threads": 4,
+    "gpu_layers": 0,
+    "device": "none",
+    "thinking": false,
+    "context_window": 32768,
+    "nice": 19,
+    "address_space_gib": 48,
+    "rss_guard_gib": 36,
+    "available_memory_admission_gib": 64,
+    "health_ready_deadline_seconds": 300
+  },
+  "acceptance_unchanged": true,
+  "prompt_unchanged": true,
+  "limitations": [
+    "Only one known public problem; no general success rate or contamination-free claim.",
+    "Longer budgets, additional tools, persistent HTTP limits and a different CPU host preclude causal attribution against old pilots.",
+    "No scripted tool calls, operator reference edits, retrospective extension or relabeling of old failures.",
+    "Protected original tests and 28 contracts overlap candidate tests; do not sum test groups.",
+    "No fault injection/recovery claim in this one normal trial."
+  ]
+}

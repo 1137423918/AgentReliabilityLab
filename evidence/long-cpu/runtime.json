@@ -1,0 +1,22 @@
+{
+  "worker": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "worker": "<server-workspace>/code/long-cpu-20261121/agent_lab/worker.py",
+    "versions": {
+      "deepagents": "0.7.41",
+      "langchain-openai": "1.8.5",
+      "langgraph": "1.2.24",
+      "jsonschema": "4.26.0"
+    }
+  },
+  "cpu_model": "Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz",
+  "cpu_affinity_count": 56,
+  "load": [
+    40.93,
+    41.41,
+    41.39
+  ],
+  "started_utc": "2026-11-20T22:29:22.105881+00:00",
+  "protocol_sha256": "bcb5d5670144c71099e26c832f176289215623f382eb84cd247d96efbe7e43f7",
+  "verification_python_exists": true
+}

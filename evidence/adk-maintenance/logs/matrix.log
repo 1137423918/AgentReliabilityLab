@@ -1,0 +1,5 @@
+{"case": "uninterrupted", "status": "verified", "tool_results": 3}
+{"case": "checkpoint", "status": "verified", "tool_results": 3}
+{"case": "materialized", "status": "verified", "tool_results": 3}
+{"case": "before_verification", "status": "verified", "tool_results": 3}
+{"cases": 4, "same_patch": true}

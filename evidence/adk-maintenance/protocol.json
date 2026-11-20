@@ -1,0 +1,42 @@
+{
+  "scope": "Third real repository maintenance-worker integration: fixed Google ADK reference edit plan, protected original tests and four operator-owned filesystem contracts. No new autonomous model run or new unique regression cases.",
+  "declared_utc": "2026-11-20T22:33:48.447436+00:00",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "reference_task_sha256": "f1c8bcebf95a35f3de2a90058d58353409813134ba9175b742991c5a6002841c",
+  "source_sha256": {
+    "agent_lab/worker.py": "932e996a54bfac5cb731c04cc7d503c392e5439c7cc1d0a3152adb72eee7729d",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/validate_model_task.py": "6dd6bb14d0b7e0621dc94ea47afabfc8297aef5e8c4acf5814b243194ef719b8",
+    "tasks/adk-artifact-delete-maintenance.json": "ac414f4c1c28a2d83e569316f20173a5329361ca5c29c06e4a1c5e4080d937f1",
+    "tasks/adk-artifact-delete-model.json": "93bbd7322065f32e3774b83116669611513a9fc848caa85b493f9388c5540f21"
+  },
+  "reference_source_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+  "fault_cases": [
+    "uninterrupted",
+    "checkpoint",
+    "materialized",
+    "before_verification"
+  ],
+  "signal": "SIGKILL owned worker at exact emitted stage, then restart same directory",
+  "acceptance": [
+    "Original test_artifact_service.py hash fixed at base; required baseline-verification view for actual worker",
+    "Four external deterministic public-API contracts: permission error, disappearing payload, concurrent delete in session and user scope"
+  ],
+  "preflight": "Unchanged base must fail independent contracts while reference production patch passes; both run exact original tests. No frozen-copy claim for direct self-check; actual worker matrix exercises that feature.",
+  "limits": {
+    "case_seconds": 600,
+    "checkpoint_observation_seconds": 180,
+    "model_inference": false,
+    "gpu": false
+  },
+  "limitations": [
+    "Operator plan/reference edit is supplied explicitly, not neural repair.",
+    "Same original upstream defect and regressions as PR8278; this adds runner integration and fault-boundary evidence, not a new defect or unique regression count.",
+    "One Linux unprivileged process host, no distributed transaction or Windows claim.",
+    "No new ADK-framework runner adapter: existing Deep Agents editing runner targets this third repository."
+  ]
+}

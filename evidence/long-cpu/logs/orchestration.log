@@ -1,0 +1,67 @@
+{"stage": "service_ready", "port": 18846}
+{"stage": "running", "seconds": 0, "requests_reserved": null}
+{"stage": "running", "seconds": 30, "requests_reserved": 1}
+{"stage": "running", "seconds": 60, "requests_reserved": 1}
+{"stage": "running", "seconds": 90, "requests_reserved": 1}
+{"stage": "running", "seconds": 120, "requests_reserved": 1}
+{"stage": "running", "seconds": 150, "requests_reserved": 1}
+{"stage": "running", "seconds": 180, "requests_reserved": 1}
+{"stage": "running", "seconds": 210, "requests_reserved": 1}
+{"stage": "running", "seconds": 240, "requests_reserved": 1}
+{"stage": "running", "seconds": 270, "requests_reserved": 1}
+{"stage": "running", "seconds": 300, "requests_reserved": 1}
+{"stage": "running", "seconds": 330, "requests_reserved": 1}
+{"stage": "running", "seconds": 360, "requests_reserved": 1}
+{"stage": "running", "seconds": 390, "requests_reserved": 1}
+{"stage": "running", "seconds": 420, "requests_reserved": 1}
+{"stage": "running", "seconds": 450, "requests_reserved": 1}
+{"stage": "running", "seconds": 480, "requests_reserved": 2}
+{"stage": "running", "seconds": 510, "requests_reserved": 2}
+{"stage": "running", "seconds": 540, "requests_reserved": 2}
+{"stage": "running", "seconds": 570, "requests_reserved": 2}
+{"stage": "running", "seconds": 600, "requests_reserved": 2}
+{"stage": "running", "seconds": 630, "requests_reserved": 2}
+{"stage": "running", "seconds": 660, "requests_reserved": 2}
+{"stage": "running", "seconds": 690, "requests_reserved": 2}
+{"stage": "running", "seconds": 720, "requests_reserved": 2}
+{"stage": "running", "seconds": 750, "requests_reserved": 3}
+{"stage": "running", "seconds": 780, "requests_reserved": 3}
+{"stage": "running", "seconds": 810, "requests_reserved": 3}
+{"stage": "running", "seconds": 840, "requests_reserved": 3}
+{"stage": "running", "seconds": 870, "requests_reserved": 3}
+{"stage": "running", "seconds": 900, "requests_reserved": 3}
+{"stage": "running", "seconds": 930, "requests_reserved": 3}
+{"stage": "running", "seconds": 960, "requests_reserved": 3}
+{"stage": "running", "seconds": 990, "requests_reserved": 3}
+{"stage": "running", "seconds": 1020, "requests_reserved": 3}
+{"stage": "running", "seconds": 1050, "requests_reserved": 3}
+{"stage": "running", "seconds": 1080, "requests_reserved": 3}
+{"stage": "running", "seconds": 1110, "requests_reserved": 3}
+{"stage": "running", "seconds": 1140, "requests_reserved": 3}
+{"stage": "running", "seconds": 1170, "requests_reserved": 4}
+{"stage": "running", "seconds": 1200, "requests_reserved": 4}
+{"stage": "running", "seconds": 1230, "requests_reserved": 4}
+{"stage": "running", "seconds": 1260, "requests_reserved": 4}
+{"stage": "running", "seconds": 1290, "requests_reserved": 4}
+{"stage": "running", "seconds": 1320, "requests_reserved": 4}
+{"stage": "running", "seconds": 1350, "requests_reserved": 4}
+{"stage": "running", "seconds": 1380, "requests_reserved": 4}
+{"stage": "running", "seconds": 1410, "requests_reserved": 4}
+{"stage": "running", "seconds": 1440, "requests_reserved": 4}
+{"stage": "running", "seconds": 1470, "requests_reserved": 4}
+{"stage": "running", "seconds": 1500, "requests_reserved": 4}
+{"stage": "running", "seconds": 1530, "requests_reserved": 5}
+{"stage": "running", "seconds": 1560, "requests_reserved": 5}
+{"stage": "running", "seconds": 1590, "requests_reserved": 6}
+{"stage": "running", "seconds": 1620, "requests_reserved": 6}
+{"stage": "running", "seconds": 1650, "requests_reserved": 6}
+{"stage": "running", "seconds": 1680, "requests_reserved": 6}
+{"stage": "running", "seconds": 1710, "requests_reserved": 6}
+{"stage": "running", "seconds": 1740, "requests_reserved": 6}
+{"stage": "running", "seconds": 1770, "requests_reserved": 6}
+{"stage": "running", "seconds": 1800, "requests_reserved": 6}
+{"stage": "driver_exited", "returncode": 0}
+{"stage": "trial_started", "protocol_sha256": "bcb5d5670144c71099e26c832f176289215623f382eb84cd247d96efbe7e43f7"}
+{"stage": "trial_finished", "verified_trials": 0, "returncode": -9, "timed_out": true, "duration_seconds": 1800.069}
+
+{"stage": "cleanup", "port_open": false, "native_child_present": false}

@@ -1,0 +1,39 @@
+{
+  "scope": "Acceptance self-check; unchanged baseline versus operator reference patch; no model inference",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "task_sha256": "f1c8bcebf95a35f3de2a90058d58353409813134ba9175b742991c5a6002841c",
+  "reference_patch_sha256": "9378be9a8b8262c5573ca5ce23164f93dce6dd0eb9bb878604c9b574eb6cccb3",
+  "cases": [
+    {
+      "case": "baseline",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "baseline/verification-0.log",
+          "log_sha256": "0d804ca3f00400815ebc30bd713e3e3f8310ef7c03c374320db79ba6aabb9863"
+        },
+        {
+          "returncode": 1,
+          "log": "baseline/verification-1.log",
+          "log_sha256": "76ff0b3ff45f725467c3c707c3bc47ee67239d0422cd70fb0bb6a561899121b7"
+        }
+      ]
+    },
+    {
+      "case": "reference",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "reference/verification-0.log",
+          "log_sha256": "293822c1017f52cbf3d642eefc41812c7c9a8c5071c97d2d752a5cc3fa456f5f"
+        },
+        {
+          "returncode": 0,
+          "log": "reference/verification-1.log",
+          "log_sha256": "e1eb46a7afb8047cd5796d03e36e92c87e9264071ec94de4cfa032d96e7bdb63"
+        }
+      ]
+    }
+  ],
+  "discriminates_baseline_and_reference": true
+}

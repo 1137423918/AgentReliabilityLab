@@ -1,0 +1,34 @@
+[
+  {
+    "stage": "selfcheck",
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "<server-workspace>/code/adk-maintenance-20261121/benchmarks/validate_model_task.py",
+      "--repo",
+      "<server-workspace>/code/adk-session-20261121",
+      "--task",
+      "<server-workspace>/code/adk-maintenance-20261121/tasks/adk-artifact-delete-maintenance.json",
+      "--reference-patch",
+      "<server-workspace>/code/adk-maintenance-20261121/reference.patch",
+      "--output",
+      "<server-workspace>/outputs/adk-maintenance-20261121/selfcheck"
+    ],
+    "returncode": 0,
+    "wall_seconds": 159.91624124068767
+  },
+  {
+    "stage": "matrix",
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "<server-workspace>/code/adk-maintenance-20261121/benchmarks/recovery_matrix.py",
+      "--repo",
+      "<server-workspace>/code/adk-session-20261121",
+      "--task",
+      "<server-workspace>/code/adk-maintenance-20261121/tasks/adk-artifact-delete-maintenance.json",
+      "--output",
+      "<server-workspace>/outputs/adk-maintenance-20261121/matrix"
+    ],
+    "returncode": 0,
+    "wall_seconds": 470.3863330828026
+  }
+]
