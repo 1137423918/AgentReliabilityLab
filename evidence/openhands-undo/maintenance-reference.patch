@@ -1,0 +1,37 @@
+diff --git a/openhands-tools/openhands/tools/file_editor/editor.py b/openhands-tools/openhands/tools/file_editor/editor.py
+index 1ebce2e..9bd8f3b 100644
+--- a/openhands-tools/openhands/tools/file_editor/editor.py
++++ b/openhands-tools/openhands/tools/file_editor/editor.py
+@@ -712,11 +712,12 @@ class FileEditor:
+         Implement the undo_edit command.
+         """
+         current_text = self.read_file(path)
+-        old_text = self._history_manager.pop_last_history(path)
++        old_text = self._history_manager.peek_last_history(path)
+         if old_text is None:
+             raise ToolError(f"No edit history found for {path}.")
+ 
+         self.write_file(path, old_text)
++        self._history_manager.pop_last_history(path)
+ 
+         return FileEditorObservation.from_text(
+             text=(
+diff --git a/openhands-tools/openhands/tools/file_editor/utils/history.py b/openhands-tools/openhands/tools/file_editor/utils/history.py
+index 4b59970..312c875 100644
+--- a/openhands-tools/openhands/tools/file_editor/utils/history.py
++++ b/openhands-tools/openhands/tools/file_editor/utils/history.py
+@@ -62,6 +62,14 @@ class FileHistoryManager:
+ 
+         self.cache.set(metadata_key, metadata)
+ 
++    def peek_last_history(self, file_path: Path) -> str | None:
++        """Return the most recent history entry without removing it."""
++        metadata = self.cache.get(self._get_metadata_key(file_path), {"entries": []})
++        entries = metadata["entries"]
++        if not entries:
++            return None
++        return self.cache.get(self._get_history_key(file_path, entries[-1]))
++
+     def pop_last_history(self, file_path: Path) -> str | None:
+         """Pop and return the most recent history entry for a file."""
+         metadata_key = self._get_metadata_key(file_path)

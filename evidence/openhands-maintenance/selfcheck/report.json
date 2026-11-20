@@ -1,0 +1,39 @@
+{
+  "scope": "Acceptance self-check; unchanged baseline versus operator reference patch; no model inference",
+  "base_commit": "722e5d403cf75d4e032b79296cfaf178f8678a93",
+  "task_sha256": "45efb17430ee8bee074ca1fbd1f65cb3ad8a8ad73c4d5925bc8288311cd84d03",
+  "reference_patch_sha256": "026981ba94bccb42cb210dc5ff99a3ce050a9d566051f0e06ecd9cedd951177e",
+  "cases": [
+    {
+      "case": "baseline",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "baseline/verification-0.log",
+          "raw_log_sha256": "6bc3e3fe5f4a9da3d54b493aa50ada53e7894d2407900a92f47a73060618e191"
+        },
+        {
+          "returncode": 1,
+          "log": "baseline/verification-1.log",
+          "raw_log_sha256": "bbe44b74d8bc0476c963026e7023a3b64ab2aba5c12fe6a09cc7626706948b19"
+        }
+      ]
+    },
+    {
+      "case": "reference",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "reference/verification-0.log",
+          "raw_log_sha256": "3ac35b1bbbfd1f341a4f271c13bc51c4c307e5e69b28f8c79c7090d8b90b6fdf"
+        },
+        {
+          "returncode": 0,
+          "log": "reference/verification-1.log",
+          "raw_log_sha256": "8deebaaefebf187cfb978e293492d74a4286c42f8f9824f4e2b15fbf267a143c"
+        }
+      ]
+    }
+  ],
+  "discriminates_baseline_and_reference": true
+}

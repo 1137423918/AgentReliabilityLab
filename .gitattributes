@@ -1,5 +1,6 @@
 evidence/*.log -whitespace
 evidence/*.patch -whitespace
+evidence/**/*.patch -whitespace
 evidence/**/*.log -whitespace
 evidence/**/*.jsonl -whitespace
 evidence/**/patch.diff -whitespace
