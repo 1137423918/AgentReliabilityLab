@@ -1,0 +1,58 @@
+{
+  "scope": "One public maintenance task, two predeclared trials; operator-provided local model endpoint; not SWE-bench or a general success rate",
+  "task_sha256": "e3bfe9b98bfa1d82e8e5f8e32458c8c1d15b6fce6333285c1b8f4e12d33a5450",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "model": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 180,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    }
+  },
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": 1,
+      "timed_out": false,
+      "duration_seconds": 185.324,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "OpenAITimeoutError"
+      }
+    },
+    {
+      "case": "checkpoint-resume",
+      "checkpoint_interruption": {
+        "stage": "checkpoint",
+        "model_turns": 1,
+        "tool_results": 2,
+        "pending": [
+          "model"
+        ]
+      },
+      "returncode": 1,
+      "timed_out": false,
+      "duration_seconds": 376.219,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "OpenAITimeoutError"
+      }
+    }
+  ],
+  "same_patch": false,
+  "verified_trials": 0
+}

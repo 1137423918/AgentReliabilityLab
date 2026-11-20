@@ -1,0 +1,15 @@
+{
+  "case": "normal",
+  "read_only_checkpoint_audit": true,
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 0,
+  "tool_results": 0,
+  "timeline": [],
+  "virtual_changes": [],
+  "acceptance_run": false,
+  "exported_patch": false,
+  "full_conversation_published": false
+}

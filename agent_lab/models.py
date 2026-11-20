@@ -78,15 +78,21 @@ def build_model(spec: dict):
             raise ValueError(
                 "The local inference adapter requires a loopback endpoint."
             )
+        sampling = {
+            name: spec[name]
+            for name in ("top_p", "presence_penalty", "extra_body")
+            if name in spec
+        }
         model = ChatOpenAI(
             model=spec["model"],
             base_url=endpoint,
             api_key=os.environ.get("AGENT_LAB_MODEL_KEY", "local"),
             timeout=spec.get("timeout_seconds", 120),
             max_retries=0,
-            temperature=0,
+            temperature=spec.get("temperature", 0),
             max_tokens=spec.get("max_output_tokens", 1536),
             seed=spec.get("seed", 42),
+            **sampling,
         )
         profile_key = "openai:" + spec["model"]
     else:

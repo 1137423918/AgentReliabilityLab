@@ -1,0 +1,134 @@
+{
+  "case": "checkpoint-resume",
+  "read_only_checkpoint_audit": true,
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 2,
+  "tool_results": 4,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "8ae8662c6e60d261c403fb374c6dde8f683648a7611d8cbc9da3fdcaeb546197",
+      "usage": {
+        "input_tokens": 2446,
+        "output_tokens": 97,
+        "total_tokens": 2543,
+        "input_token_details": {
+          "cache_read": 2442
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "DNlgcU2IZGCwE1eQPc1IYD162DnV9Zjy",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        },
+        {
+          "id": "al7t58Aef4QjgSWVxw5SZbAONbZLfork",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "58deea7515b689eca1e0469a8dbec4db4f89f64217833296b698f02aab52448e",
+      "name": "read_file",
+      "tool_call_id": "DNlgcU2IZGCwE1eQPc1IYD162DnV9Zjy",
+      "status": "success",
+      "result_bytes": 3378,
+      "result_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff",
+      "result_preview": "@@ lines 1-100 of 1250 | next offset 100 @@\n\"\"\"Shared utility functions for memory backend implementations.\n\nThis module contains both user-facing string formatters and structured\nhelpers used by backends and the composite router. Structured helpers\nenable composition without fragile string parsing.\n\"\"\"\n\nimport functoo"
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "message_sha256": "34463c15e48d960fcd4be96887e97c90691b0f5538b3547df77f00b97662c788",
+      "name": "read_file",
+      "tool_call_id": "al7t58Aef4QjgSWVxw5SZbAONbZLfork",
+      "status": "success",
+      "result_bytes": 2984,
+      "result_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d",
+      "result_preview": "@@ lines 1-100 of 733 | next offset 100 @@\n\"\"\"Tests for backends/utils.py utility functions.\"\"\"\n\nfrom typing import Any\n\nimport pytest\nfrom langchain_core.messages.content import ContentBlock\nfrom pydantic import TypeAdapter\n\nfrom deepagents.backends.protocol import FileData, ReadResult\nfrom deepagents.backends.utils i"
+    },
+    {
+      "index": 4,
+      "role": "ai",
+      "message_sha256": "91b0d298aed805f34df161bc09a907712410ac34a9ba88135bc40ebd0db948f3",
+      "usage": {
+        "input_tokens": 4204,
+        "output_tokens": 149,
+        "total_tokens": 4353,
+        "input_token_details": {
+          "cache_read": 2542
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "D0mh4uEQFy4tb7tXgs6Wyx6VUAkUT9Dp",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "00cc4ff188e2f7b6652145df2e8587219358c301fe0bce5f14e843b263d68a82",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        },
+        {
+          "id": "o57Vgq3ztRDLuTuJAFlzDYDQFTEtVJv2",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "1993059381e7593c269752da141530617fbf8593ca72141d9e826d63b729b398",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "role": "tool",
+      "message_sha256": "56c6acc70f673546a68e1f32ce162e6612ff6bb16f299a63e2394d525d452916",
+      "name": "read_file",
+      "tool_call_id": "D0mh4uEQFy4tb7tXgs6Wyx6VUAkUT9Dp",
+      "status": "success",
+      "result_bytes": 8980,
+      "result_sha256": "5e13b927f831d0619f31efacd12905f5d726057a909624b4e72147725460fe9c",
+      "result_preview": "@@ lines 101-300 of 733 | next offset 300 @@\n            \"unc\",\n            \"empty\",\n            \"root\",\n            \"bare-backslashes\",\n            \"posix-absolute\",\n        ],\n    )\n    def test_normalizes(self, input_path: str, expected: str) -> None:\n        assert to_posix_path(input_path) == expected\n\n\nclass Test"
+    },
+    {
+      "index": 6,
+      "role": "tool",
+      "message_sha256": "51c3cfc75df04ba8c8df20664084b6f168dbaef243a69f9adebbdf27f837e231",
+      "name": "read_file",
+      "tool_call_id": "o57Vgq3ztRDLuTuJAFlzDYDQFTEtVJv2",
+      "status": "success",
+      "result_bytes": 10740,
+      "result_sha256": "9a2e0784daaddee4caaa3f350bd3bca82023bf25a4a394b0bfc6a7d4cf9642c4",
+      "result_preview": "@@ lines 101-400 of 1250 | next offset 400 @@\n        \"text/x-ejs\",\n        \"text/x-elixir\",\n        \"text/x-erb\",\n        \"text/x-erlang\",\n        \"text/x-go\",\n        \"text/x-golang\",\n        \"text/x-gradle\",\n        \"text/x-graphql\",\n        \"text/x-groovy\",\n        \"text/x-handlebars\",\n        \"text/x-haskell\",\n   "
+    }
+  ],
+  "virtual_changes": [],
+  "acceptance_run": false,
+  "exported_patch": false,
+  "full_conversation_published": false
+}

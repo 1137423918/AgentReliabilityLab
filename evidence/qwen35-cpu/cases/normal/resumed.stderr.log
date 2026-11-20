@@ -1,0 +1,212 @@
+Traceback (most recent call last):
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_transports/default.py", line 95, in map_httpcore_exceptions
+    yield
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_transports/default.py", line 242, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/connection_pool.py", line 243, in handle_request
+    raise exc from None
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/connection_pool.py", line 225, in handle_request
+    response = connection.handle_request(pool_request.request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/connection.py", line 98, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/http11.py", line 125, in handle_request
+    raise exc
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/http11.py", line 97, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/http11.py", line 167, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_sync/http11.py", line 200, in _receive_event
+    data = self._network_stream.read(self.READ_NUM_BYTES, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_backends/sync.py", line 126, in read
+    with map_exceptions(exc_map):
+  File "<server-home>/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpcore2/_exceptions.py", line 16, in map_exceptions
+    raise to_exc(exc) from exc
+httpcore2.ReadTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1183, in request
+    response = self._send_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_client.py", line 211, in _send_request
+    return sync_send_request(self, request, stream=stream, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/lib/_client_auth.py", line 328, in sync_send_request
+    response = self._send_with_auth_retry(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_client.py", line 197, in _send_with_auth_retry
+    return sync_send_with_auth_retry(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/lib/_client_auth.py", line 313, in sync_send_with_auth_retry
+    response = super(_owner, self)._send_request(request, stream=stream, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1104, in _send_request
+    return self._client.send(request, stream=stream, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_client.py", line 974, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_client.py", line 1002, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_client.py", line 1037, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_client.py", line 1070, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_transports/default.py", line 241, in handle_request
+    with map_httpcore_exceptions():
+  File "<server-home>/anaconda3/lib/python3.11/contextlib.py", line 155, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_transports/default.py", line 112, in map_httpcore_exceptions
+    raise mapped_exc(message) from exc
+httpx2.ReadTimeout: timed out
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 2050, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1611, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1474, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1201, in request
+    raise APITimeoutError(request=request) from err
+openai.APITimeoutError: Request timed out.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<server-workspace>/code/qwen35-worker-20261121/agent_lab/worker.py", line 552, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<server-workspace>/code/qwen35-worker-20261121/agent_lab/worker.py", line 538, in main
+    result = run(
+             ^^^^
+  File "<server-workspace>/code/qwen35-worker-20261121/agent_lab/worker.py", line 489, in run
+    result = execute(repo, directory, task, names, manifest, hold, lock_fd)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/qwen35-worker-20261121/agent_lab/worker.py", line 502, in execute
+    state = agent_phase(repo, directory, task, names, hold)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/qwen35-worker-20261121/agent_lab/worker.py", line 204, in agent_phase
+    agent.invoke(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/main.py", line 4025, in invoke
+    for chunk in self.stream(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3084, in stream
+    for _ in runner.tick(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 210, in tick
+    run_with_retry(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 637, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 794, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 479, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 1546, in model_node
+    result = wrap_model_call_handler(request, _execute_model_sync)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/filesystem.py", line 3549, in wrap_model_call
+    response = handler(request)
+               ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_parent_notifier.py", line 59, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/summarization.py", line 1689, in wrap_model_call
+    return handler(request.override(messages=truncated_messages))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_prompt_caching.py", line 76, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/unsupported_content.py", line 199, in wrap_model_call
+    return handler(self._filter_request(request))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/middleware/model_refusal.py", line 60, in wrap_model_call
+    response = handler(request)
+               ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_tool_exclusion.py", line 62, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 1509, in _execute_model_sync
+    output = model_.invoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6001, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 529, in invoke
+    self.generate_prompt(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1920, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1727, in generate
+    self._generate_with_cache(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2065, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 2055, in _generate
+    _handle_openai_api_error(e)
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 772, in _handle_openai_api_error
+    raise OpenAITimeoutError(e.request) from e
+langchain_openai.chat_models.base.OpenAITimeoutError: Request timed out.
+During task with name 'model' and id 'c18806f4-f219-d3bd-3401-e25f935c1b5c'

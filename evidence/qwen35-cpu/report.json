@@ -1,0 +1,173 @@
+{
+  "scope": "Two predeclared trials of one public maintenance problem with a newer pinned text model; not a benchmark success rate or causal comparison to historical 4B runs",
+  "model": {
+    "name": "Qwen3.5-9B",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "file": "Qwen3.5-9B-Q4_K_M.gguf",
+    "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "bytes": 5627044256,
+    "publisher_claimed_base_model": "Qwen/Qwen3.5-9B",
+    "reference_source_card_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "exact_quantizer_source_weight_revision": "not specified by quantizer; reference card identity is not proof of weight lineage",
+    "quantizer_claimed_runtime": "llama.cpp b8185",
+    "license": "Apache-2.0",
+    "mode": "text only; no vision projector"
+  },
+  "backend": {
+    "release": "b12576",
+    "commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "unchanged_official_binary": true,
+    "gpu_layers": 0,
+    "device": "none",
+    "threads": 4,
+    "http_threads": 1,
+    "slots": 1,
+    "context_tokens": 32768,
+    "thinking_enabled": false,
+    "nice": 19,
+    "address_space_bytes": 51539607552,
+    "rss_guard_bytes": 38654705664,
+    "service_wall_seconds": 2400,
+    "listen": "127.0.0.1:18845"
+  },
+  "task_sha256": "e3bfe9b98bfa1d82e8e5f8e32458c8c1d15b6fce6333285c1b8f4e12d33a5450",
+  "predeclared_protocol_sha256": "2d9460cb5cb6df17ebe03bb50ef5a61a799363605faaf5b353df4f105ef38890",
+  "sources_sha256": {
+    "agent_lab/worker.py": "d293492e3843ee91cb6f3927dcbf3a8f0ad79b89b008e0eb6b58bce37cfebcb1",
+    "agent_lab/repair.py": "796cf756380c4d136ceefa43879c380fd3876916c244c4b907f65ce479e5a957",
+    "agent_lab/models.py": "af3601c8dd1ebe0f6e9b654571d9b08454cbfb0fe970913fd4517e8a68a6c382",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "benchmarks/inspect_qwen35_model.py": "896a165f5deb676ad98ae2aff7b213bf7cf61e557b0ea71b54e6e33209e60b09",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209"
+  },
+  "budget": {
+    "max_graph_steps": 40,
+    "max_new_tokens_per_request": 1536,
+    "request_seconds": 180,
+    "retries": 0,
+    "case_wall_seconds": 600,
+    "extra_repair_rounds": 0
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 180,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    }
+  },
+  "verified_trials": 0,
+  "planned_trials": 2,
+  "cases": [
+    {
+      "case": "normal",
+      "duration_seconds": 185.324,
+      "returncode": 1,
+      "case_deadline_exceeded": false,
+      "failure": "OpenAITimeoutError: individual 180s non-streaming request exceeded its limit",
+      "checkpoint_interruption": null,
+      "persisted_model_turns": 0,
+      "persisted_tool_results": 0,
+      "tool_names": [],
+      "virtual_changes": 0,
+      "exported_patch": false,
+      "official_acceptance_run": false
+    },
+    {
+      "case": "checkpoint-resume",
+      "duration_seconds": 376.219,
+      "returncode": 1,
+      "case_deadline_exceeded": false,
+      "failure": "OpenAITimeoutError: individual 180s non-streaming request exceeded its limit",
+      "checkpoint_interruption": {
+        "stage": "checkpoint",
+        "model_turns": 1,
+        "tool_results": 2,
+        "pending": [
+          "model"
+        ]
+      },
+      "persisted_model_turns": 2,
+      "persisted_tool_results": 4,
+      "tool_names": [
+        "read_file"
+      ],
+      "virtual_changes": 0,
+      "exported_patch": false,
+      "official_acceptance_run": false
+    }
+  ],
+  "native_requests": {
+    "launched": 4,
+    "completed_persisted_replies": 2,
+    "canceled": 2,
+    "full_token_accounting_available": false,
+    "normal_prompt_tokens": 2442,
+    "normal_prompt_processing_seconds": 172.58,
+    "normal_context_tokens_at_cancel": 2472,
+    "completed_recovery_requests": [
+      {
+        "native_task_id": 32,
+        "new_prompt_tokens": 4,
+        "prompt_eval_seconds": 0.59621,
+        "generated_tokens": 97,
+        "generation_seconds": 23.68885
+      },
+      {
+        "native_task_id": 130,
+        "new_prompt_tokens": 1662,
+        "prompt_eval_seconds": 123.27759,
+        "generated_tokens": 149,
+        "generation_seconds": 38.30504
+      }
+    ],
+    "last_request_prompt_tokens_observed": 2048,
+    "last_request_prompt_processing_seconds_observed": 154.67,
+    "last_request_partial_prompt_progress_observed": 0.67,
+    "shared_sequential_prompt_cache": true
+  },
+  "recovery": {
+    "interrupted_model_turns": 1,
+    "interrupted_tool_results": 2,
+    "final_model_turns": 2,
+    "final_tool_results": 4,
+    "read_only_state_continuation_observed": true,
+    "edited_file_recovery_exercised": false,
+    "maintenance_completed": false
+  },
+  "pre_generation_project_tests": {
+    "total": 57,
+    "passed": 43,
+    "skipped": 14,
+    "seconds": 145.467,
+    "skip_reason": "worker environment does not include jsonschema; parser checks were previously exercised separately, not counted as passing this run"
+  },
+  "service_stopped": true,
+  "shutdown": {
+    "returncode": -9,
+    "guard_reason": null,
+    "forced_cleanup": true,
+    "peak_sampled_rss_bytes": 10218131456
+  },
+  "operator_shutdown": "SIGTERM to identity-checked owned launcher; native child did not exit within 10 seconds and was reaped with SIGKILL; launcher exit 143, child -9; port and both processes absent",
+  "limitations": [
+    "single public known problem; not held out",
+    "new model and sampling plus protected grading differ from historical 4B trials; no causal attribution or general rate",
+    "1536 generation cap differs from publisher long-reasoning recommendations",
+    "no model-call fixture counted as maintenance success",
+    "failures retained, no retrospective extra attempts or relaxed acceptance",
+    "Both cases failed before any candidate or acceptance; protected grading was configured, not exercised against a neural patch.",
+    "CPU prompt processing consumes much of the request budget; the evidence does not isolate model capability from resource and client-timeout constraints.",
+    "Recovery starts on a warm sequential service; durations are not a cold-start comparison.",
+    "No full dialogs, checkpoint databases or weights are published."
+  ]
+}

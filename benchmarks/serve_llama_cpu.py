@@ -34,6 +34,7 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--port", type=int, default=18844)
+    parser.add_argument("--alias", default="agentlab-qwen3-4b")
     parser.add_argument("--wall-seconds", type=int, default=2400)
     args = parser.parse_args()
     if not 1 <= args.threads <= 4 or not 1 <= args.wall_seconds <= 2400:
@@ -88,7 +89,7 @@ def main():
         "--model",
         str(args.model.resolve()),
         "--alias",
-        "agentlab-qwen3-4b",
+        args.alias,
         "--host",
         "127.0.0.1",
         "--port",

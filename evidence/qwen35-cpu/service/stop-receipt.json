@@ -1,0 +1,8 @@
+{
+  "action": "operator SIGTERM to owned launcher after pilot and audit",
+  "child_pid": 2285481,
+  "child_start_ticks": "453398323",
+  "launcher_pid": 2278868,
+  "launcher_start_ticks": "453395474",
+  "identity_checked": true
+}

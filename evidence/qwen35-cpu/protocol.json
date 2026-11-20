@@ -1,0 +1,102 @@
+{
+  "stage": "13",
+  "scope": "Two predeclared trials of one public maintenance problem with a newer pinned text model; not a benchmark success rate or causal comparison to historical 4B runs",
+  "model": {
+    "name": "Qwen3.5-9B",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "file": "Qwen3.5-9B-Q4_K_M.gguf",
+    "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "bytes": 5627044256,
+    "publisher_claimed_base_model": "Qwen/Qwen3.5-9B",
+    "reference_source_card_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "exact_quantizer_source_weight_revision": "not specified by quantizer; reference card identity is not proof of weight lineage",
+    "quantizer_claimed_runtime": "llama.cpp b8185",
+    "license": "Apache-2.0",
+    "mode": "text only; no vision projector"
+  },
+  "backend": {
+    "release": "b12576",
+    "commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "unchanged_official_binary": true,
+    "gpu_layers": 0,
+    "device": "none",
+    "threads": 4,
+    "http_threads": 1,
+    "slots": 1,
+    "context_tokens": 32768,
+    "thinking_enabled": false,
+    "nice": 19,
+    "address_space_bytes": 51539607552,
+    "rss_guard_bytes": 38654705664,
+    "service_wall_seconds": 2400,
+    "listen": "127.0.0.1:18845"
+  },
+  "task_sha256": "e3bfe9b98bfa1d82e8e5f8e32458c8c1d15b6fce6333285c1b8f4e12d33a5450",
+  "task": "tasks/deepagents-path-model-qwen35.json",
+  "acceptance_unchanged_from_protected_task": true,
+  "budget": {
+    "max_graph_steps": 40,
+    "max_new_tokens_per_request": 1536,
+    "request_seconds": 180,
+    "retries": 0,
+    "case_wall_seconds": 600,
+    "extra_repair_rounds": 0
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 180,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    }
+  },
+  "trials": [
+    "normal",
+    "checkpoint-resume"
+  ],
+  "checkpoint_fault": "SIGKILL owned worker at first emitted checkpoint then resume same run directory within the same 600s case budget; only actually persisted tool results count",
+  "before_generation_requirements": [
+    "full source regression including HTTP sampling and launcher cleanup",
+    "model bytes match official host metadata SHA and size",
+    "runtime files match previous pinned manifest",
+    "GGUF architecture/template inspection and explicit manifest",
+    "fresh CPU/memory headroom check",
+    "no already occupied task loopback listener"
+  ],
+  "limitations": [
+    "single public known problem; not held out",
+    "new model and sampling plus protected grading differ from historical 4B trials; no causal attribution or general rate",
+    "1536 generation cap differs from publisher long-reasoning recommendations",
+    "no model-call fixture counted as maintenance success",
+    "failures retained, no retrospective extra attempts or relaxed acceptance"
+  ],
+  "sources": [
+    "https://huggingface.co/Qwen/Qwen3.5-9B/tree/c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "https://huggingface.co/lmstudio-community/Qwen3.5-9B-GGUF/tree/1379f25c6b505a3fc737bd7818cb09389cf807c1"
+  ],
+  "declared_utc": "2026-11-20T17:32:27.350851+00:00",
+  "source_sha256": {
+    "agent_lab/worker.py": "d293492e3843ee91cb6f3927dcbf3a8f0ad79b89b008e0eb6b58bce37cfebcb1",
+    "agent_lab/repair.py": "796cf756380c4d136ceefa43879c380fd3876916c244c4b907f65ce479e5a957",
+    "agent_lab/models.py": "af3601c8dd1ebe0f6e9b654571d9b08454cbfb0fe970913fd4517e8a68a6c382",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "benchmarks/inspect_qwen35_model.py": "896a165f5deb676ad98ae2aff7b213bf7cf61e557b0ea71b54e6e33209e60b09",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209"
+  },
+  "pre_generation_full_regression": {
+    "total": 57,
+    "passed": 43,
+    "skipped": 14,
+    "seconds": 145.467,
+    "skip_reason": "worker environment does not include jsonschema; parser checks were previously exercised separately, not counted as passing this run"
+  }
+}

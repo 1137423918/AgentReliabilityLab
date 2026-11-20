@@ -207,6 +207,10 @@ class LocalModelTests(unittest.TestCase):
         self.assertEqual(self.requests[0]["path"], "/v1/chat/completions")
         self.assertEqual(body.get("max_completion_tokens", body.get("max_tokens")), 64)
         self.assertEqual(body["seed"], 42)
+        self.assertEqual(body["temperature"], 0)
+        self.assertNotIn("top_p", body)
+        self.assertNotIn("presence_penalty", body)
+        self.assertNotIn("top_k", body)
         self.assertTrue(
             any(
                 message["role"] == "tool"
@@ -218,6 +222,28 @@ class LocalModelTests(unittest.TestCase):
         self.assertFalse(names & {"task", "execute", "write_todos"})
         self.assertEqual(self.call().returncode, 0)
         self.assertEqual(len(self.requests), 2)
+
+    def test_declared_sampling_reaches_http_without_changing_tool_roundtrip(self):
+        self.task["model"].update(
+            temperature=0.7,
+            top_p=0.8,
+            presence_penalty=1.5,
+            extra_body={"top_k": 20, "min_p": 0.0, "repeat_penalty": 1.0},
+        )
+        self.assertEqual(self.call().returncode, 0)
+        self.assertEqual(len(self.requests), 2)
+        for request in self.requests:
+            body = request["body"]
+            self.assertEqual(body["temperature"], 0.7)
+            self.assertEqual(body["top_p"], 0.8)
+            self.assertEqual(body["presence_penalty"], 1.5)
+            self.assertEqual(body["top_k"], 20)
+            self.assertEqual(body["min_p"], 0.0)
+            self.assertEqual(body["repeat_penalty"], 1.0)
+            self.assertEqual(body["seed"], 42)
+            self.assertEqual(
+                body.get("max_completion_tokens", body.get("max_tokens")), 64
+            )
 
     def test_unavailable_endpoint_does_not_retry_or_create_success(self):
         self.response_status = 503

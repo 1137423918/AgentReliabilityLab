@@ -105,6 +105,7 @@ class LlamaServiceTests(unittest.TestCase):
             return LAUNCHER.main()
 
     def test_wall_guard_terminates_owned_service_process(self):
+        self.argv.extend(["--alias", "qwen35-process-fixture"])
         self.assertLess(self.run_launcher(), 0)
         self.assertEqual(len(self.processes), 1)
         self.assertIsNotNone(self.processes[0].poll())
@@ -112,6 +113,8 @@ class LlamaServiceTests(unittest.TestCase):
         result = json.loads((self.output / "shutdown.json").read_text())
         self.assertEqual(result["guard_reason"], "service_wall_limit")
         self.assertFalse(result["forced_cleanup"])
+        service = json.loads((self.output / "service.json").read_text())
+        self.assertIn("qwen35-process-fixture", service["argv"])
 
     def test_altered_model_rejected_before_child_starts(self):
         self.model.write_bytes(b"changed fixture")

@@ -1,0 +1,11 @@
+{
+  "shutdown": {
+    "returncode": -9,
+    "guard_reason": null,
+    "forced_cleanup": true,
+    "peak_sampled_rss_bytes": 10218131456
+  },
+  "child_present": false,
+  "launcher_present": false,
+  "port_open": false
+}

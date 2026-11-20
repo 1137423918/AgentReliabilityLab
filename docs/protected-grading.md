@@ -4,7 +4,7 @@
 
 ## 任务配置
 
-`tasks/deepagents-path-model-protected.json` 从 grounded 模型任务继承固定基线、文件范围、模型和预算。它添加两份 Python 文件的语法检查与一条原版测试命令，原有三条验收命令保持不变。新模型任务尚未运行，不代表模型修复质量已有提高。
+`tasks/deepagents-path-model-protected.json` 从 grounded 模型任务继承固定基线、文件范围、模型和预算。它添加两份 Python 文件的语法检查与一条原版测试命令，原有三条验收命令保持不变。该阶段新模型任务尚未运行；后续沿用相同验收的 [Qwen3.5-9B 实际 CPU 试验](qwen35-maintenance.md)已完成，两场均在请求超时前没有编辑，未进入验收，不代表模型修复质量已有提高。
 
 ```json
 {
