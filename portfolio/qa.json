@@ -1,0 +1,33 @@
+{
+  "pdf_sha256": "7f0fded58b689bbb1ed48c710cfcf2da58584f93c4c6bfc900187775b712f04a",
+  "pdf_pages": 2,
+  "page_size": "A4",
+  "pages": [
+    {
+      "language": "zh",
+      "preserved_phrases": 12,
+      "text_sha256": "502950abc19432b82e403e8031b3072dece400a458296efa155165c13a78e68b",
+      "link_count": 9,
+      "render_png_sha256": "49f543ba9f1cb1ab924a65f88656d90ffc3a166428ac92b687818b30d2585aa9",
+      "visual_review": "Inspected the latest rendered page; legible, no clipping or overlap"
+    },
+    {
+      "language": "en",
+      "preserved_phrases": 12,
+      "text_sha256": "a379f83484d756d234a483f42bf0881c4b34b51c843bb2fd88a467da44e1c6c4",
+      "link_count": 9,
+      "render_png_sha256": "5890653167b32dd9b4158eb5dbd97e7b9d5029adf3916b820b8d328b7a9c27e5",
+      "visual_review": "Inspected the latest rendered page; legible, no clipping or overlap"
+    }
+  ],
+  "full_selected_prose_preserved": true,
+  "uri_targets_match_expected": true,
+  "privacy_scan": "PDF extracted text, metadata and URI targets checked",
+  "browser_qa": {
+    "verified": false,
+    "reason": "Browser state tool timed out; no website visual or interaction verification claimed"
+  },
+  "javascript_syntax_check": "node --check passed",
+  "new_server_experiments": false,
+  "new_test_results": false
+}

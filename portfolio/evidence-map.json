@@ -1,0 +1,101 @@
+{
+  "checked_at": "2026-11-21T05:34:36+08:00",
+  "project_source_commit": "ca3ff3bc42ab2e8f1e6ce65240ce4c35d0037515",
+  "files": [
+    {
+      "id": "worker_tests",
+      "label": "运行器回归 / Worker checks",
+      "path": "evidence/model-request-budget/logs/full.log",
+      "sha256": "8bef9481e3d6faefa2983c73aed0b56b83f753c8b3318cf6327c87d45f1463d5",
+      "url": "https://1137423918.github.io/reports/model-request-budget/logs/full.log"
+    },
+    {
+      "id": "budget",
+      "label": "请求预算 / Request budgets",
+      "path": "evidence/model-request-budget/report.json",
+      "sha256": "a6dc125e53e2987f1ac38fc7cdba499fc3f22825c3dd3311b722bc8be9516b7c",
+      "url": "https://1137423918.github.io/reports/model-request-budget/report.json"
+    },
+    {
+      "id": "recovery",
+      "label": "恢复控制 / Recovery controls",
+      "path": "evidence/recovery/report.json",
+      "sha256": "435e676cb9c36446d068e2b416f30cd59a910e87e4a88415fc6153a01ff55744",
+      "url": "https://1137423918.github.io/reports/recovery/report.json"
+    },
+    {
+      "id": "openhands_maintenance",
+      "label": "第二维护对象 / Second repository",
+      "path": "evidence/openhands-maintenance/report.json",
+      "sha256": "f0ce970217da222a9f2002f32d5b5ec8910e6dda24255abf6f61b257fa4ccad8",
+      "url": "https://1137423918.github.io/reports/openhands-maintenance/report.json"
+    },
+    {
+      "id": "grading",
+      "label": "验收保护 / Protected acceptance",
+      "path": "evidence/protected-grading/report.json",
+      "sha256": "db6024629548e7ce09160a981f06b7ed37839fb9f051cf3b1c5680d9b18118e3",
+      "url": "https://1137423918.github.io/reports/protected-grading/report.json"
+    },
+    {
+      "id": "openhands",
+      "label": "OpenHands SDK",
+      "path": "evidence/openhands-undo/report.json",
+      "sha256": "74b2617acd4c1fbb864e1f83d022e0ad9d3493c1ebf7bc7f51c8406dc1153cea",
+      "url": "https://1137423918.github.io/reports/openhands-undo/report.json"
+    },
+    {
+      "id": "adk",
+      "label": "Google ADK",
+      "path": "evidence/adk-artifact-cleanup/report.json",
+      "sha256": "b13f8bb40d645015626f27f90c1e93a31fe4309cbe00cab1fa419e7cfc84c31d",
+      "url": "https://1137423918.github.io/reports/adk-artifact-cleanup/report.json"
+    },
+    {
+      "id": "semantic_kernel",
+      "label": "Semantic Kernel",
+      "path": "evidence/semantic-kernel-cancellation/report.json",
+      "sha256": "803efe1edac3d76cea199af136663ba4c14c0a20b34fdb0f9b5f4cf463324396",
+      "url": "https://1137423918.github.io/reports/semantic-kernel-cancellation/report.json"
+    },
+    {
+      "id": "verification_supervision",
+      "path": "evidence/verification-supervision/active-report.json",
+      "sha256": "641c5c1a3caeb40a510c0cec1b72fbbb674a22c59cafbf56140b486f59008a3d",
+      "url": "https://1137423918.github.io/reports/verification-supervision/active-report.json",
+      "label": "Verifier process supervision"
+    }
+  ],
+  "pull_requests": [
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7032,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4"
+    },
+    {
+      "repository": "google/adk-python",
+      "number": 8278,
+      "url": "https://github.com/google/adk-python/pull/8278",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "c71ca6a2d993ede60f9fd873b768a6d452db116f"
+    },
+    {
+      "repository": "microsoft/semantic-kernel",
+      "number": 14845,
+      "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d"
+    }
+  ],
+  "paper_doi": "10.1109/LGRS.2025.3575615",
+  "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
+  "scope": "A dated project/contribution brief from existing evidence; no new tests, model runs, employment or education claims."
+}
