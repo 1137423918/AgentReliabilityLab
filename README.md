@@ -25,6 +25,16 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 模型试验预设：[任务与独立验收](tasks/deepagents-path-model-baseline.json)、[正常/恢复两次试验入口](benchmarks/model_pilot.py)、[接入与验收自检报告](evidence/model-readiness/report.json)。基线保留 6 个独立契约失败，参考修复通过全部 28 个；模型文件已按固定版本逐文件校验。启动检查发现 GPU 正在使用，因此实际模型推理仍未运行。HTTP 测试服务是明确的假服务，不能计为模型自主修复结果。
 
+## OpenHands 撤销失败后的历史保留
+
+在第二个框架 OpenHands SDK 中，通过真实只读目录复现：文件依次编辑为 0、1、2 后，撤销写入失败会提前消耗历史，恢复权限后重试错误地跳到 0。改为先读取历史、成功写回后再弹出，重试恢复 1，再次撤销恢复 0。
+
+- [上游草稿 PR #7032](https://github.com/OpenHands/software-agent-sdk/pull/7032)：已提交，未合并；等待人类说明与维护者评审。
+- 公共工具回归在原版失败、修复版通过；服务器上 185 条文件编辑器、规划编辑器与路径规则测试通过，相关 pre-commit 检查通过。
+- [复现脚本、前后日志与哈希](evidence/openhands-undo/README.md) · [最小源码补丁](evidence/openhands-undo/fix.patch)。固定上游 `722e5d4`，Python 3.13.18，无模型或 GPU 调用。
+
+这是受控的真实文件系统故障验证，不是生产事故或模型能力评测；不承诺历史缓存与文件写入跨崩溃的原子事务。
+
 ## 工具契约验证边界
 
 `prepare.py` 从指定 Deep Agents checkout 提取 `to_posix_path` 与 `validate_path` 的**原始函数源码**，生成无第三方依赖的最小复现模块；`audit.py` 在服务器运行固定契约用例，保存逐例输入、期望、观察和判定。
@@ -43,7 +53,7 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 - [候选上游补丁](evidence/deepagents-normalize-separators.patch)
 - [网站与复现记录](https://1137423918.github.io/#lab)
 
-公开日志只替换了服务器绝对路径，测试结论保持原样。候选修复尚未提交上游 PR；模型自主完成维护任务的效果评测尚未运行。
+公开日志替换了服务器私人路径，测试结论保持原样。Deep Agents 候选修复尚未提交上游 PR；OpenHands 草稿 PR 状态见上节。模型自主完成维护任务的效果评测尚未运行。
 
 包级复现：从 `langchain-ai/deepagents` 的 `744a797e3b9495539ca35571eeffd112a205f5c8` 创建独立 checkout，应用 `evidence/deepagents-normalize-separators.patch`，在 `libs/deepagents` 中执行 `uv sync --all-groups --frozen`，再运行：
 
