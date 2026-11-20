@@ -14,16 +14,34 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "面向维护长任务中断、重复请求与验收失真，开发可恢复的软件维护运行器，交付补丁及可复查的验证记录。",
       "bullets": [
-        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；在 Deep Agents、OpenHands SDK 两个真实维护对象验证正常运行与阶段 SIGKILL 恢复，补丁分别保持一致。",
+        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；在 Deep Agents、OpenHands SDK、Google ADK 三个真实仓库验证正常运行与三处 SIGKILL 恢复，各自补丁一致。",
         "实现固定原版测试验收、Python 语法导出检查与验证进程监督；对补丁、日志、反馈和缓存做哈希校验，拒绝被改写的验收记录。",
-        "在 HTTP 发送前持久化预留请求次数及 JSON 字节额度，跨重启、跨修复轮次共享；服务器完整 74 项回归通过，覆盖 503、超时、在途 SIGKILL 与并发额度争抢。"
+        "发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启、跨修复轮次共享；74 项完整回归通过，覆盖 503、超时、在途 SIGKILL 与并发争抢。"
       ],
-      "project_scope": "恢复控制采用操作者固定工具计划；额度单位是请求次数和 JSON 字节，不是 token 或费用。神经模型维护尝试尚无通过验收的补丁。",
+      "project_scope": "三仓库恢复采用固定工具计划，不计模型自主修复。30 分钟真实 CPU 试验保存 5 次回复、6 条工具结果，仍无编辑、补丁或验收。预算单位为 HTTP 请求和 JSON 字节，非 token 或费用。",
       "contributions_label": "已提交的开源草稿",
       "contributions": [
-        {"name": "OpenHands SDK", "number": 7032, "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032", "text": "修复撤销写入失败后历史被提前消耗的问题；真实权限故障前后对照，185 项相关检查通过。", "source": "openhands"},
-        {"name": "Google ADK", "number": 8278, "url": "https://github.com/google/adk-python/pull/8278", "text": "修复产物并发删除中的文件消失竞态；Python 3.11 / 3.13 各 2021 项相关测试通过、26 项预期失败，保留嵌套产物。", "source": "adk"},
-        {"name": "Semantic Kernel", "number": 14845, "url": "https://github.com/microsoft/semantic-kernel/pull/14845", "text": "修复实验性 Python 运行时取消回调重入死锁；103 项关联检查通过，真实请求取消后正常关闭。广泛套件仍有 12 项原版已有失败。", "source": "semantic_kernel"}
+        {
+          "name": "OpenHands SDK",
+          "number": 7032,
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
+          "text": "修复撤销写入失败后历史被提前消耗的问题；真实权限故障前后对照，185 项相关检查通过。",
+          "source": "openhands"
+        },
+        {
+          "name": "Google ADK",
+          "number": 8278,
+          "url": "https://github.com/google/adk-python/pull/8278",
+          "text": "修复产物并发删除中的文件消失竞态；Python 3.11 / 3.13 各 2021 项相关测试通过、26 项预期失败，保留嵌套产物。",
+          "source": "adk"
+        },
+        {
+          "name": "Semantic Kernel",
+          "number": 14845,
+          "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+          "text": "修复实验性 Python 运行时取消回调重入死锁；103 项关联检查通过，真实请求取消后正常关闭。广泛套件仍有 12 项原版已有失败。",
+          "source": "semantic_kernel"
+        }
       ],
       "paper_label": "研究论文",
       "paper_text": "第一作者 · IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025。研究前视声纳图像的轻量化目标检测。",
@@ -40,16 +58,34 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "A software-maintenance runner for interrupted tasks, repeated requests and unreliable acceptance, delivering reviewable patches with verification records.",
       "bullets": [
-        "Connect SQLite checkpoints with isolated Git worktrees to retain tool progress and failed candidates. Normal and staged SIGKILL recovery controls produce matching reference patches in Deep Agents and OpenHands SDK maintenance tasks.",
+        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. Normal execution and three staged SIGKILL controls produce matching reference patches within each of three repositories: Deep Agents, OpenHands SDK and Google ADK.",
         "Add frozen original-test acceptance, Python syntax checks before export and verifier process supervision. Hash-check patches, logs, feedback and cached results to reject modified acceptance records.",
         "Reserve HTTP attempts and serialized JSON bytes durably before send, shared across restarts and repair rounds. All 74 project checks pass, covering 503s, timeouts, in-flight SIGKILL and competing processes."
       ],
-      "project_scope": "Recovery controls use explicit operator tool plans. Limits count requests and JSON bytes, not tokens or money. No neural maintenance trial has produced an accepted patch.",
+      "project_scope": "Recovery uses explicit operator plans, not autonomous repairs. A real 30-minute CPU trial retains five replies and six tool results but no edit, patch or acceptance. Limits count HTTP attempts and JSON bytes, not tokens or money.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
       "contributions": [
-        {"name": "OpenHands SDK", "number": 7032, "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032", "text": "Preserve undo history after a failed restoration write. Real permission-fault reproduction and 185 related checks pass.", "source": "openhands"},
-        {"name": "Google ADK", "number": 8278, "url": "https://github.com/google/adk-python/pull/8278", "text": "Handle disappearing files during concurrent artifact deletion while preserving nested artifacts. Python 3.11 / 3.13 each pass the same 2,021 related tests with 26 expected failures.", "source": "adk"},
-        {"name": "Semantic Kernel", "number": 14845, "url": "https://github.com/microsoft/semantic-kernel/pull/14845", "text": "Release the experimental Python runtime token lock before callbacks. 103 related checks pass and real runtime cancellation completes; 12 existing broader-suite failures remain.", "source": "semantic_kernel"}
+        {
+          "name": "OpenHands SDK",
+          "number": 7032,
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
+          "text": "Preserve undo history after a failed restoration write. Real permission-fault reproduction and 185 related checks pass.",
+          "source": "openhands"
+        },
+        {
+          "name": "Google ADK",
+          "number": 8278,
+          "url": "https://github.com/google/adk-python/pull/8278",
+          "text": "Handle disappearing files during concurrent artifact deletion while preserving nested artifacts. Python 3.11 / 3.13 each pass the same 2,021 related tests with 26 expected failures.",
+          "source": "adk"
+        },
+        {
+          "name": "Semantic Kernel",
+          "number": 14845,
+          "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+          "text": "Release the experimental Python runtime token lock before callbacks. 103 related checks pass and real runtime cancellation completes; 12 existing broader-suite failures remain.",
+          "source": "semantic_kernel"
+        }
       ],
       "paper_label": "RESEARCH PUBLICATION",
       "paper_text": "First author. IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025. Lightweight object detection in forward-looking sonar imagery.",

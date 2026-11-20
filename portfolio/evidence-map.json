@@ -1,6 +1,6 @@
 {
-  "checked_at": "2026-11-21T05:34:36+08:00",
-  "project_source_commit": "ca3ff3bc42ab2e8f1e6ce65240ce4c35d0037515",
+  "checked_at": "2026-11-21T07:15:52+08:00",
+  "project_source_commit": "b9ff6a9fa9bd1c45d7ee499a2a97990d2d68a0ce",
   "files": [
     {
       "id": "worker_tests",
@@ -64,6 +64,20 @@
       "sha256": "641c5c1a3caeb40a510c0cec1b72fbbb674a22c59cafbf56140b486f59008a3d",
       "url": "https://1137423918.github.io/reports/verification-supervision/active-report.json",
       "label": "Verifier process supervision"
+    },
+    {
+      "id": "adk_maintenance",
+      "label": "Third repository / Google ADK recovery",
+      "path": "evidence/adk-maintenance/report.json",
+      "sha256": "7ad0b3212038ceafbee9e981b8a3657000fdfb9bbb402696ae99fc0f433d431c",
+      "url": "https://1137423918.github.io/reports/adk-maintenance/report.json"
+    },
+    {
+      "id": "long_cpu",
+      "label": "Real model / 30-minute CPU trial",
+      "path": "evidence/long-cpu/report.json",
+      "sha256": "f8c7d0eebd29d55be02574f09c187e45326278d6985f53bdafa5f3d11aac8fad",
+      "url": "https://1137423918.github.io/reports/long-cpu/report.json"
     }
   ],
   "pull_requests": [
