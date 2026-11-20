@@ -1,0 +1,11 @@
+test_actual_graph_tool_reads_current_edited_state_after_checkpoint (test_source_tools.SourceToolTests.test_actual_graph_tool_reads_current_edited_state_after_checkpoint) ... ok
+test_changed_virtual_source_rejects_stale_ids_and_pages (test_source_tools.SourceToolTests.test_changed_virtual_source_rejects_stale_ids_and_pages) ... ok
+test_nested_decorated_async_and_duplicate_definitions_have_exact_ranges (test_source_tools.SourceToolTests.test_nested_decorated_async_and_duplicate_definitions_have_exact_ranges) ... ok
+test_pages_cover_symbols_and_lines_without_silent_loss (test_source_tools.SourceToolTests.test_pages_cover_symbols_and_lines_without_silent_loss) ... ok
+test_scope_hash_syntax_and_page_errors_do_not_mutate_state (test_source_tools.SourceToolTests.test_scope_hash_syntax_and_page_errors_do_not_mutate_state) ... ok
+test_unicode_byte_cap_and_oversized_line_are_explicit (test_source_tools.SourceToolTests.test_unicode_byte_cap_and_oversized_line_are_explicit) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.161s
+
+OK

@@ -1,0 +1,711 @@
+{
+  "case": "normal",
+  "worker_returncode": 0,
+  "checkpoint_interruption": null,
+  "edited_file_checkpoint_resumed": false,
+  "result": {
+    "status": "ready_for_review",
+    "task_sha256": "747e747d62a9a931a3e99af0105da2a9220b9f3e68e0d499a4c5959d4eab9b52",
+    "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+    "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+    "patch_bytes": 1573,
+    "model_mode": "scripted",
+    "retained_ai_messages": 5,
+    "tool_results": 4,
+    "verification": [
+      {
+        "argv": [
+          "python",
+          "-c",
+          "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "log_sha256": "6cee5a7f1650fea32c2b454ea0e82d79f12b783c7f649a3ca657851c5100f955"
+      },
+      {
+        "argv": [
+          "python",
+          "-c",
+          "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "log_sha256": "826bfa8564789ed6050d280e9e4c6f79f81e2b4a6bc0cba57569247397e52e31",
+        "baseline_files": [
+          "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        ],
+        "verification_view": "verification-worktrees/001",
+        "view_patch_sha256": "5019c6fc9a1d584b0a2de6b58ebfb932e45cd9ad21ad752edb7cd5105431a359",
+        "view_integrity_error": false
+      },
+      {
+        "argv": [
+          "python",
+          "-m",
+          "pytest",
+          "tests/unit_tests/backends/test_utils.py",
+          "--disable-socket",
+          "--allow-unix-socket",
+          "--benchmark-disable",
+          "-q"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "log_sha256": "7d34276b8f24c42e8a89d0893f2b8089188d0d54e130ec5176be0b9ae8a2f29e"
+      },
+      {
+        "argv": [
+          "python",
+          "-c",
+          "import json\nfrom pathlib import Path\nfrom deepagents.backends.utils import validate_path\nimport deepagents\nassert Path(deepagents.__file__).resolve() == (Path.cwd()/'deepagents/__init__.py').resolve()\nCASES = [{'id': 'relative-posix', 'input': 'foo/bar', 'expected': {'value': '/foo/bar'}}, {'id': 'absolute-posix', 'input': '/workspace/file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'posix-dot-and-duplicate', 'input': '/./foo//bar', 'expected': {'value': '/foo/bar'}}, {'id': 'relative-backslash', 'input': 'foo\\\\bar\\\\baz', 'expected': {'value': '/foo/bar/baz'}}, {'id': 'mixed-separators', 'input': 'foo/bar\\\\baz/qux', 'expected': {'value': '/foo/bar/baz/qux'}}, {'id': 'backslash-dot-component', 'input': 'foo\\\\.\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-repeated-separator', 'input': 'foo\\\\\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-trailing-separator', 'input': 'foo\\\\bar\\\\', 'expected': {'value': '/foo/bar'}}, {'id': 'mixed-dot-component', 'input': '/workspace\\\\.\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'mixed-repeated-separator', 'input': '/workspace/\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'root', 'input': '/', 'expected': {'value': '/'}}, {'id': 'empty-existing-contract', 'input': '', 'expected': {'value': '/.'}}, {'id': 'dot-existing-contract', 'input': '.', 'expected': {'value': '/.'}}, {'id': 'dots-in-filename', 'input': 'foo..bar.txt', 'expected': {'value': '/foo..bar.txt'}}, {'id': 'dots-in-directory', 'input': 'backup..2024/data.csv', 'expected': {'value': '/backup..2024/data.csv'}}, {'id': 'traversal-relative', 'input': '../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-interior', 'input': 'foo/../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-backslash', 'input': 'foo\\\\..\\\\etc', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-mixed', 'input': '/workspace/..\\\\etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'home-expansion', 'input': '~/secret.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-backslash', 'input': 'C:\\\\Users\\\\file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-posix', 'input': 'D:/data/file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'allowed-prefix', 'input': '/workspace/file.txt', 'allowed_prefixes': ['/workspace/'], 'expected': {'value': '/workspace/file.txt'}}, {'id': 'forbidden-prefix', 'input': '/etc/passwd', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'prefix-boundary', 'input': '/workspace-evil/file', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'empty-allowlist', 'input': '/workspace/file.txt', 'allowed_prefixes': [], 'expected': {'error': 'ValueError'}}, {'id': 'unicode-posix', 'input': '/\u9879\u76ee/\u8bba\u6587.md', 'expected': {'value': '/\u9879\u76ee/\u8bba\u6587.md'}}, {'id': 'unicode-backslash-dot', 'input': '\u9879\u76ee\\\\.\\\\\u8bba\u6587.md', 'expected': {'value': '/\u9879\u76ee/\u8bba\u6587.md'}}]\nfailures=[]\nfor case in CASES:\n    kwargs={'allowed_prefixes':case['allowed_prefixes']} if 'allowed_prefixes' in case else {}\n    try:\n        value=validate_path(case['input'],**kwargs)\n        actual={'value':value}\n    except ValueError:\n        actual={'error':'ValueError'}\n    if actual != case['expected']:\n        failures.append({'id':case['id'],'expected':case['expected'],'actual':actual})\nprint(json.dumps({'total':len(CASES),'passed':len(CASES)-len(failures),'failures':failures},ensure_ascii=False))\nassert not failures, 'Independent path contracts failed'\n"
+        ],
+        "returncode": 0,
+        "timed_out": false,
+        "log_sha256": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2"
+      }
+    ]
+  },
+  "source_replies": [
+    {
+      "status": "ok",
+      "source_sha256": "e03e2276c9187d3b0449f1eea1dbe8f147a1a0a563adc668a6b4cf6489f40d66",
+      "file_lines": 1250,
+      "parser": "Python 3.11 AST",
+      "mode": "outline",
+      "offset": 0,
+      "total": 37,
+      "items": [
+        {
+          "id": "L166:0",
+          "name": "InvalidGlobPatternError",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 166,
+          "end_line": 174
+        },
+        {
+          "id": "L252:0",
+          "name": "compile_grep_include_glob",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 251,
+          "end_line": 331
+        },
+        {
+          "id": "L324:8",
+          "name": "compile_grep_include_glob.matcher",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 324,
+          "end_line": 325
+        },
+        {
+          "id": "L328:8",
+          "name": "compile_grep_include_glob.matcher",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 328,
+          "end_line": 329
+        },
+        {
+          "id": "L334:0",
+          "name": "_normalize_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 334,
+          "end_line": 352
+        },
+        {
+          "id": "L355:0",
+          "name": "sanitize_tool_call_id",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 355,
+          "end_line": 360
+        },
+        {
+          "id": "L363:0",
+          "name": "format_content_with_line_numbers",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 363,
+          "end_line": 413
+        },
+        {
+          "id": "L416:0",
+          "name": "_format_source_block",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 416,
+          "end_line": 435
+        },
+        {
+          "id": "L438:0",
+          "name": "check_empty_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 438,
+          "end_line": 449
+        },
+        {
+          "id": "L452:0",
+          "name": "_get_file_type",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 452,
+          "end_line": 463
+        },
+        {
+          "id": "L477:0",
+          "name": "_get_backend_read_file_type",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 477,
+          "end_line": 495
+        },
+        {
+          "id": "L498:0",
+          "name": "file_data_to_string",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 498,
+          "end_line": 510
+        },
+        {
+          "id": "L513:0",
+          "name": "create_file_data",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 513,
+          "end_line": 535
+        },
+        {
+          "id": "L538:0",
+          "name": "update_file_data",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 538,
+          "end_line": 557
+        },
+        {
+          "id": "L560:0",
+          "name": "_copy_file_data_with_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 560,
+          "end_line": 582
+        },
+        {
+          "id": "L585:0",
+          "name": "normalize_read_bounds",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 585,
+          "end_line": 620
+        },
+        {
+          "id": "L623:0",
+          "name": "slice_read_response",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 623,
+          "end_line": 694
+        },
+        {
+          "id": "L697:0",
+          "name": "perform_string_replacement",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 697,
+          "end_line": 754
+        },
+        {
+          "id": "L758:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 757,
+          "end_line": 758
+        },
+        {
+          "id": "L762:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 761,
+          "end_line": 762
+        },
+        {
+          "id": "L765:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 765,
+          "end_line": 780
+        },
+        {
+          "id": "L789:0",
+          "name": "_glob_anchor",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 789,
+          "end_line": 807
+        },
+        {
+          "id": "L810:0",
+          "name": "_paths_overlap",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 810,
+          "end_line": 819
+        },
+        {
+          "id": "L822:0",
+          "name": "to_posix_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 822,
+          "end_line": 843
+        },
+        {
+          "id": "L846:0",
+          "name": "validate_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 846,
+          "end_line": 909
+        },
+        {
+          "id": "L912:0",
+          "name": "_normalize_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 912,
+          "end_line": 944
+        },
+        {
+          "id": "L947:0",
+          "name": "_filter_files_by_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 947,
+          "end_line": 974
+        },
+        {
+          "id": "L977:0",
+          "name": "_relative_to_root",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 977,
+          "end_line": 994
+        },
+        {
+          "id": "L997:0",
+          "name": "_glob_search_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 997,
+          "end_line": 1056
+        },
+        {
+          "id": "L1059:0",
+          "name": "_format_grep_results",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1059,
+          "end_line": 1085
+        },
+        {
+          "id": "L1091:0",
+          "name": "grep_matches_from_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1091,
+          "end_line": 1139
+        },
+        {
+          "id": "L1142:0",
+          "name": "build_grep_results_dict",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1142,
+          "end_line": 1147
+        },
+        {
+          "id": "L1150:0",
+          "name": "format_grep_matches",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1150,
+          "end_line": 1164
+        },
+        {
+          "id": "L1167:0",
+          "name": "_format_grep_with_context",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1167,
+          "end_line": 1196
+        },
+        {
+          "id": "L1199:0",
+          "name": "_group_adjacent_lines",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1199,
+          "end_line": 1207
+        },
+        {
+          "id": "L1224:0",
+          "name": "_looks_like_regex",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1224,
+          "end_line": 1226
+        },
+        {
+          "id": "L1229:0",
+          "name": "regex_literal_hint",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1229,
+          "end_line": 1250
+        }
+      ],
+      "next_offset": null
+    },
+    {
+      "status": "ok",
+      "source_sha256": "48088312bd7d1ed5e403da3c843fe7f514b999217c42c7e747bc052d8dedd5f8",
+      "file_lines": 739,
+      "parser": "Python 3.11 AST",
+      "mode": "outline",
+      "offset": 0,
+      "total": 94,
+      "items": [
+        {
+          "id": "L27:0",
+          "name": "TestLooksLikeRegex",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 27,
+          "end_line": 77
+        },
+        {
+          "id": "L44:4",
+          "name": "TestLooksLikeRegex.test_detects_regex",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 30,
+          "end_line": 45
+        },
+        {
+          "id": "L67:4",
+          "name": "TestLooksLikeRegex.test_ignores_literal",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 47,
+          "end_line": 68
+        },
+        {
+          "id": "L70:4",
+          "name": "TestLooksLikeRegex.test_hint_present_for_regex",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 70,
+          "end_line": 74
+        },
+        {
+          "id": "L76:4",
+          "name": "TestLooksLikeRegex.test_hint_absent_for_literal",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 76,
+          "end_line": 77
+        },
+        {
+          "id": "L80:0",
+          "name": "TestToPosixPath",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 80,
+          "end_line": 109
+        },
+        {
+          "id": "L108:4",
+          "name": "TestToPosixPath.test_normalizes",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 83,
+          "end_line": 109
+        },
+        {
+          "id": "L112:0",
+          "name": "TestValidatePath",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 112,
+          "end_line": 196
+        },
+        {
+          "id": "L131:4",
+          "name": "TestValidatePath.test_path_normalization",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 115,
+          "end_line": 133
+        },
+        {
+          "id": "L145:4",
+          "name": "TestValidatePath.test_invalid_paths_rejected",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 135,
+          "end_line": 148
+        },
+        {
+          "id": "L150:4",
+          "name": "TestValidatePath.test_allowed_prefixes_enforced",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 150,
+          "end_line": 155
+        },
+        {
+          "id": "L157:4",
+          "name": "TestValidatePath.test_no_backslashes_in_output",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 157,
+          "end_line": 162
+        },
+        {
+          "id": "L164:4",
+          "name": "TestValidatePath.test_root_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 164,
+          "end_line": 166
+        },
+        {
+          "id": "L168:4",
+          "name": "TestValidatePath.test_double_dots_in_filename_allowed",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 168,
+          "end_line": 175
+        },
+        {
+          "id": "L177:4",
+          "name": "TestValidatePath.test_allowed_prefixes_boundary",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 177,
+          "end_line": 183
+        },
+        {
+          "id": "L185:4",
+          "name": "TestValidatePath.test_traversal_as_path_component_rejected",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 185,
+          "end_line": 191
+        },
+        {
+          "id": "L193:4",
+          "name": "TestValidatePath.test_dot_and_empty_string_normalize_to_slash_dot",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 193,
+          "end_line": 196
+        },
+        {
+          "id": "L199:0",
+          "name": "TestGlobSearchFiles",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 199,
+          "end_line": 311
+        },
+        {
+          "id": "L207:4",
+          "name": "TestGlobSearchFiles.sample_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 206,
+          "end_line": 215
+        },
+        {
+          "id": "L217:4",
+          "name": "TestGlobSearchFiles._paths",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 217,
+          "end_line": 220
+        },
+        {
+          "id": "L222:4",
+          "name": "TestGlobSearchFiles.test_slashless_basename_glob_matches_at_any_depth",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 222,
+          "end_line": 229
+        },
+        {
+          "id": "L231:4",
+          "name": "TestGlobSearchFiles.test_globstar_matches_same_python_set",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 231,
+          "end_line": 235
+        },
+        {
+          "id": "L237:4",
+          "name": "TestGlobSearchFiles.test_path_filter_still_matches_nested_under_root",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 237,
+          "end_line": 245
+        },
+        {
+          "id": "L247:4",
+          "name": "TestGlobSearchFiles.test_path_filter_nested_directory",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 247,
+          "end_line": 251
+        },
+        {
+          "id": "L253:4",
+          "name": "TestGlobSearchFiles.test_no_matches",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 253,
+          "end_line": 255
+        },
+        {
+          "id": "L257:4",
+          "name": "TestGlobSearchFiles.test_sorted_by_modification_time",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 257,
+          "end_line": 260
+        },
+        {
+          "id": "L262:4",
+          "name": "TestGlobSearchFiles.test_path_traversal_rejected",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 262,
+          "end_line": 265
+        },
+        {
+          "id": "L267:4",
+          "name": "TestGlobSearchFiles.test_path_relative_pattern",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 267,
+          "end_line": 275
+        },
+        {
+          "id": "L277:4",
+          "name": "TestGlobSearchFiles.test_leading_slash_anchors_to_root",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 277,
+          "end_line": 279
+        },
+        {
+          "id": "L281:4",
+          "name": "TestGlobSearchFiles.test_leading_slash_with_globstar",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 281,
+          "end_line": 285
+        },
+        {
+          "id": "L287:4",
+          "name": "TestGlobSearchFiles.test_leading_slash_pattern_with_subdir_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 287,
+          "end_line": 297
+        },
+        {
+          "id": "L299:4",
+          "name": "TestGlobSearchFiles.test_missing_modified_at_does_not_raise",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 299,
+          "end_line": 311
+        },
+        {
+          "id": "L314:0",
+          "name": "TestCompileGrepIncludeGlobRefusals",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 314,
+          "end_line": 335
+        },
+        {
+          "id": "L317:4",
+          "name": "TestCompileGrepIncludeGlobRefusals.test_pattern_wcmatch_refuses_raises_invalid_glob_pattern",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 317,
+          "end_line": 320
+        },
+        {
+          "id": "L322:4",
+          "name": "TestCompileGrepIncludeGlobRefusals.test_refusal_is_a_value_error",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 322,
+          "end_line": 324
+        },
+        {
+          "id": "L326:4",
+          "name": "TestCompileGrepIncludeGlobRefusals.test_traversal_pattern_is_refused",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 326,
+          "end_line": 330
+        },
+        {
+          "id": "L332:4",
+          "name": "TestCompileGrepIncludeGlobRefusals.test_malformed_but_compilable_patterns_do_not_raise",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 332,
+          "end_line": 335
+        },
+        {
+          "id": "L338:0",
+          "name": "TestGrepIncludeGlob",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 338,
+          "end_line": 386
+        },
+        {
+          "id": "L352:4",
+          "name": "TestGrepIncludeGlob.sample_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 351,
+          "end_line": 358
+        },
+        {
+          "id": "L360:4",
+          "name": "TestGrepIncludeGlob._paths",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 360,
+          "end_line": 362
+        }
+      ],
+      "next_offset": 40
+    }
+  ]
+}

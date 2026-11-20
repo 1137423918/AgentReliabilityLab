@@ -84,7 +84,8 @@ def validate_task(task: dict) -> list[str]:
         raise RunError("max_graph_steps must be positive.")
     features = task.get("required_features", [])
     if not isinstance(features, list) or any(
-        feature not in ("python_syntax_v1", "baseline_verification_v1")
+        feature
+        not in ("python_syntax_v1", "baseline_verification_v1", "python_source_v1")
         for feature in features
     ):
         raise RunError("The task requires unsupported worker features.")
@@ -123,6 +124,8 @@ def validate_task(task: dict) -> list[str]:
         checked_path(command.get("cwd", "."))
         baseline_verification_files(command)
     allowed_tools = {"ls", "read_file", "write_file", "edit_file", "glob", "grep"}
+    if "python_source_v1" in features:
+        allowed_tools.add("inspect_python")
     for step in task.get("model", {}).get("plan", []):
         if step["tool"] not in allowed_tools:
             raise RunError("Scripted plans only support virtual file tools.")
@@ -179,11 +182,19 @@ def agent_phase(
 ):
     config = {"configurable": {"thread_id": "maintenance"}, "recursion_limit": 100}
     with SqliteSaver.from_conn_string(str(directory / "checkpoints.sqlite")) as saver:
+        options = {}
+        prompt = "Prepare the requested maintenance patch using virtual file tools. Do not delegate or execute commands."
+        if "python_source_v1" in task.get("required_features", []):
+            from agent_lab.source_tools import make_source_tool
+
+            options["tools"] = [make_source_tool(files)]
+            prompt += " For Python files, use inspect_python to locate definitions before reading sequential chunks. Its source hashes bind pages to current virtual content; refresh the outline after edits."
         agent = create_deep_agent(
             model=build_model(task.get("model", {})),
             backend=StateBackend(),
             checkpointer=saver,
-            system_prompt="Prepare the requested maintenance patch using virtual file tools. Do not delegate or execute commands.",
+            system_prompt=prompt,
+            **options,
         )
         snapshot = agent.get_state(config)
         initial = (

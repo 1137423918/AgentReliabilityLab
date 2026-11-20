@@ -1,0 +1,721 @@
+{
+  "scope": "Operator-selected symbol retrieval from fixed real source; no model or runtime speedup claim",
+  "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+  "symbols": [
+    {
+      "id": "L822:0",
+      "name": "to_posix_path",
+      "name_truncated": false,
+      "kind": "FunctionDef",
+      "start_line": 822,
+      "end_line": 843
+    },
+    {
+      "id": "L846:0",
+      "name": "validate_path",
+      "name_truncated": false,
+      "kind": "FunctionDef",
+      "start_line": 846,
+      "end_line": 909
+    }
+  ],
+  "outline_pages": [
+    {
+      "status": "ok",
+      "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "file_lines": 1250,
+      "parser": "Python 3.11 AST",
+      "mode": "outline",
+      "offset": 0,
+      "total": 37,
+      "items": [
+        {
+          "id": "L166:0",
+          "name": "InvalidGlobPatternError",
+          "name_truncated": false,
+          "kind": "ClassDef",
+          "start_line": 166,
+          "end_line": 174
+        },
+        {
+          "id": "L252:0",
+          "name": "compile_grep_include_glob",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 251,
+          "end_line": 331
+        },
+        {
+          "id": "L324:8",
+          "name": "compile_grep_include_glob.matcher",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 324,
+          "end_line": 325
+        },
+        {
+          "id": "L328:8",
+          "name": "compile_grep_include_glob.matcher",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 328,
+          "end_line": 329
+        },
+        {
+          "id": "L334:0",
+          "name": "_normalize_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 334,
+          "end_line": 352
+        },
+        {
+          "id": "L355:0",
+          "name": "sanitize_tool_call_id",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 355,
+          "end_line": 360
+        },
+        {
+          "id": "L363:0",
+          "name": "format_content_with_line_numbers",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 363,
+          "end_line": 413
+        },
+        {
+          "id": "L416:0",
+          "name": "_format_source_block",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 416,
+          "end_line": 435
+        },
+        {
+          "id": "L438:0",
+          "name": "check_empty_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 438,
+          "end_line": 449
+        },
+        {
+          "id": "L452:0",
+          "name": "_get_file_type",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 452,
+          "end_line": 463
+        },
+        {
+          "id": "L477:0",
+          "name": "_get_backend_read_file_type",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 477,
+          "end_line": 495
+        },
+        {
+          "id": "L498:0",
+          "name": "file_data_to_string",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 498,
+          "end_line": 510
+        },
+        {
+          "id": "L513:0",
+          "name": "create_file_data",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 513,
+          "end_line": 535
+        },
+        {
+          "id": "L538:0",
+          "name": "update_file_data",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 538,
+          "end_line": 557
+        },
+        {
+          "id": "L560:0",
+          "name": "_copy_file_data_with_content",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 560,
+          "end_line": 582
+        },
+        {
+          "id": "L585:0",
+          "name": "normalize_read_bounds",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 585,
+          "end_line": 620
+        },
+        {
+          "id": "L623:0",
+          "name": "slice_read_response",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 623,
+          "end_line": 694
+        },
+        {
+          "id": "L697:0",
+          "name": "perform_string_replacement",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 697,
+          "end_line": 754
+        },
+        {
+          "id": "L758:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 757,
+          "end_line": 758
+        },
+        {
+          "id": "L762:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 761,
+          "end_line": 762
+        },
+        {
+          "id": "L765:0",
+          "name": "truncate_if_too_long",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 765,
+          "end_line": 780
+        },
+        {
+          "id": "L789:0",
+          "name": "_glob_anchor",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 789,
+          "end_line": 807
+        },
+        {
+          "id": "L810:0",
+          "name": "_paths_overlap",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 810,
+          "end_line": 819
+        },
+        {
+          "id": "L822:0",
+          "name": "to_posix_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 822,
+          "end_line": 843
+        },
+        {
+          "id": "L846:0",
+          "name": "validate_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 846,
+          "end_line": 909
+        },
+        {
+          "id": "L912:0",
+          "name": "_normalize_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 912,
+          "end_line": 944
+        },
+        {
+          "id": "L947:0",
+          "name": "_filter_files_by_path",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 947,
+          "end_line": 974
+        },
+        {
+          "id": "L977:0",
+          "name": "_relative_to_root",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 977,
+          "end_line": 994
+        },
+        {
+          "id": "L997:0",
+          "name": "_glob_search_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 997,
+          "end_line": 1056
+        },
+        {
+          "id": "L1059:0",
+          "name": "_format_grep_results",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1059,
+          "end_line": 1085
+        },
+        {
+          "id": "L1091:0",
+          "name": "grep_matches_from_files",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1091,
+          "end_line": 1139
+        },
+        {
+          "id": "L1142:0",
+          "name": "build_grep_results_dict",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1142,
+          "end_line": 1147
+        },
+        {
+          "id": "L1150:0",
+          "name": "format_grep_matches",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1150,
+          "end_line": 1164
+        },
+        {
+          "id": "L1167:0",
+          "name": "_format_grep_with_context",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1167,
+          "end_line": 1196
+        },
+        {
+          "id": "L1199:0",
+          "name": "_group_adjacent_lines",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1199,
+          "end_line": 1207
+        },
+        {
+          "id": "L1224:0",
+          "name": "_looks_like_regex",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1224,
+          "end_line": 1226
+        },
+        {
+          "id": "L1229:0",
+          "name": "regex_literal_hint",
+          "name_truncated": false,
+          "kind": "FunctionDef",
+          "start_line": 1229,
+          "end_line": 1250
+        }
+      ],
+      "next_offset": null
+    }
+  ],
+  "source_pages": [
+    {
+      "status": "ok",
+      "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "file_lines": 1250,
+      "parser": "Python 3.11 AST",
+      "mode": "source",
+      "offset": 0,
+      "symbol": {
+        "id": "L822:0",
+        "name": "to_posix_path",
+        "name_truncated": false,
+        "kind": "FunctionDef",
+        "start_line": 822,
+        "end_line": 843
+      },
+      "total": 22,
+      "items": [
+        {
+          "line": 822,
+          "text": "def to_posix_path(path: str) -> str:"
+        },
+        {
+          "line": 823,
+          "text": "    r\"\"\"Normalize backslash separators to forward slashes for `PurePosixPath` use."
+        },
+        {
+          "line": 824,
+          "text": ""
+        },
+        {
+          "line": 825,
+          "text": "    Backends running on Windows return OS-native paths using backslashes."
+        },
+        {
+          "line": 826,
+          "text": "    `PurePosixPath` treats backslashes as literal filename characters,"
+        },
+        {
+          "line": 827,
+          "text": "    so `PurePosixPath(r\"C:\\a\\b\").name` yields the full string instead"
+        },
+        {
+          "line": 828,
+          "text": "    of `\"b\"`. Normalize before constructing a `PurePosixPath`."
+        },
+        {
+          "line": 829,
+          "text": ""
+        },
+        {
+          "line": 830,
+          "text": "    This is best-effort: a POSIX directory literally named with a backslash"
+        },
+        {
+          "line": 831,
+          "text": "    will also be rewritten. That trade-off is accepted because such filenames"
+        },
+        {
+          "line": 832,
+          "text": "    are vanishingly rare in practice and the alternative (gating on `os.sep`)"
+        },
+        {
+          "line": 833,
+          "text": "    fails when a Windows-style path is handed to a non-Windows process."
+        },
+        {
+          "line": 834,
+          "text": ""
+        },
+        {
+          "line": 835,
+          "text": "    Args:"
+        },
+        {
+          "line": 836,
+          "text": "        path: Path string that may use backslash separators."
+        },
+        {
+          "line": 837,
+          "text": ""
+        },
+        {
+          "line": 838,
+          "text": "    Returns:"
+        },
+        {
+          "line": 839,
+          "text": "        The same path with every `\\\\` replaced by `/`."
+        },
+        {
+          "line": 840,
+          "text": ""
+        },
+        {
+          "line": 841,
+          "text": "            Inputs that already use forward slashes are returned unchanged."
+        },
+        {
+          "line": 842,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 843,
+          "text": "    return path.replace(\"\\\\\", \"/\")"
+        }
+      ],
+      "next_offset": null
+    },
+    {
+      "status": "ok",
+      "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "file_lines": 1250,
+      "parser": "Python 3.11 AST",
+      "mode": "source",
+      "offset": 0,
+      "symbol": {
+        "id": "L846:0",
+        "name": "validate_path",
+        "name_truncated": false,
+        "kind": "FunctionDef",
+        "start_line": 846,
+        "end_line": 909
+      },
+      "total": 64,
+      "items": [
+        {
+          "line": 846,
+          "text": "def validate_path(path: str, *, allowed_prefixes: Sequence[str] | None = None) -> str:"
+        },
+        {
+          "line": 847,
+          "text": "    r\"\"\"Validate and normalize file path for security."
+        },
+        {
+          "line": 848,
+          "text": ""
+        },
+        {
+          "line": 849,
+          "text": "    Ensures paths are safe to use by preventing directory traversal attacks"
+        },
+        {
+          "line": 850,
+          "text": "    and enforcing consistent formatting. All paths are normalized to use"
+        },
+        {
+          "line": 851,
+          "text": "    forward slashes and start with a leading slash."
+        },
+        {
+          "line": 852,
+          "text": ""
+        },
+        {
+          "line": 853,
+          "text": "    This function is designed for virtual filesystem paths and rejects"
+        },
+        {
+          "line": 854,
+          "text": "    Windows absolute paths (e.g., `C:/...`, `F:/...`) to maintain consistency"
+        },
+        {
+          "line": 855,
+          "text": "    and prevent path format ambiguity."
+        },
+        {
+          "line": 856,
+          "text": ""
+        },
+        {
+          "line": 857,
+          "text": "    Args:"
+        },
+        {
+          "line": 858,
+          "text": "        path: The path to validate and normalize."
+        },
+        {
+          "line": 859,
+          "text": "        allowed_prefixes: Optional list of allowed path prefixes."
+        },
+        {
+          "line": 860,
+          "text": ""
+        },
+        {
+          "line": 861,
+          "text": "            If provided, the normalized path must start with one of"
+        },
+        {
+          "line": 862,
+          "text": "            these prefixes."
+        },
+        {
+          "line": 863,
+          "text": ""
+        },
+        {
+          "line": 864,
+          "text": "    Returns:"
+        },
+        {
+          "line": 865,
+          "text": "        Normalized canonical path starting with `/` and using forward slashes."
+        },
+        {
+          "line": 866,
+          "text": ""
+        },
+        {
+          "line": 867,
+          "text": "    Raises:"
+        },
+        {
+          "line": 868,
+          "text": "        ValueError: If path contains traversal sequences (`..` or `~`), is a"
+        },
+        {
+          "line": 869,
+          "text": "            Windows absolute path (e.g., `C:/...`), or does not start with an"
+        },
+        {
+          "line": 870,
+          "text": "            allowed prefix when `allowed_prefixes` is specified."
+        },
+        {
+          "line": 871,
+          "text": ""
+        },
+        {
+          "line": 872,
+          "text": "    Example:"
+        },
+        {
+          "line": 873,
+          "text": "        ```python"
+        },
+        {
+          "line": 874,
+          "text": "        validate_path(\"foo/bar\")  # Returns: \"/foo/bar\""
+        },
+        {
+          "line": 875,
+          "text": "        validate_path(\"/./foo//bar\")  # Returns: \"/foo/bar\""
+        },
+        {
+          "line": 876,
+          "text": "        validate_path(\"../etc/passwd\")  # Raises ValueError"
+        },
+        {
+          "line": 877,
+          "text": "        validate_path(r\"C:\\\\Users\\\\file.txt\")  # Raises ValueError"
+        },
+        {
+          "line": 878,
+          "text": "        validate_path(\"/data/file.txt\", allowed_prefixes=[\"/data/\"])  # OK"
+        },
+        {
+          "line": 879,
+          "text": "        validate_path(\"/etc/file.txt\", allowed_prefixes=[\"/data/\"])  # Raises ValueError"
+        },
+        {
+          "line": 880,
+          "text": "        ```"
+        },
+        {
+          "line": 881,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 882,
+          "text": "    # Check for traversal as a path component (not substring) to avoid"
+        },
+        {
+          "line": 883,
+          "text": "    # false-positive rejection of legitimate filenames like \"foo..bar.txt\""
+        },
+        {
+          "line": 884,
+          "text": "    parts = PurePosixPath(to_posix_path(path)).parts"
+        },
+        {
+          "line": 885,
+          "text": "    if \"..\" in parts or path.startswith(\"~\"):"
+        },
+        {
+          "line": 886,
+          "text": "        msg = f\"Path traversal not allowed: {path}\""
+        },
+        {
+          "line": 887,
+          "text": "        raise ValueError(msg)"
+        },
+        {
+          "line": 888,
+          "text": ""
+        },
+        {
+          "line": 889,
+          "text": "    # Reject Windows absolute paths (e.g., C:\\..., D:/...)"
+        },
+        {
+          "line": 890,
+          "text": "    if re.match(r\"^[a-zA-Z]:\", path):"
+        },
+        {
+          "line": 891,
+          "text": "        msg = f\"Windows absolute paths are not supported: {path}. Please use virtual paths starting with / (e.g., /workspace/file.txt)\""
+        },
+        {
+          "line": 892,
+          "text": "        raise ValueError(msg)"
+        },
+        {
+          "line": 893,
+          "text": ""
+        },
+        {
+          "line": 894,
+          "text": "    normalized = os.path.normpath(path)"
+        },
+        {
+          "line": 895,
+          "text": "    normalized = normalized.replace(\"\\\\\", \"/\")"
+        },
+        {
+          "line": 896,
+          "text": ""
+        },
+        {
+          "line": 897,
+          "text": "    if not normalized.startswith(\"/\"):"
+        },
+        {
+          "line": 898,
+          "text": "        normalized = f\"/{normalized}\""
+        },
+        {
+          "line": 899,
+          "text": ""
+        },
+        {
+          "line": 900,
+          "text": "    # Defense-in-depth: verify normpath didn't produce traversal"
+        },
+        {
+          "line": 901,
+          "text": "    if \"..\" in normalized.split(\"/\"):"
+        },
+        {
+          "line": 902,
+          "text": "        msg = f\"Path traversal detected after normalization: {path} -> {normalized}\""
+        },
+        {
+          "line": 903,
+          "text": "        raise ValueError(msg)"
+        },
+        {
+          "line": 904,
+          "text": ""
+        },
+        {
+          "line": 905,
+          "text": "    if allowed_prefixes is not None and not any(normalized.startswith(prefix) for prefix in allowed_prefixes):"
+        },
+        {
+          "line": 906,
+          "text": "        msg = f\"Path must start with one of {allowed_prefixes}: {path}\""
+        },
+        {
+          "line": 907,
+          "text": "        raise ValueError(msg)"
+        },
+        {
+          "line": 908,
+          "text": ""
+        },
+        {
+          "line": 909,
+          "text": "    return normalized"
+        }
+      ],
+      "next_offset": null
+    }
+  ],
+  "response_bytes": 11127,
+  "max_response_bytes": 4766,
+  "per_response_limit": 8192
+}

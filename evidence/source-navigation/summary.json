@@ -1,0 +1,19 @@
+{
+  "project_tests": {
+    "total": 63,
+    "passed": 49,
+    "skipped": 14,
+    "seconds": 154.217,
+    "skip_reason": "jsonschema absent in worker environment",
+    "new_source_checks": 6,
+    "new_checks_included_not_added_again": true
+  },
+  "source_sha256": {
+    "agent_lab/worker.py": "908e05c516b81afc1a9221824cb67e677cc5c10bafd49bef9e0c96911d665abb",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "benchmarks/source_navigation.py": "fab53266e9b1d20084f5fc3af2758841886a569e0025e90a6eef933dee7fe4de"
+  },
+  "model_inference": false,
+  "same_patch": true,
+  "reference_cases": 2
+}
