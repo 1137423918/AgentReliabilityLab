@@ -1,0 +1,15 @@
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 2, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 3, "tool_results": 3, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 4, "tool_results": 4, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 5, "tool_results": 5, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 6, "tool_results": 5, "pending": []}
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 2, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 3, "tool_results": 3, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 4, "tool_results": 3, "pending": []}
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 2, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 3, "tool_results": 3, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 4, "tool_results": 3, "pending": []}
+{"stage": "complete", "policies": [{"policy": "sequential_200", "tool_calls": 5, "first_request_tokens": 2446, "final_context_tokens": 12330, "logical_input_tokens": 43990}, {"policy": "literal_grep_then_span", "tool_calls": 3, "first_request_tokens": 2446, "final_context_tokens": 3658, "logical_input_tokens": 11341}, {"policy": "python_outline_then_symbols", "tool_calls": 3, "first_request_tokens": 2732, "final_context_tokens": 6683, "logical_input_tokens": 19054}]}

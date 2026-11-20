@@ -1,0 +1,15 @@
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 2, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 3, "tool_results": 3, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 4, "tool_results": 4, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 5, "tool_results": 5, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 6, "tool_results": 5, "pending": []}
+Traceback (most recent call last):
+  File "<server-workspace>/code/context-budget-20261121/benchmarks/context_budget.py", line 281, in <module>
+    main()
+  File "<server-workspace>/code/context-budget-20261121/benchmarks/context_budget.py", line 223, in main
+    requests, row = run_control(policy, spec, repo, destination / "run", protocol, targets, source)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/context-budget-20261121/benchmarks/context_budget.py", line 181, in run_control
+    assert all(observed.get(n) == text for n, text in expected.items()), "Target source coverage is incomplete"
+AssertionError: Target source coverage is incomplete

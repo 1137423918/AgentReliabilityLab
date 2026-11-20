@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "declared_date": "2026-11-21",
+  "scope": "Paired operator-planned retrieval controls through the actual worker and loopback OpenAI-compatible fixture. No model inference, maintenance acceptance, or autonomous localization score.",
+  "subject_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "task": "tasks/deepagents-path-model-qwen35.json",
+  "source_file": "libs/deepagents/deepagents/backends/utils.py",
+  "operator_supplied_goals": [
+    "to_posix_path",
+    "validate_path"
+  ],
+  "policies": [
+    "sequential_200",
+    "literal_grep_then_span",
+    "python_outline_then_symbols"
+  ],
+  "coverage": "All original lines of both target definitions must be present verbatim in actual read_file or inspect_python tool messages. Source remains unchanged.",
+  "plans": {
+    "sequential_200": "Read from offset zero in 200-line pages through the last required definition.",
+    "literal_grep_then_span": "Two literal grep calls for operator-provided function definitions, then read their combined enclosing span. Span endpoints are operator-provided AST boundaries, not model-discovered.",
+    "python_outline_then_symbols": "Enable existing python_source_v1; read one outline and both symbol pages with returned IDs/hashes. No other harness change."
+  },
+  "metrics": [
+    "actual HTTP request bytes",
+    "full Jinja-rendered prefix token counts",
+    "first-request overhead including system prompt and schemas",
+    "final context tokens",
+    "sum of logical input tokens across requests",
+    "prompt-prefix-only LCP diagnostic"
+  ],
+  "rendering": "Pinned model's exact template bytes, Jinja2 3.1.6 reference renderer with parsed tool arguments, thinking disabled; native pinned GGUF vocabulary tokenization. This is offline reference accounting, not observed server usage, native minja equivalence, KV-cache work or latency.",
+  "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+  "template_sha256": "a4aee8afcf2e0711942cf848899be66016f8d14a889ff9ede07bca099c28f715",
+  "native_backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "context_window": 32768,
+  "generation_reserve": 1536,
+  "limitations": [
+    "Known function names and plans supplied by operator",
+    "One public source objective, not held-out or a general retrieval benchmark",
+    "Identical original task prompt/acceptance file retained, but no editing or acceptance executed",
+    "No inference, generation tokens, dollar cost or speedup measured",
+    "Logical input sum repeats cached prefixes and is not actual compute",
+    "Isolated text/schema component counts are not additive tokenizer attribution"
+  ]
+}

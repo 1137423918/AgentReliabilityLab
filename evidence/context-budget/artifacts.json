@@ -1,0 +1,173 @@
+{
+  "normalization": "Explicit allowlist; private paths and terminal formatting normalized only in logs. All measured HTTP bodies and rendered prefixes are byte identical to originals; databases and credentials excluded.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "412a4634de23acbd5ca65d8233aef9a5fa895a622ee67b1321250fed8cdfc9b1",
+      "public_sha256": "412a4634de23acbd5ca65d8233aef9a5fa895a622ee67b1321250fed8cdfc9b1",
+      "public_bytes": 11751
+    },
+    {
+      "path": "protocol.json",
+      "original_sha256": "a0358969068e3803ef576a79bb264bf8ae7a1249a6166ff43e208bddb78ef4d7",
+      "public_sha256": "a0358969068e3803ef576a79bb264bf8ae7a1249a6166ff43e208bddb78ef4d7",
+      "public_bytes": 2664
+    },
+    {
+      "path": "native-token-ids.jsonl",
+      "original_sha256": "d63ddb769b09cb722e823b218558f9c18bfa1e7f661bfc74fc40fef0d48d7224",
+      "public_sha256": "d63ddb769b09cb722e823b218558f9c18bfa1e7f661bfc74fc40fef0d48d7224",
+      "public_bytes": 338890
+    },
+    {
+      "path": "logs/native-tokenizer.log",
+      "original_sha256": "b444a24208d1cdec5e3524c14d51bef97c0242e907d81e29a10d8f3c596917e8",
+      "public_sha256": "43ade14e3746ce941a96fc44d985bac33b66311b3042feb6e4fc90b56fc6ecf6",
+      "public_bytes": 7113
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "2e9240e62e78a734bd06e6861c845d9e84f60b19ca8484524b486249eedec1f2",
+      "public_sha256": "2e9240e62e78a734bd06e6861c845d9e84f60b19ca8484524b486249eedec1f2",
+      "public_bytes": 4483
+    },
+    {
+      "path": "logs/control.log",
+      "original_sha256": "67482d3291d68bee8042128befbdd67d1cc5051f9524bf06b490fda81d184a9e",
+      "public_sha256": "67482d3291d68bee8042128befbdd67d1cc5051f9524bf06b490fda81d184a9e",
+      "public_bytes": 1613
+    },
+    {
+      "path": "logs/compile.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "preflight/unversioned-library-link.log",
+      "original_sha256": "682baeb0527e99d749020ad3977f84c49c037aea122e0993eded2f2ad265888a",
+      "public_sha256": "682baeb0527e99d749020ad3977f84c49c037aea122e0993eded2f2ad265888a",
+      "public_bytes": 75
+    },
+    {
+      "path": "preflight/venv-inheritance.log",
+      "original_sha256": "ee92a4162094c26167c54414de30d6e25fce91957d9310c0daf66ac7f69f5e26",
+      "public_sha256": "2e5ca53cbe47c87bb278d6c2e9b8d61e63941f469220057b2737c761a0d0cec9",
+      "public_bytes": 249
+    },
+    {
+      "path": "preflight/file-metadata-equality.log",
+      "original_sha256": "60f71556b9db52c6646a368cb573d39ede0af0592492dc5a1f23b6cf55a03685",
+      "public_sha256": "f133fdfd973142ff601872ea786888bacc0076e7a02aa497e4c6385b98341383",
+      "public_bytes": 1218
+    },
+    {
+      "path": "preflight/compact-coverage-parser.log",
+      "original_sha256": "409cf52505e1fba6727c93a87a0fe0a2111550b7f6ace6da60428e604835605d",
+      "public_sha256": "320012ac5ea3023a7325c37d28c7555559893d0fd83962da596718be51ecf124",
+      "public_bytes": 1228
+    },
+    {
+      "path": "sequential_200/requests.json",
+      "original_sha256": "77315454af5958c99a235f03335f1180fba9d2039cb546896e6c9a342bb4fced",
+      "public_sha256": "77315454af5958c99a235f03335f1180fba9d2039cb546896e6c9a342bb4fced",
+      "public_bytes": 204188
+    },
+    {
+      "path": "sequential_200/prefix-0.txt",
+      "original_sha256": "741688ad97966b6f919b0383495fcf5eefce5206b8f6b6a1d2ef98e21cda1d57",
+      "public_sha256": "741688ad97966b6f919b0383495fcf5eefce5206b8f6b6a1d2ef98e21cda1d57",
+      "public_bytes": 10336
+    },
+    {
+      "path": "sequential_200/prefix-1.txt",
+      "original_sha256": "09b9769e46aeb571ba2225a32fc5923b018e9752cbee8cdae03411f90fd1a3fc",
+      "public_sha256": "09b9769e46aeb571ba2225a32fc5923b018e9752cbee8cdae03411f90fd1a3fc",
+      "public_bytes": 17097
+    },
+    {
+      "path": "sequential_200/prefix-2.txt",
+      "original_sha256": "796f569bc0bcd27d2dd01700d05465679630999ff8207f12c4d6239aaf0d4f11",
+      "public_sha256": "796f569bc0bcd27d2dd01700d05465679630999ff8207f12c4d6239aaf0d4f11",
+      "public_bytes": 25095
+    },
+    {
+      "path": "sequential_200/prefix-3.txt",
+      "original_sha256": "cd64246036f5e6434f5ad4a33c0f0709198591182ffeb2d56be48165b38dc6d2",
+      "public_sha256": "cd64246036f5e6434f5ad4a33c0f0709198591182ffeb2d56be48165b38dc6d2",
+      "public_bytes": 32622
+    },
+    {
+      "path": "sequential_200/prefix-4.txt",
+      "original_sha256": "2274bfd7dfbb13b33c5726e19328354d212d332667dbbf79dfc41925a0c2f42e",
+      "public_sha256": "2274bfd7dfbb13b33c5726e19328354d212d332667dbbf79dfc41925a0c2f42e",
+      "public_bytes": 41583
+    },
+    {
+      "path": "sequential_200/prefix-5.txt",
+      "original_sha256": "bbe17c0215ec53e9e027533fa11f6ca8704e840537177abe5c6d5e98d951dd8a",
+      "public_sha256": "bbe17c0215ec53e9e027533fa11f6ca8704e840537177abe5c6d5e98d951dd8a",
+      "public_bytes": 49474
+    },
+    {
+      "path": "literal_grep_then_span/requests.json",
+      "original_sha256": "422a7c612232725a6010645d0f353e695ab5754df011730357256586d0280034",
+      "public_sha256": "422a7c612232725a6010645d0f353e695ab5754df011730357256586d0280034",
+      "public_bytes": 61647
+    },
+    {
+      "path": "literal_grep_then_span/prefix-0.txt",
+      "original_sha256": "741688ad97966b6f919b0383495fcf5eefce5206b8f6b6a1d2ef98e21cda1d57",
+      "public_sha256": "741688ad97966b6f919b0383495fcf5eefce5206b8f6b6a1d2ef98e21cda1d57",
+      "public_bytes": 10336
+    },
+    {
+      "path": "literal_grep_then_span/prefix-1.txt",
+      "original_sha256": "7bec798fa0ef0b742f66e8b00fce35e61b150603076378356ad0a2c1aa342ec0",
+      "public_sha256": "7bec798fa0ef0b742f66e8b00fce35e61b150603076378356ad0a2c1aa342ec0",
+      "public_bytes": 10764
+    },
+    {
+      "path": "literal_grep_then_span/prefix-2.txt",
+      "original_sha256": "3e5e602b0486650249360ac8098724d62245a80d608d5b12bc6caa29bae328cb",
+      "public_sha256": "3e5e602b0486650249360ac8098724d62245a80d608d5b12bc6caa29bae328cb",
+      "public_bytes": 11242
+    },
+    {
+      "path": "literal_grep_then_span/prefix-3.txt",
+      "original_sha256": "4f7ea647838802221fb143edeeb8ec35c284520e865d5ffb09a6193beb1d11fe",
+      "public_sha256": "4f7ea647838802221fb143edeeb8ec35c284520e865d5ffb09a6193beb1d11fe",
+      "public_bytes": 15330
+    },
+    {
+      "path": "python_outline_then_symbols/requests.json",
+      "original_sha256": "cb2acc0a3e020b56ae3084d1a6df536d2750ca1637750b91fb26187e985bc25d",
+      "public_sha256": "cb2acc0a3e020b56ae3084d1a6df536d2750ca1637750b91fb26187e985bc25d",
+      "public_bytes": 89767
+    },
+    {
+      "path": "python_outline_then_symbols/prefix-0.txt",
+      "original_sha256": "3afbe046d2ecbb03e4ab730e8f64bc7708dfe33f466122e4a343622cbd3a6b27",
+      "public_sha256": "3afbe046d2ecbb03e4ab730e8f64bc7708dfe33f466122e4a343622cbd3a6b27",
+      "public_bytes": 11543
+    },
+    {
+      "path": "python_outline_then_symbols/prefix-1.txt",
+      "original_sha256": "53368874e1439a8aa1ff6139f66651c118a5526b10775ae72e1c5f55310dffdf",
+      "public_sha256": "53368874e1439a8aa1ff6139f66651c118a5526b10775ae72e1c5f55310dffdf",
+      "public_bytes": 16600
+    },
+    {
+      "path": "python_outline_then_symbols/prefix-2.txt",
+      "original_sha256": "9f802acdb0ae09138b95ab96e101b88e12103330bb22de0ea2cfc4d1ea007b0e",
+      "public_sha256": "9f802acdb0ae09138b95ab96e101b88e12103330bb22de0ea2cfc4d1ea007b0e",
+      "public_bytes": 18842
+    },
+    {
+      "path": "python_outline_then_symbols/prefix-3.txt",
+      "original_sha256": "0448a11b75a8f4a059c3af8f068b850720a0e6527db123c59a15394529ce936d",
+      "public_sha256": "0448a11b75a8f4a059c3af8f068b850720a0e6527db123c59a15394529ce936d",
+      "public_bytes": 23839
+    }
+  ]
+}

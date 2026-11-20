@@ -1,0 +1,96 @@
+<|im_start|>system
+# Tools
+
+You have access to the following functions:
+
+<tools>
+{"type": "function", "function": {"name": "ls", "description": "Lists all files in a directory.\n\nThis is useful for exploring the filesystem and finding the right file to read or edit.\nYou should almost ALWAYS use this tool before using the read_file or edit_file tools.", "parameters": {"properties": {"path": {"description": "Absolute path to the directory to list. Must be absolute, not relative.", "type": "string"}}, "required": ["path"], "type": "object"}}}
+{"type": "function", "function": {"name": "read_file", "description": "Reads a file from the filesystem. Assume any path the user provides is valid; reading a missing file returns an error.\n\nUsage:\n- By default, it reads up to 100 lines starting from the beginning of the file. Use `offset`/`limit` to page through large files instead of reading them whole.\n- A status header, `@@ field | field | ... @@`, sits above the file content, and every line after it is verbatim file content. When content is truncated, there may be an explanation before the header. Never include the header when editing.\n- Speculatively batch multiple `read_file` calls in one response when several files may be useful.\n- An empty file returns a system-reminder warning in place of contents.\n- Large tool results may be offloaded to a file; the tool message gives the path. Read that path here, paging with `offset`/`limit`.\n- Images (`.png`, `.jpg`, etc.), audio, video, and PDFs return multimodal content blocks (https://docs.langchain.com/oss/python/langchain/messages#multimodal).\n- For images and PDFs, pagination via `offset`/`limit` is text-only - supply `file_path` only\n- Always read a file before editing it.", "parameters": {"properties": {"file_path": {"description": "Absolute path to the file to read. Must be absolute, not relative.", "type": "string"}, "offset": {"default": 0, "description": "Line number to start reading from (0-indexed). Use for pagination of large files.", "type": "integer"}, "limit": {"default": 100, "description": "Maximum number of lines to read. Use for pagination of large files.", "type": "integer"}}, "required": ["file_path"], "type": "object"}}}
+{"type": "function", "function": {"name": "write_file", "description": "Writes content to a file. Creates the file if it does not exist; replaces it entirely if it does.\n\nUsage:\n- Use this tool when you intend to create a new file or replace the whole file. You do not need to read the file first.\n- Prefer to edit existing files (with the edit_file tool) over creating new ones when possible.", "parameters": {"properties": {"file_path": {"description": "Absolute path where the file should be written. Must be absolute, not relative.", "type": "string"}, "content": {"description": "The text content to write to the file. This parameter is required.", "type": "string"}}, "required": ["file_path", "content"], "type": "object"}}}
+{"type": "function", "function": {"name": "edit_file", "description": "Performs exact string replacements in files.\n\nUsage:\n- You must read the file before editing.\n- Preserve the exact source indentation from the read output, and never include the read status header in old_string or new_string.\n- Prefer editing an existing file over creating a new one.\n- Only use emojis if the user explicitly requests it.", "parameters": {"properties": {"file_path": {"description": "Absolute path to the file to edit. Must be absolute, not relative.", "type": "string"}, "old_string": {"description": "The exact text to find and replace. Must be unique in the file unless replace_all is True.", "type": "string"}, "new_string": {"description": "The text to replace old_string with. Must be different from old_string.", "type": "string"}, "replace_all": {"default": false, "description": "If True, replace all occurrences of old_string. If False (default), old_string must be unique.", "type": "boolean"}}, "required": ["file_path", "old_string", "new_string"], "type": "object"}}}
+{"type": "function", "function": {"name": "delete", "description": "Deletes a file or directory from the filesystem.\n\nUsage:\n- Permanently removes the file or directory at the given absolute path.\n- Deleting a directory removes it and everything inside it, recursively. Prefer\n  deleting a directory in one call over deleting each file individually.\n- This cannot be undone, so only delete paths you are sure are no longer needed.", "parameters": {"properties": {"file_path": {"description": "Absolute path to the file to delete. Must be absolute, not relative.", "type": "string"}}, "required": ["file_path"], "type": "object"}}}
+{"type": "function", "function": {"name": "glob", "description": "Find files matching a glob pattern, returning absolute paths.\n\nSupports `*` (any characters within a path segment), `**` (any directories), `?` (single character), `[abc]` (one character from a set), and `{a,b}` (alternatives), e.g. `*.py`, `src/**/*.py`, `*.{yml,yaml}`.\n\nA pattern without `/` matches the file name at any depth under the search root (`*.py` matches `src/app/main.py`). A pattern containing `/` matches the search-root-relative path (`src/**/*.py`). A leading `/` anchors to the search root (`/*.py` matches only top-level Python files).\n\nLeading-dot names are only matched when the pattern segment itself starts with `.` (use `.env`, or `.github/**/*.yml`). Because `**` will not descend into dot-directories, the bare form `*.yml` is *broader* than `**/*.yml` and is usually what you want.", "parameters": {"properties": {"pattern": {"description": "Glob pattern to match files (e.g., '*.py', '**/*.py', '/subdir/**/*.md'). A pattern without '/' matches the file name at any depth; a pattern containing '/' matches the search-root-relative path; a leading '/' anchors to the search root ('/*.py' matches only top-level files). Leading-dot names are excluded unless the pattern segment starts with '.', so prefer the bare form '*.py' over '**/*.py' -- '**' will not descend into dot-directories like '.github'.", "type": "string"}, "path": {"anyOf": [{"type": "string"}, {"type": "null"}], "default": null, "description": "Base directory to search from. Defaults to the backend's default root."}}, "required": ["pattern"], "type": "object"}}}
+{"type": "function", "function": {"name": "grep", "description": "Search for a LITERAL text pattern across files (NOT regex).\n\nThe pattern is matched verbatim: regex metacharacters are ordinary characters, not operators. To match any of several strings, run a separate grep for each; `grep(pattern=\"foo|bar\")` searches for the literal text \"foo|bar\", and `.*` or `\\.` match those characters literally.\n\nReturns matching files or content per `output_mode`. Offloaded large tool results live under the artifacts root (`/large_tool_results/` by default); grep that directory to search them when you do not know the exact path.", "parameters": {"properties": {"pattern": {"description": "Text pattern to search for (literal string, not regex).", "type": "string"}, "path": {"anyOf": [{"type": "string"}, {"type": "null"}], "default": null, "description": "Directory to search in. Defaults to current working directory."}, "glob": {"anyOf": [{"type": "string"}, {"type": "null"}], "default": null, "description": "Glob pattern (NOT regex) limiting which files are searched (e.g. '*.py', '*.ts'). A pattern without '/' matches the file name at any depth; a pattern containing '/' matches the search-root-relative path (e.g. 'src/**/*.py'). This is an in-tool file filter, not a call to the separate glob tool. Brace expansion (e.g. '*.{ts,tsx}') is not supported on all backends; run a separate search per extension for reliable results."}, "output_mode": {"default": "files_with_matches", "description": "Shape of the returned text. 'files_with_matches' (default): newline-separated matching file paths. 'content': matching lines grouped by file under a '<path>:' header, each line indented and formatted '<line_number>: <line text>' (only the matched line, no surrounding context). 'count': one '<path>: <match_count>' line per file.", "enum": ["files_with_matches", "content", "count"], "type": "string"}, "max_count": {"anyOf": [{"exclusiveMinimum": 0, "type": "integer"}, {"type": "null"}], "default": null, "description": "Optional cap on the total number of matches returned across all files. Leave unset to use the configured default. When the cap is hit, results are truncated and a note says so; narrow the pattern or path to see the rest."}}, "required": ["pattern"], "type": "object"}}}
+{"type": "function", "function": {"name": "inspect_python", "description": "Locate Python definitions in current virtual files without execution.\n\n        First omit symbol_id for a paginated outline (functions/classes, including\n        nested methods and decorators). Select a returned id and copy its\n        source_sha256 into expected_sha256 to read that symbol's exact lines.\n        offset is zero-based within the outline or selected symbol; limit is at\n        most 120 items. Responses are at most 8192 UTF-8 bytes with next_offset.\n        Any continuation requires expected_sha256; after an edit, refresh the\n        outline. Uses the worker Python AST grammar. Other file types use grep/read_file.", "parameters": {"properties": {"file_path": {"type": "string"}, "symbol_id": {"default": "", "type": "string"}, "offset": {"default": 0, "type": "integer"}, "limit": {"default": 40, "type": "integer"}, "expected_sha256": {"default": "", "type": "string"}}, "required": ["file_path"], "type": "object"}}}
+</tools>
+
+If you choose to call a function ONLY reply in the following format with NO suffix:
+
+<tool_call>
+<function=example_function_name>
+<parameter=example_parameter_1>
+value_1
+</parameter>
+<parameter=example_parameter_2>
+This is the value for the second parameter
+that can span
+multiple lines
+</parameter>
+</function>
+</tool_call>
+
+<IMPORTANT>
+Reminder:
+- Function calls MUST follow the specified format: an inner <function=...></function> block must be nested within <tool_call></tool_call> XML tags
+- Required parameters MUST be specified
+- You may provide optional reasoning for your function call in natural language BEFORE the function call, but NOT after
+- If there is no function call available, answer the question like normal with your current knowledge and do not tell the user about function calls
+</IMPORTANT>
+
+Prepare the requested maintenance patch using virtual file tools. Do not delegate or execute commands. For Python files, use inspect_python to locate definitions before reading sequential chunks. Its source hashes bind pages to current virtual content; refresh the outline after edits.<|im_end|>
+<|im_start|>user
+On Linux, path normalization leaves dot components and repeated or trailing separators in paths written with backslashes. For example foo\.\bar should normalize to /foo/bar, and the same behavior is required for Unicode paths. Fix the production implementation while preserving existing traversal and allowed-prefix rejection. Inspect the two provided files, make a focused fix and add regression coverage. Do not weaken existing tests or validation.
+
+Virtual file inventory (paths are rooted in the file-tool workspace):
+/libs/deepagents/deepagents/backends/utils.py
+/libs/deepagents/tests/unit_tests/backends/test_utils.py
+These are the only editable files. No reference implementation or edit plan is supplied.<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+<tool_call>
+<function=inspect_python>
+<parameter=file_path>
+/libs/deepagents/deepagents/backends/utils.py
+</parameter>
+<parameter=limit>
+120
+</parameter>
+</function>
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+{"status":"ok","source_sha256":"6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c","file_lines":1250,"parser":"Python 3.11 AST","mode":"outline","offset":0,"total":37,"items":[{"id":"L166:0","name":"InvalidGlobPatternError","name_truncated":false,"kind":"ClassDef","start_line":166,"end_line":174},{"id":"L252:0","name":"compile_grep_include_glob","name_truncated":false,"kind":"FunctionDef","start_line":251,"end_line":331},{"id":"L324:8","name":"compile_grep_include_glob.matcher","name_truncated":false,"kind":"FunctionDef","start_line":324,"end_line":325},{"id":"L328:8","name":"compile_grep_include_glob.matcher","name_truncated":false,"kind":"FunctionDef","start_line":328,"end_line":329},{"id":"L334:0","name":"_normalize_content","name_truncated":false,"kind":"FunctionDef","start_line":334,"end_line":352},{"id":"L355:0","name":"sanitize_tool_call_id","name_truncated":false,"kind":"FunctionDef","start_line":355,"end_line":360},{"id":"L363:0","name":"format_content_with_line_numbers","name_truncated":false,"kind":"FunctionDef","start_line":363,"end_line":413},{"id":"L416:0","name":"_format_source_block","name_truncated":false,"kind":"FunctionDef","start_line":416,"end_line":435},{"id":"L438:0","name":"check_empty_content","name_truncated":false,"kind":"FunctionDef","start_line":438,"end_line":449},{"id":"L452:0","name":"_get_file_type","name_truncated":false,"kind":"FunctionDef","start_line":452,"end_line":463},{"id":"L477:0","name":"_get_backend_read_file_type","name_truncated":false,"kind":"FunctionDef","start_line":477,"end_line":495},{"id":"L498:0","name":"file_data_to_string","name_truncated":false,"kind":"FunctionDef","start_line":498,"end_line":510},{"id":"L513:0","name":"create_file_data","name_truncated":false,"kind":"FunctionDef","start_line":513,"end_line":535},{"id":"L538:0","name":"update_file_data","name_truncated":false,"kind":"FunctionDef","start_line":538,"end_line":557},{"id":"L560:0","name":"_copy_file_data_with_content","name_truncated":false,"kind":"FunctionDef","start_line":560,"end_line":582},{"id":"L585:0","name":"normalize_read_bounds","name_truncated":false,"kind":"FunctionDef","start_line":585,"end_line":620},{"id":"L623:0","name":"slice_read_response","name_truncated":false,"kind":"FunctionDef","start_line":623,"end_line":694},{"id":"L697:0","name":"perform_string_replacement","name_truncated":false,"kind":"FunctionDef","start_line":697,"end_line":754},{"id":"L758:0","name":"truncate_if_too_long","name_truncated":false,"kind":"FunctionDef","start_line":757,"end_line":758},{"id":"L762:0","name":"truncate_if_too_long","name_truncated":false,"kind":"FunctionDef","start_line":761,"end_line":762},{"id":"L765:0","name":"truncate_if_too_long","name_truncated":false,"kind":"FunctionDef","start_line":765,"end_line":780},{"id":"L789:0","name":"_glob_anchor","name_truncated":false,"kind":"FunctionDef","start_line":789,"end_line":807},{"id":"L810:0","name":"_paths_overlap","name_truncated":false,"kind":"FunctionDef","start_line":810,"end_line":819},{"id":"L822:0","name":"to_posix_path","name_truncated":false,"kind":"FunctionDef","start_line":822,"end_line":843},{"id":"L846:0","name":"validate_path","name_truncated":false,"kind":"FunctionDef","start_line":846,"end_line":909},{"id":"L912:0","name":"_normalize_path","name_truncated":false,"kind":"FunctionDef","start_line":912,"end_line":944},{"id":"L947:0","name":"_filter_files_by_path","name_truncated":false,"kind":"FunctionDef","start_line":947,"end_line":974},{"id":"L977:0","name":"_relative_to_root","name_truncated":false,"kind":"FunctionDef","start_line":977,"end_line":994},{"id":"L997:0","name":"_glob_search_files","name_truncated":false,"kind":"FunctionDef","start_line":997,"end_line":1056},{"id":"L1059:0","name":"_format_grep_results","name_truncated":false,"kind":"FunctionDef","start_line":1059,"end_line":1085},{"id":"L1091:0","name":"grep_matches_from_files","name_truncated":false,"kind":"FunctionDef","start_line":1091,"end_line":1139},{"id":"L1142:0","name":"build_grep_results_dict","name_truncated":false,"kind":"FunctionDef","start_line":1142,"end_line":1147},{"id":"L1150:0","name":"format_grep_matches","name_truncated":false,"kind":"FunctionDef","start_line":1150,"end_line":1164},{"id":"L1167:0","name":"_format_grep_with_context","name_truncated":false,"kind":"FunctionDef","start_line":1167,"end_line":1196},{"id":"L1199:0","name":"_group_adjacent_lines","name_truncated":false,"kind":"FunctionDef","start_line":1199,"end_line":1207},{"id":"L1224:0","name":"_looks_like_regex","name_truncated":false,"kind":"FunctionDef","start_line":1224,"end_line":1226},{"id":"L1229:0","name":"regex_literal_hint","name_truncated":false,"kind":"FunctionDef","start_line":1229,"end_line":1250}],"next_offset":null}
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+
+<tool_call>
+<function=inspect_python>
+<parameter=file_path>
+/libs/deepagents/deepagents/backends/utils.py
+</parameter>
+<parameter=symbol_id>
+L822:0
+</parameter>
+<parameter=limit>
+120
+</parameter>
+<parameter=expected_sha256>
+6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c
+</parameter>
+</function>
+</tool_call><|im_end|>
+<|im_start|>user
+<tool_response>
+{"status":"ok","source_sha256":"6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c","file_lines":1250,"parser":"Python 3.11 AST","mode":"source","offset":0,"symbol":{"id":"L822:0","name":"to_posix_path","name_truncated":false,"kind":"FunctionDef","start_line":822,"end_line":843},"total":22,"items":[{"line":822,"text":"def to_posix_path(path: str) -> str:"},{"line":823,"text":"    r\"\"\"Normalize backslash separators to forward slashes for `PurePosixPath` use."},{"line":824,"text":""},{"line":825,"text":"    Backends running on Windows return OS-native paths using backslashes."},{"line":826,"text":"    `PurePosixPath` treats backslashes as literal filename characters,"},{"line":827,"text":"    so `PurePosixPath(r\"C:\\a\\b\").name` yields the full string instead"},{"line":828,"text":"    of `\"b\"`. Normalize before constructing a `PurePosixPath`."},{"line":829,"text":""},{"line":830,"text":"    This is best-effort: a POSIX directory literally named with a backslash"},{"line":831,"text":"    will also be rewritten. That trade-off is accepted because such filenames"},{"line":832,"text":"    are vanishingly rare in practice and the alternative (gating on `os.sep`)"},{"line":833,"text":"    fails when a Windows-style path is handed to a non-Windows process."},{"line":834,"text":""},{"line":835,"text":"    Args:"},{"line":836,"text":"        path: Path string that may use backslash separators."},{"line":837,"text":""},{"line":838,"text":"    Returns:"},{"line":839,"text":"        The same path with every `\\\\` replaced by `/`."},{"line":840,"text":""},{"line":841,"text":"            Inputs that already use forward slashes are returned unchanged."},{"line":842,"text":"    \"\"\""},{"line":843,"text":"    return path.replace(\"\\\\\", \"/\")"}],"next_offset":null}
+</tool_response><|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>
+

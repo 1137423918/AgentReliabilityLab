@@ -37,3 +37,8 @@ The control pins Deep Agents `744a797e3b9495539ca35571eeffd112a205f5c8`. It retr
 [Evidence and results](../evidence/source-navigation/README.md). Output-byte counts, where reported, include source/outline JSON only; they omit prompts, tool schemas, conversation history and future model choices. They are not token savings, cost savings, latency improvements or model success measurements.
 
 The integration follows the official [LangChain ToolRuntime state API](https://docs.langchain.com/oss/python/langchain/tools) and [Deep Agents custom-tool interface](https://docs.langchain.com/oss/python/deepagents/tools). Tests exercise the actual pinned installed packages; current documentation alone is not treated as proof of compatibility.
+
+
+## Later full-prefix accounting
+
+The original source-navigation control above measured response bytes only. A separate [full-request budget control](context-budget.md) now includes schemas, worker prompts and all history with reference tokenization. For the same operator-known function objective, AST uses fewer logical input tokens than sequential pages but more than literal grep plus a supplied span. It does not establish real-model net cost, latency or repair improvement; the neural preset remains unrun.

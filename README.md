@@ -61,6 +61,12 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 [工具接口、预算和使用](docs/source-navigation.md) · [源片段、恢复与回归证据](evidence/source-navigation/README.md)。新增工具会增加 schema 和提示开销；片段字节数不等于净 token、耗时或费用节省。新神经模型预设已准备，尚未运行。
 
+## 完整请求的上下文预算审计
+
+通过实际 worker、Deep Agents 和 ChatOpenAI HTTP 传输，对同一已知函数目标比较三种操作者检索计划，逐行核对86行目标原文与虚拟文件未改动。14份真实请求JSON体、完整提示和原生GGUF词表token序列公开；参考渲染包含系统提示、所有工具schema和历史。顺序读取、grep后读span、AST检索的累计逻辑输入分别为 **43990 / 11341 / 19054 token**，AST首请求额外286。
+
+这个已知名称的场景里grep更省。Jinja参考渲染未证明与原生server完全等价；逻辑输入重复计算可缓存前缀，不等于净推理耗时、费用或成功率。固定计划与假模型只验证真实工具和传输，不计模型自主定位或修复；运行器核心未改、63项原项目测试未重复跑。[协议与完整口径](docs/context-budget.md) · [14份请求、token序列与哈希](evidence/context-budget/README.md)。
+
 ## 有界的编辑、验收与修复
 
 `python -m agent_lab.repair` 可以把完成的验收失败反馈给下一轮，继续编辑上一份候选。默认额外修复 0 次，可显式限制为 0–3 次；每轮有独立的检查点、Git worktree、补丁与日志，失败候选保留。反馈含日志哈希和最多 8 KiB 尾部；重启不会因为重置内存计数而增加轮次或重跑已有失败验收。日志或工作区被改动会停止自动流程。
