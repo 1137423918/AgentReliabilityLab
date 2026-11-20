@@ -1,0 +1,22 @@
+{
+  "scope": "Real Semantic Kernel runtime cancelling one controlled pending request; callback reads its cancellation token; no model, GPU or network service",
+  "protocol_sha256": "05a76ff313d4abf26f18e36afdd50f1421dd519b5efbf6f8ddeee17d3e65412a",
+  "base_commit": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "source_sha256": "6e0b37ff9ce142a91e914b4bf1c6dc1feee99fe0e285d4970e8166ac1b402286",
+  "benchmark_sha256": "36eabda0cf542196d37252bb2a8ee93320ee1c6a99bc0fa0a724123eaabc18d5",
+  "returncode": -9,
+  "timed_out": true,
+  "callback_hang_observed": true,
+  "completed": false,
+  "duration_seconds": 45.025,
+  "events": [
+    {
+      "stage": "agent_waiting"
+    },
+    {
+      "stage": "cleanup_entered"
+    }
+  ],
+  "traceback_sha256": "717ee001f8172f0d31502bf9dad1d56370bb18cc8852764d69a116c348cbdd72",
+  "timeout_is_not_a_general_performance_metric": true
+}

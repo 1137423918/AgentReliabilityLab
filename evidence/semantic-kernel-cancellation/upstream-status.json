@@ -1,0 +1,15 @@
+{
+  "pr_created": true,
+  "number": 14845,
+  "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d",
+  "base_sha": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "observed_at": "2026-11-20T21:25:39Z",
+  "ai_assistance_disclosed": true,
+  "human_review_asserted": false,
+  "upstream_ci_verified_green": false,
+  "no_issue_or_comment_created": true
+}

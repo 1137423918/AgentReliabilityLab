@@ -1,0 +1,7 @@
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+An unexpected error has occurred: CalledProcessError: command: ('/usr/bin/git', 'fetch', 'origin', '--tags')
+return code: 128
+stdout: (none)
+stderr:
+    fatal: unable to access 'https://github.com/pre-commit/pre-commit-hooks/': Empty reply from server
+Check the log at <server-workspace>/cache/semantic-kernel-precommit-20261121/pre-commit.log

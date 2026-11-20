@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "subject": "microsoft/semantic-kernel",
+  "base_commit": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "scope": "Real experimental Python InProcessRuntime cancellation with a controlled pending handler and a public callback querying its token",
+  "runtime_child_wall_seconds": 45,
+  "callback_trace_delay_seconds": 2,
+  "runtime_event_wait_seconds": 5,
+  "required": ["import the specified checkout", "agent handler reached pending future", "cleanup callback entered", "original child hang only classified if cleanup-return marker is absent and owned child was killed/reaped", "candidate callback once", "pending request and agent observe cancellation", "runtime stops and closes"],
+  "unit_cases": ["callback reads token before/after cancellation", "callback registers cleanup and repeats cancellation before/after cancellation", "callback waits for a separate token-reading thread before/after cancellation", "future links before/after cancellation", "six concurrent cancel callers invoke registered cleanup once", "callback exception propagation and later cancel compatibility"],
+  "limitations": ["controlled work, not production incident or neural agent task", "no GPU or cloud model", "not a timeout-based speed comparison", "Python runtime API is marked experimental", "callback exceptions remain propagated", "callbacks may block on their own work", "asyncio Future cancellation from arbitrary threads remains outside scope", "no general callback ordering guarantee across concurrent registrations"]
+}

@@ -1,0 +1,10 @@
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+An unexpected error has occurred: CalledProcessError: command: ('/usr/bin/git', '-c', 'core.useBuiltinFSMonitor=false', 'remote', 'add', 'origin', 'https://github.com/pre-commit/pre-commit-hooks')
+return code: 128
+stdout: (none)
+stderr:
+    fatal: detected dubious ownership in repository at '<server-home>/.cache/pre-commit/repovhupuas1'
+    To add an exception for this directory, call:
+    
+    	git config --global --add safe.directory <server-home>/.cache/pre-commit/repovhupuas1
+Check the log at <server-home>/.cache/pre-commit/pre-commit.log

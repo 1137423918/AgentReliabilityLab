@@ -1,0 +1,1567 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.4, pytest-9.0.3, pluggy-1.6.0
+rootdir: <server-workspace>/code/semantic-kernel-candidate-20261121/python
+configfile: pyproject.toml
+plugins: anyio-4.14.2, asyncio-1.4.0, cov-7.0.0, timeout-2.4.0, xdist-3.8.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 120.0s
+timeout method: signal
+timeout func_only: False
+collected 195 items
+
+tests/unit/agents/runtime/test_cancellation_token.py ..........          [  5%]
+tests/unit/agents/runtime/test_intervention_queue.py ............        [ 11%]
+tests/unit/agents/runtime/test_message_serialization.py .........        [ 15%]
+tests/unit/agents/runtime/test_runtime.py ...................            [ 25%]
+tests/unit/agents/orchestration/test_concurrent.py ....F...              [ 29%]
+tests/unit/agents/orchestration/test_group_chat.py ..FF...s........      [ 37%]
+tests/unit/agents/orchestration/test_handoff.py .......FF.....FF..       [ 47%]
+tests/unit/agents/orchestration/test_magentic.py ..F....FFF.........     [ 56%]
+tests/unit/agents/orchestration/test_orchestration_base.py ............. [ 63%]
+....                                                                     [ 65%]
+tests/unit/agents/orchestration/test_orchestration_tools.py ......       [ 68%]
+tests/unit/agents/orchestration/test_sequential.py ....F...              [ 72%]
+tests/unit/agents/test_group_chat/test_agent_channel.py ...              [ 74%]
+tests/unit/agents/test_group_chat/test_agent_chat.py ..................  [ 83%]
+tests/unit/agents/test_group_chat/test_agent_chat_utils.py ..            [ 84%]
+tests/unit/agents/test_group_chat/test_agent_group_chat.py ............. [ 91%]
+......                                                                   [ 94%]
+tests/unit/agents/test_group_chat/test_broadcast_queue.py ...........    [100%]
+
+=================================== FAILURES ===================================
+_____________________ test_invoke_cancel_before_completion _____________________
+
+    async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the ConcurrentOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = ConcurrentOrchestration(members=[agent_a, agent_b])
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel before the collection agent gets the responses
+                await asyncio.sleep(0.05)
+>               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_concurrent.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=<Task finished name='Task-109...cancellation_token=<semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7efd1e773910>)
+
+    def cancel(self) -> None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+>           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_XPAisVJgqnibgeGI_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration:
+Agent "agent_XPAisVJgqnibgeGI" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_XPAisVJgqnibgeGI_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/concurrent.py", line 88, in _handle_message
+    response = await self._invoke_agent(additional_messages=message.body)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_XPAisVJgqnibgeGI" did not return any response.
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_UXSYSndLVyfNZfRE_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration:
+Agent "agent_UXSYSndLVyfNZfRE" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_UXSYSndLVyfNZfRE_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/concurrent.py", line 88, in _handle_message
+    response = await self._invoke_agent(additional_messages=message.body)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_UXSYSndLVyfNZfRE" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_XPAisVJgqnibgeGI_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration:
+Agent "agent_XPAisVJgqnibgeGI" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_XPAisVJgqnibgeGI_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/concurrent.py", line 88, in _handle_message
+    response = await self._invoke_agent(additional_messages=message.body)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_XPAisVJgqnibgeGI" did not return any response.
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_UXSYSndLVyfNZfRE_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration:
+Agent "agent_UXSYSndLVyfNZfRE" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_UXSYSndLVyfNZfRE_d91bc6b85c4442f0985717717efeb39c/ConcurrentOrchestration
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/concurrent.py", line 88, in _handle_message
+    response = await self._invoke_agent(additional_messages=message.body)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_UXSYSndLVyfNZfRE" did not return any response.
+_________________________________ test_invoke __________________________________
+
+    async def test_invoke():
+        """Test the invoke method of the GroupChatOrchestration."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent(description="test agent")
+            agent_b = MockAgent(description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = GroupChatOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=RoundRobinGroupChatManager(max_rounds=3),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_group_chat.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/group_chat.py:129: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.group_chat.GroupChatAgentActor object at 0x7efd01d0e6d0>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.USER: ...etadata={}, content_type='text', text='test_message', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_xMxwvEQxPpVJruFD" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_xMxwvEQxPpVJruFD_3b6f300ccedc493dba16e836457a8136/default:
+Agent "agent_xMxwvEQxPpVJruFD" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_xMxwvEQxPpVJruFD_3b6f300ccedc493dba16e836457a8136/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/group_chat.py", line 129, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_xMxwvEQxPpVJruFD" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_xMxwvEQxPpVJruFD_3b6f300ccedc493dba16e836457a8136/default:
+Agent "agent_xMxwvEQxPpVJruFD" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_xMxwvEQxPpVJruFD_3b6f300ccedc493dba16e836457a8136/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/group_chat.py", line 129, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_xMxwvEQxPpVJruFD" did not return any response.
+____________________________ test_invoke_with_list _____________________________
+
+    async def test_invoke_with_list():
+        """Test the invoke method of the GroupChatOrchestration with a list of messages."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent(description="test agent")
+            agent_b = MockAgent(description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            messages = [
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_1"),
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_2"),
+            ]
+    
+            try:
+                orchestration = GroupChatOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=RoundRobinGroupChatManager(max_rounds=2),
+                )
+                orchestration_result = await orchestration.invoke(task=messages, runtime=runtime)
+>               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_group_chat.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/group_chat.py:129: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.group_chat.GroupChatAgentActor object at 0x7efcfc9019d0>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.USER: ...adata={}, content_type='text', text='test_message_2', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_mZyynWtDtWnBolwG" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_mZyynWtDtWnBolwG_67d6ea6b272c4425adf49eda29c17e67/default:
+Agent "agent_mZyynWtDtWnBolwG" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_mZyynWtDtWnBolwG_67d6ea6b272c4425adf49eda29c17e67/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/group_chat.py", line 129, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_mZyynWtDtWnBolwG" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_mZyynWtDtWnBolwG_67d6ea6b272c4425adf49eda29c17e67/default:
+Agent "agent_mZyynWtDtWnBolwG" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_mZyynWtDtWnBolwG_67d6ea6b272c4425adf49eda29c17e67/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/group_chat.py", line 129, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_mZyynWtDtWnBolwG" did not return any response.
+_________________________________ test_invoke __________________________________
+
+    async def test_invoke():
+        """Test the prepare method of the HandoffOrchestration."""
+        with (
+            patch.object(HandoffAgentActor, "__init__", wraps=HandoffAgentActor.__init__, autospec=True) as mock_init,
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+            agent_c = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b, agent_c],
+                    handoffs={
+                        agent_a.name: {agent_b.name: "test", agent_c.name: "test"},
+                        agent_b.name: {agent_a.name: "test"},
+                    },
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:382: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:440: in _start
+    await asyncio.gather(*[send_start_message(agent) for agent in self._members])
+semantic_kernel/agents/orchestration/handoffs.py:434: in send_start_message
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:366: in _process_send
+    recipient_agent = await self._get_agent(recipient)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:809: in _get_agent
+    agent = await self._invoke_agent_factory(agent_factory, agent_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:787: in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:750: in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+agent = MockAgent(arguments=None, description=None, id='eb9203ea-91bc-4f0f-8464-104fef789be1', instructions=None, kernel=Kerne...prompt_rendering_filters=[], auto_function_invocation_filters=[]), name='agent_UjksYCtJLEhdvNwr', prompt_template=None)
+handoff_connections = {'agent_IVtTPHqeAWMvChza': 'test', 'agent_RXpBzudMYItUNTKk': 'test'}
+
+>       lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+            agent,
+            internal_topic_type,
+            handoff_connections,
+            exception_callback,
+            result_callback=result_callback,
+            agent_response_callback=self._agent_response_callback,
+            streaming_agent_response_callback=self._streaming_agent_response_callback,
+            human_response_function=self._human_response_function,
+        ),
+    )
+E   TypeError: __init__() should return None, not 'MagicMock'
+
+semantic_kernel/agents/orchestration/handoffs.py:476: TypeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:in_process_runtime:Error constructing agent agent_UjksYCtJLEhdvNwr_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+ERROR:in_process_runtime:Error constructing agent agent_RXpBzudMYItUNTKk_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+ERROR:in_process_runtime:Error constructing agent agent_IVtTPHqeAWMvChza_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+------------------------------ Captured log call -------------------------------
+ERROR    in_process_runtime:in_process_runtime.py:798 Error constructing agent agent_UjksYCtJLEhdvNwr_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+ERROR    in_process_runtime:in_process_runtime.py:798 Error constructing agent agent_RXpBzudMYItUNTKk_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+ERROR    in_process_runtime:in_process_runtime.py:798 Error constructing agent agent_IVtTPHqeAWMvChza_e0f5c76761d54edc89cd0a37d06d6568/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 750, in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/handoffs.py", line 476, in <lambda>
+    lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: __init__() should return None, not 'MagicMock'
+____________________________ test_invoke_with_list _____________________________
+
+    async def test_invoke_with_list():
+        """Test the invoke method of the HandoffOrchestration with a list of messages."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            messages = [
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_1"),
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_2"),
+            ]
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task=messages, runtime=runtime)
+>               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:421: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:444: in _start
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:379: in _process_send
+    response = await recipient_agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.handoffs.HandoffAgentActor object at 0x7efcff317210>
+message = HandoffRequestMessage(agent_name='agent_KoVLhZCzeCvJndeA')
+cts = MessageContext(sender=None, topic_id=None, is_rpc=True, cancellation_token=<semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7efd16b80510>, message_id='45bd8f41-10d4-4dca-b05b-55bdd65b4940')
+
+    @message_handler
+    async def _handle_request_message(self, message: HandoffRequestMessage, cts: MessageContext) -> None:
+        """Handle a request message from an agent in the handoff group."""
+        if message.agent_name != self._agent.name:
+            return
+        logger.debug(f"{self.id}: Received handoff request message.")
+    
+        response = await self._invoke_agent_with_potentially_no_response(kernel=self._kernel)
+    
+        while not self._task_completed:
+            if self._handoff_agent_name:
+                await self.publish_message(
+                    HandoffRequestMessage(agent_name=self._handoff_agent_name),
+                    TopicId(self._internal_topic_type, self.id.key),
+                )
+                self._handoff_agent_name = None
+                break
+    
+            if response is None:
+>               raise RuntimeError(
+                    f'Agent "{self._agent.name}" did not return any response nor did not set a handoff agent name.'
+                )
+E               RuntimeError: Agent "agent_KoVLhZCzeCvJndeA" did not return any response nor did not set a handoff agent name.
+
+semantic_kernel/agents/orchestration/handoffs.py:283: RuntimeError
+____________________ test_invoke_with_handoff_function_call ____________________
+
+    async def test_invoke_with_handoff_function_call():
+        """Test the invoke method of the HandoffOrchestration with a handoff function call."""
+        agent_b = MockAgent()
+        agent_a = MockAgentWithHandoffFunctionCall(agent_b)
+    
+        with (
+            patch.object(
+                HandoffAgentActor, "_handoff_to_agent", wraps=HandoffAgentActor._handoff_to_agent, autospec=True
+            ) as mock_handoff_to_agent,
+        ):
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:615: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:444: in _start
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:379: in _process_send
+    response = await recipient_agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.handoffs.HandoffAgentActor object at 0x7efcfc9fb0d0>
+message = HandoffRequestMessage(agent_name='agent_UKVUSgtOqElpJpIz')
+cts = MessageContext(sender=None, topic_id=None, is_rpc=True, cancellation_token=<semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7efcff344650>, message_id='75b02600-3653-41b7-a970-6e75012e0104')
+
+    @message_handler
+    async def _handle_request_message(self, message: HandoffRequestMessage, cts: MessageContext) -> None:
+        """Handle a request message from an agent in the handoff group."""
+        if message.agent_name != self._agent.name:
+            return
+        logger.debug(f"{self.id}: Received handoff request message.")
+    
+        response = await self._invoke_agent_with_potentially_no_response(kernel=self._kernel)
+    
+        while not self._task_completed:
+            if self._handoff_agent_name:
+                await self.publish_message(
+                    HandoffRequestMessage(agent_name=self._handoff_agent_name),
+                    TopicId(self._internal_topic_type, self.id.key),
+                )
+                self._handoff_agent_name = None
+                break
+    
+            if response is None:
+>               raise RuntimeError(
+                    f'Agent "{self._agent.name}" did not return any response nor did not set a handoff agent name.'
+                )
+E               RuntimeError: Agent "agent_UKVUSgtOqElpJpIz" did not return any response nor did not set a handoff agent name.
+
+semantic_kernel/agents/orchestration/handoffs.py:283: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+INFO:semantic_kernel.kernel:Calling Handoff-transfer_to_agent_FKdzSwijyPRbdazV function.
+INFO:semantic_kernel.functions.kernel_function:Function Handoff-transfer_to_agent_FKdzSwijyPRbdazV invoking.
+INFO:semantic_kernel.functions.kernel_function:Function Handoff-transfer_to_agent_FKdzSwijyPRbdazV succeeded.
+INFO:semantic_kernel.functions.kernel_function:Function completed. Duration: 0.000191s
+------------------------------ Captured log call -------------------------------
+INFO     semantic_kernel.kernel:kernel.py:431 Calling Handoff-transfer_to_agent_FKdzSwijyPRbdazV function.
+INFO     semantic_kernel.functions.kernel_function:kernel_function_log_messages.py:19 Function Handoff-transfer_to_agent_FKdzSwijyPRbdazV invoking.
+INFO     semantic_kernel.functions.kernel_function:kernel_function_log_messages.py:29 Function Handoff-transfer_to_agent_FKdzSwijyPRbdazV succeeded.
+INFO     semantic_kernel.functions.kernel_function:kernel_function_log_messages.py:50 Function completed. Duration: 0.000191s
+_____________________ test_invoke_cancel_before_completion _____________________
+
+    async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the HandoffOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel before first agent completes
+                await asyncio.sleep(0.05)
+>               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_handoff.py:646: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=<Task finished name='Task-114...cancellation_token=<semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7efcf010a5d0>)
+
+    def cancel(self) -> None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+>           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError
+_________________________________ test_invoke __________________________________
+
+    async def test_invoke():
+        """Test the invoke method of the MagenticOrchestration."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager, "create_progress_ledger", new_callable=AsyncMock, side_effect=ManagerProgressList
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+            chat_completion_service = MockChatCompletionService(ai_model_id="test")
+            prompt_execution_settings = MockPromptExecutionSettings()
+    
+            manager = StandardMagenticManager(
+                chat_completion_service=chat_completion_service,
+                prompt_execution_settings=prompt_execution_settings,
+            )
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = MagenticOrchestration(members=[agent_a, agent_b], manager=manager)
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7efd1e7e2a10>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_a_1262f24f98b2404f852cfbe54ebd976f/default:
+Agent "agent_a" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_a_1262f24f98b2404f852cfbe54ebd976f/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_a_1262f24f98b2404f852cfbe54ebd976f/default:
+Agent "agent_a" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_a_1262f24f98b2404f852cfbe54ebd976f/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+__________________ test_invoke_with_max_stall_count_exceeded ___________________
+
+    async def test_invoke_with_max_stall_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max stall count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_stall_count=1,
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_magentic.py:396: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7efcfc930310>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_a_8a909a652ce44a0a841f41160e885a4b/default:
+Agent "agent_a" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_a_8a909a652ce44a0a841f41160e885a4b/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_a_8a909a652ce44a0a841f41160e885a4b/default:
+Agent "agent_a" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_a_8a909a652ce44a0a841f41160e885a4b/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+__________________ test_invoke_with_max_round_count_exceeded ___________________
+
+    async def test_invoke_with_max_round_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max round count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_round_count=1,
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7efcf97c35d0>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_a_547c32b9f44e414a85b26aa58a45028d/default:
+Agent "agent_a" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_a_547c32b9f44e414a85b26aa58a45028d/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_a_547c32b9f44e414a85b26aa58a45028d/default:
+Agent "agent_a" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_a_547c32b9f44e414a85b26aa58a45028d/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+__________________ test_invoke_with_max_reset_count_exceeded ___________________
+
+    async def test_invoke_with_max_reset_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max reset count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_stall_count=0,  # No stall allowed
+                        max_reset_count=0,  # No reset allowed
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+>               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:482: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7efd1b5a9950>
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=<AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -> ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) > 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+>           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_a_602d4d9ecccf4afb92c5b58e8f2241f3/default:
+Agent "agent_a" did not return any response.
+ERROR:in_process_runtime:Error processing publish message for agent_a_602d4d9ecccf4afb92c5b58e8f2241f3/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_a_602d4d9ecccf4afb92c5b58e8f2241f3/default:
+Agent "agent_a" did not return any response.
+ERROR    in_process_runtime:in_process_runtime.py:475 Error processing publish message for agent_a_602d4d9ecccf4afb92c5b58e8f2241f3/default
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 470, in _on_message
+    return await agent.on_message(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 53, in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 488, in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/routed_agent.py", line 156, in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/magentic.py", line 738, in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 76, in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/orchestration/agent_actor_base.py", line 193, in _invoke_agent
+    raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+RuntimeError: Agent "agent_a" did not return any response.
+_____________________ test_invoke_cancel_before_completion _____________________
+
+    async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the SequentialOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = SequentialOrchestration(members=[agent_a, agent_b])
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel while the first agent is processing
+                await asyncio.sleep(0.05)
+>               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_sequential.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=<Task finished name='Task-117...cancellation_token=<semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7efd1b5be6d0>)
+
+    def cancel(self) -> None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+>           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError
+----------------------------- Captured stderr call -----------------------------
+ERROR:semantic_kernel.agents.orchestration.agent_actor_base:Exception occurred in agent agent_dappdkPPtgOiidam_3468e35855724268b09a2d9d390505d6/default:
+Agent "agent_dappdkPPtgOiidam" did not return any response.
+------------------------------ Captured log call -------------------------------
+ERROR    semantic_kernel.agents.orchestration.agent_actor_base:agent_actor_base.py:79 Exception occurred in agent agent_dappdkPPtgOiidam_3468e35855724268b09a2d9d390505d6/default:
+Agent "agent_dappdkPPtgOiidam" did not return any response.
+=========================== short test summary info ============================
+FAILED tests/unit/agents/orchestration/test_concurrent.py::test_invoke_cancel_before_completion
+FAILED tests/unit/agents/orchestration/test_group_chat.py::test_invoke - Runt...
+FAILED tests/unit/agents/orchestration/test_group_chat.py::test_invoke_with_list
+FAILED tests/unit/agents/orchestration/test_handoff.py::test_invoke - TypeErr...
+FAILED tests/unit/agents/orchestration/test_handoff.py::test_invoke_with_list
+FAILED tests/unit/agents/orchestration/test_handoff.py::test_invoke_with_handoff_function_call
+FAILED tests/unit/agents/orchestration/test_handoff.py::test_invoke_cancel_before_completion
+FAILED tests/unit/agents/orchestration/test_magentic.py::test_invoke - Runtim...
+FAILED tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_stall_count_exceeded
+FAILED tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_round_count_exceeded
+FAILED tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_reset_count_exceeded
+FAILED tests/unit/agents/orchestration/test_sequential.py::test_invoke_cancel_before_completion
+================== 12 failed, 182 passed, 1 skipped in 13.54s ==================

@@ -113,6 +113,16 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 **候选尚未推送、PR 尚未创建**：GitHub 因当前令牌缺少 workflow 权限拒绝导入上游发布分支；四文件补丁未改工作流，等待授权；[复现协议](docs/lfx-checkpoint-numeric.md) · [日志、哈希与边界](evidence/lfx-checkpoint-numeric/README.md)。无模型或 GPU 调用，不计模型自主修复；旧检查点已丢失的数值不可恢复，重算仍可能重复副作用。本轮未改运行器核心，63项项目检查未重复运行。
 
+## Semantic Kernel 取消回调的重入死锁
+
+在另一个真实框架的实验性 Python 运行时中复现同类锁范围缺陷：用户清理回调读取 token、登记回调或等待其他读取线程时阻塞。候选在锁内切换状态并取出回调，释放锁后执行；future关联复用同一规则，保留异常传播和幂等取消。
+
+原版新检查6失败/4通过；候选运行时与群聊目录 **103项通过**。真实 InProcessRuntime 的待处理请求在原版进入清理后卡住，候选只清理一次、取消请求和处理器并正常关闭。[草稿PR #14845](https://github.com/microsoft/semantic-kernel/pull/14845)已提交、未合并，披露AI辅助及人工评审待办。
+
+更广范围为182通过/12失败/1跳过，原版同一范围176通过/18失败/1跳过；除六项新回归外，12个失败ID完全一致，不能声称完整Python CI绿色。103项与新10项都包含于广泛范围，不累加。mypy两文件和适用pre-commit通过，wheel字节核验通过；一项原有uv配置弃用警告保留。无模型/GPU，也未添加新的维护worker适配器。
+
+[复现与边界](docs/semantic-kernel-cancellation.md) · [日志、堆栈、补丁与哈希](evidence/semantic-kernel-cancellation/README.md)。本轮未改动自身worker核心，既有74项项目回归未重复执行；103项属于上游单独验证。
+
 ## AutoGen 取消回调的锁范围
 
 在 AutoGen 的真实公共 API 中复现取消死锁：回调查询自身 token、登记另一个清理回调，或等待其他线程读取 token 时，会再次申请仍被持有的锁。候选在锁内修改状态并复制回调列表，再释放锁执行；已取消 token 的回调登记和 future 关联复用同一逻辑。

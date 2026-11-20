@@ -1,0 +1,52 @@
+{
+  "returncode": 0,
+  "mirrors": [
+    {
+      "url": "https://github.com/pre-commit/pre-commit-hooks",
+      "rev": "v4.6.0",
+      "directory": "pre-commit-hooks.git",
+      "sha": "2c9f875913ee60ca25ce70243dc24d5b6415598c"
+    },
+    {
+      "url": "https://github.com/nbQA-dev/nbQA",
+      "rev": "1.10.0",
+      "directory": "nbQA.git",
+      "sha": "32aa5f28a7ce8a5b386159581d99798c6b87c5e3"
+    },
+    {
+      "url": "https://github.com/asottile/pyupgrade",
+      "rev": "v3.21.2",
+      "directory": "pyupgrade.git",
+      "sha": "75992aaa40730136014f34227e0135f63fc951b4"
+    },
+    {
+      "url": "https://github.com/astral-sh/ruff-pre-commit",
+      "rev": "v0.9.6",
+      "directory": "ruff-pre-commit.git",
+      "sha": "895ebb389825c29bd4e0addcf7579d6c69d199cc"
+    },
+    {
+      "url": "https://github.com/astral-sh/uv-pre-commit",
+      "rev": "0.5.30",
+      "directory": "uv-pre-commit.git",
+      "sha": "c1b860cf410af0b99258ca7e6252720e82a27206"
+    },
+    {
+      "url": "https://github.com/PyCQA/bandit",
+      "rev": "1.7.10",
+      "directory": "bandit.git",
+      "sha": "36fd65054fc8864b4037d0918904f9331512feb5"
+    }
+  ],
+  "source_unchanged": true,
+  "before": {
+    "python/semantic_kernel/agents/runtime/core/cancellation_token.py": "6f5b361a94d43b193eb8ead29f3f15789bcb3d1e21353ec035dd1d8489a2ff45",
+    "python/tests/unit/agents/runtime/test_cancellation_token.py": "37f3e266121713821f2651419b3fe1c3faaa49d29d26bcf428ae7e7b93e7ac09"
+  },
+  "after": {
+    "python/semantic_kernel/agents/runtime/core/cancellation_token.py": "6f5b361a94d43b193eb8ead29f3f15789bcb3d1e21353ec035dd1d8489a2ff45",
+    "python/tests/unit/agents/runtime/test_cancellation_token.py": "37f3e266121713821f2651419b3fe1c3faaa49d29d26bcf428ae7e7b93e7ac09"
+  },
+  "global_git_configuration_changed": false,
+  "method": "Exact original hook tag commits, only transport redirected through command-scoped Git environment; original pre-commit config unchanged; no hooks disabled; nonapplicable hooks may skip files normally"
+}

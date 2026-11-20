@@ -1,0 +1,3 @@
+warning: The `if-necessary-or-explicit` pre-release mode is deprecated and will be removed in a future release. Use `if-necessary` instead.
+Building wheel...
+Successfully built <server-workspace>/outputs/semantic-kernel-cancel-wheel-20261121/semantic_kernel-1.47.0-py3-none-any.whl

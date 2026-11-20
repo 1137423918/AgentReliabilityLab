@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "<string>", line 6, in <module>
+  File "<server-workspace>/code/semantic-kernel-original-20261121/python/semantic_kernel/agents/runtime/__init__.py", line 3, in <module>
+    from semantic_kernel.agents.runtime.core.agent import Agent
+  File "<server-workspace>/code/semantic-kernel-original-20261121/python/semantic_kernel/agents/runtime/core/__init__.py", line 6, in <module>
+    from semantic_kernel.agents.runtime.core.base_agent import BaseAgent
+  File "<server-workspace>/code/semantic-kernel-original-20261121/python/semantic_kernel/agents/runtime/core/base_agent.py", line 14, in <module>
+    from semantic_kernel.agents.runtime.core.core_runtime import CoreRuntime
+  File "<server-workspace>/code/semantic-kernel-original-20261121/python/semantic_kernel/agents/runtime/core/core_runtime.py", line 11, in <module>
+    from semantic_kernel.agents.runtime.core.serialization import MessageSerializer
+  File "<server-workspace>/code/semantic-kernel-original-20261121/python/semantic_kernel/agents/runtime/core/serialization.py", line 8, in <module>
+    from google.protobuf import any_pb2
+ModuleNotFoundError: No module named 'google'

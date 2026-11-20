@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "<server-workspace>/code/semantic-kernel-original-20261121/benchmarks/semantic_kernel_cancel.py", line 145, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "<server-workspace>/code/semantic-kernel-original-20261121/benchmarks/semantic_kernel_cancel.py", line 128, in main
+    "source_sha256": hashlib.sha256(token.read_bytes()).hexdigest(),
+                                    ^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/lib/python3.11/pathlib.py", line 1050, in read_bytes
+    with self.open(mode='rb') as f:
+         ^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/semantic-kernel-candidate-20261121/python/semantic_kernel/agents/runtime/core/cancellation_token.py'

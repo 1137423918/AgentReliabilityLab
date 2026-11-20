@@ -1,0 +1,85 @@
+{
+  "scope": "Actual experimental Semantic Kernel Python runtime cancellation and bounded regression tests; no model inference/GPU or general speedup claim",
+  "base_commit": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "upstream_repository": "https://github.com/microsoft/semantic-kernel",
+  "upstream_pr": "https://github.com/microsoft/semantic-kernel/pull/14845",
+  "upstream_pr_state": "open",
+  "upstream_pr_draft": true,
+  "merged": false,
+  "candidate_commit": "891744aad21d1778c842426f49d0c84da46a9a2d",
+  "stars_observed": 28791,
+  "observed_date": "2026-11-21",
+  "source_sha256": "6f5b361a94d43b193eb8ead29f3f15789bcb3d1e21353ec035dd1d8489a2ff45",
+  "baseline_source_sha256": "6e0b37ff9ce142a91e914b4bf1c6dc1feee99fe0e285d4970e8166ac1b402286",
+  "benchmark_sha256": "36eabda0cf542196d37252bb2a8ee93320ee1c6a99bc0fa0a724123eaabc18d5",
+  "protocol_sha256": "05a76ff313d4abf26f18e36afdd50f1421dd519b5efbf6f8ddeee17d3e65412a",
+  "new_tests": {
+    "total": 10,
+    "baseline_failed": 6,
+    "baseline_passed": 4,
+    "candidate_passed": 10,
+    "included_in_scoped_and_broad_suites": true
+  },
+  "runtime_groupchat_suite": {
+    "passed": 103,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 3.22
+  },
+  "broader_suite": {
+    "candidate_passed": 182,
+    "candidate_failed": 12,
+    "skipped": 1,
+    "baseline_passed": 176,
+    "baseline_failed": 18,
+    "same_12_old_failure_ids": [
+      "tests/unit/agents/orchestration/test_concurrent.py::test_invoke_cancel_before_completion",
+      "tests/unit/agents/orchestration/test_group_chat.py::test_invoke",
+      "tests/unit/agents/orchestration/test_group_chat.py::test_invoke_with_list",
+      "tests/unit/agents/orchestration/test_handoff.py::test_invoke",
+      "tests/unit/agents/orchestration/test_handoff.py::test_invoke_cancel_before_completion",
+      "tests/unit/agents/orchestration/test_handoff.py::test_invoke_with_handoff_function_call",
+      "tests/unit/agents/orchestration/test_handoff.py::test_invoke_with_list",
+      "tests/unit/agents/orchestration/test_magentic.py::test_invoke",
+      "tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_reset_count_exceeded",
+      "tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_round_count_exceeded",
+      "tests/unit/agents/orchestration/test_magentic.py::test_invoke_with_max_stall_count_exceeded",
+      "tests/unit/agents/orchestration/test_sequential.py::test_invoke_cancel_before_completion"
+    ],
+    "candidate_seconds": 13.54,
+    "baseline_seconds": 36.93,
+    "green": false,
+    "old_failure_root_causes_resolved": false
+  },
+  "runtime_probe": {
+    "original_callback_hang_observed": true,
+    "original_owned_child_reaped_after_wall_seconds": 45,
+    "candidate_cleanup_once": true,
+    "candidate_pending_handler_and_request_cancelled": true,
+    "runtime_closed": true,
+    "same_driver_and_protocol": true,
+    "not_speed_comparison": true
+  },
+  "quality": {
+    "mypy": "two changed files; no issues",
+    "precommit": "applicable original hooks on the two changed files; exact tag source mirrors; no file changes",
+    "wheel_build": "success; existing uv prerelease configuration warning retained",
+    "wheel_source_verified": true,
+    "full_upstream_ci_matrix_verified": false
+  },
+  "limitations": [
+    "controlled work, not production incident or neural agent task",
+    "no GPU or cloud model",
+    "not a timeout-based speed comparison",
+    "Python runtime API is marked experimental",
+    "callback exceptions remain propagated",
+    "callbacks may block on their own work",
+    "asyncio Future cancellation from arbitrary threads remains outside scope",
+    "no general callback ordering guarantee across concurrent registrations",
+    "103 checks overlap broader195-case suite; never add counts",
+    "12 existing orchestration failures and1skip retained; not all Python CI green",
+    "Python3.11.4 Linux only; optional cloud extras not installed",
+    "Human author/maintainer review and CLA status separate; draft not merged",
+    "No additional maintenance-worker runtime adapter implemented"
+  ]
+}

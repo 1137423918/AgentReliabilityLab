@@ -1,0 +1,288 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.4, pytest-9.0.3, pluggy-1.6.0
+rootdir: <server-workspace>/code/semantic-kernel-original-20261121/python
+configfile: pyproject.toml
+plugins: anyio-4.14.2, asyncio-1.4.0, cov-7.0.0, timeout-2.4.0, xdist-3.8.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=function, asyncio_default_test_loop_scope=function
+timeout: 120.0s
+timeout method: signal
+timeout func_only: False
+collected 10 items
+
+tests/unit/agents/runtime/test_cancellation_token.py FFFFFF....          [100%]
+
+=================================== FAILURES ===================================
+______________ test_callback_can_use_cancelled_token[read-False] _______________
+
+cleanup = 'read', cancel_before_registration = False
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+>       assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+E       AssertionError: Cancellation callback deadlocked while using its token
+E       assert not True
+E        +  where True = is_alive()
+E        +    where is_alive = <Thread(Thread-1 (cancel_and_register), started daemon 139624443721280)>.is_alive
+
+tests/unit/agents/runtime/test_cancellation_token.py:45: AssertionError
+_______________ test_callback_can_use_cancelled_token[read-True] _______________
+
+cleanup = 'read', cancel_before_registration = True
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+>       assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+E       AssertionError: Cancellation callback deadlocked while using its token
+E       assert not True
+E        +  where True = is_alive()
+E        +    where is_alive = <Thread(Thread-2 (cancel_and_register), started daemon 139624435328576)>.is_alive
+
+tests/unit/agents/runtime/test_cancellation_token.py:45: AssertionError
+____________ test_callback_can_use_cancelled_token[register-False] _____________
+
+cleanup = 'register', cancel_before_registration = False
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+>       assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+E       AssertionError: Cancellation callback deadlocked while using its token
+E       assert not True
+E        +  where True = is_alive()
+E        +    where is_alive = <Thread(Thread-3 (cancel_and_register), started daemon 139624353625664)>.is_alive
+
+tests/unit/agents/runtime/test_cancellation_token.py:45: AssertionError
+_____________ test_callback_can_use_cancelled_token[register-True] _____________
+
+cleanup = 'register', cancel_before_registration = True
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+>       assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+E       AssertionError: Cancellation callback deadlocked while using its token
+E       assert not True
+E        +  where True = is_alive()
+E        +    where is_alive = <Thread(Thread-4 (cancel_and_register), started daemon 139624345232960)>.is_alive
+
+tests/unit/agents/runtime/test_cancellation_token.py:45: AssertionError
+______________ test_callback_can_use_cancelled_token[join-False] _______________
+
+cleanup = 'join', cancel_before_registration = False
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+        assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+>       assert not errors
+E       AssertionError: assert not [AssertionError('Callback held token lock while waiting for cleanup\nassert not True\n +  where True = is_alive()\n +    where is_alive = <Thread(Thread-6 (read_token), started daemon 139624328447552)>.is_alive')]
+
+tests/unit/agents/runtime/test_cancellation_token.py:46: AssertionError
+_______________ test_callback_can_use_cancelled_token[join-True] _______________
+
+cleanup = 'join', cancel_before_registration = True
+
+    @pytest.mark.parametrize("cancel_before_registration", [False, True])
+    @pytest.mark.parametrize("cleanup", ["read", "register", "join"])
+    def test_callback_can_use_cancelled_token(cleanup: str, cancel_before_registration: bool) -> None:
+        token = CancellationToken()
+        observations: list[bool] = []
+        errors: list[BaseException] = []
+    
+        def read_token() -> None:
+            observations.append(token.is_cancelled())
+    
+        def on_cancel() -> None:
+            if cleanup == "read":
+                read_token()
+            elif cleanup == "register":
+                token.add_callback(read_token)
+                token.cancel()
+            else:
+                reader = threading.Thread(target=read_token, daemon=True)
+                reader.start()
+                reader.join(timeout=2)
+                assert not reader.is_alive(), "Callback held token lock while waiting for cleanup"
+    
+        def cancel_and_register() -> None:
+            try:
+                if cancel_before_registration:
+                    token.cancel()
+                token.add_callback(on_cancel)
+                token.cancel()
+            except BaseException as error:
+                errors.append(error)
+    
+        worker = threading.Thread(target=cancel_and_register, daemon=True)
+        worker.start()
+        worker.join(timeout=5)
+        assert not worker.is_alive(), "Cancellation callback deadlocked while using its token"
+>       assert not errors
+E       AssertionError: assert not [AssertionError('Callback held token lock while waiting for cleanup\nassert not True\n +  where True = is_alive()\n +    where is_alive = <Thread(Thread-8 (read_token), started daemon 139624336840256)>.is_alive')]
+
+tests/unit/agents/runtime/test_cancellation_token.py:46: AssertionError
+=========================== short test summary info ============================
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[read-False]
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[read-True]
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[register-False]
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[register-True]
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[join-False]
+FAILED tests/unit/agents/runtime/test_cancellation_token.py::test_callback_can_use_cancelled_token[join-True]
+========================= 6 failed, 4 passed in 26.44s =========================

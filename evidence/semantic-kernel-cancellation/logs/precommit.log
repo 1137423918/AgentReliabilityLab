@@ -1,0 +1,39 @@
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Initializing environment for https://github.com/nbQA-dev/nbQA.
+[INFO] Initializing environment for https://github.com/nbQA-dev/nbQA:pre-commit-hooks.
+[INFO] Initializing environment for https://github.com/asottile/pyupgrade.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Initializing environment for https://github.com/astral-sh/uv-pre-commit.
+[INFO] Initializing environment for https://github.com/PyCQA/bandit.
+[INFO] Initializing environment for https://github.com/PyCQA/bandit:bandit[toml].
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/nbQA-dev/nbQA.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/asottile/pyupgrade.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/astral-sh/uv-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/PyCQA/bandit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+check toml...........................................(no files to check)Skipped
+check yaml...........................................(no files to check)Skipped
+check json...........................................(no files to check)Skipped
+fix end of files.........................................................Passed
+mixed line ending........................................................Passed
+debug statements (python)................................................Passed
+Check Valid Python Samples...............................................Passed
+Check Valid Python Notebooks.........................(no files to check)Skipped
+pyupgrade................................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+uv-lock..............................................(no files to check)Skipped
+bandit...................................................................Passed
