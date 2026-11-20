@@ -22,6 +22,14 @@
 
 公开日志只替换了服务器绝对路径，测试结论保持原样。候选修复尚未提交上游 PR；模型自主完成维护任务的效果评测尚未运行。
 
+包级复现：从 `langchain-ai/deepagents` 的 `744a797e3b9495539ca35571eeffd112a205f5c8` 创建独立 checkout，应用 `evidence/deepagents-normalize-separators.patch`，在 `libs/deepagents` 中执行 `uv sync --all-groups --frozen`，再运行：
+
+```sh
+make test TEST_FILE="tests/unit_tests/backends/test_utils.py tests/unit_tests/test_file_system_tools.py tests/unit_tests/test_file_system_tools_async.py tests/unit_tests/test_permissions.py" PYTEST_EXTRA="-n 2" COV_ARGS=
+```
+
+候选源码分支：[1137423918/deepagents](https://github.com/1137423918/deepagents/tree/1137423918/sdk/normalize-backslash-paths)。上游代码片段及补丁上下文的 MIT 许可见 [evidence/UPSTREAM_LICENSE](evidence/UPSTREAM_LICENSE)。
+
 ```sh
 python3 prepare.py --checkout /path/to/deepagents --out prepared
 # 在服务器上运行：
