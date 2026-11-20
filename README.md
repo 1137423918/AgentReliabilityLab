@@ -1,12 +1,32 @@
 # Agent Reliability Lab
 
-面向软件维护 Agent 的工具行为评测。第一阶段关注跨平台路径规范化：相同虚拟路径应有相同规范形式，非法路径应被拒绝。
+面向软件维护 Agent 的工具契约与可恢复执行：持久化工具进度、隔离代码改动，并生成可审阅的补丁与验证记录。
 
-## 当前验证边界
+
+## 可恢复的维护运行器
+
+`agent_lab/` 将 Deep Agents、LangGraph SQLite checkpoint 和隔离 Git worktree 接起来：固定任务与文件范围 → 虚拟文件编辑 → 导出补丁 → 显式命令验证 → `ready_for_review`。不会自动提交或合并。
+
+- **18 条测试通过**：证据一致性与运行器流程，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时与跨重启预算。
+- **真实仓库四场景通过**：正常运行，以及检查点、补丁落地后、验证前的三处 SIGKILL。恢复后均完成两次工具操作，生成相同的 1573 字节补丁，分别通过 119 条上游测试。
+- 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 适配器已实现，真实模型调用尚待验证。
+
+[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [18 条测试日志](evidence/recovery/worker-tests.log)
+
+```sh
+uv sync
+uv run agent-lab-worker --repo /path/to/deepagents \
+  --task tasks/deepagents-path-maintenance.json --run-dir runs/maintenance-001
+# 使用相同任务和 run-dir 恢复；验证依赖须先按任务说明准备。
+```
+
+故障矩阵入口：`benchmarks/recovery_matrix.py`。实验固定上游 commit 和任务哈希，先断言验证时导入的是 worktree 源码，再运行官方测试。检查点数据库与完整对话留在私人运行目录；仓库只保存检查过的结果与日志。
+
+## 工具契约验证边界
 
 `prepare.py` 从指定 Deep Agents checkout 提取 `to_posix_path` 与 `validate_path` 的**原始函数源码**，生成无第三方依赖的最小复现模块；`audit.py` 在服务器运行固定契约用例，保存逐例输入、期望、观察和判定。
 
-这是隔离函数的契约检查，不代表完整包集成测试、Agent 成功率或模型能力评测。报告包含原始源码 SHA-256、上游 commit 和提取范围。后续加入真实包适配器和端到端维护任务。
+这是隔离函数的契约检查，不代表完整包集成测试、Agent 成功率或模型能力评测。报告包含原始源码 SHA-256、上游 commit 和提取范围。后续扩展跨框架适配器与模型自主维护任务评测。
 
 ## 已完成的包级验证
 

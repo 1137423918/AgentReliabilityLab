@@ -2,3 +2,6 @@ prepared/
 outputs/
 __pycache__/
 .venv/
+runs/
+.pytest_cache/
+*.egg-info/

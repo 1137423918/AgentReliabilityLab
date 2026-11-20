@@ -1,0 +1,56 @@
+{
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "files": [
+    "libs/deepagents/deepagents/backends/utils.py",
+    "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+  ],
+  "prompt": "Canonicalize backslash separators before os.path.normpath in validate_path, then add regression cases covering dot, duplicate, trailing and Unicode path forms.",
+  "max_graph_steps": 100,
+  "model": {
+    "mode": "scripted",
+    "plan": [
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "old_string": "    normalized = os.path.normpath(path)",
+          "new_string": "    normalized = os.path.normpath(to_posix_path(path))"
+        }
+      },
+      {
+        "tool": "edit_file",
+        "args": {
+          "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "old_string": "            (\"foo/bar\\\\baz/qux\", \"/foo/bar/baz/qux\"),",
+          "new_string": "            (\"foo/bar\\\\baz/qux\", \"/foo/bar/baz/qux\"),\n            (r\"foo\\.\\bar\", \"/foo/bar\"),\n            (r\"foo\\\\bar\", \"/foo/bar\"),\n            (\"foo\\\\bar\\\\\", \"/foo/bar\"),\n            (r\"/workspace\\.\\file.txt\", \"/workspace/file.txt\"),\n            (r\"/workspace/\\file.txt\", \"/workspace/file.txt\"),\n            (r\"项目\\.\\论文.md\", \"/项目/论文.md\"),"
+        }
+      }
+    ]
+  },
+  "verify": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 120
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit_tests/backends/test_utils.py",
+        "--disable-socket",
+        "--allow-unix-socket",
+        "--benchmark-disable",
+        "-q"
+      ],
+      "cwd": "libs/deepagents",
+      "timeout_seconds": 180
+    }
+  ],
+  "verification_environment": "Prepare verification dependencies from the pinned upstream lock once. python on PATH selects that environment; the first check requires imports from the task worktree."
+}

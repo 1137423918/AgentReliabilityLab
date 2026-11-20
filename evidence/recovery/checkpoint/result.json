@@ -1,0 +1,37 @@
+{
+  "status": "ready_for_review",
+  "task_sha256": "1f8426173527e962ee58b64d64929a7011d7cfbf1498617d73bb5ceb2c079aad",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+  "patch_bytes": 1573,
+  "model_mode": "scripted",
+  "retained_ai_messages": 3,
+  "tool_results": 2,
+  "verification": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "4d13b0fccd48cd6008085b14a054238c74c3f742c33227e7f972fa4326cdebf6"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit_tests/backends/test_utils.py",
+        "--disable-socket",
+        "--allow-unix-socket",
+        "--benchmark-disable",
+        "-q"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "e8be67e5b4a0e5ce25a865c2aa1c345efe70c7b8a4c2b65567b7073dd2ea45a2"
+    }
+  ]
+}
