@@ -1,0 +1,20 @@
+{
+  "task_sha256": "1303a1af897a47cc10e30798733ea6efe2deea3f1ca018c8c290e568042d939c",
+  "checkout_head": "9af2cf8d6f5f828a337c159a6aeee29a3a677ccf",
+  "pinned_base": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "model_initial_files": [
+    {
+      "path": "libs/deepagents/deepagents/backends/utils.py",
+      "base_blob_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "virtual_contents_match_base": true,
+      "checkout_head_blob_differs": true
+    },
+    {
+      "path": "libs/deepagents/tests/unit_tests/backends/test_utils.py",
+      "base_blob_sha256": "8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8",
+      "virtual_contents_match_base": true,
+      "checkout_head_blob_differs": true
+    }
+  ],
+  "model_loaded": false
+}

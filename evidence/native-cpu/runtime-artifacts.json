@@ -1,0 +1,28 @@
+{
+  "source_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "release_tag": "b12576",
+  "source_archive": {
+    "bytes": 39103960,
+    "sha256": "9588476bd9a7d5e62e19f83fea9eeb04287b2ce458c03e8a6107bfe70bce770e"
+  },
+  "binary_archive": {
+    "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12576/llama-b12576-bin-ubuntu-x64.tar.gz",
+    "bytes": 23060191,
+    "sha256": "b3e1ea8ff8723a17d312562625e9e531b10bed69222c49c53741d737d0214e31"
+  },
+  "libraries": [
+    {
+      "name": "libstdcxx-16.2.0-h934c35e_7.conda",
+      "url": "https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-16.2.0-h934c35e_7.conda",
+      "bytes": 6615436,
+      "sha256": "fa7018298629fc429971fffd6ecba3d27a7b02e4e890d6a93ea01ffebe8cb745"
+    },
+    {
+      "name": "libgcc-16.2.0-ha9f2e26_7.conda",
+      "url": "https://conda.anaconda.org/conda-forge/linux-64/libgcc-16.2.0-ha9f2e26_7.conda",
+      "bytes": 1058444,
+      "sha256": "e031634c3a928f9594eba868bc46ef5230d6571a364a0c63215b06c4563bfcea"
+    }
+  ],
+  "scope": "Standalone task-local libraries, no conda environment or system library changes"
+}

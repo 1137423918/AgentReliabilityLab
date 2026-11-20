@@ -1,0 +1,338 @@
+{
+  "scope": "One public DeepAgents maintenance problem, two native CPU operational trials; not a benchmark success rate",
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "source_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "derived_model_sha256": "9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06",
+  "derived_model_bytes": 2497279264,
+  "precision": "GGUF Q4_K_M derived from FP16 conversion of fixed BF16 source; no importance matrix",
+  "gpu_used": false,
+  "cpu": "Intel(R) Xeon(R) CPU E5-2699 v4 @ 2.20GHz",
+  "libc": [
+    "glibc",
+    "2.34"
+  ],
+  "compute_threads": 4,
+  "prefill_threads": 4,
+  "http_threads": 1,
+  "slots": 1,
+  "task_sha256": "1303a1af897a47cc10e30798733ea6efe2deea3f1ca018c8c290e568042d939c",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "planned_trials": 2,
+  "verified_trials": 0,
+  "cases": [
+    {
+      "case": "normal",
+      "duration_seconds": 600.115,
+      "worker_returncode": -9,
+      "case_wall_timeout": true,
+      "verified_patch": false,
+      "exported_patch": false,
+      "official_acceptance_reached": false,
+      "retained_graph_pending": [
+        "model"
+      ],
+      "persisted_model_turns": 8,
+      "persisted_tool_results": 9,
+      "tool_errors": 0,
+      "reported_usage_in_persisted_replies_only": {
+        "input_tokens": 26739,
+        "output_tokens": 1027
+      },
+      "checkpoint_interruption": null,
+      "unexported_virtual_changes": [
+        {
+          "virtual_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "saved_normalized_virtual_text": "normal/libs/deepagents/deepagents/backends/utils.py.txt",
+          "before_bytes": 47177,
+          "after_bytes": 900,
+          "before_lines": 1250,
+          "after_lines": 1,
+          "before_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+          "after_sha256": "1abfeb919983e4fb3e767733263325a8cc9498489c9aaf85c18be97b5c988303",
+          "original_top_level_symbols": {
+            "names": [
+              "InvalidGlobPatternError",
+              "_copy_file_data_with_content",
+              "_filter_files_by_path",
+              "_format_grep_results",
+              "_format_grep_with_context",
+              "_format_source_block",
+              "_get_backend_read_file_type",
+              "_get_file_type",
+              "_glob_anchor",
+              "_glob_search_files",
+              "_group_adjacent_lines",
+              "_looks_like_regex",
+              "_normalize_content",
+              "_normalize_path",
+              "_paths_overlap",
+              "_relative_to_root",
+              "build_grep_results_dict",
+              "check_empty_content",
+              "compile_grep_include_glob",
+              "create_file_data",
+              "file_data_to_string",
+              "format_content_with_line_numbers",
+              "format_grep_matches",
+              "grep_matches_from_files",
+              "normalize_read_bounds",
+              "perform_string_replacement",
+              "regex_literal_hint",
+              "sanitize_tool_call_id",
+              "slice_read_response",
+              "to_posix_path",
+              "truncate_if_too_long",
+              "truncate_if_too_long",
+              "truncate_if_too_long",
+              "update_file_data",
+              "validate_path"
+            ],
+            "syntax_error": null
+          },
+          "candidate_top_level_symbols": {
+            "names": [],
+            "syntax_error": {
+              "line": 1,
+              "message": "unexpected character after line continuation character"
+            }
+          },
+          "missing_original_top_level_symbols": null,
+          "symbol_comparison": "not_evaluated_due_to_invalid_syntax",
+          "artifact": "audit/normal/libs/deepagents/deepagents/backends/utils.py.txt"
+        }
+      ]
+    },
+    {
+      "case": "checkpoint-resume",
+      "duration_seconds": 600.032,
+      "worker_returncode": -9,
+      "case_wall_timeout": true,
+      "verified_patch": false,
+      "exported_patch": false,
+      "official_acceptance_reached": false,
+      "retained_graph_pending": [
+        "model"
+      ],
+      "persisted_model_turns": 12,
+      "persisted_tool_results": 13,
+      "tool_errors": 1,
+      "reported_usage_in_persisted_replies_only": {
+        "input_tokens": 53625,
+        "output_tokens": 949
+      },
+      "checkpoint_interruption": {
+        "stage": "checkpoint",
+        "model_turns": 1,
+        "tool_results": 2,
+        "pending": [
+          "model"
+        ]
+      },
+      "unexported_virtual_changes": []
+    }
+  ],
+  "server_model_task_launches": 22,
+  "canceled_model_tasks": 2,
+  "persisted_model_replies": 20,
+  "full_token_accounting_available": false,
+  "navigation_checkpoint_continuation_observed": true,
+  "checkpoint_interrupted_tools": [
+    "ls",
+    "ls"
+  ],
+  "edited_file_recovery_exercised": false,
+  "maintenance_recovery_succeeded": false,
+  "native_model_loaded": true,
+  "owned_service_terminated": true,
+  "launcher_exit_code": 143,
+  "service_shutdown": {
+    "returncode": 0,
+    "guard_reason": null,
+    "forced_cleanup": false,
+    "peak_sampled_rss_bytes": 9095294976
+  },
+  "operator_stop": {
+    "identity_checked": true,
+    "operator_requested": true,
+    "launcher_pid": 627093,
+    "child_pid": 629887,
+    "child_start_ticks": "452479205"
+  },
+  "launcher_checks": {
+    "passed": 3,
+    "seconds": 1.024,
+    "weights_loaded": false,
+    "log": "preparation/llama-launcher-tests-20261120.log"
+  },
+  "public_inspector_reproduced_manifest": true,
+  "original_snapshot_reverified_after_conversion": true,
+  "worker_source_fingerprints_match": true,
+  "source_hashes": {
+    "benchmarks/serve_llama_cpu.py": "791ed2fd9fdee6cdbb69d82ebd0b8213f883b8644c0f9d996e27f2fd1a9117c4",
+    "benchmarks/inspect_llama_model.py": "eacf14f5847856e9399a861e0128c5dd3008ae626670d3403ad862f54c983d75",
+    "tests/test_llama_service.py": "672696800a06e79abf3f48db0a6a93b6120b959cf230aeb9181b167ee467ce39"
+  },
+  "files": {
+    "MODEL_LICENSE": {
+      "raw_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e",
+      "public_sha256": "832dd9e00a68dd83b3c3fb9f5588dad7dcf337a0db50f7d9483f310cd292e92e"
+    },
+    "worker-fingerprints.json": {
+      "raw_sha256": "563765f4d4721d84ed806b330ae1970983cc796684e8c6f0f74a22d5ce2be85f",
+      "public_sha256": "563765f4d4721d84ed806b330ae1970983cc796684e8c6f0f74a22d5ce2be85f"
+    },
+    "BACKEND_LICENSE": {
+      "raw_sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "public_sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d"
+    },
+    "sources/tests/test_llama_service.py": {
+      "raw_sha256": "672696800a06e79abf3f48db0a6a93b6120b959cf230aeb9181b167ee467ce39",
+      "public_sha256": "672696800a06e79abf3f48db0a6a93b6120b959cf230aeb9181b167ee467ce39"
+    },
+    "sources/benchmarks/inspect_llama_model.py": {
+      "raw_sha256": "eacf14f5847856e9399a861e0128c5dd3008ae626670d3403ad862f54c983d75",
+      "public_sha256": "eacf14f5847856e9399a861e0128c5dd3008ae626670d3403ad862f54c983d75"
+    },
+    "sources/benchmarks/serve_llama_cpu.py": {
+      "raw_sha256": "791ed2fd9fdee6cdbb69d82ebd0b8213f883b8644c0f9d996e27f2fd1a9117c4",
+      "public_sha256": "791ed2fd9fdee6cdbb69d82ebd0b8213f883b8644c0f9d996e27f2fd1a9117c4"
+    },
+    "native-manifest.json": {
+      "raw_sha256": "1341ba1266a2bfd990eb0f8983aae2d9248ec3b053a1d42eb3a091c391cef67f",
+      "public_sha256": "1341ba1266a2bfd990eb0f8983aae2d9248ec3b053a1d42eb3a091c391cef67f"
+    },
+    "preparation/llama-launcher-20261120-01.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "preparation/llama-launcher-tests-20261120.log": {
+      "raw_sha256": "d2ad3ef94e7a57e045ed92ad22bf3cb8855b2d82a1f4822cafae6294ea3c9281",
+      "public_sha256": "d2ad3ef94e7a57e045ed92ad22bf3cb8855b2d82a1f4822cafae6294ea3c9281"
+    },
+    "preparation/llama-public-inspector-reproduction-20261120.log": {
+      "raw_sha256": "c3cb692f1f5dd537755de166b3ca11e32c675460b9ae19bf931e3a7aeef06f3f",
+      "public_sha256": "c3cb692f1f5dd537755de166b3ca11e32c675460b9ae19bf931e3a7aeef06f3f"
+    },
+    "preparation/llama-convert-f16-20261120.log": {
+      "raw_sha256": "b699f1089adb8a7169bf7d43f819dfa13a6d425f5930c2ab943baf25960ae68a",
+      "public_sha256": "124d982fe438728ae5fc5a690d261a68ff8bf71d17af748d0522ed3e09ae510d"
+    },
+    "preparation/llama-original-snapshot-reverified-20261120.json": {
+      "raw_sha256": "bf2a206de2466a114d58bd73d52d6bd05935a95e0e7c1bb1b614a94df20554db",
+      "public_sha256": "bf2a206de2466a114d58bd73d52d6bd05935a95e0e7c1bb1b614a94df20554db"
+    },
+    "preparation/llama-convert-preflight-20261120.log": {
+      "raw_sha256": "316e3f57e5c65106060020cf5a350598d8852e832d9e9569a3a2f8f4f4e8e385",
+      "public_sha256": "316e3f57e5c65106060020cf5a350598d8852e832d9e9569a3a2f8f4f4e8e385"
+    },
+    "preparation/llama-original-snapshot-reverified-20261120.log": {
+      "raw_sha256": "4bdffc909eabab1871bf09e7b01e985d2c9981ec6aaee52d8ac4b6130df53f71",
+      "public_sha256": "4bdffc909eabab1871bf09e7b01e985d2c9981ec6aaee52d8ac4b6130df53f71"
+    },
+    "preparation/llama-quantize-q4-20261120.log": {
+      "raw_sha256": "6451e8da33af07f977a741e7d24452c5afcc4786a94ef25c9c2c1acca1a2ceca",
+      "public_sha256": "bac2a6ba60f386d774fa7385760e6e799784351e379766f83f5df10e3a779bd9"
+    },
+    "preparation/llama-task-source-preflight-20261120.json": {
+      "raw_sha256": "2c414e132cbd15d6f2993d8b0f82c9681a4636127d1992a88cbdbfe5693bc5d0",
+      "public_sha256": "2c414e132cbd15d6f2993d8b0f82c9681a4636127d1992a88cbdbfe5693bc5d0"
+    },
+    "preparation/llama-pilot-20261120-01.log": {
+      "raw_sha256": "64c4b9627f963376c2042719df796193617fd7906ebbf48b18ed136f48c9cd85",
+      "public_sha256": "64c4b9627f963376c2042719df796193617fd7906ebbf48b18ed136f48c9cd85"
+    },
+    "preparation/llama-derived-inspection-20261120.log": {
+      "raw_sha256": "5f0b8abf88a4969ff397294676e150e55aff042ca27cc238473473f854e3625c",
+      "public_sha256": "5f0b8abf88a4969ff397294676e150e55aff042ca27cc238473473f854e3625c"
+    },
+    "preparation/llama-public-inspector-reproduction-20261120.json": {
+      "raw_sha256": "66204fd1fe3f3bfe82d116ef470b0677a0a41a118c1bd6860aa669c1fe47d32b",
+      "public_sha256": "66204fd1fe3f3bfe82d116ef470b0677a0a41a118c1bd6860aa669c1fe47d32b"
+    },
+    "service/shutdown.json": {
+      "raw_sha256": "4e06ca0c8f8c7d10152fc1a44cd0a289ea8779c6dd88ec8ed05187481ad54911",
+      "public_sha256": "4e06ca0c8f8c7d10152fc1a44cd0a289ea8779c6dd88ec8ed05187481ad54911"
+    },
+    "service/service.json": {
+      "raw_sha256": "a5c882be06b58ddc4d7f07cf6e6b3e9e59b76d8e7b6fd7564f313ccf7e4c42bc",
+      "public_sha256": "4cef7fb68829cc02f76a0679fa798e8a0d799736aeac51c7b8636a0023d0eb05"
+    },
+    "service/operator-stop.json": {
+      "raw_sha256": "d73aa2c111c0cf149d6cbd29c66bab2c8789296ffa9ae18aff294f25829508d0",
+      "public_sha256": "d73aa2c111c0cf149d6cbd29c66bab2c8789296ffa9ae18aff294f25829508d0"
+    },
+    "service/server.log": {
+      "raw_sha256": "b00d049f958b6b4d4019388b26bc2d3ff456c1380ffacdeecb29789eb627a923",
+      "public_sha256": "9d9ea2b99f69d44088fd804139bf5dbf8d9b8c3606778eee735ab5a61b5b371b"
+    },
+    "audit/normal.json": {
+      "raw_sha256": "130149b6332aaa5fef69fe2fb0c77ed1d14421c548267430e2aa6d5d37ba301d",
+      "public_sha256": "130149b6332aaa5fef69fe2fb0c77ed1d14421c548267430e2aa6d5d37ba301d"
+    },
+    "audit/checkpoint-resume.json": {
+      "raw_sha256": "0bd1c6db3d68bff8d6ae85a571d2d836a33e6ab64fb8cffb37e8ac2644017834",
+      "public_sha256": "0bd1c6db3d68bff8d6ae85a571d2d836a33e6ab64fb8cffb37e8ac2644017834"
+    },
+    "audit/normal/libs/deepagents/deepagents/backends/utils.py.txt": {
+      "raw_sha256": "1abfeb919983e4fb3e767733263325a8cc9498489c9aaf85c18be97b5c988303",
+      "public_sha256": "1abfeb919983e4fb3e767733263325a8cc9498489c9aaf85c18be97b5c988303"
+    },
+    "pilot/report.json": {
+      "raw_sha256": "90c84cfd07ac24f4a7a6bb22706e0eec938cc7770aede87503bd13d2eacd7fdb",
+      "public_sha256": "90c84cfd07ac24f4a7a6bb22706e0eec938cc7770aede87503bd13d2eacd7fdb"
+    },
+    "pilot/normal/resumed.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pilot/normal/resumed.stdout.jsonl": {
+      "raw_sha256": "30970757fa235c809d69fc54607dc3de16f851bce21f8d73572b63e2f2f6f6e7",
+      "public_sha256": "30970757fa235c809d69fc54607dc3de16f851bce21f8d73572b63e2f2f6f6e7"
+    },
+    "pilot/normal/status.json": {
+      "raw_sha256": "15eaed87424eec919ca23235c89221732e143a7008a32b51311c6214b4ccf942",
+      "public_sha256": "15eaed87424eec919ca23235c89221732e143a7008a32b51311c6214b4ccf942"
+    },
+    "pilot/checkpoint-resume/resumed.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pilot/checkpoint-resume/interrupted.stdout.jsonl": {
+      "raw_sha256": "7bcf6a5e2750b67cfbcb48715795b7196a4418b31c37f7432f6e504259427e82",
+      "public_sha256": "7bcf6a5e2750b67cfbcb48715795b7196a4418b31c37f7432f6e504259427e82"
+    },
+    "pilot/checkpoint-resume/resumed.stdout.jsonl": {
+      "raw_sha256": "f4cc984ea585e49dd6b6dad116031f0755e54440955b3eb6f83eea89b45f04c9",
+      "public_sha256": "f4cc984ea585e49dd6b6dad116031f0755e54440955b3eb6f83eea89b45f04c9"
+    },
+    "pilot/checkpoint-resume/interrupted.stderr.log": {
+      "raw_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "pilot/checkpoint-resume/status.json": {
+      "raw_sha256": "15eaed87424eec919ca23235c89221732e143a7008a32b51311c6214b4ccf942",
+      "public_sha256": "15eaed87424eec919ca23235c89221732e143a7008a32b51311c6214b4ccf942"
+    },
+    "protocol.json": {
+      "raw_sha256": "7967a2ad4903ac3fcf4cefc0111d134b59e9661b079fec7b0e3ffeacbe64994a",
+      "public_sha256": "7967a2ad4903ac3fcf4cefc0111d134b59e9661b079fec7b0e3ffeacbe64994a"
+    },
+    "runtime-artifacts.json": {
+      "raw_sha256": "e368806fdbdef778275b5544bc2289bf5ddd42b9c14f2275806bf6b395313c30",
+      "public_sha256": "e368806fdbdef778275b5544bc2289bf5ddd42b9c14f2275806bf6b395313c30"
+    }
+  },
+  "limits": [
+    "Both cases hit the declared 600-second deadline; no task was extended or relabelled successful",
+    "Pending model nodes and running status files are retained graph state after SIGKILL, not live jobs",
+    "Nine and thirteen tool results do not imply useful edits or task completion",
+    "Normal virtual text was never exported or executed; literal backslash-n and static syntax failure preserved",
+    "Full maintenance conversations, checkpoint databases, worktrees, model weights and native binaries are not published",
+    "Twenty persisted response usage records omit the two canceled generations; not complete cost or token accounting",
+    "Backend, quantization, prompt inventory and cache behavior differ from earlier CPU variants; no causal/general acceleration claim",
+    "The interruption covered two non-mutating directory queries, not an edited-file checkpoint",
+    "Old 33 core and 14 parser checks unchanged and not rerun; 3 new launcher checks reported separately",
+    "No GPU inference, hidden benchmark, model capability bound, production SLA or hostile-code sandbox claim"
+  ]
+}

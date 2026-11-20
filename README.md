@@ -33,7 +33,9 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 [完整协议与复现](docs/cpu-model-pilot.md) · [全部失败记录](evidence/cpu-model/README.md) · [机器可读报告](evidence/cpu-model/report.json)。GPU 推理与模型自主修复通过结果仍待取得。新增 CPU 服务和快照校验入口已在服务器分别检查，未计入前述 33 条核心测试。
 
-后续增加了[声明工具的格式兼容](docs/tool-format-compat.md)：原生标签模式保留，显式兼容完整 JSON / 括号 JSON；两种模式都校验工具名和参数 schema，拒绝未知函数、截断内容与无效批次。最终 14 项针对性服务器检查通过，四份历史维护输出仍为零工具调用。新鲜模型请求成功解析并执行了一次只读文件工具；但返回工具结果后，模型回答 `None`，未通过预先声明的完整往返验收。[原始响应与失败记录](evidence/tool-compat/report.json)均保留。新[文件清单任务](tasks/deepagents-path-model-grounded.json)只改提示词，验收和预算保持不变，尚未运行。
+后续增加了[声明工具的格式兼容](docs/tool-format-compat.md)：原生标签模式保留，显式兼容完整 JSON / 括号 JSON；两种模式都校验工具名和参数 schema，拒绝未知函数、截断内容与无效批次。最终 14 项针对性服务器检查通过，四份历史维护输出仍为零工具调用。新鲜模型请求成功解析并执行了一次只读文件工具；但返回工具结果后，模型回答 `None`，未通过预先声明的完整往返验收。[原始响应与失败记录](evidence/tool-compat/report.json)均保留。新[文件清单任务](tasks/deepagents-path-model-grounded.json)只改提示词，验收和预算保持不变，后续运行见下文。
+
+该文件清单任务随后在[原生 CPU 后端](docs/native-cpu-pilot.md)实际运行：固定权重转换为约 2.50 GB 的 Q4_K_M GGUF，以官方 llama.cpp、4 线程执行正常与检查点恢复模式。两种场景均在 600 秒上限终止，无导出补丁或官方验收；最后保存 9 / 13 条工具结果。中断前的两条目录查询状态得到保留，完整任务仍未通过。正常场景还留下含字面换行转义、静态语法无效的虚拟写入，已作为失败样例保留。[协议、派生模型身份及完整证据](evidence/native-cpu/README.md)。新增启动器的 3 项 Linux 进程清理检查通过，独立于前述测试组。
 
 ## 有界的编辑、验收与修复
 

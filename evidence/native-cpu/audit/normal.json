@@ -1,0 +1,387 @@
+{
+  "case": "normal",
+  "read_only_checkpoint_audit": true,
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 8,
+  "tool_results": 9,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "9a9aa728c7171b27ff1e61b499430bac08cf52f4bac9379eea7b5c3ce7500f46",
+      "usage": {
+        "input_tokens": 2316,
+        "output_tokens": 110,
+        "total_tokens": 2426,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "MNavuROTDjSPHsN0EIVAZDdKGuSqlYBI",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "93945e75b95d1fc2844c82e6feff2cb718ba05996dc8dc9a83aa918b1026eef5",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        },
+        {
+          "id": "3rFTEm5dzr01gEOFSkT7ojydUu5slFpI",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "1f52141ba6b3ffd0c758e18444f4013c298c42015095819ccf8e61f5e42f3ae7",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "a8eb3d749c58019e1a90d78760daab83252dbc9727297bf33926023858295b8c",
+      "name": "ls",
+      "tool_call_id": "MNavuROTDjSPHsN0EIVAZDdKGuSqlYBI",
+      "status": "success",
+      "result_bytes": 14,
+      "result_sha256": "949d59b7ee8dabf8c14f26bb88463d19a331f38aa2542534727cb77fc3b94338"
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "message_sha256": "448fa931873248461604463a25a9dadb73dd98c5fa1bc6894c2067c14f55745a",
+      "name": "ls",
+      "tool_call_id": "3rFTEm5dzr01gEOFSkT7ojydUu5slFpI",
+      "status": "success",
+      "result_bytes": 14,
+      "result_sha256": "949d59b7ee8dabf8c14f26bb88463d19a331f38aa2542534727cb77fc3b94338"
+    },
+    {
+      "index": 4,
+      "role": "ai",
+      "message_sha256": "36e5c87edcaf3d3e4b5489f774dff5766c261beaa22112f1c3ad384063bcddcc",
+      "usage": {
+        "input_tokens": 2450,
+        "output_tokens": 59,
+        "total_tokens": 2509,
+        "input_token_details": {
+          "cache_read": 2366
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "EqJ8yra06mTwDDN9lktbNGP4sxU9UMEm",
+          "name": "glob",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "542deff082ab7f9d609f9b868a93cd2a19c4a4ccbc4b8e1065de6b5f17a1a92c",
+          "path": "/libs/deepagents/deepagents"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "role": "tool",
+      "message_sha256": "5042422caac0b1abc67fe9bf48bf5230d62d144579cb5902d168861219a34a70",
+      "name": "glob",
+      "tool_call_id": "EqJ8yra06mTwDDN9lktbNGP4sxU9UMEm",
+      "status": "success",
+      "result_bytes": 49,
+      "result_sha256": "db769c3be24ec033caeec854d82e6468a0f657ee0f3b58f8e63f339a74f97d00"
+    },
+    {
+      "index": 6,
+      "role": "ai",
+      "message_sha256": "834b113aaff79b3d4d566ee814fdc0dfa4b0b957fe69efd4bc87cd300dac7475",
+      "usage": {
+        "input_tokens": 2535,
+        "output_tokens": 55,
+        "total_tokens": 2590,
+        "input_token_details": {
+          "cache_read": 2477
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "zZkip6LwrPfzKNxypiaUVCh5nrisDdmq",
+          "name": "glob",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "d39ff03487e83a91ce412f14c9e77ca3e00bac53209b5ff97b1b043aa89b17dd",
+          "path": "/libs/deepagents/tests/unit_tests/backends"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "role": "tool",
+      "message_sha256": "33777f2d3184d7f3229bcc2403bdea36500e9024ff1d3cd352d8c034004443a2",
+      "name": "glob",
+      "tool_call_id": "zZkip6LwrPfzKNxypiaUVCh5nrisDdmq",
+      "status": "success",
+      "result_bytes": 60,
+      "result_sha256": "6a3cbd8ceaabb76c8bb4cc257d105220ae6fc216ac1e1963b2205dba70b89cc4"
+    },
+    {
+      "index": 8,
+      "role": "ai",
+      "message_sha256": "9d40efdbb64801fbf981d7483b36033df178977797897be683dc390c287ea32f",
+      "usage": {
+        "input_tokens": 2618,
+        "output_tokens": 56,
+        "total_tokens": 2674,
+        "input_token_details": {
+          "cache_read": 2557
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "d4Ma7uTghO2GrcwUwsqnDaECnClYC66g",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "role": "tool",
+      "message_sha256": "4cca324029f8f4894d28e051facaa01a08980cbab0825e0036b4f5c30f51f161",
+      "name": "read_file",
+      "tool_call_id": "d4Ma7uTghO2GrcwUwsqnDaECnClYC66g",
+      "status": "success",
+      "result_bytes": 3378,
+      "result_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff"
+    },
+    {
+      "index": 10,
+      "role": "ai",
+      "message_sha256": "a99658ed05a0607def1dbb42e7fcd63aadcafaca2a427d446ab9a17da55a794a",
+      "usage": {
+        "input_tokens": 3464,
+        "output_tokens": 87,
+        "total_tokens": 3551,
+        "input_token_details": {
+          "cache_read": 2642
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "Pbozwi5S60MBSGIY0uMaJXdDGOR66Q4T",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "role": "tool",
+      "message_sha256": "91dbac8ba8b0007e8835e3a3b2198ddf1473e730fe25df30bb7654b03e198bf1",
+      "name": "read_file",
+      "tool_call_id": "Pbozwi5S60MBSGIY0uMaJXdDGOR66Q4T",
+      "status": "success",
+      "result_bytes": 2984,
+      "result_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d"
+    },
+    {
+      "index": 12,
+      "role": "ai",
+      "message_sha256": "5d47ff65e3120393d4ec68318764174bddae656857e47e2aca5f57cc69bd52b1",
+      "usage": {
+        "input_tokens": 4274,
+        "output_tokens": 174,
+        "total_tokens": 4448,
+        "input_token_details": {
+          "cache_read": 3519
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "Z8jiMMdQs6yuMT2FRBM91WXM0PzTkD8y",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "8bf3040181c35f4698a8d6796e9f36c680768a529a02801100bb67cd008eb15a",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "role": "tool",
+      "message_sha256": "3fcfa91cfb86ee44aec4850965598086789c5b847db4644111bd7ffffaf0c485",
+      "name": "grep",
+      "tool_call_id": "Z8jiMMdQs6yuMT2FRBM91WXM0PzTkD8y",
+      "status": "success",
+      "result_bytes": 45,
+      "result_sha256": "8723351d1c12bbe2710fbdbdfd29f5b3378e11b3abd4629710ce606dd54a8c7f"
+    },
+    {
+      "index": 14,
+      "role": "ai",
+      "message_sha256": "3ae7555052941c92d41a840a5df5820f4c3c57f17d97daabc9a4b3bfa5c76278",
+      "usage": {
+        "input_tokens": 4471,
+        "output_tokens": 76,
+        "total_tokens": 4547,
+        "input_token_details": {
+          "cache_read": 4408
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "g1mEWVOu5FA3fL5rdGT5lLFNAquxegYd",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "e19ac1196b5f5e73e96424c76f7baf84a0f1483ba9d901db1766165839a0e5d3",
+          "path": "/libs/deepagents/deepsagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "role": "tool",
+      "message_sha256": "6164862b1c30f484060c274c56d6780f437348ab7e4c74d0644463c5b20e1881",
+      "name": "grep",
+      "tool_call_id": "g1mEWVOu5FA3fL5rdGT5lLFNAquxegYd",
+      "status": "success",
+      "result_bytes": 229,
+      "result_sha256": "fae6f072f4f9e8ed0fc60611a629e51cc8a87bee6c7124e9cbbed837e78c7d4f"
+    },
+    {
+      "index": 16,
+      "role": "ai",
+      "message_sha256": "2c8816c45b3b42f71c488fa4eeadc3fc59a87c35299ee9df34b5caf03dc5048f",
+      "usage": {
+        "input_tokens": 4611,
+        "output_tokens": 410,
+        "total_tokens": 5021,
+        "input_token_details": {
+          "cache_read": 4505
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "yxW2f73SXr6q7a6s9xMTlGcB1lsCyfER",
+          "name": "write_file",
+          "argument_keys": [
+            "content",
+            "file_path"
+          ],
+          "arguments_sha256": "a6f85b9eda1546d47c14015e3a1615ba1ed458513e402439bdeb823f9d97beda",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "role": "tool",
+      "message_sha256": "4fae668a52cda7c6c81f7bef27d00f763b2317385a1b2b3f4dee3dfadae2f394",
+      "name": "write_file",
+      "tool_call_id": "yxW2f73SXr6q7a6s9xMTlGcB1lsCyfER",
+      "status": "success",
+      "result_bytes": 58,
+      "result_sha256": "377071fc9d9a4677433edb6fc62c20dbfec35f1467aed88960df5e62193ead0e"
+    }
+  ],
+  "unexported_virtual_changes": [
+    {
+      "virtual_path": "/libs/deepagents/deepagents/backends/utils.py",
+      "saved_normalized_virtual_text": "normal/libs/deepagents/deepagents/backends/utils.py.txt",
+      "before_bytes": 47177,
+      "after_bytes": 900,
+      "before_lines": 1250,
+      "after_lines": 1,
+      "before_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+      "after_sha256": "1abfeb919983e4fb3e767733263325a8cc9498489c9aaf85c18be97b5c988303",
+      "original_top_level_symbols": {
+        "names": [
+          "InvalidGlobPatternError",
+          "_copy_file_data_with_content",
+          "_filter_files_by_path",
+          "_format_grep_results",
+          "_format_grep_with_context",
+          "_format_source_block",
+          "_get_backend_read_file_type",
+          "_get_file_type",
+          "_glob_anchor",
+          "_glob_search_files",
+          "_group_adjacent_lines",
+          "_looks_like_regex",
+          "_normalize_content",
+          "_normalize_path",
+          "_paths_overlap",
+          "_relative_to_root",
+          "build_grep_results_dict",
+          "check_empty_content",
+          "compile_grep_include_glob",
+          "create_file_data",
+          "file_data_to_string",
+          "format_content_with_line_numbers",
+          "format_grep_matches",
+          "grep_matches_from_files",
+          "normalize_read_bounds",
+          "perform_string_replacement",
+          "regex_literal_hint",
+          "sanitize_tool_call_id",
+          "slice_read_response",
+          "to_posix_path",
+          "truncate_if_too_long",
+          "truncate_if_too_long",
+          "truncate_if_too_long",
+          "update_file_data",
+          "validate_path"
+        ],
+        "syntax_error": null
+      },
+      "candidate_top_level_symbols": {
+        "names": [],
+        "syntax_error": {
+          "line": 1,
+          "message": "unexpected character after line continuation character"
+        }
+      },
+      "missing_original_top_level_symbols": null,
+      "symbol_comparison": "not_evaluated_due_to_invalid_syntax"
+    }
+  ],
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

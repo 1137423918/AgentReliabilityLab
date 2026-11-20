@@ -1,0 +1,478 @@
+{
+  "case": "checkpoint-resume",
+  "read_only_checkpoint_audit": true,
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 12,
+  "tool_results": 13,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "b33f19ce890df658789391ba865dbc98bacb311b0f7168425ed5cd5e689bd8da",
+      "usage": {
+        "input_tokens": 2316,
+        "output_tokens": 105,
+        "total_tokens": 2421,
+        "input_token_details": {
+          "cache_read": 2315
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "GAhGlW4eBquPzwxQME2MO6RjaggCyACX",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "93945e75b95d1fc2844c82e6feff2cb718ba05996dc8dc9a83aa918b1026eef5",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        },
+        {
+          "id": "SRK1Lk5AZMXWVI2TNTbuLMYmobXG2eOH",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "1f52141ba6b3ffd0c758e18444f4013c298c42015095819ccf8e61f5e42f3ae7",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "9d451a0d54142518192e8ec3db0722c1bb9d79720da4e3c96eb7680aac65274c",
+      "name": "ls",
+      "tool_call_id": "GAhGlW4eBquPzwxQME2MO6RjaggCyACX",
+      "status": "success",
+      "result_bytes": 14,
+      "result_sha256": "949d59b7ee8dabf8c14f26bb88463d19a331f38aa2542534727cb77fc3b94338"
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "message_sha256": "5bf43db115c6b55b74e9765c986daa1932ed5de05b4b14a2bc8986f74dea13f9",
+      "name": "ls",
+      "tool_call_id": "SRK1Lk5AZMXWVI2TNTbuLMYmobXG2eOH",
+      "status": "success",
+      "result_bytes": 14,
+      "result_sha256": "949d59b7ee8dabf8c14f26bb88463d19a331f38aa2542534727cb77fc3b94338"
+    },
+    {
+      "index": 4,
+      "role": "ai",
+      "message_sha256": "56d4e5ecde9dfd94daabf3c2b1d325b7d43acb3a5ed795a533eaa0c162953dec",
+      "usage": {
+        "input_tokens": 2445,
+        "output_tokens": 71,
+        "total_tokens": 2516,
+        "input_token_details": {
+          "cache_read": 2361
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "XDCd0AwL4osOL3LJuEgvdHe4AAtQjivR",
+          "name": "glob",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "542deff082ab7f9d609f9b868a93cd2a19c4a4ccbc4b8e1065de6b5f17a1a92c",
+          "path": "/libs/deepagents/deepagents"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "role": "tool",
+      "message_sha256": "9c0e4ee7681fbd18457a850b958f1261e52750d7e7585414e82e9b976bc31515",
+      "name": "glob",
+      "tool_call_id": "XDCd0AwL4osOL3LJuEgvdHe4AAtQjivR",
+      "status": "success",
+      "result_bytes": 49,
+      "result_sha256": "db769c3be24ec033caeec854d82e6468a0f657ee0f3b58f8e63f339a74f97d00"
+    },
+    {
+      "index": 6,
+      "role": "ai",
+      "message_sha256": "1c80dd4db60e3a02d81c37b318dcc1dd2556fc29b0a8add54679933029b11657",
+      "usage": {
+        "input_tokens": 2542,
+        "output_tokens": 61,
+        "total_tokens": 2603,
+        "input_token_details": {
+          "cache_read": 2484
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "L8bpi7bBPMATM7lsLx1600wzmVYX7bLu",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "role": "tool",
+      "message_sha256": "b2ae56ace0f63afa6bf4d8dee7d7126607d3623615a28f1a4b9bc805c26cd409",
+      "name": "read_file",
+      "tool_call_id": "L8bpi7bBPMATM7lsLx1600wzmVYX7bLu",
+      "status": "success",
+      "result_bytes": 3378,
+      "result_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff"
+    },
+    {
+      "index": 8,
+      "role": "ai",
+      "message_sha256": "85e19684b714a019379eae18ef5d260ebe987e26335aa8d81c94db899816439d",
+      "usage": {
+        "input_tokens": 3393,
+        "output_tokens": 74,
+        "total_tokens": 3467,
+        "input_token_details": {
+          "cache_read": 2571
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "nHwPyDJbc6eOjljoyCFMENIeAxhqKiUT",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "9af6ab66641154112580e045df341d333754108a5f24f6cdec42aa36f147e293",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "role": "tool",
+      "message_sha256": "ebc0b86a42ec08b90d45c1031d1a8a519a83671a701e6ca7b4c811f1ef915d31",
+      "name": "grep",
+      "tool_call_id": "nHwPyDJbc6eOjljoyCFMENIeAxhqKiUT",
+      "status": "success",
+      "result_bytes": 45,
+      "result_sha256": "8723351d1c12bbe2710fbdbdfd29f5b3378e11b3abd4629710ce606dd54a8c7f"
+    },
+    {
+      "index": 10,
+      "role": "ai",
+      "message_sha256": "00635acc5617240a15f6a7c30635eb6b90f2a0efc40e43070e0b5e278dff46b2",
+      "usage": {
+        "input_tokens": 3492,
+        "output_tokens": 77,
+        "total_tokens": 3569,
+        "input_token_details": {
+          "cache_read": 3432
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "R9CYXER9Qm6dUuRFfvxx1iDpMV8l7iZE",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "5e6bf1f7ee40aeba8e99e4b8b8071e8e1c9979e6bb5f22dc9b238d7b3ad20e0b",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 11,
+      "role": "tool",
+      "message_sha256": "543ce8309f3a7ea6c72a53725c21c07a019735924a9aae06eb062286bfe45015",
+      "name": "grep",
+      "tool_call_id": "R9CYXER9Qm6dUuRFfvxx1iDpMV8l7iZE",
+      "status": "success",
+      "result_bytes": 229,
+      "result_sha256": "fae6f072f4f9e8ed0fc60611a629e51cc8a87bee6c7124e9cbbed837e78c7d4f"
+    },
+    {
+      "index": 12,
+      "role": "ai",
+      "message_sha256": "b7e8d7fda5cb304cc0b994fa9aca0bd9d724d6a1bf082e12b8dc86b3a986dc44",
+      "usage": {
+        "input_tokens": 3636,
+        "output_tokens": 75,
+        "total_tokens": 3711,
+        "input_token_details": {
+          "cache_read": 3530
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "ijO02zAVvEqZYP6pmuN19NAG3vHYbDa8",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "1a680651ac1f42f3d191a30afba6a6ecdd4d6f199f3ade2cc50d7ed894d14420",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 13,
+      "role": "tool",
+      "message_sha256": "8eac90eeba6b9aeb86f76c17c6db843280378b50e9047abcd2e6f2c5c2106746",
+      "name": "grep",
+      "tool_call_id": "ijO02zAVvEqZYP6pmuN19NAG3vHYbDa8",
+      "status": "success",
+      "result_bytes": 229,
+      "result_sha256": "fae6f072f4f9e8ed0fc60611a629e51cc8a87bee6c7124e9cbbed837e78c7d4f"
+    },
+    {
+      "index": 14,
+      "role": "ai",
+      "message_sha256": "62a75f04bacc61d2c89f8742a7f2717ef4347f084ef32c5f384278a6060dd2bb",
+      "usage": {
+        "input_tokens": 3776,
+        "output_tokens": 88,
+        "total_tokens": 3864,
+        "input_token_details": {
+          "cache_read": 3668
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "9HJ9wxHl6rqm3kEcCSUJR0MznQ1Aaf2S",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "7f100c8e261c581c0a26f10a451c0a5a47fe7fe80805e63b561b94a393be9aaf",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 15,
+      "role": "tool",
+      "message_sha256": "65e8f934a59efd68b1e2531fa99c5a555d7d76b95839f7a6114f23765487250e",
+      "name": "read_file",
+      "tool_call_id": "9HJ9wxHl6rqm3kEcCSUJR0MznQ1Aaf2S",
+      "status": "success",
+      "result_bytes": 6797,
+      "result_sha256": "8e1776d35bcfc8c3b29114a2a093e960f81e4550183a78c1296cae322678ea5b"
+    },
+    {
+      "index": 16,
+      "role": "ai",
+      "message_sha256": "01150702396903d7d8e440906187728666b5ac2797aa02789ba9194dd3544b7f",
+      "usage": {
+        "input_tokens": 5632,
+        "output_tokens": 72,
+        "total_tokens": 5704,
+        "input_token_details": {
+          "cache_read": 3815
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "YrMKCbZQYmBNMmtS0oGjncKexEEeLpRm",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+          "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 17,
+      "role": "tool",
+      "message_sha256": "a057079a5f14f26c938f2821e8f594d131712e3c8cd8be1a57b960d725b5d38d",
+      "name": "read_file",
+      "tool_call_id": "YrMKCbZQYmBNMmtS0oGjncKexEEeLpRm",
+      "status": "success",
+      "result_bytes": 2984,
+      "result_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d"
+    },
+    {
+      "index": 18,
+      "role": "ai",
+      "message_sha256": "4167ec62b7e7070a5f245573196288ca74d9afd1507cf74eb19a6f225967bc6e",
+      "usage": {
+        "input_tokens": 6427,
+        "output_tokens": 87,
+        "total_tokens": 6514,
+        "input_token_details": {
+          "cache_read": 5672
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "z7MXTRu3IyPBmuvbOecimJo3fYKWZZN4",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "8bf3040181c35f4698a8d6796e9f36c680768a529a02801100bb67cd008eb15a",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 19,
+      "role": "tool",
+      "message_sha256": "69c4d7aa374a552bf44bf86716d37e2e11341920c1b09787440421890708e609",
+      "name": "grep",
+      "tool_call_id": "z7MXTRu3IyPBmuvbOecimJo3fYKWZZN4",
+      "status": "success",
+      "result_bytes": 45,
+      "result_sha256": "8723351d1c12bbe2710fbdbdfd29f5b3378e11b3abd4629710ce606dd54a8c7f"
+    },
+    {
+      "index": 20,
+      "role": "ai",
+      "message_sha256": "a997b0f93545dd338e3bff97b80672c5fbbdfca60703eb120a3b5866b33c1eb7",
+      "usage": {
+        "input_tokens": 6537,
+        "output_tokens": 84,
+        "total_tokens": 6621,
+        "input_token_details": {
+          "cache_read": 6474
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "DuZcd6aPb98c8aKEGYPFCyadSphcNrP8",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "3573310287690c7442ed68cbe96ca547c7213e0dc646b09e60d3060bd68d1bb2",
+          "path": "/libs/deep-agents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 21,
+      "role": "tool",
+      "message_sha256": "5335f87a172e096be28d811c35636dc76cb1e12f613ae698ded3f91a3d3a0d52",
+      "name": "read_file",
+      "tool_call_id": "DuZcd6aPb98c8aKEGYPFCyadSphcNrP8",
+      "status": "error",
+      "result_bytes": 70,
+      "result_sha256": "8d282f7f01d53ac910f2f579cf6c76931b3759d6f8e76feee3072e2c02f70af4"
+    },
+    {
+      "index": 22,
+      "role": "ai",
+      "message_sha256": "c5d163fbf2af39aee7a2fe4d47049a970d2fe403f76ebe21da2082f5003f323d",
+      "usage": {
+        "input_tokens": 6652,
+        "output_tokens": 77,
+        "total_tokens": 6729,
+        "input_token_details": {
+          "cache_read": 6570
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "pp296czYKsLoNezPL5n07UKww8l5nblR",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "c654c71456539afae09bc4d75a58ee07584f90b113a9e2119955574d4875cc9d",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 23,
+      "role": "tool",
+      "message_sha256": "37f856d4fb92390e379149ea43e271effb8815733c024ed15850e7b4ee20b2e9",
+      "name": "read_file",
+      "tool_call_id": "pp296czYKsLoNezPL5n07UKww8l5nblR",
+      "status": "success",
+      "result_bytes": 144,
+      "result_sha256": "266926ca8f8829599ee7ca90d9316120f1c11a5e9b4fec628f295c58e042b8f3"
+    },
+    {
+      "index": 24,
+      "role": "ai",
+      "message_sha256": "f818d08dc3f116e04fe2bea58be0722e4fab200b55bf187ef260a7491d094ecc",
+      "usage": {
+        "input_tokens": 6777,
+        "output_tokens": 78,
+        "total_tokens": 6855,
+        "input_token_details": {
+          "cache_read": 6681
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "tools": [
+        {
+          "id": "GdUwfJRZ70lWxpMhvKsN72Eat3D5M6AU",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "8bf3040181c35f4698a8d6796e9f36c680768a529a02801100bb67cd008eb15a",
+          "path": "/libs/deepagents/deepagents/backends/utils.py"
+        }
+      ]
+    },
+    {
+      "index": 25,
+      "role": "tool",
+      "message_sha256": "5172dbca74b95e5e0fcea9fa16bef14a4478b9a719974eb8d3033f3dee08efe6",
+      "name": "grep",
+      "tool_call_id": "GdUwfJRZ70lWxpMhvKsN72Eat3D5M6AU",
+      "status": "success",
+      "result_bytes": 45,
+      "result_sha256": "8723351d1c12bbe2710fbdbdfd29f5b3378e11b3abd4629710ce606dd54a8c7f"
+    }
+  ],
+  "unexported_virtual_changes": [],
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

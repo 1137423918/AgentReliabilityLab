@@ -1,0 +1,8 @@
+test_altered_model_rejected_before_child_starts (test_llama_service.LlamaServiceTests.test_altered_model_rejected_before_child_starts) ... ok
+test_provenance_write_failure_cannot_orphan_started_service (test_llama_service.LlamaServiceTests.test_provenance_write_failure_cannot_orphan_started_service) ... ok
+test_wall_guard_terminates_owned_service_process (test_llama_service.LlamaServiceTests.test_wall_guard_terminates_owned_service_process) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 1.024s
+
+OK

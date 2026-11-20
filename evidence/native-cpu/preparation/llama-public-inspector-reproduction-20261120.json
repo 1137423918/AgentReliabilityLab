@@ -1,0 +1,98 @@
+{
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "source_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "backend": "ggml-org/llama.cpp",
+  "release_tag": "b12576",
+  "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "precision": "GGUF Q4_K_M derived from FP16 conversion of fixed BF16 source; no importance matrix",
+  "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+  "model_sha256": "9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06",
+  "model_bytes": 2497279264,
+  "f16_model_sha256": "cf847ab70b480c27e53d241bc69c0be8c9385a00b7380e3680e1f4552c1b4f64",
+  "f16_model_bytes": 8051283744,
+  "architecture": "qwen3",
+  "file_type": "MOSTLY_Q4_K_M",
+  "tensor_count": 398,
+  "parameter_count": 4022468096,
+  "tensor_types": {
+    "F32": 145,
+    "Q6_K": 37,
+    "Q4_K": 216
+  },
+  "chat_template_sha256": "64f85b198065d0fba2a81f37e10ed68161ce2c19a754c7100e67e0ca2ee9c326",
+  "chat_template_matches_fixed_hf_tokenizer": true,
+  "eos_token_id": 151645,
+  "runtime_libraries": {
+    "libstdc++.so.6": "10f0d3c46c070acd4abea2ccf2500ff0ec77e9b90154b82ea2720dba05510cb9",
+    "libgcc_s.so.1": "5444fbe71e8cfe3bd05cdf2b44bd8c2e553e6e7e276977089b5e4e1a1ceed531"
+  },
+  "server_bundle": {
+    "libggml-base.so": "2facb7ce9cd1764a6d8e681b881e95680f2e8840185b2e05654603fde0ae8aa3",
+    "libggml-base.so.1": "2facb7ce9cd1764a6d8e681b881e95680f2e8840185b2e05654603fde0ae8aa3",
+    "libggml-base.so.1.0.0": "2facb7ce9cd1764a6d8e681b881e95680f2e8840185b2e05654603fde0ae8aa3",
+    "libggml-cpu-alderlake.so": "39a13d7912b4cbb9729b9a2486182c9ba84729ffff99ed5cfbe608906aab7a17",
+    "libggml-cpu-cannonlake.so": "082fe44050fe6e918bf60953c3cd461b580bc183bb41a6d236ad04724e2f98d5",
+    "libggml-cpu-cascadelake.so": "a192c291e201e48630e6372b018bc9ddd0e14e71b0d740e926571720a191f3a6",
+    "libggml-cpu-cooperlake.so": "758693b26d5636f5cac4658759280ee474a905820dba1943d555afc652d3e700",
+    "libggml-cpu-haswell.so": "ef1ccb250070d6456a911d73a246e8b9c4761bd7f976f4935faa900caa13c03d",
+    "libggml-cpu-icelake.so": "a3cb9a648909a4c65bf1b852e843680e12fe5b97a9a5782d2629f820cc2c6977",
+    "libggml-cpu-ivybridge.so": "9468363ccabcdf57fb5b1dbfbfc143e6116736526057fe8a0d505ce6a70dcaf1",
+    "libggml-cpu-piledriver.so": "21e56549477b782072808e7b4857a09ad1991697a5ca03db9af53faa987d5fd6",
+    "libggml-cpu-sandybridge.so": "9d6cc7e9a7c5a34fbd754abe9b37b5fed6c04304699d0ce99df32d08034c4dc0",
+    "libggml-cpu-sapphirerapids.so": "6cf5ef0a0485334ee62eadc1f2961747b7a3042bc99eb37a2002bfece2d05a75",
+    "libggml-cpu-skylakex.so": "9c73a9bdbec288bc187a992cbf02be4efdf2a00766ba32c1ea57623950d4b974",
+    "libggml-cpu-sse42.so": "ac5caea1c9dfc2cb0cc12b99ed2bf82ca0856b1bca00103e80e6bc04c740a866",
+    "libggml-cpu-x64.so": "e84534f6834ac8e75dc5e6a86f62e01235cece25f556316ebdc62c8a0ba8ca61",
+    "libggml-cpu-zen4.so": "39698ac74cd0fa14473ee496a8a91a60a8e5c9cefd47866fab68b886fc38dd02",
+    "libggml-rpc.so": "4d62f439e87d372951c5a06999cbaafa935d5132abfc80720508e450a355ae69",
+    "libggml.so": "405441c70127eb7fbf000ee9681a8ef9e4a540f151bed57d1475b8115b6b46d4",
+    "libggml.so.1": "405441c70127eb7fbf000ee9681a8ef9e4a540f151bed57d1475b8115b6b46d4",
+    "libggml.so.1.0.0": "405441c70127eb7fbf000ee9681a8ef9e4a540f151bed57d1475b8115b6b46d4",
+    "libllama-batched-bench-impl.so": "0d4d5903392ff55c4d7b85a42e4b0fea69192163d09b98bb07747ced4fbe7199",
+    "libllama-bench-impl.so": "6c8b4fc51da2683c47c8dd9e2518b746a5d311029f4c2ff5aa22a64d32970cc7",
+    "libllama-cli-impl.so": "0205d618099b2ac3d21ddfe3d2a56bb2d08483d6f47e2d06bc4ee696c3eccad1",
+    "libllama-common.so": "d1ee714bd0099a7d5504aa180d60db20ceb6d912b56d8e49d15e931117464b57",
+    "libllama-common.so.1": "d1ee714bd0099a7d5504aa180d60db20ceb6d912b56d8e49d15e931117464b57",
+    "libllama-common.so.1.0.0": "d1ee714bd0099a7d5504aa180d60db20ceb6d912b56d8e49d15e931117464b57",
+    "libllama-completion-impl.so": "3177812cb53c305b3b9730604eb4adb0e8e3b55e9cfc629bad4dd1fea0959ca7",
+    "libllama-fit-params-impl.so": "7d66196d5b4acdf62fa4e77b99cb4578bf357bfc66ccc6bbd2d73ecc6e2ead0b",
+    "libllama-perplexity-impl.so": "82ad9b5555413eff4fe9b3cc6be30676428b382b659f2e8d7cbc6dbc2d2fa1f5",
+    "libllama-quantize-impl.so": "5a37c340dce5f79fe7040f78cee216d169e902ef7ac39c34fbee9c20feefde7c",
+    "libllama-server-impl.so": "ef3ddc732c0584baf8c9fe2848ebae55bdac87240f32efc2a34e25098e05b342",
+    "libllama.so": "1fef79220c6614b7f40e6b9740131e113013a0d9f0930bbf281c1df082c88c91",
+    "libllama.so.1": "1fef79220c6614b7f40e6b9740131e113013a0d9f0930bbf281c1df082c88c91",
+    "libllama.so.1.0.0": "1fef79220c6614b7f40e6b9740131e113013a0d9f0930bbf281c1df082c88c91",
+    "libmtmd.so": "d8963dff8ec7558810d5a6aabf1dfa3bb666cafba815b63d9c1288085c2779bb",
+    "libmtmd.so.1": "d8963dff8ec7558810d5a6aabf1dfa3bb666cafba815b63d9c1288085c2779bb",
+    "libmtmd.so.1.0.0": "d8963dff8ec7558810d5a6aabf1dfa3bb666cafba815b63d9c1288085c2779bb"
+  },
+  "runtime_artifacts": {
+    "source_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "release_tag": "b12576",
+    "source_archive": {
+      "bytes": 39103960,
+      "sha256": "9588476bd9a7d5e62e19f83fea9eeb04287b2ce458c03e8a6107bfe70bce770e"
+    },
+    "binary_archive": {
+      "url": "https://github.com/ggml-org/llama.cpp/releases/download/b12576/llama-b12576-bin-ubuntu-x64.tar.gz",
+      "bytes": 23060191,
+      "sha256": "b3e1ea8ff8723a17d312562625e9e531b10bed69222c49c53741d737d0214e31"
+    },
+    "libraries": [
+      {
+        "name": "libstdcxx-16.2.0-h934c35e_7.conda",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/libstdcxx-16.2.0-h934c35e_7.conda",
+        "bytes": 6615436,
+        "sha256": "fa7018298629fc429971fffd6ecba3d27a7b02e4e890d6a93ea01ffebe8cb745"
+      },
+      {
+        "name": "libgcc-16.2.0-ha9f2e26_7.conda",
+        "url": "https://conda.anaconda.org/conda-forge/linux-64/libgcc-16.2.0-ha9f2e26_7.conda",
+        "bytes": 1058444,
+        "sha256": "e031634c3a928f9594eba868bc46ef5230d6571a364a0c63215b06c4563bfcea"
+      }
+    ],
+    "scope": "Standalone task-local libraries, no conda environment or system library changes"
+  },
+  "weights_loaded_for_inference": false
+}
