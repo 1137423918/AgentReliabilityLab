@@ -1,0 +1,10 @@
+
+added 1 package, and audited 2 packages in 12s
+
+found 0 vulnerabilities
+npm notice
+npm notice New major version of npm available! 11.20.0 -> 12.2.3
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.3
+npm notice To update run: npm install -g npm@12.2.3
+npm notice
+0 errors, 0 warnings, 0 informations 

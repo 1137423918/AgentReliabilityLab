@@ -1,0 +1,58 @@
+{
+  "scope": "Real AutoGen CancellationToken regression and controlled actual AgentRuntime cancellation; no model inference, GPU or general throughput claim",
+  "base_commit": "8390985108cb1e3881f5f7297765758d8ad2540c",
+  "upstream_repository": "https://github.com/microsoft/autogen",
+  "upstream_pr": null,
+  "pr_state": "not_created_upstream_archived",
+  "candidate_url": "https://github.com/1137423918/autogen/tree/fix/cancellation-callback-deadlock",
+  "candidate_commit": "2475b3c5a9eea73b979bc6ed12c1717f68c72a10",
+  "stars_observed": 61955,
+  "observed_date": "2026-11-21",
+  "source_sha256": "84a20ec57a2fb5f7d40d3430b7ad29500679536f7672b64afc646ef772239e80",
+  "baseline_source_sha256": "628f815b2cf091da7f94d80b91ef9e8deb3c846093046650341984a1eeb7c34d",
+  "benchmark_sha256": "c53ab09746796d52b146e14aa0383d9c28794a3fec4117bb75b6c88014f26805",
+  "new_checks": {
+    "baseline_deadlock_regressions_failed": 6,
+    "baseline_late_future_compatibility_passed": 1,
+    "candidate_passed": 7,
+    "included_in_core_suite": true
+  },
+  "full_core_suite": {
+    "passed": 233,
+    "warnings": 3,
+    "seconds": 7.86,
+    "python": "3.11.4",
+    "workers": 2,
+    "full_repository_matrix": false
+  },
+  "type_checks": {
+    "scope": "changed production file and test file only",
+    "mypy": "no issues",
+    "pyright": "0 errors; warnings if any preserved in log"
+  },
+  "runtime_probe": {
+    "baseline_callback_hang_observed": true,
+    "baseline_owned_child_reaped_after_seconds": 20,
+    "candidate_cleanup_called_once": true,
+    "candidate_pending_request_and_agent_cancelled": true,
+    "same_driver": true,
+    "not_a_speedup_comparison": true
+  },
+  "adjacent_upstream_work": {
+    "url": "https://github.com/microsoft/autogen/pull/8359",
+    "scope": "asyncio future loop-affinity across threads; inspected diff does not release user callbacks from token lock",
+    "not_claimed_solved_by_this_patch": true
+  },
+  "limitations": [
+    "AutoGen is community-maintained; new framework development points to Microsoft Agent Framework",
+    "callback exceptions still propagate and may prevent later callbacks in that call",
+    "callbacks can still block on their own code; no forced callback/thread termination",
+    "no general guarantee for asyncio future cancellation from arbitrary threads",
+    "callback order across concurrent registrations is not promised",
+    "one Linux Python version; not full workspace all-extras or upstream CI matrix",
+    "no neural model task or additional Agent-runtime adapter implemented"
+  ],
+  "model_inference": false,
+  "upstream_archived": true,
+  "candidate_only": true
+}

@@ -1,0 +1,26 @@
+ * Install prebuilt node (26.13.1) ..... done.
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+WARNING: there is a new pyright version available (v1.1.389 -> v1.1.414).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+Traceback (most recent call last):
+  File "<server-workspace>/code/autogen-cancel-20261121/python/packages/autogen-core/../../.venv/bin/pyright", line 10, in <module>
+    sys.exit(entrypoint())
+             ^^^^^^^^^^^^
+  File "<server-workspace>/code/autogen-cancel-20261121/python/.venv/lib/python3.11/site-packages/pyright/cli.py", line 31, in entrypoint
+    sys.exit(main(sys.argv[1:]))
+             ^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/autogen-cancel-20261121/python/.venv/lib/python3.11/site-packages/pyright/cli.py", line 18, in main
+    return run(*args, **kwargs).returncode
+           ^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/autogen-cancel-20261121/python/.venv/lib/python3.11/site-packages/pyright/cli.py", line 22, in run
+    pkg_dir = install_pyright(args, quiet=None)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/autogen-cancel-20261121/python/.venv/lib/python3.11/site-packages/pyright/_utils.py", line 63, in install_pyright
+    node.run(
+  File "<server-workspace>/code/autogen-cancel-20261121/python/.venv/lib/python3.11/site-packages/pyright/node.py", line 173, in run
+    subprocess.run(node_args, env=env, **kwargs),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['<server-workspace>/tools/autogen-pyright-node-20261121/bin/npm', 'install', 'pyright@1.1.389']' returned non-zero exit status 127.

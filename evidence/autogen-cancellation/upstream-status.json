@@ -1,0 +1,22 @@
+{
+  "observed_utc": "2026-11-20T18:37:24.702708+00:00",
+  "repository": {
+    "full_name": "microsoft/autogen",
+    "archived": true,
+    "disabled": false,
+    "pushed_at": "2026-11-12T10:19:36Z",
+    "updated_at": "2026-11-20T18:33:22Z",
+    "stargazers_count": 61954
+  },
+  "upstream_pr": null,
+  "pr_created": false,
+  "attempt_result": {
+    "status": 403,
+    "message": "Repository was archived so is read-only."
+  },
+  "candidate_repository": "https://github.com/1137423918/autogen",
+  "candidate_branch": "fix/cancellation-callback-deadlock",
+  "candidate_commit": "2475b3c5a9eea73b979bc6ed12c1717f68c72a10",
+  "candidate_url": "https://github.com/1137423918/autogen/tree/fix/cancellation-callback-deadlock",
+  "publication": "fork_candidate_only_no_upstream_pr"
+}

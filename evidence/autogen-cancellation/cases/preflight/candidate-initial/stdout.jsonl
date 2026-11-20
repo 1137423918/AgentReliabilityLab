@@ -1,0 +1,4 @@
+{"stage": "agent_waiting"}
+{"stage": "cleanup_entered"}
+{"stage": "cleanup_returned", "observed_cancelled": true}
+{"stage": "complete", "cleanup_calls": 1, "agent_cancelled": true, "request_cancelled": true}

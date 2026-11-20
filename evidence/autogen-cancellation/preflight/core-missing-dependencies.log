@@ -1,0 +1,77 @@
+bringing up nodes...
+bringing up nodes...
+
+........................................................................ [ 45%]
+........................................................................ [ 91%]
+.............                                                            [100%]
+==================================== ERRORS ====================================
+__________ ERROR collecting tests/regressions/test_clean_terminate.py __________
+ImportError while importing test module '<server-workspace>/code/autogen-cancel-20261121/python/packages/autogen-core/tests/regressions/test_clean_terminate.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+<server-home>/anaconda3/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/regressions/test_clean_terminate.py:6: in <module>
+    import asyncio_atexit
+E   ModuleNotFoundError: No module named 'asyncio_atexit'
+_______________ ERROR collecting tests/test_json_to_pydantic.py ________________
+ImportError while importing test module '<server-workspace>/code/autogen-cancel-20261121/python/packages/autogen-core/tests/test_json_to_pydantic.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../.venv/lib/python3.11/site-packages/pydantic/networks.py:925: in import_email_validator
+    import email_validator
+E   ModuleNotFoundError: No module named 'email_validator'
+
+The above exception was the direct cause of the following exception:
+<server-home>/anaconda3/lib/python3.11/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+tests/test_json_to_pydantic.py:24: in <module>
+    class User(BaseModel):
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py:224: in __new__
+    complete_model_class(
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_model_construction.py:602: in complete_model_class
+    schema = cls.__get_pydantic_core_schema__(cls, handler)
+../../.venv/lib/python3.11/site-packages/pydantic/main.py:702: in __get_pydantic_core_schema__
+    return handler(source)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_schema_generation_shared.py:84: in __call__
+    schema = self._handler(source_type)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:610: in generate_schema
+    schema = self._generate_schema_inner(obj)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:879: in _generate_schema_inner
+    return self._model_schema(obj)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:691: in _model_schema
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:691: in <dictcomp>
+    {k: self._generate_md_field_schema(k, v, decorators) for k, v in fields.items()},
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:1071: in _generate_md_field_schema
+    common_field = self._common_field_schema(name, field_info, decorators)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:1263: in _common_field_schema
+    schema = self._apply_annotations(
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:2056: in _apply_annotations
+    schema = get_inner_schema(source_type)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_schema_generation_shared.py:84: in __call__
+    schema = self._handler(source_type)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:2035: in inner_handler
+    from_property = self._generate_schema_from_property(obj, source_type)
+../../.venv/lib/python3.11/site-packages/pydantic/_internal/_generate_schema.py:759: in _generate_schema_from_property
+    schema = get_schema(
+../../.venv/lib/python3.11/site-packages/pydantic/networks.py:965: in __get_pydantic_core_schema__
+    import_email_validator()
+../../.venv/lib/python3.11/site-packages/pydantic/networks.py:927: in import_email_validator
+    raise ImportError('email-validator is not installed, run `pip install pydantic[email]`') from e
+E   ImportError: email-validator is not installed, run `pip install pydantic[email]`
+=============================== warnings summary ===============================
+tests/test_component_config.py::test_function_tool
+tests/test_static_workbench_overrides.py::test_static_workbench_serialization_with_overrides
+tests/test_workbench.py::test_static_workbench
+  <server-workspace>/code/autogen-cancel-20261121/python/packages/autogen-core/src/autogen_core/_component_config.py:298: UserWarning: 
+  ⚠️  SECURITY WARNING ⚠️
+  Loading a FunctionTool from config will execute code to import the provided global imports and and function code.
+  Only load configs from TRUSTED sources to prevent arbitrary code execution.
+    instance = component_class._from_config(validated_config)  # type: ignore
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+ERROR tests/regressions/test_clean_terminate.py
+ERROR tests/test_json_to_pydantic.py
+157 passed, 3 warnings, 2 errors in 84.94s (0:01:24)

@@ -1,0 +1,13 @@
+Timeout (0:00:02)!
+Thread 0x00007f3cce8c4740 (most recent call first):
+  File "<server-workspace>/code/autogen-cancel-original-20261121/python/packages/autogen-core/src/autogen_core/_cancellation_token.py", line 24 in is_cancelled
+  File "<string>", line 33 in on_cancel
+  File "<server-workspace>/code/autogen-cancel-original-20261121/python/packages/autogen-core/src/autogen_core/_cancellation_token.py", line 20 in cancel
+  File "<string>", line 43 in main
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/events.py", line 80 in _run
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/base_events.py", line 1922 in _run_once
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/base_events.py", line 607 in run_forever
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/base_events.py", line 640 in run_until_complete
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/runners.py", line 118 in run
+  File "<server-home>/anaconda3/lib/python3.11/asyncio/runners.py", line 190 in run
+  File "<string>", line 58 in <module>

@@ -1,0 +1,19 @@
+bringing up nodes...
+bringing up nodes...
+
+........................................................................ [ 30%]
+........................................................................ [ 61%]
+........................................................................ [ 92%]
+.................                                                        [100%]
+=============================== warnings summary ===============================
+tests/test_component_config.py::test_function_tool
+tests/test_static_workbench_overrides.py::test_static_workbench_serialization_with_overrides
+tests/test_workbench.py::test_static_workbench
+  <server-workspace>/code/autogen-cancel-20261121/python/packages/autogen-core/src/autogen_core/_component_config.py:298: UserWarning: 
+  ⚠️  SECURITY WARNING ⚠️
+  Loading a FunctionTool from config will execute code to import the provided global imports and and function code.
+  Only load configs from TRUSTED sources to prevent arbitrary code execution.
+    instance = component_class._from_config(validated_config)  # type: ignore
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+233 passed, 3 warnings in 7.86s

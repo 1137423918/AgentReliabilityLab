@@ -89,6 +89,16 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 这是第三个框架的存储贡献，未合并；没有新增 ADK 维护 Agent 运行时适配器。真实模型修复结果仍为此前的失败记录。新增复现脚本未改动运行器核心，本轮未重复执行不受影响的 42 项项目检查。[完整协议](docs/adk-artifact-cleanup.md) · [证据、初版失败和边界](evidence/adk-artifact-cleanup/README.md)。
 
+## AutoGen 取消回调的锁范围
+
+在 AutoGen 的真实公共 API 中复现取消死锁：回调查询自身 token、登记另一个清理回调，或等待其他线程读取 token 时，会再次申请仍被持有的锁。候选在锁内修改状态并复制回调列表，再释放锁执行；已取消 token 的回调登记和 future 关联复用同一逻辑。
+
+原版六项新死锁检查失败，三项旧检查及一项新增兼容检查通过；候选完整 **autogen-core 测试目录 233 项通过、3 项既有警告**，七项新增检查包含在内。真实 AgentRuntime 公共流程也由卡在清理回调，变为只清理一次、取消请求和处理器并关闭运行时。没有模型或 GPU 调用，不作超时前后的加速比。
+
+修复已推送到 [个人 fork](https://github.com/1137423918/autogen/tree/fix/cancellation-callback-deadlock)。**上游已归档只读，创建 PR 被 HTTP 403 拒绝，没有新建 AutoGen PR。** 当前仅为候选修复；AutoGen 的新项目迁移方向是 Microsoft Agent Framework。本轮未修改运行器核心，63 项项目检查未重复执行；233 项属于 AutoGen 单独的包级验证。
+
+[复现与边界](docs/autogen-cancellation.md) · [日志、最小补丁与发布状态](evidence/autogen-cancellation/README.md)。
+
 ## 工具契约验证边界
 
 `prepare.py` 从指定 Deep Agents checkout 提取 `to_posix_path` 与 `validate_path` 的**原始函数源码**，生成无第三方依赖的最小复现模块；`audit.py` 在服务器运行固定契约用例，保存逐例输入、期望、观察和判定。

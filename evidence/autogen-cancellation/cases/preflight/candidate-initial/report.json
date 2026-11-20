@@ -1,0 +1,30 @@
+{
+  "scope": "Real AutoGen runtime cancelling one controlled pending request; callback reads its cancellation token; no model, GPU or network service",
+  "source_sha256": "84a20ec57a2fb5f7d40d3430b7ad29500679536f7672b64afc646ef772239e80",
+  "benchmark_sha256": "c53ab09746796d52b146e14aa0383d9c28794a3fec4117bb75b6c88014f26805",
+  "returncode": 0,
+  "timed_out": false,
+  "callback_hang_observed": false,
+  "completed": true,
+  "duration_seconds": 5.996,
+  "events": [
+    {
+      "stage": "agent_waiting"
+    },
+    {
+      "stage": "cleanup_entered"
+    },
+    {
+      "stage": "cleanup_returned",
+      "observed_cancelled": true
+    },
+    {
+      "stage": "complete",
+      "cleanup_calls": 1,
+      "agent_cancelled": true,
+      "request_cancelled": true
+    }
+  ],
+  "traceback_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "timeout_is_not_a_general_performance_metric": true
+}

@@ -1,0 +1,23 @@
+{
+  "node_version": "26.13.1",
+  "pyright_version": "1.1.389",
+  "library_scope": "existing task-local runtime libraries via process-only LD_LIBRARY_PATH; system and conda unchanged",
+  "files": {
+    "node": {
+      "bytes": 150348872,
+      "sha256": "d931c649850ffa7155b8ceffb400dc916ef325866e509cc52ae36e33e8fbb9a9"
+    },
+    "libatomic": {
+      "bytes": 174080,
+      "sha256": "12225c5780d6a97b3b7fd559f29a1d6afc5480a9981ce5e3bbf4219587286aa3"
+    },
+    "libstdcxx": {
+      "bytes": 23874544,
+      "sha256": "10f0d3c46c070acd4abea2ccf2500ff0ec77e9b90154b82ea2720dba05510cb9"
+    },
+    "libgcc": {
+      "bytes": 922624,
+      "sha256": "5444fbe71e8cfe3bd05cdf2b44bd8c2e553e6e7e276977089b5e4e1a1ceed531"
+    }
+  }
+}
