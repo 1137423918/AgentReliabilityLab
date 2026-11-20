@@ -1,0 +1,21 @@
+{
+  "signal": "SIGKILL",
+  "target": "worker PID only",
+  "observed_command": [
+    "python",
+    "-m",
+    "pytest",
+    "tests/unit_tests/backends/test_utils.py",
+    "--disable-socket",
+    "--allow-unix-socket",
+    "--benchmark-disable",
+    "-q"
+  ],
+  "observed_processes": [
+    {
+      "pid": 4040653,
+      "start_ticks": "224878854"
+    }
+  ],
+  "old_verifier_stopped_before_lock_release": true
+}

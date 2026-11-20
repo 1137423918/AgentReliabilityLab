@@ -1,6 +1,7 @@
 """Process-level recovery tests. Run on the authorized Linux compute server."""
 
 import json
+import fcntl
 import os
 import selectors
 import signal
@@ -256,6 +257,112 @@ class WorkerTests(unittest.TestCase):
         status = Path(f"/proc/{pid}/stat")
         if status.exists():
             self.assertEqual(status.read_text().rsplit(")", 1)[1].split()[0], "Z")
+
+    def test_parent_sigkill_stops_verification_before_resume(self):
+        code = """
+import json, os, subprocess, sys, time
+from pathlib import Path
+attempt = Path('.verify-attempt')
+if not attempt.exists():
+    attempt.write_text('1')
+    child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'])
+    marker = Path('verification-pids.tmp')
+    marker.write_text(json.dumps([os.getpid(), child.pid]))
+    marker.replace('verification-pids.json')
+    time.sleep(60)
+else:
+    attempt.write_text(str(int(attempt.read_text()) + 1))
+    import module
+    assert module.value == 2
+"""
+        self.task["verify"] = [
+            {"argv": [sys.executable, "-c", code], "timeout_seconds": 90}
+        ]
+        self.save_task()
+        directory = self.root / "parent-kill"
+        process = subprocess.Popen(
+            invoke(self.repo, self.task_path, directory),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE,
+            start_new_session=True,
+        )
+        pids = []
+
+        def alive(pid):
+            status = Path(f"/proc/{pid}/stat")
+            return (
+                status.exists()
+                and status.read_text().rsplit(")", 1)[1].split()[0] != "Z"
+            )
+
+        try:
+            wait_stage(process, "before_verification")
+            marker = directory / "worktree/verification-pids.json"
+            deadline = time.monotonic() + 15
+            while not marker.exists() and time.monotonic() < deadline:
+                time.sleep(0.02)
+            self.assertTrue(marker.exists(), "Verification did not start")
+            pids = json.loads(marker.read_text())
+            self.assertTrue(all(alive(pid) for pid in pids))
+            os.kill(process.pid, signal.SIGKILL)
+            process.communicate(timeout=10)
+            self.assertEqual(process.returncode, -signal.SIGKILL)
+            # A new owner must not enter until the old verifier has stopped.
+            with (directory / "worker.lock").open("a") as lock:
+                deadline = time.monotonic() + 10
+                while True:
+                    try:
+                        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+                        self.assertFalse(any(alive(pid) for pid in pids))
+                        break
+                    except BlockingIOError:
+                        self.assertLess(
+                            time.monotonic(), deadline, "Cleanup kept the run locked"
+                        )
+                        time.sleep(0.02)
+            self.assertFalse((directory / "result.json").exists())
+            self.assertEqual(self.call(directory).returncode, 0)
+            result = self.assert_ready(directory)
+            self.assertEqual(result["verification"][0]["returncode"], 0)
+            self.assertEqual((directory / "worktree/.verify-attempt").read_text(), "2")
+        finally:
+            if process.poll() is None:
+                os.killpg(process.pid, signal.SIGKILL)
+                process.communicate(timeout=10)
+            if pids and alive(pids[0]):
+                os.killpg(pids[0], signal.SIGKILL)
+
+    def test_completed_verifier_does_not_leave_background_children(self):
+        code = "import subprocess,sys; from pathlib import Path; child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)']); Path('child.pid').write_text(str(child.pid))"
+        self.task["verify"] = [{"argv": [sys.executable, "-c", code]}]
+        self.save_task()
+        directory = self.root / "background"
+        result = self.call(directory)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assert_ready(directory)
+        pid = int((directory / "worktree/child.pid").read_text())
+        status = Path(f"/proc/{pid}/stat")
+        try:
+            if status.exists():
+                self.assertEqual(status.read_text().rsplit(")", 1)[1].split()[0], "Z")
+        finally:
+            if (
+                status.exists()
+                and status.read_text().rsplit(")", 1)[1].split()[0] != "Z"
+            ):
+                os.kill(pid, signal.SIGKILL)
+
+    def test_missing_verifier_is_recorded_as_failed(self):
+        self.task["verify"] = [{"argv": ["/nonexistent/agentlab-verifier"]}]
+        self.save_task()
+        directory = self.root / "missing-command"
+        result = self.call(directory)
+        self.assertEqual(result.returncode, 2, result.stderr)
+        self.assertFalse((directory / "result.json").exists())
+        self.assertEqual(
+            json.loads((directory / "status.json").read_text())["status"], "failed"
+        )
+        self.assertIn("supervisor failed", result.stderr)
 
     def test_graph_budget_is_not_reset_by_resume(self):
         self.task["max_graph_steps"] = 1

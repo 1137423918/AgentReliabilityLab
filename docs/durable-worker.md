@@ -30,13 +30,13 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 ## 验证范围与边界
 
-18 条测试（含原有证据测试）已经通过，运行器覆盖：正常完成、检查点/落地后/验证前的真实 SIGKILL、重复执行、并发抢占、任务变更、输出越界、人工编辑冲突、验证失败、验证超时和跨重启的图步数预算。
+21 条测试（8 条证据测试、13 条运行器测试）已经通过，运行器覆盖：正常完成、检查点/落地后/验证前的真实 SIGKILL、重复执行、并发抢占、任务变更、输出越界、人工编辑冲突、验证失败、验证超时和跨重启的图步数预算。新增覆盖只杀 worker 父 PID、验证正常完成遗留后台子进程、缺失验证可执行文件。
 
 - 运行环境为 Linux/Unix，使用 `flock`，不是跨平台托管服务。
 - 文件范围限于 manifest 指定的既有 UTF-8 普通文件；新增文件、删除、二进制与符号链接暂不支持。
 - 输入、输出文本总量均有 2 MiB 限制；图预算使用持久化 checkpoint step，并非 token/费用上限。
 - 验证命令是操作者明确提供的可信命令，不是面向恶意代码的安全沙箱。模型 API 凭据不会继承给验证子进程。
-- 验证超时会终止该命令的进程组。当前故障实验在阶段边界杀死 worker；尚未证明验证命令执行途中只杀父 PID 后的孤儿进程恢复，也未验证整机断电。
+- 验证由独立监督进程管理。超时、worker 消失或命令结束时，清理命令的进程组；监督进程保留运行锁直到清理结束。Linux 上已测试只杀 worker PID 后恢复。未验证整机断电、监督进程自身被 SIGKILL、脱离原进程组的子进程；这不替代 cgroup 或恶意代码沙箱。
 - 崩溃发生在命令结束与结果落盘之间时，验证命令可能重跑，须采用可重复执行的测试；不声称外部副作用 exactly-once。
 - 保留 checkpoint 与完整运行目录供排查。不要将其中的仓库内容、对话或服务凭据直接公开；对外只发布经过检查的结果与复现材料。
 
@@ -61,3 +61,19 @@ python benchmarks/recovery_matrix.py --repo /path/to/deepagents \
 ```
 
 CPU 实验曾遇到 data1 共享存储上的依赖冷导入超时；改用 home 中的独立环境后通过。没有把这次环境差异当作模型或算法速度提升。首轮原始失败日志保留在私人实验记录中。
+
+## 验证进程运行时只杀 worker
+
+首版实现仅在 worker 内处理验证超时。新增回归在旧运行器上真实失败：worker 被单独 SIGKILL 后，运行锁立即释放，验证命令及其子进程仍然存活。新 worker 可能与旧验证同时操作同一工作区。
+
+现使用独立监督进程与 Unix pipe。只有 worker 持有管道写端，退出后产生 EOF；监督进程终止验证进程组，并持有继承的同一个 flock 描述符直到清理结束。验证子进程不会继承这两个资源。正常命令结束也会清理留在该组中的后台子进程。
+
+在同一固定 Deep Agents 维护任务上，新增实验通过 `/proc` 观察到明确匹配任务 argv 的 pytest 进程，然后只向 worker PID 发 SIGKILL。监督进程清理旧验证后释放锁，恢复运行重新执行未完成的验证。正常参考与恢复场景均通过 119 条上游测试，补丁仍为同一 SHA-256。模型图已完成，无需再次执行两步编辑计划。
+
+```sh
+# Linux /proc；使用前述独立的 SDK 验证环境放入 PATH。
+python benchmarks/active_verifier_recovery.py --repo /path/to/deepagents \
+  --task tasks/deepagents-path-maintenance.json --output runs/active-verifier-001
+```
+
+证据：[修复前单项失败](../evidence/verification-supervision/parent-kill-baseline.log)、[修复后完整 21 条测试](../evidence/verification-supervision/worker-supervised-tests.log)、[真实仓库正常/恢复对照](../evidence/verification-supervision/active-report.json)。当前仍允许崩溃边界上的验证重跑，不保证任意外部副作用恰好一次。

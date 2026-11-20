@@ -23,6 +23,7 @@ from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.errors import GraphRecursionError
 
 from agent_lab.models import build_model
+from agent_lab.verification import VerificationError, run_command
 
 
 class RunError(RuntimeError):
@@ -120,7 +121,7 @@ def run_lock(directory: Path):
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as error:
             raise RunError("Another worker owns this run directory.") from error
-        yield
+        yield lock.fileno()
 
 
 def prepare_manifest(repo: Path, directory: Path, task: dict) -> dict:
@@ -230,7 +231,9 @@ def materialize(
     return patch
 
 
-def verify(directory: Path, task: dict, patch: bytes, hold: str | None) -> list:
+def verify(
+    directory: Path, task: dict, patch: bytes, hold: str | None, lock_fd: int
+) -> list:
     records_path = directory / "verification.json"
     saved = json.loads(records_path.read_text()) if records_path.exists() else {}
     if saved and saved["patch_sha256"] != hashlib.sha256(patch).hexdigest():
@@ -252,21 +255,17 @@ def verify(directory: Path, task: dict, patch: bytes, hold: str | None) -> list:
             raise RunError("Verification working directory escapes the worktree.")
         log = directory / f"verification-{index}.log"
         with log.open("wb") as stream:
-            process = subprocess.Popen(
-                command["argv"],
-                cwd=cwd,
-                env=environment,
-                stdout=stream,
-                stderr=subprocess.STDOUT,
-                start_new_session=True,
-            )
             try:
-                code = process.wait(timeout=command.get("timeout_seconds", 120))
-                timed_out = False
-            except subprocess.TimeoutExpired:
-                os.killpg(process.pid, signal.SIGKILL)
-                process.wait()
-                code, timed_out = process.returncode, True
+                code, timed_out = run_command(
+                    command["argv"],
+                    cwd=cwd,
+                    environment=environment,
+                    stream=stream,
+                    timeout=command.get("timeout_seconds", 120),
+                    lock_fd=lock_fd,
+                )
+            except VerificationError as error:
+                raise RunError(str(error)) from error
         record = {
             "argv": command["argv"],
             "returncode": code,
@@ -284,7 +283,7 @@ def verify(directory: Path, task: dict, patch: bytes, hold: str | None) -> list:
 
 
 def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dict:
-    with run_lock(directory):
+    with run_lock(directory) as lock_fd:
         names = validate_task(task)
         manifest = prepare_manifest(repo, directory, task)
         if (directory / "result.json").exists():
@@ -304,7 +303,7 @@ def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dic
                 return result
         atomic_json(directory / "status.json", {"status": "running"})
         try:
-            result = execute(repo, directory, task, names, manifest, hold)
+            result = execute(repo, directory, task, names, manifest, hold, lock_fd)
         except Exception as error:
             atomic_json(
                 directory / "status.json",
@@ -316,7 +315,7 @@ def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dic
         return result
 
 
-def execute(repo, directory, task, names, manifest, hold):
+def execute(repo, directory, task, names, manifest, hold, lock_fd):
     state = agent_phase(repo, directory, task, names, hold)
     patch = materialize(repo, directory, task, names, state)
     if not patch:
@@ -324,7 +323,7 @@ def execute(repo, directory, task, names, manifest, hold):
             "Agent produced no patch; this is not a completed maintenance result."
         )
     emit("materialized", hold, patch_sha256=hashlib.sha256(patch).hexdigest())
-    commands = verify(directory, task, patch, hold)
+    commands = verify(directory, task, patch, hold, lock_fd)
     if git(directory / "worktree", "diff", "--no-ext-diff", "--binary") != patch:
         raise RunError(
             "Verification changed tracked files; patch requires a new review."

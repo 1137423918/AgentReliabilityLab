@@ -7,11 +7,12 @@
 
 `agent_lab/` 将 Deep Agents、LangGraph SQLite checkpoint 和隔离 Git worktree 接起来：固定任务与文件范围 → 虚拟文件编辑 → 导出补丁 → 显式命令验证 → `ready_for_review`。不会自动提交或合并。
 
-- **18 条测试通过**：证据一致性与运行器流程，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时与跨重启预算。
+- **21 条测试通过**：证据一致性与运行器流程，覆盖真实 SIGKILL、并发抢占、任务变更、人工修改保护、验证失败/超时与跨重启预算。
 - **真实仓库四场景通过**：正常运行，以及检查点、补丁落地后、验证前的三处 SIGKILL。恢复后均完成两次工具操作，生成相同的 1573 字节补丁，分别通过 119 条上游测试。
+- **验证进程运行中恢复通过**：观察到真实上游 pytest 进程后，仅杀 worker PID；监督进程在释放运行锁前终止旧验证。恢复后重新验证，补丁与正常运行一致，各通过 119 条测试。
 - 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 适配器已实现，真实模型调用尚待验证。
 
-[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [18 条测试日志](evidence/recovery/worker-tests.log)
+[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [21 条测试日志](evidence/verification-supervision/worker-supervised-tests.log)
 
 ```sh
 uv sync

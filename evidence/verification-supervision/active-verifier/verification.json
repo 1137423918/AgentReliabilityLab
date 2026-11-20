@@ -1,0 +1,30 @@
+{
+  "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "005eaf674e1d73362607122f8c5162a870d48595adece81016faab608a08508c"
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit_tests/backends/test_utils.py",
+        "--disable-socket",
+        "--allow-unix-socket",
+        "--benchmark-disable",
+        "-q"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "88badaed74d086ab8bd83526e1ac695d336c573e356b863da8097ed5209e3209"
+    }
+  ]
+}

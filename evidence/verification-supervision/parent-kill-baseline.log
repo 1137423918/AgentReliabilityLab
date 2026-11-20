@@ -1,0 +1,14 @@
+test_parent_sigkill_stops_verification_before_resume (tests.test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume) ... FAIL
+
+======================================================================
+FAIL: test_parent_sigkill_stops_verification_before_resume (tests.test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<source>/tests/test_worker.py", line 311, in test_parent_sigkill_stops_verification_before_resume
+    self.assertFalse(any(alive(pid) for pid in pids))
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 1 test in 4.818s
+
+FAILED (failures=1)

@@ -1,0 +1,80 @@
+{
+  "updated": "2026-11-20",
+  "scope": "Scripted infrastructure validation on Linux; not autonomous model capability or production reliability",
+  "runtime_base_commit_before_fix": "5cc2542025910453e4bffc186d59b12f168e23e1",
+  "baseline": {
+    "new_parent_sigkill_regression_added": true,
+    "result": "FAIL",
+    "tests": 1,
+    "reason": "Worker lock released while verifier and its child remained alive",
+    "log": "parent-kill-baseline.log"
+  },
+  "candidate": {
+    "tests": 21,
+    "passed": 21,
+    "evidence_tests": 8,
+    "worker_tests": 13,
+    "log": "worker-supervised-tests.log"
+  },
+  "active_verification_experiment": {
+    "report": "active-report.json",
+    "scenarios": 2,
+    "same_patch": true,
+    "old_verifier_stopped_before_lock_release": true,
+    "upstream_tests_per_scenario": 119,
+    "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+    "task_sha256": "1f8426173527e962ee58b64d64929a7011d7cfbf1498617d73bb5ceb2c079aad",
+    "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406"
+  },
+  "implementation_sha256": {
+    "agent_lab/worker.py": "f2aefe0f7f8ffc3d27450d669b7fb4421a765ee52933267c47e2061b77441abe",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "tests/test_worker.py": "9547a4f8c00490556779ceaef7e3ccd76e3a0ea8f3f7884de0bb4596b361bdf3",
+    "benchmarks/active_verifier_recovery.py": "b8fbf358561a734d3551434030f315fa5f036b185b4dc0e730402a3abbe2ac28"
+  },
+  "raw_log_sha256": {
+    "parent-kill-baseline.log": "718e88beb81e7abae483c2bc2e1e60318ea90781e93e166556f79f0c480749e3",
+    "worker-supervised-tests.log": "f43a0a5415ab594499e8fd700eeb8fd868b323dc087adadaa3d803ac5b791f6d",
+    "active-report.json": "641c5c1a3caeb40a510c0cec1b72fbbb674a22c59cafbf56140b486f59008a3d",
+    "uninterrupted/patch.diff": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+    "uninterrupted/result.json": "3e2ced01473109f8f0f5fba76251d8c9c468e042e7274d1a23c1219dedb35ead",
+    "uninterrupted/resumed.stdout.jsonl": "19d884dfbbe32847b2e356f216349a59cca180b93141706df82acf900028eac9",
+    "uninterrupted/verification.json": "3ea74be4bc3332364de2bbdfb0b4531c85cc01bc451720521f9da236ee2c5554",
+    "uninterrupted/verification-1.log": "033372b242b2e8175d059e5d8000b1c202999d832d1f9bc45cf28ef8fb19ee52",
+    "uninterrupted/verification-0.log": "27e2f8a35d338edcd7da94ce88d527424cffb591a962363f9eb14f37cfeed2b4",
+    "active-verifier/interrupted.stdout.jsonl": "40344b38fe31adb784cde742ef1980dd47ba367ecb3095f5cd624759dfbf91c1",
+    "active-verifier/patch.diff": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+    "active-verifier/result.json": "d40a922cc8867a50ca4b93cf9cae8ae2be5db9a5eb1f710078b68b40a1627063",
+    "active-verifier/resumed.stdout.jsonl": "7600d8b7e29dcc658deb056949cbc3cb4a66ca042e4a3cc7078d0b73c24ed907",
+    "active-verifier/interruption.json": "f958cb1cfc8109bfae3cc2c8e9ae2678d42bf9cf3ba2a564df331b5e9e3641a5",
+    "active-verifier/verification.json": "5bcf632fb9b8003386117efb01c2eeaf334895491e8f8a435d50eb6b33b0a2c6",
+    "active-verifier/verification-1.log": "88badaed74d086ab8bd83526e1ac695d336c573e356b863da8097ed5209e3209",
+    "active-verifier/verification-0.log": "005eaf674e1d73362607122f8c5162a870d48595adece81016faab608a08508c"
+  },
+  "published_file_sha256": {
+    "parent-kill-baseline.log": "6f50ccb43005e9dda6aa8a5cc3a75deda4458d3c9d3ae7e4b9e923d97d0693cd",
+    "worker-supervised-tests.log": "f43a0a5415ab594499e8fd700eeb8fd868b323dc087adadaa3d803ac5b791f6d",
+    "active-report.json": "641c5c1a3caeb40a510c0cec1b72fbbb674a22c59cafbf56140b486f59008a3d",
+    "uninterrupted/patch.diff": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+    "uninterrupted/result.json": "3e2ced01473109f8f0f5fba76251d8c9c468e042e7274d1a23c1219dedb35ead",
+    "uninterrupted/resumed.stdout.jsonl": "19d884dfbbe32847b2e356f216349a59cca180b93141706df82acf900028eac9",
+    "uninterrupted/verification.json": "3ea74be4bc3332364de2bbdfb0b4531c85cc01bc451720521f9da236ee2c5554",
+    "uninterrupted/verification-1.log": "033372b242b2e8175d059e5d8000b1c202999d832d1f9bc45cf28ef8fb19ee52",
+    "uninterrupted/verification-0.log": "f0488dabcd4af19b30a8e3df0d25a8b219a6deb5c874c09dc00b7bdb2c1a6dd1",
+    "active-verifier/interrupted.stdout.jsonl": "40344b38fe31adb784cde742ef1980dd47ba367ecb3095f5cd624759dfbf91c1",
+    "active-verifier/patch.diff": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+    "active-verifier/result.json": "d40a922cc8867a50ca4b93cf9cae8ae2be5db9a5eb1f710078b68b40a1627063",
+    "active-verifier/resumed.stdout.jsonl": "7600d8b7e29dcc658deb056949cbc3cb4a66ca042e4a3cc7078d0b73c24ed907",
+    "active-verifier/interruption.json": "f958cb1cfc8109bfae3cc2c8e9ae2678d42bf9cf3ba2a564df331b5e9e3641a5",
+    "active-verifier/verification.json": "5bcf632fb9b8003386117efb01c2eeaf334895491e8f8a435d50eb6b33b0a2c6",
+    "active-verifier/verification-1.log": "88badaed74d086ab8bd83526e1ac695d336c573e356b863da8097ed5209e3209",
+    "active-verifier/verification-0.log": "d79ebd2cef66be4e8689929523ef91a114c34a6eca655a0a5a18a4e4cbac9bf4"
+  },
+  "path_sanitization": "Private absolute paths replaced in public text copies; result.verification.log_sha256 still identifies original verification logs.",
+  "limits": [
+    "Supervisor SIGKILL and whole-host failure not covered",
+    "Descendants escaping the command process group not covered",
+    "Verification may rerun after a crash; no exactly-once external side effects",
+    "Scripted fixed plan; no model inference evaluation"
+  ]
+}
