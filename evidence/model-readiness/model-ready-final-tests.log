@@ -1,0 +1,31 @@
+test_accepts_explicit_expected_value_error (test_evidence.EvidenceTests.test_accepts_explicit_expected_value_error) ... ok
+test_detects_fixed_behavior (test_evidence.EvidenceTests.test_detects_fixed_behavior) ... ok
+test_detects_regression (test_evidence.EvidenceTests.test_detects_regression) ... ok
+test_does_not_hide_unexpected_exceptions_as_expected_value_error (test_evidence.EvidenceTests.test_does_not_hide_unexpected_exceptions_as_expected_value_error) ... ok
+test_rejects_different_case_sets (test_evidence.EvidenceTests.test_rejects_different_case_sets) ... ok
+test_rejects_different_cases_under_same_hash (test_evidence.EvidenceTests.test_rejects_different_cases_under_same_hash) ... ok
+test_rejects_duplicate_result (test_evidence.EvidenceTests.test_rejects_duplicate_result) ... ok
+test_rejects_missing_result (test_evidence.EvidenceTests.test_rejects_missing_result) ... ok
+test_http_tool_roundtrip_edits_verifies_and_replays_without_requests (test_local_model.LocalModelTests.test_http_tool_roundtrip_edits_verifies_and_replays_without_requests) ... ok
+test_non_loopback_endpoint_is_rejected_before_request (test_local_model.LocalModelTests.test_non_loopback_endpoint_is_rejected_before_request) ... ok
+test_pilot_resumes_after_last_tool_without_demanding_another_tool (test_local_model.LocalModelTests.test_pilot_resumes_after_last_tool_without_demanding_another_tool) ... ok
+test_read_timeout_does_not_retry_or_create_success (test_local_model.LocalModelTests.test_read_timeout_does_not_retry_or_create_success) ... ok
+test_unavailable_endpoint_does_not_retry_or_create_success (test_local_model.LocalModelTests.test_unavailable_endpoint_does_not_retry_or_create_success) ... ok
+test_changed_manifest_is_rejected_on_resume (test_worker.WorkerTests.test_changed_manifest_is_rejected_on_resume) ... ok
+test_completed_verifier_does_not_leave_background_children (test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children) ... ok
+test_concurrent_worker_cannot_take_over_live_run (test_worker.WorkerTests.test_concurrent_worker_cannot_take_over_live_run) ... ok
+test_export_rejects_files_outside_manifest (test_worker.WorkerTests.test_export_rejects_files_outside_manifest) ... ok
+test_failed_verification_never_produces_review_ready_result (test_worker.WorkerTests.test_failed_verification_never_produces_review_ready_result) ... ok
+test_graph_budget_is_not_reset_by_resume (test_worker.WorkerTests.test_graph_budget_is_not_reset_by_resume) ... ok
+test_missing_verifier_is_recorded_as_failed (test_worker.WorkerTests.test_missing_verifier_is_recorded_as_failed) ... ok
+test_modified_completed_patch_is_not_reported_as_success (test_worker.WorkerTests.test_modified_completed_patch_is_not_reported_as_success) ... ok
+test_parent_sigkill_stops_verification_before_resume (test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume) ... ok
+test_recovers_after_actual_sigkill_at_durable_stages (test_worker.WorkerTests.test_recovers_after_actual_sigkill_at_durable_stages) ... ok
+test_terminal_replay_does_not_repeat_verification (test_worker.WorkerTests.test_terminal_replay_does_not_repeat_verification) ... ok
+test_user_changes_in_worktree_survive_failed_resume (test_worker.WorkerTests.test_user_changes_in_worktree_survive_failed_resume) ... ok
+test_verification_timeout_stops_its_process_group (test_worker.WorkerTests.test_verification_timeout_stops_its_process_group) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 161.547s
+
+OK

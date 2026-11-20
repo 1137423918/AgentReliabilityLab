@@ -1,0 +1,94 @@
+{
+  "updated": "2026-11-20",
+  "status": "readiness_verified_inference_not_run",
+  "project_tests": {
+    "total": 26,
+    "passed": 26,
+    "evidence_tests": 8,
+    "worker_tests": 13,
+    "transport_and_pilot_fixture_tests": 5,
+    "log": "model-ready-final-tests.log"
+  },
+  "wire_scope": "Real HTTP adapter and worker against a fake OpenAI-compatible server; no neural model inference",
+  "acceptance_scope": "Real pinned upstream package; unchanged baseline versus operator reference patch; no model-generated patch",
+  "acceptance": {
+    "baseline_contracts_passed": 22,
+    "reference_contracts_passed": 28,
+    "total_contracts": 28,
+    "baseline_official_tests_passed": 113,
+    "reference_official_tests_passed": 119,
+    "report": "selfcheck/report.json"
+  },
+  "model_artifacts": {
+    "model": "Qwen/Qwen3-4B-Instruct-2507",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "canonical_source": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507/tree/cdbee75f17c01a7cc42f958dc650907174af0554",
+    "download_source": "https://hf-mirror.com",
+    "canonical_file_count": 12,
+    "canonical_total_bytes": 8060915998,
+    "verification": "Each file matched official pinned file size and Git blob SHA-1 or LFS SHA-256; validation process exited zero",
+    "manifest": "model-manifest.json",
+    "canonical_manifest": "canonical-model-files.json"
+  },
+  "inference": {
+    "status": "not_run",
+    "reason": "Startup resource gate found no free GPU and exited without loading a model",
+    "launch_log": "service-launch.log",
+    "metrics": null
+  },
+  "planned_pilot": {
+    "task": "tasks/deepagents-path-model-baseline.json",
+    "model_mode": "local-openai",
+    "trials": [
+      "normal",
+      "checkpoint-resume"
+    ],
+    "graph_step_budget": 40,
+    "per_request_output_token_limit": 1536,
+    "per_request_timeout_seconds": 180,
+    "per_case_wall_deadline_seconds": 600,
+    "seed": 42,
+    "temperature": 0,
+    "automatic_retries": 0,
+    "contamination_claim": "Public known task; not a contamination-free held-out benchmark"
+  },
+  "implementation_sha256": {
+    "agent_lab/models.py": "6ad3f9c458e0c8ac9702678f2e34d0a553089f79c19e91df050952b818da53b5",
+    "tests/test_local_model.py": "f88411905601e240c4f7fe1f2cc157d3fc75c73c64b6d0140fa9d471c85a7dde",
+    "benchmarks/model_pilot.py": "e7c47edcd10d7fb25b355b6c605e837af86ab40e4c9a4ccab456cae4b244cf10",
+    "benchmarks/validate_model_task.py": "6dd6bb14d0b7e0621dc94ea47afabfc8297aef5e8c4acf5814b243194ef719b8",
+    "tasks/deepagents-path-model-baseline.json": "55dabadc97130dd3740121e9bad1157e4ca193de601567e3e991e9d5887a5e3d"
+  },
+  "raw_file_sha256": {
+    "local-model-transport-tests.log": "d6cb1e723333049f233e1d1f17817721bc164c1baf4f1d34370480c6668fbddd",
+    "model-pilot-harness-test.log": "598642e182c00b39454baa1083b6425e0e3962eb7699af6a34dd2045fa185a56",
+    "model-ready-final-tests.log": "a10daf3e1f2f2da70a4e1b7871dab873126470d5c083ccf5f898b39634a0c7e6",
+    "qwen-validation.log": "518d99af84ead5fcc21a73807a6266bbf1a7dff115787a3078570a53b32980bf",
+    "service-launch.log": "c52255d4ff8345646709efd15991e9bdfafd3fdf4b254250da7a12bca0208c7d",
+    "model-manifest.json": "461f6352a0898bc55fb202dad321e3ca0683d4dd7eead492575856ba87b2575f",
+    "selfcheck/report.json": "e6f0c203cd50d1aaa7cc3699b45dc5e6c245d390dd2f314bd4adedc85eb86656",
+    "selfcheck/baseline/verification-2.log": "cfffce4a0e3b7c67df750b1f6e854d78563248bb635f88d0f3d89cfb12d66138",
+    "selfcheck/baseline/verification-1.log": "2523701290f57ae0d1d6fa479a26cda8d6fe95c2dedd8b2f6f006f2eb34ea7de",
+    "selfcheck/baseline/verification-0.log": "af91fe8c1475c313b2b75ad6816caee5e51243b7f495122b96fb9fb77df440f0",
+    "selfcheck/reference/verification-2.log": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2",
+    "selfcheck/reference/verification-1.log": "250576327f0f081b030c0e0cd52878ef6fe91871b5a95daf30238dea5364b859",
+    "selfcheck/reference/verification-0.log": "b9848e6ff5a640c5dbe4a7022273b043f3efa0ac6a3c85b22cddfd2243298b63"
+  },
+  "published_file_sha256": {
+    "local-model-transport-tests.log": "d6cb1e723333049f233e1d1f17817721bc164c1baf4f1d34370480c6668fbddd",
+    "model-pilot-harness-test.log": "598642e182c00b39454baa1083b6425e0e3962eb7699af6a34dd2045fa185a56",
+    "model-ready-final-tests.log": "a10daf3e1f2f2da70a4e1b7871dab873126470d5c083ccf5f898b39634a0c7e6",
+    "qwen-validation.log": "518d99af84ead5fcc21a73807a6266bbf1a7dff115787a3078570a53b32980bf",
+    "service-launch.log": "c52255d4ff8345646709efd15991e9bdfafd3fdf4b254250da7a12bca0208c7d",
+    "model-manifest.json": "461f6352a0898bc55fb202dad321e3ca0683d4dd7eead492575856ba87b2575f",
+    "selfcheck/report.json": "e6f0c203cd50d1aaa7cc3699b45dc5e6c245d390dd2f314bd4adedc85eb86656",
+    "selfcheck/baseline/verification-2.log": "cfffce4a0e3b7c67df750b1f6e854d78563248bb635f88d0f3d89cfb12d66138",
+    "selfcheck/baseline/verification-1.log": "2523701290f57ae0d1d6fa479a26cda8d6fe95c2dedd8b2f6f006f2eb34ea7de",
+    "selfcheck/baseline/verification-0.log": "21155a8e35b44905f89c7cf6d26567f507d20e03ff281f7895e1135d2a996f04",
+    "selfcheck/reference/verification-2.log": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2",
+    "selfcheck/reference/verification-1.log": "250576327f0f081b030c0e0cd52878ef6fe91871b5a95daf30238dea5364b859",
+    "selfcheck/reference/verification-0.log": "070b8ca1aeec11ce82df6db40f706df68c7f23207a1018b8592fad1270929f40",
+    "canonical-model-files.json": "070225e46ce06c6601a2237a704cbf431f808940e68e396831281be6476fe3eb"
+  },
+  "path_sanitization": "Private absolute paths replaced in public copies; selfcheck command log_sha256 identifies original logs."
+}

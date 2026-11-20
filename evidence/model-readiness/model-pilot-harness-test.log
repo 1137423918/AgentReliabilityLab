@@ -1,0 +1,6 @@
+test_pilot_resumes_after_last_tool_without_demanding_another_tool (tests.test_local_model.LocalModelTests.test_pilot_resumes_after_last_tool_without_demanding_another_tool) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 18.997s
+
+OK

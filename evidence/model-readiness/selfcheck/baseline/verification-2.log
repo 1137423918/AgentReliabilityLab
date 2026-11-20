@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "<string>", line 18, in <module>
+AssertionError: Independent path contracts failed
+{"total": 28, "passed": 22, "failures": [{"id": "backslash-dot-component", "expected": {"value": "/foo/bar"}, "actual": {"value": "/foo/./bar"}}, {"id": "backslash-repeated-separator", "expected": {"value": "/foo/bar"}, "actual": {"value": "/foo//bar"}}, {"id": "backslash-trailing-separator", "expected": {"value": "/foo/bar"}, "actual": {"value": "/foo/bar/"}}, {"id": "mixed-dot-component", "expected": {"value": "/workspace/file.txt"}, "actual": {"value": "/workspace/./file.txt"}}, {"id": "mixed-repeated-separator", "expected": {"value": "/workspace/file.txt"}, "actual": {"value": "/workspace//file.txt"}}, {"id": "unicode-backslash-dot", "expected": {"value": "/项目/论文.md"}, "actual": {"value": "/项目/./论文.md"}}]}

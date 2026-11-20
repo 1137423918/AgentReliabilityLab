@@ -1,0 +1,9 @@
+test_http_tool_roundtrip_edits_verifies_and_replays_without_requests (tests.test_local_model.LocalModelTests.test_http_tool_roundtrip_edits_verifies_and_replays_without_requests) ... ok
+test_non_loopback_endpoint_is_rejected_before_request (tests.test_local_model.LocalModelTests.test_non_loopback_endpoint_is_rejected_before_request) ... ok
+test_read_timeout_does_not_retry_or_create_success (tests.test_local_model.LocalModelTests.test_read_timeout_does_not_retry_or_create_success) ... ok
+test_unavailable_endpoint_does_not_retry_or_create_success (tests.test_local_model.LocalModelTests.test_unavailable_endpoint_does_not_retry_or_create_success) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 36.668s
+
+OK

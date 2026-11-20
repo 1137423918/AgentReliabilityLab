@@ -1,0 +1,49 @@
+{
+  "scope": "Acceptance self-check; unchanged baseline versus operator reference patch; no model inference",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "task_sha256": "ca52b3d3d66bbdf3df254fdafbb5359ffbe6255a5129694f0672782695a2407e",
+  "reference_patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+  "cases": [
+    {
+      "case": "baseline",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "baseline/verification-0.log",
+          "log_sha256": "af91fe8c1475c313b2b75ad6816caee5e51243b7f495122b96fb9fb77df440f0"
+        },
+        {
+          "returncode": 0,
+          "log": "baseline/verification-1.log",
+          "log_sha256": "2523701290f57ae0d1d6fa479a26cda8d6fe95c2dedd8b2f6f006f2eb34ea7de"
+        },
+        {
+          "returncode": 1,
+          "log": "baseline/verification-2.log",
+          "log_sha256": "cfffce4a0e3b7c67df750b1f6e854d78563248bb635f88d0f3d89cfb12d66138"
+        }
+      ]
+    },
+    {
+      "case": "reference",
+      "commands": [
+        {
+          "returncode": 0,
+          "log": "reference/verification-0.log",
+          "log_sha256": "b9848e6ff5a640c5dbe4a7022273b043f3efa0ac6a3c85b22cddfd2243298b63"
+        },
+        {
+          "returncode": 0,
+          "log": "reference/verification-1.log",
+          "log_sha256": "250576327f0f081b030c0e0cd52878ef6fe91871b5a95daf30238dea5364b859"
+        },
+        {
+          "returncode": 0,
+          "log": "reference/verification-2.log",
+          "log_sha256": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2"
+        }
+      ]
+    }
+  ],
+  "discriminates_baseline_and_reference": true
+}
