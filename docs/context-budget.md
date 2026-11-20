@@ -30,6 +30,8 @@ The grep control receives operator-supplied function names and AST-derived enclo
 
 Use the existing project worker environment plus Jinja2 3.1.6 in a task-owned environment. This run used a new virtual environment with a read-only `.pth` reference to the original worker's site-packages, adding Jinja2/MarkupSafe only to the new environment. Ordinary `--system-site-packages` inherited the base Python, not the original worker virtual environment; its initial missing-dependency failure is retained. The original worker environment was unchanged.
 
+For a normal isolated project checkout, `uv run --extra local-model --with jinja2==3.1.6 python benchmarks/context_budget.py ...` supplies the transport extra and reference renderer using the project's dependency environment. Replace `...` with the explicit arguments below. The read-only `.pth` setup above describes the recorded server environment, not a required shared-path layout.
+
 Compile against the fixed backend headers and **versioned** shared library (the release's unversioned link was not usable):
 
 ```sh
