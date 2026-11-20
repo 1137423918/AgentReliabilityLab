@@ -1,0 +1,77 @@
+{
+  "scope": "Actual LFX checkpoint serialization, SQLite persistence/reopen, and connected graph resume; CPU only",
+  "upstream_repository": "https://github.com/langflow-ai/langflow",
+  "base_branch": "release-1.14.0",
+  "base_commit": "4d3b965c658ae147f3204b0a17bbb63b1f4f722e",
+  "candidate_commit": "36ba5a3ae27e17f80acd7304cbdde4807652b174",
+  "source_sha256": "48d4e9114b7853709a215cdf8d3dfd82ca099f4ec332d56841925dc5b049430f",
+  "baseline_source_sha256": "32724380d80cc40e3b1d25dd7183e0e98a5c362e89c764ed68c7130fb614c1b8",
+  "driver_sha256": "8db80b43358e9574935e034870477383d79613aedde9b6961057d8a83a56b357",
+  "observed_date": "2026-11-21",
+  "stars_observed": 156806,
+  "new_checks": {
+    "total": 14,
+    "baseline_failed": 12,
+    "baseline_passed": 2,
+    "candidate_passed": 14,
+    "included_in_focused_suite": true
+  },
+  "focused_suite": {
+    "paths": [
+      "src/lfx/tests/unit/graph/checkpoint",
+      "src/lfx/tests/unit/services/durable"
+    ],
+    "passed": 105,
+    "warnings": 5,
+    "seconds": 8.7
+  },
+  "sqlite_probe": {
+    "total_cases": 12,
+    "nonfinite_cases": 9,
+    "finite_controls": 3,
+    "baseline_unmarked_numeric_loss": 9,
+    "candidate_explicit_nonfinite_drops": 9,
+    "finite_preserved": 3,
+    "same_driver": true,
+    "graph_execution": false
+  },
+  "graph_resume_checks": {
+    "nonfinite_cases": 3,
+    "finite_control": 1,
+    "real_sqlite": true,
+    "reopened_store": true,
+    "producer_built_state_and_numeric_outputs_checked": true,
+    "downstream_output_checked": true
+  },
+  "full_repository_ci": false,
+  "model_inference": false,
+  "gpu_execution": false,
+  "broad_suite": {
+    "passed": 682,
+    "failed": 3,
+    "skipped": 6,
+    "xfailed": 1,
+    "warnings": 5,
+    "seconds": 247.93,
+    "green": false,
+    "catalog_failures_reproduced_on_base": 2,
+    "scheduler_timeout_in_broad_run": 1,
+    "scheduler_isolated_baseline_passed": 2,
+    "scheduler_isolated_candidate_passed": 2,
+    "scheduler_timeout_root_cause": "unresolved; isolated pass does not erase broad failure"
+  },
+  "limitations": [
+    "Native float values in encoder-supported containers/models; not all numeric libraries",
+    "Conservatively drops raw non-finite model state even if a custom serializer intentionally encodes it another way",
+    "Flow definition must already be JSON-safe; cannot recover older null-corrupted checkpoints",
+    "Recomputation can repeat producer side effects; no exactly-once guarantee",
+    "General output serialization and wire schema unchanged",
+    "One Linux Python version; not a complete monorepo/CI matrix",
+    "No autonomous model repair or additional runtime adapter"
+  ],
+  "upstream_pr": null,
+  "pr_number": null,
+  "pr_state": "not_created_workflow_scope_required",
+  "candidate_pushed": false,
+  "validated_local_commit": "36ba5a3ae27e17f80acd7304cbdde4807652b174"
+}

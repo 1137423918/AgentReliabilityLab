@@ -1,0 +1,25 @@
+collected 25 items / 22 deselected / 3 selected
+
+src/lfx/tests/unit/graph/test_graph.py .FF                               [100%]
+
+=================================== FAILURES ===================================
+_ test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official] _
+src/lfx/tests/unit/graph/test_graph.py:219: in test_from_payload_checks_catalog_policy_before_and_after_extension_migration
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+____ test_from_payload_checks_canonical_policy_for_nested_legacy_component _____
+src/lfx/tests/unit/graph/test_graph.py:267: in test_from_payload_checks_canonical_policy_for_nested_legacy_component
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+=========================== short test summary info ============================
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official] - lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog po...
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_canonical_policy_for_nested_legacy_component - lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog po...
+============ 2 failed, 1 passed, 22 deselected, 5 warnings in 5.44s ============

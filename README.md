@@ -89,6 +89,14 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 这是第三个框架的存储贡献，未合并；没有新增 ADK 维护 Agent 运行时适配器。真实模型修复结果仍为此前的失败记录。新增复现脚本未改动运行器核心，本轮未重复执行不受影响的 42 项项目检查。[完整协议](docs/adk-artifact-cleanup.md) · [证据、初版失败和边界](evidence/adk-artifact-cleanup/README.md)。
 
+## Langflow / LFX 检查点的数值保真
+
+在活跃发布分支复现 NaN、正负 Infinity 经真实 SQLite 保存/重开后静默变为 None，生产节点却仍被标记 built。候选在模型 JSON 导出前检查原始字段，复用已有 opaque-drop 与恢复重算机制；不改通用输出序列化或 wire 格式。
+
+原版新增检查 **12 失败 / 2 个有限对照通过**；候选完整检查点与持久化目录 **105 通过 / 5 项既有弃用警告**，含14项新增检查。实际连接图验证生产节点重算及下游结果。广泛图目录为 **682 通过 / 3 失败 / 6 跳过 / 1 预期失败**，失败及原版对照完整披露，不声称全仓库 CI 通过。
+
+**候选尚未推送、PR 尚未创建**：GitHub 因当前令牌缺少 workflow 权限拒绝导入上游发布分支；四文件补丁未改工作流，等待授权；[复现协议](docs/lfx-checkpoint-numeric.md) · [日志、哈希与边界](evidence/lfx-checkpoint-numeric/README.md)。无模型或 GPU 调用，不计模型自主修复；旧检查点已丢失的数值不可恢复，重算仍可能重复副作用。本轮未改运行器核心，63项项目检查未重复运行。
+
 ## AutoGen 取消回调的锁范围
 
 在 AutoGen 的真实公共 API 中复现取消死锁：回调查询自身 token、登记另一个清理回调，或等待其他线程读取 token 时，会再次申请仍被持有的锁。候选在锁内修改状态并复制回调列表，再释放锁执行；已取消 token 的回调登记和 future 关联复用同一逻辑。

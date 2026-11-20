@@ -1,0 +1,82 @@
+collected 14 items
+
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py FFFFFFFFF.FFF.     [100%]
+
+=================================== FAILURES ===================================
+__________ test_nonfinite_scalars_are_explicit_checkpoint_drops[nan] ___________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:21: in test_nonfinite_scalars_are_explicit_checkpoint_drops
+    assert serialize_value(number) is None
+E   AssertionError: assert {'__lfx_ser__': 'raw', 'value': nan} is None
+E    +  where {'__lfx_ser__': 'raw', 'value': nan} = serialize_value(nan)
+__________ test_nonfinite_scalars_are_explicit_checkpoint_drops[inf] ___________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:21: in test_nonfinite_scalars_are_explicit_checkpoint_drops
+    assert serialize_value(number) is None
+E   AssertionError: assert {'__lfx_ser__': 'raw', 'value': inf} is None
+E    +  where {'__lfx_ser__': 'raw', 'value': inf} = serialize_value(inf)
+______ test_nonfinite_scalars_are_explicit_checkpoint_drops[negative-inf] ______
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:21: in test_nonfinite_scalars_are_explicit_checkpoint_drops
+    assert serialize_value(number) is None
+E   AssertionError: assert {'__lfx_ser__': 'raw', 'value': -inf} is None
+E    +  where {'__lfx_ser__': 'raw', 'value': -inf} = serialize_value(-inf)
+_________ test_nested_nonfinite_values_cannot_hide_in_built_state[nan] _________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:27: in test_nested_nonfinite_values_cannot_hide_in_built_state
+    assert wire_has_opaque_drop(wire)
+E   AssertionError: assert False
+E    +  where False = wire_has_opaque_drop({'__lfx_ser__': 'dict', 'value': {'scores': {'__lfx_ser__': 'list', 'value': [{'__lfx_ser__': 'raw', 'value': 1.0}, {'__lfx_ser__': 'raw', 'value': nan}]}}})
+_________ test_nested_nonfinite_values_cannot_hide_in_built_state[inf] _________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:27: in test_nested_nonfinite_values_cannot_hide_in_built_state
+    assert wire_has_opaque_drop(wire)
+E   AssertionError: assert False
+E    +  where False = wire_has_opaque_drop({'__lfx_ser__': 'dict', 'value': {'scores': {'__lfx_ser__': 'list', 'value': [{'__lfx_ser__': 'raw', 'value': 1.0}, {'__lfx_ser__': 'raw', 'value': inf}]}}})
+____ test_nested_nonfinite_values_cannot_hide_in_built_state[negative-inf] _____
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:27: in test_nested_nonfinite_values_cannot_hide_in_built_state
+    assert wire_has_opaque_drop(wire)
+E   AssertionError: assert False
+E    +  where False = wire_has_opaque_drop({'__lfx_ser__': 'dict', 'value': {'scores': {'__lfx_ser__': 'list', 'value': [{'__lfx_ser__': 'raw', 'value': 1.0}, {'__lfx_ser__': 'raw', 'value': -inf}]}}})
+__________ test_nonfinite_lfx_model_payloads_are_explicit_drops[nan] ___________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:33: in test_nonfinite_lfx_model_payloads_are_explicit_drops
+    assert serialize_value(Data(data={"score": number})) is None
+E   AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} is None
+E    +  where {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} = serialize_value(JSON(text_key='text', data={'score': nan}, default_value=''))
+E    +    where JSON(text_key='text', data={'score': nan}, default_value='') = Data(data={'score': nan})
+__________ test_nonfinite_lfx_model_payloads_are_explicit_drops[inf] ___________
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:33: in test_nonfinite_lfx_model_payloads_are_explicit_drops
+    assert serialize_value(Data(data={"score": number})) is None
+E   AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} is None
+E    +  where {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} = serialize_value(JSON(text_key='text', data={'score': inf}, default_value=''))
+E    +    where JSON(text_key='text', data={'score': inf}, default_value='') = Data(data={'score': inf})
+______ test_nonfinite_lfx_model_payloads_are_explicit_drops[negative-inf] ______
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:33: in test_nonfinite_lfx_model_payloads_are_explicit_drops
+    assert serialize_value(Data(data={"score": number})) is None
+E   AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} is None
+E    +  where {'__lfx_ser__': 'model', 'module': 'lfx.schema.data', 'name': 'JSON', 'value': {'score': None, 'data': {'score': None}}} = serialize_value(JSON(text_key='text', data={'score': -inf}, default_value=''))
+E    +    where JSON(text_key='text', data={'score': -inf}, default_value='') = Data(data={'score': -inf})
+___ test_sqlite_resume_recomputes_unsupported_numeric_state[nan-False-True] ____
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:66: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert ("producer" in resumed.checkpoint_opaque_dropped_ids) is rebuild
+E   AssertionError: assert ('producer' in set()) is True
+E    +  where set() = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer.checkpoint_opaque_dropped_ids
+____ test_sqlite_resume_recomputes_unsupported_numeric_state[inf-True-True] ____
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:66: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert ("producer" in resumed.checkpoint_opaque_dropped_ids) is rebuild
+E   AssertionError: assert ('producer' in set()) is True
+E    +  where set() = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer.checkpoint_opaque_dropped_ids
+___ test_sqlite_resume_recomputes_unsupported_numeric_state[-inf-False-True] ___
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:66: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert ("producer" in resumed.checkpoint_opaque_dropped_ids) is rebuild
+E   AssertionError: assert ('producer' in set()) is True
+E    +  where set() = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer.checkpoint_opaque_dropped_ids
+=========================== short test summary info ============================
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_scalars_are_explicit_checkpoint_drops[nan] - AssertionError: assert {'__lfx_ser__': 'raw', 'value': nan} is None
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_scalars_are_explicit_checkpoint_drops[inf] - AssertionError: assert {'__lfx_ser__': 'raw', 'value': inf} is None
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_scalars_are_explicit_checkpoint_drops[negative-inf] - AssertionError: assert {'__lfx_ser__': 'raw', 'value': -inf} is None
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nested_nonfinite_values_cannot_hide_in_built_state[nan] - AssertionError: assert False
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nested_nonfinite_values_cannot_hide_in_built_state[inf] - AssertionError: assert False
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nested_nonfinite_values_cannot_hide_in_built_state[negative-inf] - AssertionError: assert False
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_lfx_model_payloads_are_explicit_drops[nan] - AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data'...
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_lfx_model_payloads_are_explicit_drops[inf] - AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data'...
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_nonfinite_lfx_model_payloads_are_explicit_drops[negative-inf] - AssertionError: assert {'__lfx_ser__': 'model', 'module': 'lfx.schema.data'...
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[nan-False-True] - AssertionError: assert ('producer' in set()) is True
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[inf-True-True] - AssertionError: assert ('producer' in set()) is True
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[-inf-False-True] - AssertionError: assert ('producer' in set()) is True
+============= 12 failed, 2 passed, 5 warnings in 132.95s (0:02:12) =============

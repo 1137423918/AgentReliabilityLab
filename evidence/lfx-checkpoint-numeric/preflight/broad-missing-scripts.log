@@ -1,0 +1,384 @@
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.1.1, pluggy-1.6.0
+rootdir: <server-workspace>/code/langflow-checkpoint-20261121/src/lfx
+configfile: pyproject.toml
+plugins: lfx-1.14.0, anyio-4.14.2, hypothesis-6.161.7, langsmith-0.10.10, asyncio-1.4.0, langflow-sdk-0.4.0, cov-7.1.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collected 691 items / 1 skipped
+
+src/lfx/tests/unit/graph/checkpoint/test_graph_pause.py ........         [  1%]
+src/lfx/tests/unit/graph/checkpoint/test_human_input_branch_exclusion.py . [  1%]
+..                                                                       [  1%]
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py ..............     [  3%]
+src/lfx/tests/unit/graph/checkpoint/test_resume.py ..................... [  6%]
+.                                                                        [  6%]
+src/lfx/tests/unit/graph/checkpoint/test_resume_does_not_reschedule_built.py . [  6%]
+..                                                                       [  7%]
+src/lfx/tests/unit/graph/checkpoint/test_resume_round_trip.py .....      [  7%]
+src/lfx/tests/unit/graph/checkpoint/test_schema.py ..........            [  9%]
+src/lfx/tests/unit/graph/checkpoint/test_service_plumbing.py ...         [  9%]
+src/lfx/tests/unit/graph/checkpoint/test_store.py .........              [ 11%]
+src/lfx/tests/unit/graph/edge/test_edge_base.py s                        [ 11%]
+src/lfx/tests/unit/graph/edge/test_types_compatible.py ................. [ 13%]
+.............                                                            [ 15%]
+src/lfx/tests/unit/graph/graph/state/test_state_model.py ..............  [ 17%]
+src/lfx/tests/unit/graph/graph/test_base.py ...............s......       [ 20%]
+src/lfx/tests/unit/graph/graph/test_callback_graph.py s                  [ 20%]
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py EEEEEEEEEEEEEEEEEEE [ 23%]
+EEEE                                                                     [ 24%]
+src/lfx/tests/unit/graph/graph/test_dag_lifecycle.py ................... [ 27%]
+.....                                                                    [ 27%]
+src/lfx/tests/unit/graph/graph/test_dag_scheduler.py ................... [ 30%]
+..................................................................       [ 40%]
+src/lfx/tests/unit/graph/graph/test_graph_state_model.py x..s            [ 40%]
+src/lfx/tests/unit/graph/graph/test_initialize_run_telemetry.py ....     [ 41%]
+src/lfx/tests/unit/graph/graph/test_runnable_vertices_manager.py ....... [ 42%]
+.............                                                            [ 44%]
+src/lfx/tests/unit/graph/graph/test_snapshot_history.py ................ [ 46%]
+.....................FFFF                                                [ 50%]
+src/lfx/tests/unit/graph/graph/test_subgraph_isolation.py .......        [ 51%]
+src/lfx/tests/unit/graph/graph/test_utils.py ........................... [ 54%]
+.....................................                                    [ 60%]
+src/lfx/tests/unit/graph/test_async_start_flow_span.py ......            [ 61%]
+src/lfx/tests/unit/graph/test_branch_inactivation.py ........            [ 62%]
+src/lfx/tests/unit/graph/test_ephemeral_telemetry_gate.py ...            [ 62%]
+src/lfx/tests/unit/graph/test_flow_span_events_boundary.py ....          [ 63%]
+src/lfx/tests/unit/graph/test_frozen_vertex.py ......................... [ 67%]
+.                                                                        [ 67%]
+src/lfx/tests/unit/graph/test_graph.py .......FF...............s         [ 70%]
+src/lfx/tests/unit/graph/test_orphaned_tool_mode.py ......               [ 71%]
+src/lfx/tests/unit/graph/test_result_data.py .                           [ 71%]
+src/lfx/tests/unit/graph/test_token_usage_accumulation.py ............   [ 73%]
+src/lfx/tests/unit/graph/test_tracing_user_id_override.py ...            [ 73%]
+src/lfx/tests/unit/graph/test_transaction_attribution.py ...             [ 74%]
+src/lfx/tests/unit/graph/vertex/test_param_handler.py ................   [ 76%]
+src/lfx/tests/unit/graph/vertex/test_param_handler_model_edge.py ....... [ 77%]
+..                                                                       [ 78%]
+src/lfx/tests/unit/graph/vertex/test_vertex_base.py .................... [ 80%]
+........................................................................ [ 91%]
+................................                                         [ 95%]
+src/lfx/tests/unit/services/durable/test_resume_after_restart.py .       [ 96%]
+src/lfx/tests/unit/services/durable/test_sqlite_checkpoints.py ......... [ 97%]
+.                                                                        [ 97%]
+src/lfx/tests/unit/services/durable/test_sqlite_store.py ............... [ 99%]
+..                                                                       [100%]
+
+==================================== ERRORS ====================================
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload0] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[None] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[1] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[bad] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload4] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload5] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload6] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload7] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload8] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload9] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload10] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_proxy_invalid_request_rejected_before_service_start[payload11] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_____________ ERROR at setup of test_proxy_malformed_json_rejected _____________
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_____ ERROR at setup of test_proxy_valid_request_runs_real_graph[payload0] _____
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_____ ERROR at setup of test_proxy_valid_request_runs_real_graph[payload1] _____
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+____ ERROR at setup of test_provenance_binds_untracked_source_and_deletions ____
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_observation_records_actual_scheduler_and_rejects_fallback _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_observation_restores_tracer_and_scheduler_on_every_exit[failure] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_observation_restores_tracer_and_scheduler_on_every_exit[cancel] _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_____________ ERROR at setup of test_external_tracer_is_preserved ______________
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_overlapping_proxy_observations_do_not_overlap_owned_tracing _
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_observations_support_separate_sequential_event_loops __
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+_ ERROR at setup of test_cross_thread_event_loop_rejected_before_shared_state __
+src/lfx/tests/unit/graph/graph/test_dag_benchmark.py:25: in benchmark
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/dag_scheduler.py'
+=================================== FAILURES ===================================
+__ test_benchmark_rejects_conflicting_baseline_before_measurement[arguments0] __
+src/lfx/tests/unit/graph/graph/test_snapshot_history.py:407: in test_benchmark_rejects_conflicting_baseline_before_measurement
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/snapshot_history.py'
+__ test_benchmark_rejects_conflicting_baseline_before_measurement[arguments1] __
+src/lfx/tests/unit/graph/graph/test_snapshot_history.py:407: in test_benchmark_rejects_conflicting_baseline_before_measurement
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/snapshot_history.py'
+__ test_benchmark_rejects_conflicting_baseline_before_measurement[arguments2] __
+src/lfx/tests/unit/graph/graph/test_snapshot_history.py:407: in test_benchmark_rejects_conflicting_baseline_before_measurement
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/snapshot_history.py'
+__ test_benchmark_rejects_conflicting_baseline_before_measurement[arguments3] __
+src/lfx/tests/unit/graph/graph/test_snapshot_history.py:407: in test_benchmark_rejects_conflicting_baseline_before_measurement
+    spec.loader.exec_module(module)
+<frozen importlib._bootstrap_external>:1023: in exec_module
+    ???
+<frozen importlib._bootstrap_external>:1160: in get_code
+    ???
+<frozen importlib._bootstrap_external>:1218: in get_data
+    ???
+E   FileNotFoundError: [Errno 2] No such file or directory: '<server-workspace>/code/langflow-checkpoint-20261121/scripts/benchmark/snapshot_history.py'
+_ test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official] _
+src/lfx/tests/unit/graph/test_graph.py:219: in test_from_payload_checks_catalog_policy_before_and_after_extension_migration
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+____ test_from_payload_checks_canonical_policy_for_nested_legacy_component _____
+src/lfx/tests/unit/graph/test_graph.py:267: in test_from_payload_checks_canonical_policy_for_nested_legacy_component
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+=========================== short test summary info ============================
+FAILED src/lfx/tests/unit/graph/graph/test_snapshot_history.py::test_benchmark_rejects_conflicting_baseline_before_measurement[arguments0] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+FAILED src/lfx/tests/unit/graph/graph/test_snapshot_history.py::test_benchmark_rejects_conflicting_baseline_before_measurement[arguments1] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+FAILED src/lfx/tests/unit/graph/graph/test_snapshot_history.py::test_benchmark_rejects_conflicting_baseline_before_measurement[arguments2] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+FAILED src/lfx/tests/unit/graph/graph/test_snapshot_history.py::test_benchmark_rejects_conflicting_baseline_before_measurement[arguments3] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official] - lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog po...
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_canonical_policy_for_nested_legacy_component - lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog po...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload0] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[None] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[1] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[bad] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload4] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload5] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload6] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload7] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload8] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload9] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload10] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_invalid_request_rejected_before_service_start[payload11] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_malformed_json_rejected - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_valid_request_runs_real_graph[payload0] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_proxy_valid_request_runs_real_graph[payload1] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_provenance_binds_untracked_source_and_deletions - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_observation_records_actual_scheduler_and_rejects_fallback - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_observation_restores_tracer_and_scheduler_on_every_exit[failure] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_observation_restores_tracer_and_scheduler_on_every_exit[cancel] - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_external_tracer_is_preserved - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_overlapping_proxy_observations_do_not_overlap_owned_tracing - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_observations_support_separate_sequential_event_loops - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+ERROR src/lfx/tests/unit/graph/graph/test_dag_benchmark.py::test_cross_thread_event_loop_rejected_before_shared_state - FileNotFoundError: [Errno 2] No such file or directory: '<server-storage>/agent...
+= 6 failed, 656 passed, 6 skipped, 1 xfailed, 5 warnings, 23 errors in 208.88s (0:03:28) =

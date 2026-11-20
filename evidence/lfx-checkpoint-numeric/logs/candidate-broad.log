@@ -1,0 +1,72 @@
+........................................................................ [ 10%]
+.....s...........................................................s...... [ 20%]
+s....................................................................... [ 31%]
+..........................F..................................x..s....... [ 41%]
+........................................................................ [ 52%]
+........................................................................ [ 62%]
+.......................................FF...............s............... [ 72%]
+........................................................................ [ 83%]
+........................................................................ [ 93%]
+...........................................                              [100%]
+=================================== FAILURES ===================================
+____ test_completion_handling_finishes_before_descendant_admission[persist] ____
+../../tools/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py:514: in wait_for
+    return await fut
+           ^^^^^^^^^
+../../tools/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/locks.py:213: in wait
+    await fut
+E   asyncio.exceptions.CancelledError
+
+The above exception was the direct cause of the following exception:
+src/lfx/tests/unit/graph/graph/test_dag_scheduler.py:374: in test_completion_handling_finishes_before_descendant_admission
+    await asyncio.wait_for(entered.wait(), 3)
+../../tools/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/tasks.py:513: in wait_for
+    async with timeouts.timeout(timeout):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+../../tools/python/cpython-3.13.18-linux-x86_64-gnu/lib/python3.13/asyncio/timeouts.py:117: in __aexit__
+    raise TimeoutError from exc_val
+E   TimeoutError
+_ test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official] _
+src/lfx/tests/unit/graph/test_graph.py:219: in test_from_payload_checks_catalog_policy_before_and_after_extension_migration
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+____ test_from_payload_checks_canonical_policy_for_nested_legacy_component _____
+src/lfx/tests/unit/graph/test_graph.py:267: in test_from_payload_checks_canonical_policy_for_nested_legacy_component
+    Graph.from_payload(payload)
+src/lfx/src/lfx/graph/graph/base.py:1979: in from_payload
+    validate_catalog_policy_for_flow(payload, snapshot=catalog_policy_snapshot)
+src/lfx/src/lfx/utils/flow_validation.py:436: in validate_catalog_policy_for_flow
+    raise CatalogPolicyIdentityUnavailableError(CATALOG_POLICY_IDENTITIES_UNAVAILABLE_MESSAGE)
+E   lfx.utils.flow_validation.CatalogPolicyIdentityUnavailableError: Catalog policy component identities are still initializing. Please try again in a few seconds.
+=============================== warnings summary ===============================
+../../envs/langflow-lfx-20261121/lib/python3.13/site-packages/langchain_classic/chains/api/base.py:57
+  <server-workspace>/envs/langflow-lfx-20261121/lib/python3.13/site-packages/langchain_classic/chains/api/base.py:57: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+    from langchain_community.utilities.requests import TextRequestsWrapper
+
+../../envs/langflow-lfx-20261121/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:325
+../../envs/langflow-lfx-20261121/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:325
+../../envs/langflow-lfx-20261121/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:325
+  <server-workspace>/envs/langflow-lfx-20261121/lib/python3.13/site-packages/pydantic/_internal/_generate_schema.py:325: PydanticDeprecatedSince20: `json_encoders` is deprecated. See https://docs.pydantic.dev/2.13/concepts/serialization/#custom-serializers for alternatives. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/
+    warnings.warn(
+
+src/lfx/src/lfx/inputs/inputs.py:978
+  <server-workspace>/code/langflow-checkpoint-20261121/src/lfx/src/lfx/inputs/inputs.py:978: PydanticDeprecatedSince212: Using `@model_validator` with mode='after' on a classmethod is deprecated. Instead, use an instance method. See the documentation at https://docs.pydantic.dev/2.13/concepts/validators/#model-after-validator. Deprecated in Pydantic V2.12 to be removed in V3.0.
+    @model_validator(mode="after")
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [1] src/lfx/tests/unit/graph/graph/test_cycles.py:17: Failed to import components in tests. Exception: cannot import name 'PromptComponent' from 'lfx.components.processing' (<server-workspace>/code/langflow-checkpoint-20261121/src/lfx/src/lfx/components/processing/__init__.py)
+SKIPPED [1] src/lfx/tests/unit/graph/edge/test_edge_base.py:8: Temporarilty disabled
+SKIPPED [1] src/lfx/tests/unit/graph/graph/test_base.py:345: Temporarily disabled
+SKIPPED [1] src/lfx/tests/unit/graph/graph/test_callback_graph.py:24: Temporarily disabled
+SKIPPED [1] src/lfx/tests/unit/graph/graph/test_graph_state_model.py:113: Not implemented yet
+SKIPPED [1] src/lfx/tests/unit/graph/test_graph.py:755: Temporarily disabled
+XFAIL src/lfx/tests/unit/graph/graph/test_graph_state_model.py::test_graph_state_model - These components trigger aiohttp import. Should refactor LLMRouter
+FAILED src/lfx/tests/unit/graph/graph/test_dag_scheduler.py::test_completion_handling_finishes_before_descendant_admission[persist]
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_catalog_policy_before_and_after_extension_migration[ext:duckduckgo:DuckDuckGoSearchComponent@official]
+FAILED src/lfx/tests/unit/graph/test_graph.py::test_from_payload_checks_canonical_policy_for_nested_legacy_component
+3 failed, 682 passed, 6 skipped, 1 xfailed, 5 warnings in 247.93s (0:04:07)

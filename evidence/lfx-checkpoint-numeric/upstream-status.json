@@ -1,0 +1,34 @@
+{
+  "observed_date": "2026-11-21",
+  "repository": {
+    "full_name": "langflow-ai/langflow",
+    "archived": false,
+    "disabled": false,
+    "pull_request_creation_policy": "all"
+  },
+  "base_branch": "release-1.14.0",
+  "base_commit": "4d3b965c658ae147f3204b0a17bbb63b1f4f722e",
+  "validated_local_commit": "36ba5a3ae27e17f80acd7304cbdde4807652b174",
+  "fork_url": "https://github.com/1137423918/langflow",
+  "fork_created": true,
+  "candidate_pushed": false,
+  "pr_created": false,
+  "upstream_pr": null,
+  "state": "workflow_scope_required",
+  "reason": "GitHub refused to import the upstream release branch because its workflow files differ from the fork default branch; current PAT has public_repo only. Both Git push and documented fork-branch synchronization were rejected. The four-file repair changes no workflows.",
+  "git_push_rejection": "To https://github.com/1137423918/langflow.git\n ! [remote rejected] fix/checkpoint-nonfinite-state -> fix/checkpoint-nonfinite-state (refusing to allow a Personal Access Token to create or update workflow `.github/workflows/backend-tests.md` without `workflow` scope)\nerror: failed to push some refs to 'https://github.com/1137423918/langflow.git'\n",
+  "fork_sync_status": 422,
+  "fork_sync_rejection": "{\"message\":\"refusing to allow a Personal Access Token to create or update workflow `.github/workflows/backend-tests.md` without `workflow` scope\",\"documentation_url\":\"https://docs.github.com/rest/branches/branches#sync-a-fork-branch-with-the-upstream-repository\",\"status\":\"422\"}",
+  "requested_permission": "workflow scope, user answer pending; no expanded token minted",
+  "fork_release_branch_note": "A new fork release-1.14.0 ref was created at its existing main commit 21381e5b2964fb4c714dc91fcd5187d4cfc2a67f; sync was rejected, so this ref is not the tested upstream release baseline. No user-existing branch was changed.",
+  "duplicates_inspected": {
+    "open_pr_summary_count": 1116,
+    "nearby_prs": [
+      11648,
+      15229,
+      16464,
+      15882
+    ],
+    "same_checkpoint_fix_found": false
+  }
+}

@@ -1,0 +1,25 @@
+check for case conflicts................................................................................Passed
+fix end of files........................................................................................Passed
+mixed line ending.......................................................................................Passed
+trim trailing whitespace................................................................................Passed
+ruff check..............................................................................................Passed
+ruff format.............................................................................................Passed
+Validate Alembic Migrations (Expand-Contract).......................................(no files to check)Skipped
+- hook id: validate-migrations
+Check Migration Phase Documentation.................................................(no files to check)Skipped
+Extension migration table - bare-name uniqueness....................................(no files to check)Skipped
+Extension migration table - append-only.............................................(no files to check)Skipped
+BUNDLE_API.md changelog gate........................................................(no files to check)Skipped
+Extension router trust - no install/uninstall under /api/v1/extensions..............(no files to check)Skipped
+Components must not write to os.environ (process-global; bleeds across requests)....(no files to check)Skipped
+Log calls must not render the caught exception (leaks payloads, drops error.type).......................Passed
+Detect secrets..........................................................................................Passed
+biome check.........................................................................(no files to check)Skipped
+biome no-any check (staged only)....................................................(no files to check)Skipped
+Validate Starter Project Templates..................................................(no files to check)Skipped
+Check for deprecated langchain imports..............................................(no files to check)Skipped
+[fix/checkpoint-nonfinite-state 36ba5a3] fix: recompute non-finite checkpoint state
+ 4 files changed, 145 insertions(+)
+ create mode 100644 docs/features/checkpoint-nonfinite-state.md
+ create mode 100644 src/lfx/tests/unit/graph/checkpoint/_numeric_checkpoint_components.py
+ create mode 100644 src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py

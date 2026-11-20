@@ -1,0 +1,196 @@
+diff --git a/docs/features/checkpoint-nonfinite-state.md b/docs/features/checkpoint-nonfinite-state.md
+new file mode 100644
+index 0000000..3dc1701
+--- /dev/null
++++ b/docs/features/checkpoint-nonfinite-state.md
+@@ -0,0 +1,21 @@
++# Recompute checkpoint state containing non-finite floats
++
++Durable checkpoints persist built values as JSON. NaN and positive or negative
++infinity can become `null` during a model's JSON dump or the checkpoint writer.
++Previously, these values were tagged as restorable, leaving their producer built
++on resume even though a downstream component received `None`.
++
++The checkpoint encoder now treats non-finite floats as opaque state. It also
++checks raw Pydantic model fields before a model serializer can replace those
++numbers, and rejects non-finite numbers introduced by a JSON serializer. Nested
++containers use the existing opaque-drop marker. The graph's existing resume
++logic recomputes a dropped producer when an unbuilt downstream vertex needs it.
++Finite values and genuine `None` retain their existing wire format.
++
++This does not change general API output serialization, introduce a new wire
++format, or recover original numeric values from older checkpoints that already
++contain `null`. Recomputing a producer can repeat its side effects, as with other
++opaque checkpoint state; this change does not provide exactly-once execution.
++
++Regression coverage includes scalar and nested values, LFX Data, and connected
++producer/consumer graphs persisted through SQLite and reopened before resume.
+diff --git a/src/lfx/src/lfx/graph/checkpoint/schema.py b/src/lfx/src/lfx/graph/checkpoint/schema.py
+index b56c4ec..95b0a83 100644
+--- a/src/lfx/src/lfx/graph/checkpoint/schema.py
++++ b/src/lfx/src/lfx/graph/checkpoint/schema.py
+@@ -6,6 +6,8 @@ checkpoints as JSON), including the set-typed execution-state fields.
+ 
+ from __future__ import annotations
+ 
++import json
++import math
+ from datetime import datetime, timezone
+ from importlib import import_module
+ from typing import Any
+@@ -18,6 +20,19 @@ from lfx.log.logger import logger
+ _WIRE_KIND = "__lfx_ser__"
+ 
+ 
++def _has_nonfinite_float(value: Any) -> bool:
++    """Inspect model fields before JSON serializers can silently replace them."""
++    if isinstance(value, float):
++        return not math.isfinite(value)
++    if isinstance(value, BaseModel):
++        value = dict(value)
++    if isinstance(value, dict):
++        return any(_has_nonfinite_float(item) for item in value.values())
++    if isinstance(value, (list, tuple, set, frozenset)):
++        return any(_has_nonfinite_float(item) for item in value)
++    return False
++
++
+ class VertexCheckpointData(BaseModel):
+     vertex_id: str
+     built: bool = False
+@@ -77,6 +92,10 @@ def serialize_value(value: Any) -> dict[str, Any] | None:
+     on resume (it returns as None). A flow that depends on such state downstream of
+     the pause must re-derive it from the rebuilt node, not from the checkpoint.
+     """
++    # The durable JSON writer turns non-finite floats into null. Mark them as
++    # opaque so resume recomputes the producer instead of trusting corrupted state.
++    if isinstance(value, float) and not math.isfinite(value):
++        return None
+     if value is None or isinstance(value, (str, int, float, bool)):
+         return {_WIRE_KIND: "raw", "value": value}
+     if isinstance(value, BaseModel):
+@@ -88,7 +107,12 @@ def serialize_value(value: Any) -> dict[str, Any] | None:
+             logger.debug("checkpoint: dropping non-lfx model %s", type(value).__qualname__)
+             return None
+         try:
++            if _has_nonfinite_float(value):
++                return None
+             dumped = value.model_dump(mode="json")
++            # mode="json" can still leave NaN/Infinity inside a model payload.
++            # Validation alone accepts those values before the store changes them.
++            json.dumps(dumped, allow_nan=False)
+         except Exception:  # noqa: BLE001
+             # Opaque field (LLM client / model class) can't round-trip; degrade to None.
+             logger.debug("checkpoint: dropping non-serializable model %s", type(value).__qualname__)
+diff --git a/src/lfx/tests/unit/graph/checkpoint/_numeric_checkpoint_components.py b/src/lfx/tests/unit/graph/checkpoint/_numeric_checkpoint_components.py
+new file mode 100644
+index 0000000..3614d1e
+--- /dev/null
++++ b/src/lfx/tests/unit/graph/checkpoint/_numeric_checkpoint_components.py
+@@ -0,0 +1,26 @@
++"""Code-wireable numeric producer/consumer for durable checkpoint tests."""
++
++from lfx.custom import Component
++from lfx.io import DataInput, Output, StrInput
++from lfx.schema.data import Data
++from lfx.schema.message import Message
++
++
++class NumericProducer(Component):
++    display_name = "Numeric Producer"
++    name = "NumericProducer"
++    inputs = [StrInput(name="number", value="inf")]
++    outputs = [Output(name="out", display_name="Out", method="produce")]
++
++    def produce(self) -> Data:
++        return Data(data={"score": float(self.number)})
++
++
++class NumericConsumer(Component):
++    display_name = "Numeric Consumer"
++    name = "NumericConsumer"
++    inputs = [DataInput(name="record")]
++    outputs = [Output(name="out", display_name="Out", method="consume")]
++
++    def consume(self) -> Message:
++        return Message(text=str(self.record.data["score"] > 0))
+diff --git a/src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py b/src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py
+new file mode 100644
+index 0000000..a992e62
+--- /dev/null
++++ b/src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py
+@@ -0,0 +1,74 @@
++"""Checkpoint numerics must be faithful or explicitly marked for recomputation."""
++
++from __future__ import annotations
++
++import json
++import math
++import sys
++from pathlib import Path
++
++import pytest
++from lfx.graph import Graph
++from lfx.graph.checkpoint.schema import deserialize_value, serialize_value, wire_has_opaque_drop
++from lfx.schema.data import Data
++from lfx.services.durable.sqlite_checkpoints import SqliteCheckpointStore
++
++sys.path.insert(0, str(Path(__file__).parent))
++from _numeric_checkpoint_components import NumericConsumer, NumericProducer
++
++
++@pytest.mark.parametrize("number", [float("nan"), float("inf"), float("-inf")], ids=["nan", "inf", "negative-inf"])
++def test_nonfinite_scalars_are_explicit_checkpoint_drops(number):
++    assert serialize_value(number) is None
++
++
++@pytest.mark.parametrize("number", [float("nan"), float("inf"), float("-inf")], ids=["nan", "inf", "negative-inf"])
++def test_nested_nonfinite_values_cannot_hide_in_built_state(number):
++    wire = serialize_value({"scores": [1.0, number]})
++    assert wire_has_opaque_drop(wire)
++    json.dumps(wire, allow_nan=False)
++
++
++@pytest.mark.parametrize("number", [float("nan"), float("inf"), float("-inf")], ids=["nan", "inf", "negative-inf"])
++def test_nonfinite_lfx_model_payloads_are_explicit_drops(number):
++    assert serialize_value(Data(data={"score": number})) is None
++
++
++def test_finite_lfx_model_payload_remains_restorable():
++    wire = serialize_value(Data(data={"score": 3.25, "optional": None}))
++    assert not wire_has_opaque_drop(wire)
++    json.dumps(wire, allow_nan=False)
++    restored = deserialize_value(wire)
++    assert isinstance(restored, Data)
++    assert restored.data == {"score": 3.25, "optional": None}
++
++
++@pytest.mark.parametrize(
++    ("number", "expected", "rebuild"),
++    [("nan", "False", True), ("inf", "True", True), ("-inf", "False", True), ("0.5", "True", False)],
++)
++async def test_sqlite_resume_recomputes_unsupported_numeric_state(tmp_path, number, expected, rebuild):
++    producer = NumericProducer(_id="producer")
++    producer.set(number=number)
++    consumer = NumericConsumer(_id="consumer")
++    consumer.set(record=producer.produce)
++    graph = Graph(producer, consumer)
++    graph.set_run_id("numeric-checkpoint")
++    await graph.astep()
++    assert graph.get_vertex("producer").built
++    assert not graph.get_vertex("consumer").built
++
++    checkpoint = graph.build_checkpoint()
++    store = SqliteCheckpointStore(tmp_path / "checkpoint.sqlite")
++    await store.save(checkpoint)
++    loaded = await SqliteCheckpointStore(tmp_path / "checkpoint.sqlite").load(checkpoint.checkpoint_id)
++    assert loaded is not None
++    resumed = Graph.resume_from_checkpoint(loaded, checkpoint_store=store)
++    assert ("producer" in resumed.checkpoint_opaque_dropped_ids) is rebuild
++    assert resumed.get_vertex("producer").built is not rebuild
++
++    await resumed.process(fallback_to_env_vars=False)
++    assert resumed.get_vertex("consumer").results["out"].text == expected
++    score = resumed.get_vertex("producer").results["out"].data["score"]
++    assert isinstance(score, float)
++    assert math.isnan(score) if number == "nan" else score == float(number)

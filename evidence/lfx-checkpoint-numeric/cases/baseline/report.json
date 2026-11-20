@@ -1,0 +1,142 @@
+{
+  "scope": "LFX tagged value -> GraphCheckpoint -> SQLite save/reopen/load",
+  "not_a_graph_execution_or_model_benchmark": true,
+  "source_sha256": "32724380d80cc40e3b1d25dd7183e0e98a5c362e89c764ed68c7130fb614c1b8",
+  "driver_sha256": "8db80b43358e9574935e034870477383d79613aedde9b6961057d8a83a56b357",
+  "rows": [
+    {
+      "number": "nan",
+      "form": "scalar",
+      "before_repr": "nan",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "nan",
+      "form": "nested",
+      "before_repr": "nan",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "nan",
+      "form": "model",
+      "before_repr": "nan",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "positive_infinity",
+      "form": "scalar",
+      "before_repr": "inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "positive_infinity",
+      "form": "nested",
+      "before_repr": "inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "positive_infinity",
+      "form": "model",
+      "before_repr": "inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "negative_infinity",
+      "form": "scalar",
+      "before_repr": "-inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "negative_infinity",
+      "form": "nested",
+      "before_repr": "-inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "negative_infinity",
+      "form": "model",
+      "before_repr": "-inf",
+      "after_repr": "None",
+      "after_type": "NoneType",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": false,
+      "checkpoint_policy_safe": false
+    },
+    {
+      "number": "finite",
+      "form": "scalar",
+      "before_repr": "3.25",
+      "after_repr": "3.25",
+      "after_type": "float",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": true,
+      "checkpoint_policy_safe": true
+    },
+    {
+      "number": "finite",
+      "form": "nested",
+      "before_repr": "3.25",
+      "after_repr": "3.25",
+      "after_type": "float",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": true,
+      "checkpoint_policy_safe": true
+    },
+    {
+      "number": "finite",
+      "form": "model",
+      "before_repr": "3.25",
+      "after_repr": "3.25",
+      "after_type": "float",
+      "explicit_drop_before_store": false,
+      "explicit_drop_after_store": false,
+      "faithful_numeric_round_trip": true,
+      "checkpoint_policy_safe": true
+    }
+  ],
+  "safe_cases": 3,
+  "total_cases": 12
+}

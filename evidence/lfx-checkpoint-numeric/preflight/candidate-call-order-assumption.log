@@ -1,0 +1,31 @@
+collected 14 items
+
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py ..........FFF.     [100%]
+
+=================================== FAILURES ===================================
+___ test_sqlite_resume_recomputes_unsupported_numeric_state[nan-False-True] ____
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:71: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert resumed._call_order.count("producer") == (2 if rebuild else 1)
+E   AssertionError: assert 1 == 2
+E    +  where 1 = <built-in method count of list object at 0x7f52a3399a40>('producer')
+E    +    where <built-in method count of list object at 0x7f52a3399a40> = ['producer'].count
+E    +      where ['producer'] = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer._call_order
+____ test_sqlite_resume_recomputes_unsupported_numeric_state[inf-True-True] ____
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:71: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert resumed._call_order.count("producer") == (2 if rebuild else 1)
+E   AssertionError: assert 1 == 2
+E    +  where 1 = <built-in method count of list object at 0x7f52a35549c0>('producer')
+E    +    where <built-in method count of list object at 0x7f52a35549c0> = ['producer'].count
+E    +      where ['producer'] = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer._call_order
+___ test_sqlite_resume_recomputes_unsupported_numeric_state[-inf-False-True] ___
+src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py:71: in test_sqlite_resume_recomputes_unsupported_numeric_state
+    assert resumed._call_order.count("producer") == (2 if rebuild else 1)
+E   AssertionError: assert 1 == 2
+E    +  where 1 = <built-in method count of list object at 0x7f52a3e8f400>('producer')
+E    +    where <built-in method count of list object at 0x7f52a3e8f400> = ['producer'].count
+E    +      where ['producer'] = Graph Representation:\n----------------------\nVertices (2):\n  producer, consumer\n\nEdges (1):\n  producer --> consumer._call_order
+=========================== short test summary info ============================
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[nan-False-True] - AssertionError: assert 1 == 2
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[inf-True-True] - AssertionError: assert 1 == 2
+FAILED src/lfx/tests/unit/graph/checkpoint/test_nonfinite.py::test_sqlite_resume_recomputes_unsupported_numeric_state[-inf-False-True] - AssertionError: assert 1 == 2
+=================== 3 failed, 11 passed, 5 warnings in 5.02s ===================

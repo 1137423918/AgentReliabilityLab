@@ -1,0 +1,20 @@
+Downloading virtualenv (5.5MiB)
+ Downloaded virtualenv
+Installed 11 packages in 1m 36s
+pre-commit installed at .git/hooks/pre-commit
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Initializing environment for local:sqlalchemy,alembic.
+[INFO] Initializing environment for local.
+[INFO] Initializing environment for https://github.com/Yelp/detect-secrets.
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for local.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for local.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/Yelp/detect-secrets.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
