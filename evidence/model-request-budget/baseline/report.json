@@ -1,0 +1,36 @@
+{
+  "scope": "Legacy graph-step limit does not bound repeated failed HTTP attempts across process restarts; fake loopback endpoint, no model inference",
+  "max_graph_steps": 20,
+  "http_requests": 3,
+  "attempts": [
+    {
+      "returncode": 1,
+      "requests_seen": 1,
+      "result_exists": false,
+      "status": {
+        "status": "failed",
+        "error_type": "OpenAIAPIError"
+      }
+    },
+    {
+      "returncode": 1,
+      "requests_seen": 2,
+      "result_exists": false,
+      "status": {
+        "status": "failed",
+        "error_type": "OpenAIAPIError"
+      }
+    },
+    {
+      "returncode": 1,
+      "requests_seen": 3,
+      "result_exists": false,
+      "status": {
+        "status": "failed",
+        "error_type": "OpenAIAPIError"
+      }
+    }
+  ],
+  "worker_sha256": "908e05c516b81afc1a9221824cb67e677cc5c10bafd49bef9e0c96911d665abb",
+  "no_neural_inference": true
+}

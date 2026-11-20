@@ -1,0 +1,42 @@
+test_accepted_repair_and_cached_replay_do_not_spend_again (test_request_budget.RequestBudgetTests.test_accepted_repair_and_cached_replay_do_not_spend_again) ... FAIL
+test_concurrent_process_reservations_cannot_overspend (test_request_budget.RequestBudgetTests.test_concurrent_process_reservations_cannot_overspend) ... ok
+test_feature_pairing_limits_and_async_fail_closed (test_request_budget.RequestBudgetTests.test_feature_pairing_limits_and_async_fail_closed) ... ok
+test_http_errors_remain_charged_across_restarts_and_body_hash_matches (test_request_budget.RequestBudgetTests.test_http_errors_remain_charged_across_restarts_and_body_hash_matches) ... ok
+test_missing_or_corrupt_journal_and_changed_policy_cannot_reset (test_request_budget.RequestBudgetTests.test_missing_or_corrupt_journal_and_changed_policy_cannot_reset) ... ok
+test_repair_attempts_share_cap_and_direct_child_resume_is_rejected (test_request_budget.RequestBudgetTests.test_repair_attempts_share_cap_and_direct_child_resume_is_rejected) ... FAIL
+test_sigkill_after_server_receives_request_cannot_reset_budget (test_request_budget.RequestBudgetTests.test_sigkill_after_server_receives_request_cannot_reset_budget) ... ok
+test_single_request_cap_blocks_before_network_and_consumes_nothing (test_request_budget.RequestBudgetTests.test_single_request_cap_blocks_before_network_and_consumes_nothing) ... ok
+test_success_and_cached_worker_replay_keep_the_same_request_receipt (test_request_budget.RequestBudgetTests.test_success_and_cached_worker_replay_keep_the_same_request_receipt) ... FAIL
+test_timeout_remains_charged_without_another_request (test_request_budget.RequestBudgetTests.test_timeout_remains_charged_without_another_request) ... ok
+test_total_json_body_cap_is_shared_across_restarts (test_request_budget.RequestBudgetTests.test_total_json_body_cap_is_shared_across_restarts) ... ok
+
+======================================================================
+FAIL: test_accepted_repair_and_cached_replay_do_not_spend_again (test_request_budget.RequestBudgetTests.test_accepted_repair_and_cached_replay_do_not_spend_again)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<server-workspace>/code/model-request-budget-20261121/tests/test_request_budget.py", line 208, in test_accepted_repair_and_cached_replay_do_not_spend_again
+    self.assertEqual(result.returncode, 0, result.stderr)
+AssertionError: 2 != 0 : {"status": "failed", "error": "Verification supervisor failed; inspect its log."}
+
+
+======================================================================
+FAIL: test_repair_attempts_share_cap_and_direct_child_resume_is_rejected (test_request_budget.RequestBudgetTests.test_repair_attempts_share_cap_and_direct_child_resume_is_rejected)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<server-workspace>/code/model-request-budget-20261121/tests/test_request_budget.py", line 168, in test_repair_attempts_share_cap_and_direct_child_resume_is_rejected
+    self.assertTrue((root / "attempts/000/feedback.json").exists())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_success_and_cached_worker_replay_keep_the_same_request_receipt (test_request_budget.RequestBudgetTests.test_success_and_cached_worker_replay_keep_the_same_request_receipt)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<server-workspace>/code/model-request-budget-20261121/tests/test_request_budget.py", line 125, in test_success_and_cached_worker_replay_keep_the_same_request_receipt
+    self.assertEqual(first.returncode, 0, first.stderr)
+AssertionError: 2 != 0 : {"status": "failed", "error": "Verification supervisor failed; inspect its log."}
+
+
+----------------------------------------------------------------------
+Ran 11 tests in 81.685s
+
+FAILED (failures=3)

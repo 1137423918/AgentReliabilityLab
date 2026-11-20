@@ -1,0 +1,10 @@
+Using Python 3.11.4 environment at: <server-workspace>/envs/model-request-budget-20261121
+Resolved 1 package in 378ms
+   Building agent-reliability-lab @ file://<server-workspace>/code/model-request-budget-20261121
+      Built agent-reliability-lab @ file://<server-workspace>/code/model-request-budget-20261121
+Prepared 1 package in 8.81s
+warning: Failed to hardlink files; falling back to full copy. This may lead to degraded performance.
+         If the cache and target directories are on different filesystems, hardlinking may not be supported.
+         If this is intentional, set `export UV_LINK_MODE=copy` or use `--link-mode=copy` to suppress this warning.
+Installed 1 package in 98ms
+ + agent-reliability-lab==0.2.0 (from file://<server-workspace>/code/model-request-budget-20261121)

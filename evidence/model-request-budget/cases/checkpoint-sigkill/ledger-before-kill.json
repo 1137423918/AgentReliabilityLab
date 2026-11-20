@@ -1,0 +1,24 @@
+{
+  "checksum": "e6632b89569bf08cc7ecc97d3c0209113865f4f943ad04c501e06683b0bc64e6",
+  "identity": {
+    "journal_id": "935447895df74e2fa04925ab35c5f873",
+    "limits": {
+      "max_request_bytes": 65536,
+      "max_requests": 3,
+      "max_total_request_bytes": 196608
+    },
+    "owner_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5"
+  },
+  "reservations": [
+    {
+      "http_status": 200,
+      "path": "/v1/chat/completions",
+      "request_body_bytes": 8726,
+      "request_body_sha256": "ffef88e05fc3934389343b812303eac0f18b0cb8386f019659ca67e52b4bddfe",
+      "reserved_at": "2026-11-20T20:48:17.936794+00:00",
+      "sequence": 1,
+      "transport_observation": "headers_received"
+    }
+  ],
+  "version": 1
+}

@@ -1,0 +1,16 @@
+test_accepted_repair_and_cached_replay_do_not_spend_again (test_request_budget.RequestBudgetTests.test_accepted_repair_and_cached_replay_do_not_spend_again) ... ok
+test_concurrent_process_reservations_cannot_overspend (test_request_budget.RequestBudgetTests.test_concurrent_process_reservations_cannot_overspend) ... ok
+test_feature_pairing_limits_and_async_fail_closed (test_request_budget.RequestBudgetTests.test_feature_pairing_limits_and_async_fail_closed) ... ok
+test_http_errors_remain_charged_across_restarts_and_body_hash_matches (test_request_budget.RequestBudgetTests.test_http_errors_remain_charged_across_restarts_and_body_hash_matches) ... ok
+test_missing_or_corrupt_journal_and_changed_policy_cannot_reset (test_request_budget.RequestBudgetTests.test_missing_or_corrupt_journal_and_changed_policy_cannot_reset) ... ok
+test_repair_attempts_share_cap_and_direct_child_resume_is_rejected (test_request_budget.RequestBudgetTests.test_repair_attempts_share_cap_and_direct_child_resume_is_rejected) ... ok
+test_sigkill_after_server_receives_request_cannot_reset_budget (test_request_budget.RequestBudgetTests.test_sigkill_after_server_receives_request_cannot_reset_budget) ... ok
+test_single_request_cap_blocks_before_network_and_consumes_nothing (test_request_budget.RequestBudgetTests.test_single_request_cap_blocks_before_network_and_consumes_nothing) ... ok
+test_success_and_cached_worker_replay_keep_the_same_request_receipt (test_request_budget.RequestBudgetTests.test_success_and_cached_worker_replay_keep_the_same_request_receipt) ... ok
+test_timeout_remains_charged_without_another_request (test_request_budget.RequestBudgetTests.test_timeout_remains_charged_without_another_request) ... ok
+test_total_json_body_cap_is_shared_across_restarts (test_request_budget.RequestBudgetTests.test_total_json_body_cap_is_shared_across_restarts) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 87.137s
+
+OK

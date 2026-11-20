@@ -1,0 +1,136 @@
+Traceback (most recent call last):
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 2050, in _generate
+    raw_response = self.client.with_raw_response.create(**payload)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_legacy_response.py", line 364, in wrapped
+    return cast(LegacyAPIResponse[R], func(*args, **kwargs))
+                                      ^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_utils/_utils.py", line 298, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/resources/chat/completions/completions.py", line 1611, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1474, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/openai/_base_client.py", line 1248, in request
+    raise self._make_status_error_from_response(err.response) from None
+openai.InternalServerError: Error code: 503 - Fixture service unavailable
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "<server-workspace>/code/model-request-budget-original-20261121/agent_lab/worker.py", line 563, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "<server-workspace>/code/model-request-budget-original-20261121/agent_lab/worker.py", line 549, in main
+    result = run(
+             ^^^^
+  File "<server-workspace>/code/model-request-budget-original-20261121/agent_lab/worker.py", line 500, in run
+    result = execute(repo, directory, task, names, manifest, hold, lock_fd)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/model-request-budget-original-20261121/agent_lab/worker.py", line 513, in execute
+    state = agent_phase(repo, directory, task, names, hold)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-workspace>/code/model-request-budget-original-20261121/agent_lab/worker.py", line 215, in agent_phase
+    agent.invoke(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/main.py", line 4025, in invoke
+    for chunk in self.stream(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/main.py", line 3084, in stream
+    for _ in runner.tick(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/_runner.py", line 210, in tick
+    run_with_retry(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/pregel/_retry.py", line 637, in run_with_retry
+    return task.proc.invoke(task.input, config)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 794, in invoke
+    input = context.run(step.invoke, input, config, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langgraph/_internal/_runnable.py", line 479, in invoke
+    ret = self.func(*args, **kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 1546, in model_node
+    result = wrap_model_call_handler(request, _execute_model_sync)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/filesystem.py", line 3549, in wrap_model_call
+    response = handler(request)
+               ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_parent_notifier.py", line 59, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/summarization.py", line 1689, in wrap_model_call
+    return handler(request.override(messages=truncated_messages))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_prompt_caching.py", line 76, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/unsupported_content.py", line 199, in wrap_model_call
+    return handler(self._filter_request(request))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 360, in composed
+    outer_result = outer(request, inner_handler)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/middleware/model_refusal.py", line 60, in wrap_model_call
+    response = handler(request)
+               ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 350, in inner_handler
+    inner_result = inner(req, handler)
+                   ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/deepagents/middleware/_tool_exclusion.py", line 62, in wrap_model_call
+    return handler(request)
+           ^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain/agents/factory.py", line 1509, in _execute_model_sync
+    output = model_.invoke(messages)
+             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/runnables/base.py", line 6001, in invoke
+    return self.bound.invoke(
+           ^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 529, in invoke
+    self.generate_prompt(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1920, in generate_prompt
+    return self.generate(prompt_messages, stop=stop, callbacks=callbacks, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 1727, in generate
+    self._generate_with_cache(
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_core/language_models/chat_models.py", line 2065, in _generate_with_cache
+    result = self._generate(
+             ^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 2055, in _generate
+    _handle_openai_api_error(e)
+  File "<server-home>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/langchain_openai/chat_models/base.py", line 770, in _handle_openai_api_error
+    raise OpenAIAPIError(message=e.message, response=e.response, body=e.body) from e
+langchain_openai.chat_models.base.OpenAIAPIError: Error code: 503 - Fixture service unavailable
+During task with name 'model' and id 'ab959197-4baf-d0bb-f499-7c86111b5859'

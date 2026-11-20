@@ -1,0 +1,313 @@
+{
+  "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+  "platform": "Linux-5.14.0-611.5.1.el9_7.x86_64-x86_64-with-glibc2.34",
+  "executable": "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+  "source_sha256": {
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/worker.py": "932e996a54bfac5cb731c04cc7d503c392e5439c7cc1d0a3152adb72eee7729d",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "tests/test_request_budget.py": "b069b21a7a07c20c4af32b31a5032d8d050fc71e3a7bf312f60b39e997785b30",
+    "benchmarks/request_budget_recovery.py": "3b52292cc505aaf97ed8c54190bf52704d5838b7ed30d510e83281c268ec9485",
+    "benchmarks/request_budget_protocol.json": "58d0be4e8549ef016caa8030f1bdae62c9477429ff00aed30d9975ebfbcdf05d",
+    "tasks/deepagents-path-model-budgeted.json": "b4a97f617dffc8d8a7b07e9ad22c6b1ae91743bb47a9b2b2e8cd4570e2da9cbe"
+  },
+  "installed_distributions": [
+    {
+      "name": "agent-reliability-lab",
+      "version": "0.2.0"
+    },
+    {
+      "name": "agent-reliability-lab",
+      "version": "0.2.0"
+    },
+    {
+      "name": "agent-reliability-lab",
+      "version": "0.2.0"
+    },
+    {
+      "name": "aiosqlite",
+      "version": "0.22.1"
+    },
+    {
+      "name": "annotated-types",
+      "version": "0.8.0"
+    },
+    {
+      "name": "anthropic",
+      "version": "2.11.0"
+    },
+    {
+      "name": "anyio",
+      "version": "4.16.0"
+    },
+    {
+      "name": "attrs",
+      "version": "26.1.0"
+    },
+    {
+      "name": "bracex",
+      "version": "3.2.3"
+    },
+    {
+      "name": "certifi",
+      "version": "2026.10.23"
+    },
+    {
+      "name": "cffi",
+      "version": "2.1.1"
+    },
+    {
+      "name": "charset-normalizer",
+      "version": "3.5.2"
+    },
+    {
+      "name": "cryptography",
+      "version": "50.0.2"
+    },
+    {
+      "name": "deepagents",
+      "version": "0.7.41"
+    },
+    {
+      "name": "distro",
+      "version": "1.9.0"
+    },
+    {
+      "name": "docstring_parser",
+      "version": "0.18.0"
+    },
+    {
+      "name": "filetype",
+      "version": "1.2.0"
+    },
+    {
+      "name": "google-auth",
+      "version": "2.62.2"
+    },
+    {
+      "name": "google-genai",
+      "version": "3.6.1"
+    },
+    {
+      "name": "h11",
+      "version": "0.16.0"
+    },
+    {
+      "name": "httpcore",
+      "version": "1.0.9"
+    },
+    {
+      "name": "httpcore2",
+      "version": "2.16.2"
+    },
+    {
+      "name": "httpx",
+      "version": "0.28.1"
+    },
+    {
+      "name": "httpx2",
+      "version": "2.16.2"
+    },
+    {
+      "name": "idna",
+      "version": "3.20"
+    },
+    {
+      "name": "jiter",
+      "version": "0.19.0"
+    },
+    {
+      "name": "jsonpatch",
+      "version": "1.48"
+    },
+    {
+      "name": "jsonpointer",
+      "version": "3.12"
+    },
+    {
+      "name": "jsonschema",
+      "version": "4.26.0"
+    },
+    {
+      "name": "jsonschema-specifications",
+      "version": "2025.9.1"
+    },
+    {
+      "name": "langchain",
+      "version": "1.5.2"
+    },
+    {
+      "name": "langchain-anthropic",
+      "version": "1.7.12"
+    },
+    {
+      "name": "langchain-core",
+      "version": "1.8.4"
+    },
+    {
+      "name": "langchain-google-genai",
+      "version": "4.5.2"
+    },
+    {
+      "name": "langchain-openai",
+      "version": "1.8.5"
+    },
+    {
+      "name": "langchain-protocol",
+      "version": "0.0.22"
+    },
+    {
+      "name": "langgraph",
+      "version": "1.2.24"
+    },
+    {
+      "name": "langgraph-checkpoint",
+      "version": "4.3.2"
+    },
+    {
+      "name": "langgraph-checkpoint-sqlite",
+      "version": "3.1.3"
+    },
+    {
+      "name": "langgraph-prebuilt",
+      "version": "1.1.3"
+    },
+    {
+      "name": "langgraph-sdk",
+      "version": "0.4.14"
+    },
+    {
+      "name": "langsmith",
+      "version": "0.15.1"
+    },
+    {
+      "name": "openai",
+      "version": "3.57.0"
+    },
+    {
+      "name": "opentelemetry-api",
+      "version": "1.45.2"
+    },
+    {
+      "name": "orjson",
+      "version": "3.13.0"
+    },
+    {
+      "name": "ormsgpack",
+      "version": "1.13.1"
+    },
+    {
+      "name": "packaging",
+      "version": "26.3"
+    },
+    {
+      "name": "pyasn1",
+      "version": "0.6.5"
+    },
+    {
+      "name": "pyasn1_modules",
+      "version": "0.4.2"
+    },
+    {
+      "name": "pycparser",
+      "version": "3.12"
+    },
+    {
+      "name": "pydantic",
+      "version": "2.14.4"
+    },
+    {
+      "name": "pydantic_core",
+      "version": "2.50.5"
+    },
+    {
+      "name": "PyYAML",
+      "version": "6.0.3"
+    },
+    {
+      "name": "referencing",
+      "version": "0.37.0"
+    },
+    {
+      "name": "regex",
+      "version": "2026.11.19"
+    },
+    {
+      "name": "requests",
+      "version": "2.34.2"
+    },
+    {
+      "name": "requests-toolbelt",
+      "version": "1.0.0"
+    },
+    {
+      "name": "rpds-py",
+      "version": "2026.9.1"
+    },
+    {
+      "name": "sniffio",
+      "version": "1.3.1"
+    },
+    {
+      "name": "sqlite-vec",
+      "version": "0.1.9"
+    },
+    {
+      "name": "tenacity",
+      "version": "9.1.4"
+    },
+    {
+      "name": "tiktoken",
+      "version": "0.14.0"
+    },
+    {
+      "name": "truststore",
+      "version": "0.10.5"
+    },
+    {
+      "name": "typing-inspection",
+      "version": "0.4.5"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "typing_extensions",
+      "version": "4.16.0"
+    },
+    {
+      "name": "urllib3",
+      "version": "2.8.0"
+    },
+    {
+      "name": "uuid_utils",
+      "version": "0.19.0"
+    },
+    {
+      "name": "wcmatch",
+      "version": "12.0.3"
+    },
+    {
+      "name": "websockets",
+      "version": "17.4"
+    },
+    {
+      "name": "xxhash",
+      "version": "4.1.0"
+    },
+    {
+      "name": "zstandard",
+      "version": "0.25.0"
+    }
+  ],
+  "environment": "new dedicated venv; reads original worker site-packages through .pth; adds jsonschema 4.26.0 and dependencies; candidate editable install; baseline and candidate tested in same environment",
+  "neural_model": false,
+  "gpu": false,
+  "reference_runs_storage": "documented shared server workspace; no multi-host or power-loss claim",
+  "final_async_entrypoints": [
+    "ainvoke",
+    "astream"
+  ]
+}

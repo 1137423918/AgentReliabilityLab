@@ -1,0 +1,30 @@
+diff --git a/libs/deepagents/deepagents/backends/utils.py b/libs/deepagents/deepagents/backends/utils.py
+index a12fa67..effd136 100644
+--- a/libs/deepagents/deepagents/backends/utils.py
++++ b/libs/deepagents/deepagents/backends/utils.py
+@@ -891,7 +891,7 @@ def validate_path(path: str, *, allowed_prefixes: Sequence[str] | None = None) -
+         msg = f"Windows absolute paths are not supported: {path}. Please use virtual paths starting with / (e.g., /workspace/file.txt)"
+         raise ValueError(msg)
+ 
+-    normalized = os.path.normpath(path)
++    normalized = os.path.normpath(to_posix_path(path))
+     normalized = normalized.replace("\\", "/")
+ 
+     if not normalized.startswith("/"):
+diff --git a/libs/deepagents/tests/unit_tests/backends/test_utils.py b/libs/deepagents/tests/unit_tests/backends/test_utils.py
+index ec78492..22dc5e0 100644
+--- a/libs/deepagents/tests/unit_tests/backends/test_utils.py
++++ b/libs/deepagents/tests/unit_tests/backends/test_utils.py
+@@ -120,6 +120,12 @@ class TestValidatePath:
+             ("/./foo//bar", "/foo/bar"),
+             ("foo\\bar\\baz", "/foo/bar/baz"),
+             ("foo/bar\\baz/qux", "/foo/bar/baz/qux"),
++            (r"foo\.\bar", "/foo/bar"),
++            (r"foo\\bar", "/foo/bar"),
++            ("foo\\bar\\", "/foo/bar"),
++            (r"/workspace\.\file.txt", "/workspace/file.txt"),
++            (r"/workspace/\file.txt", "/workspace/file.txt"),
++            (r"项目\.\论文.md", "/项目/论文.md"),
+         ],
+     )
+     def test_path_normalization(self, input_path: str, expected: str) -> None:

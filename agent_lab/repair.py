@@ -16,6 +16,7 @@ from agent_lab.worker import (
     atomic_json,
     emit,
     git,
+    open_request_budget,
     prepare_manifest,
     run,
     run_lock,
@@ -32,10 +33,10 @@ def digest(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
 
-def failed_candidate(repo, directory, task):
+def failed_candidate(repo, directory, task, request_budget=None):
     """Read a completed failure while owning the same lock as its verifier."""
     with run_lock(directory):
-        prepare_manifest(repo, directory, task)
+        prepare_manifest(repo, directory, task, request_budget)
         path = directory / "verification.json"
         if not path.exists():
             return None
@@ -114,9 +115,12 @@ def execute(repo: Path, directory: Path, task: dict, hold=None):
         validate_task(probe)
     with run_lock(directory):
         manifest = prepare_manifest(repo, directory, task)
+        request_budget = open_request_budget(directory, task, manifest)
         atomic_json(directory / "status.json", {"status": "running"})
         try:
-            return execute_rounds(repo, directory, task, manifest, limit, hold)
+            return execute_rounds(
+                repo, directory, task, manifest, limit, hold, request_budget
+            )
         except Exception as error:
             (directory / "result.json").unlink(missing_ok=True)
             if not isinstance(error, RepairBudgetExhausted):
@@ -127,7 +131,7 @@ def execute(repo: Path, directory: Path, task: dict, hold=None):
             raise
 
 
-def execute_rounds(repo, directory, task, manifest, limit, hold):
+def execute_rounds(repo, directory, task, manifest, limit, hold, request_budget=None):
     attempts = []
     failure = None
     for number in range(limit + 1):
@@ -135,12 +139,12 @@ def execute_rounds(repo, directory, task, manifest, limit, hold):
         current = directory / "attempts" / f"{number:03d}"
         current.mkdir(parents=True, exist_ok=True)
         # This lookup also waits for/declines a still-owned verifier lock.
-        failure = failed_candidate(repo, current, child)
+        failure = failed_candidate(repo, current, child, request_budget)
         if failure is None:
             try:
-                accepted = run(repo, current, child)
+                accepted = run(repo, current, child, shared_budget=request_budget)
             except RunError:
-                failure = failed_candidate(repo, current, child)
+                failure = failed_candidate(repo, current, child, request_budget)
                 if failure is None:
                     raise
             else:
@@ -154,6 +158,8 @@ def execute_rounds(repo, directory, task, manifest, limit, hold):
                     "patch_sha256": accepted["patch_sha256"],
                     "attempts": attempts,
                 }
+                if request_budget is not None:
+                    result["model_request_budget_snapshot"] = request_budget.summary()
                 atomic_json(directory / "result.json", result)
                 atomic_json(directory / "status.json", {"status": "ready_for_review"})
                 return result

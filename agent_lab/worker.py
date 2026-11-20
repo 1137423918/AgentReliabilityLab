@@ -23,7 +23,8 @@ from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from langgraph.checkpoint.sqlite import SqliteSaver
 from langgraph.errors import GraphRecursionError
 
-from agent_lab.models import build_model
+from agent_lab.models import model_for_run
+from agent_lab.request_budget import RequestBudget, RequestBudgetError, task_limits
 from agent_lab.verification import VerificationError, run_command
 
 
@@ -85,10 +86,16 @@ def validate_task(task: dict) -> list[str]:
     features = task.get("required_features", [])
     if not isinstance(features, list) or any(
         feature
-        not in ("python_syntax_v1", "baseline_verification_v1", "python_source_v1")
+        not in (
+            "python_syntax_v1",
+            "baseline_verification_v1",
+            "python_source_v1",
+            "model_request_budget_v1",
+        )
         for feature in features
     ):
         raise RunError("The task requires unsupported worker features.")
+    task_limits(task)
     syntax_files = task.get("python_syntax_files", [])
     if (
         not isinstance(syntax_files, list)
@@ -158,7 +165,9 @@ def run_lock(directory: Path):
         yield lock.fileno()
 
 
-def prepare_manifest(repo: Path, directory: Path, task: dict) -> dict:
+def prepare_manifest(
+    repo: Path, directory: Path, task: dict, shared_budget=None
+) -> dict:
     digest = hashlib.sha256(json.dumps(task, sort_keys=True).encode()).hexdigest()
     manifest = {
         "task_sha256": digest,
@@ -167,8 +176,42 @@ def prepare_manifest(repo: Path, directory: Path, task: dict) -> dict:
         "task": task,
     }
     path = directory / "manifest.json"
+    limits = task_limits(task)
+    existing = json.loads(path.read_text()) if path.exists() else None
+    if (
+        limits is not None
+        and existing is None
+        and any(
+            (directory / name).exists()
+            for name in ("checkpoints.sqlite", "attempts", "result.json")
+        )
+    ):
+        raise RequestBudgetError(
+            "Budgeted run manifest is missing beside existing progress; refusing reset."
+        )
+    if shared_budget is not None and limits != shared_budget.limits:
+        raise RequestBudgetError("Shared model request policy differs from the task.")
+    if limits is not None:
+        if shared_budget is not None:
+            shared_budget.summary()
+            budget = shared_budget
+            scope = "shared"
+        else:
+            previous = existing.get("model_request_budget", {}) if existing else {}
+            if existing and previous.get("scope") != "local":
+                raise RequestBudgetError(
+                    "Resume this shared model budget through the original repair entry point."
+                )
+            budget = RequestBudget(
+                directory,
+                digest,
+                limits,
+                previous.get("journal_id"),
+                create=existing is None,
+            )
+            scope = "local"
+        manifest["model_request_budget"] = {"scope": scope, **budget.identity}
     if path.exists():
-        existing = json.loads(path.read_text())
         if existing != manifest:
             raise RunError("Resume rejected: task, repository, or pinned base changed.")
     else:
@@ -177,11 +220,35 @@ def prepare_manifest(repo: Path, directory: Path, task: dict) -> dict:
     return manifest
 
 
+def open_request_budget(directory, task, manifest, shared_budget=None):
+    limits = task_limits(task)
+    if limits is None:
+        return None
+    if shared_budget is not None:
+        return shared_budget
+    descriptor = manifest["model_request_budget"]
+    return RequestBudget(
+        directory, manifest["task_sha256"], limits, descriptor["journal_id"]
+    )
+
+
 def agent_phase(
-    repo: Path, directory: Path, task: dict, files: list[str], hold: str | None
+    repo: Path,
+    directory: Path,
+    task: dict,
+    files: list[str],
+    hold: str | None,
+    request_budget=None,
 ):
+    if task_limits(task) is not None and request_budget is None:
+        raise RequestBudgetError(
+            "Budgeted agent requires a manifest-bound request journal."
+        )
     config = {"configurable": {"thread_id": "maintenance"}, "recursion_limit": 100}
-    with SqliteSaver.from_conn_string(str(directory / "checkpoints.sqlite")) as saver:
+    with (
+        SqliteSaver.from_conn_string(str(directory / "checkpoints.sqlite")) as saver,
+        model_for_run(task.get("model", {}), request_budget) as model,
+    ):
         options = {}
         prompt = "Prepare the requested maintenance patch using virtual file tools. Do not delegate or execute commands."
         if "python_source_v1" in task.get("required_features", []):
@@ -190,7 +257,7 @@ def agent_phase(
             options["tools"] = [make_source_tool(files)]
             prompt += " For Python files, use inspect_python to locate definitions before reading sequential chunks. Its source hashes bind pages to current virtual content; refresh the outline after edits."
         agent = create_deep_agent(
-            model=build_model(task.get("model", {})),
+            model=model,
             backend=StateBackend(),
             checkpointer=saver,
             system_prompt=prompt,
@@ -456,12 +523,20 @@ def verify(
     return records
 
 
-def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dict:
+def run(
+    repo: Path,
+    directory: Path,
+    task: dict,
+    hold: str | None = None,
+    *,
+    shared_budget=None,
+) -> dict:
     with run_lock(directory) as lock_fd:
         names = validate_task(task)
         if task.get("max_repair_attempts", 0):
             raise RunError("Use agent_lab.repair for tasks with extra repair attempts.")
-        manifest = prepare_manifest(repo, directory, task)
+        manifest = prepare_manifest(repo, directory, task, shared_budget)
+        request_budget = open_request_budget(directory, task, manifest, shared_budget)
         if (directory / "result.json").exists():
             try:
                 result = json.loads((directory / "result.json").read_text())
@@ -497,7 +572,9 @@ def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dic
                 raise
         atomic_json(directory / "status.json", {"status": "running"})
         try:
-            result = execute(repo, directory, task, names, manifest, hold, lock_fd)
+            result = execute(
+                repo, directory, task, names, manifest, hold, lock_fd, request_budget
+            )
         except Exception as error:
             atomic_json(
                 directory / "status.json",
@@ -509,8 +586,8 @@ def run(repo: Path, directory: Path, task: dict, hold: str | None = None) -> dic
         return result
 
 
-def execute(repo, directory, task, names, manifest, hold, lock_fd):
-    state = agent_phase(repo, directory, task, names, hold)
+def execute(repo, directory, task, names, manifest, hold, lock_fd, request_budget=None):
+    state = agent_phase(repo, directory, task, names, hold, request_budget)
     patch = materialize(repo, directory, task, names, state)
     if not patch:
         raise RunError(
@@ -523,7 +600,7 @@ def execute(repo, directory, task, names, manifest, hold, lock_fd):
             "Verification changed tracked files; patch requires a new review."
         )
     messages = state.get("messages", [])
-    return {
+    result = {
         "status": "ready_for_review",
         "task_sha256": manifest["task_sha256"],
         "base_commit": task["base_commit"],
@@ -534,6 +611,9 @@ def execute(repo, directory, task, names, manifest, hold, lock_fd):
         "tool_results": sum(isinstance(m, ToolMessage) for m in messages),
         "verification": commands,
     }
+    if request_budget is not None:
+        result["model_request_budget_snapshot"] = request_budget.summary()
+    return result
 
 
 def main() -> int:

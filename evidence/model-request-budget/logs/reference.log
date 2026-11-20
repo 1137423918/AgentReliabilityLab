@@ -1,0 +1,1 @@
+{"stage": "complete", "same_patch": true, "same_request_bodies": true, "requests_per_case": 3, "reference_cases": 2, "model_inference": false}

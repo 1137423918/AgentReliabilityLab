@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "scope": "Fixed operator HTTP tool plan on a real Deep Agents repository; request-budget and SIGKILL recovery validation, not model inference or autonomous repair",
+  "subject_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "reference_plan": "tasks/deepagents-path-maintenance.json",
+  "acceptance_from": "tasks/deepagents-path-model-protected.json",
+  "limits": {
+    "max_requests": 3,
+    "max_request_bytes": 65536,
+    "max_total_request_bytes": 196608
+  },
+  "cases": [
+    "normal",
+    "checkpoint-sigkill"
+  ],
+  "fault": "Kill owned worker after its first emitted durable tool checkpoint; resume same task and run directory, within original case wall budget",
+  "case_wall_seconds": 600,
+  "required": [
+    "three actual HTTP calls per case",
+    "no repeated first edit after resume",
+    "same patch hash",
+    "113 fixed-original tests",
+    "119 candidate tests",
+    "28 independent path contracts",
+    "ledger ID survives interruption",
+    "all request JSON bytes and hashes match durable reservations"
+  ],
+  "limitations": [
+    "HTTP model is explicitly fake and returns operator-provided edits",
+    "verification groups overlap and are not added",
+    "no neural model/GPU",
+    "reserving an attempt does not prove provider acceptance or completion",
+    "no exactly-once API behavior or billed-token/money limit"
+  ]
+}
