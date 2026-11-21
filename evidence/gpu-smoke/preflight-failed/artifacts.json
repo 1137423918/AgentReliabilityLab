@@ -1,0 +1,29 @@
+{
+  "normalization": "Private paths replaced; authentication-related log lines excluded if any. No header/key/weight publication.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "8434193399f4731cdcaaabd05bd9b7a65c906a8b56043f45182df7aacebb9477",
+      "public_sha256": "56ef405d8f5006c5e66f95d7eb62f74b966277e6ccf36428151f04ef62a31f4a",
+      "bytes": 3709
+    },
+    {
+      "path": "service.json",
+      "original_sha256": "cd82239094606f5194f6c3d09e170417f954bc430898d142d2b021958171a18f",
+      "public_sha256": "de894869a67f4ec4c8b8fe9396f71bc2dccd73c6e101cd8bcb1bb3f5eb10054c",
+      "bytes": 2704
+    },
+    {
+      "path": "server.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "monitor.jsonl",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ]
+}

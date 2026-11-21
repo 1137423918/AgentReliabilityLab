@@ -1,0 +1,10 @@
+{
+  "outcome": "supervisor_gpu_probe_timeout",
+  "completed_model_http_requests": 0,
+  "journal_created": false,
+  "native_load_not_confirmed": true,
+  "native_returncode": -15,
+  "service_terminated_by_monitor": true,
+  "cleanup_confirmed": true,
+  "no_model_request_retry": true
+}
