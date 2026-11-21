@@ -1,31 +1,31 @@
 {
-  "pdf_sha256": "2190219ab5eca2179998de28b87f83426f03dda34951ec815ef1f8bdbec73abf",
+  "pdf_sha256": "f5d2a61b383a8d683b7d51fa5329de3e687506bad01cd3591a60c8306e5b4981",
   "pdf_pages": 2,
   "page_size": "A4",
   "pages": [
     {
       "language": "zh",
       "preserved_phrases": 13,
-      "text_sha256": "0b2522cea2a7a393af7ee3431143b1afbb2edf91589d8e576e129da7fefefaf7",
-      "link_count": 10,
-      "render_png_sha256": "06e822f64daabe733c11efa75ab6cbd5bf04471c46d03c0cef63e77c70061d7d",
+      "text_sha256": "660b2f3ba8a05c7f996bd67f6142b3ca3009e04084e3352214ce76bba29fa7db",
+      "link_count": 12,
+      "render_png_sha256": "2ca25b9314827868cef3a81382f0ae67302d97ac73139a2b0cf72edb00febc96",
       "drawn_fonts": [
         {
           "resource": "/F2+0",
           "base_font": "/AAAAAA+STHeitiSC-Medium-1",
-          "embedded_truetype_bytes": 25292,
+          "embedded_truetype_bytes": 23528,
           "to_unicode": true
         },
         {
           "resource": "/F3+0",
           "base_font": "/AAAAAA+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 113468,
+          "embedded_truetype_bytes": 113072,
           "to_unicode": true
         },
         {
           "resource": "/F3+1",
           "base_font": "/AAAAAB+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 74728,
+          "embedded_truetype_bytes": 75672,
           "to_unicode": true
         }
       ],
@@ -34,9 +34,9 @@
     {
       "language": "en",
       "preserved_phrases": 13,
-      "text_sha256": "a1685a9b746f21b60cbe1b612a4eb658b527db805586689de6e87617cc7bda59",
-      "link_count": 10,
-      "render_png_sha256": "3a40ec74172418b4f23afdfbe99ccbcb6c9309e13aca52144c8b41accaf43d4c",
+      "text_sha256": "eee95a7d4096d0d7b09bc3efda618a69e72ea9ea3d91374e167a72de5210dff6",
+      "link_count": 12,
+      "render_png_sha256": "9c569ae03c47aae7ce50e93515437b5a3400bd5855dd7e6458cfe1343e449a98",
       "drawn_fonts": [
         {
           "resource": "/F4+0",
@@ -61,10 +61,14 @@
     "verified": false,
     "reason": "Prior browser kernel failure remains; PDF rendering does not verify website interactions"
   },
-  "javascript_syntax_check": "Bundled Node --check passed; JavaScript unchanged",
+  "javascript_syntax_check": "Unchanged bytes from prior syntax-checked JavaScript; no new execution",
   "new_server_experiments": false,
   "new_test_results": false,
-  "source_files_verified": 27,
+  "source_files_verified": 33,
   "reference_repositories": 3,
-  "fresh_pr_snapshot": "2026-11-21T23:39:02+08:00"
+  "fresh_pr_snapshot": "2026-11-22T03:16:06+08:00",
+  "current_PRs": 5,
+  "current_drafts": 4,
+  "merged": 0,
+  "human_approval_verified": false
 }

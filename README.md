@@ -2,7 +2,7 @@
 
 面向软件维护 Agent 的工具契约与可恢复执行：持久化工具进度、隔离代码改动，并生成可审阅的补丁与验证记录。
 
-[中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和开源草稿按日期核验。
+[中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和实际开源贡献按日期核验。2026-11-22快照包含可下载MCP工具及5份开放PR（4份草稿），均未合并。
 
 ## Semantic Kernel：取消调用方之后的后续异常
 

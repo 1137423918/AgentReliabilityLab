@@ -3,7 +3,7 @@
   "handle": "A_Zhe",
   "website": "https://1137423918.github.io/",
   "github": "https://github.com/1137423918",
-  "date": "2026-11-21",
+  "date": "2026-11-22",
   "focus": "agent_engineering",
   "stack": "Python / Deep Agents / LangGraph / SQLite / MCP / LlamaIndex",
   "languages": {
@@ -12,15 +12,15 @@
       "subtitle": "Agent 工程 · 可恢复执行 · 工具可靠性",
       "project_label": "工程项目",
       "project_title": "Agent Reliability Lab",
-      "project_intro": "面向软件维护长任务中的中断、重复请求与验收失真，开发带持久化状态、资源边界及证据归档的维护运行器。",
+      "project_intro": "针对Agent长任务中断、重复调用和实验表述失真，构建持久化维护运行器、验收保护及MCP报告证据服务。",
       "bullets": [
-        "连接 SQLite 检查点与隔离 Git worktree；本机 ext4 上正常运行与首检查点 SIGKILL 恢复生成相同参考补丁，创建状态及复用成功前拒绝 NFS。",
-        "实现有界源码定位、原版测试验收与补丁/日志哈希校验；拒绝篡改缓存，修复独立会话和双重 fork 验证子进程泄漏，Linux 回收后代后释放运行锁。",
-        "持久预留 HTTP 次数和 JSON 字节，跨重启与修复共享；独立 asyncio/HTTPX2 包接入 Pydantic AI，4 场假服务控制覆盖工具、取消、并发及 SDK 重试。",
-        "提供 MCP2.3.0 报告证据服务：独立审计上下文、读取回执、并发额度与取消后计数；6 场真实 SDK/TCP 控制通过。完整130项回归通过、零跳过，新增6项已包含。"
+        "连接SQLite检查点与隔离Git worktree；ext4正常执行和首检查点SIGKILL恢复产生相同参考补丁，创建状态或复用成功前拒绝NFS。",
+        "实现有界源码定位、原版测试验收、补丁/日志哈希校验及Linux验证后代回收；HTTP次数和JSON字节预留跨重启、修复轮次共享。",
+        "提供MCP2.3.0证据服务，隔离审计回执与额度；9,033字节独立wheel脱离源码安装，8项安装控制通过，原完整130项回归通过、零跳过。",
+        "接入LlamaIndex与外部MCP，句柄/回执不进模型输入；10场脚本模型与真实MCP控制通过（含原4场），状态异常后仍尝试关闭同一审计。"
       ],
-      "project_scope": "恢复使用参考计划，未证明自主修复。真实9B CPU新版报告审计3个已知问题中2个通过结构契约，另1个缺字段；自由文字仍有范围歧义。旧两阶段审计600秒超时，GPU维护未启动；额度不是token或费用。",
-      "contributions_label": "已提交的开源草稿",
+      "project_scope": "恢复用参考计划，未证明自主修复。9B CPU本地报告审计3道已知题中2题通过结构契约，仍有文字歧义；外部MCP首题600秒超时、无有效提交，第二题未跑。GPU维护未启动；额度不是token/费用。",
+      "contributions_label": "已提交的开源贡献",
       "contributions": [
         {
           "name": "OpenHands SDK",
@@ -44,35 +44,43 @@
           "source": "adk"
         },
         {
-          "name": "Semantic Kernel",
+          "name": "Semantic Kernel (Python runtime)",
           "number": 14845,
           "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
-          "text": "修复实验性 Python 运行时取消回调重入死锁；103 项关联检查通过，真实请求取消后正常关闭。广泛套件仍有 12 项原版已有失败。",
-          "source": "semantic_kernel"
+          "text": "修复取消回调重入死锁（103项相关检查）及取消发送后报错导致的停机挂起（97项）；各自保留更广12项原版失败，范围不相加。",
+          "source": "semantic_kernel",
+          "extra_prs": [
+            {
+              "number": 14853,
+              "url": "https://github.com/microsoft/semantic-kernel/pull/14853",
+              "source": "semantic_kernel_cancelled_send"
+            }
+          ]
         }
       ],
       "paper_label": "研究论文",
       "paper_text": "第一作者 · IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025。研究前视声纳图像的轻量化目标检测。",
-      "scope": "2026-11-21核验：4份开放草稿，均未合并；重叠测试不累加。Codex辅助实现与验证，人工复核和上游评审待完成。",
+      "scope": "2026-11-22核验：5份开放PR（4份草稿），均未合并；重叠测试不累加。Codex辅助实现与验证，上游人工批准未核实；机器人COMMENTED不等于人工批准。",
       "links_label": "项目源码与协议",
       "sources_label": "证据与状态",
       "copy_label": "复制项目描述",
-      "download_label": "下载中英双语 PDF"
+      "download_label": "下载中英双语 PDF",
+      "starter_label": "下载工具启动包"
     },
     "en": {
       "title": "Projects and contributions",
       "subtitle": "Agent engineering / Recoverable execution / Tool reliability",
       "project_label": "ENGINEERING PROJECT",
       "project_title": "Agent Reliability Lab",
-      "project_intro": "A software-maintenance runner with durable state, resource limits and reviewable evidence for interrupted tasks, repeated requests and unreliable acceptance.",
+      "project_intro": "Build recoverable maintenance execution and a distributable MCP report service for interrupted agent jobs, repeated calls and auditable experimental claims.",
       "bullets": [
-        "Connect SQLite checkpoints and isolated Git worktrees. Local ext4 normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before state creation or cached success.",
-        "Add bounded source navigation, frozen original-test acceptance and patch/log hash checks. Reject tampered caches; reap detached and double-forked Linux verifier descendants before releasing the worker lock.",
-        "Reserve HTTP attempts and JSON bytes across restarts and repair rounds. A standalone asyncio/HTTPX2 wheel integrates with Pydantic AI; four fake-service cases cover tools, cancellation, concurrency and SDK retries.",
-        "Build a real MCP2.3.0 report service with isolated audits, read receipts and bounded concurrent operations. Six real SDK/TCP controls pass. All 130 engineering checks pass with zero skips, including six new service checks."
+        "Connect SQLite checkpoints and isolated Git worktrees. Ext4 normal and first-checkpoint SIGKILL runs yield the same reference patch; reject NFS before state creation or cached success.",
+        "Add bounded source navigation, original-test acceptance, patch/log hashes and Linux verifier descendant cleanup. Reserve HTTP attempts and JSON bytes across restarts and repair rounds.",
+        "Distribute an MCP2.3.0 service with isolated audit receipts and quotas: a 9,033-byte wheel passes eight installed-artifact controls outside the checkout; all 130 core checks pass with zero skips.",
+        "Integrate LlamaIndex with external MCP, keeping capabilities out of model prompts. Ten controls use scripted model replies with real MCP transport, including the original four; status faults no longer skip audit closure."
       ],
-      "project_scope": "Recovery uses reference plans; autonomous repair remains unproven. A real 9B CPU audit meets the structured contract on two of three known queries; one omits fields and prose retains a scope ambiguity. The earlier two-stage audit times out at 600 seconds; GPU maintenance never starts. Quotas are not tokens or fees.",
-      "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
+      "project_scope": "Recovery uses reference plans; autonomous repair is unproven. A local 9B CPU audit meets the structured contract on 2/3 known queries, with a prose ambiguity. A later external-MCP query times out at 600s without submission; the second is not run. GPU maintenance never starts; quotas are not tokens/fees.",
+      "contributions_label": "SUBMITTED CONTRIBUTIONS",
       "contributions": [
         {
           "name": "OpenHands SDK",
@@ -96,20 +104,28 @@
           "source": "adk"
         },
         {
-          "name": "Semantic Kernel",
+          "name": "Semantic Kernel (Python runtime)",
           "number": 14845,
           "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
-          "text": "Release the experimental Python token lock before callbacks. 103 related checks pass and runtime cancellation completes; 12 existing broader failures remain.",
-          "source": "semantic_kernel"
+          "text": "Fix callback reentry deadlock (103 related checks) and cancelled-send idle shutdown hangs (97). Both retain 12 baseline broader failures; scopes are separate.",
+          "source": "semantic_kernel",
+          "extra_prs": [
+            {
+              "number": 14853,
+              "url": "https://github.com/microsoft/semantic-kernel/pull/14853",
+              "source": "semantic_kernel_cancelled_send"
+            }
+          ]
         }
       ],
       "paper_label": "RESEARCH PUBLICATION",
       "paper_text": "First author. IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025. Lightweight object detection in forward-looking sonar imagery.",
-      "scope": "Checked 2026-11-21: four open drafts, none merged; overlapping tests are not added. Codex assisted implementation and verification; human author and upstream review remain pending.",
+      "scope": "Checked 2026-11-22: five open PRs, four drafts, none merged. Scopes are not added. Codex assisted implementation/verification; upstream human approval remains unverified. A bot COMMENTED review is not human approval.",
       "links_label": "Source and protocols",
       "sources_label": "Evidence and status",
       "copy_label": "Copy project description",
-      "download_label": "Download bilingual PDF"
+      "download_label": "Download bilingual PDF",
+      "starter_label": "Download starter"
     }
   },
   "paper": {
@@ -117,5 +133,12 @@
     "doi": "10.1109/LGRS.2025.3575615",
     "url": "https://doi.org/10.1109/LGRS.2025.3575615",
     "code": "https://github.com/1137423918/LS-DETR"
-  }
+  },
+  "pr_status_summary": {
+    "open": 5,
+    "draft": 4,
+    "closed": 0,
+    "merged": 0
+  },
+  "starter_url": "https://1137423918.github.io/downloads/agentlab-evidence-0.1.0-starter.zip"
 }

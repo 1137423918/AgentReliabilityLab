@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-21T23:39:02+08:00",
-  "project_source_commit": "cb67290a9ced302834f8458adf94b78bc64246bd",
+  "checked_at": "2026-11-22T03:16:06+08:00",
+  "project_source_commit": "d6b1aeed20144ed173c35f78544ac7583e25ebb9",
   "files": [
     {
       "id": "worker_tests",
-      "label": "完整130项快照 / Validated130-check snapshot",
-      "path": "evidence/mcp-evidence/normal/full-core.log",
-      "sha256": "04ef91b4cd825487e28c78b8a680eef5b3a54590c071f6059e265e783ceb8a36",
-      "url": "https://1137423918.github.io/reports/mcp-evidence/normal/full-core.log"
+      "label": "当前完整130项回归 / Latest130 core checks",
+      "path": "evidence/evidence-package/operator/full-core.log",
+      "sha256": "c8db821232761418838686e8740347d247ade5c45bccb718f664bc0553b0e6b1",
+      "url": "https://1137423918.github.io/reports/evidence-package/operator/full-core.log"
     },
     {
       "id": "budget",
@@ -132,7 +132,7 @@
       "id": "adk_9b_cpu",
       "path": "evidence/adk-9b-cpu/report.json",
       "url": "https://1137423918.github.io/reports/adk-9b-cpu/report.json",
-      "label": "最新9B CPU轨迹 / Latest9B CPU trajectory",
+      "label": "历史9B维护轨迹 / Earlier9B maintenance run",
       "sha256": "660c56be81f0f064fca582dd167151af2c2b4e8191e01ba7d0e4260907f717cc"
     },
     {
@@ -190,6 +190,48 @@
       "url": "https://1137423918.github.io/reports/evidence-direct/report.json",
       "label": "固定问题结构2/3与文字歧义 / Known-query structured2/3 and prose ambiguity",
       "sha256": "aeaaa0a7a12d83f36b41e7afc0a6072cc73140f0dc23cee058736fd827a4ff7b"
+    },
+    {
+      "id": "semantic_kernel_cancelled_send",
+      "path": "evidence/sk-cancelled-send/report.json",
+      "url": "https://1137423918.github.io/reports/sk-cancelled-send/report.json",
+      "label": "Semantic Kernel取消发送停机 / Cancelled-send shutdown",
+      "sha256": "1a15a9725c1b921966b1b156b999f364fb7b0f7f26c17e8e2b20d322e425606b"
+    },
+    {
+      "id": "mcp_agent",
+      "path": "evidence/mcp-agent/report.json",
+      "url": "https://1137423918.github.io/reports/mcp-agent/report.json",
+      "label": "真实外部MCP模型超时 / Actual external-MCP model timeout",
+      "sha256": "b13ecf8ba8fec3531911defb93fc3b98436f82ebb8fee679111f2ca4969a1f9d"
+    },
+    {
+      "id": "mcp_cleanup",
+      "path": "evidence/mcp-cleanup/report.json",
+      "url": "https://1137423918.github.io/reports/mcp-cleanup/report.json",
+      "label": "十场不同清理控制 / Ten distinct cleanup controls",
+      "sha256": "309419810a07e880dbebc8cc8b206fba9152e4a6142daeb843c568525cbb14b5"
+    },
+    {
+      "id": "evidence_package",
+      "path": "evidence/evidence-package/report.json",
+      "url": "https://1137423918.github.io/reports/evidence-package/report.json",
+      "label": "实际wheel安装验证 / Actual installed wheel validation",
+      "sha256": "ebd7fba000a287e4e38fea901dbc196a8b34144b199a24b8782eb6abedfb7e56"
+    },
+    {
+      "id": "mcp_starter",
+      "path": "artifacts/agentlab-evidence-0.1.0-starter.zip",
+      "url": "https://1137423918.github.io/downloads/agentlab-evidence-0.1.0-starter.zip",
+      "label": "可下载工具启动包 / Runnable starter bundle",
+      "sha256": "654fd47fa0c494fb5d032d7b5521acbdc9d117a4b430e2826984995470615347"
+    },
+    {
+      "id": "current_pr_snapshot",
+      "path": "evidence/portfolio-refresh/upstream-snapshot.json",
+      "url": "https://1137423918.github.io/reports/portfolio-refresh/upstream-snapshot.json",
+      "label": "五份PR的本轮状态 / Five freshly checked PR states",
+      "sha256": "94065b1331eaa306a115c396aff7d708af40c4016e84fb567e86f971363f2137"
     }
   ],
   "pull_requests": [
@@ -234,15 +276,36 @@
       "number": 14845,
       "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
       "state": "open",
-      "draft": true,
+      "draft": false,
       "merged": false,
       "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d",
-      "updated_at": "2026-11-20T21:25:49Z",
+      "updated_at": "2026-11-21T16:45:16Z",
+      "review_count": 1,
+      "reviews": [
+        {
+          "id": 6006583814,
+          "state": "COMMENTED",
+          "submitted_at": "2026-11-21T16:30:37Z",
+          "actor": "copilot-pull-request-reviewer[bot]",
+          "actor_type": "Bot"
+        }
+      ]
+    },
+    {
+      "repository": "microsoft/semantic-kernel",
+      "number": 14853,
+      "url": "https://github.com/microsoft/semantic-kernel/pull/14853",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "9eadf24486464a146f3168035769cc071a8182bf",
+      "updated_at": "2026-11-21T17:25:05Z",
       "review_count": 0,
       "reviews": []
     }
   ],
   "paper_doi": "10.1109/LGRS.2025.3575615",
   "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
-  "scope": "Dated bilingual brief: validated130-check snapshot, separate six real MCP controls, fixed-query CPU audit structured2/3 with a disclosed prose ambiguity, retained earlier timeout, and four unmerged drafts. Current optional cross-SDK integration is still under validation and is not claimed here. No education/employment invented."
+  "scope": "Dated bilingual brief: latest130 core checks and8 installed artifact controls separate;10 scripted-model/realMCP controls include earlier4, real externalMCP600s timeout retained, older local structured2/3 has a prose ambiguity. Five open/four draft/zero merged PRs; one Copilot Bot COMMENTED is not human approval. No new runtime experiment, invented employment/education or model repair claim.",
+  "source_commit_scope": "All33 evidence file bytes exist at this immutable commit. The following brief/content/builder revision is published separately."
 }

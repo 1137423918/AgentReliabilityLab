@@ -38,6 +38,14 @@ def contribution_prs(contribution):
     return [contribution, *contribution.get("extra_prs", [])]
 
 
+def pr_status_label(pr, evidence, language):
+    row = next(p for p in evidence["pull_requests"] if p["url"] == pr["url"])
+    status = "merged" if row["merged"] else "closed" if row["state"] == "closed" else "draft" if row["draft"] else "open"
+    labels = {"zh": {"merged": "已合并", "closed": "已关闭", "draft": "草稿", "open": "开放"},
+              "en": {"merged": "Merged", "closed": "Closed", "draft": "Draft", "open": "Open"}}
+    return f'{labels[language][status]} #{pr["number"]}'
+
+
 def register_fonts(args):
     specs = [
         ("CJKBody", args.font_regular, args.font_index),
@@ -113,10 +121,10 @@ def build_pdf(data, evidence, output):
         for bullet in content["bullets"]:
             paragraph("- " + esc(bullet), gap=5)
         paragraph(esc(content["project_scope"]), 8.9, 12.8, 6, MUTED)
-        paragraph(linked(content["links_label"], "https://github.com/1137423918/AgentReliabilityLab") + " / " + linked(content["sources_label"], "https://1137423918.github.io/project-brief.html#evidence"), 9, 12, 5)
+        paragraph(linked(content["links_label"], "https://github.com/1137423918/AgentReliabilityLab") + " / " + linked(content["sources_label"], "https://1137423918.github.io/project-brief.html#evidence") + " / " + linked(content["starter_label"], data["starter_url"]), 9, 12, 5)
         section(content["contributions_label"])
         for contribution in content["contributions"]:
-            pr_links = " / ".join(linked(f'Draft #{p["number"]}', p["url"]) for p in contribution_prs(contribution))
+            pr_links = " / ".join(linked(pr_status_label(p, evidence, language), p["url"]) for p in contribution_prs(contribution))
             paragraph(f'<b>{esc(contribution["name"])}</b> / ' + pr_links, 10.3, 13.5, 3)
             paragraph(esc(contribution["text"]), 9.5, 13.5, 7)
         section(content["paper_label"])
@@ -144,7 +152,7 @@ def build_html(data, evidence, output):
         contribution_items = []
         for x in c["contributions"]:
             prs = contribution_prs(x)
-            pr_links = " · ".join(f'<a href="{esc(p["url"])}">Draft #{p["number"]}</a>' for p in prs)
+            pr_links = " · ".join(f'<a href="{esc(p["url"])}">{esc(pr_status_label(p, evidence, language))}</a>' for p in prs)
             sources = " · ".join(f'<a class="source-link" href="{esc(next(r["url"] for r in evidence["files"] if r["id"] == p["source"]))}">{esc(c["sources_label"])} #{p["number"]}</a>' for p in prs)
             contribution_items.append(f'<article class="contribution"><div><h3>{esc(x["name"])}</h3><span>{pr_links}</span></div><p>{esc(x["text"])}</p>{sources}</article>')
         contributions = "".join(contribution_items)
@@ -153,7 +161,7 @@ def build_html(data, evidence, output):
 <div class="brief-actions"><a class="button" href="downloads/{PDF_NAME}" download>{esc(c['download_label'])}</a><button class="copy-brief" type="button" data-copy="{language}" disabled>{esc(c['copy_label'])}</button><span class="copy-result" role="status" aria-live="polite"></span></div>
 <article class="brief-project"><p class="eyebrow">{esc(c['project_label'])}</p><h2>{esc(c['project_title'])}</h2><p class="brief-stack">{esc(data['stack'])}</p><p class="brief-intro">{esc(c['project_intro'])}</p><ul class="brief-points">{bullets}</ul>
 <div class="workflow" role="img" aria-label="{'固定任务、持久化执行、隔离验收、补丁审阅' if language == 'zh' else 'Pinned task, durable execution, isolated verification, patch review'}"><span>{'固定任务' if language == 'zh' else 'Pinned task'}</span><span>{'持久化执行' if language == 'zh' else 'Durable execution'}</span><span>{'隔离验收' if language == 'zh' else 'Isolated checks'}</span><span>{'补丁审阅' if language == 'zh' else 'Patch review'}</span></div>
-<p class="scope-note">{esc(c['project_scope'])}</p><p><a href="https://github.com/1137423918/AgentReliabilityLab">{esc(c['links_label'])}</a> · <a href="notes/recovery.html#verification-tree">{'验证进程生命周期' if language == 'zh' else 'Verifier lifecycle'}</a> · <a href="notes/local-state.html">{'本机状态与恢复' if language == 'zh' else 'Local state and recovery'}</a> · <a href="notes/model-request-budget.html">{'请求预算案例' if language == 'zh' else 'Request budget case'}</a> · <a href="notes/protected-grading.html">{'验收保护案例' if language == 'zh' else 'Acceptance protection'}</a></p></article>
+<p class="scope-note">{esc(c['project_scope'])}</p><p><a href="https://github.com/1137423918/AgentReliabilityLab">{esc(c['links_label'])}</a> · <a href="{esc(data['starter_url'])}" download>{esc(c['starter_label'])}</a> · <a href="notes/mcp-evidence.html#installable">{'安装与实测' if language == 'zh' else 'Installation and evidence'}</a> · <a href="notes/recovery.html#verification-tree">{'验证进程生命周期' if language == 'zh' else 'Verifier lifecycle'}</a> · <a href="notes/local-state.html">{'本机状态与恢复' if language == 'zh' else 'Local state and recovery'}</a> · <a href="notes/model-request-budget.html">{'请求预算案例' if language == 'zh' else 'Request budget case'}</a> · <a href="notes/protected-grading.html">{'验收保护案例' if language == 'zh' else 'Acceptance protection'}</a></p></article>
 <section class="brief-contributions"><h2>{esc(c['contributions_label'])}</h2><div class="contribution-grid">{contributions}</div></section>
 <section class="brief-paper"><p class="eyebrow">{esc(c['paper_label'])}</p><h2>{esc(data['paper']['title'])}</h2><p>{esc(c['paper_text'])}</p><p><a href="{esc(data['paper']['url'])}">DOI: {esc(data['paper']['doi'])}</a> · <a href="{esc(data['paper']['code'])}">LS-DETR code</a></p></section>
 <p class="scope-note">{esc(c['scope'])}</p></section>''')
@@ -187,8 +195,17 @@ def main():
         raise ValueError("Paper citation changed")
     if data["paper"]["doi"] != evidence["paper_doi"]:
         raise ValueError("Paper DOI differs from evidence")
-    if not all(p["state"] == "open" and p["draft"] and not p["merged"] for p in evidence["pull_requests"]):
-        raise ValueError("Update text for changed PR state before building")
+    prs = evidence["pull_requests"]
+    if any(p["state"] not in {"open", "closed"} or type(p["draft"]) is not bool or type(p["merged"]) is not bool or (p["merged"] and p["state"] != "closed") for p in prs):
+        raise ValueError("Invalid PR status snapshot")
+    if len({p["url"] for p in prs}) != len(prs):
+        raise ValueError("Duplicate PR status URL")
+    counts = {"open": sum(p["state"] == "open" for p in prs),
+              "draft": sum(p["state"] == "open" and p["draft"] for p in prs),
+              "closed": sum(p["state"] == "closed" for p in prs),
+              "merged": sum(p["merged"] for p in prs)}
+    if data["pr_status_summary"] != counts:
+        raise ValueError("Brief status summary differs from the PR snapshot")
     for content in data["languages"].values():
         linked_prs = {p["url"] for c in content["contributions"] for p in contribution_prs(c)}
         if linked_prs != {p["url"] for p in evidence["pull_requests"]}:
