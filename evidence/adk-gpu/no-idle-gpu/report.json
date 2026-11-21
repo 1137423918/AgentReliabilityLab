@@ -1,0 +1,23 @@
+{
+  "protocol_sha256": "74352cf3d10185b441d7672a2916a5f223ddc90c3575be2ac424abee2c7d8770",
+  "started_utc": "2026-11-21T07:31:20.385009+00:00",
+  "local_root_sha256": "e6135873ef6b5e1e396f12740489b97f5e4a13a11455a62bc184759e944494ef",
+  "scope": "One new protected ADK repository-maintenance trajectory using pinned9B CUDA serving. Known public defect; not held out, independent tasks, a general success rate or isolated performance comparison.",
+  "status": "failed",
+  "checks": [],
+  "service_started": false,
+  "cpu_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "nice": 19,
+  "error_type": "AssertionError",
+  "error": "No eligible idle architecture86 GPU",
+  "port_closed": true,
+  "completed_utc": "2026-11-21T07:32:05.222020+00:00",
+  "model_http_request_limit": 16,
+  "warmup_outside_http_budget": true,
+  "success": false
+}
