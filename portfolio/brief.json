@@ -5,7 +5,7 @@
   "github": "https://github.com/1137423918",
   "date": "2026-11-21",
   "focus": "agent_engineering",
-  "stack": "Python / Deep Agents / LangGraph / SQLite / Pydantic AI / LlamaIndex",
+  "stack": "Python / Deep Agents / LangGraph / SQLite / MCP / LlamaIndex",
   "languages": {
     "zh": {
       "title": "项目与开源贡献",
@@ -17,9 +17,9 @@
         "连接 SQLite 检查点与隔离 Git worktree；本机 ext4 上正常运行与首检查点 SIGKILL 恢复生成相同参考补丁，创建状态及复用成功前拒绝 NFS。",
         "实现有界源码定位、原版测试验收与补丁/日志哈希校验；拒绝篡改缓存，修复独立会话和双重 fork 验证子进程泄漏，Linux 回收后代后释放运行锁。",
         "持久预留 HTTP 次数和 JSON 字节，跨重启与修复共享；独立 asyncio/HTTPX2 包接入 Pydantic AI，4 场假服务控制覆盖工具、取消、并发及 SDK 重试。",
-        "实际接入 LlamaIndex 审计 8 份报告，核验 JSON 事实、来源哈希与读取记录；2 场假回复控制通过。完整124项回归通过、零跳过，含新增8项证据检查。"
+        "提供 MCP2.3.0 报告证据服务：独立审计上下文、读取回执、并发额度与取消后计数；6 场真实 SDK/TCP 控制通过。完整130项回归通过、零跳过，新增6项已包含。"
       ],
-      "project_scope": "恢复使用参考计划，未证明自主修复。真实9B CPU报告审计在600秒上限超时，零验收完成；旧ADK CPU无编辑，GPU短请求原样文本检查失败，GPU维护未启动。历史NFS结果分列，额度不是token或费用。",
+      "project_scope": "恢复使用参考计划，未证明自主修复。真实9B CPU新版报告审计3个已知问题中2个通过结构契约，另1个缺字段；自由文字仍有范围歧义。旧两阶段审计600秒超时，GPU维护未启动；额度不是token或费用。",
       "contributions_label": "已提交的开源草稿",
       "contributions": [
         {
@@ -69,9 +69,9 @@
         "Connect SQLite checkpoints and isolated Git worktrees. Local ext4 normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before state creation or cached success.",
         "Add bounded source navigation, frozen original-test acceptance and patch/log hash checks. Reject tampered caches; reap detached and double-forked Linux verifier descendants before releasing the worker lock.",
         "Reserve HTTP attempts and JSON bytes across restarts and repair rounds. A standalone asyncio/HTTPX2 wheel integrates with Pydantic AI; four fake-service cases cover tools, cancellation, concurrency and SDK retries.",
-        "Integrate LlamaIndex with eight real reports to check JSON facts, source hashes and observed reads; two fake-reply controls pass. All 124 engineering checks pass with zero skips, including eight new evidence checks."
+        "Build a real MCP2.3.0 report service with isolated audits, read receipts and bounded concurrent operations. Six real SDK/TCP controls pass. All 130 engineering checks pass with zero skips, including six new service checks."
       ],
-      "project_scope": "Recovery uses reference plans, not autonomous repair. The real 9B CPU report audit times out at 600 seconds with no verified assessment; earlier ADK CPU makes no edits. GPU raw text fails and maintenance never starts. Historical NFS evidence is separate; quotas are not tokens or fees.",
+      "project_scope": "Recovery uses reference plans; autonomous repair remains unproven. A real 9B CPU audit meets the structured contract on two of three known queries; one omits fields and prose retains a scope ambiguity. The earlier two-stage audit times out at 600 seconds; GPU maintenance never starts. Quotas are not tokens or fees.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
       "contributions": [
         {

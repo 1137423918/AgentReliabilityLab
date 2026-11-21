@@ -1,0 +1,166 @@
+{
+  "checked_at_utc": "2026-11-21T10:16:32.413583+00:00",
+  "pull_requests": [
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7032,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
+      "updated_at": "2026-11-20T18:47:41Z"
+    },
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7050,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7050",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69",
+      "updated_at": "2026-11-21T10:14:50Z"
+    },
+    {
+      "repository": "google/adk-python",
+      "number": 8278,
+      "url": "https://github.com/google/adk-python/pull/8278",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "c71ca6a2d993ede60f9fd873b768a6d452db116f",
+      "updated_at": "2026-11-20T17:19:11Z"
+    },
+    {
+      "repository": "microsoft/semantic-kernel",
+      "number": 14845,
+      "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d",
+      "updated_at": "2026-11-20T21:25:49Z"
+    }
+  ],
+  "new_pr_checks": [
+    {
+      "name": "check-pr-artifacts",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419129/job/136813909014",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/OpenHands/software-agent-sdk/check-runs/136813909014/annotations"
+      }
+    },
+    {
+      "name": "Validate PR description",
+      "status": "completed",
+      "conclusion": "skipped",
+      "details_url": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419059/job/136813908830",
+      "output": {
+        "title": null,
+        "summary": null,
+        "text": null,
+        "annotations_count": 0,
+        "annotations_url": "https://api.github.com/repos/OpenHands/software-agent-sdk/check-runs/136813908830/annotations"
+      }
+    }
+  ],
+  "new_pr_workflow_runs": [
+    {
+      "id": 44893419170,
+      "name": "Version bump guard",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419160,
+      "name": "TypeScript client endpoint audit",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419281,
+      "name": "TypeScript client integration tests",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419295,
+      "name": "TypeScript client CI",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419231,
+      "name": "Pre-commit checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419232,
+      "name": "Deprecation deadlines",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419273,
+      "name": "Run tests",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419239,
+      "name": "Review Thread Gate",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419205,
+      "name": "Agent Server",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419294,
+      "name": "Persisted settings compatibility checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419195,
+      "name": "Agent Server Start Benchmark",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419237,
+      "name": "REST API breakage checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    },
+    {
+      "id": 44893419292,
+      "name": "Check Docstrings",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69"
+    }
+  ]
+}

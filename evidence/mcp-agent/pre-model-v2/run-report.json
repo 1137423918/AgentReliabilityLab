@@ -1,0 +1,56 @@
+{
+  "protocol_sha256": "7bb673db9c68e9689bb9fe11ca2bc6628a7ac5ad2e8cb815d3da34d812f255be",
+  "source_archive_sha256": "6670385fcd6713409745697bb5c295e1fb0e72d22a1ba7299b57b8a609ecfaac",
+  "model_started": false,
+  "model_ready": false,
+  "cases": [],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 1.102,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 8650752
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.141,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 2.154,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 15859712
+    },
+    {
+      "phase": "sdk-identity",
+      "returncode": -15,
+      "wall_seconds": 180.175,
+      "guard_reason": "phase_deadline",
+      "peak_sampled_owned_session_rss_bytes": 103833600
+    }
+  ],
+  "worker_dependency_pairs_unchanged": 68,
+  "own_project_distribution_excluded": {
+    "name": "agent-reliability-lab",
+    "version": "0.2.0"
+  },
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Phase failed: sdk-identity"
+  },
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": null,
+  "mcp_shutdown_returncode": null,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "mcp_port_closed": true,
+  "service_wall_seconds": null,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}

@@ -1,0 +1,136 @@
+{
+  "scope": "Opt-in asyncio/HTTPX2 durable request-budget component plus actual PydanticAI SDK/tool integration against an explicitly fake loopback service. No neural benchmark or new upstream fix.",
+  "full_suite_passed": 116,
+  "full_suite_skipped": 0,
+  "new_async_checks_included": 8,
+  "focused_checks": 8,
+  "core_unittest_seconds": 251.556,
+  "core_phase_wall_seconds": 254.435,
+  "framework_case_count": 4,
+  "framework_cases": [
+    {
+      "case": "normal_reopen",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 1140,
+      "http_statuses": [
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "609942694d554b4781b833cba374dfdc",
+      "actual_report_tool_reads": 1,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "cancel_inflight",
+      "passed": true,
+      "http_requests": 1,
+      "request_body_bytes": 360,
+      "http_statuses": [
+        null
+      ],
+      "unobserved": 1,
+      "journal_id": "0d6b9568f3ba48be80f8df6ae9ec2c8a",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "concurrent_agents",
+      "passed": true,
+      "http_requests": 3,
+      "request_body_bytes": 1050,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "304ade02958545a1b96f1ffbe8bd2949",
+      "actual_report_tool_reads": 3,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "sdk_retries",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 700,
+      "http_statuses": [
+        503,
+        503
+      ],
+      "unobserved": 0,
+      "journal_id": "682a5e1640124e9ba18a553a01490a7d",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 2,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    }
+  ],
+  "framework_total_fake_model_posts": 8,
+  "framework_total_request_body_bytes": 3250,
+  "framework_phase_wall_seconds": 73.367,
+  "framework_versions": {
+    "pydantic-ai-slim": "2.71.0",
+    "openai": "3.57.0",
+    "httpx2": "2.16.2",
+    "agentlab-durable-budget": "0.1.0"
+  },
+  "framework_wire_body_hashes_matched_in_runtime": true,
+  "framework_full_wire_bodies_persisted": false,
+  "framework_journals_original_bytes": true,
+  "real_neural_requests": 0,
+  "gpu_used": false,
+  "new_neural_repair": false,
+  "upstream_pr_created": false,
+  "canonical_source_sha256": {
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "tests/test_async_request_budget.py": "304277a3b71bad42cbd540c75f545899a459e80b0ee2f90a0fcbd5252ae46086",
+    "benchmarks/pydantic_budget_case.py": "221cc3aa32d7010e2ecfedd1aab9844b9e492c3eab07f834e4af8c74d0909c58",
+    "packages/durable-budget/build.py": "35c5631a976ea9f574e121b5579d8526087e1a746c66f2ec47a955681cbe5910",
+    "packages/durable-budget/pyproject.toml": "b75869c9a728ee28a92c86d0dd8feb898f106819300be0cdeff23e33eb0a20bb",
+    "packages/durable-budget/__init__.py": "36853568783bdbbb1fd769e615af95513cb602aead8aa146745cad29f50bdf4b",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f"
+  },
+  "core_protocol_sha256": "86c82fe858bf97d1707043d0b8de29a1dba9313e279f26aae2c3d2934581b321",
+  "framework_protocol_sha256": "44634dec0ff01edec644d2056262301b3910a0e53ae7d25e2983d1ee256fbc22",
+  "wheel": {
+    "wheel": "agentlab_durable_budget-0.1.0-py3-none-any.whl",
+    "bytes": 8441,
+    "sha256": "a27d27b935b9646a0bed30cac5cc300f783311860471a2df92c053ac9657005a",
+    "source_sha256": {
+      "request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+      "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+      "async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e"
+    },
+    "all_module_bytes_identical": true
+  },
+  "worker_dependency_packages_unchanged": 68,
+  "startup_failure_retained": true,
+  "intermediate_green_profile_not_released": true,
+  "accidental_recreate_probe": {
+    "supplied_expected_journal_id_was_replaced": true,
+    "spent_before_loss": 1,
+    "spent_after_recreation": 0,
+    "same_directory_existed": true,
+    "request_was_only_a_durable_reservation_no_network": true
+  },
+  "limitations": [
+    "New opt-in async client; existing maintenance-worker async rejection and sync transport stay unchanged.",
+    "Request attempts and JSON bytes are not tokens, cost, accepted replies or exactly-once tool effects.",
+    "Cancellation can consume a reservation without sending; in-flight unknowns remain charged; no refund/reset.",
+    "Cancellation during durable I/O waits for it to finish; no claim of a hard cancellation-latency bound under a held OS lock.",
+    "Asyncio only, not a Trio compatibility claim; loopback chat-completions POST only, no Responses/cloud/redirect/proxy support.",
+    "PydanticAI uses an isolated new budget-only distribution; no upstream defect/PR or model-autonomy claim.",
+    "Repeated focused tests overlap the full suite; framework cases are reported separately, not added as new core tests."
+  ]
+}

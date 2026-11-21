@@ -1,0 +1,1876 @@
+import time: self [us] | cumulative | imported package
+import time:       208 |        208 |   _io
+import time:        38 |         38 |   marshal
+import time:       492 |        492 |   posix
+import time:       449 |       1186 | _frozen_importlib_external
+import time:       139 |        139 |   time
+import time:       136 |        274 | zipimport
+import time:       219 |        219 |     _codecs
+import time:       383 |        602 |   codecs
+import time:       832 |        832 |   encodings.aliases
+import time:      1944 |       3377 | encodings
+import time:       596 |        596 | encodings.utf_8
+import time:       131 |        131 | _signal
+import time:        43 |         43 |     _abc
+import time:       164 |        207 |   abc
+import time:       185 |        392 | io
+import time:        91 |         91 |       _stat
+import time:       122 |        212 |     stat
+import time:      1153 |       1153 |     _collections_abc
+import time:        57 |         57 |       genericpath
+import time:        79 |        135 |     posixpath
+import time:       496 |       1995 |   os
+import time:        98 |         98 |   _sitebuiltins
+import time:     71703 |      71703 |   _distutils_hack
+import time:       177 |        177 |   sitecustomize
+import time:     76354 |     150325 | site
+import time:        75 |         75 | faulthandler
+import time:       711 |        711 |   warnings
+import time:       848 |       1559 | importlib
+import time:      1869 |       1869 |         types
+import time:       118 |        118 |           _operator
+import time:       668 |        785 |         operator
+import time:       141 |        141 |             itertools
+import time:       632 |        632 |             keyword
+import time:      7250 |       7250 |             reprlib
+import time:       118 |        118 |             _collections
+import time:      1820 |       9959 |           collections
+import time:        74 |         74 |           _functools
+import time:      1052 |      11084 |         functools
+import time:      6032 |      19770 |       enum
+import time:        96 |         96 |         _sre
+import time:       584 |        584 |           re._constants
+import time:      2212 |       2795 |         re._parser
+import time:       404 |        404 |         re._casefix
+import time:      3465 |       6758 |       re._compiler
+import time:       518 |        518 |       copyreg
+import time:      1315 |      28360 |     re
+import time:       401 |        401 |       _json
+import time:       883 |       1284 |     json.scanner
+import time:      1604 |      31246 |   json.decoder
+import time:       888 |        888 |   json.encoder
+import time:       799 |      32932 | json
+{"starting_import": "llama_index.core.agent.workflow", "elapsed": 1.7005950212478638e-06}
+import time:       826 |        826 |     collections.abc
+import time:       712 |        712 |         token
+import time:      2356 |       3067 |       tokenize
+import time:      1537 |       4604 |     linecache
+import time:      2103 |       2103 |     textwrap
+import time:      1584 |       1584 |     contextlib
+import time:      1440 |      10555 |   traceback
+import time:       753 |        753 |     _weakrefset
+import time:      1229 |       1982 |   weakref
+import time:        96 |         96 |     _string
+import time:      1502 |       1598 |   string
+import time:      1756 |       1756 |   threading
+import time:        85 |         85 |   atexit
+import time:      4993 |      20966 | logging
+import time:      1480 |       1480 |     _csv
+import time:      1892 |       3371 |   csv
+import time:      1431 |       1431 |   email
+import time:       588 |        588 |     fnmatch
+import time:       169 |        169 |       _winapi
+import time:       146 |        146 |       nt
+import time:       136 |        136 |       nt
+import time:       140 |        140 |       nt
+import time:       147 |        147 |       nt
+import time:       135 |        135 |       nt
+import time:       212 |       1082 |     ntpath
+import time:       123 |        123 |     errno
+import time:       866 |        866 |       urllib
+import time:      3239 |       3239 |       ipaddress
+import time:      3108 |       7212 |     urllib.parse
+import time:      1936 |      10939 |   pathlib
+import time:      3338 |       3338 |     binascii
+import time:       597 |        597 |       importlib._abc
+import time:       318 |        914 |     importlib.util
+import time:      1167 |       1167 |       zlib
+import time:       748 |        748 |         _compression
+import time:       870 |        870 |         _bz2
+import time:       840 |       2457 |       bz2
+import time:      1107 |       1107 |         _lzma
+import time:       839 |       1945 |       lzma
+import time:      2219 |       7787 |     shutil
+import time:       531 |        531 |       _struct
+import time:       567 |       1097 |     struct
+import time:      2654 |      15787 |   zipfile
+import time:      1124 |       1124 |       quopri
+import time:       771 |        771 |           math
+import time:       521 |        521 |             _bisect
+import time:       667 |       1187 |           bisect
+import time:       538 |        538 |           _random
+import time:       570 |        570 |           _sha512
+import time:      1621 |       4685 |         random
+import time:      1033 |       1033 |           _socket
+import time:       564 |        564 |             select
+import time:      3856 |       4420 |           selectors
+import time:       797 |        797 |           array
+import time:      3823 |      10072 |         socket
+import time:       850 |        850 |           _datetime
+import time:      2210 |       3060 |         datetime
+import time:       169 |        169 |               _locale
+import time:      2266 |       2435 |             locale
+import time:      1786 |       4221 |           calendar
+import time:      1192 |       5413 |         email._parseaddr
+import time:       780 |        780 |             base64
+import time:       783 |       1562 |           email.base64mime
+import time:      1330 |       1330 |           email.quoprimime
+import time:      2360 |       2360 |           email.errors
+import time:      1327 |       1327 |           email.encoders
+import time:       919 |       7495 |         email.charset
+import time:     63696 |      94418 |       email.utils
+import time:      1940 |       1940 |         email.header
+import time:      1141 |       3081 |       email._policybase
+import time:      1015 |       1015 |       email._encoded_words
+import time:       658 |        658 |       email.iterators
+import time:      2528 |     102820 |     email.message
+import time:       587 |        587 |       importlib.metadata._functools
+import time:       700 |       1287 |     importlib.metadata._text
+import time:      1376 |     105483 |   importlib.metadata._adapters
+import time:       715 |        715 |       _typing
+import time:      5689 |       6404 |     typing
+import time:      1044 |       7447 |   importlib.metadata._meta
+import time:      1076 |       1076 |   importlib.metadata._collections
+import time:       930 |        930 |   importlib.metadata._itertools
+import time:       144 |        144 |     importlib.machinery
+import time:      1340 |       1340 |           tempfile
+import time:      3566 |       3566 |           importlib.resources.abc
+import time:      1185 |       1185 |           importlib.resources._adapters
+import time:      1353 |       7443 |         importlib.resources._common
+import time:       694 |        694 |         importlib.resources._legacy
+import time:      1129 |       9264 |       importlib.resources
+import time:        28 |       9291 |     importlib.resources.abc
+import time:      1584 |      11019 |   importlib.abc
+import time:      4240 |     161718 | importlib.metadata
+import time:      1889 |       1889 |   email.feedparser
+import time:       816 |       2704 | email.parser
+import time:     70259 |      70259 |     llama_index.core.base
+import time:    116555 |     186814 |   llama_index.core.base.response
+import time:       902 |        902 |         concurrent
+import time:      1648 |       1648 |         concurrent.futures._base
+import time:      1091 |       3641 |       concurrent.futures
+import time:       611 |        611 |         _heapq
+import time:       781 |       1392 |       heapq
+import time:      1658 |       1658 |         signal
+import time:       484 |        484 |         fcntl
+import time:       195 |        195 |         msvcrt
+import time:       896 |        896 |         _posixsubprocess
+import time:      4190 |       7421 |       subprocess
+import time:     14364 |      14364 |         _ssl
+import time:      8017 |      22380 |       ssl
+import time:      1072 |       1072 |       asyncio.constants
+import time:       131 |        131 |             _ast
+import time:      2573 |       2703 |           ast
+import time:       525 |        525 |               _opcode
+import time:      1163 |       1688 |             opcode
+import time:      2493 |       4180 |           dis
+import time:      4865 |      11747 |         inspect
+import time:       748 |      12495 |       asyncio.coroutines
+import time:       929 |        929 |           _contextvars
+import time:      1700 |       2628 |         contextvars
+import time:       761 |        761 |         asyncio.format_helpers
+import time:       730 |        730 |           asyncio.base_futures
+import time:       849 |        849 |           asyncio.exceptions
+import time:       758 |        758 |           asyncio.base_tasks
+import time:      1819 |       4154 |         _asyncio
+import time:      1658 |       9199 |       asyncio.events
+import time:      1522 |       1522 |       asyncio.futures
+import time:       785 |        785 |       asyncio.protocols
+import time:      1057 |       1057 |         asyncio.transports
+import time:       655 |        655 |         asyncio.log
+import time:      2100 |       3812 |       asyncio.sslproto
+import time:       647 |        647 |           asyncio.mixins
+import time:      5096 |       5096 |           asyncio.tasks
+import time:      1511 |       7254 |         asyncio.locks
+import time:      1159 |       8412 |       asyncio.staggered
+import time:       750 |        750 |       asyncio.trsock
+import time:      4245 |      77118 |     asyncio.base_events
+import time:     11684 |      11684 |     asyncio.runners
+import time:      6161 |       6161 |     asyncio.queues
+import time:      1739 |       1739 |     asyncio.streams
+import time:      1142 |       1142 |     asyncio.subprocess
+import time:      1695 |       1695 |     asyncio.taskgroups
+import time:      1472 |       1472 |     asyncio.timeouts
+import time:       645 |        645 |     asyncio.threads
+import time:      1060 |       1060 |       asyncio.base_subprocess
+import time:      1976 |       1976 |       asyncio.selector_events
+import time:      2345 |       5380 |     asyncio.unix_events
+import time:      2234 |     109267 |   asyncio
+import time:       226 |        226 |           org
+import time:        34 |        260 |         org.python
+import time:        32 |        291 |       org.python.core
+import time:       768 |       1059 |     copy
+import time:      4234 |       5292 |   dataclasses
+import time:      4370 |       4370 |             platform
+import time:      1615 |       1615 |             _uuid
+import time:      1880 |       7863 |           uuid
+import time:    158610 |     158610 |                 wrapt.exceptions
+import time:    117835 |     276445 |               wrapt.wrappers
+import time:      2688 |       2688 |               wrapt._wrappers
+import time:     11829 |     290961 |             wrapt.__wrapt__
+import time:    120892 |     120892 |                 wrapt.arguments
+import time:     55313 |     176205 |               wrapt.decorators
+import time:     58361 |      58361 |               wrapt.synchronization
+import time:    136039 |     370604 |             wrapt.caching
+import time:     59807 |      59807 |             wrapt.doc
+import time:     93769 |      93769 |             wrapt.importer
+import time:    123872 |     123872 |             wrapt.patches
+import time:     21093 |      21093 |             wrapt.proxies
+import time:    153854 |     153854 |             wrapt.signature
+import time:      8500 |       8500 |             wrapt.weakrefs
+import time:     85073 |    1207529 |           wrapt
+import time:     64179 |      64179 |             deprecated.classic
+import time:       220 |        220 |               inspect2
+import time:    132334 |     132554 |             deprecated.params
+import time:     93803 |     290535 |           deprecated
+import time:       675 |        675 |                 __future__
+import time:    264930 |     264930 |                     typing_extensions
+import time:    399823 |     399823 |                     pydantic_core._pydantic_core
+import time:      1121 |       1121 |                           numbers
+import time:      3796 |       4917 |                         _decimal
+import time:       956 |       5872 |                       decimal
+import time:      2183 |       2183 |                       fractions
+import time:    236362 |     244416 |                     pydantic_core.core_schema
+import time:     17853 |     927020 |                   pydantic_core
+import time:      7881 |     934900 |                 pydantic.version
+import time:     18260 |     953835 |               pydantic.warnings
+import time:     77986 |    1031820 |             pydantic._migration
+import time:     39111 |      39111 |                 typing_inspection
+import time:     44127 |      44127 |                 typing_inspection.typing_objects
+import time:    100508 |     183745 |               typing_inspection.introspection
+import time:     24368 |      24368 |               pydantic._internal
+import time:     22795 |      22795 |                     pydantic._internal._contextlib
+import time:     55551 |      78346 |                   pydantic._internal._namespace_utils
+import time:     54755 |     133101 |                 pydantic._internal._typing_extra
+import time:     27191 |     160291 |               pydantic._internal._repr
+import time:     83401 |     451804 |             pydantic.errors
+import time:     99546 |    1583169 |           pydantic
+import time:     20455 |      20455 |             pydantic.aliases
+import time:     60623 |      60623 |             pydantic.config
+import time:     71064 |     152142 |           pydantic._internal._config
+import time:     92182 |      92182 |               pydantic._internal._import_utils
+import time:     65259 |      65259 |               pydantic._internal._utils
+import time:     36903 |     194342 |             pydantic._internal._type_refs
+import time:    186949 |     381290 |           pydantic._internal._decorators
+import time:     30170 |      30170 |               pydantic._internal._forward_ref
+import time:     83597 |     113767 |             pydantic._internal._generics
+import time:    154656 |     154656 |             pydantic._internal._docs_extraction
+import time:     56851 |     325273 |           pydantic._internal._fields
+import time:    128061 |     128061 |               pydantic.plugin
+import time:     65944 |     194004 |             pydantic.plugin._schema_validator
+import time:    129611 |     323615 |           pydantic._internal._mock_val_ser
+import time:      2711 |       2711 |                   sysconfig
+import time:      1336 |       1336 |                   _sysconfigdata__linux_x86_64-linux-gnu
+import time:      2877 |       6923 |                 zoneinfo._tzpath
+import time:      1002 |       1002 |                 zoneinfo._common
+import time:      1032 |       1032 |                 _zoneinfo
+import time:      4857 |      13813 |               zoneinfo
+import time:     25482 |      25482 |               pydantic.annotated_handlers
+import time:     72389 |      72389 |               pydantic.functional_validators
+import time:    147443 |     147443 |                 pydantic._internal._core_metadata
+import time:     41254 |      41254 |                 pydantic._internal._core_utils
+import time:    102685 |     102685 |                 pydantic._internal._schema_generation_shared
+import time:    162577 |     453957 |               pydantic.json_schema
+import time:     84653 |      84653 |               pydantic._internal._discriminated_union
+import time:     20266 |      20266 |               pydantic._internal._known_annotated_metadata
+import time:     19616 |      19616 |               pydantic._internal._schema_gather
+import time:    250434 |     940607 |             pydantic._internal._generate_schema
+import time:     43892 |      43892 |             pydantic._internal._signature
+import time:     98099 |    1082597 |           pydantic._internal._model_construction
+import time:     91000 |      91000 |           annotated_types
+import time:     91091 |      91091 |           pydantic._internal._validators
+import time:      2984 |       2984 |                 _hashlib
+import time:      1412 |       1412 |                   _blake2
+import time:      1824 |       3235 |                 hashlib
+import time:       851 |       7069 |               hmac
+import time:       937 |       8006 |             secrets
+import time:    107561 |     115566 |           pydantic.types
+import time:     15963 |      15963 |                   pydantic.plugin._loader
+import time:    184080 |     200043 |                 llama_index_instrumentation.span.base
+import time:     27759 |      27759 |                 llama_index_instrumentation.span.simple
+import time:     33611 |     261411 |               llama_index_instrumentation.span
+import time:     18495 |     279906 |             llama_index_instrumentation.base.event
+import time:      3954 |       3954 |             llama_index_instrumentation.base.handler
+import time:     27762 |     311621 |           llama_index_instrumentation.base
+import time:     13996 |      13996 |             llama_index_instrumentation.event_handlers.base
+import time:     35399 |      35399 |             llama_index_instrumentation.event_handlers.null
+import time:      9768 |      59161 |           llama_index_instrumentation.event_handlers
+import time:    156768 |     156768 |             llama_index_instrumentation.events
+import time:     50870 |     207638 |           llama_index_instrumentation.events.span
+import time:     12832 |      12832 |             llama_index_instrumentation.span_handlers.base
+import time:     16097 |      16097 |             llama_index_instrumentation.span_handlers.null
+import time:     39951 |      39951 |             llama_index_instrumentation.span_handlers.simple
+import time:     68324 |     137202 |           llama_index_instrumentation.span_handlers
+import time:    228366 |    6595649 |         llama_index_instrumentation.dispatcher
+import time:    104729 |    6700377 |       llama_index_instrumentation
+import time:     60549 |    6760926 |     llama_index.core.instrumentation
+import time:    103445 |    6864371 |   llama_index.core.async_utils
+import time:      8144 |       8144 |     llama_index.core.bridge
+import time:    103776 |     103776 |     pydantic.type_adapter
+import time:    141529 |     253448 |   llama_index.core.bridge.pydantic
+import time:       902 |        902 |       _compat_pickle
+import time:      1970 |       1970 |       _pickle
+import time:       110 |        110 |           org
+import time:        26 |        136 |         org.python
+import time:        19 |        154 |       org.python.core
+import time:      2996 |       6021 |     pickle
+import time:     24374 |      24374 |               filetype.types.base
+import time:     43285 |      67658 |             filetype.types.archive
+import time:     11313 |      11313 |             filetype.types.audio
+import time:     27071 |      27071 |             filetype.types.application
+import time:     41121 |      41121 |             filetype.types.document
+import time:     33925 |      33925 |             filetype.types.font
+import time:      8088 |       8088 |               filetype.types.isobmff
+import time:     14400 |      22487 |             filetype.types.image
+import time:     67184 |      67184 |             filetype.types.video
+import time:      2580 |     273336 |           filetype.types
+import time:     16626 |      16626 |           filetype.utils
+import time:    135431 |     425392 |         filetype.match
+import time:     32049 |     457440 |       filetype.filetype
+import time:     43624 |      43624 |       filetype.helpers
+import time:     30066 |     531128 |     filetype
+import time:      2279 |       2279 |             http
+import time:      2885 |       5163 |           http.client
+import time:     24949 |      30112 |         urllib3.exceptions
+import time:     27855 |      27855 |                 urllib3.util.timeout
+import time:     17791 |      45645 |               urllib3.util.connection
+import time:     18902 |      18902 |                 urllib3.util.util
+import time:       178 |        178 |                 brotlicffi
+import time:        89 |         89 |                 brotli
+import time:        77 |         77 |                 backports
+import time:     38883 |      58127 |               urllib3.util.request
+import time:     37415 |      37415 |               urllib3.util.response
+import time:     39792 |      39792 |               urllib3.util.retry
+import time:     88927 |      88927 |                 urllib3.util.url
+import time:     53713 |      53713 |                 urllib3.util.ssltransport
+import time:     72591 |     215229 |               urllib3.util.ssl_
+import time:      9570 |       9570 |               urllib3.util.wait
+import time:     11255 |     417030 |             urllib3.util
+import time:        70 |     417099 |           urllib3.util.connection
+import time:     29267 |     446366 |         urllib3._base_connection
+import time:     16269 |      16269 |         urllib3._collections
+import time:     18896 |      18896 |         urllib3._version
+import time:       571 |        571 |             _queue
+import time:       948 |       1518 |           queue
+import time:       135 |        135 |                   _winapi
+import time:        83 |         83 |                   winreg
+import time:      1309 |       1526 |                 mimetypes
+import time:     30478 |      32003 |               urllib3.fields
+import time:     14310 |      46312 |             urllib3.filepost
+import time:       308 |        308 |               brotlicffi
+import time:        83 |         83 |               brotli
+import time:     76243 |      76243 |                 urllib3.http2
+import time:     27204 |      27204 |                 urllib3.http2.probe
+import time:     36833 |      36833 |                 urllib3.util.ssl_match_hostname
+import time:     74805 |     215084 |               urllib3.connection
+import time:       337 |        337 |               backports
+import time:     45299 |     261110 |             urllib3.response
+import time:     34766 |     342187 |           urllib3._request_methods
+import time:      1850 |       1850 |           urllib3.util.proxy
+import time:     40796 |     386349 |         urllib3.connectionpool
+import time:     48246 |      48246 |         urllib3.poolmanager
+import time:     17558 |     963794 |       urllib3
+import time:     78326 |      78326 |                 charset_normalizer.constant
+import time:      6686 |       6686 |                   unicodedata
+import time:     79147 |      85832 |                 charset_normalizer.utils
+import time:      3628 |     167786 |               charset_normalizer.md
+import time:      9536 |     177321 |             charset_normalizer.cd
+import time:     74468 |      74468 |             charset_normalizer.models
+import time:      1017 |       1017 |             _multibytecodec
+import time:     31838 |     284641 |           charset_normalizer.api
+import time:     12982 |      12982 |           charset_normalizer.legacy
+import time:     17829 |      17829 |           charset_normalizer.version
+import time:       195 |        195 |           simplejson
+import time:       632 |        632 |                 urllib.response
+import time:       643 |       1274 |               urllib.error
+import time:      2939 |       4213 |             urllib.request
+import time:      5111 |       9323 |           http.cookiejar
+import time:      1839 |       1839 |           http.cookies
+import time:    104545 |     431351 |         requests.compat
+import time:     26431 |     457782 |       requests.exceptions
+import time:       129 |        129 |       chardet
+import time:     17124 |      17124 |             idna.idnadata
+import time:     17954 |      17954 |             idna.intranges
+import time:     44783 |      79860 |           idna.core
+import time:     16878 |      16878 |           idna.package_data
+import time:     41912 |     138649 |         idna
+import time:     42190 |     180839 |       requests.packages
+import time:     78702 |      78702 |             certifi.core
+import time:     52229 |     130931 |           certifi
+import time:     50359 |     181290 |         requests.certs
+import time:     44178 |      44178 |         requests.__version__
+import time:     28571 |      28571 |         requests._internal_utils
+import time:     52394 |      52394 |         requests._types
+import time:     71188 |      71188 |         requests.cookies
+import time:     48837 |      48837 |         requests.structures
+import time:      1189 |       1189 |             importlib.resources._itertools
+import time:      1769 |       2958 |           importlib.resources.readers
+import time:     82994 |      85951 |         importlib.readers
+import time:     86688 |     599095 |       requests.utils
+import time:     55101 |      55101 |             requests.auth
+import time:      1321 |       1321 |                 stringprep
+import time:      1053 |       2374 |               encodings.idna
+import time:     16511 |      16511 |               requests.hooks
+import time:      1564 |       1564 |               requests.status_codes
+import time:    153778 |     174225 |             requests.models
+import time:     87553 |      87553 |               urllib3.contrib
+import time:       253 |        253 |               socks
+import time:     62975 |     150780 |             urllib3.contrib.socks
+import time:     58376 |     438480 |           requests.adapters
+import time:     81608 |     520088 |         requests.sessions
+import time:     43207 |     563294 |       requests.api
+import time:     42055 |    2806983 |     requests
+import time:     50188 |      50188 |                 packaging
+import time:     77628 |     127815 |               packaging.version
+import time:     20351 |      20351 |               marshmallow.decorators
+import time:    105565 |     105565 |               marshmallow.exceptions
+import time:     40222 |      40222 |                 marshmallow.base
+import time:    102461 |     102461 |                 marshmallow.class_registry
+import time:     11573 |      11573 |                 marshmallow.types
+import time:      1524 |       1524 |                     pprint
+import time:     42877 |      42877 |                     marshmallow.warnings
+import time:     86220 |     130620 |                   marshmallow.utils
+import time:     84324 |      84324 |                   marshmallow.validate
+import time:     84267 |     299210 |                 marshmallow.fields
+import time:     25562 |      25562 |                 marshmallow.error_store
+import time:     40545 |      40545 |                 marshmallow.orderedset
+import time:    112512 |     632083 |               marshmallow.schema
+import time:     24354 |     910167 |             marshmallow
+import time:        48 |     910214 |           marshmallow.fields
+import time:     29395 |      29395 |           dataclasses_json.stringcase
+import time:    141821 |     141821 |             dataclasses_json.utils
+import time:     75517 |     217338 |           dataclasses_json.undefined
+import time:     90020 |    1246966 |         dataclasses_json.cfg
+import time:     59684 |      59684 |             mypy_extensions
+import time:    101106 |     160789 |           typing_inspect
+import time:     99316 |     260104 |         dataclasses_json.core
+import time:    175977 |     175977 |         dataclasses_json.mm
+import time:      2238 |    1685284 |       dataclasses_json.api
+import time:     26934 |      26934 |       dataclasses_json.__version__
+import time:     68796 |    1781014 |     dataclasses_json
+import time:    123476 |     123476 |       PIL._version
+import time:     21089 |     144565 |     PIL
+import time:    121334 |     121334 |       PIL.ExifTags
+import time:     41560 |      41560 |       PIL.ImageMode
+import time:     89846 |      89846 |       PIL.TiffTags
+import time:      1182 |       1182 |       PIL._binary
+import time:    101803 |     101803 |       PIL._deprecate
+import time:     11120 |      11120 |       PIL._util
+import time:    708581 |     708581 |       PIL._imaging
+import time:    238198 |    1313621 |     PIL.Image
+import time:      1572 |       1572 |     llama_index.core.bridge.pydantic_core
+import time:    152735 |     152735 |           platformdirs._paths
+import time:     85556 |     238290 |         platformdirs.api
+import time:     96206 |      96206 |         platformdirs.version
+import time:      1338 |       1338 |           platformdirs._runtime
+import time:     95260 |      95260 |           platformdirs._xdg
+import time:    182723 |     279320 |         platformdirs.unix
+import time:    114820 |     728634 |       platformdirs
+import time:    110036 |     838670 |     llama_index.core.utils
+import time:     64608 |    7488178 |   llama_index.core.schema
+import time:     26174 |      26174 |       llama_index.core.base.llms
+import time:    141904 |     141904 |         tinytag.tinytag
+import time:     15017 |     156921 |       tinytag
+import time:     87703 |      87703 |       llama_index.core.constants
+import time:    211077 |     481873 |     llama_index.core.base.llms.types
+import time:    146265 |     628137 |   llama_index.core.types
+import time:    148075 |   15683579 | llama_index.core.base.response.schema
+import time:    115970 |     115970 |         llama_index.core.callbacks.schema
+import time:     13104 |     129073 |       llama_index.core.callbacks.base_handler
+import time:     48069 |     177142 |     llama_index.core.callbacks.base
+import time:     62298 |      62298 |       llama_index.core.callbacks.pythonically_printing_base_handler
+import time:    136544 |     198841 |     llama_index.core.callbacks.llama_debug
+import time:     18395 |      18395 |         llama_index.core.utilities
+import time:     52599 |      70994 |       llama_index.core.utilities.token_counting
+import time:     18458 |      89452 |     llama_index.core.callbacks.token_counting
+import time:     11098 |      11098 |     llama_index.core.callbacks.utils
+import time:    108025 |     584556 |   llama_index.core.callbacks
+import time:      2405 |       2405 |   llama_index.core.callbacks.simple_llm_handler
+import time:     40933 |     627894 | llama_index.core.callbacks.global_handlers
+import time:     28652 |      28652 |       llama_index.core.data_structs.struct_type
+import time:     67708 |      96359 |     llama_index.core.data_structs.data_structs
+import time:     28604 |      28604 |     llama_index.core.data_structs.table
+import time:      7790 |     132752 |   llama_index.core.data_structs
+import time:        24 |     132776 | llama_index.core.data_structs.struct_type
+import time:     26147 |      26147 |       llama_index.core.base.embeddings
+import time:     13324 |      13324 |         numpy.version
+import time:    233702 |     233702 |         numpy._expired_attrs_2_0
+import time:     84525 |      84525 |             numpy._utils._convertions
+import time:     33496 |     118021 |           numpy._utils
+import time:     15416 |     133436 |         numpy._globals
+import time:       129 |        129 |           numpy._distributor_init_local
+import time:     46814 |      46943 |         numpy._distributor_init
+import time:     45384 |      45384 |                   numpy.exceptions
+import time:     39033 |      39033 |                   numpy._core._exceptions
+import time:     12899 |      12899 |                   numpy._core.printoptions
+import time:      6004 |       6004 |                   numpy.dtypes
+import time:   1719232 |    1822550 |                 numpy._core._multiarray_umath
+import time:     46984 |      46984 |                   numpy._utils._inspect
+import time:     73996 |     120980 |                 numpy._core.overrides
+import time:    156379 |    2099908 |               numpy._core.multiarray
+import time:     29556 |      29556 |               numpy._core.umath
+import time:    133791 |     133791 |                 numpy._core._dtype
+import time:     35638 |      35638 |                 numpy._core._string_helpers
+import time:     27093 |      27093 |                 numpy._core._type_aliases
+import time:     19696 |     216217 |               numpy._core.numerictypes
+Timeout (0:00:20)!
+Thread 0x00007f93c5a81740 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 1131 in get_data
+  File "<frozen importlib._bootstrap_external>", line 1032 in get_code
+  File "<frozen importlib._bootstrap_external>", line 936 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/numpy/_core/einsumfunc.py", line 10 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1232 in _handle_fromlist
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/numpy/_core/__init__.py", line 111 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/numpy/__config__.py", line 4 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/numpy/__init__.py", line 112 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/base/embeddings/base.py", line 10 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/embeddings/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/__init__.py", line 22 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/__init__.py", line 126 in import_module
+  File "<string>", line 4 in <module>
+import time:    109223 |     109223 |                       numpy._core._methods
+import time:    261457 |     370680 |                     numpy._core.fromnumeric
+import time:     65204 |     435884 |                   numpy._core.shape_base
+import time:    129302 |     129302 |                   numpy._core._ufunc_config
+import time:     17065 |      17065 |                   numpy._core._asarray
+import time:     58562 |      58562 |                   numpy._core.arrayprint
+import time:    130243 |     771054 |                 numpy._core.numeric
+import time:    106018 |     877072 |               numpy._core.einsumfunc
+import time:    100976 |     100976 |               numpy._core.function_base
+import time:    128783 |     128783 |               numpy._core.getlimits
+import time:    127280 |     127280 |               numpy._core.memmap
+import time:    104544 |     104544 |               numpy._core.records
+import time:    228786 |     228786 |               numpy._core._add_newdocs
+import time:     13819 |      13819 |               numpy._core._add_newdocs_scalars
+import time:     29899 |      29899 |               numpy._core._dtype_ctypes
+import time:      2902 |       2902 |                   _ctypes
+import time:       968 |        968 |                   ctypes._endian
+import time:      2397 |       6267 |                 ctypes
+import time:    141722 |     147988 |               numpy._core._internal
+import time:     54030 |      54030 |               numpy._pytesttester
+import time:     19645 |    4178495 |             numpy._core
+import time:        56 |    4178551 |           numpy._core._multiarray_umath
+import time:    102974 |    4281524 |         numpy.__config__
+import time:    116082 |     116082 |                           numpy._typing._nbit_base
+import time:     95434 |      95434 |                           numpy._typing._nested_sequence
+import time:    145129 |     145129 |                           numpy._typing._shape
+import time:     41007 |     397651 |                         numpy._typing._array_like
+import time:    112205 |     112205 |                         numpy._typing._char_codes
+import time:     42763 |      42763 |                         numpy._typing._dtype_like
+import time:     10778 |      10778 |                         numpy._typing._nbit
+import time:     89365 |      89365 |                         numpy._typing._scalars
+import time:     30216 |      30216 |                         numpy._typing._ufunc
+import time:     12157 |     695131 |                       numpy._typing
+import time:     63921 |      63921 |                         numpy.lib._stride_tricks_impl
+import time:     57934 |     121854 |                       numpy.lib._twodim_base_impl
+import time:     33559 |      33559 |                         numpy.lib._array_utils_impl
+import time:     93760 |     127319 |                       numpy.lib.array_utils
+import time:      3073 |       3073 |                       numpy.linalg._umath_linalg
+import time:    230381 |    1177756 |                     numpy.linalg._linalg
+import time:     11881 |    1189637 |                   numpy.linalg
+import time:    165021 |    1354657 |                 numpy.matrixlib.defmatrix
+import time:     31523 |    1386180 |               numpy.matrixlib
+import time:     98863 |      98863 |                 numpy.lib._histograms_impl
+import time:    243617 |     342479 |               numpy.lib._function_base_impl
+import time:    141467 |    1870125 |             numpy.lib._index_tricks_impl
+import time:     92203 |    1962328 |           numpy.lib._arraypad_impl
+import time:    109510 |     109510 |           numpy.lib._arraysetops_impl
+import time:     55908 |      55908 |           numpy.lib._arrayterator_impl
+import time:    162405 |     162405 |           numpy.lib._nanfunctions_impl
+import time:    161234 |     161234 |                 numpy.lib._utils_impl
+import time:     77085 |     238318 |               numpy.lib._format_impl
+import time:     56959 |     295276 |             numpy.lib.format
+import time:     36041 |      36041 |             numpy.lib._datasource
+import time:     74065 |      74065 |             numpy.lib._iotools
+import time:     99839 |     505220 |           numpy.lib._npyio_impl
+import time:    142935 |     142935 |               numpy.lib._ufunclike_impl
+import time:     50622 |     193557 |             numpy.lib._type_check_impl
+import time:    176632 |     370189 |           numpy.lib._polynomial_impl
+import time:     77891 |      77891 |           numpy.lib._shape_base_impl
+import time:     16605 |      16605 |           numpy.lib._version
+import time:     21270 |      21270 |           numpy.lib.introspect
+import time:    207926 |     207926 |           numpy.lib.mixins
+import time:    160680 |     160680 |           numpy.lib.npyio
+import time:    106307 |     106307 |             numpy.lib._scimath_impl
+import time:     30325 |     136632 |           numpy.lib.scimath
+import time:     77197 |      77197 |           numpy.lib.stride_tricks
+import time:     37674 |    3901428 |         numpy.lib
+import time:     62856 |      62856 |         numpy._array_api_info
+import time:    220428 |    8893638 |       numpy
+import time:     34433 |      34433 |           llama_index.core.instrumentation.events.base
+import time:    102123 |     136556 |         llama_index.core.instrumentation.events
+import time:      5928 |     142484 |       llama_index.core.instrumentation.events.embedding
+import time:     78001 |    9140268 |     llama_index.core.base.embeddings.base
+import time:     52354 |      52354 |       llama_index.core.embeddings.multi_modal_base
+import time:     10192 |      62546 |     llama_index.core.embeddings.mock_embed_model
+import time:     68664 |      68664 |     llama_index.core.embeddings.pooling
+import time:     18351 |      18351 |     llama_index.core.embeddings.utils
+import time:     62451 |    9352279 |   llama_index.core.embeddings
+import time:        34 |    9352313 | llama_index.core.embeddings.mock_embed_model
+import time:     39407 |      39407 |                 llama_index.core.base.llms.base
+import time:     48992 |      48992 |                 llama_index.core.base.llms.generic_utils
+import time:     19764 |      19764 |                 llama_index.core.prompts.prompt_type
+import time:     25408 |      25408 |                 llama_index.core.prompts.utils
+import time:     36929 |      36929 |                 pydantic._internal._serializers
+import time:    127496 |     297993 |               llama_index.core.prompts.base
+import time:      2822 |       2822 |                             griffe._internal
+import time:     96083 |      98905 |                           griffe._internal.agents
+import time:     36281 |      36281 |                             griffe._internal.agents.nodes
+import time:     44961 |      44961 |                             griffe._internal.enumerations
+import time:     52396 |      52396 |                             griffe._internal.logger
+import time:     34844 |     168481 |                           griffe._internal.agents.nodes.runtime
+import time:    101265 |     101265 |                               griffe._internal.exceptions
+import time:     15051 |      15051 |                                   griffe._internal.agents.nodes.parameters
+import time:    285184 |     300235 |                                 griffe._internal.expressions
+import time:    128805 |     429039 |                               griffe._internal.merger
+import time:    179128 |     709431 |                             griffe._internal.mixins
+import time:     36272 |     745703 |                           griffe._internal.collections
+import time:      2864 |       2864 |                             griffe._internal.extensions
+import time:     88928 |      88928 |                             griffe._internal.agents.nodes.ast
+import time:     73879 |      73879 |                             griffe._internal.importer
+import time:    128990 |     294660 |                           griffe._internal.extensions.base
+import time:     10907 |      10907 |                             griffe._internal.c3linear
+import time:     16325 |      16325 |                               griffe._internal.docstrings
+import time:     99197 |      99197 |                               griffe._internal.docstrings.auto
+import time:     58755 |      58755 |                                 griffe._internal.docstrings.models
+import time:     26417 |      26417 |                                 griffe._internal.docstrings.utils
+import time:     80886 |     166057 |                               griffe._internal.docstrings.google
+import time:     76876 |      76876 |                               griffe._internal.docstrings.numpy
+import time:     87320 |      87320 |                               griffe._internal.docstrings.sphinx
+import time:     58424 |     504196 |                             griffe._internal.docstrings.parsers
+import time:    138825 |     653927 |                           griffe._internal.models
+import time:    132251 |    2093924 |                         griffe._internal.agents.inspector
+import time:     57988 |      57988 |                         griffe._internal.agents.nodes.assignments
+import time:     68162 |      68162 |                         griffe._internal.agents.nodes.docstrings
+import time:    108012 |     108012 |                           griffe._internal.agents.nodes.values
+import time:     37344 |     145355 |                         griffe._internal.agents.nodes.exports
+import time:     68506 |      68506 |                         griffe._internal.agents.nodes.imports
+import time:       224 |        224 |                             prune_source
+import time:     47218 |      47441 |                           griffe._internal.agents.parser
+import time:    162778 |     210219 |                         griffe._internal.agents.visitor
+import time:     55222 |      55222 |                           griffe._internal.git
+import time:    104387 |     159609 |                         griffe._internal.diff
+import time:    137945 |     137945 |                         griffe._internal.encoders
+import time:     22239 |      22239 |                         griffe._internal.extensions.dataclasses
+import time:     36342 |      36342 |                         griffe._internal.extensions.unpack_typeddict
+import time:     64480 |      64480 |                         griffe._internal.finder
+import time:     15091 |      15091 |                             griffe._internal.stats
+import time:     76288 |      91379 |                           griffe._internal.loader
+import time:     60266 |     151645 |                         griffe._internal.helpers
+import time:     43861 |      43861 |                             griffecli._internal
+import time:      1498 |       1498 |                               gettext
+import time:      1952 |       3449 |                             argparse
+import time:     29004 |      29004 |                                   colorama.ansi
+import time:       210 |        210 |                                     msvcrt
+import time:     19984 |      19984 |                                     colorama.win32
+import time:     34081 |      54274 |                                   colorama.winterm
+import time:     21743 |     105020 |                                 colorama.ansitowin32
+import time:     96843 |     201863 |                               colorama.initialise
+import time:     22295 |     224158 |                             colorama
+import time:     29493 |     300959 |                           griffecli._internal.cli
+import time:     33912 |     334871 |                         griffecli
+import time:     79269 |    3630546 |                       griffe
+import time:     61164 |    3691709 |                     banks.utils
+import time:     46048 |    3737756 |                   banks.config
+import time:     61523 |      61523 |                       jinja2.bccache
+import time:      1569 |       1569 |                           markupsafe._speedups
+import time:     65203 |      66771 |                         markupsafe
+import time:     61350 |      61350 |                           jinja2.utils
+import time:    114774 |     176123 |                         jinja2.nodes
+import time:    117879 |     117879 |                           jinja2.exceptions
+import time:    185352 |     185352 |                             jinja2.visitor
+import time:     41633 |     226984 |                           jinja2.idtracking
+import time:    108748 |     108748 |                           jinja2.optimizer
+import time:     87459 |     541069 |                         jinja2.compiler
+import time:    191175 |     191175 |                             jinja2.async_utils
+import time:    161265 |     161265 |                             jinja2.runtime
+import time:    295458 |     647897 |                           jinja2.filters
+import time:     87694 |      87694 |                           jinja2.tests
+import time:      2351 |     737941 |                         jinja2.defaults
+import time:     24150 |      24150 |                           jinja2._identifier
+import time:     93045 |     117194 |                         jinja2.lexer
+import time:     55360 |      55360 |                         jinja2.parser
+import time:    116340 |    1810796 |                       jinja2.environment
+import time:    126158 |     126158 |                       jinja2.loaders
+import time:     47982 |    2046459 |                     jinja2
+import time:     47216 |      47216 |                     jinja2.sandbox
+import time:     29071 |      29071 |                         banks.types
+import time:     25211 |      54282 |                       banks.filters.audio
+import time:     43755 |      43755 |                       banks.filters.cache_control
+import time:      3206 |       3206 |                       banks.filters.document
+import time:    105537 |     105537 |                       banks.filters.image
+import time:     12476 |      12476 |                         banks.errors
+import time:      2225 |       2225 |                         simplemma
+import time:     11820 |      26520 |                       banks.filters.lemmatize
+import time:     27565 |      27565 |                       banks.filters.tool
+import time:     16721 |      16721 |                       banks.filters.video
+import time:      1538 |       1538 |                             xml
+import time:      1977 |       3515 |                           xml.etree
+import time:      2516 |       2516 |                           xml.etree.ElementPath
+import time:      2909 |       2909 |                             pyexpat
+import time:      2909 |       5817 |                           _elementtree
+import time:      5147 |      16994 |                         xml.etree.ElementTree
+import time:      1833 |       1833 |                             xml.dom.domreg
+import time:      1536 |       3369 |                           xml.dom
+import time:       741 |        741 |                           xml.dom.minicompat
+import time:       602 |        602 |                             xml.dom.NodeFilter
+import time:       941 |       1542 |                           xml.dom.xmlbuilder
+import time:      3226 |       8877 |                         xml.dom.minidom
+import time:     31188 |      57057 |                       banks.filters.xml
+import time:     18113 |     352752 |                     banks.filters
+import time:     28914 |      28914 |                       banks.extensions
+import time:    112980 |     112980 |                       jinja2.ext
+import time:     26171 |     168065 |                     banks.extensions.chat
+import time:    132529 |     132529 |                     banks.extensions.completion
+import time:     54589 |    2801607 |                   banks.env
+import time:     10807 |      10807 |                     jinja2.meta
+import time:     20601 |      20601 |                     banks.cache
+import time:     33748 |      65156 |                   banks.prompt
+import time:     11874 |    6616392 |                 banks
+import time:     30595 |      30595 |                       llama_index.core.instrumentation.events.exception
+import time:     48403 |      48403 |                       llama_index.core.instrumentation.span
+import time:     37502 |      37502 |                       llama_index.core.instrumentation.events.llm
+import time:     47503 |     164002 |                     llama_index.core.llms.callbacks
+import time:     90589 |      90589 |                     llama_index.core.llms.llm
+import time:     60509 |     315098 |                   llama_index.core.llms.custom
+import time:     21434 |      21434 |                     llama_index.core.llms.function_calling
+import time:     51800 |      51800 |                     llama_index.core.llms.utils
+import time:     76444 |     149677 |                   llama_index.core.llms.mock
+import time:     28837 |     493611 |                 llama_index.core.llms
+import time:     80218 |    7190219 |               llama_index.core.prompts.rich
+import time:     18283 |      18283 |                 llama_index.core.prompts.mixin
+import time:     16694 |      34977 |               llama_index.core.prompts.display_utils
+import time:      2456 |    7525644 |             llama_index.core.prompts
+import time:        39 |    7525682 |           llama_index.core.prompts.mixin
+import time:     29804 |      29804 |               pydantic._internal._dataclasses
+import time:     26633 |      56436 |             pydantic.dataclasses
+import time:     31676 |      88112 |           llama_index.core.instrumentation.events.query
+import time:      2087 |    7615879 |         llama_index.core.base.base_query_engine
+import time:     12657 |      12657 |                 llama_index.core.llms.structured_llm
+import time:     38670 |      38670 |                               llama_index.core.node_parser.node_utils
+import time:    171307 |     209977 |                             llama_index.core.node_parser.interface
+import time:    157341 |     367318 |                           llama_index.core.node_parser.file.html
+import time:     25896 |      25896 |                           llama_index.core.node_parser.file.json
+import time:     31985 |      31985 |                           llama_index.core.node_parser.file.markdown
+import time:     79671 |      79671 |                           llama_index.core.node_parser.file.simple_file
+import time:     13293 |     518160 |                         llama_index.core.node_parser.file
+import time:        47 |     518207 |                       llama_index.core.node_parser.file.html
+import time:     97856 |      97856 |                                 llama_index.core.node_parser.text.code
+import time:     16035 |      16035 |                                 llama_index.core.node_parser.text.langchain
+import time:     40211 |      40211 |                                   llama_index.core.node_parser.text.utils
+import time:     82651 |     122862 |                                 llama_index.core.node_parser.text.semantic_splitter
+import time:    104074 |     104074 |                                 llama_index.core.node_parser.text.sentence
+import time:     62509 |      62509 |                                 llama_index.core.node_parser.text.sentence_window
+import time:     65692 |      65692 |                                 llama_index.core.node_parser.text.semantic_double_merging_splitter
+import time:     51741 |      51741 |                                 llama_index.core.node_parser.text.token
+import time:      2364 |     523130 |                               llama_index.core.node_parser.text
+import time:        48 |     523177 |                             llama_index.core.node_parser.text.sentence
+import time:    112809 |     635985 |                           llama_index.core.node_parser.relational.hierarchical
+import time:     65733 |      65733 |                                 tqdm._monitor
+import time:    207656 |     207656 |                                 tqdm._tqdm_pandas
+import time:     10669 |      10669 |                                       envwrap
+import time:    239661 |     250329 |                                     tqdm.utils
+import time:    119549 |     369877 |                                   tqdm.std
+import time:    203577 |     203577 |                                   tqdm.version
+import time:    262055 |     835507 |                                 tqdm.cli
+import time:    144441 |     144441 |                                 tqdm.gui
+import time:     70268 |    1323603 |                               tqdm
+import time:     90746 |    1414348 |                             llama_index.core.node_parser.relational.base_element
+import time:    242560 |     242560 |                             llama_index.core.node_parser.relational.utils
+import time:     69638 |    1726545 |                           llama_index.core.node_parser.relational.markdown_element
+import time:    134618 |     134618 |                           llama_index.core.node_parser.relational.unstructured_element
+import time:     66189 |      66189 |                           llama_index.core.node_parser.relational.llama_parse_json_element
+import time:     14179 |    2577515 |                         llama_index.core.node_parser.relational
+import time:        28 |    2577542 |                       llama_index.core.node_parser.relational.hierarchical
+import time:    140888 |    3236636 |                     llama_index.core.node_parser
+import time:        15 |    3236650 |                   llama_index.core.node_parser.text
+import time:        25 |    3236674 |                 llama_index.core.node_parser.text.token
+import time:     42082 |      42082 |                 llama_index.core.prompts.prompt_utils
+import time:     36147 |    3327559 |               llama_index.core.indices.prompt_helper
+import time:     42642 |    3370201 |             llama_index.core.settings
+import time:     35028 |      35028 |             llama_index.core.instrumentation.events.retrieval
+import time:     33537 |    3438765 |           llama_index.core.base.base_retriever
+import time:      1690 |       1690 |                                   concurrent.futures.thread
+import time:     95339 |      97028 |                                 fsspec.caching
+import time:     29875 |      29875 |                                 fsspec.callbacks
+import time:     46059 |      46059 |                                   fsspec.utils
+import time:      2738 |       2738 |                                     glob
+import time:      3778 |       3778 |                                       configparser
+import time:     65992 |      69770 |                                     fsspec.config
+import time:     43762 |      43762 |                                     fsspec.dircache
+import time:     12664 |      12664 |                                     fsspec.transaction
+import time:    103648 |     232580 |                                   fsspec.spec
+import time:       203 |        203 |                                   isal
+import time:      2045 |       2045 |                                   gzip
+import time:       149 |        149 |                                   lzmaffi
+import time:       128 |        128 |                                   snappy
+import time:        81 |         81 |                                     lz4
+import time:        57 |        137 |                                   lz4.frame
+import time:       113 |        113 |                                   backports
+import time:       120 |        120 |                                   zstandard
+import time:     30228 |     311758 |                                 fsspec.compression
+import time:     49786 |      49786 |                                   fsspec.registry
+import time:    107903 |     157689 |                                 fsspec.core
+import time:     19337 |      19337 |                                 fsspec.exceptions
+import time:    104695 |     104695 |                                 fsspec.mapping
+import time:     49295 |      49295 |                                 fsspec._version
+import time:     90603 |     860276 |                               fsspec
+import time:     25131 |      25131 |                                       llama_index.core.graph_stores.prompts
+import time:     22153 |      22153 |                                               llama_index.core.indices.query
+import time:    142981 |     142981 |                                               llama_index.core.vector_stores.types
+import time:     97420 |     262553 |                                             llama_index.core.indices.query.embedding_utils
+import time:    101360 |     101360 |                                             llama_index.core.vector_stores.utils
+import time:     66134 |     430046 |                                           llama_index.core.vector_stores.simple
+import time:     28990 |     459035 |                                         llama_index.core.vector_stores
+import time:        28 |     459063 |                                       llama_index.core.vector_stores.utils
+import time:    158705 |     642898 |                                     llama_index.core.graph_stores.types
+import time:     72984 |     715881 |                                   llama_index.core.graph_stores.simple
+import time:    198859 |     198859 |                                   llama_index.core.graph_stores.simple_labelled
+import time:    119022 |    1033762 |                                 llama_index.core.graph_stores
+import time:        36 |    1033798 |                               llama_index.core.graph_stores.simple
+Timeout (0:00:20)!
+Thread 0x00007f93c5a81740 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 1131 in get_data
+  File "<frozen importlib._bootstrap_external>", line 1032 in get_code
+  File "<frozen importlib._bootstrap_external>", line 936 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/storage/docstore/keyval_docstore.py", line 7 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/storage/docstore/simple_docstore.py", line 5 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/storage/docstore/__init__.py", line 2 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/storage/storage_context.py", line 21 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/storage/__init__.py", line 3 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/memory/types.py", line 8 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/memory/chat_memory_buffer.py", line 8 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/memory/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/chat_engine/types.py", line 20 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/chat_engine/condense_plus_context.py", line 17 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/chat_engine/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/base.py", line 10 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/composability/graph.py", line 7 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/composability/__init__.py", line 3 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  ...
+import time:     53494 |      53494 |                                               llama_index.core.storage.kvstore.types
+import time:     14408 |      67902 |                                             llama_index.core.storage.kvstore.simple_kvstore
+import time:     84744 |     152645 |                                           llama_index.core.storage.kvstore
+import time:        55 |     152699 |                                         llama_index.core.storage.kvstore.types
+import time:     83859 |     236558 |                                       llama_index.core.storage.docstore.types
+import time:     55121 |      55121 |                                       llama_index.core.storage.docstore.utils
+import time:    106534 |     398212 |                                     llama_index.core.storage.docstore.keyval_docstore
+import time:     44952 |     443163 |                                   llama_index.core.storage.docstore.simple_docstore
+import time:     49162 |     492325 |                                 llama_index.core.storage.docstore
+import time:        33 |     492358 |                               llama_index.core.storage.docstore.simple_docstore
+import time:     58731 |      58731 |                                       llama_index.core.storage.index_store.types
+import time:     19019 |      19019 |                                           llama_index.core.data_structs.document_summary
+import time:     42034 |      61053 |                                         llama_index.core.data_structs.registry
+import time:     47531 |     108583 |                                       llama_index.core.storage.index_store.utils
+import time:     31919 |     199231 |                                     llama_index.core.storage.index_store.keyval_index_store
+import time:     41896 |     241127 |                                   llama_index.core.storage.index_store.simple_index_store
+import time:     95622 |     336749 |                                 llama_index.core.storage.index_store
+import time:        30 |     336779 |                               llama_index.core.storage.index_store.simple_index_store
+import time:    127311 |    2850519 |                             llama_index.core.storage.storage_context
+import time:    102191 |    2952709 |                           llama_index.core.storage
+import time:     26120 |      26120 |                           llama_index.core.storage.chat_store.base
+import time:    117681 |     117681 |                           llama_index.core.storage.chat_store.simple_chat_store
+import time:     11197 |    3107706 |                         llama_index.core.storage.chat_store
+import time:     44988 |    3152694 |                       llama_index.core.memory.types
+import time:     77611 |    3230305 |                     llama_index.core.memory.chat_memory_buffer
+import time:     62794 |      62794 |                     llama_index.core.memory.chat_summary_memory_buffer
+import time:     86704 |      86704 |                     llama_index.core.memory.vector_memory
+import time:     78422 |      78422 |                     llama_index.core.memory.simple_composable_memory
+import time:     23728 |      23728 |                               sqlalchemy.util.preloaded
+import time:     87418 |      87418 |                                   sqlalchemy.util.typing
+import time:      3229 |      90646 |                                 sqlalchemy.util._collections_cy
+import time:      2981 |       2981 |                                 sqlalchemy.util._immutabledict_cy
+import time:     67143 |     160769 |                               sqlalchemy.util._collections
+import time:     51521 |      51521 |                               sqlalchemy.util.compat
+import time:     72073 |      72073 |                                   sqlalchemy.exc
+import time:    122333 |     194405 |                                 sqlalchemy.util.langhelpers
+import time:      1478 |     195882 |                               sqlalchemy.util.concurrency
+import time:     94563 |      94563 |                               sqlalchemy.util.deprecations
+import time:    121151 |     647613 |                             sqlalchemy.util
+import time:     36422 |      36422 |                                               sqlalchemy.event.registry
+import time:     31204 |      67625 |                                             sqlalchemy.event.legacy
+import time:     92124 |     159749 |                                           sqlalchemy.event.attr
+import time:     25974 |     185722 |                                         sqlalchemy.event.base
+import time:     75745 |     261467 |                                       sqlalchemy.event.api
+import time:     44934 |     306400 |                                     sqlalchemy.event
+import time:     97463 |      97463 |                                           sqlalchemy.log
+import time:    142301 |     239763 |                                         sqlalchemy.pool.base
+import time:     15580 |     255343 |                                       sqlalchemy.pool.events
+import time:     83877 |      83877 |                                         sqlalchemy.util.queue
+import time:     36021 |     119897 |                                       sqlalchemy.pool.impl
+import time:     28689 |     403928 |                                     sqlalchemy.pool
+import time:     25151 |      25151 |                                           sqlalchemy.sql.roles
+import time:     33091 |      33091 |                                           sqlalchemy.inspection
+import time:     18050 |      76292 |                                         sqlalchemy.sql._typing
+import time:     62668 |      62668 |                                             sqlalchemy.sql._util_cy
+import time:     52881 |     115548 |                                           sqlalchemy.sql.visitors
+import time:      3215 |       3215 |                                             sqlalchemy.sql._cache_key_cy
+import time:     34009 |      37224 |                                           sqlalchemy.sql.cache_key
+import time:     71965 |      71965 |                                             sqlalchemy.sql.operators
+import time:     71627 |     143592 |                                           sqlalchemy.sql.traversals
+import time:    132765 |     429128 |                                         sqlalchemy.sql.base
+import time:     86021 |      86021 |                                           sqlalchemy.sql.coercions
+import time:     82509 |      82509 |                                                 sqlalchemy.sql.annotation
+import time:     95359 |      95359 |                                                     sqlalchemy.sql.type_api
+import time:    148286 |     243644 |                                                   sqlalchemy.sql.elements
+import time:      3313 |       3313 |                                                           sqlalchemy.engine._processors_cy
+import time:     11040 |      14353 |                                                         sqlalchemy.engine.processors
+import time:    127636 |     141988 |                                                       sqlalchemy.sql.sqltypes
+import time:     37822 |     179810 |                                                     sqlalchemy.sql._annotated_cols
+import time:    332121 |     511930 |                                                   sqlalchemy.sql.selectable
+import time:     17581 |      17581 |                                                   sqlalchemy.util.topological
+import time:     58989 |     832144 |                                                 sqlalchemy.sql.ddl
+import time:    182606 |     182606 |                                                 sqlalchemy.sql.schema
+import time:     92386 |    1189643 |                                               sqlalchemy.sql.util
+import time:    100073 |    1289716 |                                             sqlalchemy.sql.dml
+import time:     62977 |    1352693 |                                           sqlalchemy.sql.crud
+import time:     74586 |      74586 |                                           sqlalchemy.sql.functions
+import time:    315816 |    1829115 |                                         sqlalchemy.sql.compiler
+import time:     87875 |      87875 |                                           sqlalchemy.sql._dml_constructors
+import time:     72127 |      72127 |                                           sqlalchemy.sql._elements_constructors
+import time:     36619 |      36619 |                                           sqlalchemy.sql._selectable_constructors
+import time:     44773 |      44773 |                                           sqlalchemy.sql.lambdas
+import time:     46352 |     287744 |                                         sqlalchemy.sql.expression
+import time:     52086 |      52086 |                                         sqlalchemy.sql.default_comparator
+import time:     16368 |      16368 |                                           sqlalchemy.sql.events
+import time:     47560 |      63928 |                                         sqlalchemy.sql.naming
+import time:     78162 |    2816451 |                                       sqlalchemy.sql
+import time:        28 |    2816478 |                                     sqlalchemy.sql.compiler
+import time:    122700 |    3649505 |                                   sqlalchemy.engine.interfaces
+import time:      2269 |       2269 |                                     sqlalchemy.engine._util_cy
+import time:     27483 |      29752 |                                   sqlalchemy.engine.util
+import time:    158293 |    3837548 |                                 sqlalchemy.engine.base
+import time:    104902 |    3942450 |                               sqlalchemy.engine.events
+import time:     47995 |      47995 |                                   sqlalchemy.dialects
+import time:     71513 |     119507 |                                 sqlalchemy.engine.url
+import time:     26328 |      26328 |                                 sqlalchemy.engine.mock
+import time:     48717 |     194551 |                               sqlalchemy.engine.create
+import time:      2860 |       2860 |                                       sqlalchemy.engine._row_cy
+import time:     45609 |      48468 |                                     sqlalchemy.engine.row
+import time:    179289 |     227756 |                                   sqlalchemy.engine._result_cy
+import time:    110179 |     337935 |                                 sqlalchemy.engine.result
+import time:     69411 |     407345 |                               sqlalchemy.engine.cursor
+import time:     57757 |      57757 |                               sqlalchemy.engine.reflection
+import time:      2459 |    4604560 |                             sqlalchemy.engine
+import time:     31271 |      31271 |                             sqlalchemy.schema
+import time:     10894 |      10894 |                             sqlalchemy.types
+import time:     69329 |      69329 |                               sqlalchemy.engine.characteristics
+import time:    106133 |     175461 |                             sqlalchemy.engine.default
+import time:     31793 |    5501589 |                           sqlalchemy
+import time:     19468 |    5521057 |                         sqlalchemy.ext
+import time:     32064 |      32064 |                           sqlalchemy.ext.asyncio.exc
+import time:    116312 |     116312 |                           sqlalchemy.ext.asyncio.base
+import time:    138819 |     138819 |                           sqlalchemy.ext.asyncio.result
+import time:    126463 |     413656 |                         sqlalchemy.ext.asyncio.engine
+import time:     39984 |      39984 |                                           sqlalchemy.sql._orm_types
+import time:    122730 |     162714 |                                         sqlalchemy.orm._typing
+import time:     66911 |     229624 |                                       sqlalchemy.orm.base
+import time:     40346 |      40346 |                                       sqlalchemy.orm.mapped_collection
+import time:     67592 |     337561 |                                     sqlalchemy.orm.collections
+import time:     39485 |      39485 |                                       sqlalchemy.orm.path_registry
+import time:    120884 |     160369 |                                     sqlalchemy.orm.interfaces
+import time:     45717 |     543646 |                                   sqlalchemy.orm.attributes
+import time:     88492 |     632138 |                                 sqlalchemy.orm.util
+import time:     24069 |     656207 |                               sqlalchemy.orm.exc
+import time:    106849 |     106849 |                                   sqlalchemy.orm.state
+import time:    132020 |     238869 |                                 sqlalchemy.orm.instrumentation
+import time:     19601 |      19601 |                                       sqlalchemy.future.engine
+import time:     79832 |      99432 |                                     sqlalchemy.future
+import time:     73304 |     172736 |                                   sqlalchemy.orm.context
+import time:    232608 |     232608 |                                       sqlalchemy.orm.descriptor_props
+import time:    204253 |     204253 |                                       sqlalchemy.orm.relationships
+import time:    125092 |     561952 |                                     sqlalchemy.orm.properties
+import time:    176402 |     176402 |                                     sqlalchemy.orm.query
+import time:    137060 |     137060 |                                     sqlalchemy.orm.unitofwork
+import time:    111844 |     111844 |                                         sqlalchemy.orm.evaluator
+import time:    160350 |     160350 |                                           sqlalchemy.orm.sync
+import time:    128742 |     289091 |                                         sqlalchemy.orm.persistence
+import time:    191910 |     592844 |                                       sqlalchemy.orm.bulk_persistence
+import time:     25951 |      25951 |                                       sqlalchemy.orm.identity
+import time:     21467 |      21467 |                                       sqlalchemy.orm.state_changes
+import time:    425102 |    1065363 |                                     sqlalchemy.orm.session
+import time:    144481 |     144481 |                                     sqlalchemy.orm.strategy_options
+import time:    163247 |    2248501 |                                   sqlalchemy.orm.strategies
+import time:    127031 |    2548267 |                                 sqlalchemy.orm.loading
+import time:    360501 |    3147635 |                               sqlalchemy.orm.mapper
+import time:    124773 |     124773 |                               sqlalchemy.orm._orm_constructors
+import time:     75505 |      75505 |                                 sqlalchemy.orm.clsregistry
+import time:    107584 |     107584 |                                 sqlalchemy.orm.decl_base
+import time:    138218 |     321305 |                               sqlalchemy.orm.decl_api
+import time:    176059 |     176059 |                                 sqlalchemy.orm.writeonly
+import time:     51872 |     227930 |                               sqlalchemy.orm.dynamic
+import time:    176176 |     176176 |                                 sqlalchemy.orm.scoping
+import time:    145453 |     321629 |                               sqlalchemy.orm.events
+import time:    119352 |     119352 |                               sqlalchemy.orm.dependency
+import time:     64981 |    4983809 |                             sqlalchemy.orm
+import time:     92094 |    5075903 |                           sqlalchemy.ext.asyncio.session
+import time:    105786 |    5181688 |                         sqlalchemy.ext.asyncio.scoping
+import time:      4576 |       4576 |                           greenlet._greenlet
+import time:     65733 |      70308 |                         greenlet
+import time:     61982 |   11248689 |                       sqlalchemy.ext.asyncio
+import time:    132788 |     132788 |                       llama_index.core.storage.chat_store.base_db
+import time:    286004 |     286004 |                       llama_index.core.storage.chat_store.sql
+import time:      1601 |       1601 |                       encodings.unicode_escape
+import time:     95387 |   11764467 |                     llama_index.core.memory.memory
+import time:     13706 |      13706 |                       llama_index.core.memory.memory_blocks.static
+import time:     67705 |      67705 |                               llama_index.core.indices.utils
+import time:    101209 |     101209 |                               llama_index.core.postprocessor.types
+import time:    101523 |     101523 |                               llama_index.core.prompts.chat_prompts
+import time:    156252 |     156252 |                               llama_index.core.prompts.default_prompts
+import time:     53934 |     480621 |                             llama_index.core.postprocessor.llm_rerank
+import time:     82184 |      82184 |                               llama_index.core.instrumentation.events.rerank
+import time:     46220 |     128404 |                             llama_index.core.postprocessor.structured_llm_rerank
+import time:     43111 |      43111 |                             llama_index.core.postprocessor.metadata_replacement
+import time:      1145 |       1145 |                                       llama_index.llms
+import time:       575 |       1720 |                                     llama_index.llms.cohere
+import time:    140120 |     141839 |                                   llama_index.core.prompts.default_prompt_selectors
+import time:     62039 |      62039 |                                     llama_index.core.instrumentation.events.synthesis
+import time:     72081 |     134120 |                                   llama_index.core.response_synthesizers.base
+import time:     57347 |     333305 |                                 llama_index.core.response_synthesizers.accumulate
+import time:     26620 |      26620 |                                       llama_index.core.response
+import time:     29610 |      56230 |                                     llama_index.core.response.utils
+import time:    164961 |     221191 |                                   llama_index.core.response_synthesizers.refine
+import time:     17829 |     239019 |                                 llama_index.core.response_synthesizers.compact_and_refine
+import time:     92783 |      92783 |                                   llama_index.core.response_synthesizers.compact_and_accumulate
+import time:     14429 |      14429 |                                   llama_index.core.response_synthesizers.context_only
+import time:    100719 |     100719 |                                   llama_index.core.response_synthesizers.generation
+import time:     57975 |      57975 |                                   llama_index.core.response_synthesizers.no_text
+import time:      1558 |       1558 |                                   llama_index.core.response_synthesizers.simple_summarize
+import time:     25847 |      25847 |                                   llama_index.core.response_synthesizers.tree_summarize
+import time:     49565 |      49565 |                                   llama_index.core.response_synthesizers.type
+import time:     26579 |     369451 |                                 llama_index.core.response_synthesizers.factory
+import time:     18448 |     960222 |                               llama_index.core.response_synthesizers
+import time:    119453 |    1079675 |                             llama_index.core.postprocessor.node
+import time:     53652 |      53652 |                             llama_index.core.postprocessor.node_recency
+import time:    129899 |     129899 |                             llama_index.core.postprocessor.optimizer
+import time:    109818 |     109818 |                             llama_index.core.postprocessor.pii
+import time:     42790 |      42790 |                             llama_index.core.postprocessor.sbert_rerank
+import time:     25845 |    2093810 |                           llama_index.core.postprocessor
+import time:        60 |    2093870 |                         llama_index.core.postprocessor.types
+import time:     64201 |    2158071 |                       llama_index.core.memory.memory_blocks.vector
+import time:    119417 |     119417 |                       llama_index.core.memory.memory_blocks.fact
+import time:    127016 |    2418208 |                     llama_index.core.memory.memory_blocks
+import time:     46694 |   17687590 |                   llama_index.core.memory
+import time:     91220 |      91220 |                       llama_index.core.tools.types
+import time:     65800 |      65800 |                       llama_index.core.tools.utils
+import time:      2604 |       2604 |                                 pkgutil
+import time:     43627 |      43627 |                                           workflows.context.utils
+import time:     36728 |      80355 |                                         workflows.context.serializers
+import time:     26729 |      26729 |                                             workflows.collect
+import time:     16751 |      16751 |                                             workflows.errors
+import time:     73975 |      73975 |                                             workflows.events
+import time:     33605 |      33605 |                                             workflows.resource
+import time:    120202 |     120202 |                                             workflows.utils
+import time:    116924 |     116924 |                                             workflows.retry_policy
+import time:     46679 |     434864 |                                           workflows.decorators
+import time:    137562 |     572425 |                                         workflows.context.state_store
+import time:     79815 |     732594 |                                       workflows.context.context_types
+import time:       876 |        876 |                                           workflows.runtime
+import time:      1109 |       1985 |                                         workflows.runtime.types
+import time:     85284 |      85284 |                                         workflows._catch_error
+import time:     44476 |      44476 |                                         workflows._event_matching
+import time:    140057 |     140057 |                                         workflows._stream_levels
+import time:     91198 |      91198 |                                             workflows.runtime.types.step_id
+import time:    104225 |     195423 |                                           workflows.runtime.types.results
+import time:     93319 |     288742 |                                         workflows.runtime.types.commands
+import time:    385910 |     385910 |                                         workflows.runtime.types.ticks
+import time:    108889 |     108889 |                                               workflows.runtime.types.named_task
+import time:    187548 |     296437 |                                             workflows.runtime.types.plugin
+import time:    118597 |     118597 |                                             workflows.types
+import time:     35609 |     450643 |                                           workflows.handler
+import time:     88191 |     538833 |                                         workflows.workflow
+import time:    414070 |    1899354 |                                       workflows.runtime.types.internal_state
+import time:     20997 |    2652943 |                                     workflows.context.external_context
+import time:    100016 |     100016 |                                     workflows.context.internal_context
+import time:     54254 |      54254 |                                     workflows.context.pre_context
+import time:     82069 |    2889280 |                                   workflows.context.context
+import time:    125180 |    3014459 |                                 workflows.context
+import time:     37611 |    3054674 |                               workflows
+import time:        66 |    3054739 |                             workflows.context
+import time:     70893 |    3125632 |                           llama_index.core.workflow.context
+import time:     58938 |      58938 |                           llama_index.core.workflow.context_serializers
+import time:    201081 |     201081 |                           llama_index.core.workflow.decorators
+import time:    165831 |     165831 |                           llama_index.core.workflow.errors
+import time:     51772 |      51772 |                           llama_index.core.workflow.events
+import time:     96474 |      96474 |                           llama_index.core.workflow.workflow
+import time:     32330 |    3732055 |                         llama_index.core.workflow
+import time:        42 |    3732096 |                       llama_index.core.workflow.context
+import time:    118058 |    4007173 |                     llama_index.core.tools.function_tool
+import time:    133523 |     133523 |                     llama_index.core.tools.query_engine
+import time:    103694 |     103694 |                     llama_index.core.tools.query_plan
+import time:      7380 |       7380 |                     llama_index.core.tools.retriever_tool
+import time:     74004 |      74004 |                     llama_index.core.tools.calling
+import time:     12477 |    4338248 |                   llama_index.core.tools
+import time:     85534 |      85534 |                   llama_index.core.instrumentation.events.chat_engine
+import time:     56170 |   22167541 |                 llama_index.core.chat_engine.types
+import time:     47695 |      47695 |                 llama_index.core.indices.base_retriever
+import time:      3171 |       3171 |                 llama_index.core.indices.query.schema
+import time:    124136 |     124136 |                 llama_index.core.chat_engine.utils
+import time:    226962 |   22569502 |               llama_index.core.chat_engine.condense_plus_context
+Timeout (0:00:20)!
+Thread 0x00007f93c5a81740 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 1131 in get_data
+  File "<frozen importlib._bootstrap_external>", line 1032 in get_code
+  File "<frozen importlib._bootstrap_external>", line 936 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/chat_engine/__init__.py", line 4 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/base.py", line 10 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/composability/graph.py", line 7 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/composability/__init__.py", line 3 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/__init__.py", line 4 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/__init__.py", line 26 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/__init__.py", line 126 in import_module
+  File "<string>", line 4 in <module>
+import time:    215966 |     215966 |               llama_index.core.chat_engine.condense_question
+import time:    159702 |     159702 |               llama_index.core.chat_engine.context
+import time:     48366 |      48366 |               llama_index.core.chat_engine.simple
+import time:    152405 |     152405 |               llama_index.core.chat_engine.multi_modal_context
+import time:    115720 |     115720 |               llama_index.core.chat_engine.multi_modal_condense_plus_context
+import time:     30476 |   23292133 |             llama_index.core.chat_engine
+import time:        35 |   23292168 |           llama_index.core.chat_engine.types
+import time:    200775 |     200775 |             llama_index.core.ingestion.cache
+import time:       961 |        961 |                   multiprocessing.process
+import time:       855 |        855 |                   multiprocessing.reduction
+import time:      1848 |       3663 |                 multiprocessing.context
+import time:      5245 |       8907 |               multiprocessing
+import time:      1050 |       1050 |                   _multiprocessing
+import time:       796 |        796 |                   multiprocessing.util
+import time:       114 |        114 |                   _winapi
+import time:      1304 |       3264 |                 multiprocessing.connection
+import time:       704 |        704 |                 multiprocessing.queues
+import time:      3729 |       7695 |               concurrent.futures.process
+import time:    171773 |     171773 |                   llama_index.core.readers.base
+import time:    145353 |     145353 |                     llama_index.core.readers.file
+import time:     65082 |      65082 |                       fsspec.implementations
+import time:    124164 |     189246 |                     fsspec.implementations.local
+import time:    154002 |     488600 |                   llama_index.core.readers.file.base
+import time:     17268 |      17268 |                   llama_index.core.readers.string_iterable
+import time:    209026 |     886665 |                 llama_index.core.readers
+import time:        24 |     886689 |               llama_index.core.readers.base
+import time:    161195 |    1064484 |             llama_index.core.ingestion.pipeline
+import time:    111949 |    1377207 |           llama_index.core.ingestion
+import time:     31958 |   28140096 |         llama_index.core.indices.base
+import time:     38078 |   35794052 |       llama_index.core.indices.composability.graph
+import time:     45231 |   35839283 |     llama_index.core.indices.composability
+import time:        43 |   35839325 |   llama_index.core.indices.composability.graph
+import time:     58058 |      58058 |     llama_index.core.indices.document_summary.base
+import time:    155613 |     155613 |     llama_index.core.indices.document_summary.retrievers
+import time:     11328 |     224998 |   llama_index.core.indices.document_summary
+import time:     31548 |      31548 |       llama_index.core.indices.empty.base
+import time:     56963 |      56963 |       llama_index.core.indices.empty.retrievers
+import time:      9685 |      98195 |     llama_index.core.indices.empty
+import time:        42 |      98237 |   llama_index.core.indices.empty.base
+import time:     65878 |      65878 |         llama_index.core.indices.keyword_table.utils
+import time:     69711 |     135589 |       llama_index.core.indices.keyword_table.base
+import time:     18671 |      18671 |       llama_index.core.indices.keyword_table.rake_base
+import time:     12318 |      12318 |       llama_index.core.indices.keyword_table.retrievers
+import time:     80999 |      80999 |       llama_index.core.indices.keyword_table.simple_base
+import time:     33036 |     280611 |     llama_index.core.indices.keyword_table
+import time:        31 |     280641 |   llama_index.core.indices.keyword_table.base
+import time:     86873 |      86873 |     llama_index.core.indices.knowledge_graph.base
+import time:    170864 |     170864 |     llama_index.core.indices.knowledge_graph.retrievers
+import time:      4172 |     261908 |   llama_index.core.indices.knowledge_graph
+import time:    140348 |     140348 |     llama_index.core.indices.list.base
+import time:     45843 |      45843 |     llama_index.core.indices.list.retrievers
+import time:     16856 |     203046 |   llama_index.core.indices.list
+import time:    134331 |     134331 |               llama_index.core.image_retriever
+import time:     26882 |     161212 |             llama_index.core.base.base_multi_modal_retriever
+import time:     62823 |     224034 |           llama_index.core.indices.multi_modal.retriever
+import time:     49444 |      49444 |               llama_index.core.indices.vector_store.base
+import time:     33110 |      33110 |                 llama_index.core.indices.vector_store.retrievers.retriever
+import time:     21322 |      21322 |                     llama_index.core.base.base_auto_retriever
+import time:     30422 |      30422 |                                 yaml.error
+import time:     37580 |      37580 |                                 yaml.tokens
+import time:     33124 |      33124 |                                 yaml.events
+import time:     54586 |      54586 |                                 yaml.nodes
+import time:     66286 |      66286 |                                   yaml.reader
+import time:     78832 |      78832 |                                   yaml.scanner
+import time:     37493 |      37493 |                                   yaml.parser
+import time:     61743 |      61743 |                                   yaml.composer
+import time:     73630 |      73630 |                                   yaml.constructor
+import time:     49614 |      49614 |                                   yaml.resolver
+import time:     36418 |     404012 |                                 yaml.loader
+import time:    110638 |     110638 |                                   yaml.emitter
+import time:     61150 |      61150 |                                   yaml.serializer
+import time:     91381 |      91381 |                                   yaml.representer
+import time:     12979 |     276147 |                                 yaml.dumper
+import time:    144039 |     144039 |                                   yaml._yaml
+import time:    370965 |     515004 |                                 yaml.cyaml
+import time:     84064 |    1434937 |                               yaml
+import time:     91582 |      91582 |                               llama_index.core.output_parsers.base
+import time:      5601 |    1532119 |                             llama_index.core.output_parsers.utils
+import time:     12620 |    1544738 |                           llama_index.core.output_parsers.pydantic
+import time:     52393 |      52393 |                           llama_index.core.output_parsers.selection
+import time:     11426 |    1608556 |                         llama_index.core.output_parsers
+import time:        33 |    1608589 |                       llama_index.core.output_parsers.base
+import time:     22149 |    1630737 |                     llama_index.core.indices.vector_store.retrievers.auto_retriever.output_parser
+import time:     66056 |      66056 |                     llama_index.core.indices.vector_store.retrievers.auto_retriever.prompts
+import time:    121103 |    1839217 |                   llama_index.core.indices.vector_store.retrievers.auto_retriever.auto_retriever
+import time:     13019 |    1852236 |                 llama_index.core.indices.vector_store.retrievers.auto_retriever
+import time:      9031 |    1894375 |               llama_index.core.indices.vector_store.retrievers
+import time:     24412 |    1968230 |             llama_index.core.indices.vector_store
+import time:        32 |    1968262 |           llama_index.core.indices.vector_store.base
+import time:     58055 |      58055 |               llama_index.core.multi_modal_llms.base
+import time:    167480 |     225535 |             llama_index.core.multi_modal_llms
+import time:        29 |     225564 |           llama_index.core.multi_modal_llms.base
+import time:     75263 |      75263 |                   llama_index.core.indices.struct_store.json_query
+import time:     29899 |      29899 |                   llama_index.core.indices.struct_store.pandas
+import time:     28154 |      28154 |                         llama_index.core.indices.common
+import time:     53492 |      81645 |                       llama_index.core.indices.common.struct_store
+import time:     53303 |     134948 |                     llama_index.core.indices.common.struct_store.schema
+import time:     22317 |      22317 |                         llama_index.core.utilities.sql_wrapper
+import time:     20854 |      43170 |                       llama_index.core.indices.common.struct_store.base
+import time:     63256 |     106426 |                     llama_index.core.indices.common.struct_store.sql
+import time:      1467 |       1467 |                     llama_index.core.indices.struct_store.base
+import time:     55651 |      55651 |                     llama_index.core.indices.struct_store.container_builder
+import time:    130809 |     429299 |                   llama_index.core.indices.struct_store.sql
+import time:     35439 |      35439 |                             llama_index.core.objects.base_node_mapping
+import time:     57253 |      92692 |                           llama_index.core.objects.base
+import time:     47778 |      47778 |                           llama_index.core.objects.table_node_mapping
+import time:     28326 |      28326 |                           llama_index.core.objects.tool_node_mapping
+import time:     31846 |     200640 |                         llama_index.core.objects
+import time:        46 |     200685 |                       llama_index.core.objects.base
+import time:    122207 |     322891 |                     llama_index.core.indices.struct_store.sql_retriever
+import time:     68962 |     391853 |                   llama_index.core.indices.struct_store.sql_query
+import time:     46985 |     973296 |                 llama_index.core.indices.struct_store
+import time:        27 |     973323 |               llama_index.core.indices.struct_store.sql_query
+import time:     61461 |      61461 |               llama_index.core.query_engine.citation_query_engine
+import time:    100001 |     100001 |               llama_index.core.query_engine.cogniswitch_query_engine
+import time:     32083 |      32083 |               llama_index.core.query_engine.custom
+import time:     55713 |      55713 |                 llama_index.core.query_engine.flare
+import time:      6423 |       6423 |                   llama_index.core.query_engine.flare.schema
+import time:     63715 |      70138 |                 llama_index.core.query_engine.flare.answer_inserter
+import time:     27517 |      27517 |                 llama_index.core.query_engine.flare.output_parser
+import time:     23458 |      23458 |                 llama_index.core.query_engine.retriever_query_engine
+import time:     51835 |     228660 |               llama_index.core.query_engine.flare.base
+import time:     36672 |      36672 |               llama_index.core.query_engine.graph_query_engine
+import time:    115443 |     115443 |                 llama_index.core.query_engine.jsonalyze.jsonalyze_query_engine
+import time:     24460 |     139902 |               llama_index.core.query_engine.jsonalyze
+import time:    149225 |     149225 |               llama_index.core.query_engine.knowledge_graph_query_engine
+import time:      9642 |       9642 |                 llama_index.core.indices.query.base
+import time:     22987 |      32629 |               llama_index.core.query_engine.multi_modal
+import time:     17294 |      17294 |                       llama_index.core.indices.query.query_transform.prompts
+import time:     42530 |      59823 |                     llama_index.core.indices.query.query_transform.base
+import time:     58898 |     118721 |                   llama_index.core.indices.query.query_transform
+import time:        87 |     118807 |                 llama_index.core.indices.query.query_transform.base
+import time:     85566 |     204373 |               llama_index.core.query_engine.multistep_query_engine
+import time:     17917 |      17917 |                   llama_index.core.query_engine.pandas.output_parser
+import time:     23311 |      23311 |                   llama_index.core.query_engine.pandas.pandas_query_engine
+import time:     74187 |     115413 |                 llama_index.core.query_engine.pandas
+import time:        36 |     115449 |               llama_index.core.query_engine.pandas.pandas_query_engine
+import time:     39431 |      39431 |                       llama_index.core.evaluation.base
+import time:     19949 |      59379 |                     llama_index.core.evaluation.answer_relevancy
+import time:     48382 |      48382 |                         tenacity._utils
+import time:    106825 |     106825 |                         tenacity.after
+import time:    121930 |     121930 |                         tenacity.before
+import time:     35016 |      35016 |                         tenacity.before_sleep
+import time:     16133 |      16133 |                         tenacity.nap
+import time:     29682 |      29682 |                         tenacity.retry
+import time:     88330 |      88330 |                         tenacity.stop
+import time:     82909 |      82909 |                         tenacity.wait
+import time:       197 |        197 |                         tornado
+import time:     66261 |      66261 |                           tenacity.asyncio.retry
+import time:     79547 |     145808 |                         tenacity.asyncio
+import time:    107145 |     782352 |                       tenacity
+import time:     24359 |     806711 |                     llama_index.core.evaluation.batch_runner
+import time:     72295 |      72295 |                     llama_index.core.evaluation.context_relevancy
+import time:    106787 |     106787 |                       llama_index.core.evaluation.eval_utils
+import time:     82901 |     189687 |                     llama_index.core.evaluation.correctness
+import time:     73435 |      73435 |                     llama_index.core.evaluation.dataset_generation
+import time:     81533 |      81533 |                     llama_index.core.evaluation.faithfulness
+import time:     99378 |      99378 |                     llama_index.core.evaluation.guideline
+import time:     98015 |      98015 |                         llama_index.core.evaluation.retrieval
+import time:     51856 |      51856 |                           llama_index.core.evaluation.retrieval.metrics_base
+import time:    197588 |     249443 |                         llama_index.core.evaluation.retrieval.metrics
+import time:     99263 |     446720 |                       llama_index.core.evaluation.retrieval.base
+import time:    210846 |     657566 |                     llama_index.core.evaluation.notebook_utils
+import time:    180911 |     180911 |                     llama_index.core.evaluation.pairwise
+import time:    165457 |     165457 |                     llama_index.core.evaluation.relevancy
+import time:    162720 |     162720 |                     llama_index.core.evaluation.retrieval.evaluator
+import time:    911397 |     911397 |                     llama_index.core.evaluation.semantic_similarity
+import time:     33110 |    3493573 |                   llama_index.core.evaluation
+import time:        49 |    3493621 |                 llama_index.core.evaluation.base
+import time:    195646 |     195646 |                 llama_index.core.indices.query.query_transform.feedback_transform
+import time:    113878 |    3803144 |               llama_index.core.query_engine.retry_query_engine
+import time:   1228019 |    1228019 |               llama_index.core.query_engine.retry_source_query_engine
+import time:     41957 |      41957 |                 llama_index.core.base.base_selector
+import time:     97522 |      97522 |                     llama_index.core.selectors.embedding_selectors
+import time:     78658 |      78658 |                       llama_index.core.selectors.prompts
+import time:     49479 |     128136 |                     llama_index.core.selectors.llm_selectors
+import time:    410815 |     410815 |                           llama_index.core.program.utils
+import time:    905912 |    1316727 |                         llama_index.core.program.llm_program
+import time:    710943 |     710943 |                         llama_index.core.program.function_program
+import time:    284861 |     284861 |                         llama_index.core.program.multi_modal_llm_program
+import time:    127250 |    2439779 |                       llama_index.core.program
+import time:     66209 |    2505987 |                     llama_index.core.selectors.pydantic_selectors
+import time:     28261 |    2759905 |                   llama_index.core.selectors
+import time:    557579 |    3317484 |                 llama_index.core.selectors.utils
+import time:     89113 |    3448553 |               llama_index.core.query_engine.router_query_engine
+import time:     81329 |      81329 |               llama_index.core.query_engine.sql_join_query_engine
+import time:     92926 |      92926 |               llama_index.core.query_engine.sql_vector_query_engine
+import time:     59582 |      59582 |                         llama_index.core.question_gen.types
+import time:     46176 |     105757 |                       llama_index.core.question_gen.output_parser
+import time:    126436 |     126436 |                       llama_index.core.question_gen.prompts
+import time:    157179 |     389371 |                     llama_index.core.question_gen.llm_generators
+import time:   1747500 |    2136871 |                   llama_index.core.question_gen
+import time:        65 |    2136935 |                 llama_index.core.question_gen.llm_generators
+import time:     31014 |    2167949 |               llama_index.core.query_engine.sub_question_query_engine
+import time:     35402 |      35402 |               llama_index.core.query_engine.transform_query_engine
+import time:     36042 |   12967129 |             llama_index.core.query_engine
+import time:        37 |   12967165 |           llama_index.core.query_engine.multi_modal
+import time:     41051 |   15426074 |         llama_index.core.indices.multi_modal.base
+import time:      2645 |   15428719 |       llama_index.core.indices.multi_modal
+Timeout (0:00:20)!
+Thread 0x00007f93c5a81740 (most recent call first):
+  File "<frozen importlib._bootstrap_external>", line 1131 in get_data
+  File "<frozen importlib._bootstrap_external>", line 1073 in get_code
+  File "<frozen importlib._bootstrap_external>", line 936 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/property_graph/transformations/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/property_graph/base.py", line 17 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/property_graph/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/registry.py", line 13 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/loading.py", line 6 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/indices/__init__.py", line 30 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/core/__init__.py", line 26 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/__init__.py", line 126 in import_module
+  File "<string>", line 4 in <module>
+import time:    162850 |     162850 |             llama_index.core.indices.property_graph.transformations.implicit
+import time:    109550 |     109550 |               llama_index.core.indices.property_graph.transformations.utils
+import time:     78688 |     188237 |             llama_index.core.indices.property_graph.transformations.schema_llm
+import time:    154374 |     154374 |               llama_index.core.indices.property_graph.utils
+import time:     44717 |     199091 |             llama_index.core.indices.property_graph.transformations.simple_llm
+import time:    158963 |     158963 |             llama_index.core.indices.property_graph.transformations.dynamic_llm
+import time:   1081170 |    1790310 |           llama_index.core.indices.property_graph.transformations
+import time:    280832 |    2071141 |         llama_index.core.indices.property_graph.base
+import time:      9306 |       9306 |             llama_index.core.indices.property_graph.sub_retrievers
+import time:    112201 |     121506 |           llama_index.core.indices.property_graph.sub_retrievers.base
+import time:     74095 |     195601 |         llama_index.core.indices.property_graph.retriever
+import time:     16489 |      16489 |         llama_index.core.indices.property_graph.sub_retrievers.custom
+import time:     34469 |      34469 |         llama_index.core.indices.property_graph.sub_retrievers.cypher_template
+import time:     16657 |      16657 |         llama_index.core.indices.property_graph.sub_retrievers.llm_synonym
+import time:    103185 |     103185 |         llama_index.core.indices.property_graph.sub_retrievers.text_to_cypher
+import time:    232847 |     232847 |         llama_index.core.indices.property_graph.sub_retrievers.vector
+import time:     42860 |    2713244 |       llama_index.core.indices.property_graph
+import time:      8082 |       8082 |                 llama_index.core.indices.common_tree
+import time:     82996 |      82996 |                 llama_index.core.storage.docstore.registry
+import time:    302907 |     393984 |               llama_index.core.indices.common_tree.base
+import time:    116510 |     116510 |                 llama_index.core.indices.tree.utils
+import time:    102117 |     218627 |               llama_index.core.indices.tree.inserter
+import time:     70555 |     683164 |             llama_index.core.indices.tree.base
+import time:    193094 |     876258 |           llama_index.core.indices.tree.all_leaf_retriever
+import time:    218219 |     218219 |             llama_index.core.indices.tree.select_leaf_retriever
+import time:    229945 |     448164 |           llama_index.core.indices.tree.select_leaf_embedding_retriever
+import time:    256534 |     256534 |           llama_index.core.indices.tree.tree_root_retriever
+import time:    286518 |    1867473 |         llama_index.core.indices.tree
+import time:        30 |    1867503 |       llama_index.core.indices.tree.base
+import time:    106859 |   20116323 |     llama_index.core.indices.registry
+import time:    117815 |   20234137 |   llama_index.core.indices.loading
+import time:     11057 |   57153346 | llama_index.core.indices
+import time:     31168 |      31168 | llama_index.core.service_context
+import time:     52389 |      52389 |     llama_index.core.agent.workflow.agent_context
+import time:    348208 |     348208 |       llama_index.core.agent.utils
+import time:    173400 |     173400 |         llama_index.core.agent.workflow.prompts
+import time:    196394 |     196394 |         llama_index.core.agent.workflow.workflow_events
+import time:      6708 |       6708 |         llama_index.core.workflow.handler
+import time:    382905 |     759406 |       llama_index.core.agent.workflow.base_agent
+import time:    113012 |     113012 |       llama_index.core.agent.workflow.function_agent
+import time:     85736 |      85736 |               llama_index.core.agent.react.prompts
+import time:    220616 |     220616 |               llama_index.core.agent.react.types
+import time:     97498 |     403850 |             llama_index.core.agent.react.formatter
+import time:     92441 |      92441 |             llama_index.core.agent.react.output_parser
+import time:     32177 |     528467 |           llama_index.core.agent.react
+import time:        43 |     528509 |         llama_index.core.agent.react.formatter
+import time:     59628 |     588136 |       llama_index.core.agent.workflow.react_agent
+import time:    300366 |    2109126 |     llama_index.core.agent.workflow.multi_agent_workflow
+import time:     61244 |      61244 |     llama_index.core.agent.workflow.codeact_agent
+import time:     67196 |    2289955 |   llama_index.core.agent.workflow
+import time:        50 |    2290004 | llama_index.core.agent.workflow.function_agent
+{"completed_import": "llama_index.core.agent.workflow", "elapsed": 85.55757828429341}
+{"starting_import": "llama_index.core.agent.workflow.base_agent", "elapsed": 85.55762729421258}
+{"completed_import": "llama_index.core.agent.workflow.base_agent", "elapsed": 85.5576688842848}
+{"starting_import": "llama_index.llms.openai_like", "elapsed": 85.55768035072833}
+import time:     18578 |      18578 |           httpx.__version__
+import time:    128932 |     128932 |                 httpx._exceptions
+import time:    169031 |     169031 |                       httpx._types
+import time:    482794 |     482794 |                       httpx._utils
+import time:    145472 |     797296 |                     httpx._multipart
+import time:    143920 |     941216 |                   httpx._content
+import time:       247 |        247 |                     brotli
+import time:       130 |        130 |                     brotlicffi
+import time:        76 |         76 |                     zstandard
+import time:    156566 |     157017 |                   httpx._decoders
+import time:     47402 |      47402 |                   httpx._status_codes
+import time:    112425 |     112425 |                     httpx._urlparse
+import time:    149902 |     262327 |                   httpx._urls
+import time:    122924 |    1530884 |                 httpx._models
+import time:     70847 |    1730662 |               httpx._auth
+import time:    103084 |     103084 |               httpx._config
+import time:    209445 |     209445 |                     httpx._transports.base
+import time:     71606 |     281051 |                   httpx._transports.asgi
+import time:    308575 |     308575 |                   httpx._transports.default
+import time:    492646 |     492646 |                   httpx._transports.mock
+import time:    377827 |     377827 |                   httpx._transports.wsgi
+import time:   2064226 |    3524323 |                 httpx._transports
+import time:        51 |    3524374 |               httpx._transports.base
+import time:    155484 |    5513602 |             httpx._client
+import time:    289496 |    5803097 |           httpx._api
+import time:     37916 |      37916 |                   click._compat
+import time:     26064 |      26064 |                     click.globals
+import time:     65253 |      65253 |                     click.utils
+import time:     62018 |     153334 |                   click.exceptions
+import time:    126957 |     318206 |                 click.types
+import time:     46363 |      46363 |                 click._utils
+import time:    541779 |     541779 |                   click.parser
+import time:     25475 |     567253 |                 click.formatting
+import time:    957145 |     957145 |                 click.termui
+import time:    168384 |    2057349 |               click.core
+import time:    292916 |     292916 |               click.decorators
+import time:     69409 |    2419673 |             click
+import time:      1164 |       1164 |               pygments
+import time:        38 |       1202 |             pygments.lexers
+import time:     94898 |    2515772 |           httpx._main
+import time:    121401 |    8458846 |         httpx
+import time:   1205945 |    1205945 |             tiktoken._tiktoken
+import time:    130100 |    1336045 |           tiktoken.core
+import time:      1339 |       1339 |               tiktoken_ext
+import time:    105394 |     106732 |             tiktoken.registry
+import time:    614585 |     721317 |           tiktoken.model
+import time:    725491 |    2782851 |         tiktoken
+Timeout (0:00:20)!
+Thread 0x00007f93c5a81740 (most recent call first):
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/pathlib.py", line 1059 in read_text
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/metadata/__init__.py", line 938 in read_text
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/metadata/__init__.py", line 610 in metadata
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/metadata/__init__.py", line 632 in version
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/metadata/__init__.py", line 1008 in version
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/httpx2/__version__.py", line 5 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/httpx2/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/openai/_types.py", line 34 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/openai/_models.py", line 43 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/openai/types/batch.py", line 6 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/openai/types/__init__.py", line 5 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1232 in _handle_fromlist
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/openai/__init__.py", line 9 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/llms/openai/utils.py", line 20 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/llms/openai/base.py", line 69 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/llms/openai/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1126 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/llms/openai_like/base.py", line 20 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<SERVER_BASE>/envs/mcp-agent-20261121/lib/python3.11/site-packages/llama_index/llms/openai_like/__init__.py", line 1 in <module>
+  File "<frozen importlib._bootstrap>", line 241 in _call_with_frames_removed
+  File "<frozen importlib._bootstrap_external>", line 940 in exec_module
+  File "<frozen importlib._bootstrap>", line 690 in _load_unlocked
+  File "<frozen importlib._bootstrap>", line 1147 in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 1176 in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1204 in _gcd_import
+  File "<SERVER_HOME>/anaconda3/lib/python3.11/importlib/__init__.py", line 126 in import_module
+  File "<string>", line 4 in <module>
+import time:    254153 |     254153 |                       httpx2.__version__
+import time:     59826 |      59826 |                       httpx2._alias
+import time:    204210 |     204210 |                             httpx2._exceptions
+import time:     25542 |      25542 |                                   httpx2._types
+import time:    259089 |     259089 |                                   httpx2._utils
+import time:    339695 |     624325 |                                 httpx2._multipart
+import time:     61576 |     685900 |                               httpx2._content
+import time:   2521369 |    2521369 |                               httpx2._cookies
+import time:       300 |        300 |                                 brotli
+import time:       112 |        112 |                                 brotlicffi
+import time:       115 |        115 |                                   backports
+import time:        22 |        136 |                                 backports.zstd
+import time:    520790 |     521337 |                               httpx2._decoders
+import time:    222699 |     222699 |                               httpx2._status_codes
+import time:    424209 |     424209 |                                 httpx2._urlparse
+import time:    137804 |     562012 |                               httpx2._urls
+import time:    133029 |    4646344 |                             httpx2._models
+import time:    162909 |    5013462 |                           httpx2._auth
+import time:    125299 |     125299 |                           httpx2._config
+import time:    273557 |     273557 |                           httpx2._sse
+import time:    204108 |     204108 |                               httpx2._transports.base
+import time:     19492 |     223599 |                             httpx2._transports.asgi
+import time:     58969 |      58969 |                             httpx2._transports.mock
+import time:    201286 |     201286 |                             httpx2._transports.wsgi
+import time:     63507 |      63507 |                             httpx2._transports.default
+import time:    174413 |     721772 |                           httpx2._transports
+import time:   1094117 |    7228205 |                         httpx2._client
+import time:     96972 |    7325176 |                       httpx2._api
+import time:    262917 |    7902071 |                     httpx2
+import time:    383701 |    8285772 |                   openai._types
+import time:      5734 |       5734 |                           sniffio._version
+import time:    161160 |     161160 |                           sniffio._impl
+import time:     27431 |     194323 |                         sniffio
+import time:     29485 |     223808 |                       openai._utils._utils
+import time:    209712 |     433519 |                     openai._utils._logs
+import time:     79798 |      79798 |                     openai._utils._path
+import time:     40814 |      40814 |                         anyio._lazyimport
+import time:    109397 |     150210 |                       anyio
+import time:      7837 |       7837 |                           anyio._core
+import time:     94856 |      94856 |                           anyio._core._exceptions
+import time:    114220 |     216911 |                         anyio._core._eventloop
+import time:     54024 |     270935 |                       anyio.to_thread
+import time:    159953 |     581097 |                     openai._utils._sync
+import time:     77907 |      77907 |                     openai._utils._proxy
+import time:    227119 |     227119 |                       openai._utils._datetime_parse
+import time:     24366 |     251484 |                     openai._utils._compat
+import time:     15387 |      15387 |                     openai._utils._typing
+import time:    142584 |     142584 |                     openai._utils._streams
+import time:     83381 |      83381 |                       openai._files
+import time:     25413 |     108793 |                     openai._utils._transform
+import time:    621656 |     621656 |                     openai._utils._reflection
+import time:    267372 |    2579593 |                   openai._utils
+import time:    195228 |     195228 |                   openai._compat
+import time:    794105 |     794105 |                   openai._constants
+import time:    243354 |   12098050 |                 openai._models
+import time:     96638 |      96638 |                 openai.types.batch_error
+import time:     32322 |      32322 |                 openai.types.batch_usage
+import time:    283724 |     283724 |                     openai.types.shared.metadata
+import time:     31046 |      31046 |                       openai.types.shared.reasoning_effort
+import time:    131294 |     162339 |                     openai.types.shared.reasoning
+import time:    921636 |     921636 |                       openai.types.shared.chat_model
+import time:     36660 |     958295 |                     openai.types.shared.all_models
+import time:    150489 |     150489 |                     openai.types.shared.error_object
+import time:     49179 |      49179 |                       openai.types.shared.comparison_filter
+import time:    183234 |     232413 |                     openai.types.shared.compound_filter
+import time:     76797 |      76797 |                     openai.types.shared.responses_model
+import time:     56937 |      56937 |                     openai.types.shared.oauth_error_code
+import time:    184822 |     184822 |                     openai.types.shared.decision_input_json
+import time:    134931 |     134931 |                       openai.types.shared.function_parameters
+import time:     24235 |     159165 |                     openai.types.shared.function_definition
+import time:     19417 |      19417 |                     openai.types.shared.response_format_text
+import time:     95941 |      95941 |                     openai.types.shared.custom_tool_input_format
+import time:     33652 |      33652 |                     openai.types.shared.response_format_json_object
+import time:   1273824 |    1273824 |                     openai.types.shared.response_format_json_schema
+import time:    267885 |     267885 |                     openai.types.shared.response_format_text_python
+import time:    116800 |     116800 |                       openai.types.shared.decision_question_input_text
+import time:    207139 |     207139 |                       openai.types.shared.decision_question_input_image
+import time:     61006 |     384943 |                     openai.types.shared.decision_question_input_part
+import time:     36810 |      36810 |                     openai.types.shared.response_format_text_grammar
+import time:    165560 |    4543005 |                   openai.types.shared
+import time:        42 |    4543047 |                 openai.types.shared.metadata
+import time:     39509 |      39509 |                 openai.types.batch_request_counts
+import time:     57641 |   16867204 |               openai.types.batch
+import time:     39942 |      39942 |               openai.types.image
+import time:    111187 |     111187 |               openai.types.model
+import time:     53258 |      53258 |               openai.types.skill
+import time:     35364 |      35364 |                 openai.types.video_size
+import time:    130388 |     130388 |                 openai.types.video_model
+import time:     31449 |      31449 |                 openai.types.video_seconds
+import time:     40052 |      40052 |                 openai.types.video_create_error
+import time:     47611 |     284861 |               openai.types.video
+import time:     51157 |      51157 |                 openai.types.file_object
+import time:      9452 |      60609 |               openai.types.upload
+import time:     93577 |      93577 |               openai.types.decision
+import time:    119766 |     119766 |               openai.types.embedding
+import time:    123304 |     123304 |               openai.types.chat_model
+import time:    185255 |     185255 |                 openai.types.completion_usage
+import time:    168873 |     168873 |                 openai.types.completion_choice
+import time:    227931 |     582058 |               openai.types.completion
+import time:    191500 |     191500 |               openai.types.moderation
+import time:     49558 |      49558 |               openai.types.skill_list
+import time:     73845 |      73845 |               openai.types.audio_model
+import time:     80865 |      80865 |               openai.types.image_model
+import time:     20634 |      20634 |               openai.types.file_content
+import time:     23842 |      23842 |               openai.types.file_deleted
+import time:     70906 |      70906 |               openai.types.file_purpose
+import time:     91924 |      91924 |               openai.types.vector_store
+import time:     35138 |      35138 |               openai.types.deleted_skill
+import time:     58276 |      58276 |               openai.types.model_deleted
+import time:     89193 |      89193 |               openai.types.embedding_model
+import time:     60467 |      60467 |               openai.types.images_response
+import time:     40600 |      40600 |               openai.types.eval_list_params
+import time:    245127 |     245127 |               openai.types.file_list_params
+import time:     51043 |      51043 |               openai.types.moderation_model
+import time:    264285 |     264285 |               openai.types.batch_list_params
+import time:    105073 |     105073 |               openai.types.image_edit_params
+import time:     23793 |      23793 |               openai.types.skill_list_params
+import time:     65379 |      65379 |               openai.types.video_edit_params
+import time:     97418 |      97418 |               openai.types.video_list_params
+import time:     18190 |      18190 |               openai.types.video_model_param

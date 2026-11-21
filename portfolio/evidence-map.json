@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-21T20:33:23+08:00",
-  "project_source_commit": "8cd4a3b9530ebd752fd49115c3b3b0debd510399",
+  "checked_at": "2026-11-21T23:39:02+08:00",
+  "project_source_commit": "cb67290a9ced302834f8458adf94b78bc64246bd",
   "files": [
     {
       "id": "worker_tests",
-      "label": "当前完整回归 / Current124-test snapshot",
-      "path": "evidence/evidence-audit/normal/full-core.log",
-      "sha256": "93a660be3e7228a5761ede31b0382c9948491c54638b093c71a058df3deb2416",
-      "url": "https://1137423918.github.io/reports/evidence-audit/normal/full-core.log"
+      "label": "完整130项快照 / Validated130-check snapshot",
+      "path": "evidence/mcp-evidence/normal/full-core.log",
+      "sha256": "04ef91b4cd825487e28c78b8a680eef5b3a54590c071f6059e265e783ceb8a36",
+      "url": "https://1137423918.github.io/reports/mcp-evidence/normal/full-core.log"
     },
     {
       "id": "budget",
@@ -173,9 +173,23 @@
     {
       "id": "evidence_audit",
       "path": "evidence/evidence-audit/report.json",
-      "label": "LlamaIndex报告审计 / Report audit",
+      "label": "旧两阶段审计超时 / Earlier two-stage audit timeout",
       "url": "https://1137423918.github.io/reports/evidence-audit/report.json",
       "sha256": "7f5d5bf4e71db481ffb8bee457ec39fb32e54eead7b833d8c72a94b0946ff816"
+    },
+    {
+      "id": "mcp_service",
+      "path": "evidence/mcp-evidence/report.json",
+      "url": "https://1137423918.github.io/reports/mcp-evidence/report.json",
+      "label": "实际MCP服务与网络控制 / Real MCP service and TCP controls",
+      "sha256": "71f178e35bf84746233257c70513dbb3cad751f49a0a535ea664beb37bf46f1b"
+    },
+    {
+      "id": "evidence_submit_tool",
+      "path": "evidence/evidence-direct/report.json",
+      "url": "https://1137423918.github.io/reports/evidence-direct/report.json",
+      "label": "固定问题结构2/3与文字歧义 / Known-query structured2/3 and prose ambiguity",
+      "sha256": "aeaaa0a7a12d83f36b41e7afc0a6072cc73140f0dc23cee058736fd827a4ff7b"
     }
   ],
   "pull_requests": [
@@ -230,5 +244,5 @@
   ],
   "paper_doi": "10.1109/LGRS.2025.3575615",
   "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
-  "scope": "Dated bilingual project brief:124 server engineering checks, separate fake SDK controls, a real report-audit timeout and four unmerged drafts. No education/employment invented."
+  "scope": "Dated bilingual brief: validated130-check snapshot, separate six real MCP controls, fixed-query CPU audit structured2/3 with a disclosed prose ambiguity, retained earlier timeout, and four unmerged drafts. Current optional cross-SDK integration is still under validation and is not claimed here. No education/employment invented."
 }

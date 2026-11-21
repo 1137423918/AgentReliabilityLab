@@ -1,0 +1,67 @@
+{
+  "protocol_sha256": "ecbf7257b6d935c1d1e7ae235ddf48a713c1258e479532f26eed67a8f93b1eff",
+  "source_archive_sha256": "6670385fcd6713409745697bb5c295e1fb0e72d22a1ba7299b57b8a609ecfaac",
+  "model_started": false,
+  "model_ready": false,
+  "cases": [],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 14.121,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 17301504
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.099,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 15859712
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 2.328,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7929856
+    },
+    {
+      "phase": "sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 9.58,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 163835904
+    },
+    {
+      "phase": "sdk-controls",
+      "returncode": 1,
+      "wall_seconds": 6.433,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 279252992
+    }
+  ],
+  "worker_dependency_pairs_unchanged": 68,
+  "own_project_distribution_excluded": {
+    "name": "agent-reliability-lab",
+    "version": "0.2.0"
+  },
+  "mcp_started": true,
+  "mcp_pid": 3027107,
+  "mcp_start_ticks": "461430343",
+  "mcp_ready": true,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Phase failed: sdk-controls"
+  },
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": null,
+  "mcp_shutdown_returncode": -15,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "mcp_port_closed": true,
+  "service_wall_seconds": null,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}

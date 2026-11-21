@@ -1,0 +1,280 @@
+{
+  "checked_at_utc": "2026-11-21T16:22:27.880271+00:00",
+  "purpose": "Real LlamaIndex FunctionAgent consumes an external MCP2 report service; audit handle and receipts remain adapter-owned outside model prompts.",
+  "source_project_base": "cb67290a9ced302834f8458adf94b78bc64246bd",
+  "original_protocol_sha256": "d0a4b8ff79488fa49560afe0a11564d889404e6786c567baf48a5f62e52b93c9",
+  "source_archive_sha256": "4f07f5dd1b1e5e6d122513ac106c54e6d505e17f57a71e745b4b4d89eb370d85",
+  "backend": "external_mcp2",
+  "catalog_reports": 9,
+  "catalog_source_commit": "cb67290a9ced302834f8458adf94b78bc64246bd",
+  "curated_known_queries_declared": 2,
+  "gold_outside_MCP_tool_catalog": true,
+  "shared_core_source_files_unchanged": 33,
+  "prior_full_core_passed": 130,
+  "prior_full_core_skipped": 0,
+  "core_rerun": false,
+  "new_core_checks": 0,
+  "scripted_model_controls": {
+    "passed": 4,
+    "fake_model_posts": 9,
+    "neural_requests": 0,
+    "real_MCP_SDK_TCP_reports_and_receipts": true,
+    "cases": [
+      {
+        "case": "normal",
+        "passed": true,
+        "backend_evidence_verified": true,
+        "fake_model_posts": 3,
+        "mcp_context_closed": true
+      },
+      {
+        "case": "forged_fact",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 3,
+        "mcp_context_closed": true
+      },
+      {
+        "case": "unread_submission",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 2,
+        "mcp_context_closed": true
+      },
+      {
+        "case": "plain_answer",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 1,
+        "mcp_context_closed": true
+      }
+    ]
+  },
+  "neural": {
+    "case": "inflated_merged_claim",
+    "scripted_model": false,
+    "model_reservations": 6,
+    "model_request_body_bytes": 47710,
+    "model_complete_responses": 5,
+    "model_headers_observed": 5,
+    "model_headers_without_complete_body": 0,
+    "unknown_model_reservations": 1,
+    "mcp_request_attempts": 9,
+    "mcp_complete_responses": 9,
+    "mcp_rpc_counts": {
+      "server/discover": 1,
+      "tools/list": 1,
+      "tools/call": 7
+    },
+    "read_receipts_independently_checked": 4,
+    "remote_fact_verifications_independently_checked": 0,
+    "evidence_verified": false,
+    "closed": false,
+    "cleanup_error": {
+      "type": "MCPToolFailure",
+      "message": "Error executing tool audit_status: Unknown or expired audit capability"
+    },
+    "error": {
+      "type": "TimeoutError",
+      "message": ""
+    },
+    "grading": {
+      "evidence_verified": false,
+      "verdict_correct": false,
+      "required_fact_failures": [
+        {
+          "report_id": "patch_move",
+          "pointer": "/related_suite_passed",
+          "reason": "missing"
+        },
+        {
+          "report_id": "patch_move",
+          "pointer": "/focused_passed",
+          "reason": "missing"
+        },
+        {
+          "report_id": "patch_move",
+          "pointer": "/new_checks_included",
+          "reason": "missing"
+        },
+        {
+          "report_id": "patch_move",
+          "pointer": "/overlapping_suites_not_added",
+          "reason": "missing"
+        },
+        {
+          "report_id": "upstream_prs",
+          "pointer": "/pull_requests/1/state",
+          "reason": "missing"
+        },
+        {
+          "report_id": "upstream_prs",
+          "pointer": "/pull_requests/1/draft",
+          "reason": "missing"
+        },
+        {
+          "report_id": "upstream_prs",
+          "pointer": "/pull_requests/1/merged",
+          "reason": "missing"
+        }
+      ],
+      "case_passed": false,
+      "free_prose_semantics_verified": false,
+      "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+    },
+    "usage_returned": {
+      "completion_tokens": 399,
+      "prompt_tokens": 10616,
+      "total_tokens": 11015,
+      "cached_input_tokens": 7681
+    },
+    "declared_cases": 2,
+    "attempted_cases": 1,
+    "verified_assessments": 0,
+    "remaining_not_run": [
+      "supported_contribution"
+    ],
+    "outer_timeout_seconds": 600,
+    "driver_wall_seconds": 604.994,
+    "request_body_bytes": 47710,
+    "model_read_receipts": 4,
+    "final_submission_count": 0,
+    "all_five_complete_model_reply_HTTP_statuses": 200,
+    "model": "Qwen3.5-9B-Q4_K_M",
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "model_bytes": 5627044256,
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "exact_quantizer_source_weight_revision": null,
+    "native_backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "context": 8192,
+    "cpu_threads": 4,
+    "gpu_layers": 0,
+    "budgets": {
+      "max_requests_per_case": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes_per_case": 262144,
+      "agent_max_iterations": 7,
+      "agent_timeout_seconds": 600,
+      "driver_watchdog_seconds": 690,
+      "sdk_request_timeout_seconds": 300,
+      "sdk_and_llm_retries": 0,
+      "max_output_tokens_per_request": 1024,
+      "repair_rounds": 0,
+      "service_wall_seconds": 2400,
+      "global_job_wall_seconds": 3300
+    },
+    "sampling": {
+      "temperature": 0.7,
+      "top_p": 0.8,
+      "presence_penalty": 1.5,
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0,
+      "seed": 42,
+      "thinking": false
+    },
+    "unknown_sixth_reservation_remains_charged": true,
+    "tokens_only_from_five_received_responses": {
+      "completion_tokens": 399,
+      "prompt_tokens": 10616,
+      "total_tokens": 11015,
+      "cached_input_tokens": 7681
+    }
+  },
+  "preparation": {
+    "unexecuted_v1_static_correction": "V1 was sealed but never uploaded/executed. Static operator review caught inherited requirements.lock reference in a uv-only runtime. V2 checks uv.lock; no source/corpus/questions/grader/model/budgets changed.",
+    "v2": {
+      "phase": "sdk-identity",
+      "guard_seconds": 180,
+      "returncode": -15,
+      "model_started": false,
+      "mcp_started": false,
+      "completed_cases": 0,
+      "retained": true
+    },
+    "import_diagnostic": {
+      "wall_seconds": 120.44,
+      "returncode": -15,
+      "guard_seconds": 120,
+      "stack_samples": 5,
+      "observation": "Import file/metadata reads on confirmed NFS SDK. Workflow import completed85.558s; OpenAILike import incomplete by120s. Exact root cause not proven."
+    },
+    "localization": {
+      "serial_copy_guard_seconds": 900,
+      "serial_copy_success": false,
+      "partial_retained": true,
+      "parallel_copy_seconds": 93.404,
+      "verified_regular_files": 8999,
+      "verified_bytes": 229504414,
+      "identical_dependency_versions": true,
+      "io_threads": 8,
+      "cpu_affinity": 4,
+      "model_started": false,
+      "stable_alias_to_verified_ext4_copy": true
+    },
+    "v3": {
+      "phase": "sdk-controls",
+      "model_started": false,
+      "neural_requests": 0,
+      "scripted_model_posts": 6,
+      "normal_control_passed": true,
+      "forged_fact_backend_rejected": true,
+      "failure": "Expected EvidenceError was wrapped as ExceptionGroup by MCP context TaskGroup; original unchanged assertion failed. Both contexts closed; service stopped and ports closed."
+    },
+    "v4_fix": "Only optional adapter application acceptance moved after transport context exit. Same predicate/schema/backend/grader and control assertions; no broad ExceptionGroup flattening. No source changes in33 shared core/service/test/grader files. Two usage docs added. New independent output/run roots; identical model, nine reports, two known queries/gold,8-request budgets and sampling.",
+    "sdk_identity_v3_wall_seconds": 9.58,
+    "sdk_identity_v4_wall_seconds": 6.721,
+    "v4_scripted_control_wall_seconds": 8.697,
+    "interpretation": "File/metadata-read stacks on NFS and fast imports after localization are consistent with shared-filesystem I/O overhead; cache/warmup effects were not isolated, so this is not a causal benchmark."
+  },
+  "wire": {
+    "model_and_MCP_complete_bodies_decoded": 103,
+    "model_posts_scripted_controls": 9,
+    "model_posts_neural_trial": 6,
+    "MCP_HTTP_attempts_scripted_controls": 28,
+    "MCP_HTTP_attempts_neural_trial": 9,
+    "received_read_receipts_controls": 2,
+    "received_read_receipts_neural_trial": 4,
+    "successful_remote_fact_verifications_controls": 1,
+    "successful_remote_fact_verifications_neural_trial": 0,
+    "observed_current_capabilities_and_receipts_absent_from_all_model_request_bodies": true
+  },
+  "cleanup": {
+    "model_shutdown_returncode": 0,
+    "mcp_shutdown_returncode": -15,
+    "service_wall_seconds": 620.744,
+    "owned_processes_after": 0,
+    "model_port_closed": true,
+    "mcp_port_closed": true,
+    "api_key_file_remaining": false,
+    "secret_in_raw_outputs": false,
+    "real_audit_close_received": false,
+    "real_audit_cleanup_error": {
+      "type": "MCPToolFailure",
+      "message": "Error executing tool audit_status: Unknown or expired audit capability"
+    },
+    "detail": "At600s audit_status reported an expired capability, so close_audit was not attempted by that cleanup sequence. Four control audits closed normally. Server termination invalidates remaining process-local state; do not claim successful explicit close for the real trial."
+  },
+  "limits": [
+    "Two known fixed queries, one attempted and timed out; the second not run. No held-out accuracy, neural code repair, production users or comparison with old three-query outcomes.",
+    "MCP verifies exact JSON values/types, source SHA and supplied read receipts; arbitrary verdict truth and free prose semantics remain explicitly false.",
+    "No final neural assessment exists. Required facts were read but cannot be counted as submitted fact coverage or a verified verdict.",
+    "The nine scripted replies are not neural requests. Earlier130 core checks are unchanged source evidence, not a new run or an added total.",
+    "Model POST budget and MCP per-audit16-operation/8-read/600s limits are separate; neither is a token or fee limit.",
+    "Capabilities are shareable process-local authority, not user identity; this adapter does not resume the whole Agent workflow, survive service restarts or prove exactly-once tools.",
+    "Exact source weights revision behind the pinned quantizer remains unknown. Both transports are loopback; no public authenticated MCP service or multi-tenant deployment.",
+    "V2/V3 failed preflights, import diagnostic and failed serial-copy preparation are retained; all precede neural startup. No model retry or quota extension after timeout.",
+    "Browser interaction remains unverified. PDF is a separately dated Nov21 23:39 snapshot of earlier validated service and known-query outcomes."
+  ],
+  "source_sha256": {
+    "benchmarks/llamaindex_mcp_audit.py": "31bc4c4220632873d64e06da93d44c001c7caf1c09e9234231c57fef2ae3f5e4",
+    "benchmarks/mcp_agent_controls.py": "73ab522909dc76849be10dc374e3e0be2f6e85c8c3a78c215f8cd2171d623f2a",
+    "agent_lab/evidence_service.py": "f6931770e6cd1adecf64ea6d693a3773d5fbe208ab822d1123b46d72aff06466",
+    "benchmarks/mcp_evidence_server.py": "2cbdb64b27f1ee2f28ed828b7dd0c0f4c9eb7bac735bdd46b9becfa0ac29f341",
+    "benchmarks/evidence_audit_case.py": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563"
+  },
+  "artifact_manifest_sha256": "dea5251a4dab809c7fc129b8ce29312947ea0782c33d68d484b0f60e582a7026",
+  "verification_sha256": "b3a8e211c0681f22f891312e31b50c6bdac6a88d03847d8f2cde2992abade325",
+  "manual_review_sha256": "2f365e9134266b9c248f4bc4cbf37804b991caa397c46abceaae57a27170f01b"
+}

@@ -1,14 +1,14 @@
 {
-  "pdf_sha256": "a6e21c180f98dc5fa416ec6f5ad6cbdbedc3d4b5a1ebbebb55383778f7bd4bb8",
+  "pdf_sha256": "2190219ab5eca2179998de28b87f83426f03dda34951ec815ef1f8bdbec73abf",
   "pdf_pages": 2,
   "page_size": "A4",
   "pages": [
     {
       "language": "zh",
       "preserved_phrases": 13,
-      "text_sha256": "d05a55c0570f527e3e4533b7c9473bc31d815a129af8201e65fe15bbd0761037",
+      "text_sha256": "0b2522cea2a7a393af7ee3431143b1afbb2edf91589d8e576e129da7fefefaf7",
       "link_count": 10,
-      "render_png_sha256": "96c7c6ac01ecc2ca203b518323d2c95d545c247cf242face99fd13933fa96511",
+      "render_png_sha256": "06e822f64daabe733c11efa75ab6cbd5bf04471c46d03c0cef63e77c70061d7d",
       "drawn_fonts": [
         {
           "resource": "/F2+0",
@@ -19,13 +19,13 @@
         {
           "resource": "/F3+0",
           "base_font": "/AAAAAA+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 113680,
+          "embedded_truetype_bytes": 113468,
           "to_unicode": true
         },
         {
           "resource": "/F3+1",
           "base_font": "/AAAAAB+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 70192,
+          "embedded_truetype_bytes": 74728,
           "to_unicode": true
         }
       ],
@@ -34,9 +34,9 @@
     {
       "language": "en",
       "preserved_phrases": 13,
-      "text_sha256": "5c5c5e568348ce6c28454ec682e27daf5113b4e76e771f75465a7d977596bb63",
+      "text_sha256": "a1685a9b746f21b60cbe1b612a4eb658b527db805586689de6e87617cc7bda59",
       "link_count": 10,
-      "render_png_sha256": "bc4df2cb23c244a1effd2adf12cca3195842074dd70f8d1ec45bac03df8fc325",
+      "render_png_sha256": "3a40ec74172418b4f23afdfbe99ccbcb6c9309e13aca52144c8b41accaf43d4c",
       "drawn_fonts": [
         {
           "resource": "/F4+0",
@@ -64,7 +64,7 @@
   "javascript_syntax_check": "Bundled Node --check passed; JavaScript unchanged",
   "new_server_experiments": false,
   "new_test_results": false,
-  "source_files_verified": 25,
+  "source_files_verified": 27,
   "reference_repositories": 3,
-  "fresh_pr_snapshot": "2026-11-21T20:33:23+08:00"
+  "fresh_pr_snapshot": "2026-11-21T23:39:02+08:00"
 }

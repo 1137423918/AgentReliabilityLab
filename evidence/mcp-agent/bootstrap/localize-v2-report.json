@@ -1,0 +1,17 @@
+{
+  "success": true,
+  "stable_sdk_alias_verified": true,
+  "filesystem": "ext2/ext3",
+  "entries": 9003,
+  "regular_files": 8999,
+  "copied_bytes": 229504414,
+  "all_copied_file_hashes_verified": true,
+  "dependency_versions_identical": true,
+  "wall_seconds": 93.404,
+  "model_started": false,
+  "source_unchanged": true,
+  "python_interpreter_symlink_remains_original": true,
+  "io_threads": 8,
+  "cpu_affinity": 4,
+  "prior_partial_directory_preserved": true
+}

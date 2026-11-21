@@ -1,15 +1,15 @@
 {
   "pdf": "junzhe-wang-project-brief.pdf",
-  "pdf_sha256": "a6e21c180f98dc5fa416ec6f5ad6cbdbedc3d4b5a1ebbebb55383778f7bd4bb8",
-  "content_sha256": "431ff05586bab907e212a19d2cb3ff9ea266b23983334fb099251e2f12d3b29d",
-  "evidence_map_sha256": "7ce9474c8777dd9389d5ff7f59a1441dc89b2c8090985eb2a6d1517378c3e157",
+  "pdf_sha256": "2190219ab5eca2179998de28b87f83426f03dda34951ec815ef1f8bdbec73abf",
+  "content_sha256": "8cc775c86bd94749d2defe68a02d6691380bdc35b45d3718fe2f213f1162cb89",
+  "evidence_map_sha256": "f7c1ba7fd75f96b303e9a225340cc5e74a3cf88b936cd956d51aaa913d83d6cf",
   "builder_sha256": "d7915298daf887d300fbf74a5d02685a1f5ff21eab715ff08cc791f5c79ac495",
   "asset_sha256": {
     "brief.css": "1aa6e8a258d3409d743f6828525c20959ae68579773cd6dd86e4f73bde98fa82",
     "brief.js": "c49b9b1b66813c613e01872e8f6086f5e77c2959e91e9749622fdc41ba657dfe"
   },
   "reportlab_version": "4.4.9",
-  "metadata_date_source": "2026-11-21T20:33:23+08:00",
+  "metadata_date_source": "2026-11-21T23:39:02+08:00",
   "fonts": [
     {
       "role": "CJKBody",

@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-11-21T16:20:21.032980+00:00",
+  "pull_requests": [
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7032,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
+      "updated_at": "2026-11-20T18:47:41Z",
+      "review_count": 0,
+      "reviews": []
+    },
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7050,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7050",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69",
+      "updated_at": "2026-11-21T10:14:50Z",
+      "review_count": 0,
+      "reviews": []
+    },
+    {
+      "repository": "google/adk-python",
+      "number": 8278,
+      "url": "https://github.com/google/adk-python/pull/8278",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "c71ca6a2d993ede60f9fd873b768a6d452db116f",
+      "updated_at": "2026-11-20T17:19:11Z",
+      "review_count": 0,
+      "reviews": []
+    },
+    {
+      "repository": "microsoft/semantic-kernel",
+      "number": 14845,
+      "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d",
+      "updated_at": "2026-11-20T21:25:49Z",
+      "review_count": 0,
+      "reviews": []
+    }
+  ]
+}

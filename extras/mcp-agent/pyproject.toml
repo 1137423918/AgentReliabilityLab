@@ -1,0 +1,9 @@
+[project]
+name = "agentlab-mcp-agent-runtime"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = [
+  "mcp==2.3.0", "httpx2==2.16.2", "openai==3.57.0",
+  "llama-index-core==0.14.26", "llama-index-llms-openai==0.9.0",
+  "llama-index-llms-openai-like==0.9.0", "llama-index-workflows==2.26.1"
+]

@@ -1,0 +1,23 @@
+{
+  "checked_at_utc": "2026-11-21T16:22:27.879479+00:00",
+  "review_kind": "Codex-assisted saved-trace inspection; not human author review",
+  "case": "inflated_merged_claim",
+  "complete_model_reply_tools": [
+    "list_reports",
+    "read_report",
+    "read_report",
+    "read_report",
+    "read_report"
+  ],
+  "observed_reads": [
+    "patch_move",
+    "upstream_prs",
+    "core_current",
+    "historical_core"
+  ],
+  "required_contribution_reports_read_before_two_extra_historical_reports": true,
+  "final_submission_count": 0,
+  "final_verdict_or_explanation_available": false,
+  "unknown_sixth_reply_not_inferred": true,
+  "interpretation": "Reading required source fields is not a validated final assessment. Two later historical reads are outside this question required-fact set; no causal speedup or general model capability claim follows."
+}

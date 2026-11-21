@@ -1,0 +1,20 @@
+{
+  "phases": [
+    {
+      "phase": "lock",
+      "returncode": 0,
+      "wall_seconds": 11.694
+    },
+    {
+      "phase": "sync",
+      "returncode": 0,
+      "wall_seconds": 141.976
+    },
+    {
+      "phase": "identity",
+      "returncode": 0,
+      "wall_seconds": 0.323
+    }
+  ],
+  "filesystem": "ext2/ext3"
+}

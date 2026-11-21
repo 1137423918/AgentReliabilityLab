@@ -1,0 +1,3 @@
+StreamableHTTP session manager started
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Claimed fact differs from actual report'
+StreamableHTTP session manager shutting down

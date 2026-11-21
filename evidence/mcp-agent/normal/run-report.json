@@ -1,0 +1,202 @@
+{
+  "protocol_sha256": "d0a4b8ff79488fa49560afe0a11564d889404e6786c567baf48a5f62e52b93c9",
+  "source_archive_sha256": "4f07f5dd1b1e5e6d122513ac106c54e6d505e17f57a71e745b4b4d89eb370d85",
+  "model_started": true,
+  "model_ready": true,
+  "cases": [
+    {
+      "case": "inflated_merged_claim",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "patch_move",
+            "pointer": "/related_suite_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/focused_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/new_checks_included",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/overlapping_suites_not_added",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/state",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/draft",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/merged",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "model_http_reservations": 6,
+      "request_body_bytes": 47710,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        null
+      ],
+      "wall_seconds": 604.994,
+      "error_type": "TimeoutError"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 8.979,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 4325376
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.343,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 2162688
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 1.112,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 12976128
+    },
+    {
+      "phase": "sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 6.721,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 142016512
+    },
+    {
+      "phase": "sdk-controls",
+      "returncode": 0,
+      "wall_seconds": 8.697,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 270176256
+    },
+    {
+      "phase": "artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 91.304,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 79298560
+    },
+    {
+      "phase": "native-help",
+      "returncode": 0,
+      "wall_seconds": 1.102,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 66322432
+    },
+    {
+      "phase": "case-inflated_merged_claim",
+      "returncode": 2,
+      "wall_seconds": 604.994,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 9839550464
+    }
+  ],
+  "worker_dependency_pairs_unchanged": 68,
+  "own_project_distribution_excluded": {
+    "name": "agent-reliability-lab",
+    "version": "0.2.0"
+  },
+  "mcp_started": true,
+  "mcp_pid": 3067267,
+  "mcp_start_ticks": "461480949",
+  "mcp_ready": true,
+  "fake_control_cases_passed": 4,
+  "runtime_bom_verified": true,
+  "model_manifest_raw_sha256": "02813afd3e0b64857891ad6f8aca332b7259e0b50ddb890e70cb9d4ec8bdd8b6",
+  "model_manifest_canonical_sha256": "955ffb1310188faea6a2cd3346a515b56e00f5a176d86f092851b1e519c19f61",
+  "available_memory_admission_bytes": 60520304640,
+  "model_pid": 3075903,
+  "model_start_ticks": "461491364",
+  "model_argv": [
+    "<SERVER_BASE>/tools/llama-b12576/llama-b12576/llama-server",
+    "--model",
+    "<SERVER_BASE>/models/Qwen3.5-9B-LMStudio-1379f25c/Qwen3.5-9B-Q4_K_M.gguf",
+    "--alias",
+    "agentlab-mcp-audit-qwen35-9b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18858",
+    "--api-key-file",
+    "<PRIVATE_EXT4>/validation-v4/service/api-key",
+    "--device",
+    "none",
+    "--n-gpu-layers",
+    "0",
+    "--threads",
+    "4",
+    "--threads-batch",
+    "4",
+    "--threads-http",
+    "1",
+    "--parallel",
+    "1",
+    "--ctx-size",
+    "8192",
+    "--n-predict",
+    "1024",
+    "--timeout",
+    "180",
+    "--temp",
+    "0",
+    "--seed",
+    "42",
+    "--jinja",
+    "--reasoning-format",
+    "none",
+    "--chat-template-kwargs",
+    "{\"enable_thinking\":false}",
+    "--no-context-shift",
+    "--cache-prompt",
+    "--no-webui",
+    "--no-slots"
+  ],
+  "native_context_observed": 8192,
+  "owned_model_in_gpu_processes": false,
+  "aborted_remaining": "Transport/workflow timeout; stop owned model instead of leaving unknown work",
+  "declared_cases": 2,
+  "completed_cases": 1,
+  "cases_passed": 0,
+  "all_cases_passed": false,
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": 0,
+  "mcp_shutdown_returncode": -15,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "mcp_port_closed": true,
+  "service_wall_seconds": 620.744,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}
