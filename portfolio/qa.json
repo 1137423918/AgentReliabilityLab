@@ -1,14 +1,14 @@
 {
-  "pdf_sha256": "c83de54199d1efb4ff113716d1d41a3c1c50f16f3538094d3d6244e8a5de36be",
+  "pdf_sha256": "31e50c8c3a3ee8ede4cb9fdc8e1f9e28ebb05a1a5aff09bf787d1b08c99705a5",
   "pdf_pages": 2,
   "page_size": "A4",
   "pages": [
     {
       "language": "zh",
       "preserved_phrases": 13,
-      "text_sha256": "a387dd2549ec3d8c26c4a7f393f5af283584039c2f59f7a60ea43c9bfe952fb3",
+      "text_sha256": "0ca58e4a787ed8e7400d199bcb708fd6935fdcba88a9ef2e85390969c05b8d7d",
       "link_count": 9,
-      "render_png_sha256": "e2304fe5c81d524929fd3af6042d5c0fea1249c522bfc70636b55b548e31b2d5",
+      "render_png_sha256": "27c9ff2e8edfcddae4d22e560b5e5ea00edd89e3af514ab6839a4a16f3a8a77a",
       "drawn_fonts": [
         {
           "resource": "/F2+0",
@@ -19,13 +19,13 @@
         {
           "resource": "/F3+0",
           "base_font": "/AAAAAA+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 112428,
+          "embedded_truetype_bytes": 111492,
           "to_unicode": true
         },
         {
           "resource": "/F3+1",
           "base_font": "/AAAAAB+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 81312,
+          "embedded_truetype_bytes": 92600,
           "to_unicode": true
         }
       ],
@@ -34,9 +34,9 @@
     {
       "language": "en",
       "preserved_phrases": 13,
-      "text_sha256": "0c64e16a59a50c21af6ca028e378f3ecbe5bed0710350946127d06484a35bf4b",
+      "text_sha256": "a22a6b8223f3a3714b43106f15f5d7f6f4fab029e0d4b92e6b4b907cb01d4dfd",
       "link_count": 9,
-      "render_png_sha256": "255cd36befbaca2c920bab8ddbe30802420f2541c7c6fac7caa4a6fde1731942",
+      "render_png_sha256": "28506640789a5cedd36140a0528f62e026461b1fbced2eb47d39dcd04013ff13",
       "drawn_fonts": [
         {
           "resource": "/F4+0",
@@ -64,7 +64,7 @@
   "javascript_syntax_check": "Bundled Node --check passed; JavaScript unchanged",
   "new_server_experiments": false,
   "new_test_results": false,
-  "source_files_verified": 14,
+  "source_files_verified": 21,
   "reference_repositories": 3,
-  "fresh_pr_snapshot": "2026-11-21T09:52:26+08:00"
+  "fresh_pr_snapshot": "2026-11-21T16:03:57+08:00"
 }

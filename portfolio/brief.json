@@ -12,14 +12,14 @@
       "subtitle": "Agent 工程 · 可恢复执行 · 工具可靠性",
       "project_label": "工程项目",
       "project_title": "Agent Reliability Lab",
-      "project_intro": "面向维护长任务中断、重复请求与验收失真，开发可恢复的软件维护运行器，交付补丁及可复查的验证记录。",
+      "project_intro": "面向软件维护长任务中的中断、重复请求与验收失真，开发带持久化状态、资源边界及证据归档的维护运行器。",
       "bullets": [
-        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；在本机 ext4 上验证 Deep Agents 正常运行与首个检查点 SIGKILL 恢复，四步参考计划生成相同补丁。",
-        "实现固定原版测试验收、Python 语法导出检查与验证进程监督；对补丁、日志、反馈和缓存做哈希校验，拒绝被改写的验收记录。",
-        "发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启、跨修复轮次共享；验证 503、超时、在途 SIGKILL 与并发争抢，防止重启绕过限额。",
-        "在状态写入及复用缓存前拒绝 NFS 等不受支持的存储；服务器完整回归 100 项通过、零跳过。持锁生成 SQLite 私人备份，源与备份的只读审计结果一致。"
+        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；本机 ext4 上的正常运行与首个检查点 SIGKILL 恢复生成相同参考补丁，写入及缓存复用前拒绝 NFS。",
+        "实现任务级文件清单、内容哈希校验的源码定位与受保护原版测试验收；导出前检查 Python 语法，校验补丁、验证日志与反馈，拒绝篡改后的成功缓存。",
+        "在发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启和修复轮次共享；以真实本机 HTTP 验证 503、超时、在途 SIGKILL 及并发争抢。",
+        "修复验证退出后的独立会话、双重 fork 子进程泄漏，以及旧安装包监督器误加载；Linux 上回收后代后才释放运行锁。完整工程回归 108 项通过、零跳过，含 2 项新增检查。"
       ],
-      "project_scope": "恢复采用固定工具计划，不计模型自主修复；历史三仓库控制运行于 NFS，不能证明受支持存储下的恢复。最新 30 分钟 CPU 模型试验保存 4 次回复、5 条读取结果，无编辑、补丁或验收。备份仅用于审计，不证明任务迁移；请求额度不代表 token 或费用。",
+      "project_scope": "恢复使用明确参考计划，未证明模型自主修复。9B ADK CPU 轨迹在 8 次请求后停止，无编辑或验收；GPU 短请求工具往返通过，原样文本检查失败，GPU 维护未启动。历史三仓库 NFS 控制与本机 ext4 结果分列；额度不是 token 或费用。",
       "contributions_label": "已提交的开源草稿",
       "contributions": [
         {
@@ -46,7 +46,7 @@
       ],
       "paper_label": "研究论文",
       "paper_text": "第一作者 · IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025。研究前视声纳图像的轻量化目标检测。",
-      "scope": "PR 状态核验于 2026-11-21：三份均为开放草稿，未合并；测试组范围重叠，不累加。Agent 工程实现与验证由 Codex 辅助完成，人工复核与上游评审仍待完成。",
+      "scope": "PR 状态核验于 2026-11-21：三份均为开放草稿，未合并；测试范围重叠，不累加。Codex 辅助实现与验证，人工复核和上游评审待完成。",
       "links_label": "项目源码与协议",
       "sources_label": "证据与状态",
       "copy_label": "复制项目描述",
@@ -57,14 +57,14 @@
       "subtitle": "Agent engineering / Recoverable execution / Tool reliability",
       "project_label": "ENGINEERING PROJECT",
       "project_title": "Agent Reliability Lab",
-      "project_intro": "A software-maintenance runner for interrupted tasks, repeated requests and unreliable acceptance, delivering reviewable patches with verification records.",
+      "project_intro": "A software-maintenance runner with durable state, resource limits and reviewable evidence for interrupted tasks, repeated requests and unreliable acceptance.",
       "bullets": [
-        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. On local ext4, normal execution and first-checkpoint SIGKILL recovery produce the same Deep Agents patch from a four-step reference plan.",
-        "Add frozen original-test acceptance, Python syntax checks before export and verifier process supervision. Hash-check patches, logs, feedback and cached results to reject modified acceptance records.",
-        "Reserve HTTP attempts and JSON bytes durably before send, shared across restarts and repair rounds. Verify 503s, timeouts, in-flight SIGKILL and competing processes to prevent restart-based budget bypass.",
-        "Reject NFS and unsupported storage before state writes or cached success. All 100 server project tests pass with zero skips. A locked private SQLite backup reproduces the read-only source audit."
+        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. On local ext4, normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before writes or cached success.",
+        "Add task-scoped file inventory, content-hash-checked source navigation and frozen original-test acceptance. Check Python syntax before export and validate patch, log and feedback hashes before reusing success.",
+        "Reserve HTTP attempts and JSON bytes durably before send, shared across restarts and repair rounds. Exercise real loopback HTTP with 503s, timeouts, in-flight SIGKILL and competing processes.",
+        "Fix detached and double-forked verifier leaks and stale installed-supervisor loading. Reap Linux descendants before releasing the worker lock. All 108 engineering checks pass with zero skips, including two new checks."
       ],
-      "project_scope": "Recovery uses explicit plans, not autonomous repair. Historical three-repository controls ran on NFS and do not validate supported storage. The latest 30-minute CPU model trial saves four replies and five reads, with no edit, patch or acceptance. Backup proves auditability, not task migration; request limits are not tokens or money.",
+      "project_scope": "Recovery uses explicit plans, not autonomous repair. The 9B ADK CPU run stops at eight requests without edits or acceptance. GPU tool transport passes but raw text fails; GPU maintenance has not started. Historical NFS controls are separate from ext4 evidence. Request limits are not tokens or money.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
       "contributions": [
         {
@@ -91,7 +91,7 @@
       ],
       "paper_label": "RESEARCH PUBLICATION",
       "paper_text": "First author. IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025. Lightweight object detection in forward-looking sonar imagery.",
-      "scope": "PR status checked 2026-11-21: all three are open drafts, not merged. Test scopes overlap and are not added. Codex assisted engineering implementation and verification; human author and upstream reviews remain pending.",
+      "scope": "PR status checked 2026-11-21: three open drafts, none merged; overlapping tests are not added. Codex assisted implementation and verification; human author and upstream review remain pending.",
       "links_label": "Source and protocols",
       "sources_label": "Evidence and status",
       "copy_label": "Copy project description",

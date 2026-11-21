@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-21T09:52:26+08:00",
-  "project_source_commit": "23e4346fa892a36f86884923757bfa3b4e4af9ea",
+  "checked_at": "2026-11-21T16:03:57+08:00",
+  "project_source_commit": "adf8d4eb3a95a1d201ae59a73a3566d92bea734f",
   "files": [
     {
       "id": "worker_tests",
-      "label": "当前完整回归 / Current 100-test snapshot",
-      "path": "evidence/local-state/logs/full.log",
-      "sha256": "06beacd0e3f46ac56bab106860da2a973658911329f561ff672f559decca4750",
-      "url": "https://1137423918.github.io/reports/local-state/logs/full.log"
+      "label": "当前完整回归 / Current108-test snapshot",
+      "path": "evidence/verification-tree/normal/full.log",
+      "sha256": "597de4a964915ad42d47a4ab62e489ae544c527c414415109f2c5b3aa8f1e11e",
+      "url": "https://1137423918.github.io/reports/verification-tree/normal/full.log"
     },
     {
       "id": "budget",
@@ -63,7 +63,7 @@
       "path": "evidence/verification-supervision/active-report.json",
       "sha256": "641c5c1a3caeb40a510c0cec1b72fbbb674a22c59cafbf56140b486f59008a3d",
       "url": "https://1137423918.github.io/reports/verification-supervision/active-report.json",
-      "label": "Verifier process supervision"
+      "label": "早期验证监督 / Earlier process supervision"
     },
     {
       "id": "adk_maintenance",
@@ -97,8 +97,57 @@
       "id": "indexed_cpu",
       "path": "evidence/indexed-cpu/report.json",
       "url": "https://1137423918.github.io/reports/indexed-cpu/report.json",
-      "label": "最新 CPU 模型试验 / Latest CPU trial",
+      "label": "历史 CPU 轨迹 / Earlier indexed CPU run",
       "sha256": "5b3280483213013d4049e06dbde4f33b780156dd9fc5db65989d3e8dd18cb9be"
+    },
+    {
+      "id": "verification_tree",
+      "path": "evidence/verification-tree/report.json",
+      "url": "https://1137423918.github.io/reports/verification-tree/report.json",
+      "label": "验证后代清理 / Verification descendant cleanup",
+      "sha256": "abc47e4214040b03a7797be6a372a76f36e049f7c4ac211f9e3ffc35964fa7e8"
+    },
+    {
+      "id": "verification_tree_baseline",
+      "path": "evidence/verification-tree/normal/baseline.log",
+      "url": "https://1137423918.github.io/reports/verification-tree/normal/baseline.log",
+      "label": "原版缺陷复现 / Original baseline failures",
+      "sha256": "bc5e180eb39882b9587ebbb97ea79a9a5d80702622ed341fd29ada76e71bcb43"
+    },
+    {
+      "id": "verification_tree_first_candidate",
+      "path": "evidence/verification-tree/attempt-1/focused.log",
+      "url": "https://1137423918.github.io/reports/verification-tree/attempt-1/focused.log",
+      "label": "保留的集成失败 / Retained integration failures",
+      "sha256": "b2471143b3675b89db96bb0779d174ca0acd5d599dd60efee010fae7c812bbf1"
+    },
+    {
+      "id": "file_inventory",
+      "path": "evidence/file-inventory/report.json",
+      "url": "https://1137423918.github.io/reports/file-inventory/report.json",
+      "label": "任务级源码工具 / Task-scoped source tools",
+      "sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a"
+    },
+    {
+      "id": "adk_9b_cpu",
+      "path": "evidence/adk-9b-cpu/report.json",
+      "url": "https://1137423918.github.io/reports/adk-9b-cpu/report.json",
+      "label": "最新9B CPU轨迹 / Latest9B CPU trajectory",
+      "sha256": "660c56be81f0f064fca582dd167151af2c2b4e8191e01ba7d0e4260907f717cc"
+    },
+    {
+      "id": "gpu_transport",
+      "path": "evidence/gpu-smoke/report.json",
+      "url": "https://1137423918.github.io/reports/gpu-smoke/report.json",
+      "label": "GPU短请求边界 / GPU transport limits",
+      "sha256": "d21dce1331597931b7f123e0413a9807e0de43e06da65775234abf68379dc986"
+    },
+    {
+      "id": "gpu_maintenance_not_started",
+      "path": "evidence/adk-gpu/no-idle-gpu/outcome.json",
+      "url": "https://1137423918.github.io/reports/adk-gpu/no-idle-gpu/outcome.json",
+      "label": "GPU维护未启动 / GPU maintenance not started",
+      "sha256": "d13887889741b728752282acdc74b3e2560ba4fe4f75df03fd900ed9bd719f38"
     }
   ],
   "pull_requests": [
@@ -110,7 +159,9 @@
       "draft": true,
       "merged": false,
       "head_sha": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
-      "updated_at": "2026-11-20T18:47:41Z"
+      "updated_at": "2026-11-20T18:47:41Z",
+      "review_count": 0,
+      "reviews": []
     },
     {
       "repository": "google/adk-python",
@@ -120,7 +171,9 @@
       "draft": true,
       "merged": false,
       "head_sha": "c71ca6a2d993ede60f9fd873b768a6d452db116f",
-      "updated_at": "2026-11-20T17:19:11Z"
+      "updated_at": "2026-11-20T17:19:11Z",
+      "review_count": 0,
+      "reviews": []
     },
     {
       "repository": "microsoft/semantic-kernel",
@@ -130,10 +183,12 @@
       "draft": true,
       "merged": false,
       "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d",
-      "updated_at": "2026-11-20T21:25:49Z"
+      "updated_at": "2026-11-20T21:25:49Z",
+      "review_count": 0,
+      "reviews": []
     }
   ],
   "paper_doi": "10.1109/LGRS.2025.3575615",
   "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
-  "scope": "Dated project/contribution brief from existing evidence, including supported ext4 controls and historical NFS qualifications. No new tests, model runs, employment or education claims."
+  "scope": "Dated résumé project brief from existing108-test engineering, failed real-model trials and upstream draft evidence. This refresh runs no server tests or model experiments and invents no education/employment."
 }
