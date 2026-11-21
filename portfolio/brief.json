@@ -5,7 +5,7 @@
   "github": "https://github.com/1137423918",
   "date": "2026-11-21",
   "focus": "agent_engineering",
-  "stack": "Python / Deep Agents / LangGraph / SQLite / Git worktree / HTTPX",
+  "stack": "Python / Deep Agents / LangGraph / SQLite / Pydantic AI / HTTPX2",
   "languages": {
     "zh": {
       "title": "项目与开源贡献",
@@ -16,8 +16,8 @@
       "bullets": [
         "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；本机 ext4 上的正常运行与首个检查点 SIGKILL 恢复生成相同参考补丁，写入及缓存复用前拒绝 NFS。",
         "实现任务级文件清单、内容哈希校验的源码定位与受保护原版测试验收；导出前检查 Python 语法，校验补丁、验证日志与反馈，拒绝篡改后的成功缓存。",
-        "在发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启和修复轮次共享；以真实本机 HTTP 验证 503、超时、在途 SIGKILL 及并发争抢。",
-        "修复验证退出后的独立会话、双重 fork 子进程泄漏，以及旧安装包监督器误加载；Linux 上回收后代后才释放运行锁。完整工程回归 108 项通过、零跳过，含 2 项新增检查。"
+        "持久化预留 HTTP 次数与 JSON 字节额度，跨重启和修复轮次共享；新增独立 asyncio/HTTPX2 安装包，4 场 Pydantic AI 假服务控制覆盖工具往返、取消、并发与 SDK 重试。",
+        "修复独立会话、双重 fork 验证子进程泄漏及旧监督器误加载；Linux 回收后代后才释放运行锁。完整工程回归 116 项通过、零跳过，新增 8 项异步检查已计入。"
       ],
       "project_scope": "恢复使用明确参考计划，未证明模型自主修复。9B ADK CPU 轨迹在 8 次请求后停止，无编辑或验收；GPU 短请求工具往返通过，原样文本检查失败，GPU 维护未启动。历史三仓库 NFS 控制与本机 ext4 结果分列；额度不是 token 或费用。",
       "contributions_label": "已提交的开源草稿",
@@ -61,8 +61,8 @@
       "bullets": [
         "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. On local ext4, normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before writes or cached success.",
         "Add task-scoped file inventory, content-hash-checked source navigation and frozen original-test acceptance. Check Python syntax before export and validate patch, log and feedback hashes before reusing success.",
-        "Reserve HTTP attempts and JSON bytes durably before send, shared across restarts and repair rounds. Exercise real loopback HTTP with 503s, timeouts, in-flight SIGKILL and competing processes.",
-        "Fix detached and double-forked verifier leaks and stale installed-supervisor loading. Reap Linux descendants before releasing the worker lock. All 108 engineering checks pass with zero skips, including two new checks."
+        "Reserve HTTP attempts and JSON bytes durably across restarts and repair rounds. Ship a standalone asyncio/HTTPX2 wheel; four Pydantic AI fake-service cases cover tools, cancellation, concurrency and SDK retries.",
+        "Fix detached and double-forked verifier leaks and stale supervisor loading. Reap Linux descendants before releasing the worker lock. All 116 engineering checks pass with zero skips, including eight new async checks."
       ],
       "project_scope": "Recovery uses explicit plans, not autonomous repair. The 9B ADK CPU run stops at eight requests without edits or acceptance. GPU tool transport passes but raw text fails; GPU maintenance has not started. Historical NFS controls are separate from ext4 evidence. Request limits are not tokens or money.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",

@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-21T16:03:57+08:00",
-  "project_source_commit": "adf8d4eb3a95a1d201ae59a73a3566d92bea734f",
+  "checked_at": "2026-11-21T17:21:42+08:00",
+  "project_source_commit": "6a74340f72c0f6d7fb513666efbab1b40ec7faf6",
   "files": [
     {
       "id": "worker_tests",
-      "label": "当前完整回归 / Current108-test snapshot",
-      "path": "evidence/verification-tree/normal/full.log",
-      "sha256": "597de4a964915ad42d47a4ab62e489ae544c527c414415109f2c5b3aa8f1e11e",
-      "url": "https://1137423918.github.io/reports/verification-tree/normal/full.log"
+      "label": "当前完整回归 / Current116-test snapshot",
+      "path": "evidence/async-budget/normal/full.log",
+      "sha256": "49336b05ccecc87f23b3b0c47c7a7a41c1be22c9f58e81d6d80e4b4ee454f3a4",
+      "url": "https://1137423918.github.io/reports/async-budget/normal/full.log"
     },
     {
       "id": "budget",
@@ -148,6 +148,20 @@
       "url": "https://1137423918.github.io/reports/adk-gpu/no-idle-gpu/outcome.json",
       "label": "GPU维护未启动 / GPU maintenance not started",
       "sha256": "d13887889741b728752282acdc74b3e2560ba4fe4f75df03fd900ed9bd719f38"
+    },
+    {
+      "id": "async_budget",
+      "path": "evidence/async-budget/report.json",
+      "url": "https://1137423918.github.io/reports/async-budget/report.json",
+      "label": "异步 SDK 接入 / Async SDK integration",
+      "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006"
+    },
+    {
+      "id": "budget_wheel",
+      "path": "artifacts/agentlab_durable_budget-0.1.0-py3-none-any.whl",
+      "url": "https://1137423918.github.io/downloads/agentlab_durable_budget-0.1.0-py3-none-any.whl",
+      "label": "独立安装包 / Standalone budget wheel",
+      "sha256": "a27d27b935b9646a0bed30cac5cc300f783311860471a2df92c053ac9657005a"
     }
   ],
   "pull_requests": [
@@ -190,5 +204,5 @@
   ],
   "paper_doi": "10.1109/LGRS.2025.3575615",
   "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
-  "scope": "Dated résumé project brief from existing108-test engineering, failed real-model trials and upstream draft evidence. This refresh runs no server tests or model experiments and invents no education/employment."
+  "scope": "Dated résumé project brief including server-validated116-test engineering and four separate fake-service PydanticAI cases. Neural failures and three unmerged upstream drafts remain separate. No education/employment invented."
 }

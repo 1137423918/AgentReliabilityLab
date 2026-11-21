@@ -1,15 +1,15 @@
 {
   "pdf": "junzhe-wang-project-brief.pdf",
-  "pdf_sha256": "31e50c8c3a3ee8ede4cb9fdc8e1f9e28ebb05a1a5aff09bf787d1b08c99705a5",
-  "content_sha256": "cdb00964442c982de75e7ac24e5b48fe346b0dc267f5a4ebcca58f8e6b5db749",
-  "evidence_map_sha256": "3973d6a71b8c89ed5d893173a5f5ccf026ff6fae708a6adec12efb8bb43ca6f4",
+  "pdf_sha256": "15dca371f810c6c378575554aef60122c1d7cc0c87419ac0e03d643762986259",
+  "content_sha256": "2bf6715e542709d6f2373615dcb5ccb489f607fcd93a7ca1383860cf8ac21b8a",
+  "evidence_map_sha256": "65ae945fd31b3bced7d4f200b248b829ca12d4844871e7ce1feccb1ad1059738",
   "builder_sha256": "eabcf290f983670bd449d3632f81124009384c3db9a93f278091947251e072d7",
   "asset_sha256": {
     "brief.css": "1aa6e8a258d3409d743f6828525c20959ae68579773cd6dd86e4f73bde98fa82",
     "brief.js": "c49b9b1b66813c613e01872e8f6086f5e77c2959e91e9749622fdc41ba657dfe"
   },
   "reportlab_version": "4.4.9",
-  "metadata_date_source": "2026-11-21T16:03:57+08:00",
+  "metadata_date_source": "2026-11-21T17:21:42+08:00",
   "fonts": [
     {
       "role": "CJKBody",
@@ -175,7 +175,7 @@
     },
     {
       "language": "en",
-      "content_bottom": 97.59,
+      "content_bottom": 82.99,
       "paragraphs": [
         {
           "top": 794.89,
@@ -229,82 +229,82 @@
         },
         {
           "top": 517.19,
-          "bottom": 487.99,
+          "bottom": 473.39,
+          "height": 43.8
+        },
+        {
+          "top": 468.39,
+          "bottom": 439.19,
           "height": 29.2
         },
         {
-          "top": 482.99,
-          "bottom": 453.79,
-          "height": 29.2
-        },
-        {
-          "top": 448.79,
-          "bottom": 410.39,
+          "top": 434.19,
+          "bottom": 395.79,
           "height": 38.4
         },
         {
-          "top": 404.39,
-          "bottom": 392.39,
+          "top": 389.79,
+          "bottom": 377.79,
           "height": 12
         },
         {
-          "top": 374.39,
-          "bottom": 362.39,
+          "top": 359.79,
+          "bottom": 347.79,
           "height": 12
         },
         {
-          "top": 356.39,
-          "bottom": 342.89,
+          "top": 341.79,
+          "bottom": 328.29,
           "height": 13.5
         },
         {
-          "top": 339.89,
-          "bottom": 326.39,
+          "top": 325.29,
+          "bottom": 311.79,
           "height": 13.5
         },
         {
-          "top": 319.39,
-          "bottom": 305.89,
+          "top": 304.79,
+          "bottom": 291.29,
           "height": 13.5
         },
         {
-          "top": 302.89,
-          "bottom": 275.89,
+          "top": 288.29,
+          "bottom": 261.29,
           "height": 27.0
         },
         {
-          "top": 268.89,
-          "bottom": 255.39,
+          "top": 254.29,
+          "bottom": 240.79,
           "height": 13.5
         },
         {
-          "top": 252.39,
-          "bottom": 225.39,
+          "top": 237.79,
+          "bottom": 210.79,
           "height": 27.0
         },
         {
-          "top": 205.39,
-          "bottom": 193.39,
+          "top": 190.79,
+          "bottom": 178.79,
           "height": 12
         },
         {
-          "top": 187.39,
-          "bottom": 173.59,
+          "top": 172.79,
+          "bottom": 158.99,
           "height": 13.8
         },
         {
-          "top": 169.59,
-          "bottom": 143.59,
+          "top": 154.99,
+          "bottom": 128.99,
           "height": 26
         },
         {
-          "top": 139.59,
-          "bottom": 127.59,
+          "top": 124.99,
+          "bottom": 112.99,
           "height": 12
         },
         {
-          "top": 121.59,
-          "bottom": 97.59,
+          "top": 106.99,
+          "bottom": 82.99,
           "height": 24
         }
       ]
