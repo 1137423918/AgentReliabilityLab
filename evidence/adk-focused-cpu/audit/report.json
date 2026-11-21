@@ -1,0 +1,332 @@
+{
+  "scope": "Read-only reconstruction of saved graph state after declared real-model ADK focused CPU trial; no model or tool invoked.",
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 8,
+  "tool_results": 8,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "b9f90b1ef8cb76056bdeeb332a65c5cf4da1a4dc4ffb9b650a18cf4892deab1f",
+      "usage": {
+        "input_tokens": 2654,
+        "output_tokens": 27,
+        "total_tokens": 2681,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "GvulEntOvQfZmUGJvYC7C0Tv1QiXeQeO",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "1a4d0d7b056ce3a19aa39a8cd32f51c79ac62fc425dfbfb2d9324ebd2616ca92",
+          "path": "/src"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "09a4e0d4a4f32d251ec364b5cf54a1815318231acdc28bad38c2259cc91ce618",
+      "name": "ls",
+      "tool_call_id": "GvulEntOvQfZmUGJvYC7C0Tv1QiXeQeO",
+      "status": "success",
+      "result_bytes": 16,
+      "result_sha256": "99f8e444c41cc7265c2cee669356b7c334370dc40c5f05e110315b738a21aba0",
+      "result_preview": "['/src/google/']"
+    },
+    {
+      "index": 3,
+      "role": "ai",
+      "message_sha256": "aa1e133380a292f72737bfdc82c473a55c413281a1e5515b5f1e8a8117666479",
+      "usage": {
+        "input_tokens": 2691,
+        "output_tokens": 20,
+        "total_tokens": 2711,
+        "input_token_details": {
+          "cache_read": 2656
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "M6COsbv6VS1XLovGW1dR9vAwJx24CHV1",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "abbe0d10d7a8f676d2c0a2cfba0f8a25e55a2853032bed1040a5ade815532498",
+          "path": "/src/google"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "role": "tool",
+      "message_sha256": "6711a12ced53be005d20ace597aeecbd02c63f598d34e7b8629338b6dc1cb1c1",
+      "name": "ls",
+      "tool_call_id": "M6COsbv6VS1XLovGW1dR9vAwJx24CHV1",
+      "status": "success",
+      "result_bytes": 20,
+      "result_sha256": "989b7e411ad7d5803cbed9d1cc716ab45703e28a544afc747813b466fe2f19e9",
+      "result_preview": "['/src/google/adk/']"
+    },
+    {
+      "index": 5,
+      "role": "ai",
+      "message_sha256": "6babb1a347cd311ad336fe502ad25d075c3f4f71185b84ec56465ec72c8602ad",
+      "usage": {
+        "input_tokens": 2731,
+        "output_tokens": 22,
+        "total_tokens": 2753,
+        "input_token_details": {
+          "cache_read": 2710
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "ZJ9GeEJfvPtnCQzyF1BqGtGC6NGy40oC",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "0da13cf2c85530adf67a29d16e9c537d0dcc7502bcdfbfdfb9f072afd9145627",
+          "path": "/src/google/adk"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "role": "tool",
+      "message_sha256": "9ecc0b12e666fdae45e1c281e30412a3ef405c2c73cd9f0c175e3e80813fdf14",
+      "name": "ls",
+      "tool_call_id": "ZJ9GeEJfvPtnCQzyF1BqGtGC6NGy40oC",
+      "status": "success",
+      "result_bytes": 30,
+      "result_sha256": "9f97935bab499384c7da247de844a91c8934d0fd8bd5ce193442147880c6997e",
+      "result_preview": "['/src/google/adk/artifacts/']"
+    },
+    {
+      "index": 7,
+      "role": "ai",
+      "message_sha256": "2c5074d14f86eedcdac25a105d2d33ec1820f48c2aece5635314ce90f79ddfcf",
+      "usage": {
+        "input_tokens": 2775,
+        "output_tokens": 24,
+        "total_tokens": 2799,
+        "input_token_details": {
+          "cache_read": 2752
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "luFY73dQzBbhuL20Oe7x954dHH0b6DlC",
+          "name": "ls",
+          "argument_keys": [
+            "path"
+          ],
+          "arguments_sha256": "edc4962e5e02c1bbbcb468dc4fa812f340bf91c0ac10fa06a4a642f1325bb6dc",
+          "path": "/src/google/adk/artifacts"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "role": "tool",
+      "message_sha256": "288cd6ddfd73a6dcf0d80bcad3ec63b6970c2e4b13af213cbb5a1b2aab7917cd",
+      "name": "ls",
+      "tool_call_id": "luFY73dQzBbhuL20Oe7x954dHH0b6DlC",
+      "status": "success",
+      "result_bytes": 54,
+      "result_sha256": "54f260504933dfc8a0c69375bfd4dc18789cd9393b51b2ad397e1482052463e1",
+      "result_preview": "['/src/google/adk/artifacts/file_artifact_service.py']"
+    },
+    {
+      "index": 9,
+      "role": "ai",
+      "message_sha256": "5df672b56c3ae63950b0bd35ad9ce367fc1f40ec79c2ed176a24da2f809ae837",
+      "usage": {
+        "input_tokens": 2825,
+        "output_tokens": 31,
+        "total_tokens": 2856,
+        "input_token_details": {
+          "cache_read": 2798
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "w2AvE9nkdTGHCD2AR0szcePpH4Vpfy04",
+          "name": "inspect_python",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "role": "tool",
+      "message_sha256": "c1b707976d6b59051dda6881f2a434b9dfef83d17817e77f726b22c479bdd234",
+      "name": "inspect_python",
+      "tool_call_id": "w2AvE9nkdTGHCD2AR0szcePpH4Vpfy04",
+      "status": "success",
+      "result_bytes": 5413,
+      "result_sha256": "064d47d52c17127e19590b16cc3142959716cb76e6e8e9b13e8567f55d9484fd",
+      "result_preview": "{\"status\":\"ok\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\",\"file_lines\":978,\"parser\":\"Python 3.11 AST\",\"mode\":\"outline\",\"offset\":0,\"total\":44,\"items\":[{\"id\":\"L43:0\",\"name\":\"_iter_artifact_dirs\",\"name_t"
+    },
+    {
+      "index": 11,
+      "role": "ai",
+      "message_sha256": "0d9e2718306c40751bd8355028903c801e25b16660fe795fd6c2b828f4a0c794",
+      "usage": {
+        "input_tokens": 4683,
+        "output_tokens": 109,
+        "total_tokens": 4792,
+        "input_token_details": {
+          "cache_read": 2855
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "1DZaKuE6I3dJUaP3NxStl33nAoKkPuhf",
+          "name": "inspect_python",
+          "argument_keys": [
+            "expected_sha256",
+            "file_path",
+            "symbol_id"
+          ],
+          "arguments_sha256": "2eeaa04a3076536949c81a06ae773653c9cefb787162ca815c9424f908feb4dc",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "symbol_id": "L754:2",
+          "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "role": "tool",
+      "message_sha256": "771ae7afd97e13275600d86d3d17747d8efcc22180fdeac46187514fed32b8b6",
+      "name": "inspect_python",
+      "tool_call_id": "1DZaKuE6I3dJUaP3NxStl33nAoKkPuhf",
+      "status": "success",
+      "result_bytes": 1647,
+      "result_sha256": "bc25307416c288cc0e3740e36d0af25009b12d93ff07be77d12b4c7ed6111bd5",
+      "result_preview": "{\"status\":\"ok\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\",\"file_lines\":978,\"parser\":\"Python 3.11 AST\",\"mode\":\"source\",\"offset\":0,\"symbol\":{\"id\":\"L754:2\",\"name\":\"FileArtifactService._delete_artifact_sy"
+    },
+    {
+      "index": 13,
+      "role": "ai",
+      "message_sha256": "9e488a26f19c8ac2a493e66e520a3728b947b0cd9bd6833d2e3d06ef10db4f0e",
+      "usage": {
+        "input_tokens": 5356,
+        "output_tokens": 109,
+        "total_tokens": 5465,
+        "input_token_details": {
+          "cache_read": 4791
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "puhwsNLfCSyfSq6zck1UlPVgGaQUnUqJ",
+          "name": "inspect_python",
+          "argument_keys": [
+            "expected_sha256",
+            "file_path",
+            "symbol_id"
+          ],
+          "arguments_sha256": "a2795ae82c8316858c3a2c91ad68ea7c9ca4db5df7c96f235fa7c71f87476a6e",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "symbol_id": "L778:2",
+          "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "role": "tool",
+      "message_sha256": "e0dbff069a096efa2c340b63b464f71e1a1f3a314753ef7c9c3f3cc7a06f1a0f",
+      "name": "inspect_python",
+      "tool_call_id": "puhwsNLfCSyfSq6zck1UlPVgGaQUnUqJ",
+      "status": "success",
+      "result_bytes": 1117,
+      "result_sha256": "a96552ecfea7030aa21e0c28b23bf2d8f491d11fef19f71d2fa75b59fe04be17",
+      "result_preview": "{\"status\":\"ok\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\",\"file_lines\":978,\"parser\":\"Python 3.11 AST\",\"mode\":\"source\",\"offset\":0,\"symbol\":{\"id\":\"L778:2\",\"name\":\"FileArtifactService.list_versions\",\"nam"
+    },
+    {
+      "index": 15,
+      "role": "ai",
+      "message_sha256": "e09b009cab518ddb50bad0afeee7c328bf063eaa1a4fd2be030fb056a2e9d9b9",
+      "usage": {
+        "input_tokens": 5876,
+        "output_tokens": 109,
+        "total_tokens": 5985,
+        "input_token_details": {
+          "cache_read": 5464
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "L4ULjpeUGTKSXH74rl6niDcjnOU23qM1",
+          "name": "inspect_python",
+          "argument_keys": [
+            "expected_sha256",
+            "file_path",
+            "symbol_id"
+          ],
+          "arguments_sha256": "5be535bca9228f0d4e4c353d06acba9af8b9cc836520e1e6ad0dc168fa54f1b8",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "symbol_id": "L360:0",
+          "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "role": "tool",
+      "message_sha256": "e5fb72607955b11013c81af2d6bdf2bbeb2538498c25b72d4106fd03eab3fa29",
+      "name": "inspect_python",
+      "tool_call_id": "L4ULjpeUGTKSXH74rl6niDcjnOU23qM1",
+      "status": "success",
+      "result_bytes": 3190,
+      "result_sha256": "df9d86f7b44c5fe0d0d48e27178ea361bb8b6012f6dca497cebbae8af151d104",
+      "result_preview": "{\"status\":\"ok\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\",\"file_lines\":978,\"parser\":\"Python 3.11 AST\",\"mode\":\"source\",\"offset\":0,\"symbol\":{\"id\":\"L360:0\",\"name\":\"FileArtifactService\",\"name_truncated\":f"
+    }
+  ],
+  "virtual_changes": [],
+  "annotated_read_results": 0,
+  "exported_patch": false,
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

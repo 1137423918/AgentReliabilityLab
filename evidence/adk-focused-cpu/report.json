@@ -1,0 +1,334 @@
+{
+  "scope": "One normal real-model CPU trial on the existing Google ADK duplicate-delete defect, production-only edits, with explicit symbol-navigation guidance and protected acceptance. Not a held-out benchmark, independent success-rate task or reference-plan control.",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "protocol_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+  "task_sha256": "c0ac70a91f44bb44b31a070bad63d343f938fbac59d05acd4e6b886d2b37ec89",
+  "source_project_base": "5ae934f5ee1a47a460c246d30e3ad14a8910421c",
+  "source_sha256": {
+    "agent_lab/worker.py": "8778f326f00050fe881d1d386f87a3504375e20538c0b7ddc7537e0a32f7cf2f",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "f4171cd773e2c6d302e823915d4224cf1a886552e4c27279df2e6114ecc497dc",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939"
+  },
+  "model_inference": true,
+  "gpu_used": false,
+  "fault_injection": false,
+  "core_unit_tests_rerun": false,
+  "planned_trials": 1,
+  "verified_trials": 0,
+  "case": {
+    "case": "normal",
+    "checkpoint_interruption": null,
+    "returncode": 2,
+    "timed_out": false,
+    "duration_seconds": 913.965,
+    "verified_patch": false,
+    "result": null,
+    "state": {
+      "status": "failed",
+      "error_type": "RequestBudgetExhausted"
+    }
+  },
+  "outcome": "request_budget_exhausted",
+  "model": {
+    "model_sha256": "9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06",
+    "source_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "precision": "GGUF Q4_K_M derived from FP16 conversion of fixed BF16 source; no importance matrix",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "alias": "agentlab-qwen3-4b",
+    "model_card": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507"
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen3-4b",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 0.0,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "active_state_filesystem": "ext4",
+  "model_turns": 8,
+  "tool_results": 8,
+  "tool_names": [
+    "ls",
+    "ls",
+    "ls",
+    "ls",
+    "inspect_python",
+    "inspect_python",
+    "inspect_python",
+    "inspect_python"
+  ],
+  "model_tool_choices": [
+    {
+      "id": "GvulEntOvQfZmUGJvYC7C0Tv1QiXeQeO",
+      "name": "ls",
+      "argument_keys": [
+        "path"
+      ],
+      "arguments_sha256": "1a4d0d7b056ce3a19aa39a8cd32f51c79ac62fc425dfbfb2d9324ebd2616ca92",
+      "path": "/src"
+    },
+    {
+      "id": "M6COsbv6VS1XLovGW1dR9vAwJx24CHV1",
+      "name": "ls",
+      "argument_keys": [
+        "path"
+      ],
+      "arguments_sha256": "abbe0d10d7a8f676d2c0a2cfba0f8a25e55a2853032bed1040a5ade815532498",
+      "path": "/src/google"
+    },
+    {
+      "id": "ZJ9GeEJfvPtnCQzyF1BqGtGC6NGy40oC",
+      "name": "ls",
+      "argument_keys": [
+        "path"
+      ],
+      "arguments_sha256": "0da13cf2c85530adf67a29d16e9c537d0dcc7502bcdfbfdfb9f072afd9145627",
+      "path": "/src/google/adk"
+    },
+    {
+      "id": "luFY73dQzBbhuL20Oe7x954dHH0b6DlC",
+      "name": "ls",
+      "argument_keys": [
+        "path"
+      ],
+      "arguments_sha256": "edc4962e5e02c1bbbcb468dc4fa812f340bf91c0ac10fa06a4a642f1325bb6dc",
+      "path": "/src/google/adk/artifacts"
+    },
+    {
+      "id": "w2AvE9nkdTGHCD2AR0szcePpH4Vpfy04",
+      "name": "inspect_python",
+      "argument_keys": [
+        "file_path"
+      ],
+      "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+    },
+    {
+      "id": "1DZaKuE6I3dJUaP3NxStl33nAoKkPuhf",
+      "name": "inspect_python",
+      "argument_keys": [
+        "expected_sha256",
+        "file_path",
+        "symbol_id"
+      ],
+      "arguments_sha256": "2eeaa04a3076536949c81a06ae773653c9cefb787162ca815c9424f908feb4dc",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "symbol_id": "L754:2",
+      "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+    },
+    {
+      "id": "puhwsNLfCSyfSq6zck1UlPVgGaQUnUqJ",
+      "name": "inspect_python",
+      "argument_keys": [
+        "expected_sha256",
+        "file_path",
+        "symbol_id"
+      ],
+      "arguments_sha256": "a2795ae82c8316858c3a2c91ad68ea7c9ca4db5df7c96f235fa7c71f87476a6e",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "symbol_id": "L778:2",
+      "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+    },
+    {
+      "id": "L4ULjpeUGTKSXH74rl6niDcjnOU23qM1",
+      "name": "inspect_python",
+      "argument_keys": [
+        "expected_sha256",
+        "file_path",
+        "symbol_id"
+      ],
+      "arguments_sha256": "5be535bca9228f0d4e4c353d06acba9af8b9cc836520e1e6ad0dc168fa54f1b8",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "symbol_id": "L360:0",
+      "expected_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+    }
+  ],
+  "virtual_changes": [],
+  "exported_patch": false,
+  "acceptance_run": false,
+  "requests_reserved": 8,
+  "request_body_bytes": 119155,
+  "unknown_in_flight_reservations_still_charged": 0,
+  "persisted_response_usage": {
+    "scope": "Persisted replies only; canceled/unsaved work may use additional compute. Not full-trial compute or billed cost.",
+    "responses": [
+      {
+        "message_index": 1,
+        "input_tokens": 2654,
+        "output_tokens": 27,
+        "total_tokens": 2681,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 3,
+        "input_tokens": 2691,
+        "output_tokens": 20,
+        "total_tokens": 2711,
+        "input_token_details": {
+          "cache_read": 2656
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 5,
+        "input_tokens": 2731,
+        "output_tokens": 22,
+        "total_tokens": 2753,
+        "input_token_details": {
+          "cache_read": 2710
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 7,
+        "input_tokens": 2775,
+        "output_tokens": 24,
+        "total_tokens": 2799,
+        "input_token_details": {
+          "cache_read": 2752
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 9,
+        "input_tokens": 2825,
+        "output_tokens": 31,
+        "total_tokens": 2856,
+        "input_token_details": {
+          "cache_read": 2798
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 11,
+        "input_tokens": 4683,
+        "output_tokens": 109,
+        "total_tokens": 4792,
+        "input_token_details": {
+          "cache_read": 2855
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 13,
+        "input_tokens": 5356,
+        "output_tokens": 109,
+        "total_tokens": 5465,
+        "input_token_details": {
+          "cache_read": 4791
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 15,
+        "input_tokens": 5876,
+        "output_tokens": 109,
+        "total_tokens": 5985,
+        "input_token_details": {
+          "cache_read": 5464
+        },
+        "output_token_details": {}
+      }
+    ],
+    "input_tokens": 29591,
+    "cache_read_tokens": 24026,
+    "output_tokens": 451,
+    "input_minus_cache_read_tokens": 5565
+  },
+  "native_logged_prefill_counts": [
+    2654,
+    35,
+    21,
+    23,
+    27,
+    1828,
+    565,
+    412
+  ],
+  "persisted_new_input_matches_native_logged_prefill_sum": true,
+  "service_stopped": true,
+  "shutdown": {
+    "returncode": 0,
+    "guard_reason": null,
+    "forced_cleanup": false,
+    "peak_sampled_rss_bytes": 9243697152
+  },
+  "limitations": [
+    "Known public defect already studied by the operator; not held out or a benchmark success rate.",
+    "New task, model, sampling, prompt navigation and local storage differ together from previous Deep Agents trials; no isolated attribution.",
+    "The model sees only symptom, file inventory and generic navigation guidance; no operator repair or reference code.",
+    "Frozen original 1863-pass/26-expected-failure group and four known external contracts are reused, not new or summable tests.",
+    "Single normal trial, no retries, repair rounds, fault injection or deadline extension.",
+    "All inference CPU-only, existing unchanged 4-thread/nice19/64GiB admission/48GiB AS/36GiB RSS bounds retained.",
+    "Only saved replies provide complete reported usage; canceled work may consume additional compute.",
+    "No executable backup migration or cross-host resume."
+  ],
+  "owned_processes_remaining": [],
+  "inspect_python_calls": 4,
+  "terminal_error": "Persistent model request budget exhausted before network send.",
+  "native_generation_task_launches": 8,
+  "next_request_sent": false,
+  "maximum_single_request_bytes": 22509,
+  "behavioral_observations": {
+    "directory_queries_in_order": [
+      "/src",
+      "/src/google",
+      "/src/google/adk",
+      "/src/google/adk/artifacts"
+    ],
+    "directory_queries_are_distinct": true,
+    "inspect_python_source_targets_in_order": [
+      "outline",
+      "FileArtifactService._delete_artifact_sync",
+      "FileArtifactService.list_versions",
+      "FileArtifactService (first page)"
+    ],
+    "named_implementation_read": true,
+    "successful_virtual_edits": 0,
+    "acceptance_execution": false,
+    "no_new_regression_score": true
+  }
+}

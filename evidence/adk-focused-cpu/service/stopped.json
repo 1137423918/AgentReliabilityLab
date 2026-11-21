@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+  "launcher_pid": 4113422,
+  "launcher_start_ticks": "230366364",
+  "driver_pid": 4116910,
+  "driver_start_ticks": "230372569",
+  "driver_returncode": 0,
+  "launcher_returncode": 143,
+  "port_open_after": false,
+  "native_child_present": false
+}

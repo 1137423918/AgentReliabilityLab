@@ -1,0 +1,21 @@
+{
+  "scope": "One normal real-model CPU trial on the existing Google ADK duplicate-delete defect, production-only edits, with explicit symbol-navigation guidance and protected acceptance. Not a held-out benchmark, independent success-rate task or reference-plan control.",
+  "protocol_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+  "task_sha256": "c0ac70a91f44bb44b31a070bad63d343f938fbac59d05acd4e6b886d2b37ec89",
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": 2,
+      "timed_out": false,
+      "duration_seconds": 913.965,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "RequestBudgetExhausted"
+      }
+    }
+  ],
+  "verified_trials": 0
+}

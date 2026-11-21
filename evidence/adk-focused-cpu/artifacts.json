@@ -1,0 +1,107 @@
+{
+  "normalization": "Private local/server paths and terminal formatting in allowlisted metadata/logs only. Task, protocol, request journal, patch and candidate text unchanged. No SQLite, complete conversations, headers, weights or full worktrees.",
+  "files": [
+    {
+      "path": "pilot.json",
+      "original_sha256": "a3b3af824e67ae08ab4ad608bd326e2bc0cce7af506973a47d8bd9c978910601",
+      "public_sha256": "a3b3af824e67ae08ab4ad608bd326e2bc0cce7af506973a47d8bd9c978910601",
+      "public_bytes": 802
+    },
+    {
+      "path": "protocol.json",
+      "original_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+      "public_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+      "public_bytes": 5736
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "0317b8412c2cc19867b4631a63f76568b32875482d4d24f801deb9883e8c8eba",
+      "public_sha256": "d74e409f8bf7fb11a43c4ed59f2b018aea7f9cbff990557ff0668136f3bfd1f2",
+      "public_bytes": 772
+    },
+    {
+      "path": "service/service.json",
+      "original_sha256": "f838718f4c056422984deaabd3bc10d5313e93aff38c7ab17f4c120458c1c113",
+      "public_sha256": "b1deca4f3bd155fb70b4ad2b6dc2bcfa40921e5cce455353a0916464b232c35c",
+      "public_bytes": 7775
+    },
+    {
+      "path": "service/shutdown.json",
+      "original_sha256": "24106dda7c7352283d2b0e6ce522cedadf062d83db0bbf8688ac5e7c1fe00cc0",
+      "public_sha256": "24106dda7c7352283d2b0e6ce522cedadf062d83db0bbf8688ac5e7c1fe00cc0",
+      "public_bytes": 113
+    },
+    {
+      "path": "service/stopped.json",
+      "original_sha256": "48e9321be1922d340b593dd8adf39149528c0f85533191b44cdf7940549ed34c",
+      "public_sha256": "48e9321be1922d340b593dd8adf39149528c0f85533191b44cdf7940549ed34c",
+      "public_bytes": 337
+    },
+    {
+      "path": "logs/server.log",
+      "original_sha256": "132518a4aea0d44cef1be5e15e179965834bb3b545e32fa42bc09c2c95f98ed8",
+      "public_sha256": "e242a9a044ee0b1611957dc1bbdb9f1457eb427902292471f74aa5d481044bb0",
+      "public_bytes": 9580
+    },
+    {
+      "path": "logs/launcher.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "models.json",
+      "original_sha256": "87e28ea60bbd66c6a7ba2f8f5a9fdb6dab3513199b3683b9e6ef853fff7584e0",
+      "public_sha256": "87e28ea60bbd66c6a7ba2f8f5a9fdb6dab3513199b3683b9e6ef853fff7584e0",
+      "public_bytes": 1179
+    },
+    {
+      "path": "audit/report.json",
+      "original_sha256": "0b1987b47fd55da5da9966ef6870cec1d429ffdcafb4f13d9806d62040eeda74",
+      "public_sha256": "0b1987b47fd55da5da9966ef6870cec1d429ffdcafb4f13d9806d62040eeda74",
+      "public_bytes": 11570
+    },
+    {
+      "path": "task.json",
+      "original_sha256": "25a6ee1f21cc66a166d7de82b03a1b80cb00894d01936c4bf1b6b4921eef1714",
+      "public_sha256": "25a6ee1f21cc66a166d7de82b03a1b80cb00894d01936c4bf1b6b4921eef1714",
+      "public_bytes": 8515
+    },
+    {
+      "path": "normal/status.json",
+      "original_sha256": "ad5aedfc6c649490b60f99a7fb84e5ddb71ef56edc562013d3025077e57e9316",
+      "public_sha256": "ad5aedfc6c649490b60f99a7fb84e5ddb71ef56edc562013d3025077e57e9316",
+      "public_bytes": 67
+    },
+    {
+      "path": "normal/manifest.json",
+      "original_sha256": "c530f5c1509cdfc29a1ab8432b4cc765a366f4d9956ff53bb0eba138b8346e48",
+      "public_sha256": "3f07ade237f33d8f922047c3199dfd6473b024f1e8c32e0b7987fa03059db18e",
+      "public_bytes": 9175
+    },
+    {
+      "path": "normal/model-requests.json",
+      "original_sha256": "fabacd4865aef5971006f31322efa8d1347fe0e801d684a65a78b35a7d8af0b6",
+      "public_sha256": "fabacd4865aef5971006f31322efa8d1347fe0e801d684a65a78b35a7d8af0b6",
+      "public_bytes": 2507
+    },
+    {
+      "path": "normal/resumed.stdout.jsonl",
+      "original_sha256": "4df69c3465e40d61dc4de35328e09db9b5b71fb3e7762dd00f45f32c0e6a9856",
+      "public_sha256": "4df69c3465e40d61dc4de35328e09db9b5b71fb3e7762dd00f45f32c0e6a9856",
+      "public_bytes": 664
+    },
+    {
+      "path": "normal/resumed.stderr.log",
+      "original_sha256": "fea6509f23d2d32254ff6859a0abd89caf10d0fcc471db9bc11ba7da37740ed6",
+      "public_sha256": "fea6509f23d2d32254ff6859a0abd89caf10d0fcc471db9bc11ba7da37740ed6",
+      "public_bytes": 96
+    },
+    {
+      "path": "logs/trial.log",
+      "original_sha256": "3a4cc7f05ad6032734bfd2b078738d04c8879305be57ab831826f9e926d5345c",
+      "public_sha256": "3a4cc7f05ad6032734bfd2b078738d04c8879305be57ab831826f9e926d5345c",
+      "public_bytes": 230
+    }
+  ]
+}
