@@ -1,0 +1,1 @@
+{"case": "test_scope", "grading": {"evidence_verified": true, "verdict_correct": true, "required_fact_failures": [], "case_passed": true, "free_prose_semantics_verified": false, "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"}, "tool_calls": 5, "error_type": null}

@@ -1,0 +1,325 @@
+{
+  "checked_at_utc": "2026-11-21T13:31:53.773584+00:00",
+  "purpose": "Optional model-selected submit_assessment tool for real LlamaIndex report auditing; eliminate the separate formatting call while retaining strict typed JSON/source/read lineage checks.",
+  "output_strategy": "submit_tool",
+  "default_strategy_still_two_step": true,
+  "full_suite_passed": 124,
+  "full_suite_skipped": 0,
+  "new_core_test_count": 0,
+  "existing_evidence_checks_included": 8,
+  "original_worker_dependency_pairs_unchanged": 68,
+  "core_and_budget_sources_unchanged": true,
+  "questions_catalog_and_grader_unchanged": true,
+  "default_two_step_fake_request_bodies_identical_to_stage38": true,
+  "sdk_controls": {
+    "cases": 6,
+    "expected_behavior_passed": 6,
+    "original_default_cases_included": 2,
+    "new_strategy_cases_included": 4,
+    "explicit_fake_replies": true,
+    "posts": 26,
+    "normal_default_posts": 5,
+    "normal_direct_posts": 4,
+    "negative_cases": [
+      "wrong_typed_fact",
+      "unread_fact",
+      "plain_answer_without_submission"
+    ],
+    "phase_wall_seconds": 16.986,
+    "included_in_engineering_or_neural_score": false
+  },
+  "neural": {
+    "declared_known_fixed_cases": 3,
+    "started_cases": 3,
+    "predeclared_contract_passed": 2,
+    "not_run_cases": 0,
+    "all_declared_cases_passed": false,
+    "case_dispositions": [
+      {
+        "id": "gpu_claim",
+        "status": "failed_predeclared_contract",
+        "driver_wall_seconds": 491.049,
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [
+          {
+            "report_id": "gpu_transport",
+            "pointer": "/overall_smoke_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "gpu_maintenance",
+            "pointer": "/model_http_requests",
+            "reason": "missing"
+          }
+        ],
+        "error": null,
+        "http_reservations": 4,
+        "received_responses": 4,
+        "reserved_request_body_bytes": 23604,
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200
+        ],
+        "tool_calls": 4,
+        "tool_names": [
+          "list_reports",
+          "read_report",
+          "read_report",
+          "submit_assessment"
+        ],
+        "accepted_submission_count": 1,
+        "assessment": {
+          "claim_supported": false,
+          "explanation": "The resume claim is unsupported. The gpu_transport report shows only 2 of 3 GPU smoke checks passed (check/0 failed). Additionally, the repository_maintenance_run field is false and model_service_started is false with outcome 'no_eligible_idle_gpu', meaning the maintenance service did not start and no repair was produced.",
+          "facts": [
+            {
+              "report_id": "gpu_transport",
+              "pointer": "/checks/0/passed",
+              "value": false
+            },
+            {
+              "report_id": "gpu_transport",
+              "pointer": "/checks/1/passed",
+              "value": true
+            },
+            {
+              "report_id": "gpu_transport",
+              "pointer": "/checks/2/passed",
+              "value": true
+            },
+            {
+              "report_id": "gpu_transport",
+              "pointer": "/repository_maintenance_run",
+              "value": false
+            },
+            {
+              "report_id": "gpu_maintenance",
+              "pointer": "/model_service_started",
+              "value": false
+            },
+            {
+              "report_id": "gpu_maintenance",
+              "pointer": "/outcome",
+              "value": "no_eligible_idle_gpu"
+            }
+          ],
+          "citations": [
+            {
+              "report_id": "gpu_transport",
+              "sha256": "d21dce1331597931b7f123e0413a9807e0de43e06da65775234abf68379dc986"
+            },
+            {
+              "report_id": "gpu_maintenance",
+              "sha256": "d13887889741b728752282acdc74b3e2560ba4fe4f75df03fd900ed9bd719f38"
+            }
+          ]
+        },
+        "free_prose_semantics_verified": false
+      },
+      {
+        "id": "test_scope",
+        "status": "passed",
+        "driver_wall_seconds": 505.781,
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "error": null,
+        "http_reservations": 5,
+        "received_responses": 5,
+        "reserved_request_body_bytes": 33009,
+        "http_statuses": [
+          200,
+          200,
+          200,
+          200,
+          200
+        ],
+        "tool_calls": 5,
+        "tool_names": [
+          "list_reports",
+          "read_report",
+          "read_report",
+          "read_report",
+          "submit_assessment"
+        ],
+        "accepted_submission_count": 1,
+        "assessment": {
+          "claim_supported": false,
+          "explanation": "The claim states 319 passing core tests (116 + 203 = 319, which is correct). However, the claim incorrectly states that \"the 22 focused patch tests can be added again\" when the report field /overlapping_suites_not_added=true indicates these cannot be added as unique core tests due to overlapping scopes.",
+          "facts": [
+            {
+              "report_id": "core_current",
+              "pointer": "/full_suite_passed",
+              "value": 116
+            },
+            {
+              "report_id": "patch_move",
+              "pointer": "/related_suite_passed",
+              "value": 203
+            },
+            {
+              "report_id": "patch_move",
+              "pointer": "/focused_passed",
+              "value": 22
+            },
+            {
+              "report_id": "patch_move",
+              "pointer": "/overlapping_suites_not_added",
+              "value": true
+            }
+          ],
+          "citations": [
+            {
+              "report_id": "core_current",
+              "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006"
+            },
+            {
+              "report_id": "patch_move",
+              "sha256": "72e0af3d196d194798c7b5bc212750a234f74956cca85fb849880d9fdd42ecd8"
+            }
+          ]
+        },
+        "free_prose_semantics_verified": false
+      },
+      {
+        "id": "supported_core",
+        "status": "passed",
+        "driver_wall_seconds": 266.42,
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "error": null,
+        "http_reservations": 3,
+        "received_responses": 3,
+        "reserved_request_body_bytes": 16070,
+        "http_statuses": [
+          200,
+          200,
+          200
+        ],
+        "tool_calls": 3,
+        "tool_names": [
+          "list_reports",
+          "read_report",
+          "submit_assessment"
+        ],
+        "accepted_submission_count": 1,
+        "assessment": {
+          "claim_supported": true,
+          "explanation": "The claim is fully supported by the core_current report which shows: 116 passing checks (/full_suite_passed), zero skips (/full_suite_skipped), 8 new async checks included (/new_async_checks_included), 4 SDK cases reported separately (/framework_case_count), and zero real neural requests (/real_neural_requests). All numbers and scope match exactly.",
+          "facts": [
+            {
+              "report_id": "core_current",
+              "pointer": "/full_suite_passed",
+              "value": 116
+            },
+            {
+              "report_id": "core_current",
+              "pointer": "/full_suite_skipped",
+              "value": 0
+            },
+            {
+              "report_id": "core_current",
+              "pointer": "/new_async_checks_included",
+              "value": 8
+            },
+            {
+              "report_id": "core_current",
+              "pointer": "/framework_case_count",
+              "value": 4
+            },
+            {
+              "report_id": "core_current",
+              "pointer": "/real_neural_requests",
+              "value": 0
+            }
+          ],
+          "citations": [
+            {
+              "report_id": "core_current",
+              "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006"
+            }
+          ]
+        },
+        "free_prose_semantics_verified": false
+      }
+    ],
+    "synthetic_replies": false,
+    "device": "CPU only,4threads,0GPU layers",
+    "context": 8192,
+    "model": "Qwen3.5-9B text-only Q4_K_M",
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "exact_quantizer_source_weight_revision": null,
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "protocol_original_sha256": "78dbd00bdb67373824a84a115b54eb64204a500f06d31d4cd8db9f47f936b563",
+    "protocol_public_sha256": "78dbd00bdb67373824a84a115b54eb64204a500f06d31d4cd8db9f47f936b563",
+    "source_archive_sha256": "3f680e0ae7954760961dcb23739499e49bbccbee6913efc7d5b1b68d6e9c9e74",
+    "catalog_sha256": "e7f48f1cc0127545575cd22201d872a55f8b56c2fa642605bde8f8d6bfd2d171",
+    "catalog_source_commit": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+    "http_reservations": 12,
+    "received_responses": 12,
+    "reserved_request_body_bytes": 72683,
+    "saved_response_usage": {
+      "prompt_tokens": 19931,
+      "cached_prompt_tokens": 16143,
+      "completion_tokens": 2979,
+      "excludes_unknown_responses_native_warmup_and_canceled_compute": true
+    },
+    "max_requests_per_case": 8,
+    "max_request_body_bytes": 65536,
+    "max_total_request_body_bytes_per_case": 262144,
+    "agent_timeout_seconds": 600,
+    "model_max_output_tokens": 1024,
+    "agent_max_iterations": 7,
+    "sdk_and_model_retries": 0,
+    "repair_rounds": 0,
+    "no_service_restart_or_budget_extension": true,
+    "service_wall_seconds": 1282.719,
+    "model_shutdown_returncode": 0,
+    "port_closed": true,
+    "api_key_file_remaining": false,
+    "observed_owned_processes_after": 0,
+    "free_prose_semantics_verified": false
+  },
+  "sources_sha256": {
+    "benchmarks/evidence_audit_case.py": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+    "benchmarks/llamaindex_evidence_agent.py": "30538f3d571ed27129ba5e7c0cb35f9a28625acbbdb28a7a3f448cfc92cf6b00",
+    "benchmarks/llamaindex_evidence_controls.py": "d06406457855213a6ca34958e825c1e730a3b87f873dfb2fd9342e52a6d1064f"
+  },
+  "historical_two_step_trial": {
+    "report": "../evidence-audit/report.json",
+    "case": "gpu_claim",
+    "timeout_seconds": 600,
+    "http_reservations": 5,
+    "received_responses": 4,
+    "predeclared_contract_passed": 0,
+    "not_regraded": true
+  },
+  "limitations": [
+    "Explanation calls116+203=319 arithmetic correct but does not explicitly reject labeling319 as core checks; its wording remains ambiguous across core/related scopes. VerdictFalse and exact structured facts pass the predeclared grader. This does not establish fully correct prose.",
+    "Three known fixed queries, not heldout/general accuracy or neural code-repair evaluation.",
+    "New tool schema and concise-prompt instructions differ; fewer fake-service calls do not establish a causal model speedup or latency/reliability gain.",
+    "Evidence verification checks exact structured values/citations/read lineage, not all prose semantics, the truth of arbitrary verdicts or operator authenticity.",
+    "Snapshot remains earlier116-test catalog; current124 validation is not retroactively included.",
+    "Invalid submission terminates rejected; no implicit repair/retry. Model free text without a verified final tool result cannot pass.",
+    "Original two_step default remains available and its fake-control serialized request bodies are byte-identical to the earlier controls.",
+    "Request hooks record client attempts before quota admission. Unknown reservations remain charged; saved usage excludes unreceived responses/warmup/aborted work.",
+    "No GPU use, source-weight provenance upgrade or new upstream contribution. All runtime/model/tests ran on the authorized server."
+  ],
+  "manual_prose_review": [
+    {
+      "case": "test_scope",
+      "structured_contract_passed": true,
+      "observation": "Explanation calls116+203=319 arithmetic correct but does not explicitly reject labeling319 as core checks; its wording remains ambiguous across core/related scopes. VerdictFalse and exact structured facts pass the predeclared grader. This does not establish fully correct prose.",
+      "automatic_free_prose_semantic_validation": false,
+      "grades_unchanged": true,
+      "model_text_kept_verbatim": true
+    }
+  ]
+}

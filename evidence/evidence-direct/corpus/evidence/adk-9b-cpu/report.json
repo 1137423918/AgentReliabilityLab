@@ -1,0 +1,383 @@
+{
+  "scope": "One new normal real-model ADK CPU trajectory using the previously pinned LMStudio-community Qwen3.5-9B text-only Q4_K_M artifact, inventory-scoped tools and unchanged protected acceptance. Not a held-out benchmark or success-rate estimate.",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "protocol_sha256": "c99e6f7ad9976d60fd23aae66bab63237f58a696d602b26d6d6b7f19dbdaaba1",
+  "task_sha256": "a58ac6cd634e5c7fa662aa90a7d79cac2de003e203480e1a1365c62d805b3807",
+  "source_project_base": "0892198cfb2b53ce4d4e0c954c1a622f0e445134",
+  "source_sha256": {
+    "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56"
+  },
+  "engineering_evidence": {
+    "report": "evidence/file-inventory/report.json",
+    "report_sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a",
+    "full_checks_passed": 106,
+    "focused_checks_included": 6,
+    "wheel_sha256": "725b0d247525b2e4cb7f39762da51bb0875842a8c2b142e9604450b6961dbd24"
+  },
+  "task_feature_enabled": true,
+  "generated_catalog_and_ls_filtering_change_together": true,
+  "model_inference": true,
+  "gpu_used": false,
+  "fault_injection": false,
+  "core_unit_tests_rerun": false,
+  "planned_trials": 1,
+  "verified_trials": 0,
+  "case": {
+    "case": "normal",
+    "checkpoint_interruption": null,
+    "returncode": 2,
+    "timed_out": false,
+    "duration_seconds": 1721.383,
+    "verified_patch": false,
+    "result": null,
+    "state": {
+      "status": "failed",
+      "error_type": "RequestBudgetExhausted"
+    }
+  },
+  "outcome": "request_budget_exhausted",
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "publisher_claimed_base_model": "Qwen/Qwen3.5-9B",
+    "reference_source_metadata_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "exact_quantizer_source_weight_revision": null,
+    "alias": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "precision": "LMStudio-community text-only GGUF Q4_K_M",
+    "model_card": "https://huggingface.co/Qwen/Qwen3.5-9B"
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "active_state_filesystem": "ext4",
+  "model_turns": 8,
+  "tool_results": 8,
+  "tool_names": [
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file"
+  ],
+  "model_tool_choices": [
+    {
+      "id": "3bq18Z7MAR5UR3mmayiqcxnklaK8Z5Ba",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path"
+      ],
+      "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+    },
+    {
+      "id": "hbjOoR9lZY39nKqfAOttpNY7LnxVLSM8",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "aaea6febd4005638a943ec42ab4b911441dc023f2d4b4631d93cd0385c4b2f28",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 100,
+      "limit": 100
+    },
+    {
+      "id": "x9mIbdBWaLlZWQJMAQhgEs1ayRWqwxdP",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "735c1cd8814af5efc3b8fa4cdeaa3563615834eb067196906da0ce43316658fe",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 200,
+      "limit": 100
+    },
+    {
+      "id": "J2kiswBz3CYOlWaAZbhtThML4p6icC7l",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "ed273052911d3135e0eccdbdcce4859018f63408a4c8c1e3edafa81c2fb47fd6",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 300,
+      "limit": 100
+    },
+    {
+      "id": "I9SbYk4eZGS11lZdRkRBqywdj1xsIeBp",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "6c6ba987bd9eba1ba1e4993fcbb5abdae21d5feae09b6d4fa26def7df2bc15c9",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 400,
+      "limit": 100
+    },
+    {
+      "id": "674qQ1l9hSDur261HpTbr8OZHBSYpRch",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "dee93960c5fd829c110622595f4977c6bac29758e9c79f6b22ca45cf920ae6e0",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 500,
+      "limit": 100
+    },
+    {
+      "id": "5a4Ej4gR4sj1FXLgwajeHVsG1fWGGgfH",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "57c15cf701c9c7635c2f90cdb24a8f578f6fa641b5a8e4413620d9b334028e45",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 600,
+      "limit": 100
+    },
+    {
+      "id": "zW4JGVJ73nTA4mL5xbXtBmO6L3QzHnHB",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "b47d3806e929286200248d02a20ad7d07ef47375fd1b8ff08d925fc208cc92f0",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 700,
+      "limit": 100
+    }
+  ],
+  "virtual_changes": [],
+  "exported_patch": false,
+  "acceptance_run": false,
+  "requests_reserved": 8,
+  "request_body_bytes": 201769,
+  "unknown_in_flight_reservations_still_charged": 0,
+  "persisted_response_usage": {
+    "scope": "Persisted replies only; canceled/unsaved work may use additional compute. Not full-trial compute or billed cost.",
+    "responses": [
+      {
+        "message_index": 1,
+        "input_tokens": 2717,
+        "output_tokens": 63,
+        "total_tokens": 2780,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 3,
+        "input_tokens": 3618,
+        "output_tokens": 78,
+        "total_tokens": 3696,
+        "input_token_details": {
+          "cache_read": 2779
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 5,
+        "input_tokens": 4652,
+        "output_tokens": 76,
+        "total_tokens": 4728,
+        "input_token_details": {
+          "cache_read": 3695
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 7,
+        "input_tokens": 5657,
+        "output_tokens": 81,
+        "total_tokens": 5738,
+        "input_token_details": {
+          "cache_read": 4727
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 9,
+        "input_tokens": 6644,
+        "output_tokens": 75,
+        "total_tokens": 6719,
+        "input_token_details": {
+          "cache_read": 5737
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 11,
+        "input_tokens": 7655,
+        "output_tokens": 75,
+        "total_tokens": 7730,
+        "input_token_details": {
+          "cache_read": 6718
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 13,
+        "input_tokens": 8604,
+        "output_tokens": 74,
+        "total_tokens": 8678,
+        "input_token_details": {
+          "cache_read": 7729
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 15,
+        "input_tokens": 9485,
+        "output_tokens": 74,
+        "total_tokens": 9559,
+        "input_token_details": {
+          "cache_read": 8677
+        },
+        "output_token_details": {}
+      }
+    ],
+    "input_tokens": 49032,
+    "cache_read_tokens": 40062,
+    "output_tokens": 596,
+    "input_minus_cache_read_tokens": 8970
+  },
+  "native_logged_prefill_counts": [
+    2717,
+    839,
+    957,
+    930,
+    907,
+    937,
+    875,
+    808
+  ],
+  "persisted_new_input_matches_native_logged_prefill_sum": true,
+  "service_stopped": true,
+  "shutdown": {
+    "returncode": 0,
+    "guard_reason": null,
+    "forced_cleanup": false,
+    "peak_sampled_rss_bytes": 10820079616
+  },
+  "limitations": [
+    "One known public defect and one newly declared trajectory; not held out, independent tasks or a general success rate.",
+    "Model family, quantization artifact, template and presence penalty change together; host load varies. No isolated parameter-count, latency, token or cost attribution.",
+    "Exact source weight revision used by quantizer is not independently established; reference official source revision identifies metadata only. Existing artifact/license/provenance limits remain.",
+    "Output1536tokens and32K service context are resource limits, not the model card longer-output benchmark setting.",
+    "Original ADK1863pass26expected-failure group/four independent filesystem contracts are reused, not new tests.",
+    "No reference edit plan, scripted neural responses, retry, repair round, fault injection or retrospective quota/deadline extension.",
+    "Same4CPU/nice19/64GiB memory admission/48GiB address space/36GiB RSS guards, no GPU.",
+    "Only saved replies provide complete usage; canceled/unsaved work may consume extra compute.",
+    "No new core tests, unsupported NFS WAL, migration claim or source-hash relaxation."
+  ],
+  "owned_processes_remaining": [],
+  "inspect_python_calls": 0,
+  "maximum_single_request_bytes": 39392,
+  "next_request_sent": false,
+  "ls_calls": 0,
+  "tool_message_status_errors": 0,
+  "structured_tool_errors": [],
+  "native_generation_task_launches": 8,
+  "read_line_ranges": [
+    [
+      1,
+      100
+    ],
+    [
+      101,
+      200
+    ],
+    [
+      201,
+      300
+    ],
+    [
+      301,
+      400
+    ],
+    [
+      401,
+      500
+    ],
+    [
+      501,
+      600
+    ],
+    [
+      601,
+      700
+    ],
+    [
+      701,
+      800
+    ]
+  ],
+  "original_file_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+}

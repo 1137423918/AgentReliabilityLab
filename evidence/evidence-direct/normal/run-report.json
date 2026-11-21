@@ -1,0 +1,246 @@
+{
+  "protocol_sha256": "78dbd00bdb67373824a84a115b54eb64204a500f06d31d4cd8db9f47f936b563",
+  "source_archive_sha256": "3f680e0ae7954760961dcb23739499e49bbccbee6913efc7d5b1b68d6e9c9e74",
+  "model_started": true,
+  "model_ready": true,
+  "cases": [
+    {
+      "case": "gpu_claim",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [
+          {
+            "report_id": "gpu_transport",
+            "pointer": "/overall_smoke_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "gpu_maintenance",
+            "pointer": "/model_http_requests",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "model_http_reservations": 4,
+      "request_body_bytes": 23604,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "wall_seconds": 491.049,
+      "error_type": null
+    },
+    {
+      "case": "test_scope",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "model_http_reservations": 5,
+      "request_body_bytes": 33009,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "wall_seconds": 505.781,
+      "error_type": null
+    },
+    {
+      "case": "supported_core",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "model_http_reservations": 3,
+      "request_body_bytes": 16070,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "wall_seconds": 266.42,
+      "error_type": null
+    }
+  ],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 1.076,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 8650752
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 0.054,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 1.096,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 9371648
+    },
+    {
+      "phase": "fixture-parser",
+      "returncode": 0,
+      "wall_seconds": 2.25,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 23068672
+    },
+    {
+      "phase": "fixture-protected",
+      "returncode": 0,
+      "wall_seconds": 29.039,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 160038912
+    },
+    {
+      "phase": "sdk-controls",
+      "returncode": 0,
+      "wall_seconds": 16.986,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 174821376
+    },
+    {
+      "phase": "full-core",
+      "returncode": 0,
+      "wall_seconds": 306.321,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 251731968
+    },
+    {
+      "phase": "sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 9.637,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 130482176
+    },
+    {
+      "phase": "artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 34.158,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 12337152
+    },
+    {
+      "phase": "native-help",
+      "returncode": 0,
+      "wall_seconds": 1.07,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "case-gpu_claim",
+      "returncode": 2,
+      "wall_seconds": 491.049,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 9681506304
+    },
+    {
+      "phase": "case-test_scope",
+      "returncode": 0,
+      "wall_seconds": 505.781,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 10311581696
+    },
+    {
+      "phase": "case-supported_core",
+      "returncode": 0,
+      "wall_seconds": 266.42,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 10789748736
+    }
+  ],
+  "worker_dependency_pairs_unchanged": 68,
+  "own_project_distribution_excluded": {
+    "name": "agent-reliability-lab",
+    "version": "0.2.0"
+  },
+  "full_core_passed": 124,
+  "new_evidence_checks_included": 8,
+  "runtime_bom_verified": true,
+  "model_manifest_raw_sha256": "02813afd3e0b64857891ad6f8aca332b7259e0b50ddb890e70cb9d4ec8bdd8b6",
+  "model_manifest_canonical_sha256": "955ffb1310188faea6a2cd3346a515b56e00f5a176d86f092851b1e519c19f61",
+  "available_memory_admission_bytes": 70490550272,
+  "model_pid": 2184976,
+  "model_start_ticks": "460439594",
+  "model_argv": [
+    "<SERVER_BASE>/tools/llama-b12576/llama-b12576/llama-server",
+    "--model",
+    "<SERVER_BASE>/models/Qwen3.5-9B-LMStudio-1379f25c/Qwen3.5-9B-Q4_K_M.gguf",
+    "--alias",
+    "agentlab-evidence-qwen35-9b",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18855",
+    "--api-key-file",
+    "<PRIVATE_EXT4>/direct-v1/service/api-key",
+    "--device",
+    "none",
+    "--n-gpu-layers",
+    "0",
+    "--threads",
+    "4",
+    "--threads-batch",
+    "4",
+    "--threads-http",
+    "1",
+    "--parallel",
+    "1",
+    "--ctx-size",
+    "8192",
+    "--n-predict",
+    "1024",
+    "--timeout",
+    "180",
+    "--temp",
+    "0",
+    "--seed",
+    "42",
+    "--jinja",
+    "--reasoning-format",
+    "none",
+    "--chat-template-kwargs",
+    "{\"enable_thinking\":false}",
+    "--no-context-shift",
+    "--cache-prompt",
+    "--no-webui",
+    "--no-slots"
+  ],
+  "native_context_observed": 8192,
+  "owned_model_in_gpu_processes": false,
+  "declared_cases": 3,
+  "completed_cases": 3,
+  "cases_passed": 2,
+  "all_cases_passed": false,
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": 0,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "service_wall_seconds": 1282.719,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}

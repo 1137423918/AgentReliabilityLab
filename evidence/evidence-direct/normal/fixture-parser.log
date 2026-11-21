@@ -1,0 +1,19 @@
+test_bare_object_and_legacy_argument_string_are_supported (test_cpu_tool_parser.CpuToolParserTests.test_bare_object_and_legacy_argument_string_are_supported) ... ok
+test_declared_schema_local_references_and_nested_requirements (test_cpu_tool_parser.CpuToolParserTests.test_declared_schema_local_references_and_nested_requirements) ... ok
+test_duplicate_keys_nonfinite_numbers_and_extra_envelope_keys_rejected (test_cpu_tool_parser.CpuToolParserTests.test_duplicate_keys_nonfinite_numbers_and_extra_envelope_keys_rejected) ... ok
+test_fresh_neural_call_and_failed_final_response_replay (test_cpu_tool_parser.CpuToolParserTests.test_fresh_neural_call_and_failed_final_response_replay) ... ok
+test_invalid_or_partial_framing_cannot_execute_even_valid_prefix (test_cpu_tool_parser.CpuToolParserTests.test_invalid_or_partial_framing_cannot_execute_even_valid_prefix) ... ok
+test_literal_native_tags_inside_complete_compat_json_are_argument_text (test_cpu_tool_parser.CpuToolParserTests.test_literal_native_tags_inside_complete_compat_json_are_argument_text) ... ok
+test_native_multiple_calls_preserve_prose_and_literal_tags (test_cpu_tool_parser.CpuToolParserTests.test_native_multiple_calls_preserve_prose_and_literal_tags) ... ok
+test_never_extract_from_prose_markdown_arrays_or_schema_documents (test_cpu_tool_parser.CpuToolParserTests.test_never_extract_from_prose_markdown_arrays_or_schema_documents) ... ok
+test_no_declared_tools_cannot_be_called (test_cpu_tool_parser.CpuToolParserTests.test_no_declared_tools_cannot_be_called) ... ok
+test_original_time_censored_maintenance_outputs_remain_non_calls (test_cpu_tool_parser.CpuToolParserTests.test_original_time_censored_maintenance_outputs_remain_non_calls) ... ok
+test_recorded_neural_output_requires_explicit_compatibility (test_cpu_tool_parser.CpuToolParserTests.test_recorded_neural_output_requires_explicit_compatibility) ... ok
+test_request_schemas_reject_duplicates_and_external_references (test_cpu_tool_parser.CpuToolParserTests.test_request_schemas_reject_duplicates_and_external_references) ... ok
+test_required_type_bounds_and_unlisted_arguments_are_checked (test_cpu_tool_parser.CpuToolParserTests.test_required_type_bounds_and_unlisted_arguments_are_checked) ... ok
+test_unknown_function_rejects_entire_native_batch (test_cpu_tool_parser.CpuToolParserTests.test_unknown_function_rejects_entire_native_batch) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.225s
+
+OK

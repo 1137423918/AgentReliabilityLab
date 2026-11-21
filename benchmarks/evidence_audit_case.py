@@ -1,4 +1,4 @@
-"""Independent, predeclared fact-coverage grading for the two known audit cases."""
+"""Independent, predeclared fact-coverage grading for known fixed audit cases."""
 
 import argparse
 import asyncio
@@ -70,6 +70,9 @@ async def main():
     parser.add_argument("--model", required=True)
     parser.add_argument("--owner", required=True)
     parser.add_argument("--timeout", type=int, default=600)
+    parser.add_argument(
+        "--strategy", choices=["two_step", "submit_tool"], default="two_step"
+    )
     args = parser.parse_args()
     case = next(c for c in json.loads(args.cases.read_text()) if c["id"] == args.case)
     args.state_dir.mkdir(exist_ok=False)
@@ -84,6 +87,7 @@ async def main():
         timeout=args.timeout,
         max_requests=8,
         max_iterations=7,
+        strategy=args.strategy,
     )
     result["grading"] = grade_case(result, case)
     (args.state_dir / "result.json").write_text(

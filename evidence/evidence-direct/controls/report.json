@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "evidence_verified": true,
+      "http_posts": 5,
+      "tool_calls": 3
+    },
+    {
+      "case": "forged_fact",
+      "passed": true,
+      "evidence_verified": false,
+      "http_posts": 5,
+      "tool_calls": 3
+    },
+    {
+      "case": "direct_normal",
+      "passed": true,
+      "evidence_verified": true,
+      "http_posts": 4,
+      "tool_calls": 4
+    },
+    {
+      "case": "direct_forged_fact",
+      "passed": true,
+      "evidence_verified": false,
+      "http_posts": 4,
+      "tool_calls": 4
+    },
+    {
+      "case": "direct_unread_fact",
+      "passed": true,
+      "evidence_verified": false,
+      "http_posts": 4,
+      "tool_calls": 4
+    },
+    {
+      "case": "direct_plain_answer",
+      "passed": true,
+      "evidence_verified": false,
+      "http_posts": 4,
+      "tool_calls": 3
+    }
+  ],
+  "explicit_fake_model": true,
+  "real_neural_requests": 0
+}
