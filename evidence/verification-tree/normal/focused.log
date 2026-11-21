@@ -1,0 +1,10 @@
+test_double_fork_reaped_after_successful_leader_exit (test_verification_tree.VerificationTreeTests.test_double_fork_reaped_after_successful_leader_exit) ... ok
+test_timeout_cleans_detached_child_and_preserves_unrelated_process (test_verification_tree.VerificationTreeTests.test_timeout_cleans_detached_child_and_preserves_unrelated_process) ... ok
+test_verification_timeout_stops_its_process_group (test_worker.WorkerTests.test_verification_timeout_stops_its_process_group) ... ok
+test_parent_sigkill_stops_verification_before_resume (test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume) ... ok
+test_completed_verifier_does_not_leave_background_children (test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 19.840s
+
+OK

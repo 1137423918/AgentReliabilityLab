@@ -1,0 +1,40 @@
+test_double_fork_reaped_after_successful_leader_exit (test_verification_tree.VerificationTreeTests.test_double_fork_reaped_after_successful_leader_exit) ... ok
+test_timeout_cleans_detached_child_and_preserves_unrelated_process (test_verification_tree.VerificationTreeTests.test_timeout_cleans_detached_child_and_preserves_unrelated_process) ... ok
+test_verification_timeout_stops_its_process_group (test_worker.WorkerTests.test_verification_timeout_stops_its_process_group) ... FAIL
+test_parent_sigkill_stops_verification_before_resume (test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume) ... FAIL
+test_completed_verifier_does_not_leave_background_children (test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children) ... FAIL
+
+======================================================================
+FAIL: test_verification_timeout_stops_its_process_group (test_worker.WorkerTests.test_verification_timeout_stops_its_process_group)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<private-run>/candidate/tests/test_worker.py", line 259, in test_verification_timeout_stops_its_process_group
+    self.assertEqual(status.read_text().rsplit(")", 1)[1].split()[0], "Z")
+AssertionError: 'S' != 'Z'
+- S
++ Z
+
+
+======================================================================
+FAIL: test_parent_sigkill_stops_verification_before_resume (test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<private-run>/candidate/tests/test_worker.py", line 316, in test_parent_sigkill_stops_verification_before_resume
+    self.assertFalse(any(alive(pid) for pid in pids))
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_completed_verifier_does_not_leave_background_children (test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<private-run>/candidate/tests/test_worker.py", line 347, in test_completed_verifier_does_not_leave_background_children
+    self.assertEqual(status.read_text().rsplit(")", 1)[1].split()[0], "Z")
+AssertionError: 'S' != 'Z'
+- S
++ Z
+
+
+----------------------------------------------------------------------
+Ran 5 tests in 28.741s
+
+FAILED (failures=3)

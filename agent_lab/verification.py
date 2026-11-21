@@ -1,6 +1,7 @@
 """Keep verification processes tied to their worker's lifetime on Unix."""
 
 import argparse
+import ctypes
 import json
 import os
 import select
@@ -25,8 +26,7 @@ def run_command(
         supervisor = subprocess.Popen(
             [
                 sys.executable,
-                "-m",
-                "agent_lab.verification",
+                str(Path(__file__).resolve()),
                 "--owner-fd",
                 str(owner_read),
                 "--result-fd",
@@ -62,7 +62,45 @@ def run_command(
                 os.close(descriptor)
 
 
-def supervise(argv: list[str], owner_fd: int, timeout: float) -> dict:
+def enable_child_reaping() -> None:
+    """Only call in the isolated Linux supervisor, before starting a verifier."""
+    # An adopted child cannot reuse its PID until this process reaps it. Keep
+    # SIGCHLD at its default so no inherited auto-reaping policy breaks that.
+    signal.signal(signal.SIGCHLD, signal.SIG_DFL)
+    children = Path(f"/proc/self/task/{os.getpid()}/children")
+    children.read_text()  # Fail before launch when procfs is unavailable.
+    libc = ctypes.CDLL(None, use_errno=True)
+    if libc.prctl(36, 1, 0, 0, 0) != 0:  # PR_SET_CHILD_SUBREAPER
+        error = ctypes.get_errno()
+        raise OSError(error, os.strerror(error))
+
+
+def reap_children() -> None:
+    """Stop and reap adopted descendants, including new sessions/double forks."""
+    children = Path(f"/proc/self/task/{os.getpid()}/children")
+    while True:
+        for pid in map(int, children.read_text().split()):
+            try:
+                waited, _ = os.waitpid(pid, os.WNOHANG)
+                if waited == 0:
+                    # This is our unreaped direct child, not an arbitrary PID
+                    # from a system-wide process snapshot.
+                    os.kill(pid, signal.SIGKILL)
+            except ChildProcessError:
+                continue
+        try:
+            while os.waitpid(-1, os.WNOHANG)[0]:
+                pass
+        except ChildProcessError:
+            return
+        # A killed parent can expose more adopted children. Keep the worker
+        # lock until they are reaped, even during an uninterruptible OS wait.
+        time.sleep(0.01)
+
+
+def supervise(
+    argv: list[str], owner_fd: int, timeout: float, *, reap_descendants: bool = False
+) -> dict:
     process = subprocess.Popen(argv, start_new_session=True, close_fds=True)
     timed_out = False
     try:
@@ -76,11 +114,16 @@ def supervise(argv: list[str], owner_fd: int, timeout: float) -> dict:
                 if not os.read(owner_fd, 1):
                     break
     finally:
-        try:
-            os.killpg(process.pid, signal.SIGKILL)
-        except ProcessLookupError:
-            pass
-        process.wait()
+        if reap_descendants:
+            process.kill()
+            process.wait()
+            reap_children()
+        else:
+            try:
+                os.killpg(process.pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            process.wait()
     return {"returncode": process.returncode, "timed_out": timed_out}
 
 
@@ -91,7 +134,12 @@ def main() -> int:
     parser.add_argument("--timeout", type=float, required=True)
     parser.add_argument("argv", nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    result = supervise(args.argv[1:], args.owner_fd, args.timeout)
+    linux = sys.platform.startswith("linux")
+    if linux:
+        enable_child_reaping()
+    result = supervise(
+        args.argv[1:], args.owner_fd, args.timeout, reap_descendants=linux
+    )
     try:
         os.write(args.result_fd, json.dumps(result).encode("utf-8"))
     except BrokenPipeError:

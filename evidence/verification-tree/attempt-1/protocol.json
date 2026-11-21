@@ -1,0 +1,38 @@
+{
+  "declared_utc": "2026-11-21T07:39:48.569111+00:00",
+  "scope": "Linux verification descendant cleanup engineering regression; no neural requests or GPU; not a model benchmark.",
+  "source_base": "ccb12b7",
+  "archive_sha256": "cc6f619e166466a4742f86a4b18465d7b330a1006a3c25038e2634eeac9a9048",
+  "candidate_sha256": {
+    "agent_lab/verification.py": "e249fdfad38805745e3d0ef712d4f506cdac910763ab6b27573b6f3cb19b34d1",
+    "tests/test_worker.py": "23122df1aef7e2e146ffecd6e2a7a1834c346264f25cfdd33c6b821d8482a4cc",
+    "tests/test_verification_tree.py": "a2b98ed1279180fd84be34780403cd666d3dabe78f127743490bcb26b5826121"
+  },
+  "baseline_verification_sha256": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+  "baseline_expected": "both new process-boundary checks fail while fixtures clean their own surviving probes",
+  "focused_checks": [
+    "test_verification_tree",
+    "test_worker.WorkerTests.test_verification_timeout_stops_its_process_group",
+    "test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume",
+    "test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children"
+  ],
+  "full_suite": "unittest discover -s tests -v; only after expected baseline failure and successful focused candidate checks",
+  "resource_policy": {
+    "cpu_affinity": 4,
+    "nice": 19,
+    "available_memory_admission_gib": 24,
+    "available_memory_floor_gib": 12,
+    "tree_rss_guard_gib": 16,
+    "address_space_limit_gib": 48,
+    "phase_wall_seconds": 600,
+    "monitor_interval_seconds": 2,
+    "gpu_visible": false
+  },
+  "limitations": [
+    "Linux subreaper behavior only; other Unix retains process-group cleanup.",
+    "Cleanup is not a hostile-process sandbox. A malicious child can escape through external service managers or namespaces.",
+    "SIGKILL cannot immediately end uninterruptible kernel waits; supervisor retains worker lock until adopted descendants are reaped.",
+    "The supervisor itself being killed is outside this change.",
+    "No new model/repair/ADK acceptance result; repeated focused checks overlap the full suite."
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "normalization": "Private run/project/home paths normalized in logs; no checkpoint databases or environment secrets collected.",
+  "files": [
+    {
+      "path": "full-monitor.jsonl",
+      "original_sha256": "a97e607503721afdc0364ed4555c29b50f0d22c0319a08790ea0a8ae44555a71",
+      "public_sha256": "a97e607503721afdc0364ed4555c29b50f0d22c0319a08790ea0a8ae44555a71",
+      "public_bytes": 11462
+    },
+    {
+      "path": "focused.log",
+      "original_sha256": "e2ca6bf131a1ba7a2c44cc8b65a97fa7e0a80f0bd3a65b8fdf4515fa2bf64821",
+      "public_sha256": "e2ca6bf131a1ba7a2c44cc8b65a97fa7e0a80f0bd3a65b8fdf4515fa2bf64821",
+      "public_bytes": 870
+    },
+    {
+      "path": "baseline.log",
+      "original_sha256": "e45e4ee8c63dceb22615e5faa866afb75e12a9117bf71ef70f72d352594e6e3b",
+      "public_sha256": "bc5e180eb39882b9587ebbb97ea79a9a5d80702622ed341fd29ada76e71bcb43",
+      "public_bytes": 1693
+    },
+    {
+      "path": "full.log",
+      "original_sha256": "597de4a964915ad42d47a4ab62e489ae544c527c414415109f2c5b3aa8f1e11e",
+      "public_sha256": "597de4a964915ad42d47a4ab62e489ae544c527c414415109f2c5b3aa8f1e11e",
+      "public_bytes": 18687
+    },
+    {
+      "path": "report.json",
+      "original_sha256": "e7edb18171e6a3f255e39960ca0760c9d972f98a0414e33304278fc1898d466b",
+      "public_sha256": "e7edb18171e6a3f255e39960ca0760c9d972f98a0414e33304278fc1898d466b",
+      "public_bytes": 1948
+    },
+    {
+      "path": "focused-monitor.jsonl",
+      "original_sha256": "ad76acade18ab8ea345451ed997a67d9cb5f7fe46e8fc5f1df49711507bb1cbd",
+      "public_sha256": "ad76acade18ab8ea345451ed997a67d9cb5f7fe46e8fc5f1df49711507bb1cbd",
+      "public_bytes": 765
+    },
+    {
+      "path": "baseline-monitor.jsonl",
+      "original_sha256": "07cbf7a8a07c0cf8216c5fbf7bf9aa3c5e987178bd62d1a769bbf05fc2b7458c",
+      "public_sha256": "07cbf7a8a07c0cf8216c5fbf7bf9aa3c5e987178bd62d1a769bbf05fc2b7458c",
+      "public_bytes": 151
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "scope": "Linux verification descendant cleanup engineering regression; no neural requests or GPU; not a model benchmark.",
+  "protocol_sha256": "7998437cc30dd0fe70ab72c209ba22938fdee047791feb775c459b21e61ccc27",
+  "phases": [
+    {
+      "name": "baseline",
+      "returncode": 1,
+      "expected_returncode": 1,
+      "wall_seconds": 4.071,
+      "test_count": 2,
+      "unittest_seconds": 3.252,
+      "guard_reason": null,
+      "peak_sampled_tree_rss_bytes": 59609088,
+      "samples": 2,
+      "cleanup": {
+        "wait_timeout": false,
+        "returncode": 1,
+        "forced_cleanup": false,
+        "remaining_owned_processes": []
+      },
+      "source_directory": "baseline"
+    },
+    {
+      "name": "focused",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "wall_seconds": 20.217,
+      "test_count": 5,
+      "unittest_seconds": 19.84,
+      "guard_reason": null,
+      "peak_sampled_tree_rss_bytes": 134774784,
+      "samples": 10,
+      "cleanup": {
+        "wait_timeout": false,
+        "returncode": 0,
+        "forced_cleanup": false,
+        "remaining_owned_processes": []
+      },
+      "source_directory": "candidate"
+    },
+    {
+      "name": "full",
+      "returncode": 0,
+      "expected_returncode": 0,
+      "wall_seconds": 322.778,
+      "test_count": 108,
+      "unittest_seconds": 319.701,
+      "guard_reason": null,
+      "peak_sampled_tree_rss_bytes": 284798976,
+      "samples": 146,
+      "cleanup": {
+        "wait_timeout": false,
+        "returncode": 0,
+        "forced_cleanup": false,
+        "remaining_owned_processes": []
+      },
+      "source_directory": "candidate"
+    }
+  ],
+  "gpu_used": false,
+  "model_requests": 0,
+  "local_root_sha256": "d260deffd4d3455790b5757516490492ee2d9c2aef6b4442bf9c04d8387b8bda",
+  "started_utc": "2026-11-21T07:46:12.495885+00:00",
+  "active_state_filesystem": "ext4",
+  "success": true,
+  "completed_utc": "2026-11-21T07:52:00.163395+00:00"
+}

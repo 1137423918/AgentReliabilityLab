@@ -1,0 +1,40 @@
+{
+  "declared_utc": "2026-11-21T07:45:03.393833+00:00",
+  "scope": "Linux verification descendant cleanup engineering regression; no neural requests or GPU; not a model benchmark.",
+  "source_base": "ccb12b7",
+  "archive_sha256": "5bcc726a1f995c465b7eaf00ca677eb71fe3da1f33f6b7d6e7925adea3e199a1",
+  "candidate_sha256": {
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "tests/test_worker.py": "23122df1aef7e2e146ffecd6e2a7a1834c346264f25cfdd33c6b821d8482a4cc",
+    "tests/test_verification_tree.py": "5117bb9e6c3c272141d36b3f32405840a972fe7955cac77e3d7fe368655d16b5"
+  },
+  "baseline_verification_sha256": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+  "baseline_expected": "both new process-boundary checks fail while fixtures clean their own surviving probes",
+  "focused_checks": [
+    "test_verification_tree",
+    "test_worker.WorkerTests.test_verification_timeout_stops_its_process_group",
+    "test_worker.WorkerTests.test_parent_sigkill_stops_verification_before_resume",
+    "test_worker.WorkerTests.test_completed_verifier_does_not_leave_background_children"
+  ],
+  "full_suite": "unittest discover -s tests -v; only after expected baseline failure and successful focused candidate checks",
+  "resource_policy": {
+    "cpu_affinity": 4,
+    "nice": 19,
+    "available_memory_admission_gib": 24,
+    "available_memory_floor_gib": 12,
+    "tree_rss_guard_gib": 16,
+    "address_space_limit_gib": 48,
+    "phase_wall_seconds": 600,
+    "monitor_interval_seconds": 2,
+    "gpu_visible": false
+  },
+  "limitations": [
+    "Linux subreaper behavior only; other Unix retains process-group cleanup.",
+    "Cleanup is not a hostile-process sandbox. A malicious child can escape through external service managers or namespaces.",
+    "SIGKILL cannot immediately end uninterruptible kernel waits; supervisor retains worker lock until adopted descendants are reaped.",
+    "The supervisor itself being killed is outside this change.",
+    "No new model/repair/ADK acceptance result; repeated focused checks overlap the full suite."
+  ],
+  "previous_failed_protocol_sha256": "f2c63578da8ba57aa5d33d519c3935a12790bae926eadd57bedb097b0853b55b",
+  "correction_scope": "Bind supervisor argv to the loaded verification.py absolute path, without passing worker PYTHONPATH into verifier environment. First candidate direct checks passed but three worker integration checks used the old installed supervisor and failed. Test probes now publish readiness atomically and guard failure cleanup with their unique argv marker."
+}

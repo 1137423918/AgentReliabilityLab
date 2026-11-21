@@ -243,7 +243,7 @@ class WorkerTests(unittest.TestCase):
         )
 
     def test_verification_timeout_stops_its_process_group(self):
-        code = "import subprocess,sys,time; from pathlib import Path; p=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)']); Path('child.pid').write_text(str(p.pid)); time.sleep(60)"
+        code = "import subprocess,sys,time; from pathlib import Path; p=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],start_new_session=True); Path('child.pid').write_text(str(p.pid)); time.sleep(60)"
         self.task["verify"] = [
             {"argv": [sys.executable, "-c", code], "timeout_seconds": 5}
         ]
@@ -265,7 +265,7 @@ from pathlib import Path
 attempt = Path('.verify-attempt')
 if not attempt.exists():
     attempt.write_text('1')
-    child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'])
+    child = subprocess.Popen([sys.executable, '-c', 'import time; time.sleep(60)'], start_new_session=True)
     marker = Path('verification-pids.tmp')
     marker.write_text(json.dumps([os.getpid(), child.pid]))
     marker.replace('verification-pids.json')
@@ -333,7 +333,7 @@ else:
                 os.killpg(pids[0], signal.SIGKILL)
 
     def test_completed_verifier_does_not_leave_background_children(self):
-        code = "import subprocess,sys; from pathlib import Path; child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)']); Path('child.pid').write_text(str(child.pid))"
+        code = "import subprocess,sys; from pathlib import Path; child=subprocess.Popen([sys.executable,'-c','import time; time.sleep(60)'],start_new_session=True); Path('child.pid').write_text(str(child.pid))"
         self.task["verify"] = [{"argv": [sys.executable, "-c", code]}]
         self.save_task()
         directory = self.root / "background"

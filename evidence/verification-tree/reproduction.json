@@ -1,0 +1,1 @@
+{"defect_reproduced": true, "trigger": "successful verifier spawns child in new session then exits", "verification_source_sha256": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26", "reported_returncode": 0, "reported_timed_out": false, "detached_child_alive_after_success": true, "owned_probe_child_stopped": true, "gpu_used": false, "model_requests": 0}
