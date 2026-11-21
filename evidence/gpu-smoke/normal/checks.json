@@ -1,0 +1,41 @@
+[
+  {
+    "case": "plain_completion",
+    "passed": false,
+    "usage": {
+      "completion_tokens": 2,
+      "prompt_tokens": 21,
+      "total_tokens": 23,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    }
+  },
+  {
+    "case": "forced_function_call_arguments",
+    "passed": true,
+    "usage": {
+      "completion_tokens": 38,
+      "prompt_tokens": 352,
+      "total_tokens": 390,
+      "prompt_tokens_details": {
+        "cached_tokens": 0
+      }
+    },
+    "function_selection_forced": true,
+    "handler": "read-only actual completed build report"
+  },
+  {
+    "case": "tool_result_to_final_json",
+    "passed": true,
+    "usage": {
+      "completion_tokens": 19,
+      "prompt_tokens": 425,
+      "total_tokens": 444,
+      "prompt_tokens_details": {
+        "cached_tokens": 389
+      }
+    },
+    "final_response_constrained": true
+  }
+]

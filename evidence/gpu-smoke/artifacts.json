@@ -1,0 +1,89 @@
+{
+  "normalization": "Allowlisted final metadata, requests/replies and journal; private paths/UUID/terminal formatting normalized in metadata and derived logs. Producer redacts ephemeral auth value in server-public.log before deletion. Original server.log remains private. Request/reply/journal bytes unchanged. Prior two attempts have separate manifests. Derived public native log additionally selects initialization, offload/context, timing, shutdown and warning/error lines; full template/metadata log remains private.",
+  "files": [
+    {
+      "path": "normal/report.json",
+      "original_sha256": "d7d4e44fb8465a1c65d5a933ea6bf83b61ad8014c8c09e1bfcd3bfc8b24cf894",
+      "public_sha256": "1fb7d594bd565b359a914cbe09248a038504266a0796c093058a0a48e75098b2",
+      "public_bytes": 5368
+    },
+    {
+      "path": "normal/service.json",
+      "original_sha256": "a662e6f1b1d8790cc4909450ea9d4949befae4924e3b722ec25fdcd4299a8240",
+      "public_sha256": "a3dad9e4419c5670646df4270af7d83b4888c1d0ab510fd77bee0d37c9b0e9e9",
+      "public_bytes": 2736
+    },
+    {
+      "path": "normal/server-public.log",
+      "original_sha256": "c560a9fec1dfbc2435fd8a1373a1ad908f5320e65f40500f4aea8837d7bffb35",
+      "public_sha256": "26a003117e06853137bb5b40023844be0ce5c5432f71926afe9d07dd5aee0218",
+      "public_bytes": 2803
+    },
+    {
+      "path": "normal/monitor.jsonl",
+      "original_sha256": "db4d425a9dc31500aad530599796a30237f5df36252b55c5ef102cd6a53f983b",
+      "public_sha256": "db4d425a9dc31500aad530599796a30237f5df36252b55c5ef102cd6a53f983b",
+      "public_bytes": 4826
+    },
+    {
+      "path": "normal/gpu-probe-errors.json",
+      "original_sha256": "9deec962aee33e9d86022532cc3ba51851c9f3248d6fae7c7da2866db0cfd22c",
+      "public_sha256": "9deec962aee33e9d86022532cc3ba51851c9f3248d6fae7c7da2866db0cfd22c",
+      "public_bytes": 203
+    },
+    {
+      "path": "normal/checks.json",
+      "original_sha256": "e45d9ddef5c2199f7f28f083e189d7a4902b1367ec3b2e7fdd634c370525eb01",
+      "public_sha256": "e45d9ddef5c2199f7f28f083e189d7a4902b1367ec3b2e7fdd634c370525eb01",
+      "public_bytes": 871
+    },
+    {
+      "path": "normal/models.json",
+      "original_sha256": "6f8793a63508c91518e98f4a102b880fcfafbddd99f6368b52cacf3ccff3f813",
+      "public_sha256": "6f8793a63508c91518e98f4a102b880fcfafbddd99f6368b52cacf3ccff3f813",
+      "public_bytes": 1203
+    },
+    {
+      "path": "normal/model-requests.json",
+      "original_sha256": "58a88e637fb6dfdb73923a9eb6a1bef85ab8251171349bf0255e226e6eb589af",
+      "public_sha256": "58a88e637fb6dfdb73923a9eb6a1bef85ab8251171349bf0255e226e6eb589af",
+      "public_bytes": 1147
+    },
+    {
+      "path": "normal/request-1.json",
+      "original_sha256": "80acafef6d773dd6192796e77b666083c54660e3463017dff725d40217af4e80",
+      "public_sha256": "80acafef6d773dd6192796e77b666083c54660e3463017dff725d40217af4e80",
+      "public_bytes": 230
+    },
+    {
+      "path": "normal/response-1.json",
+      "original_sha256": "803c865d5b35c6632a5152fdbb7adbe1efb8aabc1503ab52f4d7751a62be0765",
+      "public_sha256": "803c865d5b35c6632a5152fdbb7adbe1efb8aabc1503ab52f4d7751a62be0765",
+      "public_bytes": 877
+    },
+    {
+      "path": "normal/request-2.json",
+      "original_sha256": "53f3567f189424e5a831476ae05d8526648c0d8a45ffbdc658a1dfcaedc4f59c",
+      "public_sha256": "53f3567f189424e5a831476ae05d8526648c0d8a45ffbdc658a1dfcaedc4f59c",
+      "public_bytes": 820
+    },
+    {
+      "path": "normal/response-2.json",
+      "original_sha256": "c0dd15ce1c52ad7752b320d9e22ac81d6413e6ff340b3eb2622714c6bab98ed9",
+      "public_sha256": "c0dd15ce1c52ad7752b320d9e22ac81d6413e6ff340b3eb2622714c6bab98ed9",
+      "public_bytes": 1190
+    },
+    {
+      "path": "normal/request-3.json",
+      "original_sha256": "79a1801fd8edc1a6c91c77841097ea67b249444551135ee7158e723d86897d9c",
+      "public_sha256": "79a1801fd8edc1a6c91c77841097ea67b249444551135ee7158e723d86897d9c",
+      "public_bytes": 1159
+    },
+    {
+      "path": "normal/response-3.json",
+      "original_sha256": "048d84124dcacb2e660b5a55ad8902ab5eebbb5327e234d4b516a6213129c3a6",
+      "public_sha256": "048d84124dcacb2e660b5a55ad8902ab5eebbb5327e234d4b516a6213129c3a6",
+      "public_bytes": 922
+    }
+  ]
+}

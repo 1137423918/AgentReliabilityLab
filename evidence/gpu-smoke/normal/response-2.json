@@ -1,0 +1,46 @@
+{
+  "choices": [
+    {
+      "finish_reason": "tool_calls",
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "<think>\n\n</think>",
+        "tool_calls": [
+          {
+            "type": "function",
+            "function": {
+              "name": "read_build_status",
+              "arguments": "{\"build_id\":\"cuda-build-20261121\"}"
+            },
+            "id": "HPPdbZOuLWWnKa8rvUA4bj7y7aqwRTL5"
+          }
+        ]
+      }
+    }
+  ],
+  "created": 1795244268,
+  "model": "agentlab-qwen35-9b-cuda",
+  "system_fingerprint": "b12576-4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "object": "chat.completion",
+  "usage": {
+    "completion_tokens": 38,
+    "prompt_tokens": 352,
+    "total_tokens": 390,
+    "prompt_tokens_details": {
+      "cached_tokens": 0
+    }
+  },
+  "id": "chatcmpl-NWio9eFNJHf8r9phhBDa5PCPswPsmBLi",
+  "timings": {
+    "cache_n": 0,
+    "prompt_n": 352,
+    "prompt_ms": 308.652,
+    "prompt_per_token_ms": 0.8768522727272727,
+    "prompt_per_second": 1140.4429584127108,
+    "predicted_n": 38,
+    "predicted_ms": 343.896,
+    "predicted_per_token_ms": 9.294486486486488,
+    "predicted_per_second": 107.59066694582081
+  }
+}
