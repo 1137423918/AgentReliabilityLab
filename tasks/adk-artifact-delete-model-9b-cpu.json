@@ -1,0 +1,64 @@
+{
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "files": [
+    "src/google/adk/artifacts/file_artifact_service.py"
+  ],
+  "prompt": "Two FileArtifactService instances may delete the same artifact concurrently. When one removes a payload or version tree after the other observed it, the other call can raise FileNotFoundError or leave version metadata. Make duplicate deletion tolerant of disappeared entries at every tree level, while preserving permission failures and nested artifacts. Keep Python 3.11 and newer compatibility and the public service API. Only the supplied production file may be edited; operator-owned original tests and independent filesystem contracts run after export.\n\nVirtual file inventory (only editable file):\n/src/google/adk/artifacts/file_artifact_service.py\n\nNavigation guidance: use inspect_python with no symbol_id to locate the named method, then pass its returned symbol_id and source_sha256 as expected_sha256 to inspect it and the implementation it calls. Make focused edit_file replacements and preserve unrelated definitions; do not replace the entire module. This is navigation guidance, not a reference implementation or edit plan.",
+  "max_graph_steps": 40,
+  "required_features": [
+    "python_syntax_v1",
+    "baseline_verification_v1",
+    "model_request_budget_v1",
+    "python_source_v1",
+    "file_inventory_v1"
+  ],
+  "python_syntax_files": [
+    "src/google/adk/artifacts/file_artifact_service.py"
+  ],
+  "model": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "verify": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import sys,hashlib; from pathlib import Path; sys.path.insert(0,str(Path.cwd()/'src')); import google.adk.artifacts.file_artifact_service as module; assert Path(module.__file__).resolve()==(Path.cwd()/'src/google/adk/artifacts/file_artifact_service.py').resolve(); assert hashlib.sha256(Path('tests/unittests/artifacts/test_artifact_service.py').read_bytes()).hexdigest()=='a9d309d8fa5b771a3ce1dff7ac09217d791555ff97fd16088d54f0f719711944'; import pytest; raise SystemExit(pytest.main(['-q','tests/unittests/artifacts/test_artifact_service.py']))"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 180,
+      "baseline_files": [
+        "tests/unittests/artifacts/test_artifact_service.py"
+      ]
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import sys,hashlib; from pathlib import Path; sys.path.insert(0,str(Path.cwd()/'src')); import google.adk.artifacts.file_artifact_service as module; assert Path(module.__file__).resolve()==(Path.cwd()/'src/google/adk/artifacts/file_artifact_service.py').resolve(); import tempfile,pytest; d=Path(tempfile.mkdtemp(prefix='agentlab-adk-contract-')); p=d/'test_operator_contract.py'; p.write_text('# Copyright 2026 Google LLC\\n# SPDX-License-Identifier: Apache-2.0\\n# Extracted operator-owned regressions from ADK candidate c71ca6a.\\nimport asyncio\\nimport os\\nimport threading\\nfrom pathlib import Path\\nfrom typing import Any\\nfrom unittest import mock\\nimport pytest\\nfrom google.adk.artifacts import file_artifact_service\\nfrom google.adk.artifacts.file_artifact_service import FileArtifactService\\nfrom google.genai import types\\n\\n@pytest.mark.skipif(\\n    os.name == \"nt\" or os.geteuid() == 0,\\n    reason=\"Requires POSIX permissions enforced for an unprivileged process\",\\n)\\nasync def test_file_delete_reports_permission_failure(tmp_path: Path) -> None:\\n  \"\"\"A failed deletion reports its permission error and preserves the artifact.\"\"\"\\n  service = FileArtifactService(tmp_path)\\n  scope = dict(app_name=\"app\", user_id=\"user\", session_id=\"session\")\\n  content = types.Part(text=\"saved\")\\n  await service.save_artifact(**scope, filename=\"doc\", artifact=content)\\n  versions = (\\n      tmp_path / \"apps/app/users/user/sessions/session/artifacts/doc/versions\"\\n  )\\n  version_dir = versions / \"0\"\\n  mode = version_dir.stat().st_mode\\n  version_dir.chmod(0o500)\\n\\n  try:\\n    with pytest.raises(PermissionError):\\n      await service.delete_artifact(**scope, filename=\"doc\")\\n  finally:\\n    version_dir.chmod(mode)\\n\\n  assert await service.load_artifact(**scope, filename=\"doc\") == content\\n\\n\\nasync def test_file_delete_continues_after_payload_disappears(\\n    tmp_path: Path,\\n) -> None:\\n  \"\"\"A disappearing payload does not leave the remaining version files behind.\"\"\"\\n  service = FileArtifactService(tmp_path)\\n  scope = dict(app_name=\"app\", user_id=\"user\", session_id=\"session\")\\n  await service.save_artifact(\\n      **scope, filename=\"doc\", artifact=types.Part(text=\"parent\")\\n  )\\n  unlink = os.unlink\\n  removed_payload = False\\n\\n  def unlink_after_other_deleter(path, *args, **kwargs):\\n    nonlocal removed_payload\\n    if Path(path).name == \"doc\" and not removed_payload:\\n      unlink(path, *args, **kwargs)\\n      removed_payload = True\\n    return unlink(path, *args, **kwargs)\\n\\n  with mock.patch.object(os, \"unlink\", side_effect=unlink_after_other_deleter):\\n    await service.delete_artifact(**scope, filename=\"doc\")\\n\\n  assert removed_payload\\n  assert await service.list_versions(**scope, filename=\"doc\") == []\\n\\n\\n@pytest.mark.parametrize(\"session_id\", [None, \"session\"])\\nasync def test_file_concurrent_deletes_preserve_nested_artifact(\\n    tmp_path: Path, session_id: str | None\\n) -> None:\\n  \"\"\"Two deletions both succeed without removing a nested artifact.\\n\\n  Setup: two services share a root containing a parent and nested artifact.\\n  Act: both deletions pass the existence check before either removes versions.\\n  Assert: both calls succeed, and the nested artifact remains readable.\\n  \"\"\"\\n  first = FileArtifactService(tmp_path)\\n  second = FileArtifactService(tmp_path)\\n  scope = dict(app_name=\"app\", user_id=\"user\", session_id=session_id)\\n  nested = types.Part(text=\"nested\")\\n  await first.save_artifact(\\n      **scope, filename=\"doc\", artifact=types.Part(text=\"parent\")\\n  )\\n  await first.save_artifact(**scope, filename=\"doc/nested\", artifact=nested)\\n  both_entered = threading.Barrier(2)\\n  first_finished = threading.Event()\\n  remove_tree = file_artifact_service.shutil.rmtree\\n\\n  def remove_after_both_enter(path: Path, **kwargs: Any) -> None:\\n    turn = both_entered.wait(timeout=5)\\n    if turn == 0:\\n      try:\\n        remove_tree(path, **kwargs)\\n      finally:\\n        first_finished.set()\\n    else:\\n      assert first_finished.wait(timeout=5)\\n      remove_tree(path, **kwargs)\\n\\n  with mock.patch.object(\\n      file_artifact_service.shutil,\\n      \"rmtree\",\\n      side_effect=remove_after_both_enter,\\n  ):\\n    outcomes = await asyncio.wait_for(\\n        asyncio.gather(\\n            first.delete_artifact(**scope, filename=\"doc\"),\\n            second.delete_artifact(**scope, filename=\"doc\"),\\n            return_exceptions=True,\\n        ),\\n        timeout=10,\\n    )\\n\\n  assert outcomes == [None, None]\\n  assert await first.list_versions(**scope, filename=\"doc\") == []\\n  assert await first.load_artifact(**scope, filename=\"doc/nested\") == nested\\n\\n\\n'); raise SystemExit(pytest.main(['-c','/dev/null','--confcutdir',str(d),'-o','asyncio_mode=auto','-o','cache_dir='+str(d/'cache'),'-q',str(p)]))"
+      ],
+      "cwd": ".",
+      "timeout_seconds": 120
+    }
+  ],
+  "verification_environment": "Use existing pinned ADK Python3.11 environment on PATH; commands explicitly import this worktree src and verify original test SHA. Worker remains in its separate environment. No model or cloud calls for acceptance.",
+  "evaluation_notes": "One new normal real-model ADK CPU trajectory with the same inventory task, human symptom prompt, source/tool policy, protected acceptance and resource budgets. Changes model family/quantized artifact/template and presence_penalty0to1.5 per official non-thinking general guidance. No reference patch, plan, retries, repair rounds or held-out/general success claim."
+}
