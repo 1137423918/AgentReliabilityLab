@@ -1,0 +1,14 @@
+{
+  "source_cache_sha256": "3bf244627e4fe4bd133dc76419c3c2ff1833be7c139be59e792e50ca4a708188",
+  "values": {
+    "CMAKE_CUDA_ARCHITECTURES": "86",
+    "CMAKE_EXE_LINKER_FLAGS": "-Wl,-rpath-link,<toolchain-prefix>/lib",
+    "GGML_BACKEND_DL": "ON",
+    "GGML_CUDA": "ON",
+    "GGML_CUDA_NCCL": "OFF",
+    "GGML_NATIVE": "OFF",
+    "LLAMA_BUILD_UI": "OFF",
+    "LLAMA_OPENSSL": "OFF",
+    "LLAMA_USE_PREBUILT_UI": "OFF"
+  }
+}

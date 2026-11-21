@@ -1,0 +1,28 @@
+{
+  "derivation": "Whitelisted CMake cache entries only; complete cache retained privately.",
+  "source_cache_sha256": "f66ba7d59205453381c914951ddd550da346cdb6f0c0a8eec13f7daaabbbb0e6",
+  "values": {
+    "CMAKE_BUILD_TYPE": "Release",
+    "CMAKE_CUDA_ARCHITECTURES": "86",
+    "CMAKE_CUDA_COMPILER": "/usr/local/cuda-12.9/bin/nvcc",
+    "CMAKE_CUDA_HOST_COMPILER": "<toolchain-prefix>/bin/x86_64-conda-linux-gnu-c++",
+    "CMAKE_CXX_COMPILER": "<toolchain-prefix>/bin/x86_64-conda-linux-gnu-c++",
+    "CMAKE_C_COMPILER": "<toolchain-prefix>/bin/x86_64-conda-linux-gnu-cc",
+    "GGML_BACKEND_DL": "ON",
+    "GGML_CUDA": "ON",
+    "GGML_CUDA_FA": "ON",
+    "GGML_CUDA_FA_QUANTS": "q4_0-q4_0;q8_0-q8_0;f16-f16;bf16-bf16;f8_e4m3-f8_e4m3",
+    "GGML_CUDA_GRAPHS": "ON",
+    "GGML_CUDA_NCCL": "OFF",
+    "GGML_NATIVE": "OFF",
+    "LLAMA_BUILD_APP": "OFF",
+    "LLAMA_BUILD_COMMIT": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "LLAMA_BUILD_EXAMPLES": "OFF",
+    "LLAMA_BUILD_NUMBER": "12576",
+    "LLAMA_BUILD_SERVER": "ON",
+    "LLAMA_BUILD_TESTS": "OFF",
+    "LLAMA_BUILD_UI": "OFF",
+    "LLAMA_OPENSSL": "OFF",
+    "LLAMA_USE_PREBUILT_UI": "OFF"
+  }
+}

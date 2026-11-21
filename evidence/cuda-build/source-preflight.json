@@ -1,0 +1,28 @@
+{
+  "source_url": "https://codeload.github.com/ggml-org/llama.cpp/tar.gz/4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "archive_sha256": "9588476bd9a7d5e62e19f83fea9eeb04287b2ce458c03e8a6107bfe70bce770e",
+  "archive_bytes": 39103960,
+  "files": {
+    "CMakeLists.txt": "6727a1188ab844d2eb5af5aa6ee07c50b80a5bb8711b9cad0784db1939587d1b",
+    "ggml/CMakeLists.txt": "d629bfb183a8ae0b823286ac31711f4414a7b0928e188c29dc8bace2f505576d",
+    "ggml/src/ggml-cuda/CMakeLists.txt": "ea76b54425e6c2e5a22c2378fcf3b337729c7e472cc439a1a7ce75b9d5d1a129",
+    "tools/server/CMakeLists.txt": "c761d99183d6889560fb1e76d9a60e7320f2b3bf0c4d8ef71a0d41a8f9271c32",
+    "docs/build.md": "eee33d5549db002540704813766f75f2f9e86205a4bbfd9fd9a72cf9446fbc5e",
+    "LICENSE": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "AGENTS.md": "67d92a8d2f75a85b640afcfcfb8f8f8d92c0e719f9587d9584f936860bf59c38",
+    "ui/apps/chat/AGENTS.md": "9faa1082d2f757f0e5135b463e9a7a1eed1cf86336816b9a42f0777e93e8e819"
+  },
+  "tools": {
+    "conda": {
+      "returncode": 0,
+      "stdout": "conda 23.7.2\n",
+      "stderr": ""
+    },
+    "gcc": {
+      "returncode": 0,
+      "stdout": "gcc (GCC) 11.5.0 20240719 (Red Hat 11.5.0-11)\nCopyright (C) 2021 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    }
+  }
+}

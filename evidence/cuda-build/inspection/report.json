@@ -1,0 +1,64 @@
+{
+  "checks": {
+    "cuda-elf-list": {
+      "returncode": 0,
+      "log_bytes": 6492,
+      "log_sha256": "a07b897d2dc3c923ea0d1cd0390dd687bbedab1fdbc72b9518648d9861181cb1",
+      "architectures": [
+        "sm_86"
+      ],
+      "elf_count": 150
+    },
+    "cuda-dynamic": {
+      "returncode": 0,
+      "log_bytes": 2225,
+      "log_sha256": "bb03102be072f06468ad7706a5d5a04fce8d8d22107e626a9ddd480df4c2361a",
+      "needed": [
+        "libggml-base.so.1",
+        "libcudart.so.12",
+        "libcublas.so.12",
+        "libcublasLt.so.12",
+        "libcuda.so.1",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6",
+        "ld-linux-x86-64.so.2"
+      ],
+      "rpath": [
+        "<toolchain-prefix>/lib:/usr/local/cuda-12.9/lib64:<local-build-output>/build/bin:"
+      ]
+    },
+    "cuda-symbols": {
+      "returncode": 0,
+      "log_bytes": 183484,
+      "log_sha256": "d70d5e442b87c36afc8236f839942466cbb525797660978aeca90e4807ebdd7e",
+      "exports_cuda_registry": true
+    },
+    "server-dynamic": {
+      "returncode": 0,
+      "log_bytes": 2282,
+      "log_sha256": "5231366e3e0dcf1be48844ac88678ec63f1611a5734f925bac863e3f4274398f",
+      "needed": [
+        "libllama-server-impl.so",
+        "libllama-common.so.1",
+        "libmtmd.so.1",
+        "libllama.so.1",
+        "libggml.so.1",
+        "libggml-base.so.1",
+        "libstdc++.so.6",
+        "libm.so.6",
+        "libgcc_s.so.1",
+        "libc.so.6"
+      ],
+      "rpath": [
+        "<toolchain-prefix>/lib:/usr/local/cuda-12.9/lib64:<local-build-output>/build/bin:"
+      ]
+    }
+  },
+  "gpu_runtime_test": false,
+  "model_inference": false,
+  "built_server_executed": false,
+  "cuda_visible_devices": "",
+  "limitation": "ELF and symbol inspection only; no dynamic loading, GPU execution, offload, model compatibility or acceleration validation."
+}

@@ -1,0 +1,18 @@
+{
+  "recorded_utc": "2026-11-21T05:35:36.911134+00:00",
+  "change": "CMAKE_EXE_LINKER_FLAGS adds -Wl,-rpath-link,<toolchain-prefix>/lib to resolve the already installed OpenMP runtime; no unresolved-symbol bypass and no upstream source change.",
+  "source_cache_before_sha256": "f66ba7d59205453381c914951ddd550da346cdb6f0c0a8eec13f7daaabbbb0e6",
+  "dependency": {
+    "filename": "libgomp.so.1",
+    "bytes": 1674616,
+    "sha256": "34324e0835be6e103844d7c416bec42834cf803d3ba8d9519df15ced19914dfe"
+  },
+  "cuda_library_before": {
+    "bytes": 74373336,
+    "sha256": "52d2257263d798c0ea8a97a4279fef05f3b5abd41344245e27ea1bc4e820991f"
+  },
+  "reuse_existing_build_directory": true,
+  "original_local_build_returncode": 1,
+  "model_inference": false,
+  "gpu_runtime_test": false
+}

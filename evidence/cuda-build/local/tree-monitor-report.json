@@ -1,0 +1,16 @@
+{
+  "scope": "Live supplementary process-tree guard, including Ninja separate job process groups. Sum of sampled RSS includes shared-page double counting; not unique RAM. Earlier build interval not tree-sampled.",
+  "started_utc": "2026-11-21T05:11:53.801886+00:00",
+  "completed_utc": "2026-11-21T05:28:15.897851+00:00",
+  "root_pid": 88470,
+  "root_start_ticks": 457543378,
+  "build_elapsed_at_monitor_start_seconds": 343.86,
+  "samples": 488,
+  "peak_sampled_tree_rss_bytes": 1857073152,
+  "guard_reason": null,
+  "signals_sent": [],
+  "remaining_owned_build_processes": [],
+  "gpu_runtime_test": false,
+  "model_inference": false,
+  "deadline_was_not_reset": true
+}

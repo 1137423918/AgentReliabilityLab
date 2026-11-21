@@ -1,0 +1,63 @@
+{
+  "scope": "CPU-only preparation of a single-architecture CUDA dependency, not GPU inference validation or a repair score.",
+  "build_succeeded": false,
+  "source_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "source_archive_sha256": "9588476bd9a7d5e62e19f83fea9eeb04287b2ce458c03e8a6107bfe70bce770e",
+  "source_tree_files": 4496,
+  "same_source_as_nfs_attempt": true,
+  "source_unchanged": true,
+  "toolchain_packages": 41,
+  "toolchain_archive_bytes": 210803832,
+  "each_archive_sha256_verified_before_install": true,
+  "cuda_architectures": [
+    "86"
+  ],
+  "cuda_visible_devices": "",
+  "gpu_runtime_test": false,
+  "model_inference": false,
+  "core_tests_rerun": false,
+  "nfs_attempt": [
+    {
+      "stage": "configure",
+      "returncode": -15,
+      "guard_reason": "wall_deadline",
+      "duration_seconds": 302.006,
+      "peak_aggregate_rss_bytes": 35090432,
+      "processes_remaining": []
+    }
+  ],
+  "local_attempt": [
+    {
+      "stage": "configure",
+      "returncode": 0,
+      "guard_reason": null,
+      "duration_seconds": 18.123,
+      "peak_aggregate_rss_bytes": 36524032,
+      "processes_remaining": []
+    },
+    {
+      "stage": "build",
+      "returncode": 1,
+      "guard_reason": null,
+      "duration_seconds": 1325.688,
+      "peak_aggregate_rss_bytes": 20856832,
+      "processes_remaining": []
+    }
+  ],
+  "artifacts": {},
+  "original_memory_guard_scope": "Process group only; Ninja compiler job groups excluded. Do not interpret those samples as whole-build peak RSS.",
+  "tree_monitor_start_elapsed_seconds": 343.86,
+  "peak_sampled_tree_rss_after_monitor_started_bytes": 1857073152,
+  "full_build_peak_memory_known": false,
+  "tree_monitor_guard_reason": null,
+  "remaining_owned_build_processes": [],
+  "source_build_label": "Configured LLAMA_BUILD_NUMBER/COMMIT identify archive provenance, not an independent Git checkout check.",
+  "limitations": [
+    "Static compilation and ELF metadata do not validate dynamic loading, GPU offload, selected-model compatibility, tool roundtrip or speedup.",
+    "Architecture86 only; no P100/sm60 support claim.",
+    "UI/prebuilt UI downloads, NCCL and OpenSSL disabled; future intended service is local HTTP on one admitted GPU.",
+    "Private local scratch paths remain operationally required; relocatability not established.",
+    "Continuous tree monitoring began343.86seconds into build; earlier coverage was group-only apart from one read-only diagnostic tree snapshot. Original2400second build deadline retained.",
+    "Existing106 engineering checks not rerun; no new neural repair, test-score or throughput claim."
+  ]
+}

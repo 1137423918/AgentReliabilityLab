@@ -1,0 +1,197 @@
+{
+  "normalization": "Private source, toolchain and server paths and terminal line formatting in allowlisted metadata/logs. Source preflight excludes copied instructions and CMake text; preserves source URL, archive/config hashes and tool identities. No binary, model, full upstream source tree or local file-URL lock is published. Local private paths are also normalized; both failed NFS and actual local attempt retained. No runtime binary or full source tree published.",
+  "files": [
+    {
+      "path": "source-preflight.json",
+      "original_sha256": "529f88da1c96236bea86564743ab1b0422f3b620376c14c2212ae5c016faeadd",
+      "public_sha256": "9673cd8636cef4a05cea8c05691e2c9353b4c3802ec917fa8c97da4e6a74e055",
+      "public_bytes": 1509
+    },
+    {
+      "path": "toolchain-lock.json",
+      "original_sha256": "9c7b86885eba9bdbb665893081ed6d5898a5593049ae559c1ff67ba40aaa5951",
+      "public_sha256": "9c7b86885eba9bdbb665893081ed6d5898a5593049ae559c1ff67ba40aaa5951",
+      "public_bytes": 15932
+    },
+    {
+      "path": "toolchain-downloads.json",
+      "original_sha256": "53d357982bd0535749906f497817c991ada64d222706cc6642039e221cb81988",
+      "public_sha256": "53d357982bd0535749906f497817c991ada64d222706cc6642039e221cb81988",
+      "public_bytes": 6095
+    },
+    {
+      "path": "toolchain-install.log",
+      "original_sha256": "61503c6c3a2050a7b3aa7ed1330174de7e84d52ad9d340f6ad1db76a21ab5898",
+      "public_sha256": "61503c6c3a2050a7b3aa7ed1330174de7e84d52ad9d340f6ad1db76a21ab5898",
+      "public_bytes": 7298
+    },
+    {
+      "path": "toolchain-report.json",
+      "original_sha256": "f69110014ac26da9d3ae9041657ca92b5faf11f94bf8db0da248d339fe1f23be",
+      "public_sha256": "f69110014ac26da9d3ae9041657ca92b5faf11f94bf8db0da248d339fe1f23be",
+      "public_bytes": 1192
+    },
+    {
+      "path": "build-run-1/started.json",
+      "original_sha256": "786de050d37bbfdd4f0c5171036bfa2190eadf6e13d169ffc16796568202452c",
+      "public_sha256": "e7b4c8a761ff49ecb192a49c3eec29d5bf875a6e5d76adecafa7c555815a1e53",
+      "public_bytes": 543287
+    },
+    {
+      "path": "build-run-1/progress.json",
+      "original_sha256": "294e26b93134a283beaec5f277a7ecb44d75c1cf8320f8c53c24f09864354866",
+      "public_sha256": "64250053d813be740f30bdc2dd496e62a6538f3bdb2360fa4482350a113704c4",
+      "public_bytes": 543505
+    },
+    {
+      "path": "build-run-1/report.json",
+      "original_sha256": "54ca174a5fc51ed1969e8b6c090a5f93b86bc61764aac7efbb9f141d3e5a293e",
+      "public_sha256": "4a3b99ba453c014d2fff732fef487d6b3c56575af1164e1d58ae8a1804ed486a",
+      "public_bytes": 543635
+    },
+    {
+      "path": "build-run-1/configure.log",
+      "original_sha256": "39940ea2f22721326d67f8bb9d9714fe79aca30aaf19ba1c02162ba584f5bd6f",
+      "public_sha256": "14b309236c6560f34949424b577047ee777205199f46680402f83062b80546da",
+      "public_bytes": 1377
+    },
+    {
+      "path": "local/preparation.json",
+      "original_sha256": "3d5841e4397e4f40a6483f991e93a80dabaca0e5d625c5aa16c95bf1c0c8f30a",
+      "public_sha256": "3d5841e4397e4f40a6483f991e93a80dabaca0e5d625c5aa16c95bf1c0c8f30a",
+      "public_bytes": 1101
+    },
+    {
+      "path": "local/toolchain-install.log",
+      "original_sha256": "61503c6c3a2050a7b3aa7ed1330174de7e84d52ad9d340f6ad1db76a21ab5898",
+      "public_sha256": "61503c6c3a2050a7b3aa7ed1330174de7e84d52ad9d340f6ad1db76a21ab5898",
+      "public_bytes": 7298
+    },
+    {
+      "path": "local/started.json",
+      "original_sha256": "b0ec499f28e142606d555baa714c2afd35a3256174f13f9064ef139c4c3b843a",
+      "public_sha256": "b88ebedc5b170d87879bb10c12e977b52ecb60df1ea0bf614b8b9521fd3f5da2",
+      "public_bytes": 543312
+    },
+    {
+      "path": "local/progress.json",
+      "original_sha256": "e0c1aea075af550a1f0a76b36651804801638d833f67ad2f04f0becef4f113f0",
+      "public_sha256": "5fa5cd68d74c5ceedeb891d3dcfb044a07dc8d16628b6363b3d9664b1d857f73",
+      "public_bytes": 543716
+    },
+    {
+      "path": "local/report.json",
+      "original_sha256": "9f66ae8b6b61985fac507241646fd75506680aee4fddbb1157c26d022861a5e1",
+      "public_sha256": "e9dfb458b85f3cac16e972091d4b2dd9a08a0a31f3dd5db50b04d8b358a43214",
+      "public_bytes": 543846
+    },
+    {
+      "path": "local/configure.log",
+      "original_sha256": "0c4e10825ae21cfd017fff9ffc9bcec980884deb4e66506237211a866aadc8a6",
+      "public_sha256": "15cd00f066c4bb578cc3e0078db0fe2fcdc1be7ff7f109b803690dfb82e21ef7",
+      "public_bytes": 2595
+    },
+    {
+      "path": "local/build.log",
+      "original_sha256": "fce9ebd75f0e971710af632007d632152a3c2e20ee6a1de4358aa33ac30b47b2",
+      "public_sha256": "4c5922e3e6b0375ab79879823845d0f8209cfdc775cae8df79d54b5c8e9e4e53",
+      "public_bytes": 33739
+    },
+    {
+      "path": "local/tree-monitor-report.json",
+      "original_sha256": "82bea78d6230c6f8a29e3c81f9699f499725de4d8e16f3df7745f0a48bbd8b23",
+      "public_sha256": "82bea78d6230c6f8a29e3c81f9699f499725de4d8e16f3df7745f0a48bbd8b23",
+      "public_bytes": 670
+    },
+    {
+      "path": "local/tree-monitor.jsonl",
+      "original_sha256": "332c250f0d2f6713a4f6a076fbaad47c5c850d0c6e31d41b13a7dc4ac0d010e7",
+      "public_sha256": "332c250f0d2f6713a4f6a076fbaad47c5c850d0c6e31d41b13a7dc4ac0d010e7",
+      "public_bytes": 67582
+    },
+    {
+      "path": "local/configuration.json",
+      "original_sha256": "3c744b9d8e877329c0affd66a141c59642800cf486b285148f8fd62b7c1dd7d1",
+      "public_sha256": "0733d62bdbae4efe11ad3b3a69d47f9584c0472e1281082cf709828afca97ef9",
+      "public_bytes": 1153
+    },
+    {
+      "path": "local/summary.json",
+      "original_sha256": "5d64da128937d99abf23478b9cb7d7cc5bfde197e71ab6ab8277198c6afc9428",
+      "public_sha256": "5d64da128937d99abf23478b9cb7d7cc5bfde197e71ab6ab8277198c6afc9428",
+      "public_bytes": 2624
+    },
+    {
+      "path": "link-correction/started.json",
+      "original_sha256": "82d99a4c5a867055d3f5683e06eca1479204a92bf515c9f64586817ce58c7bfd",
+      "public_sha256": "1be7f79a9dcb0cb5f0a77a45cf8976d7b3bec3f991483e0f05f85db6d6b72223",
+      "public_bytes": 543556
+    },
+    {
+      "path": "link-correction/progress.json",
+      "original_sha256": "5418c6e52d75ad863d6e9ed6e0c263e9aa38ff9607bd7e27120295dd982975a7",
+      "public_sha256": "e329a7de422bb26ff553646eb5d245f213b7d455cc1330854c8f8e2055a02c03",
+      "public_bytes": 543954
+    },
+    {
+      "path": "link-correction/report.json",
+      "original_sha256": "3894a2740f0bc589d39e239d79e32ab2431b6fcfddbcc597c97213afd3dd27a1",
+      "public_sha256": "9809527397c0bbf2792104082667b2520ba8f621042046f01284f269b05f651a",
+      "public_bytes": 546015
+    },
+    {
+      "path": "link-correction/configure.log",
+      "original_sha256": "d02ef2bafb0cefc7795652169bd65264da0ac97703ac869ef3d550c76d089f98",
+      "public_sha256": "7a661741ff46efc8069f066f5b3c0fdfa833213b3971894c788a7a9c41ba546f",
+      "public_bytes": 1194
+    },
+    {
+      "path": "link-correction/build.log",
+      "original_sha256": "0628cf9ac9f0b5054c9d87593cdaa34d1151324df2a245f52b3083a7c845649b",
+      "public_sha256": "e2f7b06779dfad75721c8aafb28db0c5bf1a2f8b700c7c6dc2e467ed7edc3789",
+      "public_bytes": 478
+    },
+    {
+      "path": "link-correction/protocol.json",
+      "original_sha256": "203a9b54db5723b66d8a3aae1ddb6f74eecafc6812b9cdde5d7a26fabd95c3f2",
+      "public_sha256": "203a9b54db5723b66d8a3aae1ddb6f74eecafc6812b9cdde5d7a26fabd95c3f2",
+      "public_bytes": 780
+    },
+    {
+      "path": "inspection/report.json",
+      "original_sha256": "a77e949d8673c35674c8dc50bd01365eb87269477663ed5c23c73c7df3815958",
+      "public_sha256": "7edd046038587e39ef0f2ab15b756ee13e95cab68ac8e2488d0e9633c6b6d0e2",
+      "public_bytes": 1868
+    },
+    {
+      "path": "inspection/cuda-elf-list.log",
+      "original_sha256": "a07b897d2dc3c923ea0d1cd0390dd687bbedab1fdbc72b9518648d9861181cb1",
+      "public_sha256": "a07b897d2dc3c923ea0d1cd0390dd687bbedab1fdbc72b9518648d9861181cb1",
+      "public_bytes": 6492
+    },
+    {
+      "path": "inspection/cuda-dynamic.log",
+      "original_sha256": "bb03102be072f06468ad7706a5d5a04fce8d8d22107e626a9ddd480df4c2361a",
+      "public_sha256": "529772bb444d53987f88ef2c587f3a3c39554822833c717447023a72d6af30df",
+      "public_bytes": 2187
+    },
+    {
+      "path": "inspection/cuda-symbols.log",
+      "original_sha256": "d70d5e442b87c36afc8236f839942466cbb525797660978aeca90e4807ebdd7e",
+      "public_sha256": "d70d5e442b87c36afc8236f839942466cbb525797660978aeca90e4807ebdd7e",
+      "public_bytes": 183484
+    },
+    {
+      "path": "inspection/server-dynamic.log",
+      "original_sha256": "5231366e3e0dcf1be48844ac88678ec63f1611a5734f925bac863e3f4274398f",
+      "public_sha256": "e85d40444a3cadd7442746f23ab532dacc43fd63d47ea3540be08ff2a53f4fe3",
+      "public_bytes": 2244
+    },
+    {
+      "path": "link-correction/configuration.json",
+      "original_sha256": "18739b5dc8f7af55a46bdcf4d232835a7c9e08dfb0510714f80c71348cee3a14",
+      "public_sha256": "55c63269fa729cbbd44ca76b51bb5df7219d54271bb0f97ac0efa88466a3f3b9",
+      "public_bytes": 424
+    }
+  ]
+}

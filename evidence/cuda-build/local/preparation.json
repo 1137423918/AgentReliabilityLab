@@ -1,0 +1,29 @@
+{
+  "filesystem": "ext4",
+  "local_root_sha256": "e83f608810e9dde0fdc6262f5650477c5d0ebec62bdc146003c85e2437f8b233",
+  "source_archive_sha256": "9588476bd9a7d5e62e19f83fea9eeb04287b2ce458c03e8a6107bfe70bce770e",
+  "toolchain_packages": 41,
+  "all_copied_archive_sha256_verified": true,
+  "returncode": 0,
+  "completed_utc": "2026-11-21T05:04:46.473543+00:00",
+  "duration_seconds": 19.81,
+  "gpu_runtime_test": false,
+  "tools": {
+    "cmake": {
+      "returncode": 0,
+      "stdout": "cmake version 3.31.8\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n",
+      "stderr": ""
+    },
+    "x86_64-conda-linux-gnu-c++": {
+      "returncode": 0,
+      "stdout": "x86_64-conda-linux-gnu-c++ (conda-forge gcc 13.4.0-20) 13.4.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+      "stderr": ""
+    },
+    "ninja": {
+      "returncode": 0,
+      "stdout": "1.12.1\n",
+      "stderr": ""
+    }
+  },
+  "succeeded": true
+}
