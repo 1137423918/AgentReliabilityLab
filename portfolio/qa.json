@@ -1,14 +1,14 @@
 {
-  "pdf_sha256": "3977991be971b88f3cb151dc75e43079fa9efa8a1ed70a3e378d30b53b497328",
+  "pdf_sha256": "c83de54199d1efb4ff113716d1d41a3c1c50f16f3538094d3d6244e8a5de36be",
   "pdf_pages": 2,
   "page_size": "A4",
   "pages": [
     {
       "language": "zh",
-      "preserved_phrases": 12,
-      "text_sha256": "0784f1bd0904d2f737a504ba677fbe98624a264dcd9b88e10b55af57c9b4b586",
+      "preserved_phrases": 13,
+      "text_sha256": "a387dd2549ec3d8c26c4a7f393f5af283584039c2f59f7a60ea43c9bfe952fb3",
       "link_count": 9,
-      "render_png_sha256": "a133998997d2598de7fe4b5ca75392904851ea9a52b2645c65210079896aa91e",
+      "render_png_sha256": "e2304fe5c81d524929fd3af6042d5c0fea1249c522bfc70636b55b548e31b2d5",
       "drawn_fonts": [
         {
           "resource": "/F2+0",
@@ -19,13 +19,13 @@
         {
           "resource": "/F3+0",
           "base_font": "/AAAAAA+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 113708,
+          "embedded_truetype_bytes": 112428,
           "to_unicode": true
         },
         {
           "resource": "/F3+1",
           "base_font": "/AAAAAB+STHeitiSC-Light-1",
-          "embedded_truetype_bytes": 62304,
+          "embedded_truetype_bytes": 81312,
           "to_unicode": true
         }
       ],
@@ -33,10 +33,10 @@
     },
     {
       "language": "en",
-      "preserved_phrases": 12,
-      "text_sha256": "205d51cf3378a92221501429e36738e701e77dcfa462bd28b41e63d2debc1657",
+      "preserved_phrases": 13,
+      "text_sha256": "0c64e16a59a50c21af6ca028e378f3ecbe5bed0710350946127d06484a35bf4b",
       "link_count": 9,
-      "render_png_sha256": "da8418b8f1f3392b885c561b65b4a43cd060864e659183f6f8fc010c85c3963d",
+      "render_png_sha256": "255cd36befbaca2c920bab8ddbe30802420f2541c7c6fac7caa4a6fde1731942",
       "drawn_fonts": [
         {
           "resource": "/F4+0",
@@ -64,7 +64,7 @@
   "javascript_syntax_check": "Bundled Node --check passed; JavaScript unchanged",
   "new_server_experiments": false,
   "new_test_results": false,
-  "source_files_verified": 11,
+  "source_files_verified": 14,
   "reference_repositories": 3,
-  "fresh_pr_snapshot": "2026-11-21T07:15:52+08:00"
+  "fresh_pr_snapshot": "2026-11-21T09:52:26+08:00"
 }

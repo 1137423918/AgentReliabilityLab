@@ -14,11 +14,12 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "面向维护长任务中断、重复请求与验收失真，开发可恢复的软件维护运行器，交付补丁及可复查的验证记录。",
       "bullets": [
-        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；在 Deep Agents、OpenHands SDK、Google ADK 三个真实仓库验证正常运行与三处 SIGKILL 恢复，各自补丁一致。",
+        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；在本机 ext4 上验证 Deep Agents 正常运行与首个检查点 SIGKILL 恢复，四步参考计划生成相同补丁。",
         "实现固定原版测试验收、Python 语法导出检查与验证进程监督；对补丁、日志、反馈和缓存做哈希校验，拒绝被改写的验收记录。",
-        "发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启、跨修复轮次共享；74 项完整回归通过，覆盖 503、超时、在途 SIGKILL 与并发争抢。"
+        "发送 HTTP 前持久化预留请求次数及 JSON 字节额度，跨重启、跨修复轮次共享；验证 503、超时、在途 SIGKILL 与并发争抢，防止重启绕过限额。",
+        "在状态写入及复用缓存前拒绝 NFS 等不受支持的存储；服务器完整回归 100 项通过、零跳过。持锁生成 SQLite 私人备份，源与备份的只读审计结果一致。"
       ],
-      "project_scope": "三仓库恢复采用固定工具计划，不计模型自主修复。30 分钟真实 CPU 试验保存 5 次回复、6 条工具结果，仍无编辑、补丁或验收。预算单位为 HTTP 请求和 JSON 字节，非 token 或费用。",
+      "project_scope": "恢复采用固定工具计划，不计模型自主修复；历史三仓库控制运行于 NFS，不能证明受支持存储下的恢复。最新 30 分钟 CPU 模型试验保存 4 次回复、5 条读取结果，无编辑、补丁或验收。备份仅用于审计，不证明任务迁移；请求额度不代表 token 或费用。",
       "contributions_label": "已提交的开源草稿",
       "contributions": [
         {
@@ -58,11 +59,12 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "A software-maintenance runner for interrupted tasks, repeated requests and unreliable acceptance, delivering reviewable patches with verification records.",
       "bullets": [
-        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. Normal execution and three staged SIGKILL controls produce matching reference patches within each of three repositories: Deep Agents, OpenHands SDK and Google ADK.",
+        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. On local ext4, normal execution and first-checkpoint SIGKILL recovery produce the same Deep Agents patch from a four-step reference plan.",
         "Add frozen original-test acceptance, Python syntax checks before export and verifier process supervision. Hash-check patches, logs, feedback and cached results to reject modified acceptance records.",
-        "Reserve HTTP attempts and serialized JSON bytes durably before send, shared across restarts and repair rounds. All 74 project checks pass, covering 503s, timeouts, in-flight SIGKILL and competing processes."
+        "Reserve HTTP attempts and JSON bytes durably before send, shared across restarts and repair rounds. Verify 503s, timeouts, in-flight SIGKILL and competing processes to prevent restart-based budget bypass.",
+        "Reject NFS and unsupported storage before state writes or cached success. All 100 server project tests pass with zero skips. A locked private SQLite backup reproduces the read-only source audit."
       ],
-      "project_scope": "Recovery uses explicit operator plans, not autonomous repairs. A real 30-minute CPU trial retains five replies and six tool results but no edit, patch or acceptance. Limits count HTTP attempts and JSON bytes, not tokens or money.",
+      "project_scope": "Recovery uses explicit plans, not autonomous repair. Historical three-repository controls ran on NFS and do not validate supported storage. The latest 30-minute CPU model trial saves four replies and five reads, with no edit, patch or acceptance. Backup proves auditability, not task migration; request limits are not tokens or money.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
       "contributions": [
         {
