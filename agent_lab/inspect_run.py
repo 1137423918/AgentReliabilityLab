@@ -63,6 +63,10 @@ def inspect_run(directory):
     if not database.is_file():
         raise InspectionError("No checkpoint database exists for this run.")
     options = {}
+    if "file_inventory_v1" in task.get("required_features", []):
+        from agent_lab.file_inventory import FileInventoryMiddleware
+
+        options.setdefault("middleware", []).append(FileInventoryMiddleware())
     if "python_source_v1" in task.get("required_features", []):
         from agent_lab.source_tools import make_source_tool
 
@@ -70,7 +74,9 @@ def inspect_run(directory):
     if "python_read_index_v1" in task.get("required_features", []):
         from agent_lab.read_index import PythonReadIndexMiddleware
 
-        options["middleware"] = [PythonReadIndexMiddleware(task["files"])]
+        options.setdefault("middleware", []).append(
+            PythonReadIndexMiddleware(task["files"])
+        )
     connection = sqlite3.connect(
         database.as_uri() + "?mode=ro", uri=True, check_same_thread=False, timeout=5
     )

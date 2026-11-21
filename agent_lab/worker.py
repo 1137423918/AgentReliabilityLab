@@ -93,11 +93,19 @@ def validate_task(task: dict) -> list[str]:
             "python_source_v1",
             "python_read_index_v1",
             "model_request_budget_v1",
+            "file_inventory_v1",
         )
         for feature in features
     ):
         raise RunError("The task requires unsupported worker features.")
     task_limits(task)
+    if "file_inventory_v1" in features:
+        from agent_lab.file_inventory import inventory_prompt
+
+        try:
+            inventory_prompt(files)
+        except ValueError as error:
+            raise RunError(str(error)) from error
     syntax_files = task.get("python_syntax_files", [])
     if (
         not isinstance(syntax_files, list)
@@ -135,6 +143,8 @@ def validate_task(task: dict) -> list[str]:
     allowed_tools = {"ls", "read_file", "write_file", "edit_file", "glob", "grep"}
     if "python_source_v1" in features:
         allowed_tools.add("inspect_python")
+    if "file_inventory_v1" in features:
+        allowed_tools.remove("ls")
     for step in task.get("model", {}).get("plan", []):
         if step["tool"] not in allowed_tools:
             raise RunError("Scripted plans only support virtual file tools.")
@@ -261,6 +271,14 @@ def agent_phase(
     ):
         options = {}
         prompt = "Prepare the requested maintenance patch using virtual file tools. Do not delegate or execute commands."
+        if "file_inventory_v1" in task.get("required_features", []):
+            from agent_lab.file_inventory import (
+                FileInventoryMiddleware,
+                inventory_prompt,
+            )
+
+            options.setdefault("middleware", []).append(FileInventoryMiddleware())
+            prompt += inventory_prompt(files)
         if "python_source_v1" in task.get("required_features", []):
             from agent_lab.source_tools import make_source_tool
 
@@ -269,7 +287,9 @@ def agent_phase(
         if "python_read_index_v1" in task.get("required_features", []):
             from agent_lab.read_index import PythonReadIndexMiddleware
 
-            options["middleware"] = [PythonReadIndexMiddleware(files)]
+            options.setdefault("middleware", []).append(
+                PythonReadIndexMiddleware(files)
+            )
             prompt += " A first read_file page of a large Python file may include a versioned declaration index. Use its one-based line ranges with read_file offset=start_line-1 to avoid irrelevant sequential pages. The requested source page remains unchanged after the index."
         agent = create_deep_agent(
             model=model,

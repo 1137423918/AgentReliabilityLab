@@ -1,0 +1,7 @@
+{
+  "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56",
+  "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+  "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+  "tests/test_local_model.py": "a32c873255f126e180862e123db8eacd78fc13416dd134c9b0024366877b31b6",
+  "tests/test_file_inventory.py": "52bf2753a8db08df817ec59adda8a5fbd21be50269f6ca22b4dfedb14db4be0a"
+}

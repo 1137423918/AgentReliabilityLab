@@ -1,0 +1,36 @@
+test_actual_checkpoint_sigkill_resumes_opt_in_graph_without_repeating_edit (test_file_inventory.FileInventoryTests.test_actual_checkpoint_sigkill_resumes_opt_in_graph_without_repeating_edit) ... ok
+test_complete_quoted_unicode_inventory_edits_and_replays_with_bound_quota (test_file_inventory.FileInventoryTests.test_complete_quoted_unicode_inventory_edits_and_replays_with_bound_quota) ... ok
+test_oversized_inventory_is_rejected_whole_before_model_send (test_file_inventory.FileInventoryTests.test_oversized_inventory_is_rejected_whole_before_model_send) ... ok
+test_same_model_alias_keeps_default_tools_before_and_after_opt_in_graph (test_file_inventory.FileInventoryTests.test_same_model_alias_keeps_default_tools_before_and_after_opt_in_graph) ... {"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 1, "pending": []}
+{"stage": "materialized", "patch_sha256": "3bf94de2cbad237661435135dd261731b23f15790669c4749edce282aef65dec"}
+{"stage": "before_verification"}
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 1, "pending": []}
+{"stage": "materialized", "patch_sha256": "3bf94de2cbad237661435135dd261731b23f15790669c4749edce282aef65dec"}
+{"stage": "before_verification"}
+{"stage": "checkpoint", "model_turns": 1, "tool_results": 1, "pending": ["model"]}
+{"stage": "checkpoint", "model_turns": 2, "tool_results": 1, "pending": []}
+{"stage": "materialized", "patch_sha256": "3bf94de2cbad237661435135dd261731b23f15790669c4749edce282aef65dec"}
+{"stage": "before_verification"}
+ok
+test_scripted_plan_cannot_request_ls_under_the_inventory_contract (test_file_inventory.FileInventoryTests.test_scripted_plan_cannot_request_ls_under_the_inventory_contract) ... ok
+test_unadvertised_ls_is_rejected_without_backend_execution_then_edit_is_verified (test_file_inventory.FileInventoryTests.test_unadvertised_ls_is_rejected_without_backend_execution_then_edit_is_verified) ... ERROR
+
+======================================================================
+ERROR: test_unadvertised_ls_is_rejected_without_backend_execution_then_edit_is_verified (test_file_inventory.FileInventoryTests.test_unadvertised_ls_is_rejected_without_backend_execution_then_edit_is_verified)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<server-workspace>/code/file-inventory-20261121/tests/test_file_inventory.py", line 121, in test_unadvertised_ls_is_rejected_without_backend_execution_then_edit_is_verified
+    with (
+  File "<server-home>/anaconda3/lib/python3.11/unittest/mock.py", line 1443, in __enter__
+    original, local = self.get_original()
+                      ^^^^^^^^^^^^^^^^^^^
+  File "<server-home>/anaconda3/lib/python3.11/unittest/mock.py", line 1416, in get_original
+    raise AttributeError(
+AttributeError: <class 'deepagents.backends.state.StateBackend'> does not have the attribute 'ls_info'
+
+----------------------------------------------------------------------
+Ran 6 tests in 25.951s
+
+FAILED (errors=1)

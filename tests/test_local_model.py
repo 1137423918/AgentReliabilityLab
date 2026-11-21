@@ -39,6 +39,7 @@ class LocalModelTests(unittest.TestCase):
         self.git("commit", "-m", "baseline")
         self.requests = []
         self.repair_value = None
+        self.response_script = None
         self.response_status = 200
         self.response_gate = threading.Event()
         self.response_gate.set()
@@ -92,6 +93,8 @@ class LocalModelTests(unittest.TestCase):
                                 },
                             }
                         ]
+                    if fixture.response_script is not None:
+                        message = fixture.response_script(body)
                     response = {
                         "id": "fixture-completion",
                         "object": "chat.completion",
@@ -101,7 +104,9 @@ class LocalModelTests(unittest.TestCase):
                             {
                                 "index": 0,
                                 "message": message,
-                                "finish_reason": "stop" if tool_done else "tool_calls",
+                                "finish_reason": "tool_calls"
+                                if message.get("tool_calls")
+                                else "stop",
                             }
                         ],
                         "usage": {

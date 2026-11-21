@@ -1,0 +1,25 @@
+{
+  "started_utc": "2026-11-21T02:54:06.837341+00:00",
+  "python": "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+  "cpu_affinity": 88,
+  "load": [
+    30.49,
+    31.45,
+    34.94
+  ],
+  "available_memory_bytes": 49522991104,
+  "active_state_filesystem": "ext4",
+  "test_tmp_root": "<local-test-state-0>",
+  "gpu_used": false,
+  "neural_generation": false,
+  "historical_fixture_sha256": {
+    "evidence/cpu-model/int8/responses/1776907efdc84a249154676e1e08a46d.text": "0bb9b994f2dd3bfe486f7c335c164eba0d60cda9acf3deeccec76f1a29d512d8",
+    "evidence/cpu-model/fp32/responses/376afceee0fc48adacf78b9b2701e79c.text": "e56dab3983813e0560eb7dd85a050f09a4081df68ea27e0e61f06672fe04c593",
+    "evidence/cpu-model/fp32/responses/e61f2bf091374272b0ff64d77754faf0.text": "bc4ff970a4b761087387897bcf2928381073d3699d80455929ee106e9e211321",
+    "evidence/cpu-model/int8/responses/4b4f7fa0dd274b23b61b611680fee700.text": "5b43b091e2b04bc3f5fca862c1b063fc4195d8b6c16fa84b2cd62a3bcb0df82f",
+    "evidence/cpu-model/int8/responses/20b9393d7c4b449bbe81ad4f75689e8d.text": "45015df88ecffb478686112d0ea7cae126a1303354e5765af417a69ff703f4e8",
+    "evidence/tool-compat/outputs/cpu-model-20261120-03/f503c97b18a54d399b9851f3fd71193e.text": "0bb9b994f2dd3bfe486f7c335c164eba0d60cda9acf3deeccec76f1a29d512d8",
+    "evidence/tool-compat/outputs/cpu-model-20261120-03/2cf0c81b8b804d0688eff63e178a0ad2.text": "e4ff113e77c204692758069bb541133a69a56e2adb976a3b15d020bd88057b7a",
+    "evidence/native-cpu/audit/normal/libs/deepagents/deepagents/backends/utils.py.txt": "1abfeb919983e4fb3e767733263325a8cc9498489c9aaf85c18be97b5c988303"
+  }
+}

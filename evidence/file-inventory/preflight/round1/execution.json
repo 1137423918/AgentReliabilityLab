@@ -1,0 +1,60 @@
+[
+  {
+    "stage": "format",
+    "returncode": 0,
+    "wall_seconds": 0.1901381267234683,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "format",
+      "agent_lab/file_inventory.py",
+      "agent_lab/worker.py",
+      "agent_lab/inspect_run.py",
+      "tests/test_local_model.py",
+      "tests/test_file_inventory.py"
+    ]
+  },
+  {
+    "stage": "lint",
+    "returncode": 0,
+    "wall_seconds": 0.16670447122305632,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "check",
+      "agent_lab/file_inventory.py",
+      "agent_lab/worker.py",
+      "agent_lab/inspect_run.py",
+      "tests/test_local_model.py",
+      "tests/test_file_inventory.py"
+    ]
+  },
+  {
+    "stage": "focused",
+    "returncode": 0,
+    "wall_seconds": 25.551221814006567,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_file_inventory.py",
+      "-v"
+    ]
+  },
+  {
+    "stage": "full",
+    "returncode": 1,
+    "wall_seconds": 269.4519670205191,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  }
+]

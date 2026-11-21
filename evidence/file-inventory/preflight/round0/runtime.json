@@ -1,0 +1,15 @@
+{
+  "started_utc": "2026-11-21T02:44:24.628347+00:00",
+  "python": "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+  "cpu_affinity": 88,
+  "load": [
+    32.17,
+    33.84,
+    38.29
+  ],
+  "available_memory_bytes": 49881403392,
+  "active_state_filesystem": "ext4",
+  "test_tmp_root": "<local-test-state-1>",
+  "gpu_used": false,
+  "neural_generation": false
+}
