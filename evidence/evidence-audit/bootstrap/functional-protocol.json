@@ -1,0 +1,24 @@
+{
+  "source_archive_sha256": "c224104974805ada15c890096c2719476bc8ea123e5c76261cb2d8c43cbf0403",
+  "sources_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "benchmarks/llamaindex_evidence_agent.py": "9c8b20b7410b6e0fb222615f131fc46d297d888129d22a1f25cb342b553e264d",
+    "benchmarks/llamaindex_evidence_controls.py": "4f5b996ee47dab64718a04b05b725ec705a845e644943e2085966374952df4a1",
+    "tests/test_evidence_audit.py": "db5245a89fdcc99b15cb6a42faf702620e87f8a85d7e18c4946577b2c478df96"
+  },
+  "catalog_sha256": "2efdf977e7b876cf513164590b7f21381b77d45f9187e84f2589d20ffec640f3",
+  "cases_sha256": "d1fb6aa97fa94f8257385c88268146785549238a80a8b612122a77229b4a8489",
+  "source_project_base": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+  "scope": "First LlamaIndex FunctionAgent report-audit workflow; explicit non-neural controls before any separately declared real-model CPU trial; no upstream modification/PR",
+  "stage": 38,
+  "declared_utc": "2026-11-21T10:58:15.546048+00:00",
+  "core_contract": "6 scoped stdlib catalog/provenance failure checks, no claim that historical116 full suite was rerun",
+  "sdk_controls": "2 actual LlamaIndex FunctionAgent cases with explicitly fake replies: valid facts and injected bool-for-int forged fact; each5POST expected, source reports real; no neural inference",
+  "operator_sha256": "386a7a65775e984a110ea8de028a5d79938b9432f2c408ad19e110cf74004134",
+  "limits": "4CPU,nice19,48GiBAS,16GiBsampledownedRSS,12GiBavailablefloor,90sstatic/core,360sSDKphase,90s eachaudit",
+  "neural_trials": "Not started; separate protocol required after these controls pass"
+}

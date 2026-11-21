@@ -1,0 +1,33 @@
+{
+  "phases": [
+    {
+      "phase": "final-ruff-check",
+      "returncode": 0,
+      "wall_seconds": 1.498,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "final-format-check",
+      "returncode": 0,
+      "wall_seconds": 0.178,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "catalog-tests",
+      "returncode": 0,
+      "wall_seconds": 1.264,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7208960
+    },
+    {
+      "phase": "sdk-controls",
+      "returncode": 0,
+      "wall_seconds": 146.142,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 177709056
+    }
+  ],
+  "success": true
+}

@@ -1,0 +1,112 @@
+{
+  "version": 1,
+  "created_utc": "2026-11-21T10:56:16.702369+00:00",
+  "source_commit": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+  "source_base": "https://github.com/1137423918/AgentReliabilityLab/blob/2c977ec8404c9ebfd159a7addb1d97b7500407ff/",
+  "reports": [
+    {
+      "id": "core_current",
+      "path": "evidence/async-budget/report.json",
+      "description": "Current Agent Lab core regression and asynchronous SDK controls",
+      "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006",
+      "fields": [
+        "/full_suite_passed",
+        "/full_suite_skipped",
+        "/new_async_checks_included",
+        "/framework_case_count",
+        "/real_neural_requests"
+      ]
+    },
+    {
+      "id": "patch_move",
+      "path": "evidence/apply-move/report.json",
+      "description": "OpenHands same-path patch move fix and related test scopes",
+      "sha256": "72e0af3d196d194798c7b5bc212750a234f74956cca85fb849880d9fdd42ecd8",
+      "fields": [
+        "/related_suite_passed",
+        "/focused_passed",
+        "/new_checks_included",
+        "/overlapping_suites_not_added",
+        "/neural_requests"
+      ]
+    },
+    {
+      "id": "gpu_transport",
+      "path": "evidence/gpu-smoke/report.json",
+      "description": "GPU transport smoke checks and their individual outcomes",
+      "sha256": "d21dce1331597931b7f123e0413a9807e0de43e06da65775234abf68379dc986",
+      "fields": [
+        "/overall_smoke_passed",
+        "/checks/0/passed",
+        "/checks/1/passed",
+        "/checks/2/passed",
+        "/repository_maintenance_run",
+        "/new_neural_repair"
+      ]
+    },
+    {
+      "id": "gpu_maintenance",
+      "path": "evidence/adk-gpu/no-idle-gpu/outcome.json",
+      "description": "GPU repository maintenance admission outcome",
+      "sha256": "d13887889741b728752282acdc74b3e2560ba4fe4f75df03fd900ed9bd719f38",
+      "fields": [
+        "/outcome",
+        "/model_service_started",
+        "/model_http_requests",
+        "/no_request_journal"
+      ]
+    },
+    {
+      "id": "adk_cpu",
+      "path": "evidence/adk-9b-cpu/report.json",
+      "description": "Real-model Google ADK CPU maintenance trajectory",
+      "sha256": "660c56be81f0f064fca582dd167151af2c2b4e8191e01ba7d0e4260907f717cc",
+      "fields": [
+        "/verified_trials",
+        "/outcome",
+        "/case"
+      ]
+    },
+    {
+      "id": "historical_core",
+      "path": "evidence/verification-tree/report.json",
+      "description": "Earlier Linux verifier descendant cleanup regression snapshot",
+      "sha256": "abc47e4214040b03a7797be6a372a76f36e049f7c4ac211f9e3ffc35964fa7e8",
+      "fields": [
+        "/full_suite_passed",
+        "/new_tests_included",
+        "/real_neural_model_requests"
+      ]
+    },
+    {
+      "id": "adk_cleanup",
+      "path": "evidence/adk-artifact-cleanup/report.json",
+      "description": "Google ADK artifact deletion candidate and versioned related tests",
+      "sha256": "b13f8bb40d645015626f27f90c1e93a31fe4309cbe00cab1fa419e7cfc84c31d",
+      "fields": [
+        "/scope",
+        "/base_commit",
+        "/upstream_repository",
+        "/upstream_pr",
+        "/pr_state",
+        "/stars_observed",
+        "/observed_date",
+        "/source_sha256",
+        "/baseline_source_sha256",
+        "/benchmark_sha256",
+        "/new_regressions",
+        "/related_suites"
+      ]
+    },
+    {
+      "id": "upstream_prs",
+      "path": "evidence/apply-move/upstream-snapshot.json",
+      "description": "Dated current upstream pull-request states",
+      "sha256": "fa850db1b557c6d18d31a4bd3ebad432008f966edacf98b629380fd4d86271be",
+      "fields": [
+        "/checked_at_utc",
+        "/pull_requests"
+      ]
+    }
+  ]
+}

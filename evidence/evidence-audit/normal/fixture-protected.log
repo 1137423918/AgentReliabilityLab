@@ -1,0 +1,11 @@
+test_changed_frozen_view_rejects_stale_success_without_rerunning (test_protected_verification.ProtectedVerificationTests.test_changed_frozen_view_rejects_stale_success_without_rerunning) ... ok
+test_legitimate_test_addition_and_cached_replay_keep_both_suites (test_protected_verification.ProtectedVerificationTests.test_legitimate_test_addition_and_cached_replay_keep_both_suites) ... ok
+test_partial_verification_view_setup_recovers_known_file_states (test_protected_verification.ProtectedVerificationTests.test_partial_verification_view_setup_recovers_known_file_states) ... ok
+test_recorded_invalid_model_write_is_rejected_before_any_export (test_protected_verification.ProtectedVerificationTests.test_recorded_invalid_model_write_is_rejected_before_any_export) ... ok
+test_verifier_tracked_write_is_rejected_even_with_zero_exit (test_protected_verification.ProtectedVerificationTests.test_verifier_tracked_write_is_rejected_even_with_zero_exit) ... ok
+test_weakened_candidate_tests_cannot_replace_original_regression (test_protected_verification.ProtectedVerificationTests.test_weakened_candidate_tests_cannot_replace_original_regression) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 25.528s
+
+OK

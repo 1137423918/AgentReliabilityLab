@@ -1,0 +1,3 @@
+Using CPython 3.11.4 interpreter at: <SERVER_BASE>/envs/model-request-budget-20261121/bin/python
+Creating virtual environment at: <SERVER_BASE>/envs/llamaindex-evidence-20261121
+Activate with: source <SERVER_BASE>/envs/llamaindex-evidence-20261121/bin/activate

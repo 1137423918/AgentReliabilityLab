@@ -1,0 +1,54 @@
+{
+  "protocol_sha256": "1ffba1c8639769812af5577b3b8ac71ef6c03881e3ffc7579cf49806aff46c00",
+  "source_archive_sha256": "540c32ec7bb792398d8b7e16796d5dfe2dbecf499da57ca67925d60a9dfcec31",
+  "model_started": false,
+  "model_ready": false,
+  "cases": [],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 1.065,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7208960
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.066,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 1.065,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 6488064
+    },
+    {
+      "phase": "full-core",
+      "returncode": 1,
+      "wall_seconds": 302.267,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 284975104
+    }
+  ],
+  "worker_dependency_pairs_unchanged": 68,
+  "own_project_distribution_excluded": {
+    "name": "agent-reliability-lab",
+    "version": "0.2.0"
+  },
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Phase failed: full-core"
+  },
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": null,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "service_wall_seconds": null,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}

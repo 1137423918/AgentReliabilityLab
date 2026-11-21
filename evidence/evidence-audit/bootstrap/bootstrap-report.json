@@ -1,0 +1,29 @@
+{
+  "phases": [
+    {
+      "phase": "lock",
+      "returncode": 0,
+      "wall_seconds": 11.351,
+      "guard_reason": null
+    },
+    {
+      "phase": "venv",
+      "returncode": 0,
+      "wall_seconds": 1.006,
+      "guard_reason": null
+    },
+    {
+      "phase": "install",
+      "returncode": 0,
+      "wall_seconds": 135.051,
+      "guard_reason": null
+    },
+    {
+      "phase": "dependency-check",
+      "returncode": 0,
+      "wall_seconds": 1.007,
+      "guard_reason": null
+    }
+  ],
+  "success": true
+}

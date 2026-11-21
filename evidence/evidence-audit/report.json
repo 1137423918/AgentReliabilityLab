@@ -1,0 +1,148 @@
+{
+  "checked_at_utc": "2026-11-21T12:35:05.909798+00:00",
+  "purpose": "Audit report-backed resume claims with actual LlamaIndex FunctionAgent tools and exact JSON/read-lineage checks. This is report auditing, not autonomous repository repair.",
+  "full_suite_passed": 124,
+  "full_suite_skipped": 0,
+  "new_evidence_checks_included": 8,
+  "full_suite_unittest_seconds": 331.333,
+  "full_suite_phase_wall_seconds": 334.008,
+  "overlapping_focused_groups_not_added": true,
+  "original_worker_dependency_pairs_unchanged": 68,
+  "core_source_sha256": {
+    "agent_lab/evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "benchmarks/evidence_audit_case.py": "269da300cf838646634b0aba18f98426ea0de6071caa830c09094dd720d7f379",
+    "benchmarks/llamaindex_evidence_agent.py": "9c8b20b7410b6e0fb222615f131fc46d297d888129d22a1f25cb342b553e264d",
+    "benchmarks/llamaindex_evidence_controls.py": "4f5b996ee47dab64718a04b05b725ec705a845e644943e2085966374952df4a1",
+    "tests/test_evidence_audit.py": "d842a699a3a0a9888a52d6360bec56646282c1fc8c80754d73b3b8bb34d03c66"
+  },
+  "optional_sdk": {
+    "llama-index-core": "0.14.26",
+    "llama-index-llms-openai": "0.9.0",
+    "llama-index-llms-openai-like": "0.9.0",
+    "openai": "3.57.0",
+    "httpx2": "2.16.2",
+    "workflows": "2.26.1",
+    "isolated_environment": true,
+    "upstream_policy_reference_commit": "99d7433f6f71888951379ccca9294e272442c832",
+    "wheel_build_revision_not_asserted": true
+  },
+  "catalog": {
+    "reports": 8,
+    "project_commit": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+    "manifest_sha256": "e7f48f1cc0127545575cd22201d872a55f8b56c2fa642605bde8f8d6bfd2d171",
+    "scope": "Fixed earlier catalog snapshot includes116 core checks. Not live GitHub state; the new124 result was not inserted retrospectively.",
+    "trusted_operator_manifest": true
+  },
+  "sdk_controls": {
+    "cases": 2,
+    "passed": 2,
+    "model_posts": 10,
+    "explicit_fake_replies": true,
+    "neural_requests": 0,
+    "positive_exact_fact_verified": true,
+    "forged_bool_for_int_rejected": true,
+    "phase_wall_seconds": 146.142,
+    "included_in_core_test_count": false
+  },
+  "neural": {
+    "device": "CPU only;4 threads, no GPU layers",
+    "model": "Qwen3.5-9B text-only Q4_K_M",
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "model_bytes": 5627044256,
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "exact_quantizer_source_weight_revision": null,
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "native_context_observed": 8192,
+    "runtime_bom_verified": true,
+    "protocol_original_sha256": "4cd43420565a5c20773ae86b3ecec612d64272888c6ece124b8326683abfbeb7",
+    "protocol_public_sha256": "4cd43420565a5c20773ae86b3ecec612d64272888c6ece124b8326683abfbeb7",
+    "source_archive_sha256": "3d6ae4e5814f1f6c99645890466563fd9b107d15349ad594193385f949851257",
+    "declared_fixed_cases": 3,
+    "started_cases": 1,
+    "finished_case_drivers": 1,
+    "cases_passed": 0,
+    "all_declared_cases_completed": false,
+    "case_dispositions": [
+      {
+        "id": "gpu_claim",
+        "status": "failed_timeout",
+        "driver_wall_seconds": 609.197,
+        "timeout_seconds": 600,
+        "evidence_verified": false,
+        "graded_verdict_available": false,
+        "raw_answer_observation": "Fourth saved response rejects both unsupported claims and cites the two reports. This free prose is not the typed assessment and does not pass the predeclared contract.",
+        "successful_tool_calls": 3,
+        "reports_read": 2,
+        "structured_formatting_call_started": true
+      },
+      {
+        "id": "test_scope",
+        "status": "not_run",
+        "reason": "Predeclared stop on workflow/transport timeout"
+      },
+      {
+        "id": "supported_core",
+        "status": "not_run",
+        "reason": "Predeclared stop on workflow/transport timeout"
+      }
+    ],
+    "http_reservations": 5,
+    "client_attempt_events": 5,
+    "received_responses": 4,
+    "http_statuses": [
+      200,
+      200,
+      200,
+      200,
+      null
+    ],
+    "reserved_request_body_bytes": 27926,
+    "saved_response_usage": {
+      "prompt_tokens": 4904,
+      "cached_prompt_tokens": 3302,
+      "completion_tokens": 831,
+      "excludes_unreceived_fifth_response_native_warmup_and_canceled_work": true
+    },
+    "automatic_initial_tool_selection": true,
+    "return_direct": false,
+    "typed_output_uses_extra_model_call": true,
+    "synthetic_replies": false,
+    "free_prose_semantics_verified": false,
+    "sdk_and_llm_retries": 0,
+    "repair_rounds": 0,
+    "no_restart_or_quota_extension": true,
+    "service_wall_seconds": 627.551,
+    "sampled_peak_owned_session_rss_bytes": 10023866368,
+    "model_shutdown_returncode": 0,
+    "owned_processes_after": 0,
+    "api_key_file_remaining": false,
+    "port_closed": true
+  },
+  "retained_pre_model_attempts": [
+    {
+      "attempt": 1,
+      "model_started": false,
+      "neural_requests": 0,
+      "cause": "Operator incorrectly compared69 installed distributions against baseline68 dependency entries; own editable agent-reliability-lab0.2.0 was separately excluded in original baseline. No dependency changed."
+    },
+    {
+      "attempt": 2,
+      "model_started": false,
+      "neural_requests": 0,
+      "observed": "Ran124 tests,7 missing-fixture errors; all8 new checks observed OK. Cannot infer117 passed from subtest errors.",
+      "correction": "Include8 byte-identical historical fixtures, run affected groups first, then same full124. No assertion/production source/query/gold/grader/budget change."
+    }
+  ],
+  "bootstrap_metadata_note": "bootstrap/preflight.json and grader style preparation describe unexecuted preparation snapshots, not model runs. functional-preflight.json and functional-protocol.json bind actual2 fake controls and6 earlier focused tests. Final8 evidence tests are included in full124.",
+  "limitations": [
+    "Three predeclared known English questions, not held out; zero verified model audits and no general accuracy estimate.",
+    "Exact structured JSON values/source SHA/actual tool-read lineage only; explanation prose semantics not automatically checked.",
+    "Trusted curated manifest, not an authenticated hostile-owner, OS sandbox or instruction-injection defense.",
+    "8K context/4CPU audit workload differs from previous32K/64GiB repository-maintenance profiles; no causal speed/model comparison.",
+    "Budget counts conservative reservations and JSON bytes, not exact billing/tokens/exactly-once. Request hooks can record attempts before budget admission; unknown work remains charged.",
+    "All runtime/tests/model work ran on authorized server; local preparation, evidence analysis and PDF rendering only.",
+    "LlamaIndex SDK used in own project; no new upstream contribution or PR this stage."
+  ]
+}

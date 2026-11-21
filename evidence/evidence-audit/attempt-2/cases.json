@@ -1,0 +1,48 @@
+[
+  {
+    "id": "gpu_claim",
+    "question": "Against the pinned catalog snapshot (not live GitHub state), audit this resume claim: 'All three GPU smoke checks passed, and a GPU repository-maintenance run started and produced an accepted repair.' Verify both the individual GPU checks and whether the maintenance service started. Use saved reports and exact citations.",
+    "expected_supported": false,
+    "required_facts": {
+      "gpu_transport": {
+        "/overall_smoke_passed": false,
+        "/checks/0/passed": false,
+        "/checks/1/passed": true,
+        "/checks/2/passed": true
+      },
+      "gpu_maintenance": {
+        "/model_service_started": false,
+        "/model_http_requests": 0
+      }
+    }
+  },
+  {
+    "id": "test_scope",
+    "question": "Against the pinned catalog snapshot (not live GitHub state), audit this resume claim: 'Agent Lab has 319 passing core tests, by adding 116 core checks to the 203 OpenHands same-path patch related checks; the 22 focused patch tests can be added again.' Verify the current core total, patch-related total, focused subset and whether these scopes may be added as unique core tests.",
+    "expected_supported": false,
+    "required_facts": {
+      "core_current": {
+        "/full_suite_passed": 116
+      },
+      "patch_move": {
+        "/related_suite_passed": 203,
+        "/focused_passed": 22,
+        "/overlapping_suites_not_added": true
+      }
+    }
+  },
+  {
+    "id": "supported_core",
+    "question": "Against the pinned catalog snapshot (not live GitHub state), audit this statement: 'The current dedicated Agent Lab core suite has 116 passing checks and zero skips; its eight new async checks are already included. Four SDK cases are reported separately, with zero real neural requests in those controls.' Verify the numbers and scope from the reports, rather than automatically rejecting the claim.",
+    "expected_supported": true,
+    "required_facts": {
+      "core_current": {
+        "/full_suite_passed": 116,
+        "/full_suite_skipped": 0,
+        "/new_async_checks_included": 8,
+        "/framework_case_count": 4,
+        "/real_neural_requests": 0
+      }
+    }
+  }
+]

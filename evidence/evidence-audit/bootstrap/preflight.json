@@ -1,0 +1,18 @@
+{
+  "source_archive_sha256": "bd6b0d4453724bbf9aa9c25c345f87fe0a412e6259624311f3bf57750907be79",
+  "sources_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "benchmarks/llamaindex_evidence_agent.py": "9c8b20b7410b6e0fb222615f131fc46d297d888129d22a1f25cb342b553e264d",
+    "benchmarks/llamaindex_evidence_controls.py": "4f5b996ee47dab64718a04b05b725ec705a845e644943e2085966374952df4a1",
+    "benchmarks/evidence_audit_case.py": "4911fc8fe48702c8d4eadac7884f3fcd1ca8557eeb3b3fd4bd91a73d7d56f58b",
+    "tests/test_evidence_audit.py": "88fc537d2ed05c0f3026aeb361f1353000eaca23f995a2994a357b5a2bcd97cd"
+  },
+  "catalog_sha256": "e7f48f1cc0127545575cd22201d872a55f8b56c2fa642605bde8f8d6bfd2d171",
+  "cases_sha256": "b0db7e77b25c757d0d84c1f77f945d54550375625c594f41e53a404b68410b30",
+  "source_project_base": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+  "scope": "First LlamaIndex FunctionAgent report-audit workflow; explicit non-neural controls before any separately declared real-model CPU trial; no upstream modification/PR"
+}

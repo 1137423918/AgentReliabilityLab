@@ -1,0 +1,11 @@
+test_bad_pointers_and_unknown_reports_leave_no_read_lineage (test_evidence_audit.EvidenceAuditTests.test_bad_pointers_and_unknown_reports_leave_no_read_lineage) ... ok
+test_forged_values_hashes_and_unread_facts_rejected (test_evidence_audit.EvidenceAuditTests.test_forged_values_hashes_and_unread_facts_rejected) ... ok
+test_manifest_paths_ids_and_symlinks_rejected (test_evidence_audit.EvidenceAuditTests.test_manifest_paths_ids_and_symlinks_rejected) ... ok
+test_modified_or_missing_report_stops_without_a_successful_read (test_evidence_audit.EvidenceAuditTests.test_modified_or_missing_report_stops_without_a_successful_read) ... ok
+test_output_overflow_is_rejected_without_truncation_or_lineage (test_evidence_audit.EvidenceAuditTests.test_output_overflow_is_rejected_without_truncation_or_lineage) ... ok
+test_real_reads_json_pointers_and_observed_nested_citation (test_evidence_audit.EvidenceAuditTests.test_real_reads_json_pointers_and_observed_nested_citation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.012s
+
+OK

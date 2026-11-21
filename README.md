@@ -2,7 +2,11 @@
 
 面向软件维护 Agent 的工具契约与可恢复执行：持久化工具进度、隔离代码改动，并生成可审阅的补丁与验证记录。
 
-[中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。这是已有成果的求职展示，未新增实验或测试成绩。
+[中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和开源草稿按日期核验。
+
+## LlamaIndex：审计真实报告中的项目表述
+
+加入实际 FunctionAgent / OpenAILike 工具链，对8份固定真实报告核对来源、JSON事实与读取记录。完整124项回归通过、零跳过（新增8项已计入）；另两场真实SDK假回复控制均通过。9B CPU首题完成3次真实工具调用、4次HTTP回复，在第5次结构化调用遇600秒上限，未通过验收；后两题按协议未运行，零已验证神经审计。保留全部wire/账本、超时和准备失败，不把自由文字答对计为完成。[接口与复现](docs/evidence-audit.md) · [完整证据](evidence/evidence-audit/README.md)。
 
 ## OpenHands 补丁工具：避免同路径移动删掉源文件
 

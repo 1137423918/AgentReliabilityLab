@@ -1,0 +1,42 @@
+{
+  "protocol_sha256": "266b540b640fe7ad7655d231416b54bae4b22d8fcfa4ca925fbe048919bfc122",
+  "source_archive_sha256": "540c32ec7bb792398d8b7e16796d5dfe2dbecf499da57ca67925d60a9dfcec31",
+  "model_started": false,
+  "model_ready": false,
+  "cases": [],
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 2.445,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 10813440
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.062,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7929856
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 2.18,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 14417920
+    }
+  ],
+  "operator_error": {
+    "type": "AssertionError",
+    "message": "Existing worker dependency versions changed"
+  },
+  "driver_shutdown_returncode": null,
+  "model_shutdown_returncode": null,
+  "api_key_file_remaining": false,
+  "port_closed": true,
+  "service_wall_seconds": null,
+  "observed_owned_processes_after": [],
+  "secret_in_raw_outputs": false,
+  "terminal": true
+}
