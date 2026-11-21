@@ -1,0 +1,67 @@
+{
+  "terminal": true,
+  "protocol_sha256": "c59bfe12aa3f0efd6961eb6560e743f394880e65d891ca42766b4f02e819ca5f",
+  "parent_candidate_controller_returncode": 2,
+  "parent_failure": "Missing build frontend in unchanged test environment",
+  "successful_tests_rerun": false,
+  "model_requests": 0,
+  "gpu_used": false,
+  "phases": [
+    {
+      "phase": "lock",
+      "returncode": 0,
+      "wall_seconds": 10.413,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 26091520
+    },
+    {
+      "phase": "sync",
+      "returncode": 0,
+      "wall_seconds": 2.451,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 26673152
+    },
+    {
+      "phase": "builder-identity",
+      "returncode": 0,
+      "wall_seconds": 1.062,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 5767168
+    },
+    {
+      "phase": "build",
+      "returncode": 0,
+      "wall_seconds": 1.728,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 40370176
+    },
+    {
+      "phase": "original-test-env-identity",
+      "returncode": 0,
+      "wall_seconds": 12.588,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 16580608
+    }
+  ],
+  "builder_identity": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "versions": {
+      "flit_core": "3.12.0",
+      "pyproject_hooks": "1.3.3",
+      "build": "1.3.0",
+      "packaging": "26.3"
+    }
+  },
+  "uv_lock_sha256": "b31ffbfb762ce84699d1a9faa76a44ea892e4ad8b01465d336ba7a32ccab22e2",
+  "wheel": {
+    "name": "semantic_kernel-1.47.0-py3-none-any.whl",
+    "sha256": "84763aaf5f28b8109163508c43c45e469c6f044bf3747ff28a3e266e1617cd58",
+    "bytes": 952729,
+    "runtime_source_sha256": "150050d49b2da22e29392eb44a7c79e153d3069266ae6d8ee472099baa861edb",
+    "runtime_source_bytes_match": true,
+    "installed_or_PyPI_published": false
+  },
+  "original_test_environment_versions_unchanged": true,
+  "all_frozen_candidate_and_baseline_source_files_unchanged": true,
+  "owned_processes_after_all_three_roots": []
+}

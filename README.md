@@ -4,6 +4,10 @@
 
 [中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和开源草稿按日期核验。
 
+## Semantic Kernel：取消调用方之后的后续异常
+
+新增[草稿PR #14853](https://github.com/microsoft/semantic-kernel/pull/14853)：调用方取消响应Future后，Agent处理函数或异步工厂报错会触发InvalidStateError，跳过队列记账、阻塞空闲停机。仅增加一个保护条件；同四用例在原版2通过/2失败，候选4通过。服务器运行时/群聊97项通过（含四项），扩展176通过/12失败/1跳过，共同185个原版用例结果逐项相同；不累加范围、不称完整CI绿色。原配置钩子、两文件mypy与独立构建通过，无模型/GPU。源码和测试字节绑定完整前后对照，人工复核待完成。[使用、验证及局限](docs/cancelled-send.md) · [完整证据](evidence/sk-cancelled-send/README.md)。
+
 ## 实际 Agent 通过外部 MCP 核对贡献记录
 
 接入实际 LlamaIndex FunctionAgent 与 MCP2 Client，句柄/回执由适配器保管，模型只选择报告字段和提交事实。四场真实SDK/TCP加脚本模型控制通过，共九次假回复，不是神经成绩。真实9B CPU首题600秒超时：六次预留、五份完整回复、一次未知仍扣额；四次读到报告回执但没有有效提交，第二题未运行。原130项核心快照的33份共享源码未改，本轮不增加或重跑该计数。服务已退出、端口关闭，准备与联调失败记录也公开。[使用与边界](docs/mcp-agent.md) · [完整轨迹和实际结果](evidence/mcp-agent/README.md)。
@@ -212,7 +216,7 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 在另一个真实框架的实验性 Python 运行时中复现同类锁范围缺陷：用户清理回调读取 token、登记回调或等待其他读取线程时阻塞。候选在锁内切换状态并取出回调，释放锁后执行；future关联复用同一规则，保留异常传播和幂等取消。
 
-原版新检查6失败/4通过；候选运行时与群聊目录 **103项通过**。真实 InProcessRuntime 的待处理请求在原版进入清理后卡住，候选只清理一次、取消请求和处理器并正常关闭。[草稿PR #14845](https://github.com/microsoft/semantic-kernel/pull/14845)已提交、未合并，披露AI辅助及人工评审待办。
+原版新检查6失败/4通过；候选运行时与群聊目录 **103项通过**。真实 InProcessRuntime 的待处理请求在原版进入清理后卡住，候选只清理一次、取消请求和处理器并正常关闭。[开放PR #14845](https://github.com/microsoft/semantic-kernel/pull/14845)未合并；2026-11-22刷新状态时已非草稿，收到一条Copilot机器人COMMENTED记录，无行内修改意见，人工批准仍待完成。以下103项等数字保留该轮原始验证口径。
 
 更广范围为182通过/12失败/1跳过，原版同一范围176通过/18失败/1跳过；除六项新回归外，12个失败ID完全一致，不能声称完整Python CI绿色。103项与新10项都包含于广泛范围，不累加。mypy两文件和适用pre-commit通过，wheel字节核验通过；一项原有uv配置弃用警告保留。无模型/GPU，也未添加新的维护worker适配器。
 

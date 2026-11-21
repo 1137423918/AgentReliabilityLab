@@ -1,0 +1,28 @@
+{
+  "checked_at_utc": "2026-11-21T17:06:50.995240+00:00",
+  "queries": [
+    {
+      "query": "repo:microsoft/semantic-kernel is:pr InvalidStateError",
+      "total": 0
+    },
+    {
+      "query": "repo:microsoft/semantic-kernel is:pr cancelled future",
+      "total": 10
+    },
+    {
+      "query": "repo:microsoft/semantic-kernel is:pr runtime handler exception",
+      "total": 31
+    },
+    {
+      "query": "repo:microsoft/semantic-kernel is:pr \"runtime\" \"cancelled\"",
+      "total": 4
+    }
+  ],
+  "scope_note": "No exact matching direct-send future-state fix was found in these searches. Related merged14656 covers intercepted drop/error accounting; pending14845 changes callback locking, and13130 covers a handoff token. These are distinct paths; searches do not prove exhaustive uniqueness.",
+  "related_urls": [
+    "https://github.com/microsoft/semantic-kernel/pull/14656",
+    "https://github.com/microsoft/semantic-kernel/pull/14845",
+    "https://github.com/microsoft/semantic-kernel/pull/13130"
+  ],
+  "issue_or_comment_actions": false
+}

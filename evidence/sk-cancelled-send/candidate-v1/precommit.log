@@ -1,0 +1,13 @@
+check toml...........................................(no files to check)Skipped
+check yaml...........................................(no files to check)Skipped
+check json...........................................(no files to check)Skipped
+fix end of files.........................................................Passed
+mixed line ending........................................................Passed
+debug statements (python)................................................Passed
+Check Valid Python Samples...............................................Passed
+Check Valid Python Notebooks.........................(no files to check)Skipped
+pyupgrade................................................................Passed
+ruff.....................................................................Passed
+ruff-format..............................................................Passed
+uv-lock..............................................(no files to check)Skipped
+bandit...................................................................Passed

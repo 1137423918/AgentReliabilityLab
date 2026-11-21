@@ -1,0 +1,135 @@
+{
+  "terminal": true,
+  "protocol_sha256": "cbf249346c7af365e92182e06c2575dd8f8ad01eb7d6982c4c678a7174b16448",
+  "archive_sha256": "9b48118e3ad7abe25dddbd5f36dbe1918d50d1403008c149d327ff8e046bf0ca",
+  "model_requests": 0,
+  "gpu_used": false,
+  "phases": [
+    {
+      "phase": "identity",
+      "returncode": 0,
+      "wall_seconds": 53.446,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 76414976
+    },
+    {
+      "phase": "git-init",
+      "returncode": 0,
+      "wall_seconds": 0.952,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "precommit",
+      "returncode": 0,
+      "wall_seconds": 42.532,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 51904512
+    },
+    {
+      "phase": "mypy",
+      "returncode": 0,
+      "wall_seconds": 191.79,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 658481152
+    },
+    {
+      "phase": "focused",
+      "returncode": 0,
+      "wall_seconds": 14.956,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 94437376
+    },
+    {
+      "phase": "related",
+      "returncode": 0,
+      "wall_seconds": 9.565,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 95879168
+    },
+    {
+      "phase": "baseline-broader",
+      "returncode": 1,
+      "wall_seconds": 27.456,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 104529920
+    },
+    {
+      "phase": "candidate-broader",
+      "returncode": 1,
+      "wall_seconds": 16.264,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 103809024
+    },
+    {
+      "phase": "build",
+      "returncode": 1,
+      "wall_seconds": 0.711,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    }
+  ],
+  "dependency_versions_identical_to_baseline": true,
+  "source_unchanged_after_hooks": true,
+  "focused": {
+    "total": 4,
+    "failed": 0,
+    "skipped": 0,
+    "passed": 4,
+    "failure_ids": []
+  },
+  "related": {
+    "total": 97,
+    "failed": 0,
+    "skipped": 0,
+    "passed": 97,
+    "failure_ids": []
+  },
+  "baseline_broader": {
+    "total": 185,
+    "failed": 12,
+    "skipped": 1,
+    "passed": 172,
+    "failure_ids": [
+      "tests.unit.agents.orchestration.test_concurrent::test_invoke_cancel_before_completion",
+      "tests.unit.agents.orchestration.test_group_chat::test_invoke",
+      "tests.unit.agents.orchestration.test_group_chat::test_invoke_with_list",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_cancel_before_completion",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_with_handoff_function_call",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_with_list",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_reset_count_exceeded",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_round_count_exceeded",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_stall_count_exceeded",
+      "tests.unit.agents.orchestration.test_sequential::test_invoke_cancel_before_completion"
+    ]
+  },
+  "candidate_broader": {
+    "total": 189,
+    "failed": 12,
+    "skipped": 1,
+    "passed": 176,
+    "failure_ids": [
+      "tests.unit.agents.orchestration.test_concurrent::test_invoke_cancel_before_completion",
+      "tests.unit.agents.orchestration.test_group_chat::test_invoke",
+      "tests.unit.agents.orchestration.test_group_chat::test_invoke_with_list",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_cancel_before_completion",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_with_handoff_function_call",
+      "tests.unit.agents.orchestration.test_handoff::test_invoke_with_list",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_reset_count_exceeded",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_round_count_exceeded",
+      "tests.unit.agents.orchestration.test_magentic::test_invoke_with_max_stall_count_exceeded",
+      "tests.unit.agents.orchestration.test_sequential::test_invoke_cancel_before_completion"
+    ]
+  },
+  "broader_failure_ids_match": true,
+  "operator_error": {
+    "type": "AssertionError",
+    "message": "Phase failed: build"
+  },
+  "owned_processes_after": [],
+  "global_git_configuration_unchanged": true
+}

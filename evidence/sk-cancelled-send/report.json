@@ -1,0 +1,269 @@
+{
+  "checked_at_utc": "2026-11-21T17:33:00.226712+00:00",
+  "purpose": "Fix late handler/factory exceptions after an InProcessRuntime caller cancels its response task; retain queue completion accounting.",
+  "upstream_repository": "microsoft/semantic-kernel",
+  "upstream_stars_observed": 28791,
+  "upstream_base_commit": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "candidate_commit": "9eadf24486464a146f3168035769cc071a8182bf",
+  "upstream_pr": "https://github.com/microsoft/semantic-kernel/pull/14853",
+  "upstream_pr_number": 14853,
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "human_review_attested": false,
+  "issue_or_comment_actions": false,
+  "production_files_changed": 1,
+  "test_files_changed": 1,
+  "new_parameterized_cases": 4,
+  "baseline": {
+    "passed": 2,
+    "failed": 2,
+    "errors": 0,
+    "skipped": 0
+  },
+  "candidate": {
+    "passed": 4,
+    "failed": 0,
+    "skipped": 0
+  },
+  "related_suite": {
+    "passed": 97,
+    "failed": 0,
+    "skipped": 0,
+    "four_new_cases_included": true
+  },
+  "broader_baseline": {
+    "passed": 172,
+    "failed": 12,
+    "skipped": 1,
+    "new_four_cases_excluded": true
+  },
+  "broader_candidate": {
+    "passed": 176,
+    "failed": 12,
+    "skipped": 1,
+    "new_four_cases_included": true
+  },
+  "all185_common_case_outcomes_identical": true,
+  "same_test_file_bytes_before_and_after": true,
+  "precommit_original_applicable_hooks_passed": true,
+  "mypy_selected_files_passed": 2,
+  "source_frozen_files": 1462,
+  "source_unchanged_after_hooks_and_build": true,
+  "test_environment_distribution_versions_unchanged": true,
+  "runtime_experimental": true,
+  "python_version": "3.11.4",
+  "platform": "Linux x86_64",
+  "model_inference": false,
+  "gpu_used": false,
+  "local_activity": "Static source/hash/XML/log/Git analysis only; all tests and builds on authorized serverCPU.",
+  "source_hashes": {
+    "runtime_before": "933801b8561286782c063628f2dcb397998b648e8389a8baf987c66ea99f3920",
+    "runtime_after": "150050d49b2da22e29392eb44a7c79e153d3069266ae6d8ee472099baa861edb",
+    "test_file": "dacbdb2841b2a0398347d9cc5bde11609483a0e38e35425e07f94668b207c71b"
+  },
+  "execution": {
+    "baseline_protocol_sha256": "4d0ffb45362167912c5e2a9a9e3c5829e7fbed2639389d9129006942d3306572",
+    "candidate_protocol_sha256": "cbf249346c7af365e92182e06c2575dd8f8ad01eb7d6982c4c678a7174b16448",
+    "candidate_source_archive_sha256": "9b48118e3ad7abe25dddbd5f36dbe1918d50d1403008c149d327ff8e046bf0ca",
+    "build_only_protocol_sha256": "c59bfe12aa3f0efd6961eb6560e743f394880e65d891ca42766b4f02e819ca5f",
+    "baseline_controller_returncode": 0,
+    "candidate_validation_controller_returncode": 2,
+    "candidate_failed_final_phase": "build: test environment has no build frontend",
+    "build_only_followup_returncode": 0,
+    "successful_tests_rerun": false,
+    "baseline_phases": [
+      {
+        "phase": "identity",
+        "returncode": 0,
+        "wall_seconds": 91.0,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 82182144
+      },
+      {
+        "phase": "pytest",
+        "returncode": 1,
+        "wall_seconds": 31.309,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 95879168
+      }
+    ],
+    "candidate_phases": [
+      {
+        "phase": "identity",
+        "returncode": 0,
+        "wall_seconds": 53.446,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 76414976
+      },
+      {
+        "phase": "git-init",
+        "returncode": 0,
+        "wall_seconds": 0.952,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 0
+      },
+      {
+        "phase": "precommit",
+        "returncode": 0,
+        "wall_seconds": 42.532,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 51904512
+      },
+      {
+        "phase": "mypy",
+        "returncode": 0,
+        "wall_seconds": 191.79,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 658481152
+      },
+      {
+        "phase": "focused",
+        "returncode": 0,
+        "wall_seconds": 14.956,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 94437376
+      },
+      {
+        "phase": "related",
+        "returncode": 0,
+        "wall_seconds": 9.565,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 95879168
+      },
+      {
+        "phase": "baseline-broader",
+        "returncode": 1,
+        "wall_seconds": 27.456,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 104529920
+      },
+      {
+        "phase": "candidate-broader",
+        "returncode": 1,
+        "wall_seconds": 16.264,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 103809024
+      },
+      {
+        "phase": "build",
+        "returncode": 1,
+        "wall_seconds": 0.711,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 0
+      }
+    ],
+    "build_only_phases": [
+      {
+        "phase": "lock",
+        "returncode": 0,
+        "wall_seconds": 10.413,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 26091520
+      },
+      {
+        "phase": "sync",
+        "returncode": 0,
+        "wall_seconds": 2.451,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 26673152
+      },
+      {
+        "phase": "builder-identity",
+        "returncode": 0,
+        "wall_seconds": 1.062,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 5767168
+      },
+      {
+        "phase": "build",
+        "returncode": 0,
+        "wall_seconds": 1.728,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 40370176
+      },
+      {
+        "phase": "original-test-env-identity",
+        "returncode": 0,
+        "wall_seconds": 12.588,
+        "guard": null,
+        "peak_sampled_owned_session_rss_bytes": 16580608
+      }
+    ],
+    "owned_processes_after_all_three_roots": 0,
+    "global_git_configuration_unchanged": true
+  },
+  "packaging": {
+    "wheel": {
+      "name": "semantic_kernel-1.47.0-py3-none-any.whl",
+      "sha256": "84763aaf5f28b8109163508c43c45e469c6f044bf3747ff28a3e266e1617cd58",
+      "bytes": 952729,
+      "runtime_source_sha256": "150050d49b2da22e29392eb44a7c79e153d3069266ae6d8ee472099baa861edb",
+      "runtime_source_bytes_match": true,
+      "installed_or_PyPI_published": false
+    },
+    "builder_versions": {
+      "flit_core": "3.12.0",
+      "pyproject_hooks": "1.3.3",
+      "build": "1.3.0",
+      "packaging": "26.3"
+    },
+    "builder_lock_sha256": "b31ffbfb762ce84699d1a9faa76a44ea892e4ad8b01465d336ba7a32ccab22e2",
+    "original_test_environment_unchanged": true,
+    "frozen_sources_unchanged": true,
+    "wheel_import_or_install_tested": false,
+    "wheel_not_an_official_release": true,
+    "published_to_PyPI": false
+  },
+  "upstream_CI": {
+    "observed_at_utc": "2026-11-21T17:27:36.668485+00:00",
+    "head_sha": "9eadf24486464a146f3168035769cc071a8182bf",
+    "checks": [
+      {
+        "name": "license/cla",
+        "status": "completed",
+        "conclusion": "success",
+        "details_url": "https://github.com/apps/microsoft-github-policy-service"
+      },
+      {
+        "name": "add_label",
+        "status": "completed",
+        "conclusion": "success",
+        "details_url": "https://github.com/microsoft/semantic-kernel/actions/runs/44929935031/job/136924123544"
+      }
+    ],
+    "status": {
+      "state": "pending",
+      "total_count": 0,
+      "contexts": []
+    }
+  },
+  "all_open_contributions": {
+    "checked_at_utc": "2026-11-21T17:27:49.976603+00:00",
+    "open": 5,
+    "draft": 4,
+    "merged": 0,
+    "prior14845": {
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "review_count": 1,
+      "review_source": "Copilot bot COMMENTED; zero inline comments observed",
+      "human_approval_verified": false,
+      "head_sha": "891744aad21d1778c842426f49d0c84da46a9a2d"
+    },
+    "ready_or_review_actions_by_this_run": false
+  },
+  "limits": [
+    "Four new cases are included in97 related checks and176 broader passes; overlapping scopes are not summed. Original broader185 cases exclude the four new cases; candidate189 includes them.",
+    "Twelve original orchestration failures and one skip remain; full SDK/unit CI is not claimed green. All185 common outcomes, including the skip, match.",
+    "Focused failures are controlled with asyncio Events and a real public runtime; no LLM, external model API, production traffic or neural autonomous repair score.",
+    "Only Linux Python3.11.4 was tested. No cross-version/OS, general cancellation protocol, exactly-once side effects or hostile-code sandbox claim.",
+    "The cancelled caller stays cancelled; errors remain logged, live callers retain original exception propagation. This does not force-cancel agent work.",
+    "The first controller terminal2 at packaging is retained. A separate locked builder passed without source/dependency changes or repeating successful tests. The wheel was built and inspected, not installed/executed or published.",
+    "Previous callback PR14845 and its earlier103-check evidence are separate. Current upstream state changed externally to non-draft; no ready/review/merge action was performed here.",
+    "Existing bilingual PDF remains a dated Nov21 23:39 four-draft snapshot; latest fifth PR and status changes belong to this case. Browser interaction remains unverified."
+  ],
+  "artifacts_manifest_sha256": "5fbfb00e76efd13b6f7dda8a3ae0dea22faec54ebdbef07088d60ca5a1bf59dd",
+  "verification_sha256": "9fb27606c910030fb30cea155bd88cc91bccb70aeb21c0a5ccd4f7c486e164ee"
+}

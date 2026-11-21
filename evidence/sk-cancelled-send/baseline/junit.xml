@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="4" time="12.748" timestamp="2026-11-22T00:56:13.469184+08:00" hostname="gpu5.cluster.lan"><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_late_send_failure_after_sender_cancellation[False-handler]" time="0.024" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_late_send_failure_after_sender_cancellation[False-factory]" time="0.022" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_late_send_failure_after_sender_cancellation[True-handler]" time="5.040"><failure message="TimeoutError">fut = &lt;Future cancelled&gt;, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout &lt;= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+&gt;                   return fut.result()
+                           ^^^^^^^^^^^^
+E                   asyncio.exceptions.CancelledError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:490: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+failure_source = 'handler', cancel_sender = True
+
+    @pytest.mark.parametrize("failure_source", ["handler", "factory"])
+    @pytest.mark.parametrize("cancel_sender", [False, True])
+    async def test_late_send_failure_after_sender_cancellation(failure_source: str, cancel_sender: bool) -&gt; None:
+        started = Event()
+        release = Event()
+        finished = Event()
+    
+        async def fail() -&gt; None:
+            started.set()
+            await release.wait()
+            finished.set()
+            raise RuntimeError("late agent failure")
+    
+        class FailingAgent(BaseAgent):
+            def __init__(self) -&gt; None:
+                super().__init__("An agent that fails after the sender can cancel.")
+    
+            async def on_message_impl(self, message: Any, ctx: MessageContext) -&gt; Any:
+                await fail()
+    
+        async def factory() -&gt; FailingAgent:
+            if failure_source == "factory":
+                await fail()
+            return FailingAgent()
+    
+        runtime = InProcessRuntime()
+        await FailingAgent.register(runtime, "failing", factory)
+        runtime.start()
+        request = asyncio.create_task(runtime.send_message("message", CoreAgentId("failing", "default")))
+        idle_stop = None
+        try:
+            await asyncio.wait_for(started.wait(), timeout=5)
+            if cancel_sender:
+                request.cancel()
+                with pytest.raises(asyncio.CancelledError):
+                    await request
+            release.set()
+            if not cancel_sender:
+                with pytest.raises(RuntimeError, match="late agent failure"):
+                    await request
+            await asyncio.wait_for(finished.wait(), timeout=5)
+            idle_stop = asyncio.create_task(runtime.stop_when_idle())
+&gt;           await asyncio.wait_for(asyncio.shield(idle_stop), timeout=5)
+
+tests/unit/agents/runtime/test_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fut = &lt;Future cancelled&gt;, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout &lt;= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+                    return fut.result()
+                except exceptions.CancelledError as exc:
+&gt;                   raise exceptions.TimeoutError() from exc
+E                   TimeoutError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:492: TimeoutError</failure></testcase><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_late_send_failure_after_sender_cancellation[True-factory]" time="5.040"><failure message="TimeoutError">fut = &lt;Future cancelled&gt;, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout &lt;= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+&gt;                   return fut.result()
+                           ^^^^^^^^^^^^
+E                   asyncio.exceptions.CancelledError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:490: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+failure_source = 'factory', cancel_sender = True
+
+    @pytest.mark.parametrize("failure_source", ["handler", "factory"])
+    @pytest.mark.parametrize("cancel_sender", [False, True])
+    async def test_late_send_failure_after_sender_cancellation(failure_source: str, cancel_sender: bool) -&gt; None:
+        started = Event()
+        release = Event()
+        finished = Event()
+    
+        async def fail() -&gt; None:
+            started.set()
+            await release.wait()
+            finished.set()
+            raise RuntimeError("late agent failure")
+    
+        class FailingAgent(BaseAgent):
+            def __init__(self) -&gt; None:
+                super().__init__("An agent that fails after the sender can cancel.")
+    
+            async def on_message_impl(self, message: Any, ctx: MessageContext) -&gt; Any:
+                await fail()
+    
+        async def factory() -&gt; FailingAgent:
+            if failure_source == "factory":
+                await fail()
+            return FailingAgent()
+    
+        runtime = InProcessRuntime()
+        await FailingAgent.register(runtime, "failing", factory)
+        runtime.start()
+        request = asyncio.create_task(runtime.send_message("message", CoreAgentId("failing", "default")))
+        idle_stop = None
+        try:
+            await asyncio.wait_for(started.wait(), timeout=5)
+            if cancel_sender:
+                request.cancel()
+                with pytest.raises(asyncio.CancelledError):
+                    await request
+            release.set()
+            if not cancel_sender:
+                with pytest.raises(RuntimeError, match="late agent failure"):
+                    await request
+            await asyncio.wait_for(finished.wait(), timeout=5)
+            idle_stop = asyncio.create_task(runtime.stop_when_idle())
+&gt;           await asyncio.wait_for(asyncio.shield(idle_stop), timeout=5)
+
+tests/unit/agents/runtime/test_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fut = &lt;Future cancelled&gt;, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout &lt;= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+                    return fut.result()
+                except exceptions.CancelledError as exc:
+&gt;                   raise exceptions.TimeoutError() from exc
+E                   TimeoutError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:492: TimeoutError</failure></testcase></testsuite></testsuites>

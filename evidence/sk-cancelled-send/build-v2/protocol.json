@@ -1,0 +1,29 @@
+{
+  "declared_at_utc": "2026-11-21T17:17:36.575168+00:00",
+  "scope": "Build-only followup in a new locked environment. Successful tests are not rerun; test SDK environment and both tested source trees remain unchanged. Preserve prior missing-build failure.",
+  "operator_sha256": "c302d2189a7fd37f7a5185874087d1294666ebde60d667b6cbaf221034c9a134",
+  "builder_pyproject_sha256": "56e8f14cf7e6e2ae5f679f6b7508335c635b123b36aace3a671fb95ee9f74437",
+  "candidate_protocol_sha256": "cbf249346c7af365e92182e06c2575dd8f8ad01eb7d6982c4c678a7174b16448",
+  "candidate_archive_sha256": "9b48118e3ad7abe25dddbd5f36dbe1918d50d1403008c149d327ff8e046bf0ca",
+  "pinned_builder_wheel_sha256": [
+    "7145f0b5061ba90a1500d60bd1b13ca0a8a4cebdd0cc16ed8adf1c0e739f43b4",
+    "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c"
+  ],
+  "upstream_build_backend": "flit_core.buildapi; declared flit-core >=3.9,<5.0; selected3.12.0 fits",
+  "limits": {
+    "global_seconds": 900,
+    "lock": 120,
+    "sync": 180,
+    "builder_identity": 60,
+    "build": 180,
+    "test_environment_identity": 120,
+    "CPU": 4,
+    "nice": 19,
+    "AS_GiB": 32,
+    "sampled_RSS_GiB": 8,
+    "memory_admission_GiB": 12,
+    "memory_floor_GiB": 8
+  },
+  "no_test_assertion_or_source_changes": true,
+  "no_install_into_original_SDK": true
+}

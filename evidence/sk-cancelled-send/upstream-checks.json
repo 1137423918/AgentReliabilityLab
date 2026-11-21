@@ -1,0 +1,23 @@
+{
+  "observed_at_utc": "2026-11-21T17:27:36.668485+00:00",
+  "head_sha": "9eadf24486464a146f3168035769cc071a8182bf",
+  "checks": [
+    {
+      "name": "license/cla",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/apps/microsoft-github-policy-service"
+    },
+    {
+      "name": "add_label",
+      "status": "completed",
+      "conclusion": "success",
+      "details_url": "https://github.com/microsoft/semantic-kernel/actions/runs/44929935031/job/136924123544"
+    }
+  ],
+  "status": {
+    "state": "pending",
+    "total_count": 0,
+    "contexts": []
+  }
+}

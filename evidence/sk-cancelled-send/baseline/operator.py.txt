@@ -1,0 +1,48 @@
+from pathlib import Path
+import subprocess,json,hashlib,os,resource,signal,time,tempfile,tarfile,xml.etree.ElementTree as ET
+B=Path('__SERVER_BASE__');OUT=B/'outputs/sk-late-error-baseline-stage42-20261122';PY=B/'envs/semantic-kernel-cancel-20261121/bin/python';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not (OUT/'run-report.json').exists();spec=json.loads((OUT/'protocol.json').read_text());assert sha(Path(__file__))==spec['operator_sha256'];assert sha(OUT/'source.tar.gz')==spec['archive_sha256'];root=Path(tempfile.mkdtemp(prefix='agentlab-sk-late-error-'));root.chmod(0o700);assert subprocess.check_output(['stat','-f','-c','%T',str(root)],text=True).strip() in ['ext2/ext3','xfs','btrfs'];(OUT/'control-location.json').write_text(json.dumps({'local_root':str(root)})+'\n');(OUT/'control-location.json').chmod(0o600)
+with tarfile.open(OUT/'source.tar.gz') as t:t.extractall(root,filter='data')
+for n,h in spec['source_files_sha256'].items():assert sha(root/n)==h,n
+affinity=sorted(os.sched_getaffinity(0));os.sched_setaffinity(0,affinity[:4]);os.nice(19);resource.setrlimit(resource.RLIMIT_AS,(32*2**30,32*2**30));env=dict(os.environ,PYTHONPATH=str(root/'python'),CUDA_VISIBLE_DEVICES='',PYTHONUNBUFFERED='1',TMPDIR=str(root),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4');env.pop('PYTEST_ADDOPTS',None);rows=[]
+def memory():return next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'))
+def rss(sid):
+ total=0
+ for p in Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:
+   parts=(p/'stat').read_text().rsplit(')',1)[1].split()
+   if int(parts[3])==sid:total+=int(parts[21])*os.sysconf('SC_PAGE_SIZE')
+  except (OSError,ValueError,IndexError):pass
+ return total
+assert memory()>=12*2**30
+def run(name,args,limit):
+ started=time.monotonic();guard=None;peak=0
+ with (OUT/(name+'.log')).open('wb') as log,(OUT/(name+'-monitor.jsonl')).open('w') as mon:
+  p=subprocess.Popen([str(x) for x in args],cwd=root/'python',env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+  while p.poll() is None:
+   elapsed=time.monotonic()-started;available=memory();used=rss(p.pid);peak=max(peak,used);mon.write(json.dumps({'elapsed':round(elapsed,3),'available_bytes':available,'owned_session_rss_bytes':used})+'\n');mon.flush()
+   if elapsed>limit or available<8*2**30 or used>8*2**30:
+    guard='wall' if elapsed>limit else 'memory_floor' if available<8*2**30 else 'owned_rss';os.killpg(p.pid,signal.SIGTERM)
+    try:p.wait(timeout=10)
+    except subprocess.TimeoutExpired:os.killpg(p.pid,signal.SIGKILL);p.wait()
+    break
+   time.sleep(.5)
+  rc=p.wait()
+ row={'phase':name,'returncode':rc,'wall_seconds':round(time.monotonic()-started,3),'guard':guard,'peak_sampled_owned_session_rss_bytes':peak};rows.append(row);print(json.dumps(row),flush=True);return row
+identity="import inspect,json,hashlib,importlib.metadata as m,sys;from pathlib import Path;from semantic_kernel.agents.runtime.in_process.in_process_runtime import InProcessRuntime;p=Path(inspect.getfile(InProcessRuntime));expected=Path(sys.argv[1]);assert p.resolve()==expected.resolve();print(json.dumps({'python':sys.version,'effective_runtime':str(p),'runtime_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'versions':{d.metadata['Name']:d.version for d in m.distributions()}}))"
+report={'terminal':False,'protocol_sha256':sha(OUT/'protocol.json'),'archive_sha256':spec['archive_sha256'],'model_requests':0,'gpu_used':False,'phases':rows}
+try:
+ r=run('identity',[PY,'-c',identity,root/spec['runtime_path']],120);assert r['returncode']==0 and not r['guard'],'Identity phase failed'
+ r=run('pytest',[PY,'-m','pytest',spec['selected_test'],'-q','--timeout=30','--junitxml='+str(OUT/'junit.xml')],180);assert r['returncode']==1 and not r['guard'],'Baseline did not return expected test failure'
+ suite=ET.parse(OUT/'junit.xml').getroot();cases=list(suite.iter('testcase'));failed=[x.attrib['name'] for x in cases if x.find('failure') is not None];assert len(cases)==4 and len(failed)==2 and all('True' in n for n in failed),(len(cases),failed);report.update(expected_regression_reproduced=True,passed=2,failed=2,failed_cases=failed)
+except BaseException as exc:report['operator_error']={'type':type(exc).__name__,'message':str(exc)}
+finally:
+ owned=[]
+ for p in Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:
+   if str(root).encode() in (p/'cmdline').read_bytes() or (p/'cwd').resolve().is_relative_to(root):owned.append(int(p.name))
+  except (OSError,ValueError):pass
+ report.update(terminal=True,owned_processes_after=owned);(OUT/'run-report.json').write_text(json.dumps(report,indent=2)+'\n');print(json.dumps({k:v for k,v in report.items() if k!='phases'}),flush=True)
+raise SystemExit(0 if report.get('expected_regression_reproduced') and not report['owned_processes_after'] else 2)

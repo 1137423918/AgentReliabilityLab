@@ -1,0 +1,75 @@
+from pathlib import Path
+import subprocess,json,hashlib,os,resource,signal,time,tempfile,tarfile,xml.etree.ElementTree as ET,zipfile
+B=Path('__SERVER_BASE__');OUT=B/'outputs/sk-late-error-candidate-v1-stage42-20261122';OLD=B/'outputs/sk-late-error-baseline-stage42-20261122';PY=B/'envs/semantic-kernel-cancel-20261121/bin/python';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def write(p,d):p.write_text(json.dumps(d,indent=2)+'\n')
+def memory():return next(int(x.split()[1])*1024 for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:'))
+def rss(sid):
+ total=0
+ for p in Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:
+   parts=(p/'stat').read_text().rsplit(')',1)[1].split()
+   if int(parts[3])==sid:total+=int(parts[21])*os.sysconf('SC_PAGE_SIZE')
+  except (OSError,ValueError,IndexError):pass
+ return total
+def parse(name):
+ cases=list(ET.parse(OUT/(name+'.xml')).iter('testcase'));bad=lambda x:x.find('failure') is not None or x.find('error') is not None
+ return {'total':len(cases),'failed':sum(bad(x) for x in cases),'skipped':sum(x.find('skipped') is not None for x in cases),'passed':sum(not bad(x) and x.find('skipped') is None for x in cases),'failure_ids':sorted(x.attrib.get('classname','')+'::'+x.attrib['name'] for x in cases if bad(x))}
+assert not (OUT/'run-report.json').exists();spec=json.loads((OUT/'protocol.json').read_text());assert sha(Path(__file__))==spec['operator_sha256'] and sha(OUT/'source.tar.gz')==spec['archive_sha256'];old_spec=json.loads((OLD/'protocol.json').read_text());old_run=json.loads((OLD/'run-report.json').read_text());assert old_run['terminal'] and old_run['expected_regression_reproduced'] and not old_run['owned_processes_after'];baseline=Path(json.loads((OLD/'control-location.json').read_text())['local_root']);root=Path(tempfile.mkdtemp(prefix='agentlab-sk-late-candidate-'));root.chmod(0o700);assert subprocess.check_output(['stat','-f','-c','%T',str(root)],text=True).strip() in ['ext2/ext3','xfs','btrfs'];write(OUT/'control-location.json',{'local_root':str(root),'baseline_root':str(baseline)});(OUT/'control-location.json').chmod(0o600)
+with tarfile.open(OUT/'source.tar.gz') as t:t.extractall(root,filter='data')
+def verify(folder,mapping):
+ for n,h in mapping.items():assert sha(folder/n)==h,n
+verify(root,spec['source_files_sha256']);verify(baseline,old_spec['source_files_sha256']);assert spec['test_sha256']==old_spec['test_sha256'];os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:4]);os.nice(19);resource.setrlimit(resource.RLIMIT_AS,(32*2**30,32*2**30));assert memory()>=12*2**30
+env={k:v for k,v in os.environ.items() if not k.startswith('GIT_CONFIG_') and k not in ['OPENAI_API_KEY','AZURE_OPENAI_API_KEY','ANTHROPIC_API_KEY','GH_TOKEN','GITHUB_TOKEN','AGENT_LAB_EVIDENCE_KEY','PYTEST_ADDOPTS']};env.update(PYTHONPATH=str(root/'python'),CUDA_VISIBLE_DEVICES='',PYTHONUNBUFFERED='1',TMPDIR=str(root),OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4',RAYON_NUM_THREADS='4',PRE_COMMIT_HOME=str(B/'cache/semantic-kernel-precommit-mirror-20261121'))
+mirrors=spec['hook_mirrors'];env['GIT_CONFIG_COUNT']=str(len(mirrors)+1);env['GIT_CONFIG_KEY_0']='protocol.file.allow';env['GIT_CONFIG_VALUE_0']='always'
+for i,row in enumerate(mirrors,1):
+ folder=B/'tools/semantic-kernel-hook-mirrors-20261121'/row['directory'];actual=subprocess.check_output(['git','--git-dir',str(folder),'rev-parse',row['rev']+'^{commit}'],text=True).strip();assert actual==row['sha'];env['GIT_CONFIG_KEY_'+str(i)]='url.'+folder.as_uri()+'.insteadOf';env['GIT_CONFIG_VALUE_'+str(i)]=row['url']
+def global_config():
+ p=subprocess.run(['git','config','--global','--list'],capture_output=True);return {'returncode':p.returncode,'sha256':hashlib.sha256(p.stdout).hexdigest()}
+before_config=global_config();status={'terminal':False,'protocol_sha256':sha(OUT/'protocol.json'),'archive_sha256':spec['archive_sha256'],'model_requests':0,'gpu_used':False,'phases':[]};started_job=time.monotonic();driver=None
+def save():write(OUT/'run-report.json',status)
+def run(name,args,limit,cwd=None,environment=None,allowed=(0,)):
+ global driver
+ begin=time.monotonic();guard=None;peak=0
+ with (OUT/(name+'.log')).open('wb') as log,(OUT/(name+'-monitor.jsonl')).open('w') as mon:
+  driver=subprocess.Popen([str(x) for x in args],cwd=cwd or root/'python',env=environment or env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+  while driver.poll() is None:
+   elapsed=time.monotonic()-begin;available=memory();used=rss(driver.pid);peak=max(peak,used);mon.write(json.dumps({'elapsed':round(elapsed,3),'available_bytes':available,'owned_session_rss_bytes':used})+'\n');mon.flush()
+   if elapsed>limit or time.monotonic()-started_job>3000 or available<8*2**30 or used>8*2**30:
+    guard='phase_wall' if elapsed>limit else 'global_wall' if time.monotonic()-started_job>3000 else 'memory_floor' if available<8*2**30 else 'owned_rss';os.killpg(driver.pid,signal.SIGTERM)
+    try:driver.wait(timeout=10)
+    except subprocess.TimeoutExpired:os.killpg(driver.pid,signal.SIGKILL);driver.wait()
+    break
+   time.sleep(.5)
+  rc=driver.wait()
+ driver=None;row={'phase':name,'returncode':rc,'wall_seconds':round(time.monotonic()-begin,3),'guard':guard,'peak_sampled_owned_session_rss_bytes':peak};status['phases'].append(row);save();print(json.dumps(row),flush=True);assert not guard and rc in allowed,'Phase failed: '+name
+try:
+ save();identity="import inspect,json,hashlib,importlib.metadata as m,sys;from pathlib import Path;from semantic_kernel.agents.runtime.in_process.in_process_runtime import InProcessRuntime;p=Path(inspect.getfile(InProcessRuntime));assert p.resolve()==Path(sys.argv[1]).resolve();print(json.dumps({'python':sys.version,'effective_runtime':str(p),'runtime_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'versions':{d.metadata['Name']:d.version for d in m.distributions()}}))"
+ run('identity',[PY,'-c',identity,root/spec['runtime_path']],120);ident=json.loads((OUT/'identity.log').read_text());old_ident=json.loads((OLD/'identity.log').read_text());assert ident['versions']==old_ident['versions'];status['dependency_versions_identical_to_baseline']=True;save()
+ run('git-init',['git','init','-q'],60,cwd=root)
+ run('precommit',[PY,'-m','pre_commit','run','--config','python/.pre-commit-config.yaml','--files',spec['runtime_path'],spec['test_path']],600,cwd=root);verify(root,spec['source_files_sha256']);status['source_unchanged_after_hooks']=True;save()
+ run('mypy',[PY,'-m','mypy','semantic_kernel/agents/runtime/in_process/in_process_runtime.py','tests/unit/agents/runtime/test_runtime.py'],300)
+ run('focused',[PY,'-m','pytest',spec['selected_test'],'-q','--junitxml='+str(OUT/'focused.xml')],180);status['focused']=parse('focused');assert status['focused']['passed']==4 and not status['focused']['failed'] and not status['focused']['skipped'];save()
+ related=['tests/unit/agents/runtime','tests/unit/agents/test_group_chat'];broad=related+['tests/unit/agents/orchestration']
+ run('related',[PY,'-m','pytest',*related,'-q','--junitxml='+str(OUT/'related.xml')],300);status['related']=parse('related');assert not status['related']['failed'];save()
+ baseline_env={**env,'PYTHONPATH':str(baseline/'python'),'TMPDIR':str(baseline)}
+ run('baseline-broader',[PY,'-m','pytest',*broad,'-q','-k','not test_late_send_failure_after_sender_cancellation','--junitxml='+str(OUT/'baseline-broader.xml')],600,cwd=baseline/'python',environment=baseline_env,allowed=(0,1));status['baseline_broader']=parse('baseline-broader');save()
+ run('candidate-broader',[PY,'-m','pytest',*broad,'-q','--junitxml='+str(OUT/'candidate-broader.xml')],600,allowed=(0,1));status['candidate_broader']=parse('candidate-broader');assert status['baseline_broader']['failure_ids']==status['candidate_broader']['failure_ids'];assert status['candidate_broader']['total']==status['baseline_broader']['total']+4;status['broader_failure_ids_match']=True;save()
+ run('build',[PY,'-m','build','--wheel','--no-isolation','--outdir',OUT/'wheel'],180)
+ wheels=list((OUT/'wheel').glob('*.whl'));assert len(wheels)==1
+ with zipfile.ZipFile(wheels[0]) as z:assert z.read('semantic_kernel/agents/runtime/in_process/in_process_runtime.py')==(root/spec['runtime_path']).read_bytes()
+ status['wheel']={'name':wheels[0].name,'sha256':sha(wheels[0]),'bytes':wheels[0].stat().st_size,'runtime_source_bytes_match':True};verify(root,spec['source_files_sha256']);verify(baseline,old_spec['source_files_sha256']);status['all_frozen_sources_unchanged_after_validation']=True
+except BaseException as exc:status['operator_error']={'type':type(exc).__name__,'message':str(exc)}
+finally:
+ if driver is not None and driver.poll() is None:
+  os.killpg(driver.pid,signal.SIGTERM)
+  try:driver.wait(timeout=10)
+  except subprocess.TimeoutExpired:os.killpg(driver.pid,signal.SIGKILL);driver.wait()
+ owned=[]
+ for p in Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:
+   if str(root).encode() in (p/'cmdline').read_bytes() or (p/'cwd').resolve().is_relative_to(root):owned.append(int(p.name))
+  except (OSError,ValueError):pass
+ status.update(terminal=True,owned_processes_after=owned,global_git_configuration_unchanged=global_config()==before_config);save();print(json.dumps({k:v for k,v in status.items() if k not in ['phases']}),flush=True)
+raise SystemExit(0 if not status.get('operator_error') and status.get('all_frozen_sources_unchanged_after_validation') and not status['owned_processes_after'] and status['global_git_configuration_unchanged'] else 2)

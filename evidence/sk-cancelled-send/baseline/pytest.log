@@ -1,0 +1,525 @@
+..FF                                                                     [100%]
+=================================== FAILURES ===================================
+________ test_late_send_failure_after_sender_cancellation[True-handler] ________
+
+fut = <Future cancelled>, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout <= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+>                   return fut.result()
+                           ^^^^^^^^^^^^
+E                   asyncio.exceptions.CancelledError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:490: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+failure_source = 'handler', cancel_sender = True
+
+    @pytest.mark.parametrize("failure_source", ["handler", "factory"])
+    @pytest.mark.parametrize("cancel_sender", [False, True])
+    async def test_late_send_failure_after_sender_cancellation(failure_source: str, cancel_sender: bool) -> None:
+        started = Event()
+        release = Event()
+        finished = Event()
+    
+        async def fail() -> None:
+            started.set()
+            await release.wait()
+            finished.set()
+            raise RuntimeError("late agent failure")
+    
+        class FailingAgent(BaseAgent):
+            def __init__(self) -> None:
+                super().__init__("An agent that fails after the sender can cancel.")
+    
+            async def on_message_impl(self, message: Any, ctx: MessageContext) -> Any:
+                await fail()
+    
+        async def factory() -> FailingAgent:
+            if failure_source == "factory":
+                await fail()
+            return FailingAgent()
+    
+        runtime = InProcessRuntime()
+        await FailingAgent.register(runtime, "failing", factory)
+        runtime.start()
+        request = asyncio.create_task(runtime.send_message("message", CoreAgentId("failing", "default")))
+        idle_stop = None
+        try:
+            await asyncio.wait_for(started.wait(), timeout=5)
+            if cancel_sender:
+                request.cancel()
+                with pytest.raises(asyncio.CancelledError):
+                    await request
+            release.set()
+            if not cancel_sender:
+                with pytest.raises(RuntimeError, match="late agent failure"):
+                    await request
+            await asyncio.wait_for(finished.wait(), timeout=5)
+            idle_stop = asyncio.create_task(runtime.stop_when_idle())
+>           await asyncio.wait_for(asyncio.shield(idle_stop), timeout=5)
+
+tests/unit/agents/runtime/test_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fut = <Future cancelled>, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout <= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+                    return fut.result()
+                except exceptions.CancelledError as exc:
+>                   raise exceptions.TimeoutError() from exc
+E                   TimeoutError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:492: TimeoutError
+----------------------------- Captured stderr call -----------------------------
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<InProcessRuntime._process_send() done, defined at __PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py:344> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 379, in _process_send
+    response = await recipient_agent.on_message(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 47, in on_message_impl
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 396, in _process_send
+    message_envelope.future.set_exception(e)
+asyncio.exceptions.InvalidStateError: invalid state
+------------------------------ Captured log call -------------------------------
+ERROR    asyncio:base_events.py:1771 Task exception was never retrieved
+future: <Task finished name='Task-23' coro=<InProcessRuntime._process_send() done, defined at __PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py:344> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 379, in _process_send
+    response = await recipient_agent.on_message(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/core/base_agent.py", line 127, in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 47, in on_message_impl
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 396, in _process_send
+    message_envelope.future.set_exception(e)
+asyncio.exceptions.InvalidStateError: invalid state
+________ test_late_send_failure_after_sender_cancellation[True-factory] ________
+
+fut = <Future cancelled>, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout <= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+>                   return fut.result()
+                           ^^^^^^^^^^^^
+E                   asyncio.exceptions.CancelledError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:490: CancelledError
+
+The above exception was the direct cause of the following exception:
+
+failure_source = 'factory', cancel_sender = True
+
+    @pytest.mark.parametrize("failure_source", ["handler", "factory"])
+    @pytest.mark.parametrize("cancel_sender", [False, True])
+    async def test_late_send_failure_after_sender_cancellation(failure_source: str, cancel_sender: bool) -> None:
+        started = Event()
+        release = Event()
+        finished = Event()
+    
+        async def fail() -> None:
+            started.set()
+            await release.wait()
+            finished.set()
+            raise RuntimeError("late agent failure")
+    
+        class FailingAgent(BaseAgent):
+            def __init__(self) -> None:
+                super().__init__("An agent that fails after the sender can cancel.")
+    
+            async def on_message_impl(self, message: Any, ctx: MessageContext) -> Any:
+                await fail()
+    
+        async def factory() -> FailingAgent:
+            if failure_source == "factory":
+                await fail()
+            return FailingAgent()
+    
+        runtime = InProcessRuntime()
+        await FailingAgent.register(runtime, "failing", factory)
+        runtime.start()
+        request = asyncio.create_task(runtime.send_message("message", CoreAgentId("failing", "default")))
+        idle_stop = None
+        try:
+            await asyncio.wait_for(started.wait(), timeout=5)
+            if cancel_sender:
+                request.cancel()
+                with pytest.raises(asyncio.CancelledError):
+                    await request
+            release.set()
+            if not cancel_sender:
+                with pytest.raises(RuntimeError, match="late agent failure"):
+                    await request
+            await asyncio.wait_for(finished.wait(), timeout=5)
+            idle_stop = asyncio.create_task(runtime.stop_when_idle())
+>           await asyncio.wait_for(asyncio.shield(idle_stop), timeout=5)
+
+tests/unit/agents/runtime/test_runtime.py:71: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+fut = <Future cancelled>, timeout = 5
+
+    async def wait_for(fut, timeout):
+        """Wait for the single Future or coroutine to complete, with timeout.
+    
+        Coroutine will be wrapped in Task.
+    
+        Returns result of the Future or coroutine.  When a timeout occurs,
+        it cancels the task and raises TimeoutError.  To avoid the task
+        cancellation, wrap it in shield().
+    
+        If the wait is cancelled, the task is also cancelled.
+    
+        This function is a coroutine.
+        """
+        loop = events.get_running_loop()
+    
+        if timeout is None:
+            return await fut
+    
+        if timeout <= 0:
+            fut = ensure_future(fut, loop=loop)
+    
+            if fut.done():
+                return fut.result()
+    
+            await _cancel_and_wait(fut, loop=loop)
+            try:
+                return fut.result()
+            except exceptions.CancelledError as exc:
+                raise exceptions.TimeoutError() from exc
+    
+        waiter = loop.create_future()
+        timeout_handle = loop.call_later(timeout, _release_waiter, waiter)
+        cb = functools.partial(_release_waiter, waiter)
+    
+        fut = ensure_future(fut, loop=loop)
+        fut.add_done_callback(cb)
+    
+        try:
+            # wait until the future completes or the timeout
+            try:
+                await waiter
+            except exceptions.CancelledError:
+                if fut.done():
+                    return fut.result()
+                else:
+                    fut.remove_done_callback(cb)
+                    # We must ensure that the task is not running
+                    # after wait_for() returns.
+                    # See https://bugs.python.org/issue32751
+                    await _cancel_and_wait(fut, loop=loop)
+                    raise
+    
+            if fut.done():
+                return fut.result()
+            else:
+                fut.remove_done_callback(cb)
+                # We must ensure that the task is not running
+                # after wait_for() returns.
+                # See https://bugs.python.org/issue32751
+                await _cancel_and_wait(fut, loop=loop)
+                # In case task cancellation failed with some
+                # exception, we should re-raise it
+                # See https://bugs.python.org/issue40607
+                try:
+                    return fut.result()
+                except exceptions.CancelledError as exc:
+>                   raise exceptions.TimeoutError() from exc
+E                   TimeoutError
+
+__SERVER_HOME__/anaconda3/lib/python3.11/asyncio/tasks.py:492: TimeoutError
+----------------------------- Captured stderr call -----------------------------
+ERROR:in_process_runtime:Error constructing agent failing/default
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 752, in factory_wrapper
+    agent_instance = await maybe_agent_instance
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 51, in factory
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished name='Task-32' coro=<InProcessRuntime._process_send() done, defined at __PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py:344> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 366, in _process_send
+    recipient_agent = await self._get_agent(recipient)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 809, in _get_agent
+    agent = await self._invoke_agent_factory(agent_factory, agent_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 752, in factory_wrapper
+    agent_instance = await maybe_agent_instance
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 51, in factory
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 396, in _process_send
+    message_envelope.future.set_exception(e)
+asyncio.exceptions.InvalidStateError: invalid state
+------------------------------ Captured log call -------------------------------
+ERROR    in_process_runtime:in_process_runtime.py:798 Error constructing agent failing/default
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 752, in factory_wrapper
+    agent_instance = await maybe_agent_instance
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 51, in factory
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+ERROR    asyncio:base_events.py:1771 Task exception was never retrieved
+future: <Task finished name='Task-32' coro=<InProcessRuntime._process_send() done, defined at __PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py:344> exception=InvalidStateError('invalid state')>
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 366, in _process_send
+    recipient_agent = await self._get_agent(recipient)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 809, in _get_agent
+    agent = await self._invoke_agent_factory(agent_factory, agent_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 787, in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 752, in factory_wrapper
+    agent_instance = await maybe_agent_instance
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 51, in factory
+    await fail()
+  File "__PRIVATE_BASELINE__/python/tests/unit/agents/runtime/test_runtime.py", line 40, in fail
+    raise RuntimeError("late agent failure")
+RuntimeError: late agent failure
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "__PRIVATE_BASELINE__/python/semantic_kernel/agents/runtime/in_process/in_process_runtime.py", line 396, in _process_send
+    message_envelope.future.set_exception(e)
+asyncio.exceptions.InvalidStateError: invalid state
+=========================== short test summary info ============================
+FAILED tests/unit/agents/runtime/test_runtime.py::test_late_send_failure_after_sender_cancellation[True-handler]
+FAILED tests/unit/agents/runtime/test_runtime.py::test_late_send_failure_after_sender_cancellation[True-factory]

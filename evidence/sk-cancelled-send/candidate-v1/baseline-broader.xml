@@ -1,0 +1,935 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="12" skipped="1" tests="185" time="22.386" timestamp="2026-11-22T01:11:15.233700+08:00" hostname="gpu5.cluster.lan"><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-class-send]" time="0.065" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-class-publish]" time="0.013" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-class-response]" time="0.012" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-instance-send]" time="0.010" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-instance-publish]" time="0.009" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[drop-instance-response]" time="0.006" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[raise-send]" time="0.023" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[raise-publish]" time="0.014" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[raise-response]" time="0.006" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[pass-send]" time="0.007" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[pass-publish]" time="0.005" /><testcase classname="tests.unit.agents.runtime.test_intervention_queue" name="test_interception_releases_idle_waiter[pass-response]" time="0.006" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_pydantic" time="0.004" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_nested_pydantic" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_dataclass" time="0.004" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_nesting_dataclass_dataclass" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_nesting_union_old_syntax_dataclass[DataclassNestedUnionSyntaxOldMessage]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_nesting_union_old_syntax_dataclass[DataclassNestedUnionSyntaxNewMessage]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_nesting_dataclass_pydantic" time="0.002" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_invalid_type" time="0.002" /><testcase classname="tests.unit.agents.runtime.test_message_serialization" name="test_custom_type" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[None-message_handler]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[None-rpc]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[response-message_handler]" time="0.002" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[response-rpc]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[42-message_handler]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[42-rpc]" time="0.002" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[response3-message_handler]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_handler_with_any_return_type[response3-rpc]" time="0.003" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_agent_type_register_factory" time="0.002" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_agent_type_must_be_unique" time="0.004" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_register_receives_publish" time="0.006" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_register_receives_publish_with_construction" time="0.004" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_register_receives_publish_cascade" time="1.618" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_register_factory_explicit_name" time="0.009" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_default_subscription" time="0.008" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_type_subscription" time="0.007" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_default_subscription_publish_to_other_source" time="0.004" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_event_handler_exception_propagates" time="0.008" /><testcase classname="tests.unit.agents.runtime.test_runtime" name="test_event_handler_exception_multi_message" time="0.008" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_channel" name="test_receive" time="0.010" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_channel" name="test_invoke" time="0.007" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_channel" name="test_get_history" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_set_activity_or_throw_when_inactive" time="0.003" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_set_activity_or_throw_when_active" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_clear_activity_signal" time="0.002" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_messages_in_descending_order" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_chat_messages_without_agent" time="0.006" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_chat_messages_with_agent" time="0.008" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_add_chat_message" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_add_chat_messages" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_invoke_agent" time="0.007" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_invoke_streaming_agent" time="0.006" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_synchronize_channel_with_existing_channel" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_synchronize_channel_with_nonexistent_channel" time="0.003" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_agent_hash_with_existing_hash" time="0.009" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_agent_hash_generates_new_hash" time="0.003" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_add_chat_messages_throws_exception_for_system_role" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_add_chat_messages_releases_activity_signal_when_a_message_is_rejected" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_or_create_channel_creates_new_channel" time="0.009" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat" name="test_get_or_create_channel_reuses_existing_channel" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat_utils" name="test_generate_hash_valid_keys" time="0.002" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_chat_utils" name="test_generate_hash_empty_keys" time="0.002" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_agent_group_chat_initialization" time="0.008" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_agent_group_chat_initialization_defaults" time="0.002" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_add_agent" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_add_duplicate_agent" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_single_turn" time="0.011" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_single_turn_sets_complete" time="0.007" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_with_agent_joining" time="0.010" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_with_complete_chat" time="0.316" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_agent_with_none_defined_errors" time="0.020" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_selection_strategy_error" time="0.024" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_iterations" time="0.025" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_is_complete_then_reset" time="0.013" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_streaming_single_turn" time="0.019" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_stream_with_agent_joining" time="0.014" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_stream_with_complete_chat" time="0.012" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_stream_selection_strategy_error" time="0.008" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_stream_iterations" time="0.017" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_stream_is_complete_then_reset" time="0.018" /><testcase classname="tests.unit.agents.test_group_chat.test_agent_group_chat" name="test_invoke_streaming_agent_with_none_defined_errors" time="0.007" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_queue_reference_is_empty_true" time="0.004" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_queue_reference_is_empty_false" time="0.005" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_enqueue_new_channel" time="0.009" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_enqueue_existing_channel" time="0.009" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_ensure_synchronized_channel_empty" time="0.006" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_ensure_synchronized_with_messages" time="0.107" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_ensure_synchronized_with_failure" time="0.007" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_ensure_synchronized_creates_new_task" time="0.277" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_receive_processes_queue" time="0.020" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_receive_handles_failure" time="0.024" /><testcase classname="tests.unit.agents.test_group_chat.test_broadcast_queue" name="test_receive_breaks_when_queue_is_empty" time="0.022" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_prepare" time="0.015" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke" time="0.111" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_with_response_callback" time="0.116" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_with_streaming_response_callback" time="0.118" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_cancel_before_completion" time="0.317"><failure message="RuntimeError: The invocation has already been completed.">async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the ConcurrentOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = ConcurrentOrchestration(members=[agent_a, agent_b])
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel before the collection agent gets the responses
+                await asyncio.sleep(0.05)
+&gt;               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_concurrent.py:131: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=&lt;Task finished name='Task-110...cancellation_token=&lt;semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7fa895b3d490&gt;)
+
+    def cancel(self) -&gt; None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+&gt;           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_cancel_after_completion" time="0.233" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_with_double_get_result" time="0.165" /><testcase classname="tests.unit.agents.orchestration.test_concurrent" name="test_invoke_with_agent_raising_exception" time="1.517" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_init_member_without_description_throws" time="5.440" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_prepare" time="1.081" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke" time="0.102"><failure message="RuntimeError: Agent &quot;agent_WMOZgYArrEzSGYJz&quot; did not return any response.">async def test_invoke():
+        """Test the invoke method of the GroupChatOrchestration."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent(description="test agent")
+            agent_b = MockAgent(description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = GroupChatOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=RoundRobinGroupChatManager(max_rounds=3),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_group_chat.py:89: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/group_chat.py:129: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.group_chat.GroupChatAgentActor object at 0x7fa8951224d0&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.USER: ...etadata={}, content_type='text', text='test_message', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_WMOZgYArrEzSGYJz" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_with_list" time="0.151"><failure message="RuntimeError: Agent &quot;agent_unTwQcmmgIjwqsFD&quot; did not return any response.">async def test_invoke_with_list():
+        """Test the invoke method of the GroupChatOrchestration with a list of messages."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent(description="test agent")
+            agent_b = MockAgent(description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            messages = [
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_1"),
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_2"),
+            ]
+    
+            try:
+                orchestration = GroupChatOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=RoundRobinGroupChatManager(max_rounds=2),
+                )
+                orchestration_result = await orchestration.invoke(task=messages, runtime=runtime)
+&gt;               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_group_chat.py:123: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/group_chat.py:129: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.group_chat.GroupChatAgentActor object at 0x7fa895f8f4d0&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.USER: ...adata={}, content_type='text', text='test_message_2', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_unTwQcmmgIjwqsFD" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_with_response_callback" time="1.066" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_with_streaming_response_callback" time="0.453" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_with_human_response_function" time="0.394" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_cancel_before_completion" time="0.204"><skipped type="pytest.skip" message="Unreliable test due to timing issues in CI environment. To be fixed later.">__PRIVATE_BASELINE__/python/tests/unit/agents/orchestration/test_group_chat.py:228: Unreliable test due to timing issues in CI environment. To be fixed later.</skipped></testcase><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_cancel_after_completion" time="0.323" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_invoke_with_agent_raising_exception" time="0.162" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_init" time="0.001" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_init_with_max_rounds" time="0.001" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_init_with_human_response_function" time="0.001" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_should_terminate" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_should_terminate_without_max_rounds" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_group_chat" name="test_round_robin_group_chat_manager_select_next_agent" time="0.023" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_init_without_handoffs" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_init_with_invalid_handoff" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_init_with_duplicate_handoffs" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_init_with_dictionary_handoffs" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_orchestration_handoff_add" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_orchestration_handoff_add_many" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_prepare" time="0.008" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke" time="0.410"><failure message="TypeError: __init__() should return None, not 'MagicMock'">async def test_invoke():
+        """Test the prepare method of the HandoffOrchestration."""
+        with (
+            patch.object(HandoffAgentActor, "__init__", wraps=HandoffAgentActor.__init__, autospec=True) as mock_init,
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+            agent_c = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b, agent_c],
+                    handoffs={
+                        agent_a.name: {agent_b.name: "test", agent_c.name: "test"},
+                        agent_b.name: {agent_a.name: "test"},
+                    },
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:382: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:440: in _start
+    await asyncio.gather(*[send_start_message(agent) for agent in self._members])
+semantic_kernel/agents/orchestration/handoffs.py:434: in send_start_message
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:366: in _process_send
+    recipient_agent = await self._get_agent(recipient)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:809: in _get_agent
+    agent = await self._invoke_agent_factory(agent_factory, agent_id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:787: in _invoke_agent_factory
+    return cast(T, await agent)
+                   ^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:750: in factory_wrapper
+    maybe_agent_instance = agent_factory()
+                           ^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+agent = MockAgent(arguments=None, description=None, id='5ba32ea3-df66-4aa3-b2c0-46b0e3d3bab8', instructions=None, kernel=Kerne...prompt_rendering_filters=[], auto_function_invocation_filters=[]), name='agent_LFRvXgcfVybECmxV', prompt_template=None)
+handoff_connections = {'agent_FqljHVghkjdjbCau': 'test', 'agent_vHVEvnhhjTkeYjcG': 'test'}
+
+&gt;       lambda agent=agent, handoff_connections=handoff_connections: HandoffAgentActor(  # type: ignore[misc]
+            agent,
+            internal_topic_type,
+            handoff_connections,
+            exception_callback,
+            result_callback=result_callback,
+            agent_response_callback=self._agent_response_callback,
+            streaming_agent_response_callback=self._streaming_agent_response_callback,
+            human_response_function=self._human_response_function,
+        ),
+    )
+E   TypeError: __init__() should return None, not 'MagicMock'
+
+semantic_kernel/agents/orchestration/handoffs.py:476: TypeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_list" time="0.036"><failure message="RuntimeError: Agent &quot;agent_uPkDtvBCVbkXrIhV&quot; did not return any response nor did not set a handoff agent name.">async def test_invoke_with_list():
+        """Test the invoke method of the HandoffOrchestration with a list of messages."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            messages = [
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_1"),
+                ChatMessageContent(role=AuthorRole.USER, content="test_message_2"),
+            ]
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task=messages, runtime=runtime)
+&gt;               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:421: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:444: in _start
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:379: in _process_send
+    response = await recipient_agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.handoffs.HandoffAgentActor object at 0x7fa895d63550&gt;
+message = HandoffRequestMessage(agent_name='agent_uPkDtvBCVbkXrIhV')
+cts = MessageContext(sender=None, topic_id=None, is_rpc=True, cancellation_token=&lt;semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7fa895f118d0&gt;, message_id='f0313676-5912-43be-9824-3474d8135e71')
+
+    @message_handler
+    async def _handle_request_message(self, message: HandoffRequestMessage, cts: MessageContext) -&gt; None:
+        """Handle a request message from an agent in the handoff group."""
+        if message.agent_name != self._agent.name:
+            return
+        logger.debug(f"{self.id}: Received handoff request message.")
+    
+        response = await self._invoke_agent_with_potentially_no_response(kernel=self._kernel)
+    
+        while not self._task_completed:
+            if self._handoff_agent_name:
+                await self.publish_message(
+                    HandoffRequestMessage(agent_name=self._handoff_agent_name),
+                    TopicId(self._internal_topic_type, self.id.key),
+                )
+                self._handoff_agent_name = None
+                break
+    
+            if response is None:
+&gt;               raise RuntimeError(
+                    f'Agent "{self._agent.name}" did not return any response nor did not set a handoff agent name.'
+                )
+E               RuntimeError: Agent "agent_uPkDtvBCVbkXrIhV" did not return any response nor did not set a handoff agent name.
+
+semantic_kernel/agents/orchestration/handoffs.py:283: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_response_callback" time="0.125" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_streaming_response_callback" time="0.118" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_response_callback_with_handoff_function_call" time="0.216" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_streaming_response_callback_with_handoff_function_call" time="0.213" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_human_response_function" time="0.214" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_handoff_function_call" time="0.113"><failure message="RuntimeError: Agent &quot;agent_WaIkhuochgaRNxVP&quot; did not return any response nor did not set a handoff agent name.">async def test_invoke_with_handoff_function_call():
+        """Test the invoke method of the HandoffOrchestration with a handoff function call."""
+        agent_b = MockAgent()
+        agent_a = MockAgentWithHandoffFunctionCall(agent_b)
+    
+        with (
+            patch.object(
+                HandoffAgentActor, "_handoff_to_agent", wraps=HandoffAgentActor._handoff_to_agent, autospec=True
+            ) as mock_handoff_to_agent,
+        ):
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_handoff.py:615: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/orchestration/orchestration_base.py:249: in outer_exception_callback
+    task.result()
+semantic_kernel/agents/orchestration/handoffs.py:444: in _start
+    await runtime.send_message(
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:262: in send_message
+    return await future
+           ^^^^^^^^^^^^
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:379: in _process_send
+    response = await recipient_agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.handoffs.HandoffAgentActor object at 0x7fa895d52290&gt;
+message = HandoffRequestMessage(agent_name='agent_WaIkhuochgaRNxVP')
+cts = MessageContext(sender=None, topic_id=None, is_rpc=True, cancellation_token=&lt;semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7fa895694950&gt;, message_id='43ed7869-dd0c-497f-b072-770578d16872')
+
+    @message_handler
+    async def _handle_request_message(self, message: HandoffRequestMessage, cts: MessageContext) -&gt; None:
+        """Handle a request message from an agent in the handoff group."""
+        if message.agent_name != self._agent.name:
+            return
+        logger.debug(f"{self.id}: Received handoff request message.")
+    
+        response = await self._invoke_agent_with_potentially_no_response(kernel=self._kernel)
+    
+        while not self._task_completed:
+            if self._handoff_agent_name:
+                await self.publish_message(
+                    HandoffRequestMessage(agent_name=self._handoff_agent_name),
+                    TopicId(self._internal_topic_type, self.id.key),
+                )
+                self._handoff_agent_name = None
+                break
+    
+            if response is None:
+&gt;               raise RuntimeError(
+                    f'Agent "{self._agent.name}" did not return any response nor did not set a handoff agent name.'
+                )
+E               RuntimeError: Agent "agent_WaIkhuochgaRNxVP" did not return any response nor did not set a handoff agent name.
+
+semantic_kernel/agents/orchestration/handoffs.py:283: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_cancel_before_completion" time="0.057"><failure message="RuntimeError: The invocation has already been completed.">async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the HandoffOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = HandoffOrchestration(
+                    members=[agent_a, agent_b],
+                    handoffs={agent_a.name: {agent_b.name: "test"}},
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel before first agent completes
+                await asyncio.sleep(0.05)
+&gt;               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_handoff.py:646: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=&lt;Task finished name='Task-115...cancellation_token=&lt;semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7fa8947e5810&gt;)
+
+    def cancel(self) -&gt; None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+&gt;           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_cancel_after_completion" time="0.109" /><testcase classname="tests.unit.agents.orchestration.test_handoff" name="test_invoke_with_agent_raising_exception" time="0.059" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_init_member_without_description_throws" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_prepare" time="0.009" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke" time="0.018"><failure message="RuntimeError: Agent &quot;agent_a&quot; did not return any response.">async def test_invoke():
+        """Test the invoke method of the MagenticOrchestration."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager, "create_progress_ledger", new_callable=AsyncMock, side_effect=ManagerProgressList
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+            chat_completion_service = MockChatCompletionService(ai_model_id="test")
+            prompt_execution_settings = MockPromptExecutionSettings()
+    
+            manager = StandardMagenticManager(
+                chat_completion_service=chat_completion_service,
+                prompt_execution_settings=prompt_execution_settings,
+            )
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = MagenticOrchestration(members=[agent_a, agent_b], manager=manager)
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:198: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7fa89528b5d0&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_list_error" time="0.008" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_agent_raising_exception" time="0.063" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_response_callback" time="0.218" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_streaming_response_callback" time="0.218" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_max_stall_count_exceeded" time="0.013"><failure message="RuntimeError: Agent &quot;agent_a&quot; did not return any response.">async def test_invoke_with_max_stall_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max stall count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_stall_count=1,
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               await orchestration_result.get(1.0)
+
+tests/unit/agents/orchestration/test_magentic.py:396: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7fa895d5a8d0&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_max_round_count_exceeded" time="0.012"><failure message="RuntimeError: Agent &quot;agent_a&quot; did not return any response.">async def test_invoke_with_max_round_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max round count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_round_count=1,
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:438: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7fa8950a4d50&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_max_reset_count_exceeded" time="0.012"><failure message="RuntimeError: Agent &quot;agent_a&quot; did not return any response.">async def test_invoke_with_max_reset_count_exceeded():
+        """ "Test the invoke method of the MagenticOrchestration with max reset count exceeded."""
+        runtime = InProcessRuntime()
+        runtime.start()
+    
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+            patch.object(
+                MockChatCompletionService, "get_chat_message_content", new_callable=AsyncMock
+            ) as mock_get_chat_message_content,
+            patch.object(
+                StandardMagenticManager,
+                "create_progress_ledger",
+                new_callable=AsyncMock,
+                side_effect=ManagerProgressListStalling,
+            ),
+        ):
+            mock_get_chat_message_content.return_value = ChatMessageContent(role="assistant", content="mock_response")
+    
+            agent_a = MockAgent(name="agent_a", description="test agent")
+            agent_b = MockAgent(name="agent_b", description="test agent")
+    
+            try:
+                orchestration = MagenticOrchestration(
+                    members=[agent_a, agent_b],
+                    manager=StandardMagenticManager(
+                        chat_completion_service=MockChatCompletionService(ai_model_id="test"),
+                        prompt_execution_settings=MockPromptExecutionSettings(),
+                        max_stall_count=0,  # No stall allowed
+                        max_reset_count=0,  # No reset allowed
+                    ),
+                )
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+&gt;               result = await orchestration_result.get(1.0)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/unit/agents/orchestration/test_magentic.py:482: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+semantic_kernel/agents/orchestration/orchestration_base.py:65: in get
+    raise self.exception
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:488: in _process_publish
+    await asyncio.gather(*responses)
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:483: in _on_message
+    raise e
+semantic_kernel/agents/runtime/in_process/in_process_runtime.py:470: in _on_message
+    return await agent.on_message(
+semantic_kernel/agents/runtime/core/base_agent.py:127: in on_message
+    return await self.on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:53: in on_message_impl
+    return await super().on_message_impl(message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:488: in on_message_impl
+    return await h(self, message, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/runtime/core/routed_agent.py:156: in wrapper
+    return_value = await func(self, message, ctx)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/magentic.py:738: in _handle_request_message
+    response = await self._invoke_agent()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+semantic_kernel/agents/orchestration/agent_actor_base.py:76: in async_wrapper
+    return await func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;semantic_kernel.agents.orchestration.magentic.MagenticAgentActor object at 0x7fa895c5ef10&gt;
+additional_messages = None, kwargs = {}, streaming_message_buffer = []
+messages = [ChatMessageContent(inner_content=None, ai_model_id=None, metadata={}, content_type='message', role=&lt;AuthorRole.ASSIST...ata={}, content_type='text', text='mock_instruction', encoding=None)], encoding=None, finish_reason=None, status=None)]
+
+    @ActorBase.exception_handler
+    async def _invoke_agent(self, additional_messages: DefaultTypeAlias | None = None, **kwargs) -&gt; ChatMessageContent:
+        """Invoke the agent with the current chat history or thread and optionally additional messages.
+    
+        Args:
+            additional_messages (DefaultTypeAlias | None): Additional messages to be sent to the agent.
+            **kwargs: Additional keyword arguments to be passed to the agent's invoke method:
+                - kernel: The kernel to use for the agent invocation.
+    
+        Returns:
+            DefaultTypeAlias: The response from the agent.
+        """
+        streaming_message_buffer: list[StreamingChatMessageContent] = []
+        messages = self._create_messages(additional_messages)
+    
+        async for response_item in self._agent.invoke_stream(
+            messages,  # type: ignore[arg-type]
+            thread=self._agent_thread,
+            on_intermediate_message=self._handle_intermediate_message,
+            **kwargs,
+        ):
+            # Buffer message chunks and stream them with correct is_final flag.
+            streaming_message_buffer.append(response_item.message)
+            if len(streaming_message_buffer) &gt; 1:
+                await self._call_streaming_agent_response_callback(streaming_message_buffer[-2], is_final=False)
+            if self._agent_thread is None:
+                self._agent_thread = response_item.thread
+    
+        if streaming_message_buffer:
+            # Call the callback for the last message chunk with is_final=True.
+            await self._call_streaming_agent_response_callback(streaming_message_buffer[-1], is_final=True)
+    
+        if not streaming_message_buffer:
+&gt;           raise RuntimeError(f'Agent "{self._agent.name}" did not return any response.')
+E           RuntimeError: Agent "agent_a" did not return any response.
+
+semantic_kernel/agents/orchestration/agent_actor_base.py:193: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_invoke_with_unknown_speaker" time="0.009" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_init" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_init_with_custom_prompts" time="0.001" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_init_with_invalid_prompt_execution_settings" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_init_without_prompt_execution_settings" time="0.001" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_plan" time="0.004" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_replan" time="0.005" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_replan_without_plan" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_magentic" name="test_standard_magentic_manager_create_progress_ledger" time="0.004" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_init" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_init_with_default_values" time="0.016" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_init_with_no_members" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_set_types" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_invoke_with_str" time="0.006" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_invoke_with_chat_message_content" time="0.006" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_invoke_with_custom_type" time="0.006" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_orchestration_invoke_with_custom_type_async_input_transform" time="0.106" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_input_transform_default_type_alias" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_input_transform_custom_type" time="0.005" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_input_transform_custom_type_error" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_output_transform_default_type_alias" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_output_transform_custom_type" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_default_output_transform_custom_type_error" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_invoke_with_timeout_error" time="0.104" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_invoke_cancel_before_completion" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_base" name="test_invoke_with_double_cancel" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform_original_settings_not_changed" time="0.002" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform_unsupported_service" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform_invoke" time="0.004" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform_invoke_with_messages" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_orchestration_tools" name="test_structured_outputs_transform_invoke_unsupported_type" time="0.003" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_prepare" time="0.008" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke" time="0.210" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_with_response_callback" time="0.715" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_with_streaming_response_callback" time="0.241" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_cancel_before_completion" time="0.056"><failure message="RuntimeError: The invocation has already been completed.">async def test_invoke_cancel_before_completion():
+        """Test the invoke method of the SequentialOrchestration with cancellation before completion."""
+        with (
+            patch.object(MockAgent, "invoke_stream", wraps=MockAgent.invoke_stream, autospec=True) as mock_invoke_stream,
+        ):
+            agent_a = MockAgent()
+            agent_b = MockAgent()
+    
+            runtime = InProcessRuntime()
+            runtime.start()
+    
+            try:
+                orchestration = SequentialOrchestration(members=[agent_a, agent_b])
+                orchestration_result = await orchestration.invoke(task="test_message", runtime=runtime)
+    
+                # Cancel while the first agent is processing
+                await asyncio.sleep(0.05)
+&gt;               orchestration_result.cancel()
+
+tests/unit/agents/orchestration/test_sequential.py:129: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = OrchestrationResult[Union[ChatMessageContent, list[ChatMessageContent]]](background_task=&lt;Task finished name='Task-118...cancellation_token=&lt;semantic_kernel.agents.runtime.core.cancellation_token.CancellationToken object at 0x7fa8952e7c50&gt;)
+
+    def cancel(self) -&gt; None:
+        """Cancel the invocation.
+    
+        This method will cancel the invocation.
+        Actors that have received messages will continue to process them, but no new messages will be processed.
+        """
+        if self.cancellation_token.is_cancelled():
+            raise RuntimeError("The invocation has already been canceled.")
+        if self.event.is_set():
+&gt;           raise RuntimeError("The invocation has already been completed.")
+E           RuntimeError: The invocation has already been completed.
+
+semantic_kernel/agents/orchestration/orchestration_base.py:78: RuntimeError</failure></testcase><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_cancel_after_completion" time="0.216" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_with_double_get_result" time="0.644" /><testcase classname="tests.unit.agents.orchestration.test_sequential" name="test_invoke_with_agent_raising_exception" time="0.187" /></testsuite></testsuites>

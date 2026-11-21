@@ -1,0 +1,31 @@
+{
+  "terminal": true,
+  "protocol_sha256": "4d0ffb45362167912c5e2a9a9e3c5829e7fbed2639389d9129006942d3306572",
+  "archive_sha256": "74b031b1e404366886c121e4af93373b70b2ecb4c9fa887b8d6a4c93636424d6",
+  "model_requests": 0,
+  "gpu_used": false,
+  "phases": [
+    {
+      "phase": "identity",
+      "returncode": 0,
+      "wall_seconds": 91.0,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 82182144
+    },
+    {
+      "phase": "pytest",
+      "returncode": 1,
+      "wall_seconds": 31.309,
+      "guard": null,
+      "peak_sampled_owned_session_rss_bytes": 95879168
+    }
+  ],
+  "expected_regression_reproduced": true,
+  "passed": 2,
+  "failed": 2,
+  "failed_cases": [
+    "test_late_send_failure_after_sender_cancellation[True-handler]",
+    "test_late_send_failure_after_sender_cancellation[True-factory]"
+  ],
+  "owned_processes_after": []
+}

@@ -1,0 +1,14 @@
+{
+  "observed_at_utc": "2026-11-21T17:25:06.633257+00:00",
+  "created": true,
+  "number": 14853,
+  "url": "https://github.com/microsoft/semantic-kernel/pull/14853",
+  "state": "open",
+  "draft": true,
+  "merged": false,
+  "head_sha": "9eadf24486464a146f3168035769cc071a8182bf",
+  "base_sha": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+  "body_sha256": "2f379046d0203b9bbf98465b9d5b9d99e98f3940b1fb0df66c06f059979a373d",
+  "human_review_attested": false,
+  "comments_or_issues_created": false
+}
