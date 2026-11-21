@@ -1,0 +1,121 @@
+{
+  "scope": "One normal CUDA model-load and three-request HTTP/tool-transport smoke validation. Not autonomous repository repair, a held-out benchmark, or a speedup estimate.",
+  "outcome": "raw_text_contract_failed_tools_passed",
+  "overall_smoke_passed": false,
+  "completed_model_http_requests": 3,
+  "http_statuses": [
+    200,
+    200,
+    200
+  ],
+  "request_body_bytes": 2209,
+  "plain_text_raw_content": "<think>\n\n</think>\n\nREADY",
+  "checks": [
+    {
+      "case": "plain_completion",
+      "passed": false,
+      "usage": {
+        "completion_tokens": 2,
+        "prompt_tokens": 21,
+        "total_tokens": 23,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      }
+    },
+    {
+      "case": "forced_function_call_arguments",
+      "passed": true,
+      "usage": {
+        "completion_tokens": 38,
+        "prompt_tokens": 352,
+        "total_tokens": 390,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "function_selection_forced": true,
+      "handler": "read-only actual completed build report"
+    },
+    {
+      "case": "tool_result_to_final_json",
+      "passed": true,
+      "usage": {
+        "completion_tokens": 19,
+        "prompt_tokens": 425,
+        "total_tokens": 444,
+        "prompt_tokens_details": {
+          "cached_tokens": 389
+        }
+      },
+      "final_response_constrained": true
+    }
+  ],
+  "full_reported_layer_offload": {
+    "offloaded_layers": 33,
+    "total_layers": 33,
+    "context": 32768,
+    "gpu_process_seen": true,
+    "gpu_used_mib": 263
+  },
+  "monitor": {
+    "peak_sampled_host_tree_rss_bytes": 1833648128,
+    "peak_sampled_gpu_used_mib": 6343,
+    "guard_reason": null,
+    "sample_semantics": "Independent2s host monitoring; selected-GPU observations may be up to30s old; sums RSS double count shared pages, not hard allocator caps."
+  },
+  "shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "port_closed": true,
+  "own_gpu_context_absent": true,
+  "api_key_file_remaining": false,
+  "active_state_filesystem": "ext4",
+  "protocol_sha256": "3c3e4503b95322cd63999396e0978099bb237651fbf8a564245771d478b9e28e",
+  "server_sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+  "model": {
+    "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "bytes": 5627044256,
+    "quantizer": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "exact_quantizer_source_weight_revision": null,
+    "alias": "agentlab-qwen35-9b-cuda"
+  },
+  "persisted_usage": {
+    "scope": "Three saved HTTP replies only; excludes native initialization/warmup; not billing or whole-run compute.",
+    "input_tokens": 798,
+    "cache_read_tokens": 389,
+    "output_tokens": 59
+  },
+  "warmup_outside_http_budget": true,
+  "prior_attempts": [
+    {
+      "outcome": "supervisor_gpu_probe_timeout",
+      "model_http_requests": 0
+    },
+    {
+      "outcome": "offload_log_not_confirmed",
+      "model_http_requests": 0,
+      "native_exit_code": null
+    }
+  ],
+  "repository_maintenance_run": false,
+  "autonomous_tool_selection": false,
+  "function_selection_forced": true,
+  "final_json_constrained": true,
+  "core_tests_rerun": false,
+  "new_neural_repair": false,
+  "limitations": [
+    "Three external HTTP requests only; model initialization/warmup may perform additional compute.",
+    "Function selection and final JSON response are constrained; this does not prove autonomous planning, editing or maintenance repair.",
+    "New compiler/backend/GPU/resource profile differs from earlier CPU runs; no isolated performance or cost comparison.",
+    "GPU admission is observational on a shared host; own lock does not reserve resources against other users.",
+    "Sampled resource guards are not allocator-enforced hard caps; summed RSS double counts shared pages.",
+    "Exact source weight revision behind the community quantization remains unknown.",
+    "No model request retry, prompt repair or quota reset. Health readiness GET polling is separate from inference requests.",
+    "Existing protected repository acceptance and106 core checks unchanged/not executed here."
+  ]
+}

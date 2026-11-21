@@ -1,0 +1,18 @@
+{
+  "case": "status_tool_error",
+  "passed": true,
+  "independent_status_unknown_or_expired": true,
+  "wall_seconds": 4.061,
+  "tool_calls": [
+    "begin_audit",
+    "list_reports",
+    "read_report",
+    "verify_assessment",
+    "audit_status",
+    "close_audit",
+    "audit_status"
+  ],
+  "audit_contexts_created": 1,
+  "close_attempts": 1,
+  "server_terminal": true
+}

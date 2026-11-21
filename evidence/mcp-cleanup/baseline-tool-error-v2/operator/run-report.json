@@ -1,0 +1,70 @@
+{
+  "variant": "baseline-tool-error-v2",
+  "protocol_sha256": "38a9f3c489b1d20eea3e81fa44d3c563c53c3c15fa715318ba48e0abf42bdbd1",
+  "phases": [
+    {
+      "phase": "sdk-identity-before",
+      "returncode": 0,
+      "wall_seconds": 4.335,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 119668736
+    },
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 0.565,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7929856
+    },
+    {
+      "phase": "controls",
+      "returncode": 2,
+      "wall_seconds": 7.095,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 202182656
+    },
+    {
+      "phase": "sdk-identity-after",
+      "returncode": 0,
+      "wall_seconds": 3.877,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 131203072
+    }
+  ],
+  "GPU_used": false,
+  "model_started": false,
+  "neural_requests": 0,
+  "terminal": true,
+  "controls": {
+    "cases": [
+      {
+        "case": "status_tool_error",
+        "passed": false,
+        "error": {
+          "type": "KeyError",
+          "message": "'mcp_close'"
+        },
+        "wall_seconds": 4.251,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 0,
+        "server_terminal": true
+      }
+    ],
+    "passed": 0,
+    "failed": 1,
+    "explicit_fake_model": true,
+    "neural_requests": 0,
+    "GPU_used": false
+  },
+  "SDK_distribution_versions_unchanged": true,
+  "all_frozen_sources_unchanged": true,
+  "owned_processes_after": [],
+  "wall_seconds": 16.032
+}

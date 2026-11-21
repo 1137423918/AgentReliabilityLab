@@ -1,0 +1,21 @@
+{
+  "case": "status_timeout",
+  "passed": false,
+  "error": {
+    "type": "AssertionError",
+    "message": "{'question': 'Check the fixed report facts in this integration control.', 'model': 'explicit-fake-mcp-agent', 'limits': {'max_requests': 8, 'max_request_bytes': 65536, 'max_total_request_bytes': 262144}, 'journal_id': 'd95cd8be1bb54329b32660727f87908b', 'evidence_verified': True, 'backend': 'externa"
+  },
+  "wall_seconds": 4.148,
+  "tool_calls": [
+    "begin_audit",
+    "list_reports",
+    "read_report",
+    "verify_assessment",
+    "audit_status",
+    "close_audit",
+    "audit_status"
+  ],
+  "audit_contexts_created": 1,
+  "close_attempts": 1,
+  "server_terminal": true
+}

@@ -20,7 +20,7 @@ $PY -m benchmarks.mcp_evidence_server \
 
 ```sh
 extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_agent_controls \
-  --code . --state /tmp/new-mcp-agent-controls \
+  --code evidence/mcp-agent --state /tmp/new-mcp-agent-controls \
   --mcp-url http://127.0.0.1:18859/mcp --owner "$PROTOCOL_SHA256"
 ```
 
@@ -45,7 +45,7 @@ extras/mcp-agent/.venv/bin/python -m benchmarks.llamaindex_mcp_audit \
 
 远端 `evidence_verified` 只确认 JSON 值/类型、来源 SHA 与本次提交回执的覆盖。接口显式保留 `verdict_truth_verified=false` 和 `free_prose_semantics_verified=false`。外部固定题目评分另外判断已知结论及必需字段覆盖；不会把模型解释中的所有语义都自动判为正确。
 
-适配器整体600秒、最多七次 Agent iteration，没有隐式重试或修复。失败时有界取消工作流并尝试查询/关闭远端上下文；传输取消可能使清理失败，结果会记录该错误。它不恢复整个 Agent 工作流，也不承诺跨进程复用进程内回执、工具恰好一次或恶意操作者防护。模型账本的持久性不等于这些能力。
+模型工作流最多600秒、七次 Agent iteration，没有隐式重试或修复。工作流退出后，清理另有最多10秒，使用新传输关闭同一个审计上下文：状态查询只占其中最多2秒，即使查询失败也尝试关闭一次。不会新建/续期审计、重放业务工具或退还未知模型请求。服务不可达、再次取消或能力已过期仍可能清理失败，结果会记录错误。它不恢复整个 Agent 工作流，也不承诺跨进程复用进程内回执、工具恰好一次或恶意操作者防护。模型账本的持久性不等于这些能力。
 
 ## 结果与来源
 
@@ -59,3 +59,25 @@ extras/mcp-agent/.venv/bin/python -m benchmarks.llamaindex_mcp_audit \
 四场脚本模型加真实 MCP 控制全部通过，共九次脚本模型 POST，零神经调用。33份共享源码保持不变，沿用已验证130项快照，没有新增核心测试或重复跑完整套件。实际9B CPU首题600秒超时：六次模型预留、五份完整HTTP200回复、一次未知仍扣额，47,710正文字节；读到四份报告回执但没有最终提交，第二题未运行。模型又读取两份非必需历史报告，不据此推断因果性能。600秒后远端能力过期，状态查询明确失败，不能声称显式关闭成功；最终两服务均退出、端口关闭、无任务遗留进程。
 
 首轮 SDK 导入180秒受限、独立120秒堆栈诊断、顺序复制900秒受限及第二轮异常类型控制失败均保留。8,999个相同文件转移到本地ext4并逐哈希核对后导入通过；缓存影响未单独隔离。只将相同接纳判定移出 MCP 异步上下文，未扩大检查接受范围、改 gold 或延长模型预算。完整原始及公开哈希、双通道字节和局限见上方结果入口。
+
+
+## 状态查询失败仍应关闭：后续实际修复
+
+此前把状态查询和关闭放在同一个 try 块内，查询失败就不会发出 close_audit。新版将清理移到工作流传输上下文退出后，用新连接保留同一个句柄；可选查询最多2秒，整个清理最多10秒，关闭只尝试一次。取消继续向调用者传播，未知模型预留继续扣额，审计TTL、接纳判定和模型额度不变。这个新连接用于清理，不恢复工作流、续期上下文或重放工具。
+
+在授权CPU服务器上，真实MCP2.3.0/LlamaIndex及TCP、报告、回执不伪造，只按脚本提供模型回复并在测试边界注入故障。九场基线6过/3失败，候选9过；基线的延迟查询本已最终关闭，过期上下文本已失效，这不表示三处资源泄漏。正常/伪造事实/无读取/纯文字四场及模型超时、外部取消原本就通过，现继续通过。
+
+首轮 status_error 返回缺少 MCP2 resultType，实际覆盖畸形响应；原源码和结果保留，没有改名重算。之后单独补一场合法 resultType=complete/isError=true 的工具错误，基线0过/1失败、新版1过，适配器字节与前九场完全相同，九场未重跑。候选共10个不同控制场景（包括此前四场）；每侧21次脚本模型POST，两个中断请求保留未知扣额。候选每场只创建一个审计并发一次关闭；过期场景正确记录失败，不声称有确认。全程零神经/GPU调用、不重跑真实9B实验、不增加130项核心快照。
+
+```sh
+# 在授权服务器，从源码根目录运行；state为新的本地目录。
+extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_cleanup_controls \
+  --code evidence/mcp-agent --state /tmp/new-mcp-cleanup-controls \
+  --owner "$PROTOCOL_SHA256"
+# 上一命令是原九场；合法业务错误另用新目录单独运行。
+extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_cleanup_controls \
+  --code evidence/mcp-agent --state /tmp/new-mcp-tool-error \
+  --owner "$PROTOCOL_SHA256" --case status_tool_error
+```
+
+控制自行启动并关闭仅loopback的测试MCP服务，不需要另启MCP服务或真实模型。环境仍用已锁定的 extras/mcp-agent，不安装新依赖。[全部结果、失败、协议和原始/公开哈希](../evidence/mcp-cleanup/README.md)以及[精确适配器补丁](../evidence/mcp-cleanup/adapter.patch)可核对。SDK可能把关闭工具异常包装成ExceptionGroup，原工具错误保留在wire中；不可达服务、再次取消和过期能力仍可能没有关闭确认。历史600秒真实模型失败保持原样。

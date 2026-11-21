@@ -1,0 +1,19 @@
+{
+  "only_changed_frozen_source": [
+    "benchmarks/llamaindex_mcp_audit.py"
+  ],
+  "unchanged_frozen_files": 44,
+  "regression_harness_identical": true,
+  "unchanged_AST": {
+    "hooks": true,
+    "list_reports": true,
+    "read_report": true,
+    "submit_assessment": true,
+    "main": true,
+    "OpenAILike": true,
+    "FunctionAgent": true,
+    "make_async_http_client": true,
+    "open_budget": true
+  },
+  "local_runtime_tests": false
+}

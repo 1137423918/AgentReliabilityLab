@@ -1,0 +1,28 @@
+{
+  "cases": [
+    {
+      "case": "status_tool_error",
+      "passed": false,
+      "error": {
+        "type": "KeyError",
+        "message": "'mcp_close'"
+      },
+      "wall_seconds": 4.251,
+      "tool_calls": [
+        "begin_audit",
+        "list_reports",
+        "read_report",
+        "verify_assessment",
+        "audit_status"
+      ],
+      "audit_contexts_created": 1,
+      "close_attempts": 0,
+      "server_terminal": true
+    }
+  ],
+  "passed": 0,
+  "failed": 1,
+  "explicit_fake_model": true,
+  "neural_requests": 0,
+  "GPU_used": false
+}

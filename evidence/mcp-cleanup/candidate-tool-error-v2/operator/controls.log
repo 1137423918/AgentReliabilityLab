@@ -1,0 +1,19 @@
+StreamableHTTP session manager started
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:40079/v1/chat/completions "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:40079/v1/chat/completions "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:40079/v1/chat/completions "HTTP/1.0 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+Tool 'audit_status' failed: 'Error executing tool audit_status: Unknown or expired audit capability'
+HTTP Request: POST http://127.0.0.1:33011/mcp "HTTP/1.1 200 OK"
+StreamableHTTP session manager shutting down
+{"case": "status_tool_error", "passed": true, "independent_status_unknown_or_expired": true, "wall_seconds": 4.061, "tool_calls": ["begin_audit", "list_reports", "read_report", "verify_assessment", "audit_status", "close_audit", "audit_status"], "audit_contexts_created": 1, "close_attempts": 1, "server_terminal": true}

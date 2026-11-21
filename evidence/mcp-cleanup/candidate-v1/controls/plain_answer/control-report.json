@@ -1,0 +1,15 @@
+{
+  "case": "plain_answer",
+  "passed": true,
+  "independent_status_unknown_or_expired": true,
+  "wall_seconds": 1.315,
+  "tool_calls": [
+    "begin_audit",
+    "audit_status",
+    "close_audit",
+    "audit_status"
+  ],
+  "audit_contexts_created": 1,
+  "close_attempts": 1,
+  "server_terminal": true
+}

@@ -1,0 +1,17 @@
+{
+  "case": "expired",
+  "passed": false,
+  "error": {
+    "type": "AssertionError",
+    "message": "['begin_audit', 'audit_status', 'audit_status']"
+  },
+  "wall_seconds": 2.488,
+  "tool_calls": [
+    "begin_audit",
+    "audit_status",
+    "audit_status"
+  ],
+  "audit_contexts_created": 1,
+  "close_attempts": 0,
+  "server_terminal": true
+}

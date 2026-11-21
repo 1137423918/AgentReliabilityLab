@@ -1,0 +1,245 @@
+diff --git a/benchmarks/llamaindex_mcp_audit.py b/benchmarks/llamaindex_mcp_audit.py
+index ace022d..3e7567d 100644
+--- a/benchmarks/llamaindex_mcp_audit.py
++++ b/benchmarks/llamaindex_mcp_audit.py
+@@ -65,6 +65,58 @@ def hooks(channel, wire):
+     return {"request": [request_hook], "response": [response_hook]}
+ 
+ 
++async def call_tool(remote, name, args=None):
++    result = await remote.call_tool(name, args or {})
++    if result.is_error:
++        raise MCPToolFailure(
++            "; ".join(x.text for x in result.content if hasattr(x, "text"))
++        )
++    if not isinstance(result.structured_content, dict):
++        raise MCPToolFailure("Remote tool has no structured object result")
++    return result.structured_content
++
++
++async def cleanup_audit(mcp_url, handle, wire, outcome):
++    """Close the same capability on a fresh transport within ten seconds.
++
++    Status is optional and gets only two seconds of that budget. Neither a
++    status error nor the workflow's canceled transport may skip the close.
++    There is one close attempt, no replay, renewal or replacement audit.
++    """
++    try:
++        async with asyncio.timeout(10):
++            async with httpx2.AsyncClient(
++                trust_env=False,
++                follow_redirects=False,
++                timeout=10,
++                event_hooks=hooks("mcp", wire),
++            ) as http:
++                async with Client(
++                    streamable_http_client(mcp_url, http_client=http), cache=None
++                ) as remote:
++                    try:
++                        async with asyncio.timeout(2):
++                            outcome["mcp_status_before_close"] = await call_tool(
++                                remote, "audit_status", {"audit_id": handle}
++                            )
++                    except Exception as exc:
++                        outcome["mcp_cleanup_status_error"] = {
++                            "type": type(exc).__name__,
++                            "message": str(exc),
++                        }
++                    closed = await call_tool(
++                        remote, "close_audit", {"audit_id": handle}
++                    )
++                    if closed != {"closed": True}:
++                        raise MCPToolFailure("Unexpected close acknowledgement")
++                    outcome["mcp_close"] = closed
++    except Exception as exc:
++        outcome["mcp_cleanup_error"] = {
++            "type": type(exc).__name__,
++            "message": str(exc),
++        }
++
++
+ async def audit_via_mcp(
+     mcp_url, state_dir, question, *, base_url, model, owner_sha256, timeout=600
+ ):
+@@ -120,18 +172,7 @@ async def audit_via_mcp(
+                 ) as remote:
+ 
+                     async def call(name, args=None):
+-                        result = await remote.call_tool(name, args or {})
+-                        if result.is_error:
+-                            raise MCPToolFailure(
+-                                "; ".join(
+-                                    x.text for x in result.content if hasattr(x, "text")
+-                                )
+-                            )
+-                        if not isinstance(result.structured_content, dict):
+-                            raise MCPToolFailure(
+-                                "Remote tool has no structured object result"
+-                            )
+-                        return result.structured_content
++                        return await call_tool(remote, name, args)
+ 
+                     listing = await remote.list_tools()
+                     if {t.name for t in listing.tools} != {
+@@ -247,88 +288,72 @@ async def audit_via_mcp(
+                         )
+                         return encoded
+ 
+-                    try:
+-                        async with make_async_http_client(budget) as model_http:
+-                            for name, handlers in hooks("model", wire).items():
+-                                model_http.event_hooks[name].extend(handlers)
+-                            llm = OpenAILike(
+-                                model=model,
+-                                api_base=base_url,
+-                                api_key=os.environ.get(
+-                                    "AGENT_LAB_EVIDENCE_KEY", "local-evidence-only"
+-                                ),
+-                                context_window=8192,
+-                                is_chat_model=True,
+-                                is_function_calling_model=True,
+-                                max_retries=0,
+-                                timeout=300,
+-                                max_tokens=1024,
+-                                temperature=0.7,
+-                                additional_kwargs={
+-                                    "top_p": 0.8,
+-                                    "presence_penalty": 1.5,
+-                                    "extra_body": {
+-                                        "top_k": 20,
+-                                        "min_p": 0.0,
+-                                        "repeat_penalty": 1.0,
+-                                    },
++                    async with make_async_http_client(budget) as model_http:
++                        for name, handlers in hooks("model", wire).items():
++                            model_http.event_hooks[name].extend(handlers)
++                        llm = OpenAILike(
++                            model=model,
++                            api_base=base_url,
++                            api_key=os.environ.get(
++                                "AGENT_LAB_EVIDENCE_KEY", "local-evidence-only"
++                            ),
++                            context_window=8192,
++                            is_chat_model=True,
++                            is_function_calling_model=True,
++                            max_retries=0,
++                            timeout=300,
++                            max_tokens=1024,
++                            temperature=0.7,
++                            additional_kwargs={
++                                "top_p": 0.8,
++                                "presence_penalty": 1.5,
++                                "extra_body": {
++                                    "top_k": 20,
++                                    "min_p": 0.0,
++                                    "repeat_penalty": 1.0,
+                                 },
+-                                async_http_client=model_http,
+-                            )
+-                            agent = FunctionAgent(
+-                                tools=[
+-                                    FunctionTool.from_defaults(async_fn=list_reports),
+-                                    FunctionTool.from_defaults(async_fn=read_report),
+-                                    FunctionTool.from_defaults(
+-                                        async_fn=submit_assessment,
+-                                        fn_schema=AuditAssessment,
+-                                        return_direct=True,
+-                                    ),
+-                                ],
+-                                llm=llm,
+-                                system_prompt=DIRECT_SYSTEM,
+-                                streaming=False,
+-                                allow_parallel_tool_calls=False,
+-                                timeout=timeout,
+-                            )
+-                            handler = None
+-                            completed = False
+-                            try:
+-                                handler = agent.run(user_msg=question, max_iterations=7)
+-                                async for event in handler.stream_events():
+-                                    events.append(
+-                                        {
+-                                            "type": type(event).__name__,
+-                                            "data": event.model_dump(mode="json"),
+-                                        }
+-                                    )
+-                                result = await handler
+-                                completed = True
+-                                outcome["raw_answer"] = str(result.response)
+-                                final_response_content = result.response.content or ""
+-                            finally:
+-                                if handler is not None and not completed:
+-                                    try:
+-                                        await asyncio.wait_for(
+-                                            handler.cancel_run(timeout=5), timeout=10
+-                                        )
+-                                    except TimeoutError:
+-                                        outcome["workflow_cancel_wait_expired"] = True
+-                    finally:
+-                        # Cleanup is bounded; deadline/transport cancellation can still prevent it.
++                            },
++                            async_http_client=model_http,
++                        )
++                        agent = FunctionAgent(
++                            tools=[
++                                FunctionTool.from_defaults(async_fn=list_reports),
++                                FunctionTool.from_defaults(async_fn=read_report),
++                                FunctionTool.from_defaults(
++                                    async_fn=submit_assessment,
++                                    fn_schema=AuditAssessment,
++                                    return_direct=True,
++                                ),
++                            ],
++                            llm=llm,
++                            system_prompt=DIRECT_SYSTEM,
++                            streaming=False,
++                            allow_parallel_tool_calls=False,
++                            timeout=timeout,
++                        )
++                        handler = None
++                        completed = False
+                         try:
+-                            async with asyncio.timeout(10):
+-                                outcome["mcp_status_before_close"] = await call(
+-                                    "audit_status", {"audit_id": handle}
++                            handler = agent.run(user_msg=question, max_iterations=7)
++                            async for event in handler.stream_events():
++                                events.append(
++                                    {
++                                        "type": type(event).__name__,
++                                        "data": event.model_dump(mode="json"),
++                                    }
+                                 )
+-                                outcome["mcp_close"] = await call(
+-                                    "close_audit", {"audit_id": handle}
+-                                )
+-                        except Exception as exc:
+-                            outcome["mcp_cleanup_error"] = {
+-                                "type": type(exc).__name__,
+-                                "message": str(exc),
+-                            }
++                            result = await handler
++                            completed = True
++                            outcome["raw_answer"] = str(result.response)
++                            final_response_content = result.response.content or ""
++                        finally:
++                            if handler is not None and not completed:
++                                try:
++                                    await asyncio.wait_for(
++                                        handler.cancel_run(timeout=5), timeout=10
++                                    )
++                                except TimeoutError:
++                                    outcome["workflow_cancel_wait_expired"] = True
+         # Decide application-level acceptance after transport task groups exit.
+         # Raising EvidenceError inside MCP's context can wrap it in ExceptionGroup.
+         if (
+@@ -345,6 +370,9 @@ async def audit_via_mcp(
+     except Exception as exc:
+         outcome["evidence_verified"] = False
+         outcome["error"] = {"type": type(exc).__name__, "message": str(exc)}
++    finally:
++        if handle is not None:
++            await cleanup_audit(mcp_url, handle, wire, outcome)
+     outcome["receipts_received"] = receipts
+     outcome["versions"] = {
+         n: importlib.metadata.version(n)

@@ -1,0 +1,17 @@
+{
+  "case": "unread_submission",
+  "passed": true,
+  "independent_status_unknown_or_expired": true,
+  "wall_seconds": 1.084,
+  "tool_calls": [
+    "begin_audit",
+    "list_reports",
+    "verify_assessment",
+    "audit_status",
+    "close_audit",
+    "audit_status"
+  ],
+  "audit_contexts_created": 1,
+  "close_attempts": 1,
+  "server_terminal": true
+}

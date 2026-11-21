@@ -1,0 +1,206 @@
+{
+  "variant": "baseline",
+  "protocol_sha256": "ed203c6f768d4ad40b4301ec22b0c1ab939d7bddd1cd763796ebf0a122c177a5",
+  "phases": [
+    {
+      "phase": "sdk-identity-before",
+      "returncode": 0,
+      "wall_seconds": 3.899,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 131203072
+    },
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 16.07,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 15138816
+    },
+    {
+      "phase": "controls",
+      "returncode": 2,
+      "wall_seconds": 27.066,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 414859264
+    },
+    {
+      "phase": "sdk-identity-after",
+      "returncode": 0,
+      "wall_seconds": 3.963,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 116785152
+    }
+  ],
+  "GPU_used": false,
+  "model_started": false,
+  "neural_requests": 0,
+  "terminal": true,
+  "controls": {
+    "cases": [
+      {
+        "case": "normal",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 5.062,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "forged_fact",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.114,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "unread_submission",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.084,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "plain_answer",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.514,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "status_error",
+        "passed": false,
+        "error": {
+          "type": "KeyError",
+          "message": "'mcp_close'"
+        },
+        "wall_seconds": 1.172,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 0,
+        "server_terminal": true
+      },
+      {
+        "case": "status_timeout",
+        "passed": false,
+        "error": {
+          "type": "AssertionError",
+          "message": "{'question': 'Check the fixed report facts in this integration control.', 'model': 'explicit-fake-mcp-agent', 'limits': {'max_requests': 8, 'max_request_bytes': 65536, 'max_total_request_bytes': 262144}, 'journal_id': 'd95cd8be1bb54329b32660727f87908b', 'evidence_verified': True, 'backend': 'externa"
+        },
+        "wall_seconds": 4.148,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "model_timeout",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 6.747,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "external_cancel",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.068,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "expired",
+        "passed": false,
+        "error": {
+          "type": "AssertionError",
+          "message": "['begin_audit', 'audit_status', 'audit_status']"
+        },
+        "wall_seconds": 2.488,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 0,
+        "server_terminal": true
+      }
+    ],
+    "passed": 6,
+    "failed": 3,
+    "explicit_fake_model": true,
+    "neural_requests": 0,
+    "GPU_used": false
+  },
+  "SDK_distribution_versions_unchanged": true,
+  "all_frozen_sources_unchanged": true,
+  "owned_processes_after": [],
+  "wall_seconds": 51.515
+}

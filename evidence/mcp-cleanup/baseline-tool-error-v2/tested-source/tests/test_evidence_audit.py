@@ -1,0 +1,211 @@
+import copy
+import hashlib
+import json
+import tempfile
+import unittest
+from pathlib import Path
+
+from agent_lab.evidence_audit import EvidenceCatalog, EvidenceError
+
+
+class EvidenceAuditTests(unittest.TestCase):
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        self.root = Path(self.tmp.name)
+        self.report = self.root / "report.json"
+        self.report.write_text(
+            json.dumps(
+                {"passed": 116, "checks": [{"passed": False}], "a/b": {"~key": "value"}}
+            )
+        )
+        self.manifest = self.root / "manifest.json"
+        self.entry = {
+            "id": "core",
+            "path": "report.json",
+            "description": "Core checks",
+            "sha256": hashlib.sha256(self.report.read_bytes()).hexdigest(),
+        }
+        self.write_manifest([self.entry])
+
+    def write_manifest(self, entries):
+        self.manifest.write_text(
+            json.dumps(
+                {
+                    "version": 1,
+                    "source_commit": "a" * 40,
+                    "source_base": "https://example.org/",
+                    "reports": entries,
+                }
+            )
+        )
+
+    def catalog(self, **kwargs):
+        return EvidenceCatalog(self.root, self.manifest, **kwargs)
+
+    def assessment(self):
+        return {
+            "claim_supported": False,
+            "explanation": "The reported total differs.",
+            "facts": [{"report_id": "core", "pointer": "/passed", "value": 116}],
+            "citations": [{"report_id": "core", "sha256": self.entry["sha256"]}],
+        }
+
+    def test_real_reads_json_pointers_and_observed_nested_citation(self):
+        catalog = self.catalog()
+        row = json.loads(catalog.read_report("core", ["/checks", "/a~1b/~0key"]))
+        self.assertEqual(
+            row["values"], {"/checks": [{"passed": False}], "/a~1b/~0key": "value"}
+        )
+        self.assertEqual(row["sha256"], self.entry["sha256"])
+        proposal = self.assessment()
+        proposal["facts"] = [
+            {"report_id": "core", "pointer": "/checks/0/passed", "value": False}
+        ]
+        self.assertTrue(catalog.verify_assessment(proposal)["read_lineage_verified"])
+        self.assertFalse(catalog.verify_assessment(proposal)["free_prose_verified"])
+
+    def test_modified_or_missing_report_stops_without_a_successful_read(self):
+        catalog = self.catalog()
+        self.report.write_text(self.report.read_text().replace("116", "203"))
+        with self.assertRaises(EvidenceError):
+            catalog.read_report("core", ["/passed"])
+        self.report.unlink()
+        with self.assertRaisesRegex(EvidenceError, "unavailable"):
+            catalog.read_report("core", ["/passed"])
+        self.assertEqual(catalog.reads, [])
+
+    def test_manifest_paths_ids_and_symlinks_rejected(self):
+        for path in ["../report.json", str(self.report), "report.txt"]:
+            with self.subTest(path=path):
+                self.write_manifest([{**self.entry, "path": path}])
+                with self.assertRaises(EvidenceError):
+                    self.catalog()
+        self.write_manifest([self.entry, self.entry])
+        with self.assertRaises(EvidenceError):
+            self.catalog()
+        self.write_manifest([self.entry])
+        original = self.root / "original.json"
+        self.report.rename(original)
+        self.report.symlink_to(original.name)
+        with self.assertRaisesRegex(EvidenceError, "symlink"):
+            self.catalog()
+
+    def test_bad_pointers_and_unknown_reports_leave_no_read_lineage(self):
+        catalog = self.catalog()
+        for pointers in [
+            [""],
+            ["/missing"],
+            ["/checks/-1"],
+            ["/checks/01"],
+            ["/~2"],
+            ["/passed", "/passed"],
+            [],
+            ["/checks/9"],
+        ]:
+            with self.subTest(pointers=pointers), self.assertRaises(EvidenceError):
+                catalog.read_report("core", pointers)
+        with self.assertRaises(EvidenceError):
+            catalog.read_report("../report.json", ["/passed"])
+        self.assertEqual(catalog.reads, [])
+
+    def test_output_overflow_is_rejected_without_truncation_or_lineage(self):
+        self.report.write_text(json.dumps({"large": "x" * 4000}))
+        self.entry["sha256"] = hashlib.sha256(self.report.read_bytes()).hexdigest()
+        self.write_manifest([self.entry])
+        catalog = self.catalog(max_output_bytes=512)
+        with self.assertRaisesRegex(EvidenceError, "byte bound"):
+            catalog.read_report("core", ["/large"])
+        self.assertEqual(catalog.reads, [])
+
+    def test_forged_values_hashes_and_unread_facts_rejected(self):
+        catalog = self.catalog()
+        with self.assertRaises(EvidenceError):
+            catalog.verify_assessment(self.assessment())
+        catalog.read_report("core", ["/passed"])
+        self.assertTrue(
+            catalog.verify_assessment(self.assessment())["fact_values_verified"]
+        )
+        for wrong in [203, True, "116", float("nan")]:
+            proposal = self.assessment()
+            proposal["facts"][0]["value"] = wrong
+            with self.subTest(value=repr(wrong)), self.assertRaises(EvidenceError):
+                catalog.verify_assessment(proposal)
+        proposal = self.assessment()
+        proposal["citations"][0]["sha256"] = "0" * 64
+        with self.assertRaises(EvidenceError):
+            catalog.verify_assessment(proposal)
+        proposal = self.assessment()
+        proposal["facts"].append(copy.deepcopy(proposal["facts"][0]))
+        with self.assertRaises(EvidenceError):
+            catalog.verify_assessment(proposal)
+        proposal = self.assessment()
+        proposal["facts"][0] = {
+            "report_id": "core",
+            "pointer": "/checks/0/passed",
+            "value": False,
+        }
+        with self.assertRaises(EvidenceError):
+            catalog.verify_assessment(proposal)
+
+
+class AuditCaseGradingTests(unittest.TestCase):
+    def test_parent_fact_covers_nested_fields_without_forcing_output_layout(self):
+        from benchmarks.evidence_audit_case import grade_case
+
+        case = {
+            "expected_supported": False,
+            "required_facts": {"gpu": {"/run/started": False, "/run/requests": 0}},
+        }
+        result = {
+            "evidence_verified": True,
+            "assessment": {
+                "claim_supported": False,
+                "facts": [
+                    {
+                        "report_id": "gpu",
+                        "pointer": "/run",
+                        "value": {"started": False, "requests": 0},
+                    }
+                ],
+            },
+        }
+        self.assertTrue(grade_case(result, case)["case_passed"])
+        result["assessment"]["facts"] = [
+            {"report_id": "gpu", "pointer": "/run/started", "value": False},
+            {"report_id": "gpu", "pointer": "/run/requests", "value": 0},
+        ]
+        self.assertTrue(grade_case(result, case)["case_passed"])
+
+    def test_missing_wrong_typed_or_unverified_facts_cannot_pass(self):
+        from benchmarks.evidence_audit_case import grade_case
+
+        case = {
+            "expected_supported": False,
+            "required_facts": {"core": {"/count": 116}},
+        }
+        for value in [True, "116", 203]:
+            result = {
+                "evidence_verified": True,
+                "assessment": {
+                    "claim_supported": False,
+                    "facts": [
+                        {"report_id": "core", "pointer": "/count", "value": value}
+                    ],
+                },
+            }
+            with self.subTest(value=value):
+                self.assertFalse(grade_case(result, case)["case_passed"])
+        self.assertFalse(grade_case({}, case)["case_passed"])
+        result = {
+            "evidence_verified": False,
+            "assessment": {
+                "claim_supported": False,
+                "facts": [{"report_id": "core", "pointer": "/count", "value": 116}],
+            },
+        }
+        self.assertFalse(grade_case(result, case)["case_passed"])
+
+
+if __name__ == "__main__":
+    unittest.main()
