@@ -1,0 +1,66 @@
+{"stage": "service_ready", "port": 18847}
+{"stage": "running", "seconds": 0, "requests_reserved": null}
+{"stage": "running", "seconds": 30, "requests_reserved": 1}
+{"stage": "running", "seconds": 60, "requests_reserved": 1}
+{"stage": "running", "seconds": 90, "requests_reserved": 1}
+{"stage": "running", "seconds": 120, "requests_reserved": 1}
+{"stage": "running", "seconds": 150, "requests_reserved": 1}
+{"stage": "running", "seconds": 180, "requests_reserved": 1}
+{"stage": "running", "seconds": 210, "requests_reserved": 1}
+{"stage": "running", "seconds": 240, "requests_reserved": 1}
+{"stage": "running", "seconds": 270, "requests_reserved": 1}
+{"stage": "running", "seconds": 300, "requests_reserved": 1}
+{"stage": "running", "seconds": 330, "requests_reserved": 1}
+{"stage": "running", "seconds": 360, "requests_reserved": 1}
+{"stage": "running", "seconds": 390, "requests_reserved": 1}
+{"stage": "running", "seconds": 420, "requests_reserved": 1}
+{"stage": "running", "seconds": 450, "requests_reserved": 1}
+{"stage": "running", "seconds": 480, "requests_reserved": 1}
+{"stage": "running", "seconds": 510, "requests_reserved": 2}
+{"stage": "running", "seconds": 540, "requests_reserved": 2}
+{"stage": "running", "seconds": 570, "requests_reserved": 2}
+{"stage": "running", "seconds": 600, "requests_reserved": 2}
+{"stage": "running", "seconds": 630, "requests_reserved": 2}
+{"stage": "running", "seconds": 660, "requests_reserved": 2}
+{"stage": "running", "seconds": 690, "requests_reserved": 2}
+{"stage": "running", "seconds": 720, "requests_reserved": 2}
+{"stage": "running", "seconds": 750, "requests_reserved": 2}
+{"stage": "running", "seconds": 780, "requests_reserved": 2}
+{"stage": "running", "seconds": 810, "requests_reserved": 2}
+{"stage": "running", "seconds": 840, "requests_reserved": 2}
+{"stage": "running", "seconds": 870, "requests_reserved": 2}
+{"stage": "running", "seconds": 900, "requests_reserved": 2}
+{"stage": "running", "seconds": 930, "requests_reserved": 2}
+{"stage": "running", "seconds": 960, "requests_reserved": 2}
+{"stage": "running", "seconds": 992, "requests_reserved": 2}
+{"stage": "running", "seconds": 1022, "requests_reserved": 3}
+{"stage": "running", "seconds": 1052, "requests_reserved": 3}
+{"stage": "running", "seconds": 1082, "requests_reserved": 3}
+{"stage": "running", "seconds": 1112, "requests_reserved": 3}
+{"stage": "running", "seconds": 1142, "requests_reserved": 3}
+{"stage": "running", "seconds": 1172, "requests_reserved": 3}
+{"stage": "running", "seconds": 1202, "requests_reserved": 3}
+{"stage": "running", "seconds": 1232, "requests_reserved": 3}
+{"stage": "running", "seconds": 1262, "requests_reserved": 3}
+{"stage": "running", "seconds": 1292, "requests_reserved": 3}
+{"stage": "running", "seconds": 1322, "requests_reserved": 3}
+{"stage": "running", "seconds": 1352, "requests_reserved": 3}
+{"stage": "running", "seconds": 1382, "requests_reserved": 3}
+{"stage": "running", "seconds": 1412, "requests_reserved": 3}
+{"stage": "running", "seconds": 1442, "requests_reserved": 3}
+{"stage": "running", "seconds": 1472, "requests_reserved": 4}
+{"stage": "running", "seconds": 1502, "requests_reserved": 4}
+{"stage": "running", "seconds": 1532, "requests_reserved": 4}
+{"stage": "running", "seconds": 1562, "requests_reserved": 4}
+{"stage": "running", "seconds": 1592, "requests_reserved": 4}
+{"stage": "running", "seconds": 1622, "requests_reserved": 4}
+{"stage": "running", "seconds": 1652, "requests_reserved": 4}
+{"stage": "running", "seconds": 1682, "requests_reserved": 4}
+{"stage": "running", "seconds": 1712, "requests_reserved": 5}
+{"stage": "running", "seconds": 1742, "requests_reserved": 5}
+{"stage": "running", "seconds": 1772, "requests_reserved": 5}
+{"stage": "driver_exited", "returncode": 0}
+{"stage": "trial_started", "protocol_sha256": "a7f02c1aa53a5bebb2a23cf3109041e1f5375cd92f81a7b28a3212bab440d953"}
+{"stage": "trial_finished", "verified_trials": 0, "returncode": -9, "timed_out": true, "duration_seconds": 1800.035}
+
+{"stage": "cleanup", "port_open": false, "native_child_present": false}

@@ -1,0 +1,77 @@
+{
+  "stage": 25,
+  "scope": "One newly declared normal real-model CPU maintenance trial with supplementary first-read Python declaration indexes; same public symptom task, model, sampling, protected acceptance and per-request/case/HTTP budgets as Stage22. Not a held-out benchmark or general success rate.",
+  "declared_utc": "2026-11-21T00:02:47.854813+00:00",
+  "trials": [
+    "normal"
+  ],
+  "task": "tasks/deepagents-path-model-read-index.json",
+  "task_file_sha256": "ccf6a9768a7bb940727b29883389ede6cea5f4cfa0b2dc5968a16e77f1acef08",
+  "task_sha256": "ba4e03c6b411450c44417660ef67efbd31f2c3b94eaec2a475aed84c8c9a255b",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "source_project_base": "7355b5aa790e2e8dcc7176651ef506638105c7d1",
+  "source_sha256": {
+    "agent_lab/worker.py": "03450801baa290f5fd9d4ce92ae1a7298cddd51768771955cf6c0526ca6900a4",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803"
+  },
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "alias": "agentlab-qwen35-9b-q4km",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954"
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "service": {
+    "host": "127.0.0.1",
+    "port": 18847,
+    "threads": 4,
+    "gpu_layers": 0,
+    "device": "none",
+    "thinking": false,
+    "context_window": 32768,
+    "nice": 19,
+    "address_space_gib": 48,
+    "rss_guard_gib": 36,
+    "available_memory_admission_gib": 64,
+    "health_ready_deadline_seconds": 300,
+    "identity_probe_deadline_seconds": 180,
+    "driver_watchdog_seconds": 1950
+  },
+  "acceptance_unchanged": true,
+  "prompt_unchanged": true,
+  "limitations": [
+    "One known public task and one sampled trajectory, not independent benchmark tasks or a success-rate estimate.",
+    "The read-index flag adds middleware output and a generic system hint; both change together, and host load can differ. No single-factor causal attribution or general latency/token/repair gain.",
+    "No reference edit plan, scripted model responses, retrospective extension, repair rounds or retries.",
+    "Frozen original, candidate and independent-contract groups overlap and are reused; no summed coverage claim.",
+    "Only saved replies have complete model-reported usage; interrupted work may consume additional compute.",
+    "No fault injection or new recovery claim in this normal neural trial; earlier reference SIGKILL controls remain separate."
+  ],
+  "hypothesis": "The previous model selected read_file but ignored a separate inspect_python tool. Supplementary versioned declarations through that selected entry point may cause focused reads and enable a valid repair; benefit unproven.",
+  "behavioral_observations": [
+    "whether saved successful read_file results contain a current-source versioned index",
+    "subsequent model-selected file paths, offsets and limits; report literal choices rather than infer use from tool availability",
+    "number and syntax of actual virtual edits, exported patch, protected acceptance result",
+    "durable HTTP reservations including canceled in-flight work; persisted usage only, no full-compute/billing extrapolation"
+  ]
+}

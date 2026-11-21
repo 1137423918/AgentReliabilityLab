@@ -1,0 +1,131 @@
+{
+  "normalization": "Private server paths/terminal formatting in allowlisted logs and receipts only. Source hashes and live metadata are byte-identical. No SQLite, full conversations, prompts, arguments, source contents or environment secrets published.",
+  "files": [
+    {
+      "path": "execution.json",
+      "original_sha256": "4ca9b7a64dbf0e8ddebc2ddd90b025fa23f218982c9f5db03ec711f8c73622eb",
+      "public_sha256": "8546a81fc68fe9ce03998d8f2ab54ef723cc2635aaf4000156e5a6946138f113",
+      "public_bytes": 1396
+    },
+    {
+      "path": "source.json",
+      "original_sha256": "092af6761e070441d97d8c771011c820a7115b6bcaa82b6f17bcd3c9836eff7f",
+      "public_sha256": "092af6761e070441d97d8c771011c820a7115b6bcaa82b6f17bcd3c9836eff7f",
+      "public_bytes": 478
+    },
+    {
+      "path": "wheel-audit.json",
+      "original_sha256": "8ec0f07cfce87e6ad59da1cc9554c089caa8cf4f65a5c18c8d0b02b392f9a0d0",
+      "public_sha256": "8ec0f07cfce87e6ad59da1cc9554c089caa8cf4f65a5c18c8d0b02b392f9a0d0",
+      "public_bytes": 448
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "c6baf9e7ffba0b9a6b192db45a09fca2739c29d7e122580670161b77fed19437",
+      "public_sha256": "c6baf9e7ffba0b9a6b192db45a09fca2739c29d7e122580670161b77fed19437",
+      "public_bytes": 906
+    },
+    {
+      "path": "indexed-trial-live.json",
+      "original_sha256": "d0f4a43287e7e7fa64296e1582cbf6a15f7e4a1700dfa186dc450b39740ad0b1",
+      "public_sha256": "d0f4a43287e7e7fa64296e1582cbf6a15f7e4a1700dfa186dc450b39740ad0b1",
+      "public_bytes": 1308
+    },
+    {
+      "path": "wheel-entrypoint-live.json",
+      "original_sha256": "7af7054a527c7da6cc8a09ca67f89ed2bb2bf1f77393473340131f4aa1fa9e33",
+      "public_sha256": "7af7054a527c7da6cc8a09ca67f89ed2bb2bf1f77393473340131f4aa1fa9e33",
+      "public_bytes": 504
+    },
+    {
+      "path": "wheel-entrypoint-live.stdout.json",
+      "original_sha256": "2a820521f89486cc525b4b915fef5e64596ae2204c96a921f8445dfc1a7c6461",
+      "public_sha256": "2a820521f89486cc525b4b915fef5e64596ae2204c96a921f8445dfc1a7c6461",
+      "public_bytes": 1308
+    },
+    {
+      "path": "wheel-entrypoint-live.stderr.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "historical-inspections.json",
+      "original_sha256": "ac7577f61465eb366a136d52f4a4ce11ef3371d0f952a36787fee043162937ed",
+      "public_sha256": "ac7577f61465eb366a136d52f4a4ce11ef3371d0f952a36787fee043162937ed",
+      "public_bytes": 5276
+    },
+    {
+      "path": "historical-adk-diagnostic.json",
+      "original_sha256": "d2830924c2757bb7bd1aa9c54b3fe7e11197a1218a47376d688de11bed65a9f5",
+      "public_sha256": "d2830924c2757bb7bd1aa9c54b3fe7e11197a1218a47376d688de11bed65a9f5",
+      "public_bytes": 3017
+    },
+    {
+      "path": "final-execution.json",
+      "original_sha256": "f99b9f4ed25d430dc0ccc353aebac736184a8308056cdbac8408d4d8f223f956",
+      "public_sha256": "5cb47f3da737e57d3a0b96d362dbccbe4941baff67614c36801c40a71e1796e0",
+      "public_bytes": 1039
+    },
+    {
+      "path": "preflight/initial-source.json",
+      "original_sha256": "84193d4e376a88519b21228d5152b3921b4efe2f1e12480e5a202a2f97b3c0c9",
+      "public_sha256": "84193d4e376a88519b21228d5152b3921b4efe2f1e12480e5a202a2f97b3c0c9",
+      "public_bytes": 478
+    },
+    {
+      "path": "preflight/initial-focused.log",
+      "original_sha256": "e7401c39035748fdbd5833e99113c0f1f7f3a1444fb94efad4030b574e3d57f4",
+      "public_sha256": "e7401c39035748fdbd5833e99113c0f1f7f3a1444fb94efad4030b574e3d57f4",
+      "public_bytes": 1378
+    },
+    {
+      "path": "preflight/initial-lint.log",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_bytes": 19
+    },
+    {
+      "path": "preflight/initial-full.log",
+      "original_sha256": "e1b61e88ee5c8ee8e4ec024fe1ba93fcbad54be25b151cc53ef3486f93c04292",
+      "public_sha256": "e1b61e88ee5c8ee8e4ec024fe1ba93fcbad54be25b151cc53ef3486f93c04292",
+      "public_bytes": 14307
+    },
+    {
+      "path": "preflight/initial-format.log",
+      "original_sha256": "96a977f329ec3c59092d40e041a019b49dcf03ca04055e177aa0ccb8c27234df",
+      "public_sha256": "96a977f329ec3c59092d40e041a019b49dcf03ca04055e177aa0ccb8c27234df",
+      "public_bytes": 20
+    },
+    {
+      "path": "logs/format.log",
+      "original_sha256": "413a709001976657cb743636fd34e48fc41d8d302d665460d3f874b3313da127",
+      "public_sha256": "413a709001976657cb743636fd34e48fc41d8d302d665460d3f874b3313da127",
+      "public_bytes": 19
+    },
+    {
+      "path": "logs/lint.log",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "public_bytes": 19
+    },
+    {
+      "path": "logs/focused.log",
+      "original_sha256": "ea7747fcf45b92cb10221ad47230e86acdebdab182980143eb4b7fe26cb944cf",
+      "public_sha256": "ea7747fcf45b92cb10221ad47230e86acdebdab182980143eb4b7fe26cb944cf",
+      "public_bytes": 1378
+    },
+    {
+      "path": "logs/full.log",
+      "original_sha256": "30e6e300c3db435315aacd969127f1b3f215ac8914694a0fb0b8332f549c24e1",
+      "public_sha256": "30e6e300c3db435315aacd969127f1b3f215ac8914694a0fb0b8332f549c24e1",
+      "public_bytes": 14307
+    },
+    {
+      "path": "logs/wheel.log",
+      "original_sha256": "17a686bd7260e41c9f7f0b501b872af3797cc72e277d2bcbb8c26a3f97c4cfeb",
+      "public_sha256": "3fbaaad2b37343f5a28538657188ec882968801baf88faf8a4929513cd3e3a53",
+      "public_bytes": 4159
+    }
+  ]
+}

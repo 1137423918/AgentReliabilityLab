@@ -1,8 +1,8 @@
 # 给已有文件读取附上当前 Python 定义索引
 
-真实的 [30 分钟 CPU 维护尝试](long-cpu-maintenance.md)保存了五次模型回复和六条工具结果，却没有使用已提供的 `inspect_python`。五次 `read_file` 多次读取无关的前部代码，没有产生编辑或补丁。这一失败促成一个待检验的假设：把有限的定位信息放进模型已经选择的读取入口，可能比再提供一个工具更容易被使用。尚未运行新神经模型，不能声称定位或修复成功率提高。
+真实的 [30 分钟 CPU 维护尝试](long-cpu-maintenance.md)保存了五次模型回复和六条工具结果，却没有使用已提供的 `inspect_python`。五次 `read_file` 多次读取无关的前部代码，没有产生编辑或补丁。这一失败促成一个待检验的假设：把有限的定位信息放进模型已经选择的读取入口，可能比再提供一个工具更容易被使用。接口阶段尚未运行新神经模型；后续[真实CPU试验](indexed-cpu-maintenance.md)已执行并失败，不能声称定位或修复成功率提高。
 
-任务的 `required_features` 显式添加 `python_read_index_v1` 才启用。它通过工具中间件给 `read_file` 的首屏补充索引，工具参数和完整原始页保持不变；不新增工具 schema，也不改文件读取本身的校验、分页或错误。新任务预设为 [deepagents-path-model-read-index.json](../tasks/deepagents-path-model-read-index.json)，仅准备，未推理。
+任务的 `required_features` 显式添加 `python_read_index_v1` 才启用。它通过工具中间件给 `read_file` 的首屏补充索引，工具参数和完整原始页保持不变；不新增工具 schema，也不改文件读取本身的校验、分页或错误。新任务预设为 [deepagents-path-model-read-index.json](../tasks/deepagents-path-model-read-index.json)，在接口阶段准备，后续独立实跑见上文；任务字节按声明保留。
 
 ## 返回内容和限制
 
@@ -29,6 +29,6 @@ python benchmarks/read_index_recovery.py --repo /path/to/pinned-deepagents --out
 
 使用固定 Deep Agents `744a797e3b9495539ca35571eeffd112a205f5c8`，验收环境的 Python 放在 PATH；运行器环境安装本项目及固定依赖。输出目录必须不存在。内部预声明 [协议](../benchmarks/read_index_protocol.json)将故障前观察上限 180 秒、每次续跑 600 秒和整个对照控制器 2400 秒分开记录；不能把故障前加续跑称为合计 600 秒。
 
-新索引会增加完整请求的上下文，尚未测量新真实模型的 token、净耗时、费用或修复效果。旧 `inspect_python` 与历史失败证据保留；新入口并不证明模型会依据索引跳转。
+新索引会增加完整请求的上下文，后续试验记录了保存回复的usage和失败，但没有净耗时、费用或修复收益证据。旧 `inspect_python` 与历史失败证据保留；新入口并不证明模型会依据索引跳转。
 
 实现接口参考 [LangChain 工具中间件](https://docs.langchain.com/oss/python/langchain/middleware/custom)。实际兼容性以服务器固定安装版本及集成检查为准。

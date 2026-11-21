@@ -1,0 +1,11 @@
+{
+  "wheel_name": "agent_reliability_lab-0.2.0-py3-none-any.whl",
+  "wheel_bytes": 29842,
+  "wheel_sha256": "f68a008440f32dff398428c1d629f717b2f7fce1ee8c381c66151ddff06740b5",
+  "inspection_module_sha256": "f4171cd773e2c6d302e823915d4224cf1a886552e4c27279df2e6114ecc497dc",
+  "entry_points": {
+    "agent-lab-inspect": "agent_lab.inspect_run:main",
+    "agent-lab-worker": "agent_lab.worker:main"
+  },
+  "wheel_entrypoint_runtime_executed": true
+}

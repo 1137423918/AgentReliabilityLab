@@ -1,0 +1,9 @@
+{
+  "returncode": 0,
+  "wall_seconds": 3.6515616881661117,
+  "wheel_sha256": "f68a008440f32dff398428c1d629f717b2f7fce1ee8c381c66151ddff06740b5",
+  "inspection_module_sha256": "f4171cd773e2c6d302e823915d4224cf1a886552e4c27279df2e6114ecc497dc",
+  "entrypoint": "agent_lab.inspect_run:main",
+  "method": "Pure Python wheel extracted; callable loaded from that wheel console_scripts metadata, dependencies reused. No global or old environment installation.",
+  "model_endpoint_deliberately_unusable": true
+}

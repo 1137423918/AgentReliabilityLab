@@ -1,0 +1,136 @@
+{
+  "scope": "Read-only existing reference checkpoints, not new maintenance experiments or acceptance. Main data/files and WAL frame bytes unchanged; SQLite may create empty WAL/SHM coordination files.",
+  "new_neural_requests": 0,
+  "new_acceptance_runs": 0,
+  "cases": [
+    {
+      "case": "deepagents-indexed-checkpoint",
+      "returncode": 0,
+      "wall_seconds": 1.9803520012646914,
+      "protected_run_files_byte_unchanged": true,
+      "protected_file_sha256": {
+        "checkpoints.sqlite": "22dd1b855291a7569e999c7885d12541cab4ef0f98fae3ab97a9c7a651029bd4",
+        "manifest.json": "d8a66201e002556642d7d9890c5ba9b96a9f85557753c97390c60e62a9d46f4b",
+        "result.json": "b43488061d10ccff6031942ee6faea8650d82cc0e742b52dd0cca0140a5b9234",
+        "patch.diff": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406"
+      },
+      "wal_frame_bytes_unchanged": true,
+      "wal_bytes": 0,
+      "empty_wal_coordination_file_created": false,
+      "inspection": {
+        "schema_version": 1,
+        "scope": "Owned worker checkpoint metadata; no model, tool, resume or acceptance command executed.",
+        "consistency": "Checkpoint: one read transaction. Artifact observations are separate and can change during a live run.",
+        "task_sha256": "7bb9f54a01cccb00bccecc6aad9e4f2144bc8ecd2a0d3bed65b80babcff0c9bf",
+        "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+        "model_invoked": false,
+        "checkpoint_step": 11,
+        "pending": [],
+        "pending_omitted": 0,
+        "messages": 10,
+        "model_turns": 5,
+        "tool_results": 4,
+        "indexed_read_result_markers": 2,
+        "tool_errors": 0,
+        "tool_call_counts": [
+          {
+            "name": "edit_file",
+            "name_truncated": false,
+            "count": 2
+          },
+          {
+            "name": "read_file",
+            "name_truncated": false,
+            "count": 2
+          }
+        ],
+        "tool_names_omitted": 0,
+        "virtual_file_count": 2,
+        "unexpected_virtual_file_count": 0,
+        "virtual_files": [
+          {
+            "path": "/libs/deepagents/deepagents/backends/utils.py",
+            "path_truncated": false,
+            "allowed_by_task": true,
+            "bytes": 47192,
+            "lines": 1250,
+            "sha256": "e03e2276c9187d3b0449f1eea1dbe8f147a1a0a563adc668a6b4cf6489f40d66"
+          },
+          {
+            "path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+            "path_truncated": false,
+            "allowed_by_task": true,
+            "bytes": 32269,
+            "lines": 739,
+            "sha256": "48088312bd7d1ed5e403da3c843fe7f514b999217c42c7e747bc052d8dedd5f8"
+          }
+        ],
+        "virtual_files_omitted": 0,
+        "artifacts_observed_not_revalidated": {
+          "patch.diff": true,
+          "verification.json": true,
+          "result.json": true
+        },
+        "observed_result_status": "ready_for_review"
+      }
+    },
+    {
+      "case": "adk-reference-checkpoint",
+      "returncode": 0,
+      "wall_seconds": 1.874093996360898,
+      "protected_run_files_byte_unchanged": true,
+      "protected_file_sha256": {
+        "checkpoints.sqlite": "2e18fe3bf28816e6b90c4f1738928b70d84546d082f80e85bcbc66a613a162cf",
+        "manifest.json": "8934feaa7eea21a67c48deb1553d90ebb3066036ce4c0a3593c6b3b6d5967697",
+        "result.json": "7892ee427b8e6fbdd7116c6ef0b555ad37de38b1a5eb52de41c8cda7fc51c46c",
+        "patch.diff": "9378be9a8b8262c5573ca5ce23164f93dce6dd0eb9bb878604c9b574eb6cccb3"
+      },
+      "wal_frame_bytes_unchanged": true,
+      "wal_bytes": 0,
+      "empty_wal_coordination_file_created": false,
+      "inspection": {
+        "schema_version": 1,
+        "scope": "Owned worker checkpoint metadata; no model, tool, resume or acceptance command executed.",
+        "consistency": "Checkpoint: one read transaction. Artifact observations are separate and can change during a live run.",
+        "task_sha256": "f1c8bcebf95a35f3de2a90058d58353409813134ba9175b742991c5a6002841c",
+        "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+        "model_invoked": false,
+        "checkpoint_step": 9,
+        "pending": [],
+        "pending_omitted": 0,
+        "messages": 8,
+        "model_turns": 4,
+        "tool_results": 3,
+        "indexed_read_result_markers": 0,
+        "tool_errors": 0,
+        "tool_call_counts": [
+          {
+            "name": "edit_file",
+            "name_truncated": false,
+            "count": 3
+          }
+        ],
+        "tool_names_omitted": 0,
+        "virtual_file_count": 1,
+        "unexpected_virtual_file_count": 0,
+        "virtual_files": [
+          {
+            "path": "/src/google/adk/artifacts/file_artifact_service.py",
+            "path_truncated": false,
+            "allowed_by_task": true,
+            "bytes": 33023,
+            "lines": 995,
+            "sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a"
+          }
+        ],
+        "virtual_files_omitted": 0,
+        "artifacts_observed_not_revalidated": {
+          "patch.diff": true,
+          "verification.json": true,
+          "result.json": true
+        },
+        "observed_result_status": "ready_for_review"
+      }
+    }
+  ]
+}

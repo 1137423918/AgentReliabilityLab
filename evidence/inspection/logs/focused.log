@@ -1,0 +1,13 @@
+test_bounded_unicode_metadata_excludes_prompt_arguments_and_source (test_inspect_run.InspectRunTests.test_bounded_unicode_metadata_excludes_prompt_arguments_and_source) ... ok
+test_database_and_run_artifacts_remain_byte_identical (test_inspect_run.InspectRunTests.test_database_and_run_artifacts_remain_byte_identical) ... ok
+test_empty_checkpoint_and_cli_error_do_not_claim_success (test_inspect_run.InspectRunTests.test_empty_checkpoint_and_cli_error_do_not_claim_success) ... ok
+test_inspection_never_invokes_declared_or_scripted_models_or_commands (test_inspect_run.InspectRunTests.test_inspection_never_invokes_declared_or_scripted_models_or_commands) ... ok
+test_live_graph_delta_messages_and_edited_virtual_revision (test_inspect_run.InspectRunTests.test_live_graph_delta_messages_and_edited_virtual_revision) ... ok
+test_missing_database_does_not_create_it (test_inspect_run.InspectRunTests.test_missing_database_does_not_create_it) ... ok
+test_result_status_is_an_observation_not_acceptance_revalidation (test_inspect_run.InspectRunTests.test_result_status_is_an_observation_not_acceptance_revalidation) ... ok
+test_tampered_manifest_is_rejected_before_opening_database (test_inspect_run.InspectRunTests.test_tampered_manifest_is_rejected_before_opening_database) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.687s
+
+OK

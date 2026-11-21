@@ -1,0 +1,630 @@
+{
+  "scope": "One newly declared normal real-model CPU maintenance trial with supplementary first-read Python declaration indexes; same public symptom task, model, sampling, protected acceptance and per-request/case/HTTP budgets as Stage22. Not a held-out benchmark or general success rate.",
+  "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+  "protocol_sha256": "a7f02c1aa53a5bebb2a23cf3109041e1f5375cd92f81a7b28a3212bab440d953",
+  "task_sha256": "ba4e03c6b411450c44417660ef67efbd31f2c3b94eaec2a475aed84c8c9a255b",
+  "source_sha256": {
+    "agent_lab/worker.py": "03450801baa290f5fd9d4ce92ae1a7298cddd51768771955cf6c0526ca6900a4",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803"
+  },
+  "source_project_base": "7355b5aa790e2e8dcc7176651ef506638105c7d1",
+  "model_inference": true,
+  "gpu_used": false,
+  "fault_injection": false,
+  "core_unit_tests_rerun": false,
+  "planned_trials": 1,
+  "verified_trials": 0,
+  "case": {
+    "case": "normal",
+    "checkpoint_interruption": null,
+    "returncode": -9,
+    "timed_out": true,
+    "duration_seconds": 1800.035,
+    "verified_patch": false,
+    "result": null,
+    "state": {
+      "status": "running"
+    }
+  },
+  "outcome": "case_wall_deadline_exceeded",
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "alias": "agentlab-qwen35-9b-q4km",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954"
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "model_turns": 4,
+  "tool_results": 5,
+  "tool_names": [
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file",
+    "read_file"
+  ],
+  "model_tool_choices": [
+    {
+      "id": "yF1yRbRL8x1S3FwSjCXwA1PsUVSBNWMu",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path"
+      ],
+      "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+      "file_path": "/libs/deepagents/deepagents/backends/utils.py"
+    },
+    {
+      "id": "6TjK6DAJ6L8VvyCyCxqyBNr7uKnYRZMF",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path"
+      ],
+      "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+      "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+    },
+    {
+      "id": "3sW3fvPMSvAPrp2gh3l39owd9LxlvsO5",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "00cc4ff188e2f7b6652145df2e8587219358c301fe0bce5f14e843b263d68a82",
+      "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+      "offset": 100,
+      "limit": 200
+    },
+    {
+      "id": "v9Qdgm4Y8mazbZm9MlXfix1918e85N0d",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "0f10a0f574c06194560e959bd51f5b13bbd3c08cc0ff41c35e076a40a5acd460",
+      "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+      "offset": 820,
+      "limit": 100
+    },
+    {
+      "id": "chfXcJsTdvTGHHM9MckglRLJga5tXNQB",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "cb9777c8c5eaf5820f718c044ee265888cae0bd0dbd944126ecd9cddcd955955",
+      "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+      "offset": 920,
+      "limit": 100
+    }
+  ],
+  "annotated_read_results": 2,
+  "annotations": [
+    {
+      "index": 2,
+      "tool_call_id": "yF1yRbRL8x1S3FwSjCXwA1PsUVSBNWMu",
+      "index_payload": {
+        "version": 1,
+        "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+        "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+        "file_lines": 1250,
+        "columns": [
+          "name",
+          "start_line",
+          "end_line",
+          "kind",
+          "name_truncated"
+        ],
+        "definitions": [
+          [
+            "InvalidGlobPatternError",
+            166,
+            174,
+            "class",
+            false
+          ],
+          [
+            "compile_grep_include_glob",
+            251,
+            331,
+            "def",
+            false
+          ],
+          [
+            "_normalize_content",
+            334,
+            352,
+            "def",
+            false
+          ],
+          [
+            "sanitize_tool_call_id",
+            355,
+            360,
+            "def",
+            false
+          ],
+          [
+            "format_content_with_line_numbers",
+            363,
+            413,
+            "def",
+            false
+          ],
+          [
+            "_format_source_block",
+            416,
+            435,
+            "def",
+            false
+          ],
+          [
+            "check_empty_content",
+            438,
+            449,
+            "def",
+            false
+          ],
+          [
+            "_get_file_type",
+            452,
+            463,
+            "def",
+            false
+          ],
+          [
+            "_get_backend_read_file_type",
+            477,
+            495,
+            "def",
+            false
+          ],
+          [
+            "file_data_to_string",
+            498,
+            510,
+            "def",
+            false
+          ],
+          [
+            "create_file_data",
+            513,
+            535,
+            "def",
+            false
+          ],
+          [
+            "update_file_data",
+            538,
+            557,
+            "def",
+            false
+          ],
+          [
+            "_copy_file_data_with_content",
+            560,
+            582,
+            "def",
+            false
+          ],
+          [
+            "normalize_read_bounds",
+            585,
+            620,
+            "def",
+            false
+          ],
+          [
+            "slice_read_response",
+            623,
+            694,
+            "def",
+            false
+          ],
+          [
+            "perform_string_replacement",
+            697,
+            754,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            757,
+            758,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            761,
+            762,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            765,
+            780,
+            "def",
+            false
+          ],
+          [
+            "_glob_anchor",
+            789,
+            807,
+            "def",
+            false
+          ],
+          [
+            "_paths_overlap",
+            810,
+            819,
+            "def",
+            false
+          ],
+          [
+            "to_posix_path",
+            822,
+            843,
+            "def",
+            false
+          ],
+          [
+            "validate_path",
+            846,
+            909,
+            "def",
+            false
+          ],
+          [
+            "_normalize_path",
+            912,
+            944,
+            "def",
+            false
+          ],
+          [
+            "_filter_files_by_path",
+            947,
+            974,
+            "def",
+            false
+          ],
+          [
+            "_relative_to_root",
+            977,
+            994,
+            "def",
+            false
+          ],
+          [
+            "_glob_search_files",
+            997,
+            1056,
+            "def",
+            false
+          ],
+          [
+            "_format_grep_results",
+            1059,
+            1085,
+            "def",
+            false
+          ],
+          [
+            "grep_matches_from_files",
+            1091,
+            1139,
+            "def",
+            false
+          ],
+          [
+            "build_grep_results_dict",
+            1142,
+            1147,
+            "def",
+            false
+          ],
+          [
+            "format_grep_matches",
+            1150,
+            1164,
+            "def",
+            false
+          ],
+          [
+            "_format_grep_with_context",
+            1167,
+            1196,
+            "def",
+            false
+          ],
+          [
+            "_group_adjacent_lines",
+            1199,
+            1207,
+            "def",
+            false
+          ],
+          [
+            "_looks_like_regex",
+            1224,
+            1226,
+            "def",
+            false
+          ]
+        ],
+        "omitted_definitions": 1
+      },
+      "annotation_bytes": 2004,
+      "original_reply_bytes": 3378,
+      "original_reply_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff",
+      "source_matches_known_initial_or_final_revision": true,
+      "original_page_matches_known_revision": true
+    },
+    {
+      "index": 3,
+      "tool_call_id": "6TjK6DAJ6L8VvyCyCxqyBNr7uKnYRZMF",
+      "index_payload": {
+        "version": 1,
+        "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+        "source_sha256": "8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8",
+        "file_lines": 733,
+        "columns": [
+          "name",
+          "start_line",
+          "end_line",
+          "kind",
+          "name_truncated"
+        ],
+        "definitions": [
+          [
+            "TestLooksLikeRegex",
+            27,
+            77,
+            "class",
+            false
+          ],
+          [
+            "TestToPosixPath",
+            80,
+            109,
+            "class",
+            false
+          ],
+          [
+            "TestValidatePath",
+            112,
+            190,
+            "class",
+            false
+          ],
+          [
+            "TestGlobSearchFiles",
+            193,
+            305,
+            "class",
+            false
+          ],
+          [
+            "TestCompileGrepIncludeGlobRefusals",
+            308,
+            329,
+            "class",
+            false
+          ],
+          [
+            "TestGrepIncludeGlob",
+            332,
+            380,
+            "class",
+            false
+          ],
+          [
+            "test_get_file_type_returns_text_for_unknown_extensions",
+            386,
+            389,
+            "def",
+            false
+          ],
+          [
+            "test_get_file_type_does_not_recognize_mkv",
+            392,
+            394,
+            "def",
+            false
+          ],
+          [
+            "test_get_backend_read_file_type_forces_mkv_to_binary",
+            397,
+            399,
+            "def",
+            false
+          ],
+          [
+            "test_get_backend_read_file_type_matches_get_file_type_for_other_extensions",
+            402,
+            405,
+            "def",
+            false
+          ],
+          [
+            "test_get_file_type_non_text_values_are_valid_content_block_types",
+            408,
+            412,
+            "def",
+            false
+          ],
+          [
+            "TestPerformStringReplacement",
+            415,
+            529,
+            "class",
+            false
+          ],
+          [
+            "TestSliceReadResponse",
+            532,
+            679,
+            "class",
+            false
+          ],
+          [
+            "TestGrepMaxCount",
+            682,
+            713,
+            "class",
+            false
+          ],
+          [
+            "TestGrepRefusedGlobIsAResultNotAnException",
+            716,
+            733,
+            "class",
+            false
+          ]
+        ],
+        "omitted_definitions": 0
+      },
+      "annotation_bytes": 1377,
+      "original_reply_bytes": 2984,
+      "original_reply_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d",
+      "source_matches_known_initial_or_final_revision": true,
+      "original_page_matches_known_revision": true
+    }
+  ],
+  "virtual_changes": [],
+  "exported_patch": false,
+  "acceptance_run": false,
+  "requests_reserved": 5,
+  "request_body_bytes": 143169,
+  "unknown_in_flight_reservations_still_charged": 1,
+  "persisted_response_usage": {
+    "scope": "Only persisted top-level replies with model-reported counters. In-flight, canceled or unsaved work may consume additional compute; no full-trial compute or billed-cost claim.",
+    "responses": [
+      {
+        "message_index": 1,
+        "input_tokens": 2780,
+        "output_tokens": 101,
+        "total_tokens": 2881,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 4,
+        "input_tokens": 5796,
+        "output_tokens": 82,
+        "total_tokens": 5878,
+        "input_token_details": {
+          "cache_read": 2880
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 6,
+        "input_tokens": 8198,
+        "output_tokens": 84,
+        "total_tokens": 8282,
+        "input_token_details": {
+          "cache_read": 5877
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 8,
+        "input_tokens": 9269,
+        "output_tokens": 113,
+        "total_tokens": 9382,
+        "input_token_details": {
+          "cache_read": 8281
+        },
+        "output_token_details": {}
+      }
+    ],
+    "input_tokens": 26043,
+    "cache_read_tokens": 17038,
+    "output_tokens": 380,
+    "input_minus_cache_read_tokens": 9005
+  },
+  "native_logged_prefill_counts": [
+    2780,
+    2916,
+    2321,
+    988
+  ],
+  "persisted_new_input_matches_native_logged_prefill_sum": true,
+  "native_log_scope_note": "Native timing records may include canceled or unsaved work; equality with saved response counters is informational, not a full-compute or billing guarantee.",
+  "service_stopped": true,
+  "shutdown": {
+    "returncode": -9,
+    "guard_reason": null,
+    "forced_cleanup": true,
+    "peak_sampled_rss_bytes": 10484686848
+  },
+  "limitations": [
+    "One known public task and one sampled trajectory, not independent benchmark tasks or a success-rate estimate.",
+    "The read-index flag adds middleware output and a generic system hint; both change together, and host load can differ. No single-factor causal attribution or general latency/token/repair gain.",
+    "No reference edit plan, scripted model responses, retrospective extension, repair rounds or retries.",
+    "Frozen original, candidate and independent-contract groups overlap and are reused; no summed coverage claim.",
+    "Only saved replies have complete model-reported usage; interrupted work may consume additional compute.",
+    "No fault injection or new recovery claim in this normal neural trial; earlier reference SIGKILL controls remain separate.",
+    "Post-start findmnt reports nfs4 for original run state; SQLite WAL does not support network filesystems. These are empirical single-host observations, not a supported persistence deployment. Future runs require node-local state and admission checks."
+  ],
+  "inspect_python_calls": 0,
+  "post_start_storage_probe": {
+    "trial_state_filesystem": "nfs4",
+    "node_local_tmp_filesystem": "ext4",
+    "live_observers_used_same_host": true,
+    "sqlite_wal_network_filesystem_supported": false,
+    "action": "Keep current predeclared trial immutable and bounded. Do not move a live WAL database. Future worker runs must use supported node-local state; add filesystem admission and retain portable artifacts separately.",
+    "source": "https://sqlite.org/wal.html#read_only_databases"
+  }
+}

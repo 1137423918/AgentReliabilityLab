@@ -1,0 +1,20 @@
+{
+  "scope": "One newly declared normal real-model CPU maintenance trial with supplementary first-read Python declaration indexes; same public symptom task, model, sampling, protected acceptance and per-request/case/HTTP budgets as Stage22. Not a held-out benchmark or general success rate.",
+  "protocol_sha256": "a7f02c1aa53a5bebb2a23cf3109041e1f5375cd92f81a7b28a3212bab440d953",
+  "task_sha256": "ba4e03c6b411450c44417660ef67efbd31f2c3b94eaec2a475aed84c8c9a255b",
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": -9,
+      "timed_out": true,
+      "duration_seconds": 1800.035,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "running"
+      }
+    }
+  ],
+  "verified_trials": 0
+}

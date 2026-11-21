@@ -10,6 +10,7 @@ local-model = ["langchain-openai>=1.8.5,<2"]
 
 [project.scripts]
 agent-lab-worker = "agent_lab.worker:main"
+agent-lab-inspect = "agent_lab.inspect_run:main"
 
 [build-system]
 requires = ["setuptools>=75"]

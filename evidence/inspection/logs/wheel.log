@@ -1,0 +1,77 @@
+Building wheel...
+running egg_info
+creating agent_reliability_lab.egg-info
+writing agent_reliability_lab.egg-info/PKG-INFO
+writing dependency_links to agent_reliability_lab.egg-info/dependency_links.txt
+writing entry points to agent_reliability_lab.egg-info/entry_points.txt
+writing requirements to agent_reliability_lab.egg-info/requires.txt
+writing top-level names to agent_reliability_lab.egg-info/top_level.txt
+writing manifest file 'agent_reliability_lab.egg-info/SOURCES.txt'
+reading manifest file 'agent_reliability_lab.egg-info/SOURCES.txt'
+writing manifest file 'agent_reliability_lab.egg-info/SOURCES.txt'
+running bdist_wheel
+running build
+running build_py
+creating build/lib
+copying audit.py -> build/lib
+copying compare.py -> build/lib
+copying prepare.py -> build/lib
+creating build/lib/agent_lab
+copying agent_lab/source_tools.py -> build/lib/agent_lab
+copying agent_lab/worker.py -> build/lib/agent_lab
+copying agent_lab/__init__.py -> build/lib/agent_lab
+copying agent_lab/verification.py -> build/lib/agent_lab
+copying agent_lab/models.py -> build/lib/agent_lab
+copying agent_lab/request_budget.py -> build/lib/agent_lab
+copying agent_lab/read_index.py -> build/lib/agent_lab
+copying agent_lab/inspect_run.py -> build/lib/agent_lab
+copying agent_lab/repair.py -> build/lib/agent_lab
+running egg_info
+writing agent_reliability_lab.egg-info/PKG-INFO
+writing dependency_links to agent_reliability_lab.egg-info/dependency_links.txt
+writing entry points to agent_reliability_lab.egg-info/entry_points.txt
+writing requirements to agent_reliability_lab.egg-info/requires.txt
+writing top-level names to agent_reliability_lab.egg-info/top_level.txt
+reading manifest file 'agent_reliability_lab.egg-info/SOURCES.txt'
+writing manifest file 'agent_reliability_lab.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+copying build/lib/prepare.py -> build/bdist.linux-x86_64/wheel/.
+copying build/lib/audit.py -> build/bdist.linux-x86_64/wheel/.
+creating build/bdist.linux-x86_64/wheel/agent_lab
+copying build/lib/agent_lab/repair.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/read_index.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/worker.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/__init__.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/verification.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/inspect_run.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/source_tools.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/request_budget.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/agent_lab/models.py -> build/bdist.linux-x86_64/wheel/./agent_lab
+copying build/lib/compare.py -> build/bdist.linux-x86_64/wheel/.
+running install_egg_info
+Copying agent_reliability_lab.egg-info to build/bdist.linux-x86_64/wheel/./agent_reliability_lab-0.2.0-py3.11.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/agent_reliability_lab-0.2.0.dist-info/WHEEL
+creating '<server-workspace>/outputs/inspection-20261121/dist/.tmp-922d4wiu/agent_reliability_lab-0.2.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'audit.py'
+adding 'compare.py'
+adding 'prepare.py'
+adding 'agent_lab/__init__.py'
+adding 'agent_lab/inspect_run.py'
+adding 'agent_lab/models.py'
+adding 'agent_lab/read_index.py'
+adding 'agent_lab/repair.py'
+adding 'agent_lab/request_budget.py'
+adding 'agent_lab/source_tools.py'
+adding 'agent_lab/verification.py'
+adding 'agent_lab/worker.py'
+adding 'agent_reliability_lab-0.2.0.dist-info/METADATA'
+adding 'agent_reliability_lab-0.2.0.dist-info/WHEEL'
+adding 'agent_reliability_lab-0.2.0.dist-info/entry_points.txt'
+adding 'agent_reliability_lab-0.2.0.dist-info/top_level.txt'
+adding 'agent_reliability_lab-0.2.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built <server-workspace>/outputs/inspection-20261121/dist/agent_reliability_lab-0.2.0-py3-none-any.whl

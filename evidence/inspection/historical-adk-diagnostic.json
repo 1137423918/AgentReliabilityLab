@@ -1,0 +1,91 @@
+{
+  "returncode": 0,
+  "before": {
+    "checkpoints.sqlite": {
+      "sha256": "2e18fe3bf28816e6b90c4f1738928b70d84546d082f80e85bcbc66a613a162cf",
+      "mtime_ns": 1795214380419411777
+    },
+    "checkpoints.sqlite-wal": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1795220828883215891
+    },
+    "manifest.json": {
+      "sha256": "8934feaa7eea21a67c48deb1553d90ebb3066036ce4c0a3593c6b3b6d5967697",
+      "mtime_ns": 1795214376507224826
+    },
+    "result.json": {
+      "sha256": "7892ee427b8e6fbdd7116c6ef0b555ad37de38b1a5eb52de41c8cda7fc51c46c",
+      "mtime_ns": 1795214498477053371
+    },
+    "patch.diff": {
+      "sha256": "9378be9a8b8262c5573ca5ce23164f93dce6dd0eb9bb878604c9b574eb6cccb3",
+      "mtime_ns": 1795214426857630909
+    }
+  },
+  "after": {
+    "checkpoints.sqlite": {
+      "sha256": "2e18fe3bf28816e6b90c4f1738928b70d84546d082f80e85bcbc66a613a162cf",
+      "mtime_ns": 1795214380419411777
+    },
+    "checkpoints.sqlite-wal": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1795220828883215891
+    },
+    "manifest.json": {
+      "sha256": "8934feaa7eea21a67c48deb1553d90ebb3066036ce4c0a3593c6b3b6d5967697",
+      "mtime_ns": 1795214376507224826
+    },
+    "result.json": {
+      "sha256": "7892ee427b8e6fbdd7116c6ef0b555ad37de38b1a5eb52de41c8cda7fc51c46c",
+      "mtime_ns": 1795214498477053371
+    },
+    "patch.diff": {
+      "sha256": "9378be9a8b8262c5573ca5ce23164f93dce6dd0eb9bb878604c9b574eb6cccb3",
+      "mtime_ns": 1795214426857630909
+    }
+  },
+  "summary": {
+    "schema_version": 1,
+    "scope": "Owned worker checkpoint metadata; no model, tool, resume or acceptance command executed.",
+    "consistency": "Checkpoint: one read transaction. Artifact observations are separate and can change during a live run.",
+    "task_sha256": "f1c8bcebf95a35f3de2a90058d58353409813134ba9175b742991c5a6002841c",
+    "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+    "model_invoked": false,
+    "checkpoint_step": 9,
+    "pending": [],
+    "pending_omitted": 0,
+    "messages": 8,
+    "model_turns": 4,
+    "tool_results": 3,
+    "indexed_read_result_markers": 0,
+    "tool_errors": 0,
+    "tool_call_counts": [
+      {
+        "name": "edit_file",
+        "name_truncated": false,
+        "count": 3
+      }
+    ],
+    "tool_names_omitted": 0,
+    "virtual_file_count": 1,
+    "unexpected_virtual_file_count": 0,
+    "virtual_files": [
+      {
+        "path": "/src/google/adk/artifacts/file_artifact_service.py",
+        "path_truncated": false,
+        "allowed_by_task": true,
+        "bytes": 33023,
+        "lines": 995,
+        "sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a"
+      }
+    ],
+    "virtual_files_omitted": 0,
+    "artifacts_observed_not_revalidated": {
+      "patch.diff": true,
+      "verification.json": true,
+      "result.json": true
+    },
+    "observed_result_status": "ready_for_review"
+  },
+  "stderr": ""
+}

@@ -1,0 +1,585 @@
+{
+  "scope": "Read-only reconstruction of saved graph state after declared real-model indexed CPU trial; no model or tool invoked.",
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 4,
+  "tool_results": 5,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "be6d266a7ee9bd5097030eb49dffa98fbe0bc8f8dd2d588dbc72a28e99712baa",
+      "usage": {
+        "input_tokens": 2780,
+        "output_tokens": 101,
+        "total_tokens": 2881,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 168,
+      "tools": [
+        {
+          "id": "yF1yRbRL8x1S3FwSjCXwA1PsUVSBNWMu",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "13eea7f028f74464e96009f97d3b7e8b8c484a6c2fea33f3c6a937a224caf700",
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py"
+        },
+        {
+          "id": "6TjK6DAJ6L8VvyCyCxqyBNr7uKnYRZMF",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "dc87b7d0e8b5a2ae707bd07873ce1a51f10b01a22ed4d56d463ec5722fa1b669",
+          "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "ed86ad29e48203500af2a5bd67596f89d2b337cd36e085d7c43cadeb70b4b167",
+      "name": "read_file",
+      "tool_call_id": "yF1yRbRL8x1S3FwSjCXwA1PsUVSBNWMu",
+      "status": "success",
+      "result_bytes": 5382,
+      "result_sha256": "dc1918b04c607e4e006434b08a7199fa92489eb054447f1ae5f90a6134fcc1be",
+      "result_preview": "<python_read_index_v1>\n{\"version\":1,\"file_path\":\"/libs/deepagents/deepagents/backends/utils.py\",\"source_sha256\":\"6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c\",\"file_lines\":1250,\"columns\":[\"name\",\"start_line\",\"end_line\",\"",
+      "index_payload": {
+        "version": 1,
+        "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+        "source_sha256": "6b62cedbf9f951d54188c61da238dbba790d75eb6924a4f133bd440ff7e27b9c",
+        "file_lines": 1250,
+        "columns": [
+          "name",
+          "start_line",
+          "end_line",
+          "kind",
+          "name_truncated"
+        ],
+        "definitions": [
+          [
+            "InvalidGlobPatternError",
+            166,
+            174,
+            "class",
+            false
+          ],
+          [
+            "compile_grep_include_glob",
+            251,
+            331,
+            "def",
+            false
+          ],
+          [
+            "_normalize_content",
+            334,
+            352,
+            "def",
+            false
+          ],
+          [
+            "sanitize_tool_call_id",
+            355,
+            360,
+            "def",
+            false
+          ],
+          [
+            "format_content_with_line_numbers",
+            363,
+            413,
+            "def",
+            false
+          ],
+          [
+            "_format_source_block",
+            416,
+            435,
+            "def",
+            false
+          ],
+          [
+            "check_empty_content",
+            438,
+            449,
+            "def",
+            false
+          ],
+          [
+            "_get_file_type",
+            452,
+            463,
+            "def",
+            false
+          ],
+          [
+            "_get_backend_read_file_type",
+            477,
+            495,
+            "def",
+            false
+          ],
+          [
+            "file_data_to_string",
+            498,
+            510,
+            "def",
+            false
+          ],
+          [
+            "create_file_data",
+            513,
+            535,
+            "def",
+            false
+          ],
+          [
+            "update_file_data",
+            538,
+            557,
+            "def",
+            false
+          ],
+          [
+            "_copy_file_data_with_content",
+            560,
+            582,
+            "def",
+            false
+          ],
+          [
+            "normalize_read_bounds",
+            585,
+            620,
+            "def",
+            false
+          ],
+          [
+            "slice_read_response",
+            623,
+            694,
+            "def",
+            false
+          ],
+          [
+            "perform_string_replacement",
+            697,
+            754,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            757,
+            758,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            761,
+            762,
+            "def",
+            false
+          ],
+          [
+            "truncate_if_too_long",
+            765,
+            780,
+            "def",
+            false
+          ],
+          [
+            "_glob_anchor",
+            789,
+            807,
+            "def",
+            false
+          ],
+          [
+            "_paths_overlap",
+            810,
+            819,
+            "def",
+            false
+          ],
+          [
+            "to_posix_path",
+            822,
+            843,
+            "def",
+            false
+          ],
+          [
+            "validate_path",
+            846,
+            909,
+            "def",
+            false
+          ],
+          [
+            "_normalize_path",
+            912,
+            944,
+            "def",
+            false
+          ],
+          [
+            "_filter_files_by_path",
+            947,
+            974,
+            "def",
+            false
+          ],
+          [
+            "_relative_to_root",
+            977,
+            994,
+            "def",
+            false
+          ],
+          [
+            "_glob_search_files",
+            997,
+            1056,
+            "def",
+            false
+          ],
+          [
+            "_format_grep_results",
+            1059,
+            1085,
+            "def",
+            false
+          ],
+          [
+            "grep_matches_from_files",
+            1091,
+            1139,
+            "def",
+            false
+          ],
+          [
+            "build_grep_results_dict",
+            1142,
+            1147,
+            "def",
+            false
+          ],
+          [
+            "format_grep_matches",
+            1150,
+            1164,
+            "def",
+            false
+          ],
+          [
+            "_format_grep_with_context",
+            1167,
+            1196,
+            "def",
+            false
+          ],
+          [
+            "_group_adjacent_lines",
+            1199,
+            1207,
+            "def",
+            false
+          ],
+          [
+            "_looks_like_regex",
+            1224,
+            1226,
+            "def",
+            false
+          ]
+        ],
+        "omitted_definitions": 1
+      },
+      "annotation_bytes": 2004,
+      "original_reply_bytes": 3378,
+      "original_reply_sha256": "c614998e464db82c0148afc1b124a1586107bad7a919856f0eca2d4e54f22fff",
+      "source_matches_known_initial_or_final_revision": true,
+      "original_page_matches_known_revision": true
+    },
+    {
+      "index": 3,
+      "role": "tool",
+      "message_sha256": "085632abe790c8391386f27ae3c9d0e896c08445fb6bdeb530bd9edd86c99bd8",
+      "name": "read_file",
+      "tool_call_id": "6TjK6DAJ6L8VvyCyCxqyBNr7uKnYRZMF",
+      "status": "success",
+      "result_bytes": 4361,
+      "result_sha256": "9ced7a998b00f639a8e614931e362b41a0f5ca877ceeff0f1092f847fa6fedaa",
+      "result_preview": "<python_read_index_v1>\n{\"version\":1,\"file_path\":\"/libs/deepagents/tests/unit_tests/backends/test_utils.py\",\"source_sha256\":\"8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8\",\"file_lines\":733,\"columns\":[\"name\",\"start_line\",\"e",
+      "index_payload": {
+        "version": 1,
+        "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+        "source_sha256": "8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8",
+        "file_lines": 733,
+        "columns": [
+          "name",
+          "start_line",
+          "end_line",
+          "kind",
+          "name_truncated"
+        ],
+        "definitions": [
+          [
+            "TestLooksLikeRegex",
+            27,
+            77,
+            "class",
+            false
+          ],
+          [
+            "TestToPosixPath",
+            80,
+            109,
+            "class",
+            false
+          ],
+          [
+            "TestValidatePath",
+            112,
+            190,
+            "class",
+            false
+          ],
+          [
+            "TestGlobSearchFiles",
+            193,
+            305,
+            "class",
+            false
+          ],
+          [
+            "TestCompileGrepIncludeGlobRefusals",
+            308,
+            329,
+            "class",
+            false
+          ],
+          [
+            "TestGrepIncludeGlob",
+            332,
+            380,
+            "class",
+            false
+          ],
+          [
+            "test_get_file_type_returns_text_for_unknown_extensions",
+            386,
+            389,
+            "def",
+            false
+          ],
+          [
+            "test_get_file_type_does_not_recognize_mkv",
+            392,
+            394,
+            "def",
+            false
+          ],
+          [
+            "test_get_backend_read_file_type_forces_mkv_to_binary",
+            397,
+            399,
+            "def",
+            false
+          ],
+          [
+            "test_get_backend_read_file_type_matches_get_file_type_for_other_extensions",
+            402,
+            405,
+            "def",
+            false
+          ],
+          [
+            "test_get_file_type_non_text_values_are_valid_content_block_types",
+            408,
+            412,
+            "def",
+            false
+          ],
+          [
+            "TestPerformStringReplacement",
+            415,
+            529,
+            "class",
+            false
+          ],
+          [
+            "TestSliceReadResponse",
+            532,
+            679,
+            "class",
+            false
+          ],
+          [
+            "TestGrepMaxCount",
+            682,
+            713,
+            "class",
+            false
+          ],
+          [
+            "TestGrepRefusedGlobIsAResultNotAnException",
+            716,
+            733,
+            "class",
+            false
+          ]
+        ],
+        "omitted_definitions": 0
+      },
+      "annotation_bytes": 1377,
+      "original_reply_bytes": 2984,
+      "original_reply_sha256": "0e873d0a571481f2568f2bfcb80cfc3aa6cb5ce956314af304c789bd2266f14d",
+      "source_matches_known_initial_or_final_revision": true,
+      "original_page_matches_known_revision": true
+    },
+    {
+      "index": 4,
+      "role": "ai",
+      "message_sha256": "72d9965cb576124f04aef310f19026d6469c75c331c4025b338fe8db19f516aa",
+      "usage": {
+        "input_tokens": 5796,
+        "output_tokens": 82,
+        "total_tokens": 5878,
+        "input_token_details": {
+          "cache_read": 2880
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 110,
+      "tools": [
+        {
+          "id": "3sW3fvPMSvAPrp2gh3l39owd9LxlvsO5",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "00cc4ff188e2f7b6652145df2e8587219358c301fe0bce5f14e843b263d68a82",
+          "file_path": "/libs/deepagents/tests/unit_tests/backends/test_utils.py",
+          "offset": 100,
+          "limit": 200
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "role": "tool",
+      "message_sha256": "2bd243556605d936aa1f8e824f0f407e3500c882fffd79bf46343d464605f7a5",
+      "name": "read_file",
+      "tool_call_id": "3sW3fvPMSvAPrp2gh3l39owd9LxlvsO5",
+      "status": "success",
+      "result_bytes": 8980,
+      "result_sha256": "5e13b927f831d0619f31efacd12905f5d726057a909624b4e72147725460fe9c",
+      "result_preview": "@@ lines 101-300 of 733 | next offset 300 @@\n            \"unc\",\n            \"empty\",\n            \"root\",\n            \"bare-backslashes\",\n            \"posix-absolute\",\n        ],\n    )\n    def test_normalizes(self, input_path: str, expected:"
+    },
+    {
+      "index": 6,
+      "role": "ai",
+      "message_sha256": "da490ff51303f22b1d712e7f765debc548d097d0f5211b115d5fa99df410b4ba",
+      "usage": {
+        "input_tokens": 8198,
+        "output_tokens": 84,
+        "total_tokens": 8282,
+        "input_token_details": {
+          "cache_read": 5877
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 112,
+      "tools": [
+        {
+          "id": "v9Qdgm4Y8mazbZm9MlXfix1918e85N0d",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "0f10a0f574c06194560e959bd51f5b13bbd3c08cc0ff41c35e076a40a5acd460",
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "offset": 820,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "role": "tool",
+      "message_sha256": "dd3be01f225528bf45824c9ffd4c788d46b5c7838745a4c6cb6b34744d6aea8c",
+      "name": "read_file",
+      "tool_call_id": "v9Qdgm4Y8mazbZm9MlXfix1918e85N0d",
+      "status": "success",
+      "result_bytes": 4069,
+      "result_sha256": "6d4edeb2ddd4b1df6dc805ec0c5fcb14f59c2096b8e0b3952cfe89af24bb1eac",
+      "result_preview": "@@ lines 821-920 of 1250 | next offset 920 @@\n\ndef to_posix_path(path: str) -> str:\n    r\"\"\"Normalize backslash separators to forward slashes for `PurePosixPath` use.\n\n    Backends running on Windows return OS-native paths using backslashes"
+    },
+    {
+      "index": 8,
+      "role": "ai",
+      "message_sha256": "32ac0502e252276fe691e045f5730545ae477523f943d4a46fa1affd3f99bfd3",
+      "usage": {
+        "input_tokens": 9269,
+        "output_tokens": 113,
+        "total_tokens": 9382,
+        "input_token_details": {
+          "cache_read": 8281
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 250,
+      "tools": [
+        {
+          "id": "chfXcJsTdvTGHHM9MckglRLJga5tXNQB",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "cb9777c8c5eaf5820f718c044ee265888cae0bd0dbd944126ecd9cddcd955955",
+          "file_path": "/libs/deepagents/deepagents/backends/utils.py",
+          "offset": 920,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 9,
+      "role": "tool",
+      "message_sha256": "846b4fda594b6f9736a618345782aa8591a9d7796e55b0885a29234b798b1429",
+      "name": "read_file",
+      "tool_call_id": "chfXcJsTdvTGHHM9MckglRLJga5tXNQB",
+      "status": "success",
+      "result_bytes": 3564,
+      "result_sha256": "b97c31771b9021a0190245245ab41bdb2da95139b3be8a9f3e0d48dce33013c8",
+      "result_preview": "@@ lines 921-1020 of 1250 | next offset 1020 @@\n    Returns:\n        Normalized path starting with / (without trailing slash unless it's root)\n\n    Raises:\n        ValueError: If path is invalid (empty string after strip)\n\n    Example:\n    "
+    }
+  ],
+  "virtual_changes": [],
+  "annotated_read_results": 2,
+  "exported_patch": false,
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

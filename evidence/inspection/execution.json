@@ -1,0 +1,66 @@
+[
+  {
+    "stage": "format",
+    "returncode": 0,
+    "wall_seconds": 4.635710934177041,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "format",
+      "agent_lab/inspect_run.py",
+      "tests/test_inspect_run.py"
+    ]
+  },
+  {
+    "stage": "lint",
+    "returncode": 0,
+    "wall_seconds": 0.18038828950375319,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "check",
+      "agent_lab/inspect_run.py",
+      "tests/test_inspect_run.py"
+    ]
+  },
+  {
+    "stage": "focused",
+    "returncode": 0,
+    "wall_seconds": 3.1326534878462553,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_inspect_run.py",
+      "-v"
+    ]
+  },
+  {
+    "stage": "full",
+    "returncode": 0,
+    "wall_seconds": 222.76209424901754,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  },
+  {
+    "stage": "wheel",
+    "returncode": 0,
+    "wall_seconds": 12.351920031942427,
+    "argv": [
+      "<server-workspace>/tools/uv-x86_64-unknown-linux-gnu/uv",
+      "build",
+      "--wheel",
+      "--out-dir",
+      "<server-workspace>/outputs/inspection-20261121/dist"
+    ]
+  }
+]
