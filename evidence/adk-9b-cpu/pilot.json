@@ -1,0 +1,21 @@
+{
+  "scope": "One new normal real-model ADK CPU trajectory using the previously pinned LMStudio-community Qwen3.5-9B text-only Q4_K_M artifact, inventory-scoped tools and unchanged protected acceptance. Not a held-out benchmark or success-rate estimate.",
+  "protocol_sha256": "c99e6f7ad9976d60fd23aae66bab63237f58a696d602b26d6d6b7f19dbdaaba1",
+  "task_sha256": "a58ac6cd634e5c7fa662aa90a7d79cac2de003e203480e1a1365c62d805b3807",
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": 2,
+      "timed_out": false,
+      "duration_seconds": 1721.383,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "RequestBudgetExhausted"
+      }
+    }
+  ],
+  "verified_trials": 0
+}

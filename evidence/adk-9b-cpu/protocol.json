@@ -1,0 +1,127 @@
+{
+  "trials": [
+    "normal"
+  ],
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "service": {
+    "host": "127.0.0.1",
+    "port": 18850,
+    "threads": 4,
+    "gpu_layers": 0,
+    "device": "none",
+    "thinking": false,
+    "context_window": 32768,
+    "nice": 19,
+    "address_space_gib": 48,
+    "rss_guard_gib": 36,
+    "available_memory_admission_gib": 64,
+    "health_ready_deadline_seconds": 300,
+    "identity_probe_deadline_seconds": 180,
+    "driver_watchdog_seconds": 1950
+  },
+  "stage": 30,
+  "scope": "One new normal real-model ADK CPU trajectory using the previously pinned LMStudio-community Qwen3.5-9B text-only Q4_K_M artifact, inventory-scoped tools and unchanged protected acceptance. Not a held-out benchmark or success-rate estimate.",
+  "declared_utc": "2026-11-21T03:52:53.584225+00:00",
+  "task": "tasks/adk-artifact-delete-model-9b-cpu.json",
+  "task_file_sha256": "8a80c48075f6a923f26fdef587ecc434e5c67e8861246f18abdf187172723889",
+  "task_sha256": "a58ac6cd634e5c7fa662aa90a7d79cac2de003e203480e1a1365c62d805b3807",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "source_project_base": "0892198cfb2b53ce4d4e0c954c1a622f0e445134",
+  "source_sha256": {
+    "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56"
+  },
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "publisher_claimed_base_model": "Qwen/Qwen3.5-9B",
+    "reference_source_metadata_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "exact_quantizer_source_weight_revision": null,
+    "alias": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "precision": "LMStudio-community text-only GGUF Q4_K_M",
+    "model_card": "https://huggingface.co/Qwen/Qwen3.5-9B"
+  },
+  "acceptance_unchanged_from_prepared_adk_task": true,
+  "acceptance_sha256": "49d7b2d07a4fdd4ab5fc24d8c50cf60d2840279a5b0e7b37a3c72f4fbbeb8b2d",
+  "original_task_file_sha256": "7c5d4a2374ecfb46a4ace2cbd6e653800f6ed7b24373691aa69bb2f7c834a07f",
+  "hypothesis": "With the same complete-file ADK inventory and protected acceptance, the already pinned9B artifact plus its recommended non-thinking presence penalty may progress from reading to a valid edit. Prior4B trajectories never edited and one omitted a mandatory source hash. Benefit unproven; model/template/penalty change together.",
+  "limitations": [
+    "One known public defect and one newly declared trajectory; not held out, independent tasks or a general success rate.",
+    "Model family, quantization artifact, template and presence penalty change together; host load varies. No isolated parameter-count, latency, token or cost attribution.",
+    "Exact source weight revision used by quantizer is not independently established; reference official source revision identifies metadata only. Existing artifact/license/provenance limits remain.",
+    "Output1536tokens and32K service context are resource limits, not the model card longer-output benchmark setting.",
+    "Original ADK1863pass26expected-failure group/four independent filesystem contracts are reused, not new tests.",
+    "No reference edit plan, scripted neural responses, retry, repair round, fault injection or retrospective quota/deadline extension.",
+    "Same4CPU/nice19/64GiB memory admission/48GiB address space/36GiB RSS guards, no GPU.",
+    "Only saved replies provide complete usage; canceled/unsaved work may consume extra compute.",
+    "No new core tests, unsupported NFS WAL, migration claim or source-hash relaxation."
+  ],
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-q4km",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "storage": {
+    "active_state_filesystem": "ext4",
+    "local_root_path_sha256": "555e3fe1e55414025d62279c8e2658063ee491c77c63839d1fd79429ad1e2aab",
+    "metadata_and_read_only_code_filesystem": "nfs4",
+    "checkpoint_state_on_network_storage": false,
+    "private_database_publication": false
+  },
+  "model_and_sampling_unchanged": false,
+  "previous_focused_protocol_sha256": "64d7120b963c09cfe8836e867e2dd55a61001464e90f7dd015cff85816bf3917",
+  "engineering_evidence": {
+    "report": "evidence/file-inventory/report.json",
+    "report_sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a",
+    "full_checks_passed": 106,
+    "focused_checks_included": 6,
+    "wheel_sha256": "725b0d247525b2e4cb7f39762da51bb0875842a8c2b142e9604450b6961dbd24"
+  },
+  "prompt_unchanged_from_inventory_4b_trial": true,
+  "previous_inventory_protocol_sha256": "21788468bde286aa77812fe6e42953fa35df4104ba20820c4ddbe60918c73386"
+}

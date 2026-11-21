@@ -1,0 +1,348 @@
+{
+  "scope": "Read-only reconstruction of saved graph state after declared real-model inventory-scoped ADK CPU trial; no model or tool invoked.",
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 8,
+  "tool_results": 8,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "94519f86be17c4f68848d06710d9833ec8f07cf024aff696ce7256689b27da57",
+      "usage": {
+        "input_tokens": 2717,
+        "output_tokens": 63,
+        "total_tokens": 2780,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 160,
+      "tools": [
+        {
+          "id": "3bq18Z7MAR5UR3mmayiqcxnklaK8Z5Ba",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "cd081c814e75df1ae5939f5942b19a61d4eaf686ac6be14174dbf0c900a42d6c",
+      "name": "read_file",
+      "tool_call_id": "3bq18Z7MAR5UR3mmayiqcxnklaK8Z5Ba",
+      "status": "success",
+      "result_bytes": 3327,
+      "result_sha256": "1e2edd74aafde9b01f499c1164056f702f70ba18a0ec649f147337f5afe30518",
+      "result_preview": "@@ lines 1-100 of 978 | next offset 100 @@\n# Copyright 2026 Google LLC\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the Lic"
+    },
+    {
+      "index": 3,
+      "role": "ai",
+      "message_sha256": "d3454e43ed5996a1f4c5049c9e69cd85ffe1473ee150583c4759c9f3127898bd",
+      "usage": {
+        "input_tokens": 3618,
+        "output_tokens": 78,
+        "total_tokens": 3696,
+        "input_token_details": {
+          "cache_read": 2779
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 81,
+      "tools": [
+        {
+          "id": "hbjOoR9lZY39nKqfAOttpNY7LnxVLSM8",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "aaea6febd4005638a943ec42ab4b911441dc023f2d4b4631d93cd0385c4b2f28",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 100,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "role": "tool",
+      "message_sha256": "4a173aab92aa8f48aa2c2b1b06f8145428b7edb311c3eeda683d2584c052ab23",
+      "name": "read_file",
+      "tool_call_id": "hbjOoR9lZY39nKqfAOttpNY7LnxVLSM8",
+      "status": "success",
+      "result_bytes": 3776,
+      "result_sha256": "b47397398b92bb09d36b76010c4b90c14b5f2d8f6a5c6fa6cd5eae5cff2b0335",
+      "result_preview": "@@ lines 101-200 of 978 | next offset 200 @@\n\n\ndef _umask_derived_file_mode() -> int:\n  \"\"\"Returns the mode a normally created file would get from the umask.\n\n  Sampled once at import: reading the umask requires temporarily setting it,\n  wh"
+    },
+    {
+      "index": 5,
+      "role": "ai",
+      "message_sha256": "3a55d3af0bb5bbbd5d2c435ec245f1d2049531d009d63f6b3620ff8f14ba61c1",
+      "usage": {
+        "input_tokens": 4652,
+        "output_tokens": 76,
+        "total_tokens": 4728,
+        "input_token_details": {
+          "cache_read": 3695
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 76,
+      "tools": [
+        {
+          "id": "x9mIbdBWaLlZWQJMAQhgEs1ayRWqwxdP",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "735c1cd8814af5efc3b8fa4cdeaa3563615834eb067196906da0ce43316658fe",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 200,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "role": "tool",
+      "message_sha256": "b6f764fb9fc8ade867e6c1ed1c61781dc16b8db3321f5525ac552df6f069be1e",
+      "name": "read_file",
+      "tool_call_id": "x9mIbdBWaLlZWQJMAQhgEs1ayRWqwxdP",
+      "status": "success",
+      "result_bytes": 3634,
+      "result_sha256": "bc4e1636f2d925e4f7fc2fdaa230411ed23c4839d75631980d289a55a29707b1",
+      "result_preview": "@@ lines 201-300 of 978 | next offset 300 @@\n  rejected outright, including parent references that would resolve back inside\n  the scope root. Whatever remains is joined under the scope root.\n\n  Args:\n    scope_root: Directory that defines "
+    },
+    {
+      "index": 7,
+      "role": "ai",
+      "message_sha256": "4ae6ebae57a1d4d9d19c8ada4005099bf47a0749f9c990a944d8ecb9bb626b11",
+      "usage": {
+        "input_tokens": 5657,
+        "output_tokens": 81,
+        "total_tokens": 5738,
+        "input_token_details": {
+          "cache_read": 4727
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 102,
+      "tools": [
+        {
+          "id": "J2kiswBz3CYOlWaAZbhtThML4p6icC7l",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "ed273052911d3135e0eccdbdcce4859018f63408a4c8c1e3edafa81c2fb47fd6",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 300,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "role": "tool",
+      "message_sha256": "357ba06812317210d897172e5a2f2e699142011a24cd9fec430460ee01261bae",
+      "name": "read_file",
+      "tool_call_id": "J2kiswBz3CYOlWaAZbhtThML4p6icC7l",
+      "status": "success",
+      "result_bytes": 3730,
+      "result_sha256": "d9b2221f93b992c345a90cac7fb745128550f7d567dec6f7120ab0fcb27a7992",
+      "result_preview": "@@ lines 301-400 of 978 | next offset 400 @@\n\n\ndef _list_versions_on_disk(artifact_dir: Path) -> list[int]:\n  \"\"\"Returns sorted versions discovered under the artifact directory.\"\"\"\n  versions_dir = _versions_dir(artifact_dir)\n  if not versi"
+    },
+    {
+      "index": 9,
+      "role": "ai",
+      "message_sha256": "12181cd62a6fcb304bd7db2995df171214369ae58e020f7cfb688a93e1712354",
+      "usage": {
+        "input_tokens": 6644,
+        "output_tokens": 75,
+        "total_tokens": 6719,
+        "input_token_details": {
+          "cache_read": 5737
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 70,
+      "tools": [
+        {
+          "id": "I9SbYk4eZGS11lZdRkRBqywdj1xsIeBp",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "6c6ba987bd9eba1ba1e4993fcbb5abdae21d5feae09b6d4fa26def7df2bc15c9",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 400,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "role": "tool",
+      "message_sha256": "ea4e2f85ec7d45a53309bc30af5b4e5526ad22ead051a817ec7ccfd52c7a87c7",
+      "name": "read_file",
+      "tool_call_id": "I9SbYk4eZGS11lZdRkRBqywdj1xsIeBp",
+      "status": "success",
+      "result_bytes": 3605,
+      "result_sha256": "b0b161f8a19484f2148ae2c4c4460cbc0a767ee78de3813146216c22440403a8",
+      "result_preview": "@@ lines 401-500 of 978 | next offset 500 @@\n    \"\"\"\n    self.root_dir = Path(root_dir).expanduser().resolve()\n    self.root_dir.mkdir(parents=True, exist_ok=True)\n\n  def _base_root(self, app_name: str, user_id: str) -> Path:\n    \"\"\"Returns"
+    },
+    {
+      "index": 11,
+      "role": "ai",
+      "message_sha256": "78f0b4603e8b0c4365b2cc631ad56a71862800d38787a78a30778981416d5974",
+      "usage": {
+        "input_tokens": 7655,
+        "output_tokens": 75,
+        "total_tokens": 7730,
+        "input_token_details": {
+          "cache_read": 6718
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 70,
+      "tools": [
+        {
+          "id": "674qQ1l9hSDur261HpTbr8OZHBSYpRch",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "dee93960c5fd829c110622595f4977c6bac29758e9c79f6b22ca45cf920ae6e0",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 500,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "role": "tool",
+      "message_sha256": "2c5b2c305460549da5fe201846ea361a6b0c709bfcfbd1aafd389edaa1d40e90",
+      "name": "read_file",
+      "tool_call_id": "674qQ1l9hSDur261HpTbr8OZHBSYpRch",
+      "status": "success",
+      "result_bytes": 3551,
+      "result_sha256": "93b9ecf6c7b6ce6c4852660a8c6ed95a1b1902931b2312c58591bf6da3be99e7",
+      "result_preview": "@@ lines 501-600 of 978 | next offset 600 @@\n\n  def _save_artifact_sync(\n      self,\n      app_name: str,\n      user_id: str,\n      filename: str,\n      artifact: types.Part | dict[str, Any],\n      session_id: str | None,\n      custom_metad"
+    },
+    {
+      "index": 13,
+      "role": "ai",
+      "message_sha256": "698b0224bbc0492e549264e4b44702077632ceca9e17ed91ffd06b414e7c5558",
+      "usage": {
+        "input_tokens": 8604,
+        "output_tokens": 74,
+        "total_tokens": 8678,
+        "input_token_details": {
+          "cache_read": 7729
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 62,
+      "tools": [
+        {
+          "id": "5a4Ej4gR4sj1FXLgwajeHVsG1fWGGgfH",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "57c15cf701c9c7635c2f90cdb24a8f578f6fa641b5a8e4413620d9b334028e45",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 600,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "role": "tool",
+      "message_sha256": "2b0790f1840ee3bc88fb93f839ef947fb5b219504489e16438dba5f3159e8a3d",
+      "name": "read_file",
+      "tool_call_id": "5a4Ej4gR4sj1FXLgwajeHVsG1fWGGgfH",
+      "status": "success",
+      "result_bytes": 3098,
+      "result_sha256": "549ee48c74d3fbbdf8fe3b756901bc2c3e5a9f7ec3585bddc995be364f45e2c1",
+      "result_preview": "@@ lines 601-700 of 978 | next offset 700 @@\n      version: int | None = None,\n  ) -> types.Part | None:\n    return await asyncio.to_thread(\n        self._load_artifact_sync,\n        app_name,\n        user_id,\n        filename,\n        sess"
+    },
+    {
+      "index": 15,
+      "role": "ai",
+      "message_sha256": "0c77140353c37d396d7c4a88461c10040995cb1b897d6582d3e436bd2bbcc2b4",
+      "usage": {
+        "input_tokens": 9485,
+        "output_tokens": 74,
+        "total_tokens": 9559,
+        "input_token_details": {
+          "cache_read": 8677
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 62,
+      "tools": [
+        {
+          "id": "zW4JGVJ73nTA4mL5xbXtBmO6L3QzHnHB",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "b47d3806e929286200248d02a20ad7d07ef47375fd1b8ff08d925fc208cc92f0",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 700,
+          "limit": 100
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "role": "tool",
+      "message_sha256": "0e5f5a677a5f7c3b2aa4d16ab3558d92a2b8d0c90dd7dd5623de73bc9713e877",
+      "name": "read_file",
+      "tool_call_id": "zW4JGVJ73nTA4mL5xbXtBmO6L3QzHnHB",
+      "status": "success",
+      "result_bytes": 2898,
+      "result_sha256": "1101be6ecf904f3385a5cef62b49dbaa5673bb31533956099a0d5a5c85819965",
+      "result_preview": "@@ lines 701-800 of 978 | next offset 800 @@\n      user_id: str,\n      session_id: str | None,\n  ) -> list[str]:\n    filenames: set[str] = set()\n    base_root = self._base_root(app_name, user_id)\n\n    if session_id is not None:\n      sessio"
+    }
+  ],
+  "virtual_changes": [],
+  "annotated_read_results": 0,
+  "exported_patch": false,
+  "acceptance_run": false,
+  "full_conversation_published": false
+}

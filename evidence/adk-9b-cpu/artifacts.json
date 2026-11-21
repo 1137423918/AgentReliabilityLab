@@ -1,0 +1,107 @@
+{
+  "normalization": "Private local/server paths and terminal formatting in allowlisted metadata/logs only. Task, protocol, request journal, patch and candidate text unchanged. No SQLite, complete conversations, headers, weights or full worktrees.",
+  "files": [
+    {
+      "path": "pilot.json",
+      "original_sha256": "8e444f6786e66bb78f6331b20bf9a936c83ff0398a6b67a01d92393d31410a9a",
+      "public_sha256": "8e444f6786e66bb78f6331b20bf9a936c83ff0398a6b67a01d92393d31410a9a",
+      "public_bytes": 786
+    },
+    {
+      "path": "protocol.json",
+      "original_sha256": "c99e6f7ad9976d60fd23aae66bab63237f58a696d602b26d6d6b7f19dbdaaba1",
+      "public_sha256": "c99e6f7ad9976d60fd23aae66bab63237f58a696d602b26d6d6b7f19dbdaaba1",
+      "public_bytes": 6946
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "e53b6aa7301b4cd2f3119ab08606208837f53454eb120a172f6a4c078c4b5b96",
+      "public_sha256": "6e81b2c36db7a361cf0adf3cb4a286033a1bdea593159afbc54813efa3e8e583",
+      "public_bytes": 874
+    },
+    {
+      "path": "service/service.json",
+      "original_sha256": "d3f11802321c8a69858da41de5ff091ce16ddd2fac8bec0d6d44f20962f6c4e5",
+      "public_sha256": "f2625f629bea415dc3be36c8a45dafc03b0d79aceae8233abd1c1c25eedc05db",
+      "public_bytes": 7790
+    },
+    {
+      "path": "service/shutdown.json",
+      "original_sha256": "f1bc55ef473618a2d394a9e102b329badd9d77585b9e31ec81a274552941d8af",
+      "public_sha256": "f1bc55ef473618a2d394a9e102b329badd9d77585b9e31ec81a274552941d8af",
+      "public_bytes": 114
+    },
+    {
+      "path": "service/stopped.json",
+      "original_sha256": "7962e1dbb7287eaa43cd7301f97bae651df257f520b670c3adb6c1b887c86434",
+      "public_sha256": "7962e1dbb7287eaa43cd7301f97bae651df257f520b670c3adb6c1b887c86434",
+      "public_bytes": 335
+    },
+    {
+      "path": "logs/server.log",
+      "original_sha256": "7070f07f9a73d1d8f2e9f3d4b8a3421f087ae35d45c6ac5ddcc2083871503825",
+      "public_sha256": "015229e522020080b0cce35024a18ce617ca83e3db2c96f3bb198e997f7d16df",
+      "public_bytes": 11229
+    },
+    {
+      "path": "logs/launcher.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "logs/trial.log",
+      "original_sha256": "d4f980a59c15db2da23fa0bbd5aec3952c6741e8c16d869054260fb246b8341a",
+      "public_sha256": "d4f980a59c15db2da23fa0bbd5aec3952c6741e8c16d869054260fb246b8341a",
+      "public_bytes": 231
+    },
+    {
+      "path": "models.json",
+      "original_sha256": "2a5af96dbef9943b7d8a075aa00476c567ccf1bd54615a81b128cef0dbf74cbd",
+      "public_sha256": "2a5af96dbef9943b7d8a075aa00476c567ccf1bd54615a81b128cef0dbf74cbd",
+      "public_bytes": 1203
+    },
+    {
+      "path": "audit/report.json",
+      "original_sha256": "b1f82367748c3c9150567dcdd1e37335ee6e60b3d48269e29e9bda72f98f94cf",
+      "public_sha256": "b1f82367748c3c9150567dcdd1e37335ee6e60b3d48269e29e9bda72f98f94cf",
+      "public_bytes": 12667
+    },
+    {
+      "path": "task.json",
+      "original_sha256": "8a80c48075f6a923f26fdef587ecc434e5c67e8861246f18abdf187172723889",
+      "public_sha256": "8a80c48075f6a923f26fdef587ecc434e5c67e8861246f18abdf187172723889",
+      "public_bytes": 8530
+    },
+    {
+      "path": "normal/status.json",
+      "original_sha256": "ad5aedfc6c649490b60f99a7fb84e5ddb71ef56edc562013d3025077e57e9316",
+      "public_sha256": "ad5aedfc6c649490b60f99a7fb84e5ddb71ef56edc562013d3025077e57e9316",
+      "public_bytes": 67
+    },
+    {
+      "path": "normal/manifest.json",
+      "original_sha256": "bbb73a9dd761b55deb26c8767ee63354c634eeb3972ebe3dbbfd5e0bdad7e48f",
+      "public_sha256": "1382993687f7fdaa26c58601c02299eb34bb65bcf8a3f75936a53d96d475d3f5",
+      "public_bytes": 9192
+    },
+    {
+      "path": "normal/model-requests.json",
+      "original_sha256": "ba2181562cab752bb25052aeee50f82b5632e11a125622acd5c1416405a34685",
+      "public_sha256": "ba2181562cab752bb25052aeee50f82b5632e11a125622acd5c1416405a34685",
+      "public_bytes": 2507
+    },
+    {
+      "path": "normal/resumed.stdout.jsonl",
+      "original_sha256": "4df69c3465e40d61dc4de35328e09db9b5b71fb3e7762dd00f45f32c0e6a9856",
+      "public_sha256": "4df69c3465e40d61dc4de35328e09db9b5b71fb3e7762dd00f45f32c0e6a9856",
+      "public_bytes": 664
+    },
+    {
+      "path": "normal/resumed.stderr.log",
+      "original_sha256": "fea6509f23d2d32254ff6859a0abd89caf10d0fcc471db9bc11ba7da37740ed6",
+      "public_sha256": "fea6509f23d2d32254ff6859a0abd89caf10d0fcc471db9bc11ba7da37740ed6",
+      "public_bytes": 96
+    }
+  ]
+}
