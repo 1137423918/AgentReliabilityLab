@@ -42,12 +42,12 @@
       "public_bytes": 1549
     },
     {
-      "path": "attempt-1/test_verification_tree.py",
+      "path": "attempt-1/test_verification_tree.py.txt",
       "public_sha256": "a2b98ed1279180fd84be34780403cd666d3dabe78f127743490bcb26b5826121",
       "public_bytes": 3336
     },
     {
-      "path": "attempt-1/test_worker.py",
+      "path": "attempt-1/test_worker.py.txt",
       "public_sha256": "23122df1aef7e2e146ffecd6e2a7a1834c346264f25cfdd33c6b821d8482a4cc",
       "public_bytes": 16343
     },
@@ -107,12 +107,12 @@
       "public_bytes": 1948
     },
     {
-      "path": "normal/test_verification_tree.py",
+      "path": "normal/test_verification_tree.py.txt",
       "public_sha256": "5117bb9e6c3c272141d36b3f32405840a972fe7955cac77e3d7fe368655d16b5",
       "public_bytes": 3741
     },
     {
-      "path": "normal/test_worker.py",
+      "path": "normal/test_worker.py.txt",
       "public_sha256": "23122df1aef7e2e146ffecd6e2a7a1834c346264f25cfdd33c6b821d8482a4cc",
       "public_bytes": 16343
     },
