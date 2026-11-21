@@ -1,0 +1,21 @@
+{
+  "scope": "One new normal real-model ADK CPU trial with a complete task file inventory and graph-local directory-listing policy. Same previous focused-CPU task symptom, protected acceptance, model and budgets; not a held-out benchmark or success rate.",
+  "protocol_sha256": "21788468bde286aa77812fe6e42953fa35df4104ba20820c4ddbe60918c73386",
+  "task_sha256": "46f01871bd11a4840e027749c05660b2a84c45e426625b6c6fff1d9b793b2e71",
+  "cases": [
+    {
+      "case": "normal",
+      "checkpoint_interruption": null,
+      "returncode": 2,
+      "timed_out": false,
+      "duration_seconds": 1525.938,
+      "verified_patch": false,
+      "result": null,
+      "state": {
+        "status": "failed",
+        "error_type": "RequestBudgetExhausted"
+      }
+    }
+  ],
+  "verified_trials": 0
+}

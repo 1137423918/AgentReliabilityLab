@@ -1,0 +1,367 @@
+{
+  "scope": "One new normal real-model ADK CPU trial with a complete task file inventory and graph-local directory-listing policy. Same previous focused-CPU task symptom, protected acceptance, model and budgets; not a held-out benchmark or success rate.",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "protocol_sha256": "21788468bde286aa77812fe6e42953fa35df4104ba20820c4ddbe60918c73386",
+  "task_sha256": "46f01871bd11a4840e027749c05660b2a84c45e426625b6c6fff1d9b793b2e71",
+  "source_project_base": "b2afb4ae981567be60c8f6fda037e808a0601529",
+  "source_sha256": {
+    "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56"
+  },
+  "engineering_evidence": {
+    "report": "evidence/file-inventory/report.json",
+    "report_sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a",
+    "full_checks_passed": 106,
+    "focused_checks_included": 6,
+    "wheel_sha256": "725b0d247525b2e4cb7f39762da51bb0875842a8c2b142e9604450b6961dbd24"
+  },
+  "task_feature_enabled": true,
+  "generated_catalog_and_ls_filtering_change_together": true,
+  "model_inference": true,
+  "gpu_used": false,
+  "fault_injection": false,
+  "core_unit_tests_rerun": false,
+  "planned_trials": 1,
+  "verified_trials": 0,
+  "case": {
+    "case": "normal",
+    "checkpoint_interruption": null,
+    "returncode": 2,
+    "timed_out": false,
+    "duration_seconds": 1525.938,
+    "verified_patch": false,
+    "result": null,
+    "state": {
+      "status": "failed",
+      "error_type": "RequestBudgetExhausted"
+    }
+  },
+  "outcome": "request_budget_exhausted",
+  "model": {
+    "model_sha256": "9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06",
+    "source_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+    "precision": "GGUF Q4_K_M derived from FP16 conversion of fixed BF16 source; no importance matrix",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "alias": "agentlab-qwen3-4b",
+    "model_card": "https://huggingface.co/Qwen/Qwen3-4B-Instruct-2507"
+  },
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen3-4b",
+    "revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 600,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 0.0,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    }
+  },
+  "budget": {
+    "case_wall_seconds": 1800,
+    "request_seconds": 600,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 2400,
+    "max_graph_steps": 40,
+    "http_limits": {
+      "max_requests": 8,
+      "max_request_bytes": 65536,
+      "max_total_request_bytes": 262144
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "active_state_filesystem": "ext4",
+  "model_turns": 8,
+  "tool_results": 8,
+  "tool_names": [
+    "inspect_python",
+    "inspect_python",
+    "read_file",
+    "read_file",
+    "grep",
+    "grep",
+    "read_file",
+    "read_file"
+  ],
+  "model_tool_choices": [
+    {
+      "id": "SLZ0kyqTiPaGHNOK2IYJIfcsIuX9D5gY",
+      "name": "inspect_python",
+      "argument_keys": [
+        "file_path"
+      ],
+      "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+    },
+    {
+      "id": "T8xV4SYoGd77LBbY6BuRSXIBb8VpX8jO",
+      "name": "inspect_python",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset",
+        "symbol_id"
+      ],
+      "arguments_sha256": "eb0eea88e6e870fc2a9f2b22a3b99b19885f4c729b1d5915d8568e567e80d7d0",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 0,
+      "limit": 20,
+      "symbol_id": "L754:2"
+    },
+    {
+      "id": "PpiW9mKYx3Otbk3UTgdwCK4aIwS9aYbn",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "d7512a7fd63e7a15c777249e6e0b8afa2ef04caa6fd001e9e221f66c99cb555e",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 0,
+      "limit": 200
+    },
+    {
+      "id": "7u6ARthyxRKtrcnYczmgSv4kKEQ4x9IS",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "5a73de907cbfc8313ba7569980a2e30b8064b9f444c63c2a4e4929fd71fb3df5",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 750,
+      "limit": 200
+    },
+    {
+      "id": "dTntl739ksCrRbiaA7ZpGCsU5Nr9SshS",
+      "name": "grep",
+      "argument_keys": [
+        "path",
+        "pattern"
+      ],
+      "arguments_sha256": "22efe9d841c0dfc505d8edf9e0d062ce53d6b96b3caea1d1d6646e59cd6ca79d",
+      "path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "pattern": "delete_artifact"
+    },
+    {
+      "id": "xy0sGRGKLPK4T81im69jZSjMvJUfbyEC",
+      "name": "grep",
+      "argument_keys": [
+        "path",
+        "pattern"
+      ],
+      "arguments_sha256": "09987e2056bc3cba1d1c4077cc45cbeebbc01463cefbaa10c26104b25d456520",
+      "path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "pattern": "prune_empty_dirs"
+    },
+    {
+      "id": "my9ig4AaXXZki9ryrReK38GGAuxmsSI2",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "918cf2ebf37b57d328eb6ae82a612af931c786720fe5e46c30357f6b33be6943",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 800,
+      "limit": 200
+    },
+    {
+      "id": "i7m6zuMtasW3TsFpmttFyAxqgrBIHA54",
+      "name": "read_file",
+      "argument_keys": [
+        "file_path",
+        "limit",
+        "offset"
+      ],
+      "arguments_sha256": "a16f3da37e651e2aa6c748972ec276a6c8557f179003ec1e896c977acc9e49ea",
+      "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+      "offset": 0,
+      "limit": 50
+    }
+  ],
+  "virtual_changes": [],
+  "exported_patch": false,
+  "acceptance_run": false,
+  "requests_reserved": 8,
+  "request_body_bytes": 205121,
+  "unknown_in_flight_reservations_still_charged": 0,
+  "persisted_response_usage": {
+    "scope": "Persisted replies only; canceled/unsaved work may use additional compute. Not full-trial compute or billed cost.",
+    "responses": [
+      {
+        "message_index": 1,
+        "input_tokens": 2585,
+        "output_tokens": 39,
+        "total_tokens": 2624,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 3,
+        "input_tokens": 4443,
+        "output_tokens": 56,
+        "total_tokens": 4499,
+        "input_token_details": {
+          "cache_read": 2587
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 5,
+        "input_tokens": 4586,
+        "output_tokens": 45,
+        "total_tokens": 4631,
+        "input_token_details": {
+          "cache_read": 4498
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 7,
+        "input_tokens": 6281,
+        "output_tokens": 47,
+        "total_tokens": 6328,
+        "input_token_details": {
+          "cache_read": 4630
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 9,
+        "input_tokens": 7703,
+        "output_tokens": 37,
+        "total_tokens": 7740,
+        "input_token_details": {
+          "cache_read": 6327
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 11,
+        "input_tokens": 7764,
+        "output_tokens": 38,
+        "total_tokens": 7802,
+        "input_token_details": {
+          "cache_read": 7739
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 13,
+        "input_tokens": 7826,
+        "output_tokens": 47,
+        "total_tokens": 7873,
+        "input_token_details": {
+          "cache_read": 7801
+        },
+        "output_token_details": {}
+      },
+      {
+        "message_index": 15,
+        "input_tokens": 9126,
+        "output_tokens": 44,
+        "total_tokens": 9170,
+        "input_token_details": {
+          "cache_read": 7872
+        },
+        "output_token_details": {}
+      }
+    ],
+    "input_tokens": 50314,
+    "cache_read_tokens": 41454,
+    "output_tokens": 353,
+    "input_minus_cache_read_tokens": 8860
+  },
+  "native_logged_prefill_counts": [
+    2585,
+    1856,
+    88,
+    1651,
+    1376,
+    25,
+    25,
+    1254
+  ],
+  "persisted_new_input_matches_native_logged_prefill_sum": true,
+  "service_stopped": true,
+  "shutdown": {
+    "returncode": 0,
+    "guard_reason": null,
+    "forced_cleanup": false,
+    "peak_sampled_rss_bytes": 9242923008
+  },
+  "limitations": [
+    "One known public defect and one new sampled trajectory, not held out or a success-rate estimate.",
+    "Generated system catalog and tool filtering/rejection change together; host load and sampled choices can differ. No isolated attribution or general latency/token/cost gain.",
+    "Same model, human prompt, source base ADK task, sampling, limits and protected acceptance as the previous focused trial; no reference edits or plan.",
+    "Single normal trial, no retries, repair rounds, fault injection or retrospective deadline/quota extension.",
+    "Six explicit fake-model checks are included within106project tests; they do not establish neural repair.",
+    "All inference CPU-only, same4thread/nice19/64GiB admission/48GiB AS/36GiB RSS guards.",
+    "Only saved replies have complete reported usage; canceled or unsaved work may use extra compute.",
+    "Original1863pass26expected-failure acceptance and four independent contracts are reused, not new or summable test scores.",
+    "Task source/tool policy is not a new filesystem sandbox or automatic backup migration."
+  ],
+  "owned_processes_remaining": [],
+  "inspect_python_calls": 2,
+  "terminal_error": "{\"status\": \"failed\", \"error\": \"Persistent model request budget exhausted before network send.\"}",
+  "maximum_single_request_bytes": 38243,
+  "native_generation_task_launches": 8,
+  "next_request_sent": false,
+  "ls_calls": 0,
+  "successful_virtual_edits": 0,
+  "tool_message_status_errors": 0,
+  "structured_tool_errors": [
+    {
+      "message_index": 4,
+      "tool": "inspect_python",
+      "code": "source_hash_required"
+    }
+  ],
+  "named_deletion_implementation_read": true,
+  "behavioral_observations": {
+    "read_file_ranges_one_based": [
+      "1-200",
+      "751-950",
+      "801-978",
+      "1-50"
+    ],
+    "inspect_python_calls": 2,
+    "grep_patterns": [
+      "delete_artifact",
+      "prune_empty_dirs"
+    ],
+    "grep_reply_scope": "file paths only for the submitted arguments",
+    "source_hash_guard_weakened": false,
+    "initial_and_final_production_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16"
+  }
+}

@@ -1,0 +1,2 @@
+{"stage": "trial_started", "protocol_sha256": "21788468bde286aa77812fe6e42953fa35df4104ba20820c4ddbe60918c73386"}
+{"stage": "trial_finished", "verified_trials": 0, "returncode": 2, "timed_out": false, "duration_seconds": 1525.938}

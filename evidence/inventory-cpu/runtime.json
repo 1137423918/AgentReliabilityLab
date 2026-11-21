@@ -1,0 +1,27 @@
+{
+  "worker": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "worker": "<server-workspace>/code/inventory-cpu-20261121/agent_lab/worker.py",
+    "versions": {
+      "deepagents": "0.7.41",
+      "langchain": "1.5.2",
+      "langchain-core": "1.8.4",
+      "langchain-openai": "1.8.5",
+      "langgraph": "1.2.24",
+      "langgraph-checkpoint-sqlite": "3.1.3",
+      "jsonschema": "4.26.0"
+    }
+  },
+  "cpu_model": "Intel(R) Xeon(R) CPU E5-2690 v4 @ 2.60GHz",
+  "cpu_affinity_count": 56,
+  "load": [
+    46.16,
+    46.15,
+    47.05
+  ],
+  "started_utc": "2026-11-21T03:06:54.302513+00:00",
+  "protocol_sha256": "21788468bde286aa77812fe6e42953fa35df4104ba20820c4ddbe60918c73386",
+  "verification_python_exists": true,
+  "active_state_filesystem": "ext4",
+  "local_root_path_sha256": "6e90a71de24aef57ebb313de3cd56aba38e2e8aa443908588684a0fb70e522d1"
+}

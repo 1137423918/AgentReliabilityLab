@@ -1,0 +1,346 @@
+{
+  "scope": "Read-only reconstruction of saved graph state after declared real-model inventory-scoped ADK CPU trial; no model or tool invoked.",
+  "new_neural_requests": 0,
+  "pending": [
+    "model"
+  ],
+  "model_turns": 8,
+  "tool_results": 8,
+  "timeline": [
+    {
+      "index": 1,
+      "role": "ai",
+      "message_sha256": "dae2b4c54740697f75e0ac78fdf3eccf5acde61739893acef235eb310e37a71b",
+      "usage": {
+        "input_tokens": 2585,
+        "output_tokens": 39,
+        "total_tokens": 2624,
+        "input_token_details": {
+          "cache_read": 0
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "SLZ0kyqTiPaGHNOK2IYJIfcsIuX9D5gY",
+          "name": "inspect_python",
+          "argument_keys": [
+            "file_path"
+          ],
+          "arguments_sha256": "8b1121c395ecd700203efa588f076bca94ae5ffa3dc9b3814081cb13da997734",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "role": "tool",
+      "message_sha256": "2d6037f9b4ba904356f58401b9d9fd6ed3534cccb3f02d8a8139806f3d1f285c",
+      "name": "inspect_python",
+      "tool_call_id": "SLZ0kyqTiPaGHNOK2IYJIfcsIuX9D5gY",
+      "status": "success",
+      "result_bytes": 5413,
+      "result_sha256": "064d47d52c17127e19590b16cc3142959716cb76e6e8e9b13e8567f55d9484fd",
+      "result_preview": "{\"status\":\"ok\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\",\"file_lines\":978,\"parser\":\"Python 3.11 AST\",\"mode\":\"outline\",\"offset\":0,\"total\":44,\"items\":[{\"id\":\"L43:0\",\"name\":\"_iter_artifact_dirs\",\"name_t"
+    },
+    {
+      "index": 3,
+      "role": "ai",
+      "message_sha256": "c2622a00bce06c8f18d3446c644592d665ac278258cf10305303cf4524cc658b",
+      "usage": {
+        "input_tokens": 4443,
+        "output_tokens": 56,
+        "total_tokens": 4499,
+        "input_token_details": {
+          "cache_read": 2587
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "T8xV4SYoGd77LBbY6BuRSXIBb8VpX8jO",
+          "name": "inspect_python",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset",
+            "symbol_id"
+          ],
+          "arguments_sha256": "eb0eea88e6e870fc2a9f2b22a3b99b19885f4c729b1d5915d8568e567e80d7d0",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 0,
+          "limit": 20,
+          "symbol_id": "L754:2"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "role": "tool",
+      "message_sha256": "88ded1cf6fb4024a82d19c6b3ec86cd8bcc95a935a1f85109060e6aee52325f7",
+      "name": "inspect_python",
+      "tool_call_id": "T8xV4SYoGd77LBbY6BuRSXIBb8VpX8jO",
+      "status": "success",
+      "result_bytes": 132,
+      "result_sha256": "05f795ed9fa3b031cce976e27d0a09c8414f6f2125bcb42ff1aa73357013c4a2",
+      "result_preview": "{\"status\":\"error\",\"error\":\"source_hash_required\",\"source_sha256\":\"d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16\"}"
+    },
+    {
+      "index": 5,
+      "role": "ai",
+      "message_sha256": "1b859eb1fc9ac87bbbbf77b4ce8beb5a05c0ea45b2077bef642fc4edfd4f4011",
+      "usage": {
+        "input_tokens": 4586,
+        "output_tokens": 45,
+        "total_tokens": 4631,
+        "input_token_details": {
+          "cache_read": 4498
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "PpiW9mKYx3Otbk3UTgdwCK4aIwS9aYbn",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "d7512a7fd63e7a15c777249e6e0b8afa2ef04caa6fd001e9e221f66c99cb555e",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 0,
+          "limit": 200
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "role": "tool",
+      "message_sha256": "a2a3fc58e1ab6c900f729614d8698e0b60b81ad683718d5a72deeef3314eb10f",
+      "name": "read_file",
+      "tool_call_id": "PpiW9mKYx3Otbk3UTgdwCK4aIwS9aYbn",
+      "status": "success",
+      "result_bytes": 7059,
+      "result_sha256": "22630ac979bcbfd076bdf93e49aab38fd53f6c116f0841956c96be6e85f967c2",
+      "result_preview": "@@ lines 1-200 of 978 | next offset 200 @@\n# Copyright 2026 Google LLC\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the Lic"
+    },
+    {
+      "index": 7,
+      "role": "ai",
+      "message_sha256": "4e7683df88e2042d68330a883fe80f2db33de2a905d632b2dbab8c8c1221ff54",
+      "usage": {
+        "input_tokens": 6281,
+        "output_tokens": 47,
+        "total_tokens": 6328,
+        "input_token_details": {
+          "cache_read": 4630
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "7u6ARthyxRKtrcnYczmgSv4kKEQ4x9IS",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "5a73de907cbfc8313ba7569980a2e30b8064b9f444c63c2a4e4929fd71fb3df5",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 750,
+          "limit": 200
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "role": "tool",
+      "message_sha256": "6ac3eb69158ede02ee14192fe6986ad32ee4059164fa17046bf149520857d1b5",
+      "name": "read_file",
+      "tool_call_id": "7u6ARthyxRKtrcnYczmgSv4kKEQ4x9IS",
+      "status": "success",
+      "result_bytes": 5726,
+      "result_sha256": "d07f3b5fa84514245ff4fcba37ece2c4f2d141ce6c0f8be93704008ca15fcfa7",
+      "result_preview": "@@ lines 751-950 of 978 | next offset 950 @@\n        session_id,\n    )\n\n  def _delete_artifact_sync(\n      self,\n      app_name: str,\n      user_id: str,\n      filename: str,\n      session_id: str | None,\n  ) -> None:\n    artifact_dir, _ = "
+    },
+    {
+      "index": 9,
+      "role": "ai",
+      "message_sha256": "eedc25848d87b765076589b7eeeb31a18452d288a4a6d2c4b07b6024fa4a6f4f",
+      "usage": {
+        "input_tokens": 7703,
+        "output_tokens": 37,
+        "total_tokens": 7740,
+        "input_token_details": {
+          "cache_read": 6327
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "dTntl739ksCrRbiaA7ZpGCsU5Nr9SshS",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "22efe9d841c0dfc505d8edf9e0d062ce53d6b96b3caea1d1d6646e59cd6ca79d",
+          "path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "pattern": "delete_artifact"
+        }
+      ]
+    },
+    {
+      "index": 10,
+      "role": "tool",
+      "message_sha256": "9f4a2c198c8d5202648f1728ae6458db3ff510b1da7aa15feb1ba8a335dfee6f",
+      "name": "grep",
+      "tool_call_id": "dTntl739ksCrRbiaA7ZpGCsU5Nr9SshS",
+      "status": "success",
+      "result_bytes": 50,
+      "result_sha256": "05a7e3a1bc728ab3ac1cea19b83769d6ab5c05678c5393cba53e8ebc5e5e5807",
+      "result_preview": "/src/google/adk/artifacts/file_artifact_service.py"
+    },
+    {
+      "index": 11,
+      "role": "ai",
+      "message_sha256": "6a5d44d1d6930fb56e4472d06d8e548d8ba34f93a335e139eedb18953c98314a",
+      "usage": {
+        "input_tokens": 7764,
+        "output_tokens": 38,
+        "total_tokens": 7802,
+        "input_token_details": {
+          "cache_read": 7739
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "xy0sGRGKLPK4T81im69jZSjMvJUfbyEC",
+          "name": "grep",
+          "argument_keys": [
+            "path",
+            "pattern"
+          ],
+          "arguments_sha256": "09987e2056bc3cba1d1c4077cc45cbeebbc01463cefbaa10c26104b25d456520",
+          "path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "pattern": "prune_empty_dirs"
+        }
+      ]
+    },
+    {
+      "index": 12,
+      "role": "tool",
+      "message_sha256": "6f615a8cbbf2edd7eaaaa64178012b85c19e2af0fd83ba30ec76f2e1165e8bfd",
+      "name": "grep",
+      "tool_call_id": "xy0sGRGKLPK4T81im69jZSjMvJUfbyEC",
+      "status": "success",
+      "result_bytes": 50,
+      "result_sha256": "05a7e3a1bc728ab3ac1cea19b83769d6ab5c05678c5393cba53e8ebc5e5e5807",
+      "result_preview": "/src/google/adk/artifacts/file_artifact_service.py"
+    },
+    {
+      "index": 13,
+      "role": "ai",
+      "message_sha256": "9b671eaaca9288a714c5a6791725379766727f7861690a17c873fd7527ea6fee",
+      "usage": {
+        "input_tokens": 7826,
+        "output_tokens": 47,
+        "total_tokens": 7873,
+        "input_token_details": {
+          "cache_read": 7801
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "my9ig4AaXXZki9ryrReK38GGAuxmsSI2",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "918cf2ebf37b57d328eb6ae82a612af931c786720fe5e46c30357f6b33be6943",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 800,
+          "limit": 200
+        }
+      ]
+    },
+    {
+      "index": 14,
+      "role": "tool",
+      "message_sha256": "b9efee2eb0df7c3eb156559c617f60142fe5e2f2d0a2d61564c6c49751fccb39",
+      "name": "read_file",
+      "tool_call_id": "my9ig4AaXXZki9ryrReK38GGAuxmsSI2",
+      "status": "success",
+      "result_bytes": 5273,
+      "result_sha256": "7d1c073a848e4c0a8ae250c7e1cd229a9e58db4ea383a0f4a802d5db0fbeaa76",
+      "result_preview": "@@ lines 801-978 of 978 @@\n  ) -> list[int]:\n    artifact_dir, _ = self._artifact_dir(\n        app_name=app_name,\n        user_id=user_id,\n        session_id=session_id,\n        filename=filename,\n    )\n    return _list_versions_on_disk(art"
+    },
+    {
+      "index": 15,
+      "role": "ai",
+      "message_sha256": "d204b7962f382353998c96c665ccd6cd5a5f5fe71101f46f3567711713c4e32b",
+      "usage": {
+        "input_tokens": 9126,
+        "output_tokens": 44,
+        "total_tokens": 9170,
+        "input_token_details": {
+          "cache_read": 7872
+        },
+        "output_token_details": {}
+      },
+      "finish_reason": "tool_calls",
+      "content_bytes": 0,
+      "tools": [
+        {
+          "id": "i7m6zuMtasW3TsFpmttFyAxqgrBIHA54",
+          "name": "read_file",
+          "argument_keys": [
+            "file_path",
+            "limit",
+            "offset"
+          ],
+          "arguments_sha256": "a16f3da37e651e2aa6c748972ec276a6c8557f179003ec1e896c977acc9e49ea",
+          "file_path": "/src/google/adk/artifacts/file_artifact_service.py",
+          "offset": 0,
+          "limit": 50
+        }
+      ]
+    },
+    {
+      "index": 16,
+      "role": "tool",
+      "message_sha256": "630ca6b7c7f56addcc4cff3a4594a88881d0936f0c24bd73a7c912c7eb84dd27",
+      "name": "read_file",
+      "tool_call_id": "i7m6zuMtasW3TsFpmttFyAxqgrBIHA54",
+      "status": "success",
+      "result_bytes": 1690,
+      "result_sha256": "bde20fcde8da2d84ab21df22f94c3a12b23e054e1655429991e908ce2a116579",
+      "result_preview": "@@ lines 1-50 of 978 | next offset 50 @@\n# Copyright 2026 Google LLC\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this file except in compliance with the License.\n# You may obtain a copy of the Licen"
+    }
+  ],
+  "virtual_changes": [],
+  "annotated_read_results": 0,
+  "exported_patch": false,
+  "acceptance_run": false,
+  "full_conversation_published": false
+}
