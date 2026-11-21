@@ -1,0 +1,11 @@
+0.12.527.633 W Setting 'enable_thinking' via --chat-template-kwargs is deprecated. Use --reasoning on / --reasoning off instead.
+0.12.528.171 I srv  llama_server: initializing ...
+0.12.528.203 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.12.531.270 I srv  init_listene: The UI is disabled
+0.12.531.272 I srv  init_listene: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.12.533.387 I srv    load_model: loading model '<server-workspace>/models/Qwen3.5-9B-LMStudio-1379f25c/Qwen3.5-9B-Q4_K_M.gguf'
+0.39.001.597 I cmn          init: llama threadpool init, n_threads = 4
+0.41.714.702 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 32768, kv_unified = 'false'
+0.41.742.197 I srv  server_run_i: model loaded
+0.41.742.210 I srv  server_on_li: listening on http://127.0.0.1:18851
+0.42.012.978 I srv    operator(): operator(): cleaning up before exit...

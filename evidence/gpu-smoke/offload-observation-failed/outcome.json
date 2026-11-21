@@ -1,0 +1,11 @@
+{
+  "outcome": "offload_log_not_confirmed",
+  "completed_model_http_requests": 0,
+  "journal_created": false,
+  "model_health_reached": true,
+  "layer_offload_count_unconfirmed": true,
+  "native_returncode": null,
+  "service_stopped_after_failed_preflight": true,
+  "cleanup_confirmed": true,
+  "no_model_request_retry": true
+}

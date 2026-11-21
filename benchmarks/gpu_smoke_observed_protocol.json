@@ -1,0 +1,136 @@
+{
+  "stage": 32,
+  "declared_utc": "2026-11-21T06:52:17.278545+00:00",
+  "scope": "One normal CUDA model-load and three-request HTTP/tool-transport smoke validation. Not autonomous repository repair, a held-out benchmark, or a speedup estimate.",
+  "source_project_base": "8385a74804d1048cb1be1183d9c874fbc3c124e3",
+  "operator_sha256": {
+    "gpu_smoke_runtime_v3_20261121.py": "ff409f27ab4c283002bd6b64f77c244d13a2e6114e6220552fd81ea11dd03528",
+    "gpu_smoke_http_v3_20261121.py": "823534d9bf765f219b0bb7a36667e53792d75b91c0f9c6b2ebc175d1ab222b5e",
+    "gpu-smoke-run-v3-20261121.py": "b8bf11ace88658e621c569184525bae811d84e44fd1be791e069bf82d15954fa"
+  },
+  "runtime_manifest_sha256": "6d309b948bd103b13e8ae5fd53f2c1cd69519c4fa5ff2a1c9b2ce30ac3666c8c",
+  "server_sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+  "cuda_backend_sha256": "52d2257263d798c0ea8a97a4279fef05f3b5abd41344245e27ea1bc4e820991f",
+  "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "model": {
+    "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "bytes": 5627044256,
+    "quantizer": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "exact_quantizer_source_weight_revision": null,
+    "alias": "agentlab-qwen35-9b-cuda"
+  },
+  "request_budget_source_sha256": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+  "http_limits": {
+    "max_requests": 3,
+    "max_request_bytes": 65536,
+    "max_total_request_bytes": 131072
+  },
+  "service": {
+    "host": "127.0.0.1",
+    "port": 18851,
+    "gpu_layers": "all",
+    "visible_devices": "one admitted UUID only; private UUID not published",
+    "device": "CUDA0",
+    "split_mode": "none",
+    "fit": "off",
+    "context": 32768,
+    "threads": 4,
+    "parallel": 1,
+    "thinking": false,
+    "wall_seconds": 900,
+    "readiness_seconds": 300,
+    "request_seconds": 120,
+    "api_auth": "Ephemeral owner-only key file; no key/header publication"
+  },
+  "resource_policy": {
+    "compute_capability": "8.6",
+    "total_memory_min_mib": 20480,
+    "idle_memory_max_mib": 64,
+    "idle_utilization": 0,
+    "no_existing_compute_clients": true,
+    "admission_snapshot_separation_seconds": 5,
+    "immediate_prelaunch_recheck": true,
+    "own_lock_not_system_reservation": true,
+    "stop_own_service_on_foreign_compute_client": true,
+    "host_available_admission_gib": 32,
+    "host_available_floor_gib": 16,
+    "sampled_host_tree_rss_limit_gib": 16,
+    "sampled_gpu_memory_limit_mib": 18432,
+    "sampling_interval_seconds": 2,
+    "gpu_query_timeout_seconds": 10,
+    "address_space_limit": "Not imposed for CUDA virtual-address reservations; sampled physical-resource guards apply",
+    "nice": 19,
+    "active_state": "private local ext4",
+    "parent_death_signal": "SIGTERM via Linux prctl",
+    "runtime_gpu_query_scope": "selected UUID only",
+    "gpu_observation_max_age_seconds": 30,
+    "host_monitor_independent_of_gpu_queries": true
+  },
+  "cases": [
+    {
+      "name": "plain_completion",
+      "prompt": "Return exactly READY, with no other text.",
+      "max_output_tokens": 16,
+      "expected": "READY"
+    },
+    {
+      "name": "forced_function_call_arguments",
+      "function": "read_build_status",
+      "function_selection": "forced",
+      "arguments": {
+        "build_id": "cuda-build-20261121"
+      },
+      "max_output_tokens": 128,
+      "handler": "Read only the actual completed build report; return source_files and source_unchanged"
+    },
+    {
+      "name": "tool_result_to_final_json",
+      "final_tool_choice": "none",
+      "response_format": "json_object",
+      "max_output_tokens": 64,
+      "expected": {
+        "source_files": 4496,
+        "source_unchanged": true
+      }
+    }
+  ],
+  "sampling": {
+    "temperature": 0,
+    "top_p": 1,
+    "top_k": 0,
+    "min_p": 0,
+    "repeat_penalty": 1,
+    "presence_penalty": 0,
+    "seed": 42
+  },
+  "retries": 0,
+  "repair_rounds": 0,
+  "fault_injection": false,
+  "core_tests_rerun": false,
+  "limitations": [
+    "Three external HTTP requests only; model initialization/warmup may perform additional compute.",
+    "Function selection and final JSON response are constrained; this does not prove autonomous planning, editing or maintenance repair.",
+    "New compiler/backend/GPU/resource profile differs from earlier CPU runs; no isolated performance or cost comparison.",
+    "GPU admission is observational on a shared host; own lock does not reserve resources against other users.",
+    "Sampled resource guards are not allocator-enforced hard caps; summed RSS double counts shared pages.",
+    "Exact source weight revision behind the community quantization remains unknown.",
+    "No model request retry, prompt repair or quota reset. Health readiness GET polling is separate from inference requests.",
+    "Existing protected repository acceptance and106 core checks unchanged/not executed here."
+  ],
+  "attempt": "native_metadata_observed",
+  "prior_attempt_protocol_sha256": "8afe73cd02ae43bd351239a9aef0904850cff272da0d5193b5df97611bb9912a",
+  "prior_attempt_outcome": "Health/model list reached; library INFO log is TRACE4 while default server threshold3. Layer evidence absent at chosen verbosity, zero HTTP requests; closed port/no remaining process/context, exit code not captured.",
+  "changes": [
+    "NVML queries target only selected UUID during runtime",
+    "GPU sampling thread separate from host RSS/wall supervisor",
+    "A transient GPU observation gap does not restart or immediately kill service; stale over30seconds still stops only own server",
+    "Set native verbosity4 because common_log_get_verbosity maps GGML INFO to TRACE4; no numeric model configuration change",
+    "Parse native n_ctx or n_ctx_slot after ANSI removal; require unchanged32768",
+    "Wait/reap child to capture native exit code; success additionally requires exit0",
+    "Redact the ephemeral authentication value from a derived log before publication"
+  ],
+  "output_directory_identity": "gpu-smoke-observed-20261121",
+  "native_log_verbosity": 4,
+  "normal_native_exit_required": 0
+}

@@ -1,0 +1,41 @@
+{
+  "normalization": "Private paths replaced; authentication-related log lines excluded if any. No header/key/weight publication.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "22bc617475929bd41dd7a09b446faf4e681471214f2df7bae288a40a1374904c",
+      "public_sha256": "eea06bdd9f84c93153ae0eca0b76bbdb0a3a50898d7a0ce8d741f0223f86d353",
+      "bytes": 3716
+    },
+    {
+      "path": "service.json",
+      "original_sha256": "197a8c8516efa532cc6c97c1f62e35ce858ae706942bc29364811d9699a017f2",
+      "public_sha256": "5bb3cfb5bd1394d0f113385c20c2c4349823f79507ed62a424f1ea3eb46744eb",
+      "bytes": 2704
+    },
+    {
+      "path": "server.log",
+      "original_sha256": "a4cfe5efaa19d53df399032d1ed1cc52d3825c9ba22323e73f85073b3298f7d6",
+      "public_sha256": "3dc14e1d13b570ebe65f7f1aa24f8b7096aa6835844bbd49c9f49f1300517475",
+      "bytes": 936
+    },
+    {
+      "path": "monitor.jsonl",
+      "original_sha256": "2757a775ac311ef8c046a3e6067e7a523327a37241207645129338df54434327",
+      "public_sha256": "2757a775ac311ef8c046a3e6067e7a523327a37241207645129338df54434327",
+      "bytes": 3757
+    },
+    {
+      "path": "gpu-probe-errors.json",
+      "original_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "public_sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    {
+      "path": "models.json",
+      "original_sha256": "95233910f69b063f704fc7149812b18810b674b4b79a8752c8048331dc46cded",
+      "public_sha256": "95233910f69b063f704fc7149812b18810b674b4b79a8752c8048331dc46cded",
+      "bytes": 1203
+    }
+  ]
+}
