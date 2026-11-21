@@ -1,0 +1,10 @@
+{
+  "normalization": "Private temporary root normalized; original report retained privately.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "5b9fbda459b86ccae4b2f8f7a39ef2ffb5ee69198e2d75db86557b117b7e2449",
+      "public_sha256": "5b9fbda459b86ccae4b2f8f7a39ef2ffb5ee69198e2d75db86557b117b7e2449"
+    }
+  ]
+}

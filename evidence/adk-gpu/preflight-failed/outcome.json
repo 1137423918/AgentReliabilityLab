@@ -1,0 +1,8 @@
+{
+  "outcome": "model_hash_field_schema_mismatch",
+  "model_service_started": false,
+  "model_http_requests": 0,
+  "no_request_journal": true,
+  "no_api_key_file": true,
+  "strict_failure_preserved": true
+}

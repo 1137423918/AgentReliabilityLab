@@ -1,0 +1,16 @@
+{
+  "protocol_sha256": "929000c914048d963a749fdf9719308fdebb8bac59c9558ba69f259260387e94",
+  "started_utc": "2026-11-21T07:28:02.538545+00:00",
+  "local_root_sha256": "02256641871b98387513a9bc87f81d1a272f9e205ae7a4ba171152c77f05ff6a",
+  "scope": "One new protected ADK repository-maintenance trajectory using pinned9B CUDA serving. Known public defect; not held out, independent tasks, a general success rate or isolated performance comparison.",
+  "status": "failed",
+  "checks": [],
+  "service_started": false,
+  "error_type": "KeyError",
+  "error": "'sha256'",
+  "port_closed": true,
+  "completed_utc": "2026-11-21T07:28:44.899593+00:00",
+  "model_http_request_limit": 16,
+  "warmup_outside_http_budget": true,
+  "success": false
+}
