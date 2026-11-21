@@ -1,0 +1,4 @@
+StreamableHTTP session manager started
+Tool 'audit_status' failed: 'Error executing tool audit_status: Unknown or expired audit capability'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+StreamableHTTP session manager shutting down

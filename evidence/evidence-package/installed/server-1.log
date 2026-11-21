@@ -1,0 +1,6 @@
+StreamableHTTP session manager started
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Receipt was not issued by this audit'
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Claimed fact differs from actual report'
+Tool 'read_report' failed: 'Error executing tool read_report: Report bytes differ from the pinned snapshot'
+Tool 'audit_status' failed: 'Error executing tool audit_status: Unknown or expired audit capability'
+StreamableHTTP session manager shutting down

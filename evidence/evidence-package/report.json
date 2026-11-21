@@ -1,0 +1,280 @@
+{
+  "checked_at_utc": "2026-11-21T19:00:56.461478+00:00",
+  "purpose": "Standalone installable evidence MCP service, with a real console entry and preflight. Exact installed wheel validated outside checkout in a minimal frozen runtime.",
+  "base_project_commit": "3a35c72b977c483e54902fc1428c3a557ece2af9",
+  "package": "agentlab-evidence",
+  "version": "0.1.0",
+  "wheel": {
+    "wheel": "agentlab_evidence-0.1.0-py3-none-any.whl",
+    "bytes": 9033,
+    "sha256": "1a79b4535dae12717133a4a07f61f63bb52d217d86b994d9d4c034393105b720",
+    "source_sha256": {
+      "evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+      "evidence_service.py": "9ca1f64bda0cb85b9088454af5dcbf420d5f9ef8d4eb3022c01df553dccfe8e6",
+      "evidence_mcp.py": "748592c2fe6e922d2b5baca9120b93e98c890646295340b84a1b31c81f474ca5"
+    },
+    "all_canonical_module_bytes_identical": true,
+    "requires_dist": [
+      "mcp==2.3.0",
+      "httpx2==2.16.2"
+    ],
+    "entry_points": "[console_scripts]\nagentlab-evidence = agentlab_evidence.evidence_mcp:main\n",
+    "installed_or_executed": false
+  },
+  "starter": {
+    "file": "agentlab-evidence-0.1.0-starter.zip",
+    "entries": 15,
+    "bytes": 80592,
+    "sha256": "654fd47fa0c494fb5d032d7b5521acbdc9d117a4b430e2826984995470615347",
+    "every_payload_byte_identical": true,
+    "reports": 9,
+    "catalog_snapshot": "cb67290a9ced302834f8458adf94b78bc64246bd",
+    "runtime_uv_lock_sha256": "4adb0fddcce995b5ca121144e542cba0a6dad6029f2b6d82ec1b1c342ae7db10",
+    "wheel_sha256": "1a79b4535dae12717133a4a07f61f63bb52d217d86b994d9d4c034393105b720",
+    "package_is_not_PyPI_release": true,
+    "whole_starter_quickstart_reexecuted": false,
+    "validation_scope": "Installed exact wheel and canonical corpus tested on server; final starter ZIP payloads are statically byte-verified, not a second full runtime replay."
+  },
+  "execution_protocol_sha256": "531702500c52fe746a1004a07349f53b5ca920683b6ccd478d0fa123164c8391",
+  "source_archive_sha256": "7977ce93a4f1d4ee012cbf0c0160516c366e929e8f055190ee1029ae887ba893",
+  "runtime_lock_sha256": "4adb0fddcce995b5ca121144e542cba0a6dad6029f2b6d82ec1b1c342ae7db10",
+  "canonical_modules": {
+    "evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "evidence_service.py": "9ca1f64bda0cb85b9088454af5dcbf420d5f9ef8d4eb3022c01df553dccfe8e6",
+    "evidence_mcp.py": "748592c2fe6e922d2b5baca9120b93e98c890646295340b84a1b31c81f474ca5"
+  },
+  "installed_controls": {
+    "cases": [
+      {
+        "case": "installed_cli_catalog_check",
+        "passed": true,
+        "returncode": 0
+      },
+      {
+        "case": "installed_module_help",
+        "passed": true,
+        "returncode": 0
+      },
+      {
+        "case": "modified_catalog_check_rejected",
+        "passed": true,
+        "returncode": 2
+      },
+      {
+        "case": "modified_catalog_start_rejected",
+        "passed": true,
+        "returncode": 2
+      },
+      {
+        "case": "installed_cli_real_report_receipt_verification",
+        "passed": true
+      },
+      {
+        "case": "cross_audit_receipt_and_wrong_JSON_type_rejected",
+        "passed": true
+      },
+      {
+        "case": "installed_cli_rechecks_changed_report",
+        "passed": true
+      },
+      {
+        "case": "installed_cli_restart_invalidates_handles_and_exhausted_context_closes",
+        "passed": true
+      }
+    ],
+    "passed": 8,
+    "failed": 0,
+    "canonical_installed_source": {
+      "evidence_audit.py": {
+        "sha256": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+        "inside_new_environment": true
+      },
+      "evidence_service.py": {
+        "sha256": "9ca1f64bda0cb85b9088454af5dcbf420d5f9ef8d4eb3022c01df553dccfe8e6",
+        "inside_new_environment": true
+      },
+      "evidence_mcp.py": {
+        "sha256": "748592c2fe6e922d2b5baca9120b93e98c890646295340b84a1b31c81f474ca5",
+        "inside_new_environment": true
+      }
+    },
+    "isolated_python": true,
+    "source_checkout_importable": false,
+    "deepagents_or_llamaindex_installed": false,
+    "installed_version": "0.1.0",
+    "catalog_reports": 9,
+    "planned_server_lifetimes": [
+      {
+        "lifetime": 1,
+        "returncode": -15,
+        "forced_kill": false,
+        "port_closed": true,
+        "wall_seconds": 1.427
+      },
+      {
+        "lifetime": 2,
+        "returncode": -15,
+        "forced_kill": false,
+        "port_closed": true,
+        "wall_seconds": 1.204
+      }
+    ],
+    "model_HTTP_requests": 0,
+    "neural_requests": 0,
+    "GPU_used": false,
+    "corpus_bytes_restored": true
+  },
+  "full_core_passed": 130,
+  "full_core_skipped": 0,
+  "new_core_test_count": 0,
+  "verification": {
+    "full_core_passed": 130,
+    "core_skipped": 0,
+    "core_test_count_added": 0,
+    "installed_artifact_controls_passed": 8,
+    "same_canonical_source_in_wheel_and_installed_modules": true,
+    "wheel_RECORD_all_entries_verified": true,
+    "installed_isolated_python_outside_checkout": true,
+    "main_agent_and_benchmark_namespaces_not_importable": true,
+    "deepagents_and_llamaindex_not_installed": true,
+    "all181_frozen_server_source_files_unchanged": true,
+    "original_core_and_builder_distribution_versions_unchanged": true,
+    "new_runtime_only_added_own_wheel": true,
+    "frozen_optional_dependency_lock_unchanged": true,
+    "installed_dependency_check_passed": true,
+    "two_planned_server_lifetimes_terminal": true,
+    "no_forced_kill_and_ports_closed": true,
+    "owned_processes_after": 0,
+    "installed_report_data_restored": true,
+    "saved_wire_bodies_checked": 88,
+    "wire_SHA_length_JSON_privacy_checked": true,
+    "static_source_checks": {
+      "EvidenceService_AST_unchanged_except_relative_import": true,
+      "create_app_AST_identical_to_original": true,
+      "canonical_modules_are_copied_without_rewriting_into_independent_namespace": true,
+      "main_project_and_existing_optional_SDK_locks_unchanged": true,
+      "previous_goal_turn": "progress_stage43_published",
+      "local_runtime_tests": false
+    },
+    "neural_requests": 0,
+    "GPU_used": false,
+    "local_runtime_tests": false
+  },
+  "phases": [
+    {
+      "phase": "core-identity-before",
+      "returncode": 0,
+      "wall_seconds": 1.213,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 15859712
+    },
+    {
+      "phase": "builder-identity-before",
+      "returncode": 0,
+      "wall_seconds": 1.126,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 8650752
+    },
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 1.244,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7929856
+    },
+    {
+      "phase": "runtime-sync",
+      "returncode": 0,
+      "wall_seconds": 9.832,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 22347776
+    },
+    {
+      "phase": "runtime-identity-before",
+      "returncode": 0,
+      "wall_seconds": 0.586,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 10813440
+    },
+    {
+      "phase": "build",
+      "returncode": 0,
+      "wall_seconds": 2.645,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 63438848
+    },
+    {
+      "phase": "wheel-install",
+      "returncode": 0,
+      "wall_seconds": 2.831,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 28114944
+    },
+    {
+      "phase": "installed-dependency-check",
+      "returncode": 0,
+      "wall_seconds": 0.87,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 0
+    },
+    {
+      "phase": "installed-controls",
+      "returncode": 0,
+      "wall_seconds": 15.856,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 129761280
+    },
+    {
+      "phase": "full-core",
+      "returncode": 0,
+      "wall_seconds": 366.713,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 245424128
+    },
+    {
+      "phase": "core-identity-after",
+      "returncode": 0,
+      "wall_seconds": 1.707,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 14417920
+    },
+    {
+      "phase": "builder-identity-after",
+      "returncode": 0,
+      "wall_seconds": 0.592,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 8650752
+    },
+    {
+      "phase": "runtime-identity-after",
+      "returncode": 0,
+      "wall_seconds": 0.663,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 7929856
+    }
+  ],
+  "original_core_and_builder_versions_unchanged": true,
+  "new_runtime_only_added_own_wheel": true,
+  "frozen_source_files": 181,
+  "all_frozen_server_sources_unchanged": true,
+  "all_jobs_terminal": true,
+  "owned_processes_after": 0,
+  "neural_requests": 0,
+  "GPU_used": false,
+  "artifact_rows": 51,
+  "artifacts_manifest_sha256": "be11b9944d45cf9288c1b3dfb092e5cb22ad295d9543ce655bfbf880c4d7fdf5",
+  "limits": [
+    "Eight installed artifact controls and130 core tests are separate scopes, not138 unique tests or new neural scores. Previous10 consumer/6network controls are historical, not rerun or added.",
+    "Fixed nine-report catalog from cb67290 is historical source data, not the latest live PR/core status. Source corpus and real-model failures are unchanged.",
+    "Minimal wheel namespace is separate from main agent_lab; default optional runtime remains unchanged. Existing benchmark entry reexports the canonical app/main. Only relative import changes EvidenceService; class methods and create_app AST are identical.",
+    "Final starter ZIP bytes are checked entry-by-entry against the actual tested wheel/corpus and unchanged dependency lock. The full starter quickstart is not run again; installed exact components were validated once.",
+    "Linux Python3.11.4 only; no cross-platform, full MCP conformance, authenticated public service, hostile operator, multiworker or durable audit restoration proof.",
+    "Preflight checks pinned JSON integrity and allowed paths, not publisher authentication, arbitrary verdict truth or free-prose semantics.",
+    "No real model/GPU request, production traffic, upstream issue/comment/PR or PyPI upload. The website remains a static distribution/documentation surface; temporary server processes are stopped.",
+    "Build receipt installed_or_executed=false describes build time; the separate installed controls report proves subsequent actual installation/execution."
+  ],
+  "upstream_references": [
+    "https://packaging.python.org/en/latest/specifications/entry-points/",
+    "https://py.sdk.modelcontextprotocol.io/"
+  ]
+}

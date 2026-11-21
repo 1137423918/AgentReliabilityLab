@@ -1,0 +1,3 @@
+usage: agentlab-evidence [-h] --root ROOT --manifest MANIFEST [--port PORT]
+                         [--max-operations MAX_OPERATIONS] [--check]
+agentlab-evidence: error: Catalog validation failed: Report bytes differ from the pinned snapshot

@@ -1,0 +1,81 @@
+{
+  "cases": [
+    {
+      "case": "installed_cli_catalog_check",
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "case": "installed_module_help",
+      "passed": true,
+      "returncode": 0
+    },
+    {
+      "case": "modified_catalog_check_rejected",
+      "passed": true,
+      "returncode": 2
+    },
+    {
+      "case": "modified_catalog_start_rejected",
+      "passed": true,
+      "returncode": 2
+    },
+    {
+      "case": "installed_cli_real_report_receipt_verification",
+      "passed": true
+    },
+    {
+      "case": "cross_audit_receipt_and_wrong_JSON_type_rejected",
+      "passed": true
+    },
+    {
+      "case": "installed_cli_rechecks_changed_report",
+      "passed": true
+    },
+    {
+      "case": "installed_cli_restart_invalidates_handles_and_exhausted_context_closes",
+      "passed": true
+    }
+  ],
+  "passed": 8,
+  "failed": 0,
+  "canonical_installed_source": {
+    "evidence_audit.py": {
+      "sha256": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+      "inside_new_environment": true
+    },
+    "evidence_service.py": {
+      "sha256": "9ca1f64bda0cb85b9088454af5dcbf420d5f9ef8d4eb3022c01df553dccfe8e6",
+      "inside_new_environment": true
+    },
+    "evidence_mcp.py": {
+      "sha256": "748592c2fe6e922d2b5baca9120b93e98c890646295340b84a1b31c81f474ca5",
+      "inside_new_environment": true
+    }
+  },
+  "isolated_python": true,
+  "source_checkout_importable": false,
+  "deepagents_or_llamaindex_installed": false,
+  "installed_version": "0.1.0",
+  "catalog_reports": 9,
+  "planned_server_lifetimes": [
+    {
+      "lifetime": 1,
+      "returncode": -15,
+      "forced_kill": false,
+      "port_closed": true,
+      "wall_seconds": 1.427
+    },
+    {
+      "lifetime": 2,
+      "returncode": -15,
+      "forced_kill": false,
+      "port_closed": true,
+      "wall_seconds": 1.204
+    }
+  ],
+  "model_HTTP_requests": 0,
+  "neural_requests": 0,
+  "GPU_used": false,
+  "corpus_bytes_restored": true
+}

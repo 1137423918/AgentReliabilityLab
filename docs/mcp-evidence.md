@@ -2,6 +2,34 @@
 
 面向多个Agent客户端共用同一批实验报告的情况：提供固定来源读取，分开维护每次审计的读数、回执和操作额度。MCP2.3.0本身提供协议和工具发现；本项目的`EvidenceService`实现独立上下文与回执核对。不会调用模型，原维护worker的依赖与模型额度账本不变。
 
+## 下载启动包，脱离源码运行
+
+现在提供[独立启动包](../artifacts/agentlab-evidence-0.1.0-starter.zip)、[原始wheel](../artifacts/agentlab_evidence-0.1.0-py3-none-any.whl)和[完整性收据](../artifacts/agentlab-evidence-0.1.0-starter.json)。解压启动包后不需要项目checkout、Deep Agents、LlamaIndex、模型权重或模型API key。使用已有Python3.11及uv，在获准服务器的解压目录执行：
+
+```sh
+uv sync --python python3.11 --project runtime --frozen \
+  --no-install-project --no-default-groups
+uv pip install --python runtime/.venv/bin/python --offline --no-deps \
+  ./agentlab_evidence-0.1.0-py3-none-any.whl
+uv pip check --python runtime/.venv/bin/python
+runtime/.venv/bin/agentlab-evidence --root reports \
+  --manifest reports/catalog.json --check
+runtime/.venv/bin/agentlab-evidence --root reports \
+  --manifest reports/catalog.json --port 18856
+```
+
+冻结依赖同步会从PyPI下载；随后安装本项目wheel时使用offline/no-deps。`--check`检查每份报告的固定哈希后退出，不监听端口；正常启动也会先检查。`python -m agentlab_evidence`为相同安装入口。停止前台服务即可结束；不会建立公开监听或网站在线后端。
+
+启动包内是九份真实公开报告的历史目录，来源固定在`cb67290a9ced302834f8458adf94b78bc64246bd`，不是最新GitHub PR状态或本轮130项结果。`CHECKSUMS.json`逐项记录payload字节；外层zip SHA256为`654fd47fa0c494fb5d032d7b5521acbdc9d117a4b430e2826984995470615347`，wheel SHA256为`1a79b4535dae12717133a4a07f61f63bb52d217d86b994d9d4c034393105b720`。这是完整性元数据，不是发布者认证。
+
+可用自有目录和manifest替换报告：`version:1`、`source_commit`、`source_base`及`reports:[{id,path,description,sha256}]`，示例见启动包`reports/catalog.json`。每份文件必须为根目录内的相对JSON路径，最多32份、每份最多262144字节；报告symlink不接纳。目录由可信操作者配置，不要加入连接文档、凭据或活跃任务状态。
+
+本次确实安装/执行了9033字节wheel：新的最小锁定环境、源码目录之外、隔离Python `-I`，`agent_lab`/`benchmarks`/Deep Agents/LlamaIndex均不能导入。八项安装后控制通过，覆盖CLI/模块入口、篡改报告启动前拒绝、真实回执核对、串用回执/错误JSON类型拒绝、运行中哈希复查、计划重启使旧能力失效及额度耗尽后关闭。两个服务SIGTERM(-15)结束、端口关闭、自有进程归零。共享导入调整后原130项完整回归再次通过、零跳过，没有增加测试函数；八项控制与其分开。原core/builder环境版本不变，新runtime仅在冻结依赖上安装本项目wheel。
+
+三个规范模块字节原样进入独立`agentlab_evidence`命名空间，没有通过源码路径别名导入旧环境。最终启动zip将实际测试的wheel、相同报告和未改依赖锁逐项打包并核对字节，未为它再完整重跑启动流程。[安装证据和全部边界](../evidence/evidence-package/README.md)。只实测Linux/Python3.11.4，不宣称其他系统、完整MCP合规、公网认证或真实模型成绩；没有上传PyPI。
+
+## 从源码启动
+
 以下在服务器的源码checkout根目录运行，使用独立环境：
 
 ```sh

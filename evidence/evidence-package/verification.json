@@ -1,0 +1,33 @@
+{
+  "full_core_passed": 130,
+  "core_skipped": 0,
+  "core_test_count_added": 0,
+  "installed_artifact_controls_passed": 8,
+  "same_canonical_source_in_wheel_and_installed_modules": true,
+  "wheel_RECORD_all_entries_verified": true,
+  "installed_isolated_python_outside_checkout": true,
+  "main_agent_and_benchmark_namespaces_not_importable": true,
+  "deepagents_and_llamaindex_not_installed": true,
+  "all181_frozen_server_source_files_unchanged": true,
+  "original_core_and_builder_distribution_versions_unchanged": true,
+  "new_runtime_only_added_own_wheel": true,
+  "frozen_optional_dependency_lock_unchanged": true,
+  "installed_dependency_check_passed": true,
+  "two_planned_server_lifetimes_terminal": true,
+  "no_forced_kill_and_ports_closed": true,
+  "owned_processes_after": 0,
+  "installed_report_data_restored": true,
+  "saved_wire_bodies_checked": 88,
+  "wire_SHA_length_JSON_privacy_checked": true,
+  "static_source_checks": {
+    "EvidenceService_AST_unchanged_except_relative_import": true,
+    "create_app_AST_identical_to_original": true,
+    "canonical_modules_are_copied_without_rewriting_into_independent_namespace": true,
+    "main_project_and_existing_optional_SDK_locks_unchanged": true,
+    "previous_goal_turn": "progress_stage43_published",
+    "local_runtime_tests": false
+  },
+  "neural_requests": 0,
+  "GPU_used": false,
+  "local_runtime_tests": false
+}

@@ -16,6 +16,8 @@
 
 ## MCP：把真实报告核对做成可调用服务
 
+可直接下载[独立启动包](artifacts/agentlab-evidence-0.1.0-starter.zip)：9033字节wheel、冻结依赖锁与九份固定公开报告。无需源码checkout或主Agent依赖，CLI启动前检查报告哈希。真实安装后八项控制通过，原130项完整回归再次通过、零跳过；两种范围分开，零神经/GPU调用。[安装命令](docs/mcp-evidence.md) · [实际安装证据](evidence/evidence-package/README.md)。
+
 提供可运行的MCP2.3.0本机服务，独立审计上下文、读取回执、TTL和并发共享操作额度。完整130项回归通过、零跳过（新增6项包含在内）；另6场真实SDK/TCP控制通过，覆盖回执隔离、重连、最后一次额度争抢及读完但回复未收到时的取消。57次SDK尝试/56份完整回复，另测超限HTTP413；两个预定服务进程已退出、端口关闭。零模型/GPU调用，不计神经审计成绩。[部署、客户端与边界](docs/mcp-evidence.md) · [全部实际轨迹](evidence/mcp-evidence/README.md)。
 
 ## LlamaIndex：审计真实报告中的项目表述

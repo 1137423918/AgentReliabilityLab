@@ -1,0 +1,17 @@
+{
+  "wheel": "agentlab_evidence-0.1.0-py3-none-any.whl",
+  "bytes": 9033,
+  "sha256": "1a79b4535dae12717133a4a07f61f63bb52d217d86b994d9d4c034393105b720",
+  "source_sha256": {
+    "evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "evidence_service.py": "9ca1f64bda0cb85b9088454af5dcbf420d5f9ef8d4eb3022c01df553dccfe8e6",
+    "evidence_mcp.py": "748592c2fe6e922d2b5baca9120b93e98c890646295340b84a1b31c81f474ca5"
+  },
+  "all_canonical_module_bytes_identical": true,
+  "requires_dist": [
+    "mcp==2.3.0",
+    "httpx2==2.16.2"
+  ],
+  "entry_points": "[console_scripts]\nagentlab-evidence = agentlab_evidence.evidence_mcp:main\n",
+  "installed_or_executed": false
+}

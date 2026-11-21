@@ -1,0 +1,14 @@
+usage: __main__.py [-h] --root ROOT --manifest MANIFEST [--port PORT]
+                   [--max-operations MAX_OPERATIONS] [--check]
+
+Expose fixed public evidence through the real MCP2 Streamable HTTP transport.
+The optional SDK is installed in its own environment. This service binds only
+loopback. It does not call a model or expose arbitrary filesystem operations.
+
+options:
+  -h, --help            show this help message and exit
+  --root ROOT
+  --manifest MANIFEST
+  --port PORT
+  --max-operations MAX_OPERATIONS
+  --check               Validate the pinned catalog and exit without listening

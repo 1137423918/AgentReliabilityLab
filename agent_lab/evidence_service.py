@@ -11,7 +11,7 @@ import threading
 import time
 from pathlib import Path
 
-from agent_lab.evidence_audit import EvidenceCatalog, EvidenceError
+from .evidence_audit import EvidenceCatalog, EvidenceError
 
 
 class EvidenceService:

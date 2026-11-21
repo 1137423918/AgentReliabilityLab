@@ -1,0 +1,1 @@
+{"passed": 8, "failed": 0, "planned_lifetimes": [{"lifetime": 1, "returncode": -15, "forced_kill": false, "port_closed": true, "wall_seconds": 1.427}, {"lifetime": 2, "returncode": -15, "forced_kill": false, "port_closed": true, "wall_seconds": 1.204}], "model_requests": 0}

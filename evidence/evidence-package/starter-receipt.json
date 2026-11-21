@@ -1,0 +1,14 @@
+{
+  "file": "agentlab-evidence-0.1.0-starter.zip",
+  "entries": 15,
+  "bytes": 80592,
+  "sha256": "654fd47fa0c494fb5d032d7b5521acbdc9d117a4b430e2826984995470615347",
+  "every_payload_byte_identical": true,
+  "reports": 9,
+  "catalog_snapshot": "cb67290a9ced302834f8458adf94b78bc64246bd",
+  "runtime_uv_lock_sha256": "4adb0fddcce995b5ca121144e542cba0a6dad6029f2b6d82ec1b1c342ae7db10",
+  "wheel_sha256": "1a79b4535dae12717133a4a07f61f63bb52d217d86b994d9d4c034393105b720",
+  "package_is_not_PyPI_release": true,
+  "whole_starter_quickstart_reexecuted": false,
+  "validation_scope": "Installed exact wheel and canonical corpus tested on server; final starter ZIP payloads are statically byte-verified, not a second full runtime replay."
+}
