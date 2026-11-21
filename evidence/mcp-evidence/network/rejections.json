@@ -1,0 +1,68 @@
+{
+  "errors": [
+    {
+      "meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "AgentLab Evidence",
+          "version": "0.1.0"
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool read_report: Unknown report ID",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    },
+    {
+      "meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "AgentLab Evidence",
+          "version": "0.1.0"
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool read_report: Select an explicit JSON pointer, not a whole report",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    },
+    {
+      "meta": {
+        "io.modelcontextprotocol/serverInfo": {
+          "name": "AgentLab Evidence",
+          "version": "0.1.0"
+        }
+      },
+      "content": [
+        {
+          "type": "text",
+          "text": "Error executing tool verify_assessment: Claimed fact differs from actual report",
+          "annotations": null,
+          "meta": null
+        }
+      ],
+      "structured_content": null,
+      "is_error": true,
+      "result_type": "complete"
+    }
+  ],
+  "oversize_http_status": 413,
+  "counter": {
+    "operations_spent": 4,
+    "reads_completed": 1,
+    "max_operations": 16,
+    "max_reads": 8
+  }
+}

@@ -1,0 +1,81 @@
+from pathlib import Path
+import datetime,hashlib,json,os,re,resource,signal,subprocess,tarfile,time
+BASE=Path('<SERVER_BASE>');OUT=BASE/'outputs/mcp-evidence-validation-v1-20261121';BOOT=BASE/'outputs/mcp-evidence-20261121';ROOT=Path(json.loads((BOOT/'control-location.json').read_text())['local_root'])/'validation-v1';CODE=ROOT/'code';SDK=BASE/'envs/mcp-evidence-20261121/bin/python';CORE=BASE/'envs/model-request-budget-20261121/bin/python';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+def ticks(pid):
+ try:return Path(f'/proc/{pid}/stat').read_text().rsplit(')',1)[1].split()[19]
+ except (FileNotFoundError,ProcessLookupError):return None
+def available():return next(int(s.split()[1])*1024 for s in Path('/proc/meminfo').read_text().splitlines() if s.startswith('MemAvailable:'))
+def owned():
+ result=[]
+ for p in Path('/proc').iterdir():
+  if not p.name.isdigit():continue
+  try:
+   if str(ROOT).encode() in (p/'cmdline').read_bytes() or (p/'cwd').resolve().is_relative_to(ROOT):
+    stat=(p/'stat').read_text().rsplit(')',1)[1].split();result.append({'pid':int(p.name),'pgrp':int(stat[2]),'start_ticks':stat[19],'name':(p/'comm').read_text().strip()})
+  except (OSError,ValueError):pass
+ return result
+def main():
+ assert not ROOT.exists() and not (OUT/'run-report.json').exists();spec=json.loads((OUT/'protocol.json').read_text());assert sha(Path(__file__))==spec['operator_sha256'];assert sha(OUT/'source.tar.gz')==spec['source_archive_sha256'];assert sha(BOOT/'uv.lock')==spec['uv_lock_sha256'];ROOT.mkdir(mode=0o700);CODE.mkdir();(OUT/'control-location.json').write_text(json.dumps({'local_root':str(ROOT)})+'\n');(OUT/'control-location.json').chmod(0o600)
+ with tarfile.open(OUT/'source.tar.gz') as t:t.extractall(CODE,filter='data')
+ manifest=json.loads((OUT/'source-manifest.json').read_text())
+ for n,d in manifest['source_files_sha256'].items():assert sha(CODE/n)==d,n
+ assert sha(CODE/'corpus/catalog.json')==spec['catalog_sha256'];assert available()>=16*2**30
+ os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:4]);os.nice(19);resource.setrlimit(resource.RLIMIT_AS,(48*2**30,48*2**30));env=dict(os.environ,PYTHONPATH=str(CODE),TMPDIR=str(ROOT),CUDA_VISIBLE_DEVICES='',PYTHONUNBUFFERED='1');report={'protocol_sha256':sha(OUT/'protocol.json'),'source_archive_sha256':spec['source_archive_sha256'],'phases':[],'terminal':False,'model_requests':0,'gpu_used':False};driver=None;identity=None;groups=set();started=time.monotonic()
+ def save(): (OUT/'run-report.json').write_text(json.dumps(report,indent=2)+'\n')
+ def stop():
+  nonlocal driver
+  if driver is not None and driver.poll() is None:
+   assert ticks(driver.pid)==identity;os.killpg(driver.pid,signal.SIGTERM)
+   try:driver.wait(timeout=25)
+   except subprocess.TimeoutExpired:
+    assert ticks(driver.pid)==identity;os.killpg(driver.pid,signal.SIGKILL);driver.wait(timeout=10)
+ def run(name,args,timeout):
+  nonlocal driver,identity
+  start=time.monotonic();peak=0;guard=None
+  with (OUT/(name+'.log')).open('wb') as log:
+   driver=subprocess.Popen(list(map(str,args)),cwd=CODE,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True);identity=ticks(driver.pid);groups.add(driver.pid)
+   with (OUT/(name+'-monitor.jsonl')).open('w') as monitor:
+    while driver.poll() is None:
+     memory=available();rss=0
+     for p in Path('/proc').iterdir():
+      if not p.name.isdigit():continue
+      try:
+       stat=(p/'stat').read_text().rsplit(')',1)[1].split()
+       if int(stat[3])==driver.pid:rss+=int(stat[21])*os.sysconf('SC_PAGE_SIZE')
+      except (OSError,ValueError):pass
+     peak=max(peak,rss);elapsed=time.monotonic()-start;monitor.write(json.dumps({'elapsed_seconds':round(elapsed,3),'available_memory_bytes':memory,'owned_session_rss_bytes':rss})+'\n');monitor.flush()
+     if elapsed>timeout or time.monotonic()-started>1200 or memory<12*2**30 or rss>16*2**30:
+      guard='phase_deadline' if elapsed>timeout else 'job_deadline' if time.monotonic()-started>1200 else 'memory_floor' if memory<12*2**30 else 'owned_rss';stop();break
+     time.sleep(1)
+   rc=driver.wait()
+  row={'phase':name,'returncode':rc,'wall_seconds':round(time.monotonic()-start,3),'guard_reason':guard,'peak_sampled_owned_session_rss_bytes':peak};report['phases'].append(row);save();print(json.dumps(row),flush=True);driver=None;identity=None
+  if rc or guard:raise RuntimeError('Phase failed: '+name)
+ def interrupted(sig,frame):raise KeyboardInterrupt('Operator signal '+str(sig))
+ for sig in [signal.SIGTERM,signal.SIGINT,signal.SIGHUP]:signal.signal(sig,interrupted)
+ save()
+ try:
+  files=['agent_lab/evidence_service.py','tests/test_evidence_service.py','benchmarks/mcp_evidence_server.py','benchmarks/mcp_evidence_controls.py'];ruff=BASE/'envs/langflow-lfx-20261121/bin/ruff'
+  run('ruff',[ruff,'check',*files],90);run('format',[ruff,'format','--check',*files],90)
+  run('worker-identity',[CORE,'-c',"import json,importlib.metadata as m;print(json.dumps({d.metadata['Name']:d.version for d in m.distributions()}))"],60)
+  before=json.loads((OUT/'worker-package-baseline.json').read_text())['original_worker_packages'];now=json.loads((OUT/'worker-identity.log').read_text());norm=lambda d:{re.sub(r'[-_.]+','-',k).lower():v for k,v in d.items()};assert norm(now).pop('agent-reliability-lab')=='0.2.0';deps={k:v for k,v in now.items() if re.sub(r'[-_.]+','-',k).lower()!='agent-reliability-lab'};assert norm(before)==norm(deps);report['original_worker_dependency_pairs_unchanged']=len(deps)
+  run('focused',[CORE,'-m','unittest','discover','-s','tests','-p','test_evidence_service.py','-v'],90)
+  run('sdk-identity',[SDK,'-c',"import inspect,json,hashlib,importlib.metadata as m;from pathlib import Path;from mcp import Client;from mcp.server import MCPServer;from mcp.client.streamable_http import streamable_http_client;print(json.dumps({'versions':{d.metadata['Name']:d.version for d in m.distributions()},'source_sha256':{o.__name__:hashlib.sha256(Path(inspect.getfile(o)).read_bytes()).hexdigest() for o in [Client,MCPServer,streamable_http_client]}}))"],90)
+  sdk=json.loads((OUT/'sdk-identity.log').read_text());assert sdk['versions']['mcp']==sdk['versions']['mcp-types']=='2.3.0' and sdk['versions']['httpx2']=='2.16.2';report['sdk_identity_verified']=True
+  run('network',[SDK,'-m','benchmarks.mcp_evidence_controls','--root',CODE/'corpus','--state',ROOT/'network','--port','18856'],360)
+  net=json.loads((ROOT/'network/report.json').read_text());assert len(net['cases'])==6 and all(c['passed'] for c in net['cases']) and net['port_closed'];report['network_cases_passed']=6
+  run('full-core',[CORE,'-m','unittest','discover','-s','tests','-v'],600)
+  full=(OUT/'full-core.log').read_text();assert 'Ran 130 tests' in full and full.rstrip().endswith('OK');report.update(full_core_passed=130,full_core_skipped=0,new_service_checks_included=6)
+ except BaseException as exc:report['operator_error']={'type':type(exc).__name__,'message':str(exc)}
+ finally:
+  stop();left=owned();cleanup_groups={x['pgrp'] for x in left if x['pgrp'] in groups};report['forced_cleanup_groups']=sorted(cleanup_groups)
+  for group in cleanup_groups:
+   try:os.killpg(group,signal.SIGTERM)
+   except ProcessLookupError:pass
+  deadline=time.monotonic()+10
+  while owned() and time.monotonic()<deadline:time.sleep(.2)
+  for group in {x['pgrp'] for x in owned() if x['pgrp'] in groups}:
+   try:os.killpg(group,signal.SIGKILL)
+   except ProcessLookupError:pass
+  report['observed_owned_processes_after']=owned();report['terminal']=True;save();print(json.dumps({'terminal':True,'operator_error':report.get('operator_error'),'full_core_passed':report.get('full_core_passed'),'network_cases_passed':report.get('network_cases_passed'),'owned_after':len(report['observed_owned_processes_after'])}),flush=True)
+ return 0 if report.get('full_core_passed')==130 and report.get('network_cases_passed')==6 and not report.get('operator_error') and not report['observed_owned_processes_after'] else 2
+if __name__=='__main__':raise SystemExit(main())

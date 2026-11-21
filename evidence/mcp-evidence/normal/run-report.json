@@ -1,0 +1,66 @@
+{
+  "protocol_sha256": "2600b11aa0b936f2c96b7e0982bbc9cf74ea35d53c466361dfc1ce6cc5aa77f4",
+  "source_archive_sha256": "5c64d92b566b43958f21ab9ed135723f77ccabe0f6debeae1f8ebc3076c3b46c",
+  "phases": [
+    {
+      "phase": "ruff",
+      "returncode": 0,
+      "wall_seconds": 1.076,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 4325376
+    },
+    {
+      "phase": "format",
+      "returncode": 0,
+      "wall_seconds": 1.062,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 14417920
+    },
+    {
+      "phase": "worker-identity",
+      "returncode": 0,
+      "wall_seconds": 1.126,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 6488064
+    },
+    {
+      "phase": "focused",
+      "returncode": 0,
+      "wall_seconds": 1.072,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 6488064
+    },
+    {
+      "phase": "sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 17.973,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 58392576
+    },
+    {
+      "phase": "network",
+      "returncode": 0,
+      "wall_seconds": 23.915,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 134807552
+    },
+    {
+      "phase": "full-core",
+      "returncode": 0,
+      "wall_seconds": 336.784,
+      "guard_reason": null,
+      "peak_sampled_owned_session_rss_bytes": 240779264
+    }
+  ],
+  "terminal": true,
+  "model_requests": 0,
+  "gpu_used": false,
+  "original_worker_dependency_pairs_unchanged": 68,
+  "sdk_identity_verified": true,
+  "network_cases_passed": 6,
+  "full_core_passed": 130,
+  "full_core_skipped": 0,
+  "new_service_checks_included": 6,
+  "forced_cleanup_groups": [],
+  "observed_owned_processes_after": []
+}

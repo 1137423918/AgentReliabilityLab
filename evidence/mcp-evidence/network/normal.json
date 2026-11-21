@@ -1,0 +1,124 @@
+{
+  "listing": {
+    "reports": [
+      {
+        "description": "Current Agent Lab core regression and asynchronous SDK controls",
+        "fields": [
+          "/full_suite_passed",
+          "/full_suite_skipped",
+          "/new_async_checks_included",
+          "/framework_case_count",
+          "/real_neural_requests"
+        ],
+        "id": "core_current"
+      },
+      {
+        "description": "OpenHands same-path patch move fix and related test scopes",
+        "fields": [
+          "/related_suite_passed",
+          "/focused_passed",
+          "/new_checks_included",
+          "/overlapping_suites_not_added",
+          "/neural_requests"
+        ],
+        "id": "patch_move"
+      },
+      {
+        "description": "GPU transport smoke checks and their individual outcomes",
+        "fields": [
+          "/overall_smoke_passed",
+          "/checks/0/passed",
+          "/checks/1/passed",
+          "/checks/2/passed",
+          "/repository_maintenance_run",
+          "/new_neural_repair"
+        ],
+        "id": "gpu_transport"
+      },
+      {
+        "description": "GPU repository maintenance admission outcome",
+        "fields": [
+          "/outcome",
+          "/model_service_started",
+          "/model_http_requests",
+          "/no_request_journal"
+        ],
+        "id": "gpu_maintenance"
+      },
+      {
+        "description": "Real-model Google ADK CPU maintenance trajectory",
+        "fields": [
+          "/verified_trials",
+          "/outcome",
+          "/case"
+        ],
+        "id": "adk_cpu"
+      },
+      {
+        "description": "Earlier Linux verifier descendant cleanup regression snapshot",
+        "fields": [
+          "/full_suite_passed",
+          "/new_tests_included",
+          "/real_neural_model_requests"
+        ],
+        "id": "historical_core"
+      },
+      {
+        "description": "Google ADK artifact deletion candidate and versioned related tests",
+        "fields": [
+          "/scope",
+          "/base_commit",
+          "/upstream_repository",
+          "/upstream_pr",
+          "/pr_state",
+          "/stars_observed",
+          "/observed_date",
+          "/source_sha256",
+          "/baseline_source_sha256",
+          "/benchmark_sha256",
+          "/new_regressions",
+          "/related_suites"
+        ],
+        "id": "adk_cleanup"
+      },
+      {
+        "description": "Dated current upstream pull-request states",
+        "fields": [
+          "/checked_at_utc",
+          "/pull_requests"
+        ],
+        "id": "upstream_prs"
+      }
+    ],
+    "snapshot": "2c977ec8404c9ebfd159a7addb1d97b7500407ff"
+  },
+  "read": {
+    "receipt": "6c9rM9s8s5dWJjIPhuPZPXNo7O7TzpMq",
+    "report": {
+      "report_id": "core_current",
+      "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006",
+      "source_url": "https://github.com/1137423918/AgentReliabilityLab/blob/2c977ec8404c9ebfd159a7addb1d97b7500407ff/evidence/async-budget/report.json",
+      "values": {
+        "/full_suite_passed": 116
+      }
+    }
+  },
+  "verification": {
+    "evidence_verified": true,
+    "verification": {
+      "fact_values_verified": true,
+      "read_lineage_verified": true,
+      "free_prose_verified": false,
+      "facts": 1,
+      "citations": 1
+    },
+    "free_prose_semantics_verified": false,
+    "verdict_truth_verified": false
+  },
+  "status": {
+    "operations_spent": 3,
+    "reads_completed": 1,
+    "max_operations": 16,
+    "max_reads": 8
+  }
+}

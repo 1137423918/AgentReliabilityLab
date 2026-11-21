@@ -1,0 +1,11 @@
+test_concurrent_attempts_share_a_hard_operation_cap (test_evidence_service.EvidenceServiceTests.test_concurrent_attempts_share_a_hard_operation_cap) ... ok
+test_expiry_capacity_close_and_restart_invalidate_old_capabilities (test_evidence_service.EvidenceServiceTests.test_expiry_capacity_close_and_restart_invalidate_old_capabilities) ... ok
+test_invalid_and_oversize_reads_are_charged_without_receipts (test_evidence_service.EvidenceServiceTests.test_invalid_and_oversize_reads_are_charged_without_receipts) ... ok
+test_presented_receipt_must_cover_the_claimed_field (test_evidence_service.EvidenceServiceTests.test_presented_receipt_must_cover_the_claimed_field) ... ok
+test_read_cap_and_report_hash_tampering_do_not_issue_extra_receipts (test_evidence_service.EvidenceServiceTests.test_read_cap_and_report_hash_tampering_do_not_issue_extra_receipts) ... ok
+test_read_receipts_cannot_be_guessed_or_borrowed_between_audits (test_evidence_service.EvidenceServiceTests.test_read_receipts_cannot_be_guessed_or_borrowed_between_audits) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.413s
+
+OK

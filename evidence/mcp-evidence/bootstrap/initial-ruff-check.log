@@ -1,0 +1,14 @@
+F401 [*] `os` imported but unused
+  --> <SERVER_BASE>/outputs/mcp-evidence-20261121/mcp_evidence_controls.py:13:8
+   |
+11 | import hashlib
+12 | import json
+13 | import os
+   |        ^^
+14 | from pathlib import Path
+15 | import socket
+   |
+help: Remove unused import: `os`
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

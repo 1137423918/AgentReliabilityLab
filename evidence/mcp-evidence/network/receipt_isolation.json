@@ -1,0 +1,33 @@
+{
+  "foreign_receipt_rejected": {
+    "meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "AgentLab Evidence",
+        "version": "0.1.0"
+      }
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "Error executing tool verify_assessment: Receipt was not issued by this audit",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structured_content": null,
+    "is_error": true,
+    "result_type": "complete"
+  },
+  "own_receipt_accepted": {
+    "evidence_verified": true,
+    "verification": {
+      "fact_values_verified": true,
+      "read_lineage_verified": true,
+      "free_prose_verified": false,
+      "facts": 1,
+      "citations": 1
+    },
+    "free_prose_semantics_verified": false,
+    "verdict_truth_verified": false
+  }
+}

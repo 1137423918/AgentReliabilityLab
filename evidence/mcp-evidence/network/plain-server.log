@@ -1,0 +1,11 @@
+StreamableHTTP session manager started
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Receipt was not issued by this audit'
+Tool 'read_report' failed: 'Error executing tool read_report: Unknown report ID'
+Tool 'read_report' failed: 'Error executing tool read_report: Select an explicit JSON pointer, not a whole report'
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Claimed fact differs from actual report'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+Tool 'list_reports' failed: 'Error executing tool list_reports: Audit operation budget exhausted'
+StreamableHTTP session manager shutting down

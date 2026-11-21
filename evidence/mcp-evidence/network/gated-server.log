@@ -1,0 +1,4 @@
+StreamableHTTP session manager started
+Tool 'audit_status' failed: 'Error executing tool audit_status: Unknown or expired audit capability'
+Tool 'verify_assessment' failed: 'Error executing tool verify_assessment: Provide distinct bounded read receipts'
+StreamableHTTP session manager shutting down

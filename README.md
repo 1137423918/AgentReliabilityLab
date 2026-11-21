@@ -4,6 +4,10 @@
 
 [中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和开源草稿按日期核验。
 
+## MCP：把真实报告核对做成可调用服务
+
+提供可运行的MCP2.3.0本机服务，独立审计上下文、读取回执、TTL和并发共享操作额度。完整130项回归通过、零跳过（新增6项包含在内）；另6场真实SDK/TCP控制通过，覆盖回执隔离、重连、最后一次额度争抢及读完但回复未收到时的取消。57次SDK尝试/56份完整回复，另测超限HTTP413；两个预定服务进程已退出、端口关闭。零模型/GPU调用，不计神经审计成绩。[部署、客户端与边界](docs/mcp-evidence.md) · [全部实际轨迹](evidence/mcp-evidence/README.md)。
+
 ## LlamaIndex：审计真实报告中的项目表述
 
 实际 FunctionAgent / OpenAILike 接入8份固定真实报告，核对JSON事实、来源SHA与读取谱系。新增可选校验提交工具，保留原两步默认；服务器完整124项再次通过、零跳过（无新增核心测试），另6场SDK假回复控制单列。真实9B CPU三道固定问题中2题通过预声明结构化契约；GPU题判断与事实正确但缺2个约定字段，仍未通过。12次模型HTTP200/72683请求字节，保留全部wire/账本，不推导一般准确率或自主修复能力。[接口与复现](docs/evidence-audit.md) · [新策略完整证据](evidence/evidence-direct/README.md)。

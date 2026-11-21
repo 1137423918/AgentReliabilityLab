@@ -1,0 +1,13 @@
+{
+  "successful_of_six": 1,
+  "rejected_of_six": 5,
+  "counter": {
+    "operations_spent": 16,
+    "reads_completed": 0,
+    "max_operations": 16,
+    "max_reads": 8
+  },
+  "close_after_exhaustion": {
+    "closed": true
+  }
+}

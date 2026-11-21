@@ -1,0 +1,7 @@
+{"case": "normal", "passed": true}
+{"case": "receipt_isolation", "passed": true}
+{"case": "rejections", "passed": true}
+{"case": "concurrent_cap", "passed": true}
+{"case": "reconnect", "passed": true}
+{"case": "cancel_unknown", "passed": true}
+{"network_cases_passed": 6, "model_requests": 0, "planned_server_lifetimes": 2, "port_closed": true}
