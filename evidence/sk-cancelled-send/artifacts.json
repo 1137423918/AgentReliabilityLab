@@ -1,5 +1,5 @@
 {
-  "normalization": "Private root/server/pytest paths normalized in metadata/log/XML/operator transcripts using XML-safe placeholders. Tested upstream source attachments, posted PR body, patch and public metadata preserve exact bytes. Source copies retain upstream copyright headers and exact UPSTREAM_LICENSE. Original execution protocol hashes remain the identities; normalized public protocol hashes differ. Build frontend failure retained; independent build-only followup does not rerun successful tests.",
+  "normalization": "Private root/server/pytest paths normalized in metadata/log/XML/operator transcripts using XML-safe placeholders. Tested upstream source attachments, posted PR body, patch and public metadata preserve exact bytes. Source copies retain upstream copyright headers and exact UPSTREAM_LICENSE. Original execution protocol hashes remain the identities; normalized public protocol hashes differ. Build frontend failure retained; independent build-only followup does not rerun successful tests. Two .github-directory source attachments use flat public aliases because the Pages upload action excludes .github; original_collected_path retains provenance and content hashes are unchanged.",
   "files": [
     {
       "path": "baseline/identity-monitor.jsonl",
@@ -58,11 +58,12 @@
       "source_or_public_metadata_bytes_unchanged": false
     },
     {
-      "path": "baseline/tested-source/.github/pull_request_template.md.txt",
+      "path": "baseline/tested-source/github-pr-template.md.txt",
       "original_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0",
       "public_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0",
       "public_bytes": 1042,
-      "source_or_public_metadata_bytes_unchanged": true
+      "source_or_public_metadata_bytes_unchanged": true,
+      "original_collected_path": "baseline/tested-source/.github/pull_request_template.md.txt"
     },
     {
       "path": "baseline/tested-source/CONTRIBUTING.md.txt",
@@ -282,11 +283,12 @@
       "source_or_public_metadata_bytes_unchanged": false
     },
     {
-      "path": "candidate-v1/tested-source/.github/pull_request_template.md.txt",
+      "path": "candidate-v1/tested-source/github-pr-template.md.txt",
       "original_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0",
       "public_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0",
       "public_bytes": 1042,
-      "source_or_public_metadata_bytes_unchanged": true
+      "source_or_public_metadata_bytes_unchanged": true,
+      "original_collected_path": "candidate-v1/tested-source/.github/pull_request_template.md.txt"
     },
     {
       "path": "candidate-v1/tested-source/CONTRIBUTING.md.txt",

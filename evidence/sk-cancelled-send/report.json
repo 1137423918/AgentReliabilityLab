@@ -264,6 +264,25 @@
     "Previous callback PR14845 and its earlier103-check evidence are separate. Current upstream state changed externally to non-draft; no ready/review/merge action was performed here.",
     "Existing bilingual PDF remains a dated Nov21 23:39 four-draft snapshot; latest fifth PR and status changes belong to this case. Browser interaction remains unverified."
   ],
-  "artifacts_manifest_sha256": "5fbfb00e76efd13b6f7dda8a3ae0dea22faec54ebdbef07088d60ca5a1bf59dd",
-  "verification_sha256": "9fb27606c910030fb30cea155bd88cc91bccb70aeb21c0a5ccd4f7c486e164ee"
+  "artifacts_manifest_sha256": "e7020176fad476fdbd27d9d35f045315b5aa62fb188542f63936bc22c6a04796",
+  "verification_sha256": "9fb27606c910030fb30cea155bd88cc91bccb70aeb21c0a5ccd4f7c486e164ee",
+  "publication_path_aliases": {
+    "original_pages_commit": "7481c1cbe3151167290b1f2d2269e61474ffa8f5",
+    "first_verification": "94of96 exact; two.github attachment requests503, same-version recheck404",
+    "official_action_source": "https://github.com/actions/upload-pages-artifact/blob/main/action.yml",
+    "aliases": [
+      {
+        "original_collected_path": "baseline/tested-source/.github/pull_request_template.md.txt",
+        "public_path": "baseline/tested-source/github-pr-template.md.txt",
+        "content_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0"
+      },
+      {
+        "original_collected_path": "candidate-v1/tested-source/.github/pull_request_template.md.txt",
+        "public_path": "candidate-v1/tested-source/github-pr-template.md.txt",
+        "content_sha256": "7cb6f1c53d633e2d8529d6f0509aef8637012ff50c0105c3248dd5db7ef9cfe0"
+      }
+    ],
+    "SDK_code_or_test_changes": false,
+    "experiments_rerun": false
+  }
 }
