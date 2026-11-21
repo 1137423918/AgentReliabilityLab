@@ -3,8 +3,8 @@
   "files": [
     {
       "path": "README.md",
-      "public_sha256": "fd66cbe8c1c66e0a912f98f3b703d3d1fb84abd36c0a2aebc8bb9d31b0d275eb",
-      "public_bytes": 5047
+      "public_sha256": "c199ebd5ea8cd7b13572a242e5e5873fe5bcb69e58de4c3c946341058c411209",
+      "public_bytes": 5441
     },
     {
       "path": "baseline-definition.py.txt",
@@ -277,9 +277,14 @@
       "public_bytes": 6841
     },
     {
+      "path": "upstream-snapshot.json",
+      "public_sha256": "fa850db1b557c6d18d31a4bd3ebad432008f966edacf98b629380fd4d86271be",
+      "public_bytes": 5094
+    },
+    {
       "path": "upstream-status.json",
-      "public_sha256": "6ce4a78e5e0edd257a0f95ff53e192927c9e385cf82ec8343a5ca317dfa7550e",
-      "public_bytes": 158
+      "public_sha256": "fb2ed4e13396bdae8a92aa3a1815d1b3915c554cfc3ecf87667b8e72a2aed552",
+      "public_bytes": 4235
     },
     {
       "path": "validation-protocol.json",
