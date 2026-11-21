@@ -1,0 +1,8 @@
+{
+  "phase": "candidate-focused",
+  "returncode": 0,
+  "expected_returncode": 0,
+  "wall_seconds": 13.874,
+  "guard_reason": null,
+  "peak_sampled_owned_session_rss_bytes": 297676800
+}

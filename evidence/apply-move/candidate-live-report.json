@@ -1,0 +1,8 @@
+{
+  "phase": "candidate-live",
+  "returncode": 0,
+  "expected_returncode": 0,
+  "wall_seconds": 10.564,
+  "guard_reason": null,
+  "peak_sampled_owned_session_rss_bytes": 264458240
+}

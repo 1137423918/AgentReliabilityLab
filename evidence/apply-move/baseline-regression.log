@@ -1,0 +1,50 @@
+<PRIVATE_EXT4>/source/.venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session". Set it to "fixture-scope" to keep the current behavior.
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.2.0, pluggy-1.6.0 -- <PRIVATE_EXT4>/source/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: <PRIVATE_EXT4>/source
+configfile: pyproject.toml
+plugins: asyncio-1.5.0, libtmux-0.62.0, xdist-3.8.0, timeout-2.4.0, cov-7.1.0, anyio-4.14.2, forked-1.7.5
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 22 items / 19 deselected / 3 selected
+
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source.txt] FAILED [ 33%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[./source.txt] FAILED [ 66%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source-link.txt] FAILED [100%]
+
+=================================== FAILURES ===================================
+_______ test_move_to_same_resolved_path_rejects_whole_patch[source.txt] ________
+tests/tools/apply_patch/test_apply_patch_executor.py:363: in test_move_to_same_resolved_path_rejects_whole_patch
+    assert obs.is_error
+E   AssertionError: assert False
+E    +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='source.txt')}), kind='ApplyPatchObservation').is_error
+______ test_move_to_same_resolved_path_rejects_whole_patch[./source.txt] _______
+tests/tools/apply_patch/test_apply_patch_executor.py:363: in test_move_to_same_resolved_path_rejects_whole_patch
+    assert obs.is_error
+E   AssertionError: assert False
+E    +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='./source.txt')}), kind='ApplyPatchObservation').is_error
+_____ test_move_to_same_resolved_path_rejects_whole_patch[source-link.txt] _____
+tests/tools/apply_patch/test_apply_patch_executor.py:363: in test_move_to_same_resolved_path_rejects_whole_patch
+    assert obs.is_error
+E   AssertionError: assert False
+E    +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='source-link.txt')}), kind='ApplyPatchObservation').is_error
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  <PRIVATE_EXT4>/source/.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source.txt] - AssertionError: assert False
+ +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='source.txt')}), kind='ApplyPatchObservation').is_error
+FAILED tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[./source.txt] - AssertionError: assert False
+ +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='./source.txt')}), kind='ApplyPatchObservation').is_error
+FAILED tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source-link.txt] - AssertionError: assert False
+ +  where False = ApplyPatchObservation(content=[TextContent(cache_prompt=False, type='text', text='Done!')], is_error=False, message='Done!', fuzz=0, commit=Commit(changes={'earlier.txt': FileChange(type=<ActionType.ADD: 'add'>, old_content=None, new_content='queued', move_path=None), 'source.txt': FileChange(type=<ActionType.UPDATE: 'update'>, old_content='before\n', new_content='after\n', move_path='source-link.txt')}), kind='ApplyPatchObservation').is_error
+================= 3 failed, 19 deselected, 1 warning in 0.88s ==================

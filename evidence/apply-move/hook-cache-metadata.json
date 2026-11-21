@@ -1,0 +1,13 @@
+{
+  "sha256": "4141234ea91f39d01794770af541134364b62bea5188d22c3cb7ff0ac6a5d216",
+  "bytes": 4493101,
+  "repo": "https://github.com/jumanjihouse/pre-commit-hook-yamlfmt",
+  "ref": "0.2.1",
+  "commit": "752eb7b8990459b8134765a395eeee06f87d0f17",
+  "tracked_files_unchanged": true,
+  "generated_untracked_build_directories": [
+    "build/",
+    "yamlfmt.egg-info/"
+  ],
+  "existing_task_cache_read_only": true
+}

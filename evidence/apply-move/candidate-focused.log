@@ -1,0 +1,46 @@
+<PRIVATE_EXT4>/source/.venv/lib/python3.13/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session". Set it to "fixture-scope" to keep the current behavior.
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts ==============================
+platform linux -- Python 3.13.18, pytest-9.2.0, pluggy-1.6.0 -- <PRIVATE_EXT4>/source/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: <PRIVATE_EXT4>/source
+configfile: pyproject.toml
+plugins: asyncio-1.5.0, libtmux-0.62.0, xdist-3.8.0, timeout-2.4.0, cov-7.1.0, anyio-4.14.2, forked-1.7.5
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 22 items
+
+tests/tools/apply_patch/test_apply_patch_executor.py::test_create_modify_delete PASSED [  4%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_reject_absolute_path PASSED [  9%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_multi_hunk_success_single_file PASSED [ 13%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_multi_file_update_single_patch PASSED [ 18%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_multi_file_add_update_delete_single_patch PASSED [ 22%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_multi_hunk_invalid_context_error PASSED [ 27%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_fuzz_matching_trailing_spaces PASSED [ 31%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_invalid_patch_returns_error[delete_missing_file] PASSED [ 36%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_invalid_patch_returns_error[duplicate_add_file] PASSED [ 40%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_invalid_patch_returns_error[path_escape_with_parent_directory] PASSED [ 45%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_update_missing_file_error_names_update PASSED [ 50%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_update_non_utf8_file_returns_error_observation PASSED [ 54%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_update_directory_returns_error_observation PASSED [ 59%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_reject_sibling_prefix_path_escape PASSED [ 63%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_malformed_patch_header_returns_differror PASSED [ 68%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_invalid_move_to_path_returns_differror PASSED [ 72%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_rejected_patch_does_not_apply_earlier_files PASSED [ 77%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_update_preserves_crlf_line_endings PASSED [ 81%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source.txt] PASSED [ 86%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[./source.txt] PASSED [ 90%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_same_resolved_path_rejects_whole_patch[source-link.txt] PASSED [ 95%]
+tests/tools/apply_patch/test_apply_patch_executor.py::test_move_to_distinct_path_preserves_updated_content PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14
+  <PRIVATE_EXT4>/source/.venv/lib/python3.13/site-packages/anyio/pytest_plugin.py:14: PytestRemovedIn10Warning: _pytest.python.CallSpec2 has been renamed to CallSpec.
+  The CallSpec2 alias will be removed in pytest 10.
+  Update imports to use CallSpec instead.
+  See https://docs.pytest.org/en/stable/deprecations.html#callspec2-renamed
+    from _pytest.python import CallSpec2
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 22 passed, 1 warning in 0.31s =========================

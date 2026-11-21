@@ -1,0 +1,8 @@
+{
+  "phase": "candidate-related-corrected",
+  "returncode": 0,
+  "expected_returncode": 0,
+  "wall_seconds": 31.149,
+  "guard_reason": null,
+  "peak_sampled_owned_session_rss_bytes": 594386944
+}

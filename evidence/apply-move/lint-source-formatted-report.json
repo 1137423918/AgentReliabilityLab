@@ -1,0 +1,8 @@
+{
+  "phase": "lint-source-formatted",
+  "returncode": 0,
+  "expected_returncode": 0,
+  "wall_seconds": 14.105,
+  "guard_reason": null,
+  "peak_sampled_owned_session_rss_bytes": 486727680
+}

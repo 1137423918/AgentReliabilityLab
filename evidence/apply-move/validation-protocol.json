@@ -1,0 +1,30 @@
+{
+  "declared_utc": "2026-11-21T09:54:31.796355+00:00",
+  "candidate_definition_sha256": "343830b375403f4932163934c1956281916fc32704e505cf675e8ed3fed7effe",
+  "operator_sha256": "6ba9931e849882e494790947c67b0f18b6a1a21a72dc700ef2304d15a007105c",
+  "source_hook_first_failure": "pre-commit exited3, git fetch128: HTTP/2 stream closed before any applicable hooks ran; retained original log/report",
+  "retry_change": "only process-scoped Git http.version=HTTP/1.1; identical config and hook revisions; source unchanged",
+  "regression_contract": "three self-move aliases reject before all queued mutations; ordinary rename remains successful",
+  "resource_policy": "4CPU/nice19,48GiBAS,16GiB sampled owned-session RSS,12GiB available floor,360s per hook/120s live/600s related tests",
+  "final_candidate": {
+    "declared_utc": "2026-11-21T10:04:48.207460+00:00",
+    "source_sha256": "0703d3751fbb1010c73288a7d44b1e31fbd09bda170bb1ab060af9578a788657",
+    "tests_sha256": "69d5c3f87a87a8a8b07f2c15b857f7dc5080bfacd774851e74ae01084cb76592",
+    "operator_sha256": "38083518ffa7363f57dc25378221e1f09cbf891e4616e184089ce41ca3fa7954",
+    "new_checks": 4,
+    "baseline_new_alias_checks_expected_fail": 3,
+    "framework_or_model_requests": 0,
+    "hook_cache_provenance": {
+      "official_tag": "0.2.1",
+      "commit": "752eb7b8990459b8134765a395eeee06f87d0f17",
+      "source": "previous task cache read only on GPU3, SHA verified before copying to absent same path on GPU5; tracked hook code unchanged",
+      "archive_sha256": "4141234ea91f39d01794770af541134364b62bea5188d22c3cb7ff0ac6a5d216"
+    },
+    "retained_failures": [
+      "HTTP/2 Git fetch128",
+      "HTTP/1.1 Git empty reply128",
+      "Ruff formatter modified source; other applicable hooks passed"
+    ],
+    "final_source_hook_terminal_pass": true
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "phase": "baseline-regression",
+  "returncode": 1,
+  "expected_returncode": 1,
+  "wall_seconds": 19.047,
+  "guard_reason": null,
+  "peak_sampled_owned_session_rss_bytes": 304676864
+}

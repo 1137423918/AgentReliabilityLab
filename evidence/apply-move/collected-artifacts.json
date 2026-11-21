@@ -1,0 +1,293 @@
+{
+  "normalization": "Private root/home/base/cache paths replaced in logs/metadata; before/after observations unchanged",
+  "files": [
+    {
+      "path": "candidate-related-corrected-monitor.jsonl",
+      "original_sha256": "70e5aa85d78ce59ee9f6995c7f409ade8fcae3774295ebe031c1a8823f714a23",
+      "public_sha256": "70e5aa85d78ce59ee9f6995c7f409ade8fcae3774295ebe031c1a8823f714a23",
+      "public_bytes": 3032
+    },
+    {
+      "path": "git-baseline.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "candidate-related-monitor.jsonl",
+      "original_sha256": "378aa4a111f78da9bfe8b47cd827b9a39aec783bfb621f5b8ba010d0297be1c5",
+      "public_sha256": "378aa4a111f78da9bfe8b47cd827b9a39aec783bfb621f5b8ba010d0297be1c5",
+      "public_bytes": 1036
+    },
+    {
+      "path": "lint-source-http1.log",
+      "original_sha256": "fb7ee5356a1e870d32710970a923db6fa369228881af584f63b38dc0966afe6e",
+      "public_sha256": "345266532a287ac641ca0581c5659b4a061270694e64db8e326b7c02f1ace0db",
+      "public_bytes": 411
+    },
+    {
+      "path": "baseline-live.json",
+      "original_sha256": "a35050d75e101d92a6253d690317b13eb6d965e8ef8d71f8fbb9e12e26b15e6f",
+      "public_sha256": "a35050d75e101d92a6253d690317b13eb6d965e8ef8d71f8fbb9e12e26b15e6f",
+      "public_bytes": 1240
+    },
+    {
+      "path": "git-baseline-monitor.jsonl",
+      "original_sha256": "139887dca28ed7f7409662315700aed15c0ba8c9e5f6253ab4284b3795b66cb1",
+      "public_sha256": "139887dca28ed7f7409662315700aed15c0ba8c9e5f6253ab4284b3795b66cb1",
+      "public_bytes": 66
+    },
+    {
+      "path": "baseline-live.log",
+      "original_sha256": "774b5e9a95185868af340b033e3b701308dfce7fa78d31d082eddd7a792f5388",
+      "public_sha256": "774b5e9a95185868af340b033e3b701308dfce7fa78d31d082eddd7a792f5388",
+      "public_bytes": 1648
+    },
+    {
+      "path": "candidate-related-report.json",
+      "original_sha256": "6a1bc84ea8cd7a906acafd8b7f6ae09898a9456c1f9339b79683aac0bb93f378",
+      "public_sha256": "6a1bc84ea8cd7a906acafd8b7f6ae09898a9456c1f9339b79683aac0bb93f378",
+      "public_bytes": 185
+    },
+    {
+      "path": "bootstrap-report.json",
+      "original_sha256": "42edccdc996165f8d5a7d56a5a3ffe458372489273b75ee3f199106b1eef8c71",
+      "public_sha256": "42edccdc996165f8d5a7d56a5a3ffe458372489273b75ee3f199106b1eef8c71",
+      "public_bytes": 648
+    },
+    {
+      "path": "validation-protocol.json",
+      "original_sha256": "afb6363cbe5132417ebf4c9c928b852bfeabffe017fb65c1322b880b39582a63",
+      "public_sha256": "afb6363cbe5132417ebf4c9c928b852bfeabffe017fb65c1322b880b39582a63",
+      "public_bytes": 1822
+    },
+    {
+      "path": "lint-tests.log",
+      "original_sha256": "78afeb333b0f8dd152ff1d2298619f6e25281bbe42a36f80a73c0ec6d185bdff",
+      "public_sha256": "78afeb333b0f8dd152ff1d2298619f6e25281bbe42a36f80a73c0ec6d185bdff",
+      "public_bytes": 1056
+    },
+    {
+      "path": "lint-tests-monitor.jsonl",
+      "original_sha256": "f8b74eef247ba1e59e9ff2b8cbc7afb9d697c5eb968d80efc202535cfa77adc6",
+      "public_sha256": "f8b74eef247ba1e59e9ff2b8cbc7afb9d697c5eb968d80efc202535cfa77adc6",
+      "public_bytes": 621
+    },
+    {
+      "path": "candidate-related.log",
+      "original_sha256": "5a2ea308494bf2b7671a23185089ba966496bdefaec643e1f04225bf726bc755",
+      "public_sha256": "42989c68ba6376ea97f922cddcccdcfa156505f238107313ce3156ad37cb8c76",
+      "public_bytes": 2630
+    },
+    {
+      "path": "baseline-regression.log",
+      "original_sha256": "99b8739fc0e3027cbc3a55cd160f1676de8ec846ad83873eac5a20c890fbfbdd",
+      "public_sha256": "f8f245f709dd5a8853f782543fca6deb89a0a74b95e7314532520ef926c6f061",
+      "public_bytes": 6509
+    },
+    {
+      "path": "lint-source-formatted.log",
+      "original_sha256": "8530f3ac2b701c5890b57b7b96adb7822d19ad4351667efda0d6542c513faea5",
+      "public_sha256": "8530f3ac2b701c5890b57b7b96adb7822d19ad4351667efda0d6542c513faea5",
+      "public_bytes": 1056
+    },
+    {
+      "path": "hook-cache-metadata.json",
+      "original_sha256": "cdde3a18977d00ebc9342bf3b5c1f01252a47e53c8268ce69298265a36048eff",
+      "public_sha256": "cdde3a18977d00ebc9342bf3b5c1f01252a47e53c8268ce69298265a36048eff",
+      "public_bytes": 410
+    },
+    {
+      "path": "make-build-monitor.jsonl",
+      "original_sha256": "c7850c4a71947d7ce8cb9e26f2e3256c6e33f6228661b28bc91a65937c9a75ff",
+      "public_sha256": "c7850c4a71947d7ce8cb9e26f2e3256c6e33f6228661b28bc91a65937c9a75ff",
+      "public_bytes": 5717
+    },
+    {
+      "path": "candidate-related-corrected.log",
+      "original_sha256": "a0ab28ad5fac7b7da7512243c2ac9045c76dae5d3353940eca8ea8d6534242d7",
+      "public_sha256": "aa82e9f64d3cae6727735c3887a2945a80f64ba5fe448ae745041a92a3658e04",
+      "public_bytes": 22727
+    },
+    {
+      "path": "candidate-live.log",
+      "original_sha256": "0347b3d86e62153eb70019f26e8363d44af46b54a03ccb46fc65e30c789f9fa6",
+      "public_sha256": "0347b3d86e62153eb70019f26e8363d44af46b54a03ccb46fc65e30c789f9fa6",
+      "public_bytes": 1816
+    },
+    {
+      "path": "lint-source-http1-monitor.jsonl",
+      "original_sha256": "d07063435b51718c76b3e788e137fb1942489e7b4fdde5f961b300f4a169f9f8",
+      "public_sha256": "d07063435b51718c76b3e788e137fb1942489e7b4fdde5f961b300f4a169f9f8",
+      "public_bytes": 18038
+    },
+    {
+      "path": "baseline-regression-report.json",
+      "original_sha256": "a554865bff5c97d42a2cb7407f13286b4cb4b01d4d623bf7b1aaae2ed61b10e1",
+      "public_sha256": "a554865bff5c97d42a2cb7407f13286b4cb4b01d4d623bf7b1aaae2ed61b10e1",
+      "public_bytes": 187
+    },
+    {
+      "path": "candidate-related-corrected-report.json",
+      "original_sha256": "044b780d560387b512ffea62350d129e11db1170fd5b9f4e8f3b7d7c471e86d1",
+      "public_sha256": "044b780d560387b512ffea62350d129e11db1170fd5b9f4e8f3b7d7c471e86d1",
+      "public_bytes": 195
+    },
+    {
+      "path": "candidate-focused-monitor.jsonl",
+      "original_sha256": "114f2fe099859ae198d6ff6a5a84b7f2b33626183163ad0130bfa51c81b6986c",
+      "public_sha256": "114f2fe099859ae198d6ff6a5a84b7f2b33626183163ad0130bfa51c81b6986c",
+      "public_bytes": 1352
+    },
+    {
+      "path": "lint-source-cache-monitor.jsonl",
+      "original_sha256": "3b40aa6d8772ae7a37ccbd46980c979fc1bb409dfffeae0aba460862e63ad082",
+      "public_sha256": "3b40aa6d8772ae7a37ccbd46980c979fc1bb409dfffeae0aba460862e63ad082",
+      "public_bytes": 1244
+    },
+    {
+      "path": "baseline-regression-monitor.jsonl",
+      "original_sha256": "6920045748e0db22750fe26ac344e581686cabd53830fcc9d46de5d703234a47",
+      "public_sha256": "6920045748e0db22750fe26ac344e581686cabd53830fcc9d46de5d703234a47",
+      "public_bytes": 1873
+    },
+    {
+      "path": "candidate-live-report.json",
+      "original_sha256": "e42a7598c2909fbfe24da391021af630eaf7c2acdedc6d9ab80e4df228d0e3be",
+      "public_sha256": "e42a7598c2909fbfe24da391021af630eaf7c2acdedc6d9ab80e4df228d0e3be",
+      "public_bytes": 182
+    },
+    {
+      "path": "git-add.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "git-init-monitor.jsonl",
+      "original_sha256": "1e18d7b8ba9670d3a21195fa1b05a85501986316fb40bddda66d95c1aa5692b5",
+      "public_sha256": "1e18d7b8ba9670d3a21195fa1b05a85501986316fb40bddda66d95c1aa5692b5",
+      "public_bytes": 65
+    },
+    {
+      "path": "lint-source-formatted-monitor.jsonl",
+      "original_sha256": "3ea0226cace7632daa8cdc28d513d360088659288aadf641fbecafe5eee492a1",
+      "public_sha256": "3ea0226cace7632daa8cdc28d513d360088659288aadf641fbecafe5eee492a1",
+      "public_bytes": 1346
+    },
+    {
+      "path": "make-build.log",
+      "original_sha256": "aadfb6f7e32333c699d877fc1b836931d2c409c3788d42860ecb0223b7811b0b",
+      "public_sha256": "11fe6db222798c0572d237227f10edb503d8ad452d39a86205d8a51dbf64e933",
+      "public_bytes": 7512
+    },
+    {
+      "path": "lint-tests-report.json",
+      "original_sha256": "42a365b7e0e26f85dc1683d5da9ae1927db879f68efea973b75924683d17653d",
+      "public_sha256": "42a365b7e0e26f85dc1683d5da9ae1927db879f68efea973b75924683d17653d",
+      "public_bytes": 177
+    },
+    {
+      "path": "candidate-live.json",
+      "original_sha256": "feebac0a7a6dff595244b3a70e1a0f0883100993630318b1a5744564a96f9b79",
+      "public_sha256": "feebac0a7a6dff595244b3a70e1a0f0883100993630318b1a5744564a96f9b79",
+      "public_bytes": 1408
+    },
+    {
+      "path": "git-add-monitor.jsonl",
+      "original_sha256": "631f679027f6b3ac64f7ce7a39e35b782971e486cfda13d7ab1055993f463f43",
+      "public_sha256": "631f679027f6b3ac64f7ce7a39e35b782971e486cfda13d7ab1055993f463f43",
+      "public_bytes": 66
+    },
+    {
+      "path": "lint-source-cache-report.json",
+      "original_sha256": "1bffa9ddf663fbb896a6f209136cee8bbefa3783f8d36cebd84a7f3160acb576",
+      "public_sha256": "1bffa9ddf663fbb896a6f209136cee8bbefa3783f8d36cebd84a7f3160acb576",
+      "public_bytes": 185
+    },
+    {
+      "path": "baseline-live-monitor.jsonl",
+      "original_sha256": "a85803ead863e2464d62c6e4296759f2aefa66368ba608e802ff88100d059c4a",
+      "public_sha256": "a85803ead863e2464d62c6e4296759f2aefa66368ba608e802ff88100d059c4a",
+      "public_bytes": 731
+    },
+    {
+      "path": "git-init.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "preflight.json",
+      "original_sha256": "2288a3358eb4389c16828315610bc6af023f3490b6e74485aeccb9523d3d7df3",
+      "public_sha256": "2288a3358eb4389c16828315610bc6af023f3490b6e74485aeccb9523d3d7df3",
+      "public_bytes": 263
+    },
+    {
+      "path": "protocol.json",
+      "original_sha256": "3441965e67a4190be8eb0705744c93a80c7311cb7c30f4bcc578e95f5a63d367",
+      "public_sha256": "3441965e67a4190be8eb0705744c93a80c7311cb7c30f4bcc578e95f5a63d367",
+      "public_bytes": 1213
+    },
+    {
+      "path": "lint-source-monitor.jsonl",
+      "original_sha256": "97e2c3cea4b4c7325c283eb96843fecc73d631d2ab6e450014db530d10e1cf39",
+      "public_sha256": "97e2c3cea4b4c7325c283eb96843fecc73d631d2ab6e450014db530d10e1cf39",
+      "public_bytes": 24639
+    },
+    {
+      "path": "candidate-focused.log",
+      "original_sha256": "705a91287906d6c0848f935d33e494fc24888ab0de97b380adfff64268568451",
+      "public_sha256": "2b311e2c43142efb7c41f59a2b6d5bce92e4c2b818e768b44fd1e8425b2c6fcd",
+      "public_bytes": 4424
+    },
+    {
+      "path": "candidate-live-monitor.jsonl",
+      "original_sha256": "27df1171f781ea4a90912922798034e3f0e45aab941b25b7b6da1a5757d016a3",
+      "public_sha256": "27df1171f781ea4a90912922798034e3f0e45aab941b25b7b6da1a5757d016a3",
+      "public_bytes": 1035
+    },
+    {
+      "path": "lint-source.log",
+      "original_sha256": "f4b2d8eb1f9c93ac1f66d1fb780c7f400123f237b7b489576f188562d4635f3a",
+      "public_sha256": "21e6a15eeb509370241052f63ccd94b21610df5f52c66dd09465a375ee93e10c",
+      "public_bytes": 462
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "0f038d76e8c6bac32defabfc60761c0649c34c1592e3b1795a70f069255c3378",
+      "public_sha256": "0f038d76e8c6bac32defabfc60761c0649c34c1592e3b1795a70f069255c3378",
+      "public_bytes": 6841
+    },
+    {
+      "path": "lint-source-formatted-report.json",
+      "original_sha256": "324e7518669ee28c6d501a25fb3b7bafd23839416d43c03f0ab7c8f798bbf660",
+      "public_sha256": "324e7518669ee28c6d501a25fb3b7bafd23839416d43c03f0ab7c8f798bbf660",
+      "public_bytes": 189
+    },
+    {
+      "path": "lint-source-http1-report.json",
+      "original_sha256": "b939dcf4afb03651728c2c8fa27db119133101bbb5f05ce10ce94b6ca7e333ae",
+      "public_sha256": "b939dcf4afb03651728c2c8fa27db119133101bbb5f05ce10ce94b6ca7e333ae",
+      "public_bytes": 184
+    },
+    {
+      "path": "lint-source-cache.log",
+      "original_sha256": "08f3edc89b6134a158789d3bf7f28bc9589406d205a026c2b76ef69cd0285295",
+      "public_sha256": "08f3edc89b6134a158789d3bf7f28bc9589406d205a026c2b76ef69cd0285295",
+      "public_bytes": 1135
+    },
+    {
+      "path": "candidate-focused-report.json",
+      "original_sha256": "cc3a32cd1d0f2588ad2a7e40061c9702f7b28b56101fe7b383dc8ac18f7fe8d2",
+      "public_sha256": "cc3a32cd1d0f2588ad2a7e40061c9702f7b28b56101fe7b383dc8ac18f7fe8d2",
+      "public_bytes": 185
+    },
+    {
+      "path": "lint-source-report.json",
+      "original_sha256": "9611ce568b8133d803ac600be89d5a702dd0609f5de007ab0943e9f2d74c0225",
+      "public_sha256": "9611ce568b8133d803ac600be89d5a702dd0609f5de007ab0943e9f2d74c0225",
+      "public_bytes": 179
+    }
+  ]
+}

@@ -1,0 +1,181 @@
+{
+  "checked_at_utc": "2026-11-21T09:35:04.483931+00:00",
+  "results": [
+    {
+      "repository": {
+        "full_name": "OpenHands/software-agent-sdk",
+        "stargazers_count": 1416,
+        "archived": false,
+        "default_branch": "main"
+      }
+    },
+    {
+      "query": "repo:OpenHands/software-agent-sdk is:pr apply_patch move",
+      "total": 10,
+      "pull_requests": [
+        {
+          "number": 6617,
+          "title": "fix(tools): apply a patch all-or-nothing and keep CRLF line endings",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/6617"
+        },
+        {
+          "number": 4053,
+          "title": "refactor(skills): report touched paths on observations for path-rule injection",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4053"
+        },
+        {
+          "number": 4883,
+          "title": "feat(agent-server): isolate tool execution in Docker workspaces",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4883"
+        },
+        {
+          "number": 3382,
+          "title": "Replace silent assert failures with structured DiffError raises in apply_patch, and fixe a race condition and unhandled telemetry crash in event_service",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/3382"
+        },
+        {
+          "number": 3994,
+          "title": "feat(skills): add path-triggered rules",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/3994"
+        },
+        {
+          "number": 2177,
+          "title": "refactor(tools): move tool descriptions to jinja templates",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/2177"
+        },
+        {
+          "number": 1759,
+          "title": "Add GPT-5 Codex system prompt template",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1759"
+        },
+        {
+          "number": 1166,
+          "title": "feat(tools): Add GPT-5.1 ApplyPatch tool",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1166"
+        },
+        {
+          "number": 1199,
+          "title": "Implement gemini-style file editing tools",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1199"
+        },
+        {
+          "number": 1486,
+          "title": "Release v1.7.0",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1486"
+        }
+      ]
+    },
+    {
+      "query": "repo:OpenHands/software-agent-sdk is:pr apply_patch same path",
+      "total": 16,
+      "pull_requests": [
+        {
+          "number": 5971,
+          "title": "feat(tools): opt-in workspace containment for file tools",
+          "state": "open",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/5971"
+        },
+        {
+          "number": 6526,
+          "title": "fix(file_editor): refuse edits whose result would fail validation",
+          "state": "open",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/6526"
+        },
+        {
+          "number": 6371,
+          "title": "fix(tools): name the patch action that references a missing file",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/6371"
+        },
+        {
+          "number": 6617,
+          "title": "fix(tools): apply a patch all-or-nothing and keep CRLF line endings",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/6617"
+        },
+        {
+          "number": 4053,
+          "title": "refactor(skills): report touched paths on observations for path-rule injection",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4053"
+        },
+        {
+          "number": 4788,
+          "title": "fix(tools): mask secrets in every tool's observation at the shared chokepoint",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4788"
+        },
+        {
+          "number": 4883,
+          "title": "feat(agent-server): isolate tool execution in Docker workspaces",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4883"
+        },
+        {
+          "number": 4715,
+          "title": "fix(sdk): mask registered secrets at the tool chokepoint",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4715"
+        },
+        {
+          "number": 3382,
+          "title": "Replace silent assert failures with structured DiffError raises in apply_patch, and fixe a race condition and unhandled telemetry crash in event_service",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/3382"
+        },
+        {
+          "number": 3994,
+          "title": "feat(skills): add path-triggered rules",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/3994"
+        },
+        {
+          "number": 4226,
+          "title": "chore(ruff): enable safe line-reducing rules and apply autofixes",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/4226"
+        },
+        {
+          "number": 2712,
+          "title": "Add update_plan support to the GPT-5 preset",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/2712"
+        },
+        {
+          "number": 1236,
+          "title": "Add GPT-5 specific system prompt template",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1236"
+        },
+        {
+          "number": 1166,
+          "title": "feat(tools): Add GPT-5.1 ApplyPatch tool",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1166"
+        },
+        {
+          "number": 1462,
+          "title": "Add GPT-5 preset using ApplyPatchTool (opt-in)",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1462"
+        },
+        {
+          "number": 1199,
+          "title": "Implement gemini-style file editing tools",
+          "state": "closed",
+          "url": "https://github.com/OpenHands/software-agent-sdk/pull/1199"
+        }
+      ]
+    }
+  ]
+}

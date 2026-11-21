@@ -1,0 +1,35 @@
+{
+  "phases": [
+    {
+      "phase": "git-init",
+      "returncode": 0,
+      "wall_seconds": 2.012,
+      "guard_reason": null
+    },
+    {
+      "phase": "git-add",
+      "returncode": 0,
+      "wall_seconds": 2.007,
+      "guard_reason": null
+    },
+    {
+      "phase": "git-baseline",
+      "returncode": 0,
+      "wall_seconds": 2.008,
+      "guard_reason": null
+    },
+    {
+      "phase": "make-build",
+      "returncode": 0,
+      "wall_seconds": 170.047,
+      "guard_reason": null
+    },
+    {
+      "phase": "baseline-live",
+      "returncode": 0,
+      "wall_seconds": 22.011,
+      "guard_reason": null
+    }
+  ],
+  "success": true
+}

@@ -1,0 +1,11 @@
+{
+  "status": 200,
+  "data": {
+    "ref": "refs/tags/0.2.1",
+    "object": {
+      "sha": "752eb7b8990459b8134765a395eeee06f87d0f17",
+      "type": "commit",
+      "url": "https://api.github.com/repos/jumanjihouse/pre-commit-hook-yamlfmt/git/commits/752eb7b8990459b8134765a395eeee06f87d0f17"
+    }
+  }
+}

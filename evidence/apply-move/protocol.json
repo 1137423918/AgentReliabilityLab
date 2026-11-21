@@ -1,0 +1,28 @@
+{
+  "base_sha": "885242b563b1d2695d6c7b3d4bfe642f1c8838a3",
+  "archive_sha256": "105dd51818458b94dffbbe9bc83ce7ebbbdb6ad44e344d1fd0c6ba6b9dedeb0a",
+  "archive_bytes": 6259275,
+  "repro_sha256": "db9e2643d802e87bf8ae613e9d63736700e9da55e37358948e5f158acf9de4df",
+  "stage": 37,
+  "declared_utc": "2026-11-21T09:40:48.880791+00:00",
+  "scope": "OpenHands ApplyPatchExecutor self-move data-loss before/after through public tool entry point; no neural/GPU benchmark",
+  "cases": [
+    "literal",
+    "dot_alias",
+    "symlink_alias",
+    "distinct_move"
+  ],
+  "baseline_hypothesis": "First three return success but delete source; distinct rename retains target update",
+  "candidate_contract": "Reject source/destination resolving to same path before any queued filesystem operation; preserve source and earlier queued add; distinct rename succeeds",
+  "resource_policy": {
+    "cpu_cores": 4,
+    "nice": 19,
+    "address_space_gib": 48,
+    "memory_admission_gib": 24,
+    "available_memory_floor_gib": 12,
+    "bootstrap_deadline_seconds": 900,
+    "live_repro_deadline_seconds": 120,
+    "filesystem": "private ext4"
+  },
+  "operator_sha256": "42bbd7efc652e10d1216d2dc3197d25cabb80324379acf43958039be551febcf"
+}
