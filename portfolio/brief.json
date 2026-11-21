@@ -5,7 +5,7 @@
   "github": "https://github.com/1137423918",
   "date": "2026-11-21",
   "focus": "agent_engineering",
-  "stack": "Python / Deep Agents / LangGraph / SQLite / Pydantic AI / HTTPX2",
+  "stack": "Python / Deep Agents / LangGraph / SQLite / Pydantic AI / LlamaIndex",
   "languages": {
     "zh": {
       "title": "项目与开源贡献",
@@ -14,20 +14,27 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "面向软件维护长任务中的中断、重复请求与验收失真，开发带持久化状态、资源边界及证据归档的维护运行器。",
       "bullets": [
-        "连接 SQLite 检查点与隔离 Git worktree，保留工具进度和失败候选；本机 ext4 上的正常运行与首个检查点 SIGKILL 恢复生成相同参考补丁，写入及缓存复用前拒绝 NFS。",
-        "实现任务级文件清单、内容哈希校验的源码定位与受保护原版测试验收；导出前检查 Python 语法，校验补丁、验证日志与反馈，拒绝篡改后的成功缓存。",
-        "持久化预留 HTTP 次数与 JSON 字节额度，跨重启和修复轮次共享；新增独立 asyncio/HTTPX2 安装包，4 场 Pydantic AI 假服务控制覆盖工具往返、取消、并发与 SDK 重试。",
-        "修复独立会话、双重 fork 验证子进程泄漏及旧监督器误加载；Linux 回收后代后才释放运行锁。完整工程回归 116 项通过、零跳过，新增 8 项异步检查已计入。"
+        "连接 SQLite 检查点与隔离 Git worktree；本机 ext4 上正常运行与首检查点 SIGKILL 恢复生成相同参考补丁，创建状态及复用成功前拒绝 NFS。",
+        "实现有界源码定位、原版测试验收与补丁/日志哈希校验；拒绝篡改缓存，修复独立会话和双重 fork 验证子进程泄漏，Linux 回收后代后释放运行锁。",
+        "持久预留 HTTP 次数和 JSON 字节，跨重启与修复共享；独立 asyncio/HTTPX2 包接入 Pydantic AI，4 场假服务控制覆盖工具、取消、并发及 SDK 重试。",
+        "实际接入 LlamaIndex 审计 8 份报告，核验 JSON 事实、来源哈希与读取记录；2 场假回复控制通过。完整124项回归通过、零跳过，含新增8项证据检查。"
       ],
-      "project_scope": "恢复使用明确参考计划，未证明模型自主修复。9B ADK CPU 轨迹在 8 次请求后停止，无编辑或验收；GPU 短请求工具往返通过，原样文本检查失败，GPU 维护未启动。历史三仓库 NFS 控制与本机 ext4 结果分列；额度不是 token 或费用。",
+      "project_scope": "恢复使用参考计划，未证明自主修复。真实9B CPU报告审计在600秒上限超时，零验收完成；旧ADK CPU无编辑，GPU短请求原样文本检查失败，GPU维护未启动。历史NFS结果分列，额度不是token或费用。",
       "contributions_label": "已提交的开源草稿",
       "contributions": [
         {
           "name": "OpenHands SDK",
           "number": 7032,
           "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
-          "text": "修复撤销写入失败后历史被提前消耗的问题；真实权限故障前后对照，185 项相关检查通过。",
-          "source": "openhands"
+          "text": "保留撤销失败后的历史；拒绝同路径补丁移动造成的文件丢失。真实权限/路径别名前后对照，相关185项/203项分别通过，不相加。",
+          "source": "openhands",
+          "extra_prs": [
+            {
+              "number": 7050,
+              "url": "https://github.com/OpenHands/software-agent-sdk/pull/7050",
+              "source": "openhands_patch_move"
+            }
+          ]
         },
         {
           "name": "Google ADK",
@@ -46,7 +53,7 @@
       ],
       "paper_label": "研究论文",
       "paper_text": "第一作者 · IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025。研究前视声纳图像的轻量化目标检测。",
-      "scope": "PR 状态核验于 2026-11-21：三份均为开放草稿，未合并；测试范围重叠，不累加。Codex 辅助实现与验证，人工复核和上游评审待完成。",
+      "scope": "2026-11-21核验：4份开放草稿，均未合并；重叠测试不累加。Codex辅助实现与验证，人工复核和上游评审待完成。",
       "links_label": "项目源码与协议",
       "sources_label": "证据与状态",
       "copy_label": "复制项目描述",
@@ -59,39 +66,46 @@
       "project_title": "Agent Reliability Lab",
       "project_intro": "A software-maintenance runner with durable state, resource limits and reviewable evidence for interrupted tasks, repeated requests and unreliable acceptance.",
       "bullets": [
-        "Connect SQLite checkpoints and isolated Git worktrees to retain tool progress and failed candidates. On local ext4, normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before writes or cached success.",
-        "Add task-scoped file inventory, content-hash-checked source navigation and frozen original-test acceptance. Check Python syntax before export and validate patch, log and feedback hashes before reusing success.",
-        "Reserve HTTP attempts and JSON bytes durably across restarts and repair rounds. Ship a standalone asyncio/HTTPX2 wheel; four Pydantic AI fake-service cases cover tools, cancellation, concurrency and SDK retries.",
-        "Fix detached and double-forked verifier leaks and stale supervisor loading. Reap Linux descendants before releasing the worker lock. All 116 engineering checks pass with zero skips, including eight new async checks."
+        "Connect SQLite checkpoints and isolated Git worktrees. Local ext4 normal and first-checkpoint SIGKILL runs produce the same reference patch; reject NFS before state creation or cached success.",
+        "Add bounded source navigation, frozen original-test acceptance and patch/log hash checks. Reject tampered caches; reap detached and double-forked Linux verifier descendants before releasing the worker lock.",
+        "Reserve HTTP attempts and JSON bytes across restarts and repair rounds. A standalone asyncio/HTTPX2 wheel integrates with Pydantic AI; four fake-service cases cover tools, cancellation, concurrency and SDK retries.",
+        "Integrate LlamaIndex with eight real reports to check JSON facts, source hashes and observed reads; two fake-reply controls pass. All 124 engineering checks pass with zero skips, including eight new evidence checks."
       ],
-      "project_scope": "Recovery uses explicit plans, not autonomous repair. The 9B ADK CPU run stops at eight requests without edits or acceptance. GPU tool transport passes but raw text fails; GPU maintenance has not started. Historical NFS controls are separate from ext4 evidence. Request limits are not tokens or money.",
+      "project_scope": "Recovery uses reference plans, not autonomous repair. The real 9B CPU report audit times out at 600 seconds with no verified assessment; earlier ADK CPU makes no edits. GPU raw text fails and maintenance never starts. Historical NFS evidence is separate; quotas are not tokens or fees.",
       "contributions_label": "SUBMITTED UPSTREAM DRAFTS",
       "contributions": [
         {
           "name": "OpenHands SDK",
           "number": 7032,
           "url": "https://github.com/OpenHands/software-agent-sdk/pull/7032",
-          "text": "Preserve undo history after a failed restoration write. Real permission-fault reproduction and 185 related checks pass.",
-          "source": "openhands"
+          "text": "Preserve history after failed undo; reject same-path patch moves that delete files. Real permission/alias reproductions; 185 and 203 related checks pass separately.",
+          "source": "openhands",
+          "extra_prs": [
+            {
+              "number": 7050,
+              "url": "https://github.com/OpenHands/software-agent-sdk/pull/7050",
+              "source": "openhands_patch_move"
+            }
+          ]
         },
         {
           "name": "Google ADK",
           "number": 8278,
           "url": "https://github.com/google/adk-python/pull/8278",
-          "text": "Handle disappearing files during concurrent artifact deletion while preserving nested artifacts. Python 3.11 / 3.13 each pass the same 2,021 related tests with 26 expected failures.",
+          "text": "Handle files disappearing during concurrent artifact deletion, retaining nested artifacts. Python 3.11/3.13 each pass the same 2,021 related tests with 26 expected failures.",
           "source": "adk"
         },
         {
           "name": "Semantic Kernel",
           "number": 14845,
           "url": "https://github.com/microsoft/semantic-kernel/pull/14845",
-          "text": "Release the experimental Python runtime token lock before callbacks. 103 related checks pass and real runtime cancellation completes; 12 existing broader-suite failures remain.",
+          "text": "Release the experimental Python token lock before callbacks. 103 related checks pass and runtime cancellation completes; 12 existing broader failures remain.",
           "source": "semantic_kernel"
         }
       ],
       "paper_label": "RESEARCH PUBLICATION",
       "paper_text": "First author. IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025. Lightweight object detection in forward-looking sonar imagery.",
-      "scope": "PR status checked 2026-11-21: three open drafts, none merged; overlapping tests are not added. Codex assisted implementation and verification; human author and upstream review remain pending.",
+      "scope": "Checked 2026-11-21: four open drafts, none merged; overlapping tests are not added. Codex assisted implementation and verification; human author and upstream review remain pending.",
       "links_label": "Source and protocols",
       "sources_label": "Evidence and status",
       "copy_label": "Copy project description",

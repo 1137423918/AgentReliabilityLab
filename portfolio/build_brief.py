@@ -34,6 +34,10 @@ def linked(label, url):
     return f'<a href="{esc(url)}" color="{GREEN}">{esc(label)}</a>'
 
 
+def contribution_prs(contribution):
+    return [contribution, *contribution.get("extra_prs", [])]
+
+
 def register_fonts(args):
     specs = [
         ("CJKBody", args.font_regular, args.font_index),
@@ -112,7 +116,8 @@ def build_pdf(data, evidence, output):
         paragraph(linked(content["links_label"], "https://github.com/1137423918/AgentReliabilityLab") + " / " + linked(content["sources_label"], "https://1137423918.github.io/project-brief.html#evidence"), 9, 12, 5)
         section(content["contributions_label"])
         for contribution in content["contributions"]:
-            paragraph(f'<b>{esc(contribution["name"])}</b> / ' + linked(f'Draft #{contribution["number"]}', contribution["url"]), 10.3, 13.5, 3)
+            pr_links = " / ".join(linked(f'Draft #{p["number"]}', p["url"]) for p in contribution_prs(contribution))
+            paragraph(f'<b>{esc(contribution["name"])}</b> / ' + pr_links, 10.3, 13.5, 3)
             paragraph(esc(contribution["text"]), 9.5, 13.5, 7)
         section(content["paper_label"])
         paragraph(esc(data["paper"]["title"]), 10.3, 13.8, 4, INK, True)
@@ -136,7 +141,13 @@ def build_html(data, evidence, output):
     for language in ["zh", "en"]:
         c = data["languages"][language]
         bullets = "".join(f"<li>{esc(x)}</li>" for x in c["bullets"])
-        contributions = "".join(f'<article class="contribution"><div><h3>{esc(x["name"])}</h3><a href="{esc(x["url"])}">Draft #{x["number"]}</a></div><p>{esc(x["text"])}</p><a class="source-link" href="{esc(next(r["url"] for r in evidence["files"] if r["id"] == x["source"]))}">{esc(c["sources_label"])}</a></article>' for x in c["contributions"])
+        contribution_items = []
+        for x in c["contributions"]:
+            prs = contribution_prs(x)
+            pr_links = " · ".join(f'<a href="{esc(p["url"])}">Draft #{p["number"]}</a>' for p in prs)
+            sources = " · ".join(f'<a class="source-link" href="{esc(next(r["url"] for r in evidence["files"] if r["id"] == p["source"]))}">{esc(c["sources_label"])} #{p["number"]}</a>' for p in prs)
+            contribution_items.append(f'<article class="contribution"><div><h3>{esc(x["name"])}</h3><span>{pr_links}</span></div><p>{esc(x["text"])}</p>{sources}</article>')
+        contributions = "".join(contribution_items)
         sections.append(f'''<section class="brief-language" data-language="{language}" lang="{'zh-CN' if language == 'zh' else 'en'}" {'hidden' if language == 'en' else ''}>
 <p class="eyebrow">SELECTED ENGINEERING WORK / {esc(data['date'])}</p><h1>{esc(c['title'])}</h1><p class="brief-intro">{esc(c['subtitle'])}</p>
 <div class="brief-actions"><a class="button" href="downloads/{PDF_NAME}" download>{esc(c['download_label'])}</a><button class="copy-brief" type="button" data-copy="{language}" disabled>{esc(c['copy_label'])}</button><span class="copy-result" role="status" aria-live="polite"></span></div>
@@ -178,6 +189,10 @@ def main():
         raise ValueError("Paper DOI differs from evidence")
     if not all(p["state"] == "open" and p["draft"] and not p["merged"] for p in evidence["pull_requests"]):
         raise ValueError("Update text for changed PR state before building")
+    for content in data["languages"].values():
+        linked_prs = {p["url"] for c in content["contributions"] for p in contribution_prs(c)}
+        if linked_prs != {p["url"] for p in evidence["pull_requests"]}:
+            raise ValueError("Contribution links differ from the PR snapshot")
     fonts = register_fonts(args)
     args.output.mkdir(parents=True, exist_ok=True)
     layouts = build_pdf(data, evidence, args.output / PDF_NAME)

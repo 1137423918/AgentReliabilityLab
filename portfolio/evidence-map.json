@@ -1,13 +1,13 @@
 {
-  "checked_at": "2026-11-21T17:21:42+08:00",
-  "project_source_commit": "6a74340f72c0f6d7fb513666efbab1b40ec7faf6",
+  "checked_at": "2026-11-21T20:33:23+08:00",
+  "project_source_commit": "8cd4a3b9530ebd752fd49115c3b3b0debd510399",
   "files": [
     {
       "id": "worker_tests",
-      "label": "当前完整回归 / Current116-test snapshot",
-      "path": "evidence/async-budget/normal/full.log",
-      "sha256": "49336b05ccecc87f23b3b0c47c7a7a41c1be22c9f58e81d6d80e4b4ee454f3a4",
-      "url": "https://1137423918.github.io/reports/async-budget/normal/full.log"
+      "label": "当前完整回归 / Current124-test snapshot",
+      "path": "evidence/evidence-audit/normal/full-core.log",
+      "sha256": "93a660be3e7228a5761ede31b0382c9948491c54638b093c71a058df3deb2416",
+      "url": "https://1137423918.github.io/reports/evidence-audit/normal/full-core.log"
     },
     {
       "id": "budget",
@@ -162,6 +162,20 @@
       "url": "https://1137423918.github.io/downloads/agentlab_durable_budget-0.1.0-py3-none-any.whl",
       "label": "独立安装包 / Standalone budget wheel",
       "sha256": "a27d27b935b9646a0bed30cac5cc300f783311860471a2df92c053ac9657005a"
+    },
+    {
+      "id": "openhands_patch_move",
+      "path": "evidence/apply-move/report.json",
+      "label": "OpenHands补丁移动 / Patch move",
+      "url": "https://1137423918.github.io/reports/apply-move/report.json",
+      "sha256": "72e0af3d196d194798c7b5bc212750a234f74956cca85fb849880d9fdd42ecd8"
+    },
+    {
+      "id": "evidence_audit",
+      "path": "evidence/evidence-audit/report.json",
+      "label": "LlamaIndex报告审计 / Report audit",
+      "url": "https://1137423918.github.io/reports/evidence-audit/report.json",
+      "sha256": "7f5d5bf4e71db481ffb8bee457ec39fb32e54eead7b833d8c72a94b0946ff816"
     }
   ],
   "pull_requests": [
@@ -174,6 +188,18 @@
       "merged": false,
       "head_sha": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
       "updated_at": "2026-11-20T18:47:41Z",
+      "review_count": 0,
+      "reviews": []
+    },
+    {
+      "repository": "OpenHands/software-agent-sdk",
+      "number": 7050,
+      "url": "https://github.com/OpenHands/software-agent-sdk/pull/7050",
+      "state": "open",
+      "draft": true,
+      "merged": false,
+      "head_sha": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69",
+      "updated_at": "2026-11-21T10:14:50Z",
       "review_count": 0,
       "reviews": []
     },
@@ -204,5 +230,5 @@
   ],
   "paper_doi": "10.1109/LGRS.2025.3575615",
   "paper_bibtex_sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
-  "scope": "Dated résumé project brief including server-validated116-test engineering and four separate fake-service PydanticAI cases. Neural failures and three unmerged upstream drafts remain separate. No education/employment invented."
+  "scope": "Dated bilingual project brief:124 server engineering checks, separate fake SDK controls, a real report-audit timeout and four unmerged drafts. No education/employment invented."
 }

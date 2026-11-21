@@ -1,15 +1,15 @@
 {
   "pdf": "junzhe-wang-project-brief.pdf",
-  "pdf_sha256": "15dca371f810c6c378575554aef60122c1d7cc0c87419ac0e03d643762986259",
-  "content_sha256": "2bf6715e542709d6f2373615dcb5ccb489f607fcd93a7ca1383860cf8ac21b8a",
-  "evidence_map_sha256": "65ae945fd31b3bced7d4f200b248b829ca12d4844871e7ce1feccb1ad1059738",
-  "builder_sha256": "eabcf290f983670bd449d3632f81124009384c3db9a93f278091947251e072d7",
+  "pdf_sha256": "a6e21c180f98dc5fa416ec6f5ad6cbdbedc3d4b5a1ebbebb55383778f7bd4bb8",
+  "content_sha256": "431ff05586bab907e212a19d2cb3ff9ea266b23983334fb099251e2f12d3b29d",
+  "evidence_map_sha256": "7ce9474c8777dd9389d5ff7f59a1441dc89b2c8090985eb2a6d1517378c3e157",
+  "builder_sha256": "d7915298daf887d300fbf74a5d02685a1f5ff21eab715ff08cc791f5c79ac495",
   "asset_sha256": {
     "brief.css": "1aa6e8a258d3409d743f6828525c20959ae68579773cd6dd86e4f73bde98fa82",
     "brief.js": "c49b9b1b66813c613e01872e8f6086f5e77c2959e91e9749622fdc41ba657dfe"
   },
   "reportlab_version": "4.4.9",
-  "metadata_date_source": "2026-11-21T17:21:42+08:00",
+  "metadata_date_source": "2026-11-21T20:33:23+08:00",
   "fonts": [
     {
       "role": "CJKBody",
@@ -39,7 +39,7 @@
   "pages": [
     {
       "language": "zh",
-      "content_bottom": 166.09,
+      "content_bottom": 164.59,
       "paragraphs": [
         {
           "top": 794.89,
@@ -123,59 +123,59 @@
         },
         {
           "top": 381.89,
-          "bottom": 368.39,
-          "height": 13.5
-        },
-        {
-          "top": 361.39,
-          "bottom": 347.89,
-          "height": 13.5
-        },
-        {
-          "top": 344.89,
-          "bottom": 331.39,
-          "height": 13.5
-        },
-        {
-          "top": 324.39,
-          "bottom": 310.89,
-          "height": 13.5
-        },
-        {
-          "top": 307.89,
-          "bottom": 280.89,
+          "bottom": 354.89,
           "height": 27.0
         },
         {
-          "top": 260.89,
-          "bottom": 248.89,
+          "top": 347.89,
+          "bottom": 334.39,
+          "height": 13.5
+        },
+        {
+          "top": 331.39,
+          "bottom": 317.89,
+          "height": 13.5
+        },
+        {
+          "top": 310.89,
+          "bottom": 297.39,
+          "height": 13.5
+        },
+        {
+          "top": 294.39,
+          "bottom": 267.39,
+          "height": 27.0
+        },
+        {
+          "top": 247.39,
+          "bottom": 235.39,
           "height": 12
         },
         {
-          "top": 242.89,
-          "bottom": 229.09,
+          "top": 229.39,
+          "bottom": 215.59,
           "height": 13.8
         },
         {
-          "top": 225.09,
-          "bottom": 212.09,
+          "top": 211.59,
+          "bottom": 198.59,
           "height": 13
         },
         {
-          "top": 208.09,
-          "bottom": 196.09,
+          "top": 194.59,
+          "bottom": 182.59,
           "height": 12
         },
         {
-          "top": 190.09,
-          "bottom": 166.09,
-          "height": 24
+          "top": 176.59,
+          "bottom": 164.59,
+          "height": 12
         }
       ]
     },
     {
       "language": "en",
-      "content_bottom": 82.99,
+      "content_bottom": 84.09,
       "paragraphs": [
         {
           "top": 794.89,
@@ -219,92 +219,92 @@
         },
         {
           "top": 600.19,
-          "bottom": 556.39,
-          "height": 43.8
-        },
-        {
-          "top": 551.39,
-          "bottom": 522.19,
+          "bottom": 570.99,
           "height": 29.2
         },
         {
-          "top": 517.19,
-          "bottom": 473.39,
-          "height": 43.8
-        },
-        {
-          "top": 468.39,
-          "bottom": 439.19,
+          "top": 565.99,
+          "bottom": 536.79,
           "height": 29.2
         },
         {
-          "top": 434.19,
-          "bottom": 395.79,
+          "top": 531.79,
+          "bottom": 487.99,
+          "height": 43.8
+        },
+        {
+          "top": 482.99,
+          "bottom": 453.79,
+          "height": 29.2
+        },
+        {
+          "top": 448.79,
+          "bottom": 410.39,
           "height": 38.4
         },
         {
-          "top": 389.79,
-          "bottom": 377.79,
+          "top": 404.39,
+          "bottom": 392.39,
           "height": 12
         },
         {
-          "top": 359.79,
-          "bottom": 347.79,
+          "top": 374.39,
+          "bottom": 362.39,
           "height": 12
         },
         {
-          "top": 341.79,
-          "bottom": 328.29,
+          "top": 356.39,
+          "bottom": 342.89,
           "height": 13.5
         },
         {
-          "top": 325.29,
-          "bottom": 311.79,
-          "height": 13.5
-        },
-        {
-          "top": 304.79,
-          "bottom": 291.29,
-          "height": 13.5
-        },
-        {
-          "top": 288.29,
-          "bottom": 261.29,
+          "top": 339.89,
+          "bottom": 312.89,
           "height": 27.0
         },
         {
-          "top": 254.29,
-          "bottom": 240.79,
+          "top": 305.89,
+          "bottom": 292.39,
           "height": 13.5
         },
         {
-          "top": 237.79,
-          "bottom": 210.79,
+          "top": 289.39,
+          "bottom": 262.39,
           "height": 27.0
         },
         {
-          "top": 190.79,
-          "bottom": 178.79,
+          "top": 255.39,
+          "bottom": 241.89,
+          "height": 13.5
+        },
+        {
+          "top": 238.89,
+          "bottom": 211.89,
+          "height": 27.0
+        },
+        {
+          "top": 191.89,
+          "bottom": 179.89,
           "height": 12
         },
         {
-          "top": 172.79,
-          "bottom": 158.99,
+          "top": 173.89,
+          "bottom": 160.09,
           "height": 13.8
         },
         {
-          "top": 154.99,
-          "bottom": 128.99,
+          "top": 156.09,
+          "bottom": 130.09,
           "height": 26
         },
         {
-          "top": 124.99,
-          "bottom": 112.99,
+          "top": 126.09,
+          "bottom": 114.09,
           "height": 12
         },
         {
-          "top": 106.99,
-          "bottom": 82.99,
+          "top": 108.09,
+          "bottom": 84.09,
           "height": 24
         }
       ]
