@@ -1,0 +1,3 @@
+{"case": "local-normal", "status": "ready_for_review", "filesystem": "ext4"}
+{"case": "local-checkpoint", "status": "ready_for_review", "filesystem": "ext4"}
+{"same_patch": true, "new_network_state_created": false, "old_network_state_unchanged": true, "backup_audit_identical": true}

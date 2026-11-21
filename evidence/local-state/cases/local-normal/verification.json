@@ -1,0 +1,56 @@
+{
+  "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+  "commands": [
+    {
+      "argv": [
+        "python",
+        "-c",
+        "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "ddb51a31d4d8ace2df6550bc37a1c0876e21ce5f516e2c08db1e9c662e33a3e3"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "dd4e26c77fb81eb3f931ac3388f75078ecacb58f4d6487d569fb65c95257c5d9",
+      "baseline_files": [
+        "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+      ],
+      "verification_view": "verification-worktrees/001",
+      "view_patch_sha256": "5019c6fc9a1d584b0a2de6b58ebfb932e45cd9ad21ad752edb7cd5105431a359",
+      "view_integrity_error": false
+    },
+    {
+      "argv": [
+        "python",
+        "-m",
+        "pytest",
+        "tests/unit_tests/backends/test_utils.py",
+        "--disable-socket",
+        "--allow-unix-socket",
+        "--benchmark-disable",
+        "-q"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "3e7a1d3ec2c45db1d57f178c2aae1133ed3bc869266f2f2735b3228ae063574e"
+    },
+    {
+      "argv": [
+        "python",
+        "-c",
+        "import json\nfrom pathlib import Path\nfrom deepagents.backends.utils import validate_path\nimport deepagents\nassert Path(deepagents.__file__).resolve() == (Path.cwd()/'deepagents/__init__.py').resolve()\nCASES = [{'id': 'relative-posix', 'input': 'foo/bar', 'expected': {'value': '/foo/bar'}}, {'id': 'absolute-posix', 'input': '/workspace/file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'posix-dot-and-duplicate', 'input': '/./foo//bar', 'expected': {'value': '/foo/bar'}}, {'id': 'relative-backslash', 'input': 'foo\\\\bar\\\\baz', 'expected': {'value': '/foo/bar/baz'}}, {'id': 'mixed-separators', 'input': 'foo/bar\\\\baz/qux', 'expected': {'value': '/foo/bar/baz/qux'}}, {'id': 'backslash-dot-component', 'input': 'foo\\\\.\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-repeated-separator', 'input': 'foo\\\\\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-trailing-separator', 'input': 'foo\\\\bar\\\\', 'expected': {'value': '/foo/bar'}}, {'id': 'mixed-dot-component', 'input': '/workspace\\\\.\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'mixed-repeated-separator', 'input': '/workspace/\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'root', 'input': '/', 'expected': {'value': '/'}}, {'id': 'empty-existing-contract', 'input': '', 'expected': {'value': '/.'}}, {'id': 'dot-existing-contract', 'input': '.', 'expected': {'value': '/.'}}, {'id': 'dots-in-filename', 'input': 'foo..bar.txt', 'expected': {'value': '/foo..bar.txt'}}, {'id': 'dots-in-directory', 'input': 'backup..2024/data.csv', 'expected': {'value': '/backup..2024/data.csv'}}, {'id': 'traversal-relative', 'input': '../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-interior', 'input': 'foo/../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-backslash', 'input': 'foo\\\\..\\\\etc', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-mixed', 'input': '/workspace/..\\\\etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'home-expansion', 'input': '~/secret.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-backslash', 'input': 'C:\\\\Users\\\\file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-posix', 'input': 'D:/data/file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'allowed-prefix', 'input': '/workspace/file.txt', 'allowed_prefixes': ['/workspace/'], 'expected': {'value': '/workspace/file.txt'}}, {'id': 'forbidden-prefix', 'input': '/etc/passwd', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'prefix-boundary', 'input': '/workspace-evil/file', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'empty-allowlist', 'input': '/workspace/file.txt', 'allowed_prefixes': [], 'expected': {'error': 'ValueError'}}, {'id': 'unicode-posix', 'input': '/项目/论文.md', 'expected': {'value': '/项目/论文.md'}}, {'id': 'unicode-backslash-dot', 'input': '项目\\\\.\\\\论文.md', 'expected': {'value': '/项目/论文.md'}}]\nfailures=[]\nfor case in CASES:\n    kwargs={'allowed_prefixes':case['allowed_prefixes']} if 'allowed_prefixes' in case else {}\n    try:\n        value=validate_path(case['input'],**kwargs)\n        actual={'value':value}\n    except ValueError:\n        actual={'error':'ValueError'}\n    if actual != case['expected']:\n        failures.append({'id':case['id'],'expected':case['expected'],'actual':actual})\nprint(json.dumps({'total':len(CASES),'passed':len(CASES)-len(failures),'failures':failures},ensure_ascii=False))\nassert not failures, 'Independent path contracts failed'\n"
+      ],
+      "returncode": 0,
+      "timed_out": false,
+      "log_sha256": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2"
+    }
+  ]
+}

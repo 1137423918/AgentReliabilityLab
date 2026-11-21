@@ -25,6 +25,7 @@ from langgraph.errors import GraphRecursionError
 
 from agent_lab.models import model_for_run
 from agent_lab.request_budget import RequestBudget, RequestBudgetError, task_limits
+from agent_lab.storage import admit_state_directory
 from agent_lab.verification import VerificationError, run_command
 
 
@@ -157,12 +158,20 @@ def baseline_files(repo: Path, commit: str, names: list[str]) -> dict:
 
 @contextlib.contextmanager
 def run_lock(directory: Path):
+    admit_state_directory(directory)
     directory.mkdir(parents=True, exist_ok=True, mode=0o700)
-    with (directory / "worker.lock").open("a") as lock:
+    admit_state_directory(directory)
+    descriptor = os.open(
+        directory / "worker.lock",
+        os.O_WRONLY | os.O_APPEND | os.O_CREAT | os.O_NOFOLLOW,
+        0o600,
+    )
+    with os.fdopen(descriptor, "a") as lock:
         try:
             fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
         except BlockingIOError as error:
             raise RunError("Another worker owns this run directory.") from error
+        admit_state_directory(directory)
         yield lock.fileno()
 
 

@@ -1,0 +1,1 @@
+{"status": "failed", "error": "Run state filesystem 'nfs4' is not admitted; use a supported local --run-dir. SQLite WAL must not use network storage."}

@@ -4,11 +4,17 @@
 
 [中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。这是已有成果的求职展示，未新增实验或测试成绩。
 
+## 本机状态准入与共享归档
+
+已修正实际发现的NFS/WAL放置问题：worker和repair在创建状态目录前、拿锁前及持锁后检查本机文件系统和既有持久控制文件，拒绝网络/未知类型及控制文件链接；不自动迁移旧状态或重置模型额度。代码与便携工件可保留共享位置，活动检查点留在已确认的本机存储。
+
+最新服务器完整回归 **100项通过、零跳过**（含十项新增存储检查）。真实NFS新建拒绝未创建目录，旧NFS状态字节与mtime保持；Deep Agents在ext4上的正常/首读SIGKILL恢复补丁一致，各通过复用的113/119/28验收组。关闭任务后的SQLite备份重建相同审计JSON，完整数据库/私人ZIP不公开，也不声称可执行任务迁移。仅这两个本机参考场景，不新增神经修复成绩；其余历史仓库控制仍是原条件下的观察。[准入和操作](docs/local-state.md) · [协议、源哈希与实测](evidence/local-state/README.md)。
+
 ## 只读检查运行进度
 
 `python -m agent_lab.inspect_run --run-dir /path/to/run` 使用只读SQLite事务及图的get_state重建增量消息，不调用模型、工具、恢复或验收。输出最多8KiB元数据，含工具进度、待执行节点和当前虚拟文件SHA，不输出提示、参数或源码。现有结果状态仅作观察，不冒充重新验收。
 
-最新服务器完整回归 **90项通过、零跳过**，含八项新增审计检查。已查看正在运行的真实模型任务、两个历史参考检查点，并通过解包wheel入口的实际调用；无新增修复成绩。只读SQLite仍可能创建空WAL/SHM协调文件。实际旧状态路径为nfs4，后续先修正为本机受支持状态存储并加启动预检；旧控制不代表网络WAL部署受支持。[接口与限制](docs/run-inspection.md) · [完整日志与包验证](evidence/inspection/README.md)。
+该审计版本服务器完整回归 **90项通过、零跳过**，含八项新增审计检查。已查看正在运行的真实模型任务、两个历史参考检查点，并通过解包wheel入口的实际调用；无新增修复成绩。只读SQLite仍可能创建空WAL/SHM协调文件。实际旧状态路径为nfs4，后续已加入本机状态准入（见首节）；旧控制不代表网络WAL部署受支持。[接口与限制](docs/run-inspection.md) · [完整日志与包验证](evidence/inspection/README.md)。
 
 ## 模型请求预算：跨重启、跨修复轮次
 
@@ -35,7 +41,7 @@
 ```sh
 uv sync
 uv run agent-lab-worker --repo /path/to/deepagents \
-  --task tasks/deepagents-path-maintenance.json --run-dir runs/maintenance-001
+  --task tasks/deepagents-path-maintenance.json --run-dir /path/to/local-state/maintenance-001
 # 使用相同任务和 run-dir 恢复；验证依赖须先按任务说明准备。
 ```
 
@@ -87,7 +93,7 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 独立声明的一次正常CPU试验已运行，在1800.035秒整场上限结束：4份回复、5次读取、2份附加索引，0虚拟改动/补丁/验收。第三份回复选择生产文件821–920行，覆盖相关函数，随后继续读取；这不证明索引导致收益，也不等于完成修复。5份请求共143169字节，最后在途仍扣额度，次数和字节预算未耗尽。
 
-保存回复的输入/缓存读取/输出为26043/17038/380token，输入减缓存9005与四条原生prefill计数一致；第五份未完成工作不含在完整usage内。原生进程宽限后强制回收，端口关闭。另确认旧状态路径为nfs4，SQLiteWAL不支持这种部署；下一项先做本机状态落点与启动预检，再开新模型任务。[声明、选择与边界](docs/indexed-cpu-maintenance.md) · [全部证据](evidence/indexed-cpu/README.md)。
+保存回复的输入/缓存读取/输出为26043/17038/380token，输入减缓存9005与四条原生prefill计数一致；第五份未完成工作不含在完整usage内。原生进程宽限后强制回收，端口关闭。另确认旧状态路径为nfs4，SQLiteWAL不支持这种部署；后续已加入本机状态准入，见本文首节；本次旧试验保持原记录。[声明、选择与边界](docs/indexed-cpu-maintenance.md) · [全部证据](evidence/indexed-cpu/README.md)。
 
 ## 让已有文件读取带上定位信息
 

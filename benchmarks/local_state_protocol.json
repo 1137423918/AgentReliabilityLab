@@ -1,0 +1,61 @@
+{
+  "stage": 26,
+  "declared_utc": "2026-11-21T01:13:45.233504+00:00",
+  "scope": "Real filesystem admission rejection before state writes, and two explicit-reference Deep Agents controls on node-local ext4 with actual checkpoint SIGKILL/resume. Audit-only SQLite backup is not worker relocation or neural capability.",
+  "model_inference": false,
+  "gpu_used": false,
+  "task_path": "evidence/read-index/tasks/indexed-checkpoint.json",
+  "task_file_sha256": "b15a032ac84118cc868600f9c8eb3a422ca15397aa3a290c3976cf9744588357",
+  "source_project_base": "c30114746230d306a9e00a7c5cb6a7f8393df9fe",
+  "source_sha256": {
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/worker.py": "8778f326f00050fe881d1d386f87a3504375e20538c0b7ddc7537e0a32f7cf2f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "f4171cd773e2c6d302e823915d4224cf1a886552e4c27279df2e6114ecc497dc",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/local_state_recovery.py": "6fca86bdcd1f8239b3d77394246221836c34566b752b46d02c2740e854bceb26"
+  },
+  "local_root_path_sha256": "b7f62fac8fe63f4782fbae32f565c5b5de9d827b74d25ac1483ede2aec39e145",
+  "required_actual_filesystems": {
+    "new_active_state": "ext4",
+    "network_rejection_target": "nfs4"
+  },
+  "cases": [
+    "new-NFS-rejection-no-directory",
+    "old-NFS-rejection-data-and-mtime-unchanged",
+    "local-normal",
+    "local-checkpoint-SIGKILL"
+  ],
+  "timer_caps_seconds": {
+    "rejection_worker_each": 120,
+    "fault_stage_observation": 180,
+    "resumed_worker_each": 600,
+    "inspection_each": 120,
+    "combined_control_controller": 2400
+  },
+  "timer_note": "Fault observation and resumed worker caps are distinct, not a combined600s cap. Whole controller includes all phases.",
+  "acceptance_reused_groups": [
+    113,
+    119,
+    28
+  ],
+  "acceptance_note": "Overlapping fixed original/candidate/contracts reused, not new unique tests or neural scores.",
+  "backup": {
+    "source": "completed local-checkpoint case with exclusive existing worker lock",
+    "method": "SQLite backup API to local standalone DELETE-journal database; then private zip",
+    "public_full_database_or_conversation": false,
+    "validate": "read-only audit JSON identical before/after backup, source DB and WAL frame bytes unchanged",
+    "executable_worker_relocation_claim": false
+  },
+  "limits": [
+    "Known filesystem type does not prove disk/firmware durability or defend privileged remounts and hostile path replacement.",
+    "Linux ext4 real integration; macOS APFS metadata-only observation and mocked adapter checks, no full macOS worker matrix.",
+    "tmpfs admitted but volatile; overlay/FUSE/unknown types rejected rather than presumed local.",
+    "No automatic old NFS migration, quota reset, model invocation, host-failure guarantee or cross-host resume."
+  ]
+}

@@ -1,0 +1,70 @@
+[
+  {
+    "stage": "format",
+    "returncode": 0,
+    "wall_seconds": 0.5178168043494225,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "format",
+      "agent_lab/storage.py",
+      "agent_lab/worker.py",
+      "agent_lab/repair.py",
+      "tests/test_storage.py"
+    ]
+  },
+  {
+    "stage": "lint",
+    "returncode": 0,
+    "wall_seconds": 0.06622117478400469,
+    "argv": [
+      "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+      "check",
+      "agent_lab/storage.py",
+      "agent_lab/worker.py",
+      "agent_lab/repair.py",
+      "tests/test_storage.py"
+    ]
+  },
+  {
+    "stage": "focused",
+    "returncode": 0,
+    "wall_seconds": 3.074393051676452,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_storage.py",
+      "-v"
+    ]
+  },
+  {
+    "stage": "full",
+    "returncode": 0,
+    "wall_seconds": 224.3397130612284,
+    "argv": [
+      "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-v"
+    ]
+  },
+  {
+    "stage": "wheel",
+    "returncode": 0,
+    "wall_seconds": 5.937760681845248,
+    "argv": [
+      "<server-workspace>/tools/uv-x86_64-unknown-linux-gnu/uv",
+      "build",
+      "--wheel",
+      "--out-dir",
+      "<server-workspace>/outputs/local-state-20261121/dist"
+    ]
+  }
+]

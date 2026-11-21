@@ -1,0 +1,15 @@
+test_admission_is_rechecked_while_holding_the_lock_before_body (test_storage.StorageTests.test_admission_is_rechecked_while_holding_the_lock_before_body) ... ok
+test_admitted_local_lock_and_fresh_resume_probe (test_storage.StorageTests.test_admitted_local_lock_and_fresh_resume_probe) ... ok
+test_control_links_special_files_and_separate_mount_are_rejected (test_storage.StorageTests.test_control_links_special_files_and_separate_mount_are_rejected) ... ok
+test_directory_alias_resolves_target_and_dangling_alias_does_not_create_it (test_storage.StorageTests.test_directory_alias_resolves_target_and_dangling_alias_does_not_create_it) ... ok
+test_existing_unsupported_run_is_unchanged_including_cached_result (test_storage.StorageTests.test_existing_unsupported_run_is_unchanged_including_cached_result) ... ok
+test_native_adapters_use_argument_arrays_and_identify_local_types (test_storage.StorageTests.test_native_adapters_use_argument_arrays_and_identify_local_types) ... ok
+test_native_metadata_failure_is_closed_without_fallback (test_storage.StorageTests.test_native_metadata_failure_is_closed_without_fallback) ... ok
+test_native_probe_and_lock_on_real_temporary_storage (test_storage.StorageTests.test_native_probe_and_lock_on_real_temporary_storage) ... ok
+test_new_unsupported_run_is_rejected_before_directory_or_task_execution (test_storage.StorageTests.test_new_unsupported_run_is_rejected_before_directory_or_task_execution) ... ok
+test_repair_parent_and_nested_attempt_use_same_admission (test_storage.StorageTests.test_repair_parent_and_nested_attempt_use_same_admission) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.069s
+
+OK

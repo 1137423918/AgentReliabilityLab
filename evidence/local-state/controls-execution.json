@@ -1,0 +1,25 @@
+{
+  "returncode": 0,
+  "wall_seconds": 172.87893528770655,
+  "argv": [
+    "nice",
+    "-n",
+    "19",
+    "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+    "<server-workspace>/code/local-state-20261121/benchmarks/local_state_recovery.py",
+    "--repo",
+    "<server-workspace>/code/deepagents-target",
+    "--task",
+    "<server-workspace>/code/local-state-20261121/evidence/read-index/tasks/indexed-checkpoint.json",
+    "--protocol",
+    "<server-workspace>/code/local-state-20261121/benchmarks/local_state_protocol.json",
+    "--local-root",
+    "<node-local-state>",
+    "--old-network-run",
+    "<server-workspace>/outputs/read-index-20261121/controls/indexed-checkpoint",
+    "--output",
+    "<server-workspace>/outputs/local-state-20261121/controls"
+  ],
+  "protocol_sha256": "84e13680ffaab03cbbd1ee1d1cd80d11094109f6324ea8d4da1c7bccaf617691",
+  "owned_workers_signalled_in_cleanup": []
+}

@@ -5,7 +5,7 @@
 
 ```sh
 python -m agent_lab.repair --repo /path/to/upstream \
-  --task tasks/openhands-undo-model-repair.json --run-dir runs/repair-001
+  --task tasks/openhands-undo-model-repair.json --run-dir /path/to/local-state/repair-001
 # 中断后使用相同任务、仓库与目录重新运行。
 ```
 
@@ -50,3 +50,6 @@ HTTP fixture 检查真实传输与修复流程，返回明确编排的工具调�
 真实 OpenHands 参考任务先生成一份不完整补丁，让独立权限验收实际失败；随后
 使用固定纠正计划完成修复。正常和反馈边界 SIGKILL 的结果以公开证据报告为准。
 这些实验检验流程与恢复，不证明模型修复成功率提升。
+
+
+后续版本已增加[本机状态准入与共享归档](local-state.md)。写入口不再接受旧NFS状态路径；原始试验记录保留，只读检查与本机新控制的范围分别说明。

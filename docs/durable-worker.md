@@ -22,7 +22,7 @@
 ```sh
 uv sync
 uv run agent-lab-worker --repo /path/to/deepagents \
-  --task tasks/deepagents-path-maintenance.json --run-dir runs/maintenance-001
+  --task tasks/deepagents-path-maintenance.json --run-dir /path/to/local-state/maintenance-001
 # 中断后使用完全相同的命令与 run-dir 恢复。
 ```
 
@@ -60,7 +60,7 @@ uv run agent-lab-worker --repo /path/to/deepagents \
 
 ```sh
 python benchmarks/recovery_matrix.py --repo /path/to/deepagents \
-  --task tasks/deepagents-path-maintenance.json --output runs/matrix-001
+  --task tasks/deepagents-path-maintenance.json --output /path/to/local-state/matrix-001
 ```
 
 CPU 实验曾遇到 data1 共享存储上的依赖冷导入超时；改用 home 中的独立环境后通过。没有把这次环境差异当作模型或算法速度提升。首轮原始失败日志保留在私人实验记录中。
@@ -76,10 +76,13 @@ CPU 实验曾遇到 data1 共享存储上的依赖冷导入超时；改用 home 
 ```sh
 # Linux /proc；使用前述独立的 SDK 验证环境放入 PATH。
 python benchmarks/active_verifier_recovery.py --repo /path/to/deepagents \
-  --task tasks/deepagents-path-maintenance.json --output runs/active-verifier-001
+  --task tasks/deepagents-path-maintenance.json --output /path/to/local-state/active-verifier-001
 ```
 
 证据：[修复前单项失败](../evidence/verification-supervision/parent-kill-baseline.log)、[修复后完整 21 条测试](../evidence/verification-supervision/worker-supervised-tests.log)、[真实仓库正常/恢复对照](../evidence/verification-supervision/active-report.json)。当前仍允许崩溃边界上的验证重跑，不保证任意外部副作用恰好一次。
 
 
 显式 opt-in 的原版测试视图、导出前 Python 语法检查、缓存与失败反馈完整性协议见 [验收保护](protected-grading.md)。默认任务保持原有命令工作目录，新任务增加能力标记并在旧 worker 上于验收阶段拒绝继续。
+
+
+后续版本已增加[本机状态准入与共享归档](local-state.md)。写入口不再接受旧NFS状态路径；原始试验记录保留，只读检查与本机新控制的范围分别说明。

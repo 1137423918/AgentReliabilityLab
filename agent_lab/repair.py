@@ -137,7 +137,6 @@ def execute_rounds(repo, directory, task, manifest, limit, hold, request_budget=
     for number in range(limit + 1):
         child = attempt_task(task, number, failure)
         current = directory / "attempts" / f"{number:03d}"
-        current.mkdir(parents=True, exist_ok=True)
         # This lookup also waits for/declines a still-owned verifier lock.
         failure = failed_candidate(repo, current, child, request_budget)
         if failure is None:

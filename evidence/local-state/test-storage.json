@@ -1,0 +1,6 @@
+{
+  "test_temp_root": "<node-local-tests>",
+  "filesystem": "ext4",
+  "code_and_logs_filesystem": "nfs4",
+  "note": "Mutable test states on node-local ext4, code and portable logs on existing storage."
+}
