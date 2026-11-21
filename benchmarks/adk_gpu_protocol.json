@@ -1,0 +1,169 @@
+{
+  "trials": [
+    "normal"
+  ],
+  "budget": {
+    "case_wall_seconds": 1200,
+    "request_seconds": 120,
+    "max_output_tokens_per_request": 1536,
+    "service_wall_seconds": 1800,
+    "max_graph_steps": 64,
+    "http_limits": {
+      "max_requests": 16,
+      "max_request_bytes": 131072,
+      "max_total_request_bytes": 1048576
+    },
+    "repair_rounds": 0,
+    "retries": 0
+  },
+  "service": {
+    "host": "127.0.0.1",
+    "port": 18852,
+    "gpu_layers": "all",
+    "visible_devices": "one admitted UUID only; private UUID not published",
+    "device": "CUDA0",
+    "split_mode": "none",
+    "fit": "off",
+    "context": 32768,
+    "threads": 4,
+    "parallel": 1,
+    "thinking": false,
+    "wall_seconds": 1800,
+    "readiness_seconds": 300,
+    "request_seconds": 120,
+    "api_auth": "Ephemeral owner-only key file; no key/header publication",
+    "reasoning_format": "auto",
+    "driver_watchdog_seconds": 1350
+  },
+  "stage": 33,
+  "scope": "One new protected ADK repository-maintenance trajectory using pinned9B CUDA serving. Known public defect; not held out, independent tasks, a general success rate or isolated performance comparison.",
+  "declared_utc": "2026-11-21T07:27:06.792909+00:00",
+  "task": "tasks/adk-artifact-delete-model-gpu.json",
+  "task_file_sha256": "15f44999fd152d27f6af944753e7da6a6af504a02dc7c4f35134cc5d33e5a493",
+  "task_sha256": "fbf641f7f5b17b3728536d0cbd941e29aacb4eb4db2171e3ce14be401aaaa610",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "source_project_base": "d3af34aae1dc9da86a492425d6ec3c9201035213",
+  "source_sha256": {
+    "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "08c085adcdd14cc7934c4c34dfaf567b1a112b6edef514acb13ced93d2f5c6e0",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/source_tools.py": "154e2960d661578f1c7cba676f99ef2b1891c89a5c48d7f1b15c5a2e1cad33c4",
+    "agent_lab/read_index.py": "48eb9610eddbef07ad1405d32119b63ff034d1436e10c248aac6c4eb87140803",
+    "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+    "agent_lab/verification.py": "408cd3abe25c5d6956f0cfbe6bd60fca309a47f97495fa6be39dcafea5059a26",
+    "benchmarks/model_pilot.py": "d92e929c32978e4a5c045765416aeba31a2be17f66e1c02877008776b8376209",
+    "benchmarks/single_model_trial.py": "5d79efa845abdc2daa773c2807e1e55083ef0c1c224679bcc218c4efd5f0212f",
+    "benchmarks/recovery_matrix.py": "237c2fc04eab7fba410c8f7587fded8c7fc386fe65f2bdfcf8a6fb53b629da6d",
+    "benchmarks/serve_llama_cpu.py": "759e4a32e9cc2ccecc3d556b5eb43f3dbedc27115a91e65de9b5f1f23f93d939",
+    "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56"
+  },
+  "model": {
+    "model_sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+    "server_sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+    "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+    "quantizer_repository": "lmstudio-community/Qwen3.5-9B-GGUF",
+    "quantizer_revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "publisher_claimed_base_model": "Qwen/Qwen3.5-9B",
+    "reference_source_metadata_revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "exact_quantizer_source_weight_revision": null,
+    "alias": "agentlab-qwen35-9b-adk-cuda",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "precision": "LMStudio-community text-only GGUF Q4_K_M",
+    "model_card": "https://huggingface.co/Qwen/Qwen3.5-9B"
+  },
+  "acceptance_unchanged_from_prepared_adk_task": true,
+  "acceptance_sha256": "49d7b2d07a4fdd4ab5fc24d8c50cf60d2840279a5b0e7b37a3c72f4fbbeb8b2d",
+  "original_task_file_sha256": "8a80c48075f6a923f26fdef587ecc434e5c67e8861246f18abdf187172723889",
+  "hypothesis": "GPU serving and a predeclared16-request budget may allow the same9B model to finish source navigation and produce a valid focused edit. The unchanged prompt/grading and original source-hash requirements prevent substituting a reference implementation. Benefit unproven; backend/hardware/parser/budgets change together.",
+  "limitations": [
+    "One known public defect, after prior failed CPU trajectories; not held out or a general autonomous repair rate.",
+    "New CUDA backend, hardware, reasoning parser(auto),16 request/64 graph-step and1200s case budgets change together; no isolated speed/cost claim.",
+    "Original protected acceptance, editable scope, prompt and hash-checked tools remain identical; no reference patch/plan or scripted neural responses.",
+    "No retry, repair round, checkpoint fault, budget reset, retrospective extension or grading relaxation.",
+    "Exact source weight revision behind community quantization remains unknown; previous provenance/license limits remain.",
+    "Host/GPU sampled limits and shared-host admission are observational, not resource reservation or allocator-enforced caps; summed RSS double counts shared pages.",
+    "Only persisted replies provide complete usage; canceled/unsaved requests and warmup may consume extra compute.",
+    "Existing106 engineering checks and originalADK1863pass26xfail/four external contracts are reused; no new unique-test count.",
+    "Native/driver parent-death and forced-cleanup branches not fault injected; only observed cleanup may be claimed."
+  ],
+  "sampling": {
+    "mode": "local-openai",
+    "model": "agentlab-qwen35-9b-adk-cuda",
+    "revision": "1379f25c6b505a3fc737bd7818cb09389cf807c1",
+    "max_output_tokens": 1536,
+    "timeout_seconds": 120,
+    "seed": 42,
+    "temperature": 0.7,
+    "top_p": 0.8,
+    "presence_penalty": 1.5,
+    "extra_body": {
+      "top_k": 20,
+      "min_p": 0.0,
+      "repeat_penalty": 1.0
+    },
+    "request_budget": {
+      "max_requests": 16,
+      "max_request_bytes": 131072,
+      "max_total_request_bytes": 1048576
+    }
+  },
+  "storage": {
+    "active_state_filesystem": "ext4",
+    "metadata_and_read_only_code_filesystem": "nfs4",
+    "checkpoint_state_on_network_storage": false,
+    "private_database_publication": false,
+    "local_root": "random owner-only temporary directory; only path hash published"
+  },
+  "model_and_sampling_unchanged": false,
+  "engineering_evidence": {
+    "report": "evidence/file-inventory/report.json",
+    "report_sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a",
+    "full_checks_passed": 106,
+    "focused_checks_included": 6,
+    "wheel_sha256": "725b0d247525b2e4cb7f39762da51bb0875842a8c2b142e9604450b6961dbd24"
+  },
+  "prompt_unchanged_from_inventory_4b_trial": true,
+  "previous_cpu_protocol_sha256": "c99e6f7ad9976d60fd23aae66bab63237f58a696d602b26d6d6b7f19dbdaaba1",
+  "previous_transport_protocol_sha256": "3c3e4503b95322cd63999396e0978099bb237651fbf8a564245771d478b9e28e",
+  "http_limits": {
+    "max_requests": 16,
+    "max_request_bytes": 131072,
+    "max_total_request_bytes": 1048576
+  },
+  "resource_policy": {
+    "compute_capability": "8.6",
+    "total_memory_min_mib": 20480,
+    "idle_memory_max_mib": 64,
+    "idle_utilization": 0,
+    "no_existing_compute_clients": true,
+    "admission_snapshot_separation_seconds": 5,
+    "immediate_prelaunch_recheck": true,
+    "own_lock_not_system_reservation": true,
+    "stop_own_service_on_foreign_compute_client": true,
+    "host_available_admission_gib": 32,
+    "host_available_floor_gib": 16,
+    "sampled_host_tree_rss_limit_gib": 16,
+    "sampled_gpu_memory_limit_mib": 18432,
+    "sampling_interval_seconds": 2,
+    "gpu_query_timeout_seconds": 10,
+    "address_space_limit": "Not imposed for CUDA virtual-address reservations; sampled physical-resource guards apply",
+    "nice": 19,
+    "active_state": "private local ext4",
+    "parent_death_signal": "SIGTERM via Linux prctl",
+    "runtime_gpu_query_scope": "selected UUID only",
+    "gpu_observation_max_age_seconds": 30,
+    "host_monitor_independent_of_gpu_queries": true,
+    "sampled_host_tree_scope": "native server plus observed driver/worker descendants, identity checked by PID/start ticks"
+  },
+  "server_sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+  "cuda_backend_sha256": "52d2257263d798c0ea8a97a4279fef05f3b5abd41344245e27ea1bc4e820991f",
+  "runtime_manifest_sha256": "6d309b948bd103b13e8ae5fd53f2c1cd69519c4fa5ff2a1c9b2ce30ac3666c8c",
+  "request_budget_source_sha256": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+  "operator_sha256": {
+    "adk_gpu_runtime_20261121.py": "eb4ee9f73291481ce49f6d10f6df9dd8ed56724c68dd20402368cbb16ccdd7ef",
+    "adk-gpu-run-20261121.py": "c0120286b8f5de2a59e0458a5d4f062b1ca8732cb38f25ebf822252ce207c22a"
+  },
+  "reasoning_reference": "https://github.com/ggml-org/llama.cpp/blob/4783b1145c7073bb809f4c282ff4853cbfe42954/tools/server/README.md?plain=1#L227"
+}
