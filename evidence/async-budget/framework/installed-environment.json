@@ -1,0 +1,42 @@
+{
+  "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+  "package_directory": "<private-runtime>/envs/async-budget-pydantic-20261121/lib/python3.11/site-packages/durable_agent_budget",
+  "module_sha256": {
+    "request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "__init__.py": "36853568783bdbbb1fd769e615af95513cb602aead8aa146745cad29f50bdf4b"
+  },
+  "packages": {
+    "jiter": "0.19.0",
+    "truststore": "0.10.5",
+    "anyio": "4.16.0",
+    "pip": "25.3",
+    "h11": "0.16.0",
+    "httpcore2": "2.16.2",
+    "wheel": "0.45.1",
+    "openai": "3.57.0",
+    "annotated-types": "0.8.0",
+    "sniffio": "1.3.1",
+    "tiktoken": "0.14.0",
+    "agentlab-durable-budget": "0.1.0",
+    "typing-inspection": "0.4.5",
+    "pydantic_core": "2.50.5",
+    "logfire-api": "6.0.0",
+    "idna": "3.20",
+    "regex": "2026.11.19",
+    "griffelib": "2.4.1",
+    "pydantic": "2.14.4",
+    "pydantic-graph": "2.71.0",
+    "certifi": "2026.11.20",
+    "setuptools": "80.9.0",
+    "charset-normalizer": "3.5.2",
+    "requests": "2.34.2",
+    "httpx2": "2.16.2",
+    "opentelemetry-api": "1.45.2",
+    "pydantic-ai-slim": "2.71.0",
+    "urllib3": "2.8.0",
+    "genai-prices": "0.2.5",
+    "typing_extensions": "4.16.0"
+  }
+}

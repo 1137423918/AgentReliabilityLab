@@ -1,0 +1,40 @@
+{
+  "normalization": "Private execution/project/home paths normalized in metadata/logs; four framework journals are original bytes. HTTP headers/full conversational bodies were not exported.",
+  "files": [
+    {
+      "path": "bootstrap-report.json",
+      "original_sha256": "8fb943ba2fcfc58171daf40824d8046ba23a0f07cdf18b4355bd3cc06ab52a75",
+      "public_sha256": "8fb943ba2fcfc58171daf40824d8046ba23a0f07cdf18b4355bd3cc06ab52a75",
+      "public_bytes": 469,
+      "byte_identical": true
+    },
+    {
+      "path": "framework-lock.txt",
+      "original_sha256": "a03957d1539db5ed2553d5a1b533e5749e99caf51f69b60907e9140243debb54",
+      "public_sha256": "a03957d1539db5ed2553d5a1b533e5749e99caf51f69b60907e9140243debb54",
+      "public_bytes": 55187,
+      "byte_identical": true
+    },
+    {
+      "path": "framework-environment.json",
+      "original_sha256": "d4bd45e46ad16df761e02aa9383166c3ac0a1e36d436992f42e3e2b0707a2fea",
+      "public_sha256": "d4bd45e46ad16df761e02aa9383166c3ac0a1e36d436992f42e3e2b0707a2fea",
+      "public_bytes": 755,
+      "byte_identical": true
+    },
+    {
+      "path": "lock.log",
+      "original_sha256": "4d39aaac68aa824a507349c635943a8263cd09814607fb219ddf18f8b80167e1",
+      "public_sha256": "4d39aaac68aa824a507349c635943a8263cd09814607fb219ddf18f8b80167e1",
+      "public_bytes": 55339,
+      "byte_identical": true
+    },
+    {
+      "path": "install.log",
+      "original_sha256": "fa1f8ad0ea8070901737c24f8ffdaf9f0ca49de88990146f7dd6bc6d548fdc03",
+      "public_sha256": "81c52c1a8d12eb32ac973a4ec7223ee5fb95724412bff32aa164917b0af4dfe9",
+      "public_bytes": 1447,
+      "byte_identical": false
+    }
+  ]
+}

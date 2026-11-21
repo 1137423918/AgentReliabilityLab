@@ -1,0 +1,46 @@
+{
+  "stage": 36,
+  "declared_utc": "2026-11-21T08:43:34.257368+00:00",
+  "scope": "Asyncio/HTTPX2 durable request reservation, cancellation and SIGKILL engineering checks plus isolated PydanticAI integration; explicit fake loopback services, no neural/GPU/cloud calls.",
+  "source_project_base": "be5fca0ef4663a4d0416e0e1672b1e8bd9c945d3",
+  "source_archive_sha256": "5657210ecf79b7fcadbbf5f0e66024a358adf441630d889e4a0087b48d7fbd33",
+  "source_sha256": {
+    "agent_lab/async_request_budget.py": "3996dce70b104db0d0e2641d2bbb0c7a4fb71651a5be907853664ffe43321711",
+    "tests/test_async_request_budget.py": "9845e7184ab89897058426930624893c456c478c3914acbad8dabc1727d07d37",
+    "benchmarks/pydantic_budget_case.py": "221cc3aa32d7010e2ecfedd1aab9844b9e492c3eab07f834e4af8c74d0909c58",
+    "packages/durable-budget/build.py": "35c5631a976ea9f574e121b5579d8526087e1a746c66f2ec47a955681cbe5910",
+    "packages/durable-budget/pyproject.toml": "b75869c9a728ee28a92c86d0dd8feb898f106819300be0cdeff23e33eb0a20bb",
+    "packages/durable-budget/__init__.py": "36853568783bdbbb1fd769e615af95513cb602aead8aa146745cad29f50bdf4b",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f"
+  },
+  "frozen_legacy_budget_sha256": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+  "core_environment": "existing model-request-budget-20261121, no installs/changes; expected HTTPX2=2.16.2",
+  "framework_environment": "separate async-budget-pydantic-20261121; pip-hash-locked PydanticAI2.71.0/OpenAI3.57.0/HTTPX2=2.16.2",
+  "core_focused": "unittest -v test_async_request_budget, expected8checks including real SIGKILL",
+  "full_suite": "unittest discover -s tests -v after focused8pass; no manufactured missing-API baseline defect",
+  "resource_policy": {
+    "cpu_affinity": 4,
+    "nice": 19,
+    "available_memory_admission_gib": 24,
+    "available_memory_floor_gib": 12,
+    "tree_rss_guard_gib": 16,
+    "address_space_limit_gib": 48,
+    "phase_wall_seconds": 600,
+    "monitor_interval_seconds": 2,
+    "gpu_visible": false
+  },
+  "limitations": [
+    "New opt-in async client; existing maintenance-worker async rejection and sync transport stay unchanged.",
+    "Request attempts and JSON bytes are not tokens, cost, accepted replies or exactly-once tool effects.",
+    "Cancellation can consume a reservation without sending; in-flight unknowns remain charged; no refund/reset.",
+    "Cancellation during durable I/O waits for it to finish; no claim of a hard cancellation-latency bound under a held OS lock.",
+    "Asyncio only, not a Trio compatibility claim; loopback chat-completions POST only, no Responses/cloud/redirect/proxy support.",
+    "PydanticAI uses an isolated new budget-only distribution; no upstream defect/PR or model-autonomy claim.",
+    "Repeated focused tests overlap the full suite; framework cases are reported separately, not added as new core tests."
+  ],
+  "previous_failed_protocol_sha256": "0ef8faeb25b98b0349facc82072d1cf7d22efef23145e3f2afc052f6decf4203",
+  "correction_scope": "Firstfocused6pass/2failed before the requested boundary during cold HTTP backend imports/new-process startup. Add an unbudgeted fixture-only health GET before fault injection; child sends READY after its own health GET, with a separate30s initialization bound. Keep3s boundary waits,5s journal gates, quotas/resources/600sphase and every outcome assertion unchanged. Canonical async module is byte-identical to firstattempt; no inference/post budgets changed. The eager-import-onlyv2 preparation was never executed and is superseded, not counted as another failed test run."
+}

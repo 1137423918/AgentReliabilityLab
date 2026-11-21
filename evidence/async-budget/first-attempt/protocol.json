@@ -1,0 +1,43 @@
+{
+  "stage": 36,
+  "declared_utc": "2026-11-21T08:34:44.436112+00:00",
+  "scope": "Asyncio/HTTPX2 durable request reservation, cancellation and SIGKILL engineering checks plus isolated PydanticAI integration; explicit fake loopback services, no neural/GPU/cloud calls.",
+  "source_project_base": "be5fca0ef4663a4d0416e0e1672b1e8bd9c945d3",
+  "source_archive_sha256": "bf7601494da269979fb6e88da716a4643b257880b93a81042d147857d20553ee",
+  "source_sha256": {
+    "agent_lab/async_request_budget.py": "3996dce70b104db0d0e2641d2bbb0c7a4fb71651a5be907853664ffe43321711",
+    "tests/test_async_request_budget.py": "bc7cfaf702b98522f425d3a7afce891a918103ec2949339aeeeab4a0f2217bbd",
+    "packages/durable-budget/build.py": "35c5631a976ea9f574e121b5579d8526087e1a746c66f2ec47a955681cbe5910",
+    "packages/durable-budget/pyproject.toml": "b75869c9a728ee28a92c86d0dd8feb898f106819300be0cdeff23e33eb0a20bb",
+    "packages/durable-budget/__init__.py": "36853568783bdbbb1fd769e615af95513cb602aead8aa146745cad29f50bdf4b",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f"
+  },
+  "frozen_legacy_budget_sha256": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+  "core_environment": "existing model-request-budget-20261121, no installs/changes; expected HTTPX2=2.16.2",
+  "framework_environment": "separate async-budget-pydantic-20261121; pip-hash-locked PydanticAI2.71.0/OpenAI3.57.0/HTTPX2=2.16.2",
+  "core_focused": "unittest -v test_async_request_budget, expected8checks including real SIGKILL",
+  "full_suite": "unittest discover -s tests -v after focused8pass; no manufactured missing-API baseline defect",
+  "resource_policy": {
+    "cpu_affinity": 4,
+    "nice": 19,
+    "available_memory_admission_gib": 24,
+    "available_memory_floor_gib": 12,
+    "tree_rss_guard_gib": 16,
+    "address_space_limit_gib": 48,
+    "phase_wall_seconds": 600,
+    "monitor_interval_seconds": 2,
+    "gpu_visible": false
+  },
+  "limitations": [
+    "New opt-in async client; existing maintenance-worker async rejection and sync transport stay unchanged.",
+    "Request attempts and JSON bytes are not tokens, cost, accepted replies or exactly-once tool effects.",
+    "Cancellation can consume a reservation without sending; in-flight unknowns remain charged; no refund/reset.",
+    "Cancellation during durable I/O waits for it to finish; no claim of a hard cancellation-latency bound under a held OS lock.",
+    "Asyncio only, not a Trio compatibility claim; loopback chat-completions POST only, no Responses/cloud/redirect/proxy support.",
+    "PydanticAI uses an isolated new budget-only distribution; no upstream defect/PR or model-autonomy claim.",
+    "Repeated focused tests overlap the full suite; framework cases are reported separately, not added as new core tests."
+  ]
+}

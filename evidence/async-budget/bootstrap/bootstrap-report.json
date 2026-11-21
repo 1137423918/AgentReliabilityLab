@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "phases": [
+    {
+      "phase": "lock",
+      "returncode": 0,
+      "seconds": 17.615
+    },
+    {
+      "phase": "venv",
+      "returncode": 0,
+      "seconds": 0.419
+    },
+    {
+      "phase": "install",
+      "returncode": 0,
+      "seconds": 37.661
+    }
+  ],
+  "gpu_used": false,
+  "model_requests": 0,
+  "lock_sha256": "a03957d1539db5ed2553d5a1b533e5749e99caf51f69b60907e9140243debb54",
+  "original_worker_environment_modified": false
+}

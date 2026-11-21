@@ -4,6 +4,10 @@
 
 [中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。这是已有成果的求职展示，未新增实验或测试成绩。
 
+## 异步请求额度与 Pydantic AI 接入
+
+新增独立 asyncio/HTTPX2 预算适配层与 8.4KB 小包，直接复用原请求账本；取消、并发、重启和 SDK 自动重试共享次数及 JSON 字节额度。服务器完整116项回归通过（新增8项已计入），另有4场真实 Pydantic AI SDK/工具控制：8次假服务POST、3250字节，一次在途取消保持未知并占用额度；不计神经推理或模型修复。创建必须使用新目录，恢复时缺失账本拒绝重建。[证据、保留的失败和边界](evidence/async-budget/README.md) · [独立包用法](packages/durable-budget/README.md)。
+
 ## 验证生命周期：清理独立会话子进程
 
 验证命令退出0后遗留后台子进程的缺陷已在服务器复现。Linux监督器改为接管并回收孤儿后代，同时绑定worker已加载的监督器源码，避免过滤环境后命中旧安装包。定向5项、完整108项回归通过，新增2项已计入；覆盖双重fork、超时、worker强杀恢复与无关进程隔离。[结果、首版集成失败与限制](evidence/verification-tree/README.md)。这是CPU工程验证，没有新的模型修复分数。

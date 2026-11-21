@@ -1,0 +1,33 @@
+{
+  "scope": "Asyncio/HTTPX2 durable request reservation, cancellation and SIGKILL engineering checks plus isolated PydanticAI integration; explicit fake loopback services, no neural/GPU/cloud calls.",
+  "protocol_sha256": "0ef8faeb25b98b0349facc82072d1cf7d22efef23145e3f2afc052f6decf4203",
+  "phases": [
+    {
+      "name": "focused",
+      "returncode": 1,
+      "expected_tests": 8,
+      "wall_seconds": 20.196,
+      "test_count": 8,
+      "unittest_seconds": 15.646,
+      "guard_reason": null,
+      "peak_sampled_tree_rss_bytes": 81207296,
+      "samples": 10,
+      "cleanup": {
+        "wait_timeout": false,
+        "returncode": 1,
+        "forced_cleanup": false,
+        "remaining_owned_processes": []
+      }
+    }
+  ],
+  "gpu_used": false,
+  "real_neural_requests": 0,
+  "fake_http_services": true,
+  "local_root_sha256": "913deaf32130bb7bccec437efdfd7e387fdc82d082c2720fe77c3ec89f7f85b8",
+  "started_utc": "2026-11-21T08:36:57.715814+00:00",
+  "active_state_filesystem": "ext4",
+  "success": false,
+  "error_type": "AssertionError",
+  "error": "focused checks failed or skipped",
+  "completed_utc": "2026-11-21T08:37:22.396781+00:00"
+}

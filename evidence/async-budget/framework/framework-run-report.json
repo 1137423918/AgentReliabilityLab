@@ -1,0 +1,98 @@
+{
+  "scope": "Four actual PydanticAI2.71/OpenAI3.57/HTTPX2 transport-tool cases against explicit fake loopback services and an actual public lifecycle report. No neural inference/GPU/general repair score.",
+  "protocol_sha256": "44634dec0ff01edec644d2056262301b3910a0e53ae7d25e2983d1ee256fbc22",
+  "real_neural_requests": 0,
+  "explicit_fake_model": true,
+  "gpu_used": false,
+  "cases": [
+    {
+      "case": "normal_reopen",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 1140,
+      "http_statuses": [
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "609942694d554b4781b833cba374dfdc",
+      "actual_report_tool_reads": 1,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "cancel_inflight",
+      "passed": true,
+      "http_requests": 1,
+      "request_body_bytes": 360,
+      "http_statuses": [
+        null
+      ],
+      "unobserved": 1,
+      "journal_id": "0d6b9568f3ba48be80f8df6ae9ec2c8a",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "concurrent_agents",
+      "passed": true,
+      "http_requests": 3,
+      "request_body_bytes": 1050,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "304ade02958545a1b96f1ffbe8bd2949",
+      "actual_report_tool_reads": 3,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "sdk_retries",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 700,
+      "http_statuses": [
+        503,
+        503
+      ],
+      "unobserved": 0,
+      "journal_id": "682a5e1640124e9ba18a553a01490a7d",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 2,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    }
+  ],
+  "active_state_filesystem": "ext4",
+  "cleanup": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "returncode": 0,
+  "wall_seconds": 73.367,
+  "guard_reason": null,
+  "peak_sampled_tree_rss_bytes": 139194368,
+  "samples": 72,
+  "versions": {
+    "pydantic-ai-slim": "2.71.0",
+    "openai": "3.57.0",
+    "httpx2": "2.16.2",
+    "agentlab-durable-budget": "0.1.0"
+  },
+  "expected_tool_payload": {
+    "source_report_sha256": "abc47e4214040b03a7797be6a372a76f36e049f7c4ac211f9e3ffc35964fa7e8",
+    "full_suite_passed": 108
+  },
+  "case_report_success": true,
+  "success": true,
+  "completed_utc": "2026-11-21T09:02:57.189618+00:00"
+}

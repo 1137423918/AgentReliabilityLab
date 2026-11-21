@@ -1,0 +1,47 @@
+{
+  "success": true,
+  "phases": [
+    {
+      "phase": "build",
+      "returncode": 0,
+      "seconds": 1.838
+    },
+    {
+      "phase": "install",
+      "returncode": 0,
+      "seconds": 1.129
+    },
+    {
+      "phase": "dependency_check",
+      "returncode": 0,
+      "seconds": 0.113
+    }
+  ],
+  "wheel": {
+    "wheel": "agentlab_durable_budget-0.1.0-py3-none-any.whl",
+    "bytes": 8441,
+    "sha256": "a27d27b935b9646a0bed30cac5cc300f783311860471a2df92c053ac9657005a",
+    "source_sha256": {
+      "request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+      "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+      "async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e"
+    },
+    "all_module_bytes_identical": true
+  },
+  "module_source_verified": true,
+  "core_source_sha256": {
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "tests/test_async_request_budget.py": "304277a3b71bad42cbd540c75f545899a459e80b0ee2f90a0fcbd5252ae46086",
+    "benchmarks/pydantic_budget_case.py": "221cc3aa32d7010e2ecfedd1aab9844b9e492c3eab07f834e4af8c74d0909c58",
+    "packages/durable-budget/build.py": "35c5631a976ea9f574e121b5579d8526087e1a746c66f2ec47a955681cbe5910",
+    "packages/durable-budget/pyproject.toml": "b75869c9a728ee28a92c86d0dd8feb898f106819300be0cdeff23e33eb0a20bb",
+    "packages/durable-budget/__init__.py": "36853568783bdbbb1fd769e615af95513cb602aead8aa146745cad29f50bdf4b",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f"
+  },
+  "framework_lock_sha256": "a03957d1539db5ed2553d5a1b533e5749e99caf51f69b60907e9140243debb54",
+  "framework_cases_started": false,
+  "original_worker_environment_modified": false
+}

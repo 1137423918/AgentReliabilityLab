@@ -1,0 +1,67 @@
+test_cancel_during_observation_commits_known_status (test_async_request_budget.AsyncBudgetTests.test_cancel_during_observation_commits_known_status) ... Executing <Task finished name='Task-1' coro=<AsyncBudgetTests.asyncSetUp() done, defined at <private-runtime>/candidate/tests/test_async_request_budget.py:23> result=None created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.135 seconds
+Executing <Task pending name='Task-2' coro=<AsyncBudgetTests.test_cancel_during_observation_commits_known_status() running at <private-runtime>/candidate/tests/test_async_request_budget.py:179> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at <private-runtime>/anaconda3/lib/python3.11/asyncio/futures.py:387, Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 4.235 seconds
+Executing <Task pending name='Task-3' coro=<AsyncClient.post() running at <private-runtime>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/httpx2/_client.py:2036> wait_for=<Future pending cb=[Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> created at <private-runtime>/anaconda3/lib/python3.11/asyncio/tasks.py:374> took 2.837 seconds
+Executing <Task pending name='anyio._core._sockets.connect_tcp.<locals>.try_connect' coro=<TaskHandle._run_coro() running at <private-runtime>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/anyio/_core/_tasks.py:327> wait_for=<Future pending cb=[BaseSelectorEventLoop._sock_write_done(7, handle=<Handle BaseS...events.py:300>)(), Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[TaskGroup._spawn.<locals>.task_done() at <private-runtime>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:894] created at <private-runtime>/anaconda3/envs/agentlab-worker-20261120/lib/python3.11/site-packages/anyio/_backends/_asyncio.py:968> took 0.204 seconds
+FAIL
+test_cancelled_inflight_request_remains_reserved (test_async_request_budget.AsyncBudgetTests.test_cancelled_inflight_request_remains_reserved) ... Executing <Task pending name='Task-11' coro=<AsyncBudgetTests.test_cancelled_inflight_request_remains_reserved() running at <private-runtime>/candidate/tests/test_async_request_budget.py:115> wait_for=<Future pending cb=[_chain_future.<locals>._call_check_cancel() at <private-runtime>/anaconda3/lib/python3.11/asyncio/futures.py:387, Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.193 seconds
+Executing <Task pending name='Task-11' coro=<AsyncBudgetTests.test_cancelled_inflight_request_remains_reserved() running at <private-runtime>/candidate/tests/test_async_request_budget.py:127> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at <private-runtime>/anaconda3/lib/python3.11/asyncio/tasks.py:898, Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.139 seconds
+ok
+test_concurrent_clients_share_one_limit (test_async_request_budget.AsyncBudgetTests.test_concurrent_clients_share_one_limit) ... Executing <Task pending name='Task-21' coro=<AsyncBudgetTests.test_concurrent_clients_share_one_limit() running at <private-runtime>/candidate/tests/test_async_request_budget.py:199> wait_for=<_GatheringFuture pending cb=[Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/tasks.py:699> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.248 seconds
+ok
+test_redirect_is_charged_without_following_the_target (test_async_request_budget.AsyncBudgetTests.test_redirect_is_charged_without_following_the_target) ... Executing <Task pending name='Task-58' coro=<AsyncBudgetTests.test_redirect_is_charged_without_following_the_target() running at <private-runtime>/candidate/tests/test_async_request_budget.py:104> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at <private-runtime>/anaconda3/lib/python3.11/asyncio/tasks.py:898, Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.112 seconds
+ok
+test_rejected_routes_bodies_and_storage_never_send (test_async_request_budget.AsyncBudgetTests.test_rejected_routes_bodies_and_storage_never_send) ... ok
+test_repeated_cancel_drains_reservation_without_blocking_loop (test_async_request_budget.AsyncBudgetTests.test_repeated_cancel_drains_reservation_without_blocking_loop) ... ok
+test_sigkill_inflight_cannot_reset_the_budget (test_async_request_budget.AsyncBudgetTests.test_sigkill_inflight_cannot_reset_the_budget) ... Executing <Task pending name='Task-84' coro=<AsyncBudgetTests.test_sigkill_inflight_cannot_reset_the_budget() running at <private-runtime>/candidate/tests/test_async_request_budget.py:246> wait_for=<Future pending cb=[Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.282 seconds
+FAIL
+test_wire_bytes_and_503_stay_charged_after_reopen (test_async_request_budget.AsyncBudgetTests.test_wire_bytes_and_503_stay_charged_after_reopen) ... Executing <Task pending name='Task-91' coro=<AsyncBudgetTests.test_wire_bytes_and_503_stay_charged_after_reopen() running at <private-runtime>/candidate/tests/test_async_request_budget.py:87> wait_for=<Future pending cb=[shield.<locals>._outer_done_callback() at <private-runtime>/anaconda3/lib/python3.11/asyncio/tasks.py:898, Task.task_wakeup()] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.137 seconds
+ok
+
+======================================================================
+FAIL: test_cancel_during_observation_commits_known_status (test_async_request_budget.AsyncBudgetTests.test_cancel_during_observation_commits_known_status)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<private-runtime>/anaconda3/lib/python3.11/unittest/async_case.py", line 90, in _callTestMethod
+    if self._callMaybeAsync(method) is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/unittest/async_case.py", line 112, in _callMaybeAsync
+    return self._asyncioRunner.run(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "<private-runtime>/candidate/tests/test_async_request_budget.py", line 179, in test_cancel_during_observation_commits_known_status
+    await self.event(entered)
+  File "<private-runtime>/candidate/tests/test_async_request_budget.py", line 80, in event
+    self.assertTrue(await asyncio.to_thread(marker.wait, 3), "Boundary not reached")
+AssertionError: False is not true : Boundary not reached
+
+======================================================================
+FAIL: test_sigkill_inflight_cannot_reset_the_budget (test_async_request_budget.AsyncBudgetTests.test_sigkill_inflight_cannot_reset_the_budget)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<private-runtime>/anaconda3/lib/python3.11/unittest/async_case.py", line 90, in _callTestMethod
+    if self._callMaybeAsync(method) is not None:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/unittest/async_case.py", line 112, in _callMaybeAsync
+    return self._asyncioRunner.run(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<private-runtime>/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "<private-runtime>/candidate/tests/test_async_request_budget.py", line 251, in test_sigkill_inflight_cannot_reset_the_budget
+    await self.event(self.arrived)
+  File "<private-runtime>/candidate/tests/test_async_request_budget.py", line 80, in event
+    self.assertTrue(await asyncio.to_thread(marker.wait, 3), "Boundary not reached")
+AssertionError: False is not true : Boundary not reached
+
+----------------------------------------------------------------------
+Ran 8 tests in 15.646s
+
+FAILED (failures=2)

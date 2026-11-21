@@ -1,0 +1,11 @@
+{
+  "wheel": "agentlab_durable_budget-0.1.0-py3-none-any.whl",
+  "bytes": 8441,
+  "sha256": "a27d27b935b9646a0bed30cac5cc300f783311860471a2df92c053ac9657005a",
+  "source_sha256": {
+    "request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e"
+  },
+  "all_module_bytes_identical": true
+}

@@ -1,0 +1,47 @@
+{
+  "normalization": "Private execution/project/home paths normalized in metadata/logs; four framework journals are original bytes. HTTP headers/full conversational bodies were not exported.",
+  "files": [
+    {
+      "path": "report.json",
+      "original_sha256": "819a4333db2529fc40b823b35f0a6b5296a0d7189e583453411f76724f172ee7",
+      "public_sha256": "819a4333db2529fc40b823b35f0a6b5296a0d7189e583453411f76724f172ee7",
+      "public_bytes": 1501,
+      "byte_identical": true
+    },
+    {
+      "path": "runtime.json",
+      "original_sha256": "0cf2a87c8ebf45ad0f43c1fad775059843c58dea39c9b1335121f4d140acc786",
+      "public_sha256": "844a4ff150c9ae854e4fb1ba1c1d75d0567b091d5ea8500dee96b18de6eaa9b6",
+      "public_bytes": 2121,
+      "byte_identical": false
+    },
+    {
+      "path": "focused.log",
+      "original_sha256": "492a69c646d0e0dc27f8c094102395d10d2babd43d71a13f48745b1d5fbf2a06",
+      "public_sha256": "86e593a1b55b06d8c7f2d46637841537dd0afd67b326c20711acd0a2441c6b42",
+      "public_bytes": 5516,
+      "byte_identical": false
+    },
+    {
+      "path": "full.log",
+      "original_sha256": "eb49831d0182bcc69af4d32eb6f890d7692340ade78922c05b1ea4332d1b5219",
+      "public_sha256": "3d8adb281107e511ba0ee123c53dc7c428f6012a75eea26da887e8967ecfda5a",
+      "public_bytes": 21031,
+      "byte_identical": false
+    },
+    {
+      "path": "focused-monitor.jsonl",
+      "original_sha256": "3090a6b63186e4ee3ba36aa030aef5eac4615e2502b44765b3d753801adf6646",
+      "public_sha256": "3090a6b63186e4ee3ba36aa030aef5eac4615e2502b44765b3d753801adf6646",
+      "public_bytes": 372,
+      "byte_identical": true
+    },
+    {
+      "path": "full-monitor.jsonl",
+      "original_sha256": "c6833fb8d23c1de36740e2b4ad40e831bb3e959b6984156a38347cee6b57cf29",
+      "public_sha256": "c6833fb8d23c1de36740e2b4ad40e831bb3e959b6984156a38347cee6b57cf29",
+      "public_bytes": 10196,
+      "byte_identical": true
+    }
+  ]
+}

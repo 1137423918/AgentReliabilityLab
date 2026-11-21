@@ -1,0 +1,110 @@
+{
+  "normalization": "Private execution/project/home paths normalized in metadata/logs; four framework journals are original bytes. HTTP headers/full conversational bodies were not exported.",
+  "files": [
+    {
+      "path": "setup-report.json",
+      "original_sha256": "a02f4c23a6579a26899995ca259ef275a041fd8fd04faf571c76ba5a8cfc7b2a",
+      "public_sha256": "a02f4c23a6579a26899995ca259ef275a041fd8fd04faf571c76ba5a8cfc7b2a",
+      "public_bytes": 2137,
+      "byte_identical": true
+    },
+    {
+      "path": "wheel-receipt.json",
+      "original_sha256": "197ff02a772d477ec560c49a5bddb631f132af9c1c4d510189739893523aa74d",
+      "public_sha256": "197ff02a772d477ec560c49a5bddb631f132af9c1c4d510189739893523aa74d",
+      "public_bytes": 502,
+      "byte_identical": true
+    },
+    {
+      "path": "installed-environment.json",
+      "original_sha256": "53fd6374437234ffa9deadc6d62c2f24193c91764d9164f1ab94bd140984bb82",
+      "public_sha256": "ed08e439139429a03e0e21cb81eab432e142df46e770de5dcfbeb2e906d07215",
+      "public_bytes": 1441,
+      "byte_identical": false
+    },
+    {
+      "path": "build.log",
+      "original_sha256": "c45bd16284b02d77c98cff57b94e541c7f7e3575007791266f49a819a062dd95",
+      "public_sha256": "56ecd0f79ed0d7fd39e1e324959f50e5018f93133f190d017baca796112ecb31",
+      "public_bytes": 1207,
+      "byte_identical": false
+    },
+    {
+      "path": "install.log",
+      "original_sha256": "920e30baeaa88a184ec517d971731847225b3135634525cc97d7ce066fe27186",
+      "public_sha256": "3399d945eef8da00997c3d59fb1edba5183bb5b0ffc2772883c7e020f952fc28",
+      "public_bytes": 715,
+      "byte_identical": false
+    },
+    {
+      "path": "dependency_check.log",
+      "original_sha256": "84a382b83d2270805b65365a12ba94e90843084a60c89043e2fc4de21e2ec069",
+      "public_sha256": "5c0b4652ebeb808caf893b10bad235c67e825da7dcc94c2cca52d4f2a0a5c0fb",
+      "public_bytes": 156,
+      "byte_identical": false
+    },
+    {
+      "path": "framework-run-report.json",
+      "original_sha256": "ecf80f9fa3e55d832380606fa4bb2b7ec12e70dc3754635228ceca1804d64673",
+      "public_sha256": "ecf80f9fa3e55d832380606fa4bb2b7ec12e70dc3754635228ceca1804d64673",
+      "public_bytes": 2688,
+      "byte_identical": true
+    },
+    {
+      "path": "integration.log",
+      "original_sha256": "1928e2e1769bdadc181492db97fc1cac5c644d943193822274d585c0a061e49b",
+      "public_sha256": "1928e2e1769bdadc181492db97fc1cac5c644d943193822274d585c0a061e49b",
+      "public_bytes": 1183,
+      "byte_identical": true
+    },
+    {
+      "path": "integration-monitor.jsonl",
+      "original_sha256": "dc7ee73c008fb9f2aa0d98549aa9f6954696c51b960d1be16da4bc5d185fb97e",
+      "public_sha256": "dc7ee73c008fb9f2aa0d98549aa9f6954696c51b960d1be16da4bc5d185fb97e",
+      "public_bytes": 5536,
+      "byte_identical": true
+    },
+    {
+      "path": "framework-protocol.json",
+      "original_sha256": "44634dec0ff01edec644d2056262301b3910a0e53ae7d25e2983d1ee256fbc22",
+      "public_sha256": "44634dec0ff01edec644d2056262301b3910a0e53ae7d25e2983d1ee256fbc22",
+      "public_bytes": 5732,
+      "byte_identical": true
+    },
+    {
+      "path": "trial-report.json",
+      "original_sha256": "1d8b43d500eeec813c628be8b6e407ea1ae55b05b6ef3ce07e6f4b8d05d19843",
+      "public_sha256": "1d8b43d500eeec813c628be8b6e407ea1ae55b05b6ef3ce07e6f4b8d05d19843",
+      "public_bytes": 2103,
+      "byte_identical": true
+    },
+    {
+      "path": "normal_reopen/model-requests.json",
+      "original_sha256": "d9a368f55db99be8c303adb7eecd3a4badb031d56d7fa6631220f29d0dfed521",
+      "public_sha256": "d9a368f55db99be8c303adb7eecd3a4badb031d56d7fa6631220f29d0dfed521",
+      "public_bytes": 877,
+      "byte_identical": true
+    },
+    {
+      "path": "cancel_inflight/model-requests.json",
+      "original_sha256": "a21a0fb0a19832f2fb2fc13b2dec7753f78d0fcb5ae668e0baad8a6ee86b56d1",
+      "public_sha256": "a21a0fb0a19832f2fb2fc13b2dec7753f78d0fcb5ae668e0baad8a6ee86b56d1",
+      "public_bytes": 601,
+      "byte_identical": true
+    },
+    {
+      "path": "concurrent_agents/model-requests.json",
+      "original_sha256": "04a886934b51e8f9c0981f2cbee94d5f5994c38cb83ed62a810c39cd95d2411a",
+      "public_sha256": "04a886934b51e8f9c0981f2cbee94d5f5994c38cb83ed62a810c39cd95d2411a",
+      "public_bytes": 1146,
+      "byte_identical": true
+    },
+    {
+      "path": "sdk_retries/model-requests.json",
+      "original_sha256": "dd840e01436cbbe89d771a2e5ddb80bdf585fbccbe1953b3a703c13ed25212c8",
+      "public_sha256": "dd840e01436cbbe89d771a2e5ddb80bdf585fbccbe1953b3a703c13ed25212c8",
+      "public_bytes": 877,
+      "byte_identical": true
+    }
+  ]
+}

@@ -1,0 +1,287 @@
+"""Real loopback HTTP, cancellation and SIGKILL checks for the async budget."""
+
+import asyncio
+import hashlib
+import importlib.util
+import json
+from pathlib import Path
+import signal
+import sys
+import tempfile
+import threading
+import unittest
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+from unittest.mock import patch
+
+from agent_lab.async_request_budget import make_async_http_client, open_budget
+from agent_lab.request_budget import RequestBudgetExhausted, RequestBudgetError
+from agent_lab.storage import StorageError
+
+
+@unittest.skipUnless(importlib.util.find_spec("httpx2"), "Install HTTPX2 async client")
+class AsyncBudgetTests(unittest.IsolatedAsyncioTestCase):
+    async def asyncSetUp(self):
+        self.temporary = tempfile.TemporaryDirectory()
+        self.root = Path(self.temporary.name)
+        self.owner = "a" * 64
+        self.limits = {"max_requests": 2, "max_request_bytes": 4096,
+                       "max_total_request_bytes": 8192}
+        self.requests = []
+        self.status = 200
+        self.location = None
+        self.gate = threading.Event()
+        self.gate.set()
+        self.arrived = threading.Event()
+        fixture = self
+
+        class Handler(BaseHTTPRequestHandler):
+            protocol_version = "HTTP/1.1"
+
+            def do_GET(self):
+                if not self.path.endswith("/health"):
+                    self.send_error(404)
+                    return
+                self.send_response(200)
+                self.send_header("Content-Length", "2")
+                self.end_headers()
+                self.wfile.write(b"ok")
+
+            def do_POST(self):
+                raw = self.rfile.read(int(self.headers["Content-Length"]))
+                fixture.requests.append(raw)
+                fixture.arrived.set()
+                fixture.gate.wait(timeout=10)
+                payload = b'{"ok":true}'
+                try:
+                    self.send_response(fixture.status)
+                    if fixture.location:
+                        self.send_header("Location", fixture.location)
+                    self.send_header("Content-Type", "application/json")
+                    self.send_header("Content-Length", str(len(payload)))
+                    self.end_headers()
+                    self.wfile.write(payload)
+                except (BrokenPipeError, ConnectionResetError):
+                    pass
+
+            def log_message(self, *args):
+                pass
+
+        self.server = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        self.thread = threading.Thread(target=self.server.serve_forever, daemon=True)
+        self.thread.start()
+        self.url = f"http://127.0.0.1:{self.server.server_port}/v1/chat/completions"
+        # A readiness GET initializes the HTTP backend before fault-boundary
+        # waits; it is not a model POST and does not consume the test budget.
+        import httpx2
+        async with httpx2.AsyncClient(trust_env=False) as readiness:
+            response = await readiness.get(self.url.rsplit("/chat/completions", 1)[0] + "/health")
+            self.assertEqual(response.status_code, 200)
+
+
+    async def asyncTearDown(self):
+        self.gate.set()
+        await asyncio.to_thread(self.server.shutdown)
+        self.server.server_close()
+        self.thread.join(timeout=3)
+        self.temporary.cleanup()
+
+    def budget(self, count=2, *, create=True):
+        self.limits["max_requests"] = count
+        return open_budget(self.root / "budget", self.owner, self.limits, create=create)
+
+    def ledger(self):
+        return json.loads((self.root / "budget/model-requests.json").read_text())
+
+    async def event(self, marker):
+        self.assertTrue(await asyncio.to_thread(marker.wait, 3), "Boundary not reached")
+
+    async def test_wire_bytes_and_503_stay_charged_after_reopen(self):
+        budget = self.budget()
+        self.status = 503
+        async with make_async_http_client(budget) as client:
+            for index in range(2):
+                self.assertEqual((await client.post(self.url, json={"turn": index})).status_code, 503)
+        resumed = self.budget(create=False)
+        async with make_async_http_client(resumed) as client:
+            with self.assertRaises(RequestBudgetExhausted):
+                await client.post(self.url, json={"turn": 2})
+        self.assertEqual(len(self.requests), 2)
+        for entry, body in zip(self.ledger()["reservations"], self.requests):
+            self.assertEqual(entry["request_body_sha256"], hashlib.sha256(body).hexdigest())
+            self.assertEqual(entry["request_body_bytes"], len(body))
+            self.assertEqual(entry["http_status"], 503)
+        self.assertEqual(resumed.summary()["reserved_requests"], 2)
+
+    async def test_redirect_is_charged_without_following_the_target(self):
+        budget = self.budget(1)
+        self.status = 307
+        self.location = "https://example.com/v1/chat/completions"
+        async with make_async_http_client(budget) as client:
+            response = await client.post(self.url, json={"redirect": True})
+        self.assertEqual(response.status_code, 307)
+        self.assertEqual(len(self.requests), 1)
+        self.assertEqual(self.ledger()["reservations"][0]["http_status"], 307)
+
+    async def test_cancelled_inflight_request_remains_reserved(self):
+        budget = self.budget(1)
+        self.gate.clear()
+        async with make_async_http_client(budget) as client:
+            job = asyncio.create_task(client.post(self.url, json={"cancel": True}))
+            try:
+                await self.event(self.arrived)
+                job.cancel()
+                with self.assertRaises(asyncio.CancelledError):
+                    await job
+            finally:
+                self.gate.set()
+                if not job.done():
+                    job.cancel()
+                    await asyncio.gather(job, return_exceptions=True)
+        self.assertEqual(budget.summary()["unobserved_reservations"], 1)
+        async with make_async_http_client(self.budget(1, create=False)) as client:
+            with self.assertRaises(RequestBudgetExhausted):
+                await client.post(self.url, json={"restart": True})
+        self.assertEqual(len(self.requests), 1)
+
+    async def test_repeated_cancel_drains_reservation_without_blocking_loop(self):
+        budget = self.budget(1)
+        entered, release = threading.Event(), threading.Event()
+        reserve = budget.reserve
+
+        def gated(*args):
+            entered.set()
+            if not release.wait(timeout=5):
+                raise AssertionError("Reservation gate timed out")
+            return reserve(*args)
+
+        with patch.object(budget, "reserve", gated):
+            async with make_async_http_client(budget) as client:
+                job = asyncio.create_task(client.post(self.url, json={"early_cancel": True}))
+                try:
+                    await self.event(entered)
+                    job.cancel()
+                    await asyncio.sleep(0)
+                    job.cancel()
+                    for _ in range(5):
+                        await asyncio.sleep(0)
+                    self.assertFalse(job.done(), "Journal work was abandoned")
+                    release.set()
+                    with self.assertRaises(asyncio.CancelledError):
+                        await job
+                finally:
+                    release.set()
+                    if not job.done():
+                        job.cancel()
+                        await asyncio.gather(job, return_exceptions=True)
+        self.assertEqual(len(self.requests), 0)
+        self.assertEqual(budget.summary()["reserved_requests"], 1)
+        self.assertEqual(budget.summary()["unobserved_reservations"], 1)
+
+    async def test_cancel_during_observation_commits_known_status(self):
+        budget = self.budget(1)
+        entered, release = threading.Event(), threading.Event()
+        observe = budget.observe
+
+        def gated(*args):
+            entered.set()
+            if not release.wait(timeout=5):
+                raise AssertionError("Observation gate timed out")
+            return observe(*args)
+
+        async with make_async_http_client(budget) as client:
+            with patch.object(budget, "observe", gated):
+                job = asyncio.create_task(client.post(self.url, json={"known_status": True}))
+                try:
+                    await self.event(entered)
+                    job.cancel()
+                    await asyncio.sleep(0)
+                    self.assertFalse(job.done())
+                    release.set()
+                    with self.assertRaises(asyncio.CancelledError):
+                        await job
+                finally:
+                    release.set()
+                    if not job.done():
+                        job.cancel()
+                        await asyncio.gather(job, return_exceptions=True)
+        self.assertEqual(self.ledger()["reservations"][0]["http_status"], 200)
+        self.assertEqual(budget.summary()["reserved_requests"], 1)
+        self.assertEqual(budget.summary()["unobserved_reservations"], 0)
+
+    async def test_concurrent_clients_share_one_limit(self):
+        budget = self.budget(3)
+        second = self.budget(3, create=False)
+        async with make_async_http_client(budget) as a, make_async_http_client(second) as b:
+            results = await asyncio.gather(
+                *(a.post(self.url, json={"turn": i}) if i % 2 else b.post(self.url, json={"turn": i})
+                  for i in range(10)), return_exceptions=True)
+        self.assertEqual(sum(not isinstance(r, BaseException) for r in results), 3)
+        self.assertEqual(sum(isinstance(r, RequestBudgetExhausted) for r in results), 7)
+        self.assertEqual(len(self.requests), 3)
+        self.assertEqual(len(self.ledger()["reservations"]), 3)
+        self.assertEqual(budget.summary()["unobserved_reservations"], 0)
+
+    async def test_rejected_routes_bodies_and_storage_never_send(self):
+        budget = self.budget()
+        async with make_async_http_client(budget) as client:
+            for method, url in [("GET", self.url), ("POST", self.url.replace("127.0.0.1", "example.com")),
+                                ("POST", self.url.replace("chat/completions", "completions"))]:
+                with self.subTest(method=method, url=url), self.assertRaises(RequestBudgetError):
+                    await client.request(method, url, content=b"{}")
+            with self.assertRaises(RequestBudgetExhausted):
+                await client.post(self.url, content=b"x" * 4097)
+            with patch("agent_lab.storage.filesystem_type", return_value="nfs4"):
+                with self.assertRaises(StorageError):
+                    await client.post(self.url, content=b"{}")
+        self.assertEqual(self.requests, [])
+        self.assertEqual(budget.summary()["reserved_requests"], 0)
+        with patch("agent_lab.storage.filesystem_type", return_value="nfs4"):
+            with self.assertRaises(StorageError):
+                open_budget(self.root / "unadmitted", self.owner, self.limits, create=True)
+        self.assertFalse((self.root / "unadmitted").exists())
+        state = self.ledger()
+        state["checksum"] = "0" * 64
+        (self.root / "budget/model-requests.json").write_text(json.dumps(state))
+        async with make_async_http_client(budget) as client:
+            with self.assertRaises(RequestBudgetError):
+                await client.post(self.url, content=b"{}")
+        self.assertEqual(self.requests, [])
+
+    @unittest.skipUnless(sys.platform.startswith("linux"), "Real Linux SIGKILL contract")
+    async def test_sigkill_inflight_cannot_reset_the_budget(self):
+        self.budget(1)
+        self.gate.clear()
+        code = """
+import asyncio,json,sys,httpx2
+from agent_lab.async_request_budget import open_budget,make_async_http_client
+b=open_budget(sys.argv[1],sys.argv[2],json.loads(sys.argv[3]))
+c=make_async_http_client(b)
+async def main():
+    async with httpx2.AsyncClient(trust_env=False) as readiness:
+        response=await readiness.get(sys.argv[4].rsplit('/chat/completions',1)[0]+'/health')
+        assert response.status_code==200
+    print('READY',flush=True)
+    async with c: await c.post(sys.argv[4],json={'inflight':True})
+asyncio.run(main())
+"""
+        process = await asyncio.create_subprocess_exec(
+            sys.executable, "-c", code, str(self.root / "budget"), self.owner,
+            json.dumps(self.limits), self.url, stdout=asyncio.subprocess.PIPE,
+            stderr=asyncio.subprocess.PIPE)
+        try:
+            ready = await asyncio.wait_for(process.stdout.readline(), 30)
+            self.assertEqual(ready, b"READY\n", "Client startup failed")
+            await self.event(self.arrived)
+            process.kill()
+            self.assertEqual(await asyncio.wait_for(process.wait(), 5), -signal.SIGKILL)
+            resumed = self.budget(1, create=False)
+            async with make_async_http_client(resumed) as client:
+                with self.assertRaises(RequestBudgetExhausted):
+                    await client.post(self.url, json={"after_kill": True})
+            self.assertEqual(len(self.requests), 1)
+            self.assertEqual(resumed.summary()["unobserved_reservations"], 1)
+        finally:
+            self.gate.set()
+            if process.returncode is None:
+                process.kill()
+                await asyncio.wait_for(process.wait(), 5)

@@ -1,0 +1,82 @@
+{
+  "scope": "Four actual PydanticAI/SDK/tool HTTP cases against an explicitly fake loopback service; not a neural benchmark.",
+  "versions": {
+    "pydantic-ai-slim": "2.71.0",
+    "openai": "3.57.0",
+    "httpx2": "2.16.2",
+    "agentlab-durable-budget": "0.1.0"
+  },
+  "expected_tool_payload": {
+    "source_report_sha256": "abc47e4214040b03a7797be6a372a76f36e049f7c4ac211f9e3ffc35964fa7e8",
+    "full_suite_passed": 108
+  },
+  "cases": [
+    {
+      "case": "normal_reopen",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 1140,
+      "http_statuses": [
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "609942694d554b4781b833cba374dfdc",
+      "actual_report_tool_reads": 1,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "cancel_inflight",
+      "passed": true,
+      "http_requests": 1,
+      "request_body_bytes": 360,
+      "http_statuses": [
+        null
+      ],
+      "unobserved": 1,
+      "journal_id": "0d6b9568f3ba48be80f8df6ae9ec2c8a",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "concurrent_agents",
+      "passed": true,
+      "http_requests": 3,
+      "request_body_bytes": 1050,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "unobserved": 0,
+      "journal_id": "304ade02958545a1b96f1ffbe8bd2949",
+      "actual_report_tool_reads": 3,
+      "sdk_max_retries": 0,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    },
+    {
+      "case": "sdk_retries",
+      "passed": true,
+      "http_requests": 2,
+      "request_body_bytes": 700,
+      "http_statuses": [
+        503,
+        503
+      ],
+      "unobserved": 0,
+      "journal_id": "682a5e1640124e9ba18a553a01490a7d",
+      "actual_report_tool_reads": 0,
+      "sdk_max_retries": 2,
+      "neural_inference": false,
+      "explicit_fake_model": true
+    }
+  ],
+  "real_neural_requests": 0,
+  "gpu_used": false,
+  "success": true
+}
