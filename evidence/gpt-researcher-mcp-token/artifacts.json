@@ -1,0 +1,193 @@
+{
+  "files": {
+    "runtime-constraints.txt": {
+      "sha256": "2ae31f30021caabaaa11812c6055609d48a97ffbef17178505a0998e720d3d00",
+      "bytes": 3562
+    },
+    "summary.json": {
+      "sha256": "6c1818de7c6a41203017f6e422d5a6ced0a5af16a63ffa976613c36b3e331fa0",
+      "bytes": 5457
+    },
+    "source-binding.json": {
+      "sha256": "0e55973cc18a518fdfc037f16bc0afa48c1d7ee3c5a71c01a12bd51ab9546ed9",
+      "bytes": 2842
+    },
+    "patch.diff": {
+      "sha256": "46c6635626d7c961d180dd7c42680b9040ec6565a64c0728f15e2430f67a954d",
+      "bytes": 9402
+    },
+    "README.md": {
+      "sha256": "77fd0aae7a0063ba1e69b8a574d478c6c14add5bd210569c996c3ef3a97716b6",
+      "bytes": 4238
+    },
+    "cleanup.json": {
+      "sha256": "2c1cb0d940b67db9943d3aa9820201f13c47452115a34e76f3d96541a3e1d7d3",
+      "bytes": 235
+    },
+    "EOF-cleanup.json": {
+      "sha256": "bd6a516bd44a18420fc449f10deb0f736a64a6715f1b1c5b19f8ef364173caa5",
+      "bytes": 1184
+    },
+    "export-manifest.json": {
+      "sha256": "9c91df406ad57e0a0af0d8d3eb63b3de125fbf0eeb6a3324bf00459a6b99b0f3",
+      "bytes": 11369
+    },
+    "v1/LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "v1/baseline-client.py.txt": {
+      "sha256": "af58ea26ecb9985a44f2e9933b0a5de6be5e0b0acad0ecd5e221eabf459529f8",
+      "bytes": 7591
+    },
+    "v1/logs/warm-tokenizer-cache.log": {
+      "sha256": "e822475379156fed9a51566f3dcdd4f1b6be1b3e7f19088b727d2b4cb04ee8ae",
+      "bytes": 27
+    },
+    "v1/logs/dependency-install.log": {
+      "sha256": "c3caf42c6d8b7de9f360375831a7c4b392d41b7ff30888122ce97fe0aa7b565e",
+      "bytes": 6235
+    },
+    "v1/logs/candidate-collect.log": {
+      "sha256": "4efdbeb9ddd4b038e9e735b461044e77156b554231775e396f57eea6fa5d6272",
+      "bytes": 95197
+    },
+    "v1/logs/candidate-offline-suite.log": {
+      "sha256": "46b2185c37fb07d6a4321128a85227de656af709f8ea9830cab1dc369d4be4b7",
+      "bytes": 17001
+    },
+    "v1/logs/candidate-import.log": {
+      "sha256": "f0d90e1c4c80cfbe84ba0755067b8f0fadf7f7ee9a60f81106f505ee51fa1862",
+      "bytes": 101
+    },
+    "v1/logs/identity-baseline.log": {
+      "sha256": "805d83c6b7c464785e97e7ef73dc6004794ccf5505468a7b371aae6ca6a8208e",
+      "bytes": 878
+    },
+    "v1/logs/candidate-regression.log": {
+      "sha256": "dfbf4bf4735df60e77e9fca559ef26c8236180f810451795125d2f56d4ad3b16",
+      "bytes": 2198
+    },
+    "v1/logs/dependency-freeze.log": {
+      "sha256": "3f7479b9979edc07b10446e2e0b58b40bde55c7355a8fd0db5476ab69d5f81c2",
+      "bytes": 3599
+    },
+    "v1/logs/baseline-regression.log": {
+      "sha256": "dda5df76bc7f2d75c303d222fbe51273e6dfe3bd8e10a4e889b446f874aeb9ad",
+      "bytes": 20344
+    },
+    "v1/logs/candidate-MCP-related.log": {
+      "sha256": "cdb5407ca285b145f3d2c2bde13d3bc825c0d1cb909ceeb10ae36d274cfc9fd5",
+      "bytes": 3574
+    },
+    "v1/logs/identity-candidate.log": {
+      "sha256": "ad4fdf1b3a4c75383e2b33039a2df5acde9dec837c1fe90ce37d3a9d2867f0ab",
+      "bytes": 879
+    },
+    "v1/logs/dependency-consistency.log": {
+      "sha256": "61854bc0afa9aade7ef1238432e1182ef4113d34a5a12ad32d54f2dfcee70497",
+      "bytes": 66
+    },
+    "v1/logs/create-private-Python312-env.log": {
+      "sha256": "a8d98bd6baad55d87f6b6583cc6c47f4b063bbc43638b813f52098a7909ad590",
+      "bytes": 224
+    },
+    "v1/tested-source/gpt_researcher/mcp/client.py": {
+      "sha256": "7e600c61dcd0c3fa9822794bb3c8794be077e532a01230546495ab3582742d0c",
+      "bytes": 8041
+    },
+    "v1/tested-source/gpt_researcher/mcp/README.md": {
+      "sha256": "a96b054ec4c9de05138f40174d7c31de385358bff593b85a61c50ac61f545043",
+      "bytes": 8610
+    },
+    "v1/tested-source/tests/test_mcp_client_auth.py": {
+      "sha256": "ec4265a9f9ae64b4ff6d3f94971c129168f84b049aa8f0be34d2e42648d0244c",
+      "bytes": 4784
+    },
+    "v1/tested-source/docs/docs/gpt-researcher/retrievers/mcp-configs.mdx": {
+      "sha256": "3b37b86f97bc8af18ea5fbd0e9c25dcdf6d18fcd73c8d688b366f523f4c88ac1",
+      "bytes": 19466
+    },
+    "v1/operator/exec_child.py.txt": {
+      "sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443
+    },
+    "v1/operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870
+    },
+    "v1/operator/protocol.json": {
+      "sha256": "e6a89eb20cb6c96fe9d6e7a0b392ef4767ea7e2cd1ba9edc8630254ef6c42f19",
+      "bytes": 330980
+    },
+    "v1/operator/run_cpu.py.txt": {
+      "sha256": "b0cb59be74cce30d6748e0fe5a7ea501ab0e378a49ce4ef352204fd31b1bce05",
+      "bytes": 9142
+    },
+    "v1/operator/run-report.json": {
+      "sha256": "10e4cb10dded05d6211e71fcfe83c7e991b6dda9dd20f5dea7ad356a1d08f8ac",
+      "bytes": 63834
+    },
+    "final/LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    "final/baseline-client.py.txt": {
+      "sha256": "af58ea26ecb9985a44f2e9933b0a5de6be5e0b0acad0ecd5e221eabf459529f8",
+      "bytes": 7591
+    },
+    "final/logs/baseline-final-regression.log": {
+      "sha256": "d257b8baa2c09a1aead26963748454b357756a774f2462e6d6b9eec5193c3916",
+      "bytes": 20387
+    },
+    "final/logs/identity-baseline.log": {
+      "sha256": "861d5c9a7d16b6995e0fbd01ab28b7e169601fd95d00fc1e6965a13ddf4d6fa7",
+      "bytes": 69
+    },
+    "final/logs/candidate-final-regression.log": {
+      "sha256": "da36c7a102d5b0704cb1b6755dabe373408e44b119fbd0a23c51dc8605a24fd6",
+      "bytes": 2254
+    },
+    "final/logs/identity-candidate.log": {
+      "sha256": "d63396b3280e1f742698746707f488ff67cf578a0366fbd353e08fd34013b15a",
+      "bytes": 70
+    },
+    "final/tested-source/gpt_researcher/mcp/client.py": {
+      "sha256": "7e600c61dcd0c3fa9822794bb3c8794be077e532a01230546495ab3582742d0c",
+      "bytes": 8041
+    },
+    "final/tested-source/gpt_researcher/mcp/README.md": {
+      "sha256": "657b173abbeea2d69ba5ffdbaead9fd8c0e55df71479658574c03a1dc8fa538f",
+      "bytes": 8609
+    },
+    "final/tested-source/tests/test_mcp_client_auth.py": {
+      "sha256": "94758b102b6ea9da2ad6bd8616fc4dbc4d5a014f0c50a56a55fa6adb00dd2c7d",
+      "bytes": 4783
+    },
+    "final/tested-source/docs/docs/gpt-researcher/retrievers/mcp-configs.mdx": {
+      "sha256": "042662eb4c4f0aa8a821e90897a84ed05f4ecd2f84d27b1b06ad21419751d231",
+      "bytes": 19465
+    },
+    "final/operator/exec_child.py.txt": {
+      "sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443
+    },
+    "final/operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870
+    },
+    "final/operator/protocol.json": {
+      "sha256": "9417bfa35b66afb6592d1bba34575633d4303282bedb711b11f639c9ed14c8a4",
+      "bytes": 331258
+    },
+    "final/operator/run_cpu.py.txt": {
+      "sha256": "0282f3ca1e10c042b0f5ae1b8bbdaecf15341cfa808097323f3da5449dee9e68",
+      "bytes": 8664
+    },
+    "final/operator/run-report.json": {
+      "sha256": "8df486374c4664188e1f41b6af997a1b8b02771417aa2fdb142d96a4c62685b1",
+      "bytes": 60072
+    }
+  },
+  "scope": "Verbatim tested source and normalized metadata/logs; no real secrets or environments."
+}

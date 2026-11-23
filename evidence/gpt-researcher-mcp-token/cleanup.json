@@ -1,0 +1,8 @@
+{
+  "matching_runtime_processes": 0,
+  "both_controllers_terminal_ready_and_owned_zero": true,
+  "frozen_sources_unchanged": true,
+  "GPU_work_launched": false,
+  "model_inference_launched": false,
+  "credentials_fixture_only": true
+}

@@ -10,3 +10,5 @@ evidence/lightning-terminal-reuse/**/*.xml -whitespace
 evidence/dependency-upgrade/candidates/*/uv-lock.diff -whitespace
 evidence/dependency-upgrade/inputs/fastmcp-2.12.4/pyproject.toml -whitespace
 evidence/dependency-upgrade/candidates/fastmcp-2.12.4/pyproject.toml -whitespace
+evidence/gpt-researcher-mcp-token/**/tested-source/** -whitespace
+evidence/gpt-researcher-mcp-token/**/baseline-client.py.txt -whitespace

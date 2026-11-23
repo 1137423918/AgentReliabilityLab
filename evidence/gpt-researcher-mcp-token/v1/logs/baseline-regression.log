@@ -1,0 +1,413 @@
+[NODE_WORKSPACE]/candidate/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session". Set it to "fixture-scope" to keep the current behavior.
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0
+rootdir: [NODE_WORKSPACE]/baseline
+configfile: pyproject.toml
+plugins: asyncio-1.5.0, langsmith-0.16.0, timeout-2.4.0, anyio-4.16.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+timeout: 30.0s
+timeout method: signal
+timeout func_only: False
+collected 11 items
+
+tests/test_mcp_client_auth.py FFFFFFFFFFF                                [100%]
+
+=================================== FAILURES ===================================
+____________ test_connection_token_becomes_http_bearer_header[http] ____________
+
+scheme = 'http'
+
+    @pytest.mark.parametrize("scheme", ["http", "https", "HTTPS"])
+    def test_connection_token_becomes_http_bearer_header(scheme):
+        config = {
+            "name": "research",
+            "connection_url": f"{scheme}://mcp.example.com/mcp",
+            "connection_token": "fixture-token",
+            "connection_headers": {"X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+>       assert connection["headers"] == {
+            "X-Project": "research",
+            "Authorization": "Bearer fixture-token",
+        }
+E       AssertionError: assert {'X-Project': 'research'} == {'X-Project':...ixture-token'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Right contains 1 more item:
+E         {'Authorization': 'Bearer fixture-token'}
+E         Use -v to get more diff
+
+tests/test_mcp_client_auth.py:25: AssertionError
+___________ test_connection_token_becomes_http_bearer_header[https] ____________
+
+scheme = 'https'
+
+    @pytest.mark.parametrize("scheme", ["http", "https", "HTTPS"])
+    def test_connection_token_becomes_http_bearer_header(scheme):
+        config = {
+            "name": "research",
+            "connection_url": f"{scheme}://mcp.example.com/mcp",
+            "connection_token": "fixture-token",
+            "connection_headers": {"X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+>       assert connection["headers"] == {
+            "X-Project": "research",
+            "Authorization": "Bearer fixture-token",
+        }
+E       AssertionError: assert {'X-Project': 'research'} == {'X-Project':...ixture-token'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Right contains 1 more item:
+E         {'Authorization': 'Bearer fixture-token'}
+E         Use -v to get more diff
+
+tests/test_mcp_client_auth.py:25: AssertionError
+___________ test_connection_token_becomes_http_bearer_header[HTTPS] ____________
+
+scheme = 'HTTPS'
+
+    @pytest.mark.parametrize("scheme", ["http", "https", "HTTPS"])
+    def test_connection_token_becomes_http_bearer_header(scheme):
+        config = {
+            "name": "research",
+            "connection_url": f"{scheme}://mcp.example.com/mcp",
+            "connection_token": "fixture-token",
+            "connection_headers": {"X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+>       assert connection["headers"] == {
+            "X-Project": "research",
+            "Authorization": "Bearer fixture-token",
+        }
+E       AssertionError: assert {'X-Project': 'research'} == {'X-Project':...ixture-token'}
+E         
+E         Omitting 1 identical items, use -vv to show
+E         Right contains 1 more item:
+E         {'Authorization': 'Bearer fixture-token'}
+E         Use -v to get more diff
+
+tests/test_mcp_client_auth.py:25: AssertionError
+____ test_explicit_authorization_takes_precedence_over_token[Authorization] ____
+
+header = 'Authorization'
+
+    @pytest.mark.parametrize("header", ["Authorization", "authorization", "AUTHORIZATION"])
+    def test_explicit_authorization_takes_precedence_over_token(header):
+        config = {
+            "name": "research",
+            "connection_url": "https://mcp.example.com/mcp",
+            "connection_token": "unused-fallback",
+            "connection_headers": {header: "Basic explicit", "X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+        assert connection["headers"] == config["connection_headers"]
+>       assert "token" not in connection
+E       AssertionError: assert 'token' not in {'transport': 'streamable_http', 'url': 'https://mcp.example.com/mcp', 'headers': {'Authorization': 'Basic explicit', 'X-Project': 'research'}, 'token': 'unused-fallback'}
+
+tests/test_mcp_client_auth.py:46: AssertionError
+____ test_explicit_authorization_takes_precedence_over_token[authorization] ____
+
+header = 'authorization'
+
+    @pytest.mark.parametrize("header", ["Authorization", "authorization", "AUTHORIZATION"])
+    def test_explicit_authorization_takes_precedence_over_token(header):
+        config = {
+            "name": "research",
+            "connection_url": "https://mcp.example.com/mcp",
+            "connection_token": "unused-fallback",
+            "connection_headers": {header: "Basic explicit", "X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+        assert connection["headers"] == config["connection_headers"]
+>       assert "token" not in connection
+E       AssertionError: assert 'token' not in {'transport': 'streamable_http', 'url': 'https://mcp.example.com/mcp', 'headers': {'authorization': 'Basic explicit', 'X-Project': 'research'}, 'token': 'unused-fallback'}
+
+tests/test_mcp_client_auth.py:46: AssertionError
+____ test_explicit_authorization_takes_precedence_over_token[AUTHORIZATION] ____
+
+header = 'AUTHORIZATION'
+
+    @pytest.mark.parametrize("header", ["Authorization", "authorization", "AUTHORIZATION"])
+    def test_explicit_authorization_takes_precedence_over_token(header):
+        config = {
+            "name": "research",
+            "connection_url": "https://mcp.example.com/mcp",
+            "connection_token": "unused-fallback",
+            "connection_headers": {header: "Basic explicit", "X-Project": "research"},
+        }
+        before = deepcopy(config)
+    
+        connection = MCPClientManager([config]).convert_configs_to_langchain_format()["research"]
+    
+        assert connection["headers"] == config["connection_headers"]
+>       assert "token" not in connection
+E       AssertionError: assert 'token' not in {'transport': 'streamable_http', 'url': 'https://mcp.example.com/mcp', 'headers': {'AUTHORIZATION': 'Basic explicit', 'X-Project': 'research'}, 'token': 'unused-fallback'}
+
+tests/test_mcp_client_auth.py:46: AssertionError
+______ test_connection_token_rejects_unsupported_transports[connection0] _______
+
+connection = {'command': 'python', 'args': ['server.py']}
+
+    @pytest.mark.parametrize(
+        "connection",
+        [{"command": "python", "args": ["server.py"]}, {"connection_url": "wss://example.com/mcp"}],
+    )
+    def test_connection_token_rejects_unsupported_transports(connection):
+        config = {**connection, "connection_token": "fixture-token"}
+    
+>       with pytest.raises(ValueError, match="requires an HTTP MCP connection"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_mcp_client_auth.py:57: Failed
+______ test_connection_token_rejects_unsupported_transports[connection1] _______
+
+connection = {'connection_url': 'wss://example.com/mcp'}
+
+    @pytest.mark.parametrize(
+        "connection",
+        [{"command": "python", "args": ["server.py"]}, {"connection_url": "wss://example.com/mcp"}],
+    )
+    def test_connection_token_rejects_unsupported_transports(connection):
+        config = {**connection, "connection_token": "fixture-token"}
+    
+>       with pytest.raises(ValueError, match="requires an HTTP MCP connection"):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       Failed: DID NOT RAISE ValueError
+
+tests/test_mcp_client_auth.py:57: Failed
+_________ test_authenticated_http_tool_discovery_and_invocation[None] __________
+
+explicit_header = None
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("explicit_header", [None, "Authorization", "authorization"])
+    async def test_authenticated_http_tool_discovery_and_invocation(explicit_header):
+        pytest.importorskip("langchain_mcp_adapters.client")
+        import httpx
+        import uvicorn
+        from mcp.server.fastmcp import FastMCP
+        from starlette.datastructures import Headers
+        from starlette.responses import Response
+    
+        mcp = FastMCP("Private research sources", stateless_http=True, json_response=True)
+        expected = "Basic explicit" if explicit_header else "Bearer fixture-token"
+        methods = []
+        calls = []
+    
+        @mcp.tool()
+        def lookup_source(topic: str) -> str:
+            calls.append(topic)
+            return json.dumps({"title": topic, "url": "https://example.com/source", "body": "Evidence"})
+    
+        app = mcp.streamable_http_app()
+    
+        async def authenticated_app(scope, receive, send):
+            if scope["type"] == "http":
+                if Headers(scope=scope).get("authorization") != expected:
+                    await Response(status_code=401)(scope, receive, send)
+                    return
+                methods.append(scope["method"])
+            await app(scope, receive, send)
+    
+        sock = socket.socket()
+        sock.bind(("127.0.0.1", 0))
+        sock.listen()
+        sock.setblocking(False)
+        url = f"http://127.0.0.1:{sock.getsockname()[1]}/mcp"
+        server = uvicorn.Server(uvicorn.Config(authenticated_app, log_level="error"))
+        task = asyncio.create_task(server.serve(sockets=[sock]))
+        config = {"name": "research", "connection_url": url, "connection_token": "fixture-token"}
+        if explicit_header:
+            config["connection_headers"] = {explicit_header: expected}
+        manager = MCPClientManager([config])
+        try:
+            async with asyncio.timeout(10):
+                while not server.started:
+                    if task.done():
+                        await task
+                        pytest.fail("MCP server stopped before startup")
+                    await asyncio.sleep(0.01)
+                async with httpx.AsyncClient() as client:
+                    assert (await client.post(url, json={})).status_code == 401
+                tools = await manager.get_all_tools()
+>               assert [tool.name for tool in tools] == ["lookup_source"]
+E               AssertionError: assert [] == ['lookup_source']
+E                 
+E                 Right contains one more item: 'lookup_source'
+E                 Use -v to get more diff
+
+tests/test_mcp_client_auth.py:112: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    gpt_researcher.mcp.client:client.py:191 Error getting MCP tools: _create_streamable_http_session() got an unexpected keyword argument 'token'
+_____ test_authenticated_http_tool_discovery_and_invocation[Authorization] _____
+
+explicit_header = 'Authorization'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("explicit_header", [None, "Authorization", "authorization"])
+    async def test_authenticated_http_tool_discovery_and_invocation(explicit_header):
+        pytest.importorskip("langchain_mcp_adapters.client")
+        import httpx
+        import uvicorn
+        from mcp.server.fastmcp import FastMCP
+        from starlette.datastructures import Headers
+        from starlette.responses import Response
+    
+        mcp = FastMCP("Private research sources", stateless_http=True, json_response=True)
+        expected = "Basic explicit" if explicit_header else "Bearer fixture-token"
+        methods = []
+        calls = []
+    
+        @mcp.tool()
+        def lookup_source(topic: str) -> str:
+            calls.append(topic)
+            return json.dumps({"title": topic, "url": "https://example.com/source", "body": "Evidence"})
+    
+        app = mcp.streamable_http_app()
+    
+        async def authenticated_app(scope, receive, send):
+            if scope["type"] == "http":
+                if Headers(scope=scope).get("authorization") != expected:
+                    await Response(status_code=401)(scope, receive, send)
+                    return
+                methods.append(scope["method"])
+            await app(scope, receive, send)
+    
+        sock = socket.socket()
+        sock.bind(("127.0.0.1", 0))
+        sock.listen()
+        sock.setblocking(False)
+        url = f"http://127.0.0.1:{sock.getsockname()[1]}/mcp"
+        server = uvicorn.Server(uvicorn.Config(authenticated_app, log_level="error"))
+        task = asyncio.create_task(server.serve(sockets=[sock]))
+        config = {"name": "research", "connection_url": url, "connection_token": "fixture-token"}
+        if explicit_header:
+            config["connection_headers"] = {explicit_header: expected}
+        manager = MCPClientManager([config])
+        try:
+            async with asyncio.timeout(10):
+                while not server.started:
+                    if task.done():
+                        await task
+                        pytest.fail("MCP server stopped before startup")
+                    await asyncio.sleep(0.01)
+                async with httpx.AsyncClient() as client:
+                    assert (await client.post(url, json={})).status_code == 401
+                tools = await manager.get_all_tools()
+>               assert [tool.name for tool in tools] == ["lookup_source"]
+E               AssertionError: assert [] == ['lookup_source']
+E                 
+E                 Right contains one more item: 'lookup_source'
+E                 Use -v to get more diff
+
+tests/test_mcp_client_auth.py:112: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    gpt_researcher.mcp.client:client.py:191 Error getting MCP tools: _create_streamable_http_session() got an unexpected keyword argument 'token'
+_____ test_authenticated_http_tool_discovery_and_invocation[authorization] _____
+
+explicit_header = 'authorization'
+
+    @pytest.mark.asyncio
+    @pytest.mark.parametrize("explicit_header", [None, "Authorization", "authorization"])
+    async def test_authenticated_http_tool_discovery_and_invocation(explicit_header):
+        pytest.importorskip("langchain_mcp_adapters.client")
+        import httpx
+        import uvicorn
+        from mcp.server.fastmcp import FastMCP
+        from starlette.datastructures import Headers
+        from starlette.responses import Response
+    
+        mcp = FastMCP("Private research sources", stateless_http=True, json_response=True)
+        expected = "Basic explicit" if explicit_header else "Bearer fixture-token"
+        methods = []
+        calls = []
+    
+        @mcp.tool()
+        def lookup_source(topic: str) -> str:
+            calls.append(topic)
+            return json.dumps({"title": topic, "url": "https://example.com/source", "body": "Evidence"})
+    
+        app = mcp.streamable_http_app()
+    
+        async def authenticated_app(scope, receive, send):
+            if scope["type"] == "http":
+                if Headers(scope=scope).get("authorization") != expected:
+                    await Response(status_code=401)(scope, receive, send)
+                    return
+                methods.append(scope["method"])
+            await app(scope, receive, send)
+    
+        sock = socket.socket()
+        sock.bind(("127.0.0.1", 0))
+        sock.listen()
+        sock.setblocking(False)
+        url = f"http://127.0.0.1:{sock.getsockname()[1]}/mcp"
+        server = uvicorn.Server(uvicorn.Config(authenticated_app, log_level="error"))
+        task = asyncio.create_task(server.serve(sockets=[sock]))
+        config = {"name": "research", "connection_url": url, "connection_token": "fixture-token"}
+        if explicit_header:
+            config["connection_headers"] = {explicit_header: expected}
+        manager = MCPClientManager([config])
+        try:
+            async with asyncio.timeout(10):
+                while not server.started:
+                    if task.done():
+                        await task
+                        pytest.fail("MCP server stopped before startup")
+                    await asyncio.sleep(0.01)
+                async with httpx.AsyncClient() as client:
+                    assert (await client.post(url, json={})).status_code == 401
+                tools = await manager.get_all_tools()
+>               assert [tool.name for tool in tools] == ["lookup_source"]
+E               AssertionError: assert [] == ['lookup_source']
+E                 
+E                 Right contains one more item: 'lookup_source'
+E                 Use -v to get more diff
+
+tests/test_mcp_client_auth.py:112: AssertionError
+------------------------------ Captured log call -------------------------------
+ERROR    gpt_researcher.mcp.client:client.py:191 Error getting MCP tools: _create_streamable_http_session() got an unexpected keyword argument 'token'
+=============================== warnings summary ===============================
+../candidate/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  [NODE_WORKSPACE]/candidate/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+gpt_researcher/document/document.py:4
+  [NODE_WORKSPACE]/baseline/gpt_researcher/document/document.py:4: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+    from langchain_community.document_loaders import (
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_mcp_client_auth.py::test_connection_token_becomes_http_bearer_header[http]
+FAILED tests/test_mcp_client_auth.py::test_connection_token_becomes_http_bearer_header[https]
+FAILED tests/test_mcp_client_auth.py::test_connection_token_becomes_http_bearer_header[HTTPS]
+FAILED tests/test_mcp_client_auth.py::test_explicit_authorization_takes_precedence_over_token[Authorization]
+FAILED tests/test_mcp_client_auth.py::test_explicit_authorization_takes_precedence_over_token[authorization]
+FAILED tests/test_mcp_client_auth.py::test_explicit_authorization_takes_precedence_over_token[AUTHORIZATION]
+FAILED tests/test_mcp_client_auth.py::test_connection_token_rejects_unsupported_transports[connection0]
+FAILED tests/test_mcp_client_auth.py::test_connection_token_rejects_unsupported_transports[connection1]
+FAILED tests/test_mcp_client_auth.py::test_authenticated_http_tool_discovery_and_invocation[None]
+FAILED tests/test_mcp_client_auth.py::test_authenticated_http_tool_discovery_and_invocation[Authorization]
+FAILED tests/test_mcp_client_auth.py::test_authenticated_http_tool_discovery_and_invocation[authorization]
+======================== 11 failed, 2 warnings in 4.63s ========================

@@ -1,0 +1,121 @@
+"""Frozen real-adapter MCP authentication regression on an authorized server."""
+from pathlib import Path, PurePosixPath
+import ast
+import hashlib
+import json
+import os
+import shutil
+import signal
+import subprocess
+import tarfile
+import tempfile
+import time
+
+OUT=Path(__file__).resolve().parent
+spec=json.loads((OUT/'protocol.json').read_text())
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not (OUT/'run-report.json').exists()
+assert sha(OUT/'run_cpu.py')==spec['controller_sha256'] and sha(OUT/'exec_child.py')==spec['wrapper_sha256']
+for profile in ['baseline','candidate']:assert sha(OUT/(profile+'-source.tar.gz'))==spec['archives'][profile]
+assert sha(OUT/'cpu_admission.py')==spec['cpu_admission_sha256']
+BASE=Path('[SERVER_WORKSPACE]');CORE=BASE/'envs/model-request-budget-20261121/bin/python';UV=BASE/'tools/uv-x86_64-unknown-linux-gnu/uv'
+assert CORE.is_file() and UV.is_file()
+os.umask(0o077);os.nice(19)
+ROOT=Path(tempfile.mkdtemp(prefix='agentlab-gptr-mcp-auth-stage70-'))
+(OUT/'location.json').write_text(json.dumps({'root':str(ROOT)})+'\n')
+parent_start=int(Path('/proc/self/stat').read_text().rsplit(')',1)[1].split()[19])
+env={k:v for k,v in os.environ.items() if k not in ['PYTHONPATH','LD_PRELOAD','LD_LIBRARY_PATH'] and not k.endswith(('_KEY','_TOKEN','_SECRET'))}
+env.update(CUDA_VISIBLE_DEVICES='',PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1',OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4',TMPDIR=str(ROOT),XDG_CACHE_HOME=str(ROOT/'cache'),UV_CACHE_DIR=str(ROOT/'cache/uv'),UV_PYTHON_INSTALL_DIR=str(ROOT/'pythons'),UV_CONCURRENT_DOWNLOADS='4',UV_CONCURRENT_BUILDS='1',UV_CONCURRENT_INSTALLS='4',ANONYMIZED_TELEMETRY='false',BROWSER_USE_AUTO_LOGIN='0',PRE_COMMIT_HOME=str(ROOT/'cache/pre-commit'))
+env['PATH']=str(UV.parent)+':'+str(CORE.parent)+':'+env.get('PATH','/usr/bin:/bin')
+report={'terminal':False,'protocol_sha256':sha(OUT/'protocol.json'),'phases':[],'neural_calls':0,'real_remote_credentials_used':False,'GPU_used':False,'CPU_affinity':sorted(os.sched_getaffinity(0))}
+child=None;known={};began=time.monotonic()
+memory=lambda:int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024
+
+def save():
+ tmp=OUT/'run-report.tmp';tmp.write_text(json.dumps(report,indent=2)+'\n');os.replace(tmp,OUT/'run-report.json')
+def owned():
+ rows={}
+ for p in Path('/proc').glob('[0-9]*'):
+  try:
+   if p.stat().st_uid!=os.getuid():continue
+   s=(p/'stat').read_text().rsplit(')',1)[1].split();rows[int(p.name)]={'parent':int(s[1]),'start':int(s[19]),'state':s[0],'rss':int(s[21])*os.sysconf('SC_PAGE_SIZE')}
+  except (OSError,ValueError):pass
+ ids={child.pid} if child is not None and child.poll() is None and child.pid in rows else set()
+ ids.update(p for p,start in known.items() if p in rows and rows[p]['start']==start)
+ for _ in range(24):
+  old=len(ids);ids.update(p for p,v in rows.items() if v['parent'] in ids)
+  if len(ids)==old:break
+ ids={p for p in ids if rows[p]['state']!='Z'};known.update({p:rows[p]['start'] for p in ids})
+ return {p:rows[p] for p in ids}
+def stop():
+ for sig in [signal.SIGTERM,signal.SIGKILL]:
+  for pid,v in owned().items():
+   if owned().get(pid,{}).get('start')==v['start']:
+    try:os.kill(pid,sig)
+    except ProcessLookupError:pass
+  if child and child.poll() is None:
+   try:child.wait(timeout=3)
+   except subprocess.TimeoutExpired:pass
+  if not owned():break
+
+def run(name,command,cwd,cap=300,allowed=(0,)):
+ global child
+ env['PYTHONPATH']=str(cwd);env['GPTR_BLOCK_NETWORK']='1';env['TIKTOKEN_CACHE_DIR']=str(ROOT/'cache/tiktoken')
+ report['active_phase']=name;save();start=time.monotonic();peak=0;guard=None
+ argv=[str(CORE),str(OUT/'exec_child.py'),str(os.getpid()),str(parent_start),'cpu',*[str(x) for x in command]]
+ with (OUT/(name+'.log')).open('wb') as log:
+  child=subprocess.Popen(argv,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+  while child.poll() is None:
+   rss=sum(v['rss'] for v in owned().values());peak=max(peak,rss)
+   if time.monotonic()-start>cap or time.monotonic()-began>3300 or rss>8*2**30 or memory()<8*2**30 or shutil.disk_usage('/tmp').free<4*2**30:
+    guard='phase/resource/job cap';stop();break
+   time.sleep(.5)
+  rc=child.wait()
+ row={'name':name,'exit_code':rc,'guard':guard,'wall_seconds':round(time.monotonic()-start,3),'peak_owned_RSS_bytes':peak};report['phases'].append(row);save();print(json.dumps(row),flush=True)
+ assert not guard and rc in allowed,name
+ return rc
+
+try:
+ assert memory()>=16*2**30 and shutil.disk_usage('/tmp').free>=8*2**30
+ from cpu_admission import measure_compute_headroom
+ report['CPU_admission']=measure_compute_headroom(os.sched_getaffinity(0),interval_seconds=5,count=4,minimum=.8);save()
+ assert len(report['CPU_admission']['selected_cpus'])==4,'CPU compute headroom not admitted'
+ os.sched_setaffinity(0,report['CPU_admission']['selected_cpus']);report['CPU_affinity']=sorted(os.sched_getaffinity(0))
+ for profile in ['baseline','candidate']:
+  root=ROOT/profile;root.mkdir()
+  with tarfile.open(OUT/(profile+'-source.tar.gz')) as archive:
+   for member in archive:
+    path=PurePosixPath(member.name);assert member.isfile() and not path.is_absolute() and '..' not in path.parts
+    dst=root/member.name;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(archive.extractfile(member).read())
+  assert all(sha(root/n)==v['sha256'] for n,v in spec['source_files'][profile].items())
+ candidate=ROOT/'candidate';baseline=ROOT/'baseline';python=candidate/'.venv/bin/python'
+ run('create-private-Python312-env',[UV,'venv','--python','3.12',candidate/'.venv'],candidate,600)
+ run('dependency-install',[UV,'pip','install','--python',python,'-e','.[test]','langchain-mcp-adapters==0.3.2'],candidate,1500)
+ run('dependency-freeze',[UV,'pip','freeze','--python',python],candidate,60)
+ run('dependency-consistency',[UV,'pip','check','--python',python],candidate,60)
+ run('warm-tokenizer-cache',[python,'-c',"import tiktoken;tiktoken.get_encoding('o200k_base');tiktoken.get_encoding('cl100k_base');print('Both encoding caches ready')"],candidate,180)
+ for name,root in [('baseline',baseline),('candidate',candidate)]:
+  identity="import importlib.metadata as m,json,sys,gpt_researcher.mcp.client as c,langchain_mcp_adapters.sessions as s,inspect,hashlib;print(json.dumps({'python':sys.version,'client_source':c.__file__,'adapter_sessions_sha256':hashlib.sha256(open(s.__file__,'rb').read()).hexdigest(),'http_session_signature':str(inspect.signature(s._create_streamable_http_session)),'versions':{k:m.version(k) for k in ['gpt-researcher','langchain-mcp-adapters','langchain-core','mcp','httpx','uvicorn','pytest','pytest-asyncio']}}))"
+  run('identity-'+name,[python,'-c',identity],root,120)
+  d=json.loads((OUT/('identity-'+name+'.log')).read_text());assert Path(d['client_source'])==root/'gpt_researcher/mcp/client.py';assert d['python'].startswith('3.12.');assert d['versions']['langchain-mcp-adapters']=='0.3.2';report['identity_'+name]=d
+ test='tests/test_mcp_client_auth.py'
+ assert sha(candidate/test)==sha(baseline/test)==spec['source_files']['candidate'][test]['sha256']
+ report['regression_test_bytes_identical']=True
+ report['tested_source_sha256']={n:sha(candidate/n) for n in spec['changed']}
+ run('baseline-regression',[python,'-m','pytest',test,'-q','--timeout=30'],baseline,180,allowed=(1,))
+ log=(OUT/'baseline-regression.log').read_text();assert '11 failed' in log and "unexpected keyword argument 'token'" in log
+ run('candidate-regression',[python,'-m','pytest',test,'-q','--timeout=30'],candidate,180)
+ assert '11 passed' in (OUT/'candidate-regression.log').read_text()
+ run('candidate-MCP-related',[python,'-m','pytest','tests','-k','mcp','--ignore=tests/test_mcp.py','-q','--timeout=60'],candidate,300)
+ run('candidate-collect',[python,'-m','pytest','tests/','--collect-only','-q'],candidate,180)
+ run('candidate-offline-suite',[python,'-m','pytest','tests/','--timeout=60','-p','no:warnings','--deselect','tests/test_researcher_logging.py','--deselect','tests/test_logging_output.py','--deselect','tests/test_mcp.py','-q'],candidate,900)
+ run('candidate-import',[python,'-c',"from gpt_researcher import GPTResearcher;from backend.server.app import app;print(GPTResearcher,app)"],candidate,120)
+ report['ready']=True
+except BaseException as error:
+ report['error']={'type':type(error).__name__,'message':str(error)[:500]}
+finally:
+ stop();report.update(terminal=True,owned_after=len(owned()),wall_seconds=round(time.monotonic()-began,3))
+ candidate=ROOT/'candidate';report['final_source_sha256']={n:sha(candidate/n) for n in spec['changed'] if (candidate/n).is_file()}
+ report['source_unchanged_after_tests']=all((ROOT/profile/n).is_file() and sha(ROOT/profile/n)==v['sha256'] for profile,files in spec['source_files'].items() for n,v in files.items())
+ save();print(json.dumps({k:report.get(k) for k in ['terminal','ready','error','owned_after','wall_seconds','source_unchanged_after_tests']}),flush=True)
+raise SystemExit(0 if report.get('ready') and not report.get('error') and not report['owned_after'] and report['source_unchanged_after_tests'] else 2)

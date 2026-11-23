@@ -1,0 +1,47 @@
+[NODE_WORKSPACE]/candidate/.venv/lib/python3.12/site-packages/pytest_asyncio/plugin.py:306: PytestDeprecationWarning: The configuration option "asyncio_default_fixture_loop_scope" is unset.
+The event loop scope for asynchronous fixtures will default to the fixture scope. Future versions of pytest-asyncio will default the loop scope for asynchronous fixtures to "function" scope. Set the default fixture loop scope explicitly in order to avoid unexpected behavior in the future. Valid fixture loop scopes are: "function", "class", "module", "package", "session". Set it to "fixture-scope" to keep the current behavior.
+
+  warnings.warn(PytestDeprecationWarning(_DEFAULT_FIXTURE_LOOP_SCOPE_UNSET))
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.2.0, pluggy-1.7.0
+rootdir: [NODE_WORKSPACE]/candidate
+configfile: pyproject.toml
+plugins: asyncio-1.5.0, langsmith-0.16.0, timeout-2.4.0, anyio-4.16.0
+asyncio: mode=Mode.AUTO, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+timeout: 60.0s
+timeout method: signal
+timeout func_only: False
+collected 1129 items / 1085 deselected / 2 skipped / 44 selected
+
+tests/skills/test_mcp_research_async.py ..                               [  4%]
+tests/skills/test_tavily_mcp_dedupe.py ..                                [  9%]
+tests/test_config_default_isolation.py ....                              [ 18%]
+tests/test_mcp_client_auth.py ...........                                [ 43%]
+tests/test_mcp_client_config.py ...                                      [ 50%]
+tests/test_mcp_client_non_dict_config.py .                               [ 52%]
+tests/test_mcp_client_uppercase_url_schemes.py ......                    [ 65%]
+tests/test_mcp_config_values.py .........                                [ 86%]
+tests/test_mcp_tool_selector_json_repair.py ..                           [ 90%]
+tests/test_mcp_tool_selector_max_tools.py ...                            [ 97%]
+tests/test_planning_sources.py .                                         [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636
+  [NODE_WORKSPACE]/candidate/.venv/lib/python3.12/site-packages/_pytest/config/__init__.py:1636: PytestConfigWarning: Unknown config option: asyncio_fixture_loop_scope
+  
+    self._warn_or_fail_if_strict(f"Unknown config option: {key}\n")
+
+gpt_researcher/document/document.py:4
+  [NODE_WORKSPACE]/candidate/gpt_researcher/document/document.py:4: DeprecationWarning: `langchain-community` is being sunset and is no longer actively maintained. See https://github.com/langchain-ai/langchain-community/issues/674 for details and migration guidance toward standalone integration packages.
+    from langchain_community.document_loaders import (
+
+tests/test_logging_output.py:12
+  [NODE_WORKSPACE]/candidate/tests/test_logging_output.py:12: PytestCollectionWarning: cannot collect test class 'TestWebSocket' because it has a __init__ constructor (from: tests/test_logging_output.py)
+    class TestWebSocket(WebSocket):
+
+gpt_researcher/scraper/tavily_extract/tavily_extract.py:3
+  [NODE_WORKSPACE]/candidate/gpt_researcher/scraper/tavily_extract/tavily_extract.py:3: DeprecationWarning: __package__ != __spec__.parent
+    from ..utils import get_relevant_images, extract_title
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+========= 44 passed, 2 skipped, 1085 deselected, 4 warnings in 11.78s ==========

@@ -1,0 +1,182 @@
+{
+  "profiles": {
+    "v1": {
+      "terminal": true,
+      "ready": true,
+      "owned_after": 0,
+      "source_unchanged_after_tests": true,
+      "phases": {
+        "create-private-Python312-env": {
+          "name": "create-private-Python312-env",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 13.038,
+          "peak_owned_RSS_bytes": 73932800,
+          "pytest_summary_counts": {}
+        },
+        "dependency-install": {
+          "name": "dependency-install",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 24.031,
+          "peak_owned_RSS_bytes": 224104448,
+          "pytest_summary_counts": {}
+        },
+        "dependency-freeze": {
+          "name": "dependency-freeze",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 0.534,
+          "peak_owned_RSS_bytes": 6488064,
+          "pytest_summary_counts": {}
+        },
+        "dependency-consistency": {
+          "name": "dependency-consistency",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 0.532,
+          "peak_owned_RSS_bytes": 6488064,
+          "pytest_summary_counts": {}
+        },
+        "warm-tokenizer-cache": {
+          "name": "warm-tokenizer-cache",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 8.346,
+          "peak_owned_RSS_bytes": 132399104,
+          "pytest_summary_counts": {}
+        },
+        "identity-baseline": {
+          "name": "identity-baseline",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 8.349,
+          "peak_owned_RSS_bytes": 140980224,
+          "pytest_summary_counts": {}
+        },
+        "identity-candidate": {
+          "name": "identity-candidate",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 7.283,
+          "peak_owned_RSS_bytes": 140857344,
+          "pytest_summary_counts": {}
+        },
+        "baseline-regression": {
+          "name": "baseline-regression",
+          "exit_code": 1,
+          "guard": null,
+          "wall_seconds": 10.945,
+          "peak_owned_RSS_bytes": 158420992,
+          "pytest_summary_counts": {
+            "failed": 11
+          }
+        },
+        "candidate-regression": {
+          "name": "candidate-regression",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 12.022,
+          "peak_owned_RSS_bytes": 158482432,
+          "pytest_summary_counts": {
+            "passed": 11
+          }
+        },
+        "candidate-MCP-related": {
+          "name": "candidate-MCP-related",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 18.761,
+          "peak_owned_RSS_bytes": 202276864,
+          "pytest_summary_counts": {
+            "passed": 44,
+            "skipped": 2,
+            "deselected": 1085
+          }
+        },
+        "candidate-collect": {
+          "name": "candidate-collect",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 16.264,
+          "peak_owned_RSS_bytes": 198225920,
+          "pytest_summary_counts": {}
+        },
+        "candidate-offline-suite": {
+          "name": "candidate-offline-suite",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 77.297,
+          "peak_owned_RSS_bytes": 444166144,
+          "pytest_summary_counts": {
+            "passed": 1112,
+            "skipped": 17,
+            "deselected": 4
+          }
+        },
+        "candidate-import": {
+          "name": "candidate-import",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 7.836,
+          "peak_owned_RSS_bytes": 134959104,
+          "pytest_summary_counts": {}
+        }
+      },
+      "neural_calls": 0,
+      "GPU_used": false,
+      "real_remote_credentials_used": false
+    },
+    "final": {
+      "terminal": true,
+      "ready": true,
+      "owned_after": 0,
+      "source_unchanged_after_tests": true,
+      "phases": {
+        "identity-baseline": {
+          "name": "identity-baseline",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 8.345,
+          "peak_owned_RSS_bytes": 140988416,
+          "pytest_summary_counts": {}
+        },
+        "identity-candidate": {
+          "name": "identity-candidate",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 8.384,
+          "peak_owned_RSS_bytes": 140382208,
+          "pytest_summary_counts": {}
+        },
+        "baseline-final-regression": {
+          "name": "baseline-final-regression",
+          "exit_code": 1,
+          "guard": null,
+          "wall_seconds": 11.552,
+          "peak_owned_RSS_bytes": 156901376,
+          "pytest_summary_counts": {
+            "failed": 11
+          }
+        },
+        "candidate-final-regression": {
+          "name": "candidate-final-regression",
+          "exit_code": 0,
+          "guard": null,
+          "wall_seconds": 11.02,
+          "peak_owned_RSS_bytes": 155680768,
+          "pytest_summary_counts": {
+            "passed": 11
+          }
+        }
+      },
+      "neural_calls": 0,
+      "GPU_used": false,
+      "real_remote_credentials_used": false
+    }
+  },
+  "scope_overlap_not_additive": true,
+  "original_frozen_tests_identical_between_baseline_and_candidate": true,
+  "final_profile_reuses_full_suite_for_identical_Python_AST_and_only_rechecks_final11": true,
+  "no_weights_environments_or_real_credentials_exported": true
+}

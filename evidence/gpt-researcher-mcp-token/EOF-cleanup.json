@@ -1,0 +1,26 @@
+{
+  "files": [
+    {
+      "path": "gpt_researcher/mcp/README.md",
+      "server_input_sha256": "a96b054ec4c9de05138f40174d7c31de385358bff593b85a61c50ac61f545043",
+      "final_sha256": "657b173abbeea2d69ba5ffdbaead9fd8c0e55df71479658574c03a1dc8fa538f",
+      "change": "Restore upstream no-final-newline; no documentation text changed."
+    },
+    {
+      "path": "docs/docs/gpt-researcher/retrievers/mcp-configs.mdx",
+      "server_input_sha256": "3b37b86f97bc8af18ea5fbd0e9c25dcdf6d18fcd73c8d688b366f523f4c88ac1",
+      "final_sha256": "042662eb4c4f0aa8a821e90897a84ed05f4ecd2f84d27b1b06ad21419751d231",
+      "change": "Restore upstream no-final-newline; no documentation text changed."
+    }
+  ],
+  "Python_source_and_server_archives_unchanged": false,
+  "test_EOF_cleanup": {
+    "path": "tests/test_mcp_client_auth.py",
+    "server_input_sha256": "ec4265a9f9ae64b4ff6d3f94971c129168f84b049aa8f0be34d2e42648d0244c",
+    "final_sha256": "94758b102b6ea9da2ad6bd8616fc4dbc4d5a014f0c50a56a55fa6adb00dd2c7d",
+    "Python_AST_unchanged": true,
+    "only_removed_extra_trailing_blank_line": true
+  },
+  "Python_production_source_unchanged": true,
+  "server_archives_unchanged": true
+}
