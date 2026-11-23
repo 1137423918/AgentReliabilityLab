@@ -81,3 +81,8 @@ extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_cleanup_controls \
 ```
 
 控制自行启动并关闭仅loopback的测试MCP服务，不需要另启MCP服务或真实模型。环境仍用已锁定的 extras/mcp-agent，不安装新依赖。[全部结果、失败、协议和原始/公开哈希](../evidence/mcp-cleanup/README.md)以及[精确适配器补丁](../evidence/mcp-cleanup/adapter.patch)可核对。SDK可能把关闭工具异常包装成ExceptionGroup，原工具错误保留在wire中；不可达服务、再次取消和过期能力仍可能没有关闭确认。历史600秒真实模型失败保持原样。
+
+
+## 后续GPU消费实验
+
+[独立记录](../evidence/mcp-agent-gpu/README.md)：已安装服务与真实9B GPU启动成功，但共享显卡保护中止首题；零已完成评分，缺完整wire/最终答案。旧CPU记录及后续十控制保持各自范围。后续[算法与应用路线](robust-tool-use.md)单列准备/实测状态。

@@ -1,0 +1,66 @@
+{
+  "scope": "Real-filesystem Google ADK contribution, deterministic regressions and unforced public API cleanup; no model inference or general reliability rate",
+  "base_commit": "c81876a49911745248f2b774c02770ed211ff460",
+  "upstream_repository": "https://github.com/google/adk-python",
+  "upstream_pr": "https://github.com/google/adk-python/pull/8278",
+  "pr_state": "draft_open_not_merged",
+  "stars_observed": 22282,
+  "observed_date": "2026-11-21",
+  "source_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+  "baseline_source_sha256": "d0da937d1c32ae62bc5a7092597751151efab895431b2288b2bbad17f75b4e16",
+  "benchmark_sha256": "6ecfb64244fc3c1475066215ba47fce9bff8b10f7a155929bcef786af0651797",
+  "new_regressions": {
+    "baseline_failed": 3,
+    "baseline_passed_permission_control": 1,
+    "candidate_passed": 4,
+    "included_in_full_suite": true
+  },
+  "related_suites": [
+    {
+      "python": "3.11.4",
+      "passed": 2021,
+      "xfailed": 26,
+      "wall_seconds": 29.12
+    },
+    {
+      "python": "3.13.18",
+      "passed": 2021,
+      "xfailed": 26,
+      "wall_seconds": 38.77
+    }
+  ],
+  "suite_counts_overlap": true,
+  "type_checks": {
+    "scope": "one changed source file; follow-imports=silent, no-incremental",
+    "python_targets": [
+      "3.11",
+      "3.13"
+    ],
+    "result": "no issues"
+  },
+  "public_api_trials": {
+    "rounds_per_source": 20,
+    "baseline_rounds_with_errors": 20,
+    "first_narrow_candidate_rounds_with_errors": 20,
+    "final_rounds_with_errors": 0,
+    "final_all_parent_versions_removed": true,
+    "final_all_nested_artifacts_preserved": true,
+    "scheduling": "unforced asyncio public calls using real filesystem workers",
+    "not_a_general_rate_or_performance_comparison": true
+  },
+  "model_inference": false,
+  "precommit": {
+    "result": "all applicable checks passed",
+    "tool_sources": "seven configured tags, verified commit SHA, process-only local mirrors",
+    "addlicense": "configured optional fallback; executable absent; existing header prefixes unchanged"
+  },
+  "limitations": [
+    "two service instances in one Linux process, not a distributed transaction",
+    "Windows, concurrent save/delete, process crash, and full ADK repository matrix not evaluated",
+    "no atomic rollback guarantee for recursive-delete errors",
+    "CLA and human maintainer review are separate; no signature, approval or merge claimed"
+  ],
+  "upstream_status": "upstream-status.json",
+  "cla_check": "failure_matching_agreement_not_found",
+  "full_upstream_ci_passed": false
+}

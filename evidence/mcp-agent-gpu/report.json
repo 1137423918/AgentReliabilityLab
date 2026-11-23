@@ -1,0 +1,79 @@
+{
+  "outcome": "infrastructure_abort_foreign_compute_client",
+  "controller_exit_code": 2,
+  "protocol_sha256": "4b5e244ff61be5d3000a3cfd86cb38a454cdeb0b88e176c924b829d9eb6d5ca1",
+  "source_archive_sha256": "3385c2d4adbee87da6a41063a274ddf152598152c9a0a33eb4f6079cd3877620",
+  "project_source_commit": "0a20a9f8f90ab0453b83939b6dd9df53b3a15d15",
+  "model_started": true,
+  "model_ready": true,
+  "installed_service_ready": true,
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "context_observed": 8192,
+  "known_questions_declared": 2,
+  "first_question_started": true,
+  "first_question_phase_seconds": 44.008,
+  "graded_completed_cases": 0,
+  "case_pass_rate": null,
+  "second_question_started": false,
+  "model_POST_reservations": 5,
+  "recorded_HTTP_headers": [
+    200,
+    200,
+    200,
+    200,
+    null
+  ],
+  "model_request_body_bytes": 37004,
+  "unknown_reservation_still_charged": true,
+  "wire_bodies_persisted": false,
+  "final_answer_persisted": false,
+  "MCP_close_acknowledged": false,
+  "guard_reason": "foreign_compute_client",
+  "service_wall_seconds": 82.031,
+  "cleanup": {
+    "model_shutdown": {
+      "wait_timeout": false,
+      "returncode": 0,
+      "forced_cleanup": false,
+      "remaining_owned_processes": []
+    },
+    "mcp_shutdown": {
+      "wait_timeout": false,
+      "returncode": -15,
+      "forced_cleanup": false,
+      "remaining_owned_processes": []
+    },
+    "owned_processes_after": [],
+    "ports_closed": {
+      "18860": true,
+      "18861": true
+    },
+    "own_GPU_context_absent": true,
+    "model_api_key_file_remaining": false,
+    "monitor_thread_stopped": true,
+    "sampler_thread_stopped": true,
+    "secret_in_json_outputs": false
+  },
+  "frozen_source_files_verified": 28,
+  "same_locked_agent_SDK_as_CPU_snapshot": true,
+  "same_installed_wheel_source_verified": true,
+  "runtime_files_and_model_verified": 22,
+  "single_variable_hardware_comparison": false,
+  "retry_performed": false,
+  "GPU7_used_in_this_frozen_profile": false,
+  "user_later_reported_GPU7_reachable": true,
+  "core_tests_rerun": false,
+  "scripted_controls_rerun": false,
+  "neural_repository_repair": false,
+  "limits": [
+    "Infrastructure interruption is neither a completed semantic failure nor a passing model score.",
+    "Four HTTP200 header observations do not establish four complete bodies or successful tool executions.",
+    "SIGTERM interrupted the driver before result.json persisted its in-memory wire events; no literal model/tool answer review is possible.",
+    "A fifth reserved request has unknown outcome and is not refunded.",
+    "No explicit close_audit acknowledgement survived; installed MCP process termination invalidated in-memory audit capabilities.",
+    "Advisory device lock only coordinates our jobs and cannot reserve a shared GPU.",
+    "CUDA binary, cleanup implementation and installed-service entry differ from the older CPU run; no causal speedup claim.",
+    "The predeclared role assumption remains in protocol; user subsequently confirmed both algorithm/model R&D and Agent applications."
+  ]
+}

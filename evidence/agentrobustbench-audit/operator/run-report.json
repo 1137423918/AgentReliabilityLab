@@ -1,0 +1,16 @@
+{
+  "terminal": true,
+  "protocol_sha256": "52259b7841863204312e70422b612da39832a34959d3cf639ee6423346d07df9",
+  "source_archive_sha256": "938812158feea13c09cefe674ff64b477d1a81dde40ad3a8091652cfcf227f6d",
+  "operator_sha256": "129999fec471d1c57df054273fd1fbcc022286f46cbeb6a81b0158d07f3d1bff",
+  "filesystem": "ext4",
+  "GPU_used": false,
+  "model_inference": false,
+  "training_run": false,
+  "returncode": 0,
+  "guard_reason": null,
+  "wall_seconds": 0.854,
+  "peak_sampled_child_RSS_bytes": 26939392,
+  "source_files_unchanged": true,
+  "child_reaped": true
+}

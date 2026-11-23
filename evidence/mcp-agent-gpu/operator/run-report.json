@@ -1,0 +1,183 @@
+{
+  "protocol_sha256": "4b5e244ff61be5d3000a3cfd86cb38a454cdeb0b88e176c924b829d9eb6d5ca1",
+  "source_archive_sha256": "3385c2d4adbee87da6a41063a274ddf152598152c9a0a33eb4f6079cd3877620",
+  "terminal": true,
+  "model_started": true,
+  "model_ready": true,
+  "MCP_installed_service": true,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 5.188,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 158494720
+    },
+    {
+      "phase": "installed-service-identity",
+      "returncode": 0,
+      "wall_seconds": 2.15,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 62906368
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 39.428,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 14761984
+    },
+    {
+      "phase": "case-inflated_merged_claim",
+      "returncode": -15,
+      "wall_seconds": 44.008,
+      "guard_reason": "foreign_compute_client",
+      "peak_sampled_driver_tree_rss_bytes": 206032896
+    }
+  ],
+  "cases": [],
+  "GPU7_excluded": true,
+  "address_space": "CPU phases48GiB; CUDA model virtual address space uncapped, bounded by sampled host RSS/device memory/wall guards.",
+  "same_locked_agent_SDK_as_CPU_snapshot": true,
+  "installed_wheel_identity_verified": true,
+  "native_runtime_and_model_hashes_verified": true,
+  "GPU": {
+    "index": 3,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 3,
+    "utilization": 0,
+    "uuid_sha256": "9c0de1facff87c0dca791970d68cb7082964ea73b7145467694a403b4aac8f62",
+    "compute_clients": 0
+  },
+  "admission": [
+    {
+      "at": "2026-11-21T20:09:05.309507+00:00",
+      "card": {
+        "index": 3,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "9c0de1facff87c0dca791970d68cb7082964ea73b7145467694a403b4aac8f62",
+        "compute_clients": 0
+      }
+    },
+    {
+      "at": "2026-11-21T20:09:17.833736+00:00",
+      "card": {
+        "index": 3,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "9c0de1facff87c0dca791970d68cb7082964ea73b7145467694a403b4aac8f62",
+        "compute_clients": 0
+      }
+    }
+  ],
+  "mcp_ready": true,
+  "model_argv": [
+    "<PRIVATE_RUNTIME>",
+    "--model",
+    "<SERVER_BASE>/models/Qwen3.5-9B-LMStudio-1379f25c/Qwen3.5-9B-Q4_K_M.gguf",
+    "--alias",
+    "agentlab-qwen35-9b-gpu-mcp",
+    "--host",
+    "127.0.0.1",
+    "--port",
+    "18860",
+    "--device",
+    "CUDA0",
+    "--n-gpu-layers",
+    "all",
+    "--split-mode",
+    "none",
+    "--fit",
+    "off",
+    "--threads",
+    "4",
+    "--threads-batch",
+    "4",
+    "--threads-http",
+    "1",
+    "--parallel",
+    "1",
+    "--ctx-size",
+    "8192",
+    "--n-predict",
+    "1024",
+    "--log-verbosity",
+    "4",
+    "--timeout",
+    "180",
+    "--temp",
+    "0",
+    "--seed",
+    "42",
+    "--jinja",
+    "--reasoning-format",
+    "none",
+    "--chat-template-kwargs",
+    "{\"enable_thinking\":false}",
+    "--no-context-shift",
+    "--cache-prompt",
+    "--no-webui",
+    "--no-slots",
+    "--api-key-file",
+    "<PRIVATE_RUNTIME>"
+  ],
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "context_observed": 8192,
+  "own_GPU_compute_process_seen": true,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Phase failed: case-inflated_merged_claim"
+  },
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "GPU_monitor": {
+    "peak_host_tree_RSS_bytes": 5974118400,
+    "peak_GPU_used_MiB": 5551,
+    "guard_reason": "foreign_compute_client"
+  },
+  "GPU_guard_reason": "foreign_compute_client",
+  "GPU_probe_errors": [],
+  "model_shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "mcp_shutdown": {
+    "wait_timeout": false,
+    "returncode": -15,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "GPU_after": {
+    "index": 3,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 947,
+    "utilization": 0,
+    "uuid_sha256": "9c0de1facff87c0dca791970d68cb7082964ea73b7145467694a403b4aac8f62",
+    "compute_clients": 1
+  },
+  "own_GPU_context_absent": true,
+  "server_log_auth_redactions": 0,
+  "ports_closed": {
+    "18860": true,
+    "18861": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": 82.031,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false
+}

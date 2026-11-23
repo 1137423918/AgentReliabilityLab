@@ -1,0 +1,251 @@
+{
+  "upstream_repository": "https://github.com/WillChow66/AgentRobustBench",
+  "upstream_commit": "111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1",
+  "scorer_sha256": "ddaf243edee6641a9610c8593ef9e8e38f633a633fc5aec937727a5cd3562d6b",
+  "data_files": [
+    {
+      "file": "hf_data/datasets/api_eval/CD.jsonl",
+      "sha256": "b59e04f347d436eb6086707769f392c56df3162368fc08b9c28a71002fe846d6",
+      "bytes": 1219415,
+      "records": 122,
+      "single_turn": 102,
+      "multi_turn_skipped": 20
+    },
+    {
+      "file": "hf_data/datasets/api_eval/CD_AB.jsonl",
+      "sha256": "8a0168ffaf6166778e4d60b34f0d88f47e9b3623542165a94448bc985bc53336",
+      "bytes": 834929,
+      "records": 144,
+      "single_turn": 144,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/CD_NT.jsonl",
+      "sha256": "90367e65c420f26c51d2b72449f3f971299a5d907c706d5ca42346e93b9d5352",
+      "bytes": 1305994,
+      "records": 125,
+      "single_turn": 102,
+      "multi_turn_skipped": 23
+    },
+    {
+      "file": "hf_data/datasets/api_eval/TD.jsonl",
+      "sha256": "575a81a2741dfdb5ed0bc43648e3d9513b3f92e593b65ef9fd10197affd9eeb4",
+      "bytes": 1251482,
+      "records": 124,
+      "single_turn": 102,
+      "multi_turn_skipped": 22
+    },
+    {
+      "file": "hf_data/datasets/api_eval/TD_AB.jsonl",
+      "sha256": "052c3d66f63667d4ab5c2ee2cdaa134da3ce819667e0388f56b78846daf07dc7",
+      "bytes": 834009,
+      "records": 144,
+      "single_turn": 144,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/TD_NT.jsonl",
+      "sha256": "3649fc27ea25e71516743e4b421b8d1e058053c8d6ed4c65d9a8ebdb1b8f8ae2",
+      "bytes": 1300311,
+      "records": 125,
+      "single_turn": 102,
+      "multi_turn_skipped": 23
+    },
+    {
+      "file": "hf_data/datasets/api_eval/clean.jsonl",
+      "sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+      "bytes": 1357251,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/paraphrase_parameter_description.jsonl",
+      "sha256": "f79d23c7675493f4c19cf5166a1eccf707ffae3431b4e323035a1d8044cd2bf5",
+      "bytes": 1396501,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/paraphrase_tool_description.jsonl",
+      "sha256": "ecf214044e52c2dca54158d9a768bace811b101cf02b506a2b66de33c62f2f7c",
+      "bytes": 1392946,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/query_paraphrase.jsonl",
+      "sha256": "2887de13adb610e5e6f33c8b72067c98eedb9a5bd7d897e19d5a26e3f6c883e6",
+      "bytes": 1363080,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/realistic_typos.jsonl",
+      "sha256": "9876eeb48baac43eeefd7f1e33ddcc0cdf10f84a21baedfc8589a0c80fc75a3f",
+      "bytes": 1361139,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/redundant.jsonl",
+      "sha256": "59bdb85934b2605be187ef5e461b0f2c5d96aa852174350c93b0aa568cbe1753",
+      "bytes": 1697204,
+      "records": 199,
+      "single_turn": 199,
+      "multi_turn_skipped": 0
+    },
+    {
+      "file": "hf_data/datasets/api_eval/same_name_A.jsonl",
+      "sha256": "051bc56e4951b07a127cc993d1cc143b671cd7c60c01ef534f809f6166c2bb8e",
+      "bytes": 1102343,
+      "records": 148,
+      "single_turn": 133,
+      "multi_turn_skipped": 15
+    },
+    {
+      "file": "hf_data/datasets/api_eval/same_name_B.jsonl",
+      "sha256": "32c3067e6811a18050f349c9b2d9220e88089e6f36a28d20d88ce8929fe4557a",
+      "bytes": 1232708,
+      "records": 148,
+      "single_turn": 127,
+      "multi_turn_skipped": 21
+    },
+    {
+      "file": "hf_data/datasets/api_eval/same_name_C.jsonl",
+      "sha256": "965b534ae666e502c06672f72793f328d2a26a57cac37f882e39b0d8c5b0e6bc",
+      "bytes": 1313110,
+      "records": 148,
+      "single_turn": 126,
+      "multi_turn_skipped": 22
+    },
+    {
+      "file": "hf_data/datasets/api_eval/same_name_D.jsonl",
+      "sha256": "f6cd87bedd93028e16952c5c4b3bf145ed71058c003cb7740f95dbe2ade89c63",
+      "bytes": 1315309,
+      "records": 148,
+      "single_turn": 125,
+      "multi_turn_skipped": 23
+    },
+    {
+      "file": "hf_data/datasets/api_eval/same_name_E.jsonl",
+      "sha256": "d3a0c108e40001f81f994572f86d55f6f7097dc5bc03baa62c8691b419619556",
+      "bytes": 1301335,
+      "records": 148,
+      "single_turn": 126,
+      "multi_turn_skipped": 22
+    }
+  ],
+  "observed_static_records": 2718,
+  "observed_static_single_turn": 2527,
+  "observed_skipped_multi_turn": 191,
+  "clean_single_turn": 199,
+  "declared_runtime_cases_not_executed": 1194,
+  "upstream_count_expectations": {
+    "static_2718": true,
+    "single_turn_2527": true,
+    "multi_turn_191": true,
+    "clean_199": true,
+    "official_runtime_case_count_1194": true,
+    "declared_full_scope_3721": true
+  },
+  "single_turn_eval_methods": {
+    "exact_match": 1515,
+    "gpt_judge": 659,
+    "rule_based": 353
+  },
+  "exact_ID_overlap_with_clean": {
+    "CD": {
+      "matched": 102,
+      "unmatched": 0
+    },
+    "CD_AB": {
+      "matched": 144,
+      "unmatched": 0
+    },
+    "CD_NT": {
+      "matched": 102,
+      "unmatched": 0
+    },
+    "TD": {
+      "matched": 102,
+      "unmatched": 0
+    },
+    "TD_AB": {
+      "matched": 144,
+      "unmatched": 0
+    },
+    "TD_NT": {
+      "matched": 102,
+      "unmatched": 0
+    },
+    "clean": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "paraphrase_parameter_description": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "paraphrase_tool_description": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "query_paraphrase": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "realistic_typos": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "redundant": {
+      "matched": 199,
+      "unmatched": 0
+    },
+    "same_name_A": {
+      "matched": 116,
+      "unmatched": 17
+    },
+    "same_name_B": {
+      "matched": 116,
+      "unmatched": 11
+    },
+    "same_name_C": {
+      "matched": 116,
+      "unmatched": 10
+    },
+    "same_name_D": {
+      "matched": 116,
+      "unmatched": 9
+    },
+    "same_name_E": {
+      "matched": 116,
+      "unmatched": 10
+    }
+  },
+  "semantic_family_mapping_verified": false,
+  "training_parquets_audited": false,
+  "training_evaluation_disjointness_verified": false,
+  "evaluation_data_used_for_training": false,
+  "diagnostic_control_count": 32,
+  "reference_controls_official_correct": 32,
+  "empty_argument_controls_official_correct": 32,
+  "empty_argument_controls_missing_required_keys": 32,
+  "model_inference": false,
+  "training_run": false,
+  "GPU_used": false,
+  "benchmark_accuracy_measured": false,
+  "limitations": [
+    "Gold-derived evaluator controls are not neural predictions or benchmark accuracy.",
+    "The official BFCL matcher intentionally tolerates omitted arguments; this audit does not alter or relabel its metric.",
+    "Required-key presence is narrower than full JSON Schema validity or successful real tool execution.",
+    "Runtime perturbations are only counted from the published construction, not executed.",
+    "Shared IDs reveal exact reuse, not a complete semantic family mapping; no new train/test split is claimed.",
+    "Training Parquets and train/evaluation leakage require a separate audit before any training."
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Linux verification descendant cleanup engineering regression; no neural requests or GPU; not a model benchmark.",
+  "status": "engineering_regression_passed",
+  "full_suite_passed": 108,
+  "full_suite_skipped": 0,
+  "focused_checks": 5,
+  "new_tests_included": 2,
+  "strengthened_existing_tests": 3,
+  "baseline_new_checks_failed": 2,
+  "first_candidate_worker_integration_failed": 3,
+  "baseline_wall_seconds": 4.071,
+  "focused_wall_seconds": 20.217,
+  "full_unittest_seconds": 319.701,
+  "full_wall_seconds": 322.778,
+  "protocol_sha256": "7998437cc30dd0fe70ab72c209ba22938fdee047791feb775c459b21e61ccc27",
+  "source_sha256": {
+    "agent_lab/verification.py": "32e2e4bca449d5b55adf91b61e888d37c802f994419796884b5f7084848d8e35",
+    "tests/test_worker.py": "23122df1aef7e2e146ffecd6e2a7a1834c346264f25cfdd33c6b821d8482a4cc",
+    "tests/test_verification_tree.py": "5117bb9e6c3c272141d36b3f32405840a972fe7955cac77e3d7fe368655d16b5"
+  },
+  "gpu_used": false,
+  "real_neural_model_requests": 0,
+  "fake_model_http_in_tests": true,
+  "new_neural_repair": false,
+  "upstream_pr_created": false,
+  "platform_scope": "Linux isolated verification supervisor; other Unix retains process-group cleanup",
+  "limits": [
+    "Linux subreaper behavior only; other Unix retains process-group cleanup.",
+    "Cleanup is not a hostile-process sandbox. A malicious child can escape through external service managers or namespaces.",
+    "SIGKILL cannot immediately end uninterruptible kernel waits; supervisor retains worker lock until adopted descendants are reaped.",
+    "The supervisor itself being killed is outside this change.",
+    "No new model/repair/ADK acceptance result; repeated focused checks overlap the full suite."
+  ],
+  "all_phases_guard_reason_none": true,
+  "all_observed_owned_processes_stopped": true
+}

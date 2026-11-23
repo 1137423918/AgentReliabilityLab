@@ -1,0 +1,36 @@
+[
+  {
+    "id": "inflated_merged_claim",
+    "question": "Against the pinned catalog snapshot (not live GitHub), audit this OpenHands#7050 contribution claim: 'The same-path patch fix has229 distinct tests, by adding203 related,22 focused and4 new checks; the PR is already merged.' Verify the reported totals, subset overlap and the matching PR's state/draft/merged fields. Give only exact observed evidence.",
+    "expected_supported": false,
+    "required_facts": {
+      "patch_move": {
+        "/related_suite_passed": 203,
+        "/focused_passed": 22,
+        "/new_checks_included": 4,
+        "/overlapping_suites_not_added": true
+      },
+      "upstream_prs": {
+        "/pull_requests/1/state": "open",
+        "/pull_requests/1/draft": true,
+        "/pull_requests/1/merged": false
+      }
+    }
+  },
+  {
+    "id": "supported_contribution",
+    "question": "Against the pinned catalog snapshot (not live GitHub), audit this contribution description: 'Three new baseline checks fail before the OpenHands same-path move fix. The candidate's203 related checks pass, including22 focused checks and4 new checks. This uses the real public executor with zero neural requests, and the overlapping groups must not be added again.' Verify each stated number and scope rather than automatically rejecting the statement.",
+    "expected_supported": true,
+    "required_facts": {
+      "patch_move": {
+        "/baseline_new_checks_failed": 3,
+        "/related_suite_passed": 203,
+        "/focused_passed": 22,
+        "/new_checks_included": 4,
+        "/real_public_executor": true,
+        "/neural_requests": 0,
+        "/overlapping_suites_not_added": true
+      }
+    }
+  }
+]

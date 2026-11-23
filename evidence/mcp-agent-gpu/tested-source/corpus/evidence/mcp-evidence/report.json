@@ -1,0 +1,467 @@
+{
+  "checked_at_utc": "2026-11-21T14:32:36.271771+00:00",
+  "purpose": "Deployable loopback MCP2 report evidence service: explicit expiring audit capabilities, read receipts and bounded costly operations. Real SDK/TCP/fault-lifecycle controls, not a neural benchmark.",
+  "sdk": {
+    "mcp": "2.3.0",
+    "mcp-types": "2.3.0",
+    "httpx2": "2.16.2",
+    "observed_protocol": "2026-07-28",
+    "wheel_sha256": "dd0c44c089d16453e8ae31a3877a0054d7a2314caaa81f5e0541b9b1734b2377",
+    "uv_lock_sha256": "4adb0fddcce995b5ca121144e542cba0a6dad6029f2b6d82ec1b1c342ae7db10",
+    "upstream_reference_commit": "77001c96f9507be0f4d009b83210a384a5e08bda",
+    "wheel_build_revision_not_asserted": true,
+    "new_isolated_environment": true
+  },
+  "full_suite_passed": 130,
+  "full_suite_skipped": 0,
+  "new_service_checks_included": 6,
+  "focused_checks_overlap_full": true,
+  "full_suite_unittest_seconds": 332.428,
+  "full_suite_phase_wall_seconds": 336.784,
+  "original_worker_dependency_pairs_unchanged": 68,
+  "network_controls_passed": 6,
+  "network_controls_included_in_full_count": false,
+  "network_phase_wall_seconds": 23.915,
+  "network_cases": [
+    {
+      "case": "normal",
+      "passed": true,
+      "listing": {
+        "reports": [
+          {
+            "description": "Current Agent Lab core regression and asynchronous SDK controls",
+            "fields": [
+              "/full_suite_passed",
+              "/full_suite_skipped",
+              "/new_async_checks_included",
+              "/framework_case_count",
+              "/real_neural_requests"
+            ],
+            "id": "core_current"
+          },
+          {
+            "description": "OpenHands same-path patch move fix and related test scopes",
+            "fields": [
+              "/related_suite_passed",
+              "/focused_passed",
+              "/new_checks_included",
+              "/overlapping_suites_not_added",
+              "/neural_requests"
+            ],
+            "id": "patch_move"
+          },
+          {
+            "description": "GPU transport smoke checks and their individual outcomes",
+            "fields": [
+              "/overall_smoke_passed",
+              "/checks/0/passed",
+              "/checks/1/passed",
+              "/checks/2/passed",
+              "/repository_maintenance_run",
+              "/new_neural_repair"
+            ],
+            "id": "gpu_transport"
+          },
+          {
+            "description": "GPU repository maintenance admission outcome",
+            "fields": [
+              "/outcome",
+              "/model_service_started",
+              "/model_http_requests",
+              "/no_request_journal"
+            ],
+            "id": "gpu_maintenance"
+          },
+          {
+            "description": "Real-model Google ADK CPU maintenance trajectory",
+            "fields": [
+              "/verified_trials",
+              "/outcome",
+              "/case"
+            ],
+            "id": "adk_cpu"
+          },
+          {
+            "description": "Earlier Linux verifier descendant cleanup regression snapshot",
+            "fields": [
+              "/full_suite_passed",
+              "/new_tests_included",
+              "/real_neural_model_requests"
+            ],
+            "id": "historical_core"
+          },
+          {
+            "description": "Google ADK artifact deletion candidate and versioned related tests",
+            "fields": [
+              "/scope",
+              "/base_commit",
+              "/upstream_repository",
+              "/upstream_pr",
+              "/pr_state",
+              "/stars_observed",
+              "/observed_date",
+              "/source_sha256",
+              "/baseline_source_sha256",
+              "/benchmark_sha256",
+              "/new_regressions",
+              "/related_suites"
+            ],
+            "id": "adk_cleanup"
+          },
+          {
+            "description": "Dated current upstream pull-request states",
+            "fields": [
+              "/checked_at_utc",
+              "/pull_requests"
+            ],
+            "id": "upstream_prs"
+          }
+        ],
+        "snapshot": "2c977ec8404c9ebfd159a7addb1d97b7500407ff"
+      },
+      "read": {
+        "receipt": "6c9rM9s8s5dWJjIPhuPZPXNo7O7TzpMq",
+        "report": {
+          "report_id": "core_current",
+          "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006",
+          "source_url": "https://github.com/1137423918/AgentReliabilityLab/blob/2c977ec8404c9ebfd159a7addb1d97b7500407ff/evidence/async-budget/report.json",
+          "values": {
+            "/full_suite_passed": 116
+          }
+        }
+      },
+      "verification": {
+        "evidence_verified": true,
+        "verification": {
+          "fact_values_verified": true,
+          "read_lineage_verified": true,
+          "free_prose_verified": false,
+          "facts": 1,
+          "citations": 1
+        },
+        "free_prose_semantics_verified": false,
+        "verdict_truth_verified": false
+      },
+      "status": {
+        "operations_spent": 3,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      }
+    },
+    {
+      "case": "receipt_isolation",
+      "passed": true,
+      "foreign_receipt_rejected": {
+        "meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "AgentLab Evidence",
+            "version": "0.1.0"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool verify_assessment: Receipt was not issued by this audit",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      },
+      "own_receipt_accepted": {
+        "evidence_verified": true,
+        "verification": {
+          "fact_values_verified": true,
+          "read_lineage_verified": true,
+          "free_prose_verified": false,
+          "facts": 1,
+          "citations": 1
+        },
+        "free_prose_semantics_verified": false,
+        "verdict_truth_verified": false
+      }
+    },
+    {
+      "case": "rejections",
+      "passed": true,
+      "errors": [
+        {
+          "meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "AgentLab Evidence",
+              "version": "0.1.0"
+            }
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Error executing tool read_report: Unknown report ID",
+              "annotations": null,
+              "meta": null
+            }
+          ],
+          "structured_content": null,
+          "is_error": true,
+          "result_type": "complete"
+        },
+        {
+          "meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "AgentLab Evidence",
+              "version": "0.1.0"
+            }
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Error executing tool read_report: Select an explicit JSON pointer, not a whole report",
+              "annotations": null,
+              "meta": null
+            }
+          ],
+          "structured_content": null,
+          "is_error": true,
+          "result_type": "complete"
+        },
+        {
+          "meta": {
+            "io.modelcontextprotocol/serverInfo": {
+              "name": "AgentLab Evidence",
+              "version": "0.1.0"
+            }
+          },
+          "content": [
+            {
+              "type": "text",
+              "text": "Error executing tool verify_assessment: Claimed fact differs from actual report",
+              "annotations": null,
+              "meta": null
+            }
+          ],
+          "structured_content": null,
+          "is_error": true,
+          "result_type": "complete"
+        }
+      ],
+      "oversize_http_status": 413,
+      "counter": {
+        "operations_spent": 4,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      }
+    },
+    {
+      "case": "concurrent_cap",
+      "passed": true,
+      "successful_of_six": 1,
+      "rejected_of_six": 5,
+      "counter": {
+        "operations_spent": 16,
+        "reads_completed": 0,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "close_after_exhaustion": {
+        "closed": true
+      }
+    },
+    {
+      "case": "reconnect",
+      "passed": true,
+      "same_capability_still_charged": {
+        "operations_spent": 4,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "verification": {
+        "evidence_verified": true,
+        "verification": {
+          "fact_values_verified": true,
+          "read_lineage_verified": true,
+          "free_prose_verified": false,
+          "facts": 1,
+          "citations": 1
+        },
+        "free_prose_semantics_verified": false,
+        "verdict_truth_verified": false
+      },
+      "capability_sharing_is_not_user_authentication": true
+    },
+    {
+      "case": "cancel_unknown",
+      "passed": true,
+      "prior_server_capability_invalidated": {
+        "meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "AgentLab Evidence",
+            "version": "0.1.0"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool audit_status: Unknown or expired audit capability",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      },
+      "held_body_canceled": true,
+      "before_reread": {
+        "operations_spent": 1,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "missing_receipt_rejected": {
+        "meta": {
+          "io.modelcontextprotocol/serverInfo": {
+            "name": "AgentLab Evidence",
+            "version": "0.1.0"
+          }
+        },
+        "content": [
+          {
+            "type": "text",
+            "text": "Error executing tool verify_assessment: Provide distinct bounded read receipts",
+            "annotations": null,
+            "meta": null
+          }
+        ],
+        "structured_content": null,
+        "is_error": true,
+        "result_type": "complete"
+      },
+      "reread": {
+        "receipt": "gOZ6yHenl9UGgFU18vLQk-l64qK3nqNU",
+        "report": {
+          "report_id": "core_current",
+          "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006",
+          "source_url": "https://github.com/1137423918/AgentReliabilityLab/blob/2c977ec8404c9ebfd159a7addb1d97b7500407ff/evidence/async-budget/report.json",
+          "values": {
+            "/full_suite_skipped": 0
+          }
+        }
+      },
+      "verification": {
+        "evidence_verified": true,
+        "verification": {
+          "fact_values_verified": true,
+          "read_lineage_verified": true,
+          "free_prose_verified": false,
+          "facts": 1,
+          "citations": 1
+        },
+        "free_prose_semantics_verified": false,
+        "verdict_truth_verified": false
+      },
+      "after_reread": {
+        "operations_spent": 4,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "fixture": "Actual response body withheld after receipt production; no synthetic tool response"
+    }
+  ],
+  "transport_capture": {
+    "sdk_http_attempts": 57,
+    "sdk_response_headers": 57,
+    "complete_reply_bodies": 56,
+    "held_canceled_reply_bodies": 1,
+    "complete_reply_http_statuses": [
+      200
+    ],
+    "oversize_request_http_status_separate": 413,
+    "rpc_methods": {
+      "server/discover": 4,
+      "tools/list": 4,
+      "tools/call": 49
+    },
+    "scope": "SDK transport only; health, fault-gate control HTTP and the separate oversized request are not included in57. HTTP200 can contain tool-level isError; it is not57 successful tool operations.",
+    "all_body_bytes_sha256_and_json_checked": 113,
+    "read_receipts_independently_checked": 4,
+    "successful_exact_fact_verifications_independently_checked": 4,
+    "full_wire": "network/report.json"
+  },
+  "audit_service_limits": {
+    "max_live_audits": 32,
+    "ttl_seconds": 600,
+    "operations_per_audit": 16,
+    "reads_per_audit": 8,
+    "catalog_read_bytes": 7168,
+    "business_result_json_bytes": 8192,
+    "mcp_request_body_bytes": 16384,
+    "host": "127.0.0.1",
+    "stateless_http": true,
+    "json_response": true
+  },
+  "source_files_sha256": {
+    "agent_lab/evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "agent_lab/evidence_service.py": "f6931770e6cd1adecf64ea6d693a3773d5fbe208ab822d1123b46d72aff06466",
+    "benchmarks/mcp_evidence_controls.py": "7029ca80bf4a9e3db85aab78bd9ba13b29952fd89e01dfb193b75c59c570c180",
+    "benchmarks/mcp_evidence_server.py": "2cbdb64b27f1ee2f28ed828b7dd0c0f4c9eb7bac735bdd46b9becfa0ac29f341",
+    "tests/test_evidence_service.py": "5c5231b4a6e891f8b61332cfa330134284e20e76819a18f6d5cb813fdef4d73b"
+  },
+  "protocol_original_sha256": "2600b11aa0b936f2c96b7e0982bbc9cf74ea35d53c466361dfc1ce6cc5aa77f4",
+  "protocol_public_sha256": "2600b11aa0b936f2c96b7e0982bbc9cf74ea35d53c466361dfc1ce6cc5aa77f4",
+  "source_archive_sha256": "5c64d92b566b43958f21ab9ed135723f77ccabe0f6debeae1f8ebc3076c3b46c",
+  "corpus": {
+    "reports": 8,
+    "catalog_sha256": "e7f48f1cc0127545575cd22201d872a55f8b56c2fa642605bde8f8d6bfd2d171",
+    "source_commit": "2c977ec8404c9ebfd159a7addb1d97b7500407ff",
+    "old116_snapshot_not_replaced_by130": true
+  },
+  "lifecycle": {
+    "planned_server_lifetimes": 2,
+    "servers": [
+      {
+        "mode": "plain",
+        "pid": 2520382,
+        "returncode": -15,
+        "forced_kill": false
+      },
+      {
+        "mode": "gated",
+        "pid": 2522111,
+        "returncode": -15,
+        "forced_kill": false
+      }
+    ],
+    "both_stopped_by_planned_sigterm": true,
+    "forced_kills": 0,
+    "forced_operator_cleanup_groups": [],
+    "port_closed": true,
+    "observed_owned_processes_after": 0,
+    "old_process_capability_rejected": true,
+    "context_reconnect_does_not_reset_spent_operations": true,
+    "cancelled_read_spent_operations": 1,
+    "cancelled_read_completed_server_side": 1,
+    "reread_and_verify_operations_total": 4,
+    "reread_completed_reads_total": 2
+  },
+  "fault_fixture": "Only benchmarks.mcp_evidence_controls.ResponseGate withholds an actual completed response body. Product app/CLI has no test-gate routes. No fake filesystem/report/MCP/model replies.",
+  "model_requests": 0,
+  "gpu_used": false,
+  "upstream_modified": false,
+  "upstream_pr": null,
+  "upstream_policy": "Outside MCP PRs need eligible linked issue and human involvement. This stage uses unchanged SDK in the own project only. No issues/comments/PR operations.",
+  "retained_preparation_failure": "Initial Ruff preparation rejected one unused os import before any validation run. Original diagnostic retained. Formatting and final source checks passed; not a failed runtime experiment.",
+  "limitations": [
+    "Capabilities separate audit contexts, not authenticated users or transport sessions; a holder may intentionally share/reuse one across reconnects.",
+    "Receipts demonstrate possession of a completed read response, not that a model understood it. Unknown unreceived reads still spend an operation and create inaccessible receipts.",
+    "Quota is in-memory per-audit expensive business operations, not total HTTP traffic, durable model budget or billed usage. New context creation is not model quota renewal.",
+    "Context TTL/close/process restart invalidate old capabilities; no durable audit resumption or cross-host migration.",
+    "No free-prose semantics or arbitrary verdict-truth validation, no broader MCP conformance/Windows/multiworker/public auth claim.",
+    "No GPU/model/neural scores. Full130 and6network controls are separate.",
+    "Installed PyPI wheel source hashes are recorded; upstream main reference is not asserted as wheel build revision."
+  ]
+}

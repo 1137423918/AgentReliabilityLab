@@ -1,0 +1,71 @@
+{
+  "normalization": "Only readable operator server/runtime paths normalized; results, row hash manifest, official scorer attachment/license, audit source and predeclared protocol unchanged. Upstream dataset/training weights are not redistributed. All original/public SHA retained.",
+  "files": [
+    {
+      "path": "operator/monitor.jsonl",
+      "original_sha256": "bb3d114f1c123c27931e5c577f710c4e22cb0bc029a2e03d70fb5ba86e8724b0",
+      "public_sha256": "bb3d114f1c123c27931e5c577f710c4e22cb0bc029a2e03d70fb5ba86e8724b0",
+      "public_bytes": 358
+    },
+    {
+      "path": "operator/run-report.json",
+      "original_sha256": "81ebb54dc399f0db3f503ffdb244f1593664b41218d5a59655e2071a9b2241b4",
+      "public_sha256": "81ebb54dc399f0db3f503ffdb244f1593664b41218d5a59655e2071a9b2241b4",
+      "public_bytes": 564
+    },
+    {
+      "path": "operator/audit.log",
+      "original_sha256": "f183da159542ff2f7cfc3ae557df756f1549fa9838c54edc8116c5d3f000ba23",
+      "public_sha256": "f183da159542ff2f7cfc3ae557df756f1549fa9838c54edc8116c5d3f000ba23",
+      "public_bytes": 256
+    },
+    {
+      "path": "operator/protocol.json",
+      "original_sha256": "52259b7841863204312e70422b612da39832a34959d3cf639ee6423346d07df9",
+      "public_sha256": "52259b7841863204312e70422b612da39832a34959d3cf639ee6423346d07df9",
+      "public_bytes": 7333
+    },
+    {
+      "path": "operator/run.py",
+      "original_sha256": "129999fec471d1c57df054273fd1fbcc022286f46cbeb6a81b0158d07f3d1bff",
+      "public_sha256": "7fc8c63ce3b337c628279a387fc96916a8af0914909204cdeaaafb338891aa99",
+      "public_bytes": 3372
+    },
+    {
+      "path": "results/record-manifest.jsonl",
+      "original_sha256": "ff1b847b59fc8d5185d2ea69fc7d771af51a87d54123c30dacf03b5d06204b01",
+      "public_sha256": "ff1b847b59fc8d5185d2ea69fc7d771af51a87d54123c30dacf03b5d06204b01",
+      "public_bytes": 749399
+    },
+    {
+      "path": "results/scorer-controls.json",
+      "original_sha256": "581444ce11b3e8b3269de7034766d7f9a97ad98c34eeadc37bf437bebcf52890",
+      "public_sha256": "581444ce11b3e8b3269de7034766d7f9a97ad98c34eeadc37bf437bebcf52890",
+      "public_bytes": 10000
+    },
+    {
+      "path": "results/report.json",
+      "original_sha256": "6f88d6d2402a5fe01824291c1943ba8d7f199816f9ea33daed48a5234e1377e4",
+      "public_sha256": "6f88d6d2402a5fe01824291c1943ba8d7f199816f9ea33daed48a5234e1377e4",
+      "public_bytes": 7575
+    },
+    {
+      "path": "tested-source/audit_agentrobustbench.py",
+      "original_sha256": "7e77b572779e2d4145b32976f9514154b9422bd9cf9aacd91f051dfa9e2b0549",
+      "public_sha256": "7e77b572779e2d4145b32976f9514154b9422bd9cf9aacd91f051dfa9e2b0549",
+      "public_bytes": 8395
+    },
+    {
+      "path": "tested-source/official-scorer.py.txt",
+      "original_sha256": "ddaf243edee6641a9610c8593ef9e8e38f633a633fc5aec937727a5cd3562d6b",
+      "public_sha256": "ddaf243edee6641a9610c8593ef9e8e38f633a633fc5aec937727a5cd3562d6b",
+      "public_bytes": 18960
+    },
+    {
+      "path": "UPSTREAM_LICENSE",
+      "original_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "public_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "public_bytes": 11358
+    }
+  ]
+}
