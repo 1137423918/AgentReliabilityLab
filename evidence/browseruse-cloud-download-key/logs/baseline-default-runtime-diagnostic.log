@@ -1,0 +1,14 @@
+F                                                                        [100%]
+=================================== FAILURES ===================================
+___________________ test_run_starts_and_stops_cloud_browser ____________________
+tests/ci/test_browser.py:126: in test_run_starts_and_stops_cloud_browser
+    assert result.final_result() == 'ok'
+E   AssertionError: assert None == 'ok'
+E    +  where None = final_result()
+E    +    where final_result = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).final_result
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [RUN]/pytest-of-wjz26/pytest-0/test_run_starts_and_stops_clou0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+=========================== short test summary info ============================
+FAILED tests/ci/test_browser.py::test_run_starts_and_stops_cloud_browser - As...
+1 failed in 3.11s

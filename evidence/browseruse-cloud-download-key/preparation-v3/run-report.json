@@ -1,0 +1,77 @@
+{
+  "terminal": true,
+  "protocol_sha256": "489b03939ebd2df9de9b3a8ce6d24460421898ed84be052676ae95dea803d5cd",
+  "phases": [
+    {
+      "name": "git-init-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.569,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.565,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-init-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.588,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.574,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "dependency-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 14.173,
+      "peak_owned_RSS_bytes": 124796928
+    },
+    {
+      "name": "pre-commit-initial",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 135.613,
+      "peak_owned_RSS_bytes": 249585664
+    },
+    {
+      "name": "pre-commit-confirm",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 6.267,
+      "peak_owned_RSS_bytes": 61276160
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "active_phase": "pre-commit-confirm",
+  "error": {
+    "type": "AssertionError",
+    "message": "pre-commit-confirm"
+  },
+  "owned_after": 0,
+  "wall_seconds": 160.475,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": false
+}

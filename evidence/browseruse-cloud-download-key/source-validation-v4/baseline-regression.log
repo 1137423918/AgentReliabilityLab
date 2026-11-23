@@ -1,0 +1,74 @@
+FFF                                                                      [100%]
+=================================== FAILURES ===================================
+___ test_cloud_downloads_use_the_creation_key_after_the_model_changes[list] ____
+tests/ci/test_login.py:703: in test_cloud_downloads_use_the_creation_key_after_the_model_changes
+    assert await browser.list_downloads() == [
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:1265: in list_downloads
+    page = await asyncio.to_thread(_cloud, q)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/threads.py:25: in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/concurrent/futures/thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:221: in _cloud
+    headers={'X-Browser-Use-API-Key': key or browser_use_api_key(gate='cloud_browser'), 'Content-Type': 'application/json'},
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/auth.py:213: in browser_use_api_key
+    return _stored_api_key(what, gate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/auth.py:241: in _stored_api_key
+    raise MissingAPIKeyError(what, gate=gate)
+E   browser_use.exceptions.MissingAPIKeyError: Browser Use Cloud needs a Browser Use API key. Sign in once: `browser-use login` (over SSH or in a container: `browser-use login --device-code`).
+E   Or export BROWSER_USE_API_KEY with a key from https://cloud.browser-use.com/new-api-key
+E   No key: browser=Browser('chromium') runs a local browser instead.
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.browser.browser] Browser Use cloud browser b1 (us proxy, billed until it stops). Browser('chromium') runs a local one.
+___ test_cloud_downloads_use_the_creation_key_after_the_model_changes[copy] ____
+tests/ci/test_login.py:707: in test_cloud_downloads_use_the_creation_key_after_the_model_changes
+    files = await (
+browser_use/browser/browser.py:1306: in download_files
+    page = await asyncio.to_thread(_cloud, q)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/threads.py:25: in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/concurrent/futures/thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:221: in _cloud
+    headers={'X-Browser-Use-API-Key': key or browser_use_api_key(gate='cloud_browser'), 'Content-Type': 'application/json'},
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/auth.py:213: in browser_use_api_key
+    return _stored_api_key(what, gate)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/auth.py:241: in _stored_api_key
+    raise MissingAPIKeyError(what, gate=gate)
+E   browser_use.exceptions.MissingAPIKeyError: Browser Use Cloud needs a Browser Use API key. Sign in once: `browser-use login` (over SSH or in a container: `browser-use login --device-code`).
+E   Or export BROWSER_USE_API_KEY with a key from https://cloud.browser-use.com/new-api-key
+E   No key: browser=Browser('chromium') runs a local browser instead.
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.browser.browser] Browser Use cloud browser b1 (us proxy, billed until it stops). Browser('chromium') runs a local one.
+___ test_cloud_downloads_use_the_creation_key_after_the_model_changes[stop] ____
+tests/ci/test_login.py:711: in test_cloud_downloads_use_the_creation_key_after_the_model_changes
+    assert {p.name: p.read_bytes() for p in files} == expected
+E   AssertionError: assert {} == {'after.csv':...v': b'second'}
+E     
+E     Right contains 3 more items:
+E     {'after.csv': b'after', 'before.csv': b'before', 'second.csv': b'second'}
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.browser.browser] Browser Use cloud browser b1 (us proxy, billed until it stops). Browser('chromium') runs a local one.
+WARNING  [browser_use.browser.browser] Could not fetch cloud browser downloads: Browser Use Cloud needs a Browser Use API key. Sign in once: `browser-use login` (over SSH or in a container: `browser-use login --device-code`).
+Or export BROWSER_USE_API_KEY with a key from https://cloud.browser-use.com/new-api-key
+No key: browser=Browser('chromium') runs a local browser instead.
+WARNING  [browser_use.browser.browser] Could not fetch cloud browser downloads: Browser Use Cloud needs a Browser Use API key. Sign in once: `browser-use login` (over SSH or in a container: `browser-use login --device-code`).
+Or export BROWSER_USE_API_KEY with a key from https://cloud.browser-use.com/new-api-key
+No key: browser=Browser('chromium') runs a local browser instead.
+=========================== short test summary info ============================
+FAILED tests/ci/test_login.py::test_cloud_downloads_use_the_creation_key_after_the_model_changes[list]
+FAILED tests/ci/test_login.py::test_cloud_downloads_use_the_creation_key_after_the_model_changes[copy]
+FAILED tests/ci/test_login.py::test_cloud_downloads_use_the_creation_key_after_the_model_changes[stop]
+3 failed, 33 deselected in 3.09s

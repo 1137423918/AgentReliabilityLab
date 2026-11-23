@@ -1,0 +1,938 @@
+.....F.............F....F......F..............................FFFFFF.F.. [ 45%]
+.FFFFFFFFF...........FFFFFFFFFF..FFFFFFFFF....FFFFFFF.FF................ [ 90%]
+.FFF...F.FF...FF                                                         [100%]
+=================================== FAILURES ===================================
+____________________ test_missing_key_names_the_one_command ____________________
+tests/ci/test_login.py:228: in test_missing_key_names_the_one_command
+    assert 'Run `browser-use login`' in result.stderr and 'Traceback' not in result.stderr
+E   AssertionError: assert ('Run `browser-use login`' in 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.\n')
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.\n' = CompletedProcess(args=['[NODE_WORKSPACE]/candidate/.venv/bin/python', '-m', 'browser...), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.\n').stderr
+____ test_mcp_browser_login_finishes_across_calls_and_never_returns_the_key ____
+tests/ci/test_login.py:383: in test_mcp_browser_login_finishes_across_calls_and_never_returns_the_key
+    assert cli_mcp.LOGIN_HINT in output
+E   AssertionError: assert 'Not signed in to Browser Use Cloud. Call the browser_login tool (it opens the browser to approve), then retry.' in 'Error: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.\n'
+E    +  where 'Not signed in to Browser Use Cloud. Call the browser_login tool (it opens the browser to approve), then retry.' = <module 'browser_use.mcp.cli_mcp' from '[NODE_WORKSPACE]/candidate/browser_use/mcp/cli_mcp.py'>.LOGIN_HINT
+___ test_a_key_with_whitespace_inside_never_appears_in_an_error_or_the_store ___
+tests/ci/test_login.py:477: in test_a_key_with_whitespace_inside_never_appears_in_an_error_or_the_store
+    assert 'line break' in str(raised.value) and FAKE_KEY[:20] not in str(raised.value)
+E   AssertionError: assert ('line break' in 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.')
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.' = str(CloudBrowserError('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.'))
+E    +    where CloudBrowserError('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.') = <ExceptionInfo CloudBrowserError('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by anot...could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.') tblen=4>.value
+_______ test_the_cloud_browser_uses_the_key_the_gateway_model_was_given ________
+tests/ci/test_login.py:626: in test_the_cloud_browser_uses_the_key_the_gateway_model_was_given
+    await agent.browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+
+During handling of the above exception, another exception occurred:
+tests/ci/test_login.py:625: in test_the_cloud_browser_uses_the_key_the_gateway_model_was_given
+    with pytest.raises(RuntimeError, match='HTTP 402'):  # past the key check: the create call carried the model's key
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'HTTP 402'
+E     Actual message: 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.'
+___________________ test_run_starts_and_stops_cloud_browser ____________________
+tests/ci/test_browser.py:126: in test_run_starts_and_stops_cloud_browser
+    assert result.final_result() == 'ok'
+E   AssertionError: assert None == 'ok'
+E    +  where None = final_result()
+E    +    where final_result = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).final_result
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_run_starts_and_stops_clou0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_________________ test_keep_alive_leaves_cloud_browser_running _________________
+tests/ci/test_browser.py:140: in test_keep_alive_leaves_cloud_browser_running
+    assert stops(cloud) == [] and browser in browser_mod._LIVE  # atexit/SIGTERM would still stop it
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   assert ([] == []
+E     
+E     Use -v to get more diff and <browser_use.browser.browser.Browser object at 0x7f6bd8bd2a50> in set())
+E    +  where set() = browser_mod._LIVE
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_keep_alive_leaves_cloud_b0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser[kill] _
+tests/ci/test_browser.py:155: in test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser
+    assert stops(cloud) == ['/browsers/b1'] and not browser_mod._LIVE
+E   AssertionError: assert ([] == ['/browsers/b1']
+E     
+E     Right contains one more item: '/browsers/b1'
+E     Use -v to get more diff)
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_the_0x_kill_and_close_at_0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser[close] _
+tests/ci/test_browser.py:155: in test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser
+    assert stops(cloud) == ['/browsers/b1'] and not browser_mod._LIVE
+E   AssertionError: assert ([] == ['/browsers/b1']
+E     
+E     Right contains one more item: '/browsers/b1'
+E     Use -v to get more diff)
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_the_0x_kill_and_close_at_1)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_________ test_keep_alive_cloud_downloads_land_in_each_runs_workspace __________
+tests/ci/test_browser.py:175: in test_keep_alive_cloud_downloads_land_in_each_runs_workspace
+    assert results[0].downloads == [tmp_path / 'a' / 'downloads' / 'report.csv']
+E   AssertionError: assert [] == [PosixPath('/.../report.csv')]
+E     
+E     Right contains one more item: PosixPath('[NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_keep_alive_cloud_download0/a/downloads/report.csv')
+E     Use -v to get more diff
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_keep_alive_cloud_download0/a)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_keep_alive_cloud_download0/b)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_a_socket_path_too_long_for_the_os_names_the_path_before_anything_starts _
+tests/ci/test_browser.py:193: in test_a_socket_path_too_long_for_the_os_names_the_path_before_anything_starts
+    await Browser().start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+
+During handling of the above exception, another exception occurred:
+tests/ci/test_browser.py:192: in test_a_socket_path_too_long_for_the_os_names_the_path_before_anything_starts
+    with pytest.raises(RuntimeError, match=r'socket path is \d+ bytes, over the 10\d-byte limit.*BH_RUNTIME_DIR') as raised:
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'socket path is \\d+ bytes, over the 10\\d-byte limit.*BH_RUNTIME_DIR'
+E     Actual message: 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.'
+_ test_a_rejected_provider_key_or_unknown_model_never_creates_a_cloud_browser __
+tests/ci/test_browser.py:243: in test_a_rejected_provider_key_or_unknown_model_never_creates_a_cloud_browser
+    assert (await Agent('t', model, browser=Browser(), workspace=tmp_path).run()).final_result() == 'ok'
+E   AssertionError: assert None == 'ok'
+E    +  where None = final_result()
+E    +    where final_result = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).final_result
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_rejected_provider_key_o0)
+ERROR    [browser_use.agent.service] openai rejected the API key (401): Incorrect API key provided. No browser was started.
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_rejected_provider_key_o0)
+ERROR    [browser_use.agent.service] claude-nonexistent-9 is not a model this anthropic key can use (404): model: claude-nonexistent-9. No browser was started.
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_rejected_provider_key_o0)
+ERROR    [browser_use.agent.service] gemini-nonexistent-9 is not a model this google key can use (404): Model is not found. No browser was started.
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_rejected_provider_key_o0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape[create] _
+tests/ci/test_browser.py:385: in test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape
+    assert result.status == 'error' and ('HTTP 402' if fails == 'create' else 'could not attach') in (result.error or '')
+E   AssertionError: assert ('error' == 'error'
+E     
+E       error and 'HTTP 402' in (('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.')))
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.' = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).error
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_cloud_browser_that_fail0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape[attach] _
+tests/ci/test_browser.py:385: in test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape
+    assert result.status == 'error' and ('HTTP 402' if fails == 'create' else 'could not attach') in (result.error or '')
+E   AssertionError: assert ('error' == 'error'
+E     
+E       error and 'could not attach' in (('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.')))
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.' = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).error
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_cloud_browser_that_fail1)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________ test_a_profile_name_that_matches_none_raises_from_run[chrome] _________
+tests/ci/test_browser.py:410: in test_a_profile_name_that_matches_none_raises_from_run
+    with pytest.raises(ValueError, match="No Chrome profiles match 'Gaming'.*'Personal'" if kind == 'chrome' else 'Gaming'):
+E   Failed: DID NOT RAISE <class 'ValueError'>
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_profile_name_that_match0/w)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_________ test_a_profile_name_that_matches_none_raises_from_run[cloud] _________
+tests/ci/test_browser.py:410: in test_a_profile_name_that_matches_none_raises_from_run
+    with pytest.raises(ValueError, match="No Chrome profiles match 'Gaming'.*'Personal'" if kind == 'chrome' else 'Gaming'):
+E   Failed: DID NOT RAISE <class 'ValueError'>
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_profile_name_that_match1/w)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+__________ test_a_reattach_waiting_on_a_stop_never_creates_a_browser ___________
+tests/ci/test_browser.py:421: in test_a_reattach_waiting_on_a_stop_never_creates_a_browser
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___________________ test_restarted_browser_is_stopped_again ____________________
+tests/ci/test_browser.py:435: in test_restarted_browser_is_stopped_again
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_____ test_a_kept_alive_cloud_browser_that_ended_between_runs_is_replaced ______
+tests/ci/test_browser.py:457: in test_a_kept_alive_cloud_browser_that_ended_between_runs_is_replaced
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____________________ test_start_is_idempotent_while_running ____________________
+tests/ci/test_browser.py:469: in test_start_is_idempotent_while_running
+    assert await browser.start() == await browser.start()
+           ^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___________________ test_atexit_cleanup_stops_live_browsers ____________________
+tests/ci/test_browser.py:478: in test_atexit_cleanup_stops_live_browsers
+    asyncio.run(browser.start())
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/base_events.py:653: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_live_view_prints_by_default_and_opens_only_when_requested[options0-True-False] _
+tests/ci/test_browser.py:527: in test_live_view_prints_by_default_and_opens_only_when_requested
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_live_view_prints_by_default_and_opens_only_when_requested[options1-True-True] _
+tests/ci/test_browser.py:527: in test_live_view_prints_by_default_and_opens_only_when_requested
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_live_view_prints_by_default_and_opens_only_when_requested[options2-False-False] _
+tests/ci/test_browser.py:527: in test_live_view_prints_by_default_and_opens_only_when_requested
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_unwritable_live_view_output_does_not_fail_browser_start[BrokenPipeError] _
+tests/ci/test_browser.py:542: in test_unwritable_live_view_output_does_not_fail_browser_start
+    env = await browser.start()
+          ^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___ test_unwritable_live_view_output_does_not_fail_browser_start[ValueError] ___
+tests/ci/test_browser.py:542: in test_unwritable_live_view_output_does_not_fail_browser_start
+    env = await browser.start()
+          ^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+______________ test_cancelled_start_still_stops_the_cloud_browser ______________
+tests/ci/test_browser.py:568: in test_cancelled_start_still_stops_the_cloud_browser
+    await task
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+______________ test_failed_stop_keeps_the_browser_owned_for_retry ______________
+tests/ci/test_browser.py:584: in test_failed_stop_keeps_the_browser_owned_for_retry
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_________________ test_a_cloud_browser_start_is_logged_at_info _________________
+tests/ci/test_browser.py:599: in test_a_cloud_browser_start_is_logged_at_info
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___ test_the_cloud_browser_id_is_never_logged_whole_or_put_in_a_command_line ___
+tests/ci/test_browser.py:633: in test_the_cloud_browser_id_is_never_logged_whole_or_put_in_a_command_line
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_____________ test_downloads_lists_a_cloud_browsers_finished_files _____________
+tests/ci/test_browser.py:663: in test_downloads_lists_a_cloud_browsers_finished_files
+    assert result.final_result() == 'ok', result.error
+E   AssertionError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+E   assert None == 'ok'
+E    +  where None = final_result()
+E    +    where final_result = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).final_result
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_downloads_lists_a_cloud_b0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+__________________ test_concurrent_starts_create_one_browser ___________________
+tests/ci/test_browser.py:701: in test_concurrent_starts_create_one_browser
+    a, b = await asyncio.gather(browser.start(), browser.start())
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+__________________ test_downloads_are_listed_before_the_stop ___________________
+tests/ci/test_browser.py:710: in test_downloads_are_listed_before_the_stop
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________ test_restart_during_stop_waits_and_keeps_the_new_browser_owned ________
+tests/ci/test_browser.py:747: in test_restart_during_stop_waits_and_keeps_the_new_browser_owned
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_______ test_cancelled_download_collection_still_stops_the_cloud_browser _______
+tests/ci/test_browser.py:769: in test_cancelled_download_collection_still_stops_the_cloud_browser
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___________________ test_hung_download_never_holds_the_stop ____________________
+tests/ci/test_browser.py:789: in test_hung_download_never_holds_the_stop
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____ test_a_download_that_keeps_failing_holds_the_stop_one_deadline_in_all _____
+tests/ci/test_browser.py:812: in test_a_download_that_keeps_failing_holds_the_stop_one_deadline_in_all
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________________ test_failed_download_is_retried_after_the_stop ________________
+tests/ci/test_browser.py:838: in test_failed_download_is_retried_after_the_stop
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_________ test_stop_waits_for_a_running_download_and_its_cloud_listing _________
+tests/ci/test_browser.py:882: in test_stop_waits_for_a_running_download_and_its_cloud_listing
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___________ test_stop_waits_for_a_download_only_the_daemon_saw_begin ___________
+tests/ci/test_browser.py:909: in test_stop_waits_for_a_download_only_the_daemon_saw_begin
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+___________ test_a_cancelled_run_never_waits_for_a_running_download ____________
+tests/ci/test_browser.py:1010: in test_a_cancelled_run_never_waits_for_a_running_download
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_______ test_start_after_a_cancelled_stop_never_overlaps_its_stop_thread _______
+tests/ci/test_browser.py:1045: in test_start_after_a_cancelled_stop_never_overlaps_its_stop_thread
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_______________ test_sigterm_during_exit_cleanup_never_deadlocks _______________
+tests/ci/test_browser.py:1076: in test_sigterm_during_exit_cleanup_never_deadlocks
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____ test_local_start_is_bounded_when_chrome_never_allows_remote_debugging _____
+tests/ci/test_browser.py:1100: in test_local_start_is_bounded_when_chrome_never_allows_remote_debugging
+    await Browser('chrome').start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:904: in _start
+    _check_runtime_dir()  # before anything connects to the default daemon's socket in it
+    ^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+
+During handling of the above exception, another exception occurred:
+tests/ci/test_browser.py:1099: in test_local_start_is_bounded_when_chrome_never_allows_remote_debugging
+    with pytest.raises(RuntimeError, match='did not allow remote debugging within 120s'):
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'did not allow remote debugging within 120s'
+E     Actual message: 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.'
+_ test_cloud_create_past_its_deadline_stays_owned_and_is_stopped_when_it_lands _
+tests/ci/test_browser.py:1122: in test_cloud_create_past_its_deadline_stays_owned_and_is_stopped_when_it_lands
+    await asyncio.wait_for(browser.start(), 5)
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/tasks.py:479: in wait_for
+    return fut.result()
+           ^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+
+During handling of the above exception, another exception occurred:
+tests/ci/test_browser.py:1121: in test_cloud_create_past_its_deadline_stays_owned_and_is_stopped_when_it_lands
+    with pytest.raises(RuntimeError, match='did not create a browser within'):
+E   AssertionError: Regex pattern did not match.
+E     Expected regex: 'did not create a browser within'
+E     Actual message: 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.'
+______________________ test_stop_reaps_the_cloud_watchdog ______________________
+tests/ci/test_browser.py:1137: in test_stop_reaps_the_cloud_watchdog
+    await b.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_______ test_cancel_while_the_repl_closes_still_stops_the_cloud_browser ________
+tests/ci/test_browser.py:1158: in test_cancel_while_the_repl_closes_still_stops_the_cloud_browser
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________________ test_slow_download_thread_ends_at_the_deadline ________________
+tests/ci/test_browser.py:1223: in test_slow_download_thread_ends_at_the_deadline
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________________ test_downloads_never_overwrite_an_earlier_file ________________
+tests/ci/test_browser.py:1243: in test_downloads_never_overwrite_an_earlier_file
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+________________ test_live_and_cdp_urls_are_cleared_after_stop _________________
+tests/ci/test_browser.py:1330: in test_live_and_cdp_urls_are_cleared_after_stop
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+______ test_download_with_a_name_too_long_for_the_filesystem_is_shortened ______
+tests/ci/test_browser.py:1346: in test_download_with_a_name_too_long_for_the_filesystem_is_shortened
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____________ test_a_json_page_the_cloud_browser_saved_is_not_copied ____________
+tests/ci/test_browser.py:1383: in test_a_json_page_the_cloud_browser_saved_is_not_copied
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____ test_json_copies_are_numbered_across_every_agent_on_one_cloud_browser _____
+tests/ci/test_browser.py:1463: in test_json_copies_are_numbered_across_every_agent_on_one_cloud_browser
+    asyncio.run(browser.start())
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/runners.py:190: in run
+    return runner.run(main)
+           ^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/runners.py:118: in run
+    return self._loop.run_until_complete(task)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[SERVER_HOME]/anaconda3/lib/python3.11/asyncio/base_events.py:653: in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+____________________ test_cloud_daemon_knows_its_browser_id ____________________
+tests/ci/test_browser.py:1504: in test_cloud_daemon_knows_its_browser_id
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+__ test_a_daemon_that_acknowledged_shutdown_already_stopped_the_cloud_browser __
+tests/ci/test_browser.py:1518: in test_a_daemon_that_acknowledged_shutdown_already_stopped_the_cloud_browser
+    await browser.start()
+browser_use/browser/browser.py:705: in start
+    return await self._start_locked(replace_gone_cloud=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:712: in _start_locked
+    env = await self._start()
+          ^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:940: in _start
+    _check_socket_path(self.name)  # before a cloud browser is created and billed
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+browser_use/browser/browser.py:462: in _check_socket_path
+    _check_runtime_dir()
+browser_use/browser/browser.py:447: in _check_runtime_dir
+    raise RuntimeError(
+E   RuntimeError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_a_cdp_url_nothing_answers_on_names_the_cdp_url[http://127.0.0.1:{port}] _
+tests/ci/test_browser.py:1587: in test_a_cdp_url_nothing_answers_on_names_the_cdp_url
+    assert 'cdp_url' in (result.error or '') and f'127.0.0.1:{port}' in result.error, result.error
+E   AssertionError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+E   assert ('cdp_url' in (('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.')))
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.' = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).error
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_cdp_url_nothing_answers0)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+_ test_a_cdp_url_nothing_answers_on_names_the_cdp_url[ws://127.0.0.1:{port}/devtools/browser/x?token=s3cret] _
+tests/ci/test_browser.py:1587: in test_a_cdp_url_nothing_answers_on_names_the_cdp_url
+    assert 'cdp_url' in (result.error or '') and f'127.0.0.1:{port}' in result.error, result.error
+E   AssertionError: The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+E   assert ('cdp_url' in (('The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.')))
+E    +  where 'The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.' = AgentHistoryList(status='error', success=None, text='', steps=0, duration_s=0.0, cost_usd=0.0, usage={'input': 0, 'out...r its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.', messages=<0 messages>).error
+----------------------------- Captured stderr call -----------------------------
+INFO     [browser_use.agent.service] Task: t (workspace [NODE_WORKSPACE]/pytest-of-wjz26/pytest-2/test_a_cdp_url_nothing_answers1)
+ERROR    [browser_use.agent.service] The browser-harness dir [SERVER_HOME]/.config/browser-harness/runtime is owned by another user (mode 700), who could take over its daemon. Use a dir only you can write to: set BH_RUNTIME_DIR to a new path such as ~/.bh.
+=========================== short test summary info ============================
+FAILED tests/ci/test_login.py::test_missing_key_names_the_one_command - Asser...
+FAILED tests/ci/test_login.py::test_mcp_browser_login_finishes_across_calls_and_never_returns_the_key
+FAILED tests/ci/test_login.py::test_a_key_with_whitespace_inside_never_appears_in_an_error_or_the_store
+FAILED tests/ci/test_login.py::test_the_cloud_browser_uses_the_key_the_gateway_model_was_given
+FAILED tests/ci/test_browser.py::test_run_starts_and_stops_cloud_browser - As...
+FAILED tests/ci/test_browser.py::test_keep_alive_leaves_cloud_browser_running
+FAILED tests/ci/test_browser.py::test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser[kill]
+FAILED tests/ci/test_browser.py::test_the_0x_kill_and_close_at_the_end_of_a_keep_alive_script_stop_the_browser[close]
+FAILED tests/ci/test_browser.py::test_keep_alive_cloud_downloads_land_in_each_runs_workspace
+FAILED tests/ci/test_browser.py::test_a_socket_path_too_long_for_the_os_names_the_path_before_anything_starts
+FAILED tests/ci/test_browser.py::test_a_rejected_provider_key_or_unknown_model_never_creates_a_cloud_browser
+FAILED tests/ci/test_browser.py::test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape[create]
+FAILED tests/ci/test_browser.py::test_a_cloud_browser_that_fails_to_start_returns_the_preflight_error_shape[attach]
+FAILED tests/ci/test_browser.py::test_a_profile_name_that_matches_none_raises_from_run[chrome]
+FAILED tests/ci/test_browser.py::test_a_profile_name_that_matches_none_raises_from_run[cloud]
+FAILED tests/ci/test_browser.py::test_a_reattach_waiting_on_a_stop_never_creates_a_browser
+FAILED tests/ci/test_browser.py::test_restarted_browser_is_stopped_again - Ru...
+FAILED tests/ci/test_browser.py::test_a_kept_alive_cloud_browser_that_ended_between_runs_is_replaced
+FAILED tests/ci/test_browser.py::test_start_is_idempotent_while_running - Run...
+FAILED tests/ci/test_browser.py::test_atexit_cleanup_stops_live_browsers - Ru...
+FAILED tests/ci/test_browser.py::test_live_view_prints_by_default_and_opens_only_when_requested[options0-True-False]
+FAILED tests/ci/test_browser.py::test_live_view_prints_by_default_and_opens_only_when_requested[options1-True-True]
+FAILED tests/ci/test_browser.py::test_live_view_prints_by_default_and_opens_only_when_requested[options2-False-False]
+FAILED tests/ci/test_browser.py::test_unwritable_live_view_output_does_not_fail_browser_start[BrokenPipeError]
+FAILED tests/ci/test_browser.py::test_unwritable_live_view_output_does_not_fail_browser_start[ValueError]
+FAILED tests/ci/test_browser.py::test_cancelled_start_still_stops_the_cloud_browser
+FAILED tests/ci/test_browser.py::test_failed_stop_keeps_the_browser_owned_for_retry
+FAILED tests/ci/test_browser.py::test_a_cloud_browser_start_is_logged_at_info
+FAILED tests/ci/test_browser.py::test_the_cloud_browser_id_is_never_logged_whole_or_put_in_a_command_line
+FAILED tests/ci/test_browser.py::test_downloads_lists_a_cloud_browsers_finished_files
+FAILED tests/ci/test_browser.py::test_concurrent_starts_create_one_browser - ...
+FAILED tests/ci/test_browser.py::test_downloads_are_listed_before_the_stop - ...
+FAILED tests/ci/test_browser.py::test_restart_during_stop_waits_and_keeps_the_new_browser_owned
+FAILED tests/ci/test_browser.py::test_cancelled_download_collection_still_stops_the_cloud_browser
+FAILED tests/ci/test_browser.py::test_hung_download_never_holds_the_stop - Ru...
+FAILED tests/ci/test_browser.py::test_a_download_that_keeps_failing_holds_the_stop_one_deadline_in_all
+FAILED tests/ci/test_browser.py::test_failed_download_is_retried_after_the_stop
+FAILED tests/ci/test_browser.py::test_stop_waits_for_a_running_download_and_its_cloud_listing
+FAILED tests/ci/test_browser.py::test_stop_waits_for_a_download_only_the_daemon_saw_begin
+FAILED tests/ci/test_browser.py::test_a_cancelled_run_never_waits_for_a_running_download
+FAILED tests/ci/test_browser.py::test_start_after_a_cancelled_stop_never_overlaps_its_stop_thread
+FAILED tests/ci/test_browser.py::test_sigterm_during_exit_cleanup_never_deadlocks
+FAILED tests/ci/test_browser.py::test_local_start_is_bounded_when_chrome_never_allows_remote_debugging
+FAILED tests/ci/test_browser.py::test_cloud_create_past_its_deadline_stays_owned_and_is_stopped_when_it_lands
+FAILED tests/ci/test_browser.py::test_stop_reaps_the_cloud_watchdog - Runtime...
+FAILED tests/ci/test_browser.py::test_cancel_while_the_repl_closes_still_stops_the_cloud_browser
+FAILED tests/ci/test_browser.py::test_slow_download_thread_ends_at_the_deadline
+FAILED tests/ci/test_browser.py::test_downloads_never_overwrite_an_earlier_file
+FAILED tests/ci/test_browser.py::test_live_and_cdp_urls_are_cleared_after_stop
+FAILED tests/ci/test_browser.py::test_download_with_a_name_too_long_for_the_filesystem_is_shortened
+FAILED tests/ci/test_browser.py::test_a_json_page_the_cloud_browser_saved_is_not_copied
+FAILED tests/ci/test_browser.py::test_json_copies_are_numbered_across_every_agent_on_one_cloud_browser
+FAILED tests/ci/test_browser.py::test_cloud_daemon_knows_its_browser_id - Run...
+FAILED tests/ci/test_browser.py::test_a_daemon_that_acknowledged_shutdown_already_stopped_the_cloud_browser
+FAILED tests/ci/test_browser.py::test_a_cdp_url_nothing_answers_on_names_the_cdp_url[http://127.0.0.1:{port}]
+FAILED tests/ci/test_browser.py::test_a_cdp_url_nothing_answers_on_names_the_cdp_url[ws://127.0.0.1:{port}/devtools/browser/x?token=s3cret]
+56 failed, 104 passed in 56.55s

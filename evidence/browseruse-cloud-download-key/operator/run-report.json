@@ -1,0 +1,87 @@
+{
+  "terminal": true,
+  "protocol_sha256": "a52843922f437a9fe61f49d12044d371c6ce6336ee4283a4a006e8675f5d8610",
+  "phases": [
+    {
+      "name": "identity-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.149,
+      "peak_owned_RSS_bytes": 23068672
+    },
+    {
+      "name": "identity-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.582,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-default-runtime-diagnostic",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 9.539,
+      "peak_owned_RSS_bytes": 116613120
+    },
+    {
+      "name": "baseline-isolated-runtime-diagnostic",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.333,
+      "peak_owned_RSS_bytes": 142442496
+    },
+    {
+      "name": "candidate-related",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 57.261,
+      "peak_owned_RSS_bytes": 241782784
+    },
+    {
+      "name": "candidate-nonchrome",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 413.373,
+      "peak_owned_RSS_bytes": 349573120
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "inherited_same_source_checks": {
+    "source_protocol_sha256": "b343d5eec1b8dbb12bfdb8323a3e622624aac638adfc3c7cc2ce156856619d44",
+    "baseline_regression_failed": 3,
+    "candidate_regression_passed": 3,
+    "pre_commit_and_locked_static_checks_passed": true,
+    "old_related_failures_preserved": 56,
+    "old_related_passed": 104
+  },
+  "tested_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58"
+  },
+  "formatting_AST_unchanged": true,
+  "baseline_regression_test_sha256": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58",
+  "active_phase": "candidate-nonchrome",
+  "harness_runtime_isolation": {
+    "new_private_home": true,
+    "mode": "0o700",
+    "owned_by_current_user": true,
+    "security_checks_disabled": false
+  },
+  "ready": true,
+  "owned_after": 0,
+  "wall_seconds": 494.749,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": true
+}

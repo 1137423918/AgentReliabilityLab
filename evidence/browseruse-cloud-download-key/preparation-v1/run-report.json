@@ -1,0 +1,32 @@
+{
+  "terminal": true,
+  "protocol_sha256": "cae3e52d17323d220ecdfe381e023847ec44038a29d059107f7968a53c1fe819",
+  "phases": [
+    {
+      "name": "git-init-baseline",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 0.549,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "active_phase": "git-init-baseline",
+  "error": {
+    "type": "AssertionError",
+    "message": "git-init-baseline"
+  },
+  "owned_after": 0,
+  "wall_seconds": 0.829,
+  "final_source_sha256": {},
+  "lock_unchanged": false,
+  "source_unchanged_after_tests": false
+}

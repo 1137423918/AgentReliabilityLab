@@ -1,0 +1,23 @@
+# Browser Use: retain the cloud session key for downloads
+
+2026-11-24. Formal [PR #6521](https://github.com/browser-use/browser-use/pull/6521), open and unmerged at the [recorded snapshot](pr-state.json). Source `c881c18c60e95d3ef7393cab2b13bf48690cf2e9` against `753d629d76eb2b670f4cf467f3355bbe750f6845`; two changed upstream files. This is a concrete framework fix, not a model task score or production cloud validation.
+
+A browser created through `ChatBrowserUse(api_key=...)` can use that fallback key to create its cloud session while download-list requests omit it. With no environment/stored key, listing and copying fail, including the final copy after stop. A later agent using a different model clears the current model fallback; downloads must belong to the session's creation key. Both paginated listing paths now reuse that key. The synchronous stop retains it until the final collection finishes, and the asynchronous stop clears it when releasing the session. No new public API; credential precedence at session creation is unchanged.
+
+One parameterized regression covers listing, direct copy and stopping: actual request construction, key resolution, pagination, streaming writes, and a file listed only after stop. Only external cloud HTTP responses are mocked. Unchanged source fails all3; candidate passes all3 using identical formatted test bytes. [Baseline](source-validation-v4/baseline-regression.log), [candidate](source-validation-v4/candidate-regression.log), [exact candidate source](tested-source/candidate/browser_use/browser/browser.py), [regression](tested-source/candidate/tests/ci/test_login.py).
+
+| Server check | Result |
+| --- | --- |
+| Same3 regression cases | baseline3fail; candidate3pass |
+| Login and browser neighbors | 160 passed in 51.45s |
+| Complete non-Chrome CI selection | 967 passed, 3 skipped, 140 deselected, 1 warning in 405.91s (0:06:45) |
+| Required pre-commit hooks, including Pyright1.1.404 | pass |
+| Project-locked Ruff0.14.14/check+format and Pyright1.1.408 | pass |
+
+These scopes **overlap**; the3 regressions are included in the neighbors and broader selection. Skipped/deselected platform or browser cases are not passed tests. No real Chrome, paid provider or cloud browser is claimed. [Machine-readable result](report.json), [final controller](operator/run-report.json), [original source/static validation](source-validation-v4/run-report.json), [frozen Python lock](uv.lock).
+
+Initial preparation failures are retained verbatim: relative executable lookup, a GitHub HTTP/2 fetch failure, and Pyright's auto-selected Node missing `libatomic.so.1`. The successful source checks use verified official Node22.23.5/npm from an existing hash-checked archive, with process-local PATH/GitHTTP1 settings. No project dependency lock or system library was changed. The first broader run then failed56/passed104 because default harness runtime directories were owned by a different UID. This was not labeled a pre-existing source defect: an unchanged-base test reproduced the same ownership error, then passed with only a new owned0700short `BH_HOME`. The guard remains active, original directories are untouched, and source/static evidence is reused only after exact hash checks. [Original environment failure](source-validation-v4/candidate-related.log), [baseline diagnostic](logs/baseline-default-runtime-diagnostic.log), [isolated baseline](logs/baseline-isolated-runtime-diagnostic.log). Old failures are not rescored.
+
+All experiments ran on an authorized Linux CPU server with4CPU/nice19/32GiB address-space/4GiB sampled RSS and wall guards. Final owned processes0; [independent cleanup](cleanup.json). Tool caches/SDK were reused from terminal profiles, not old test outcomes. Local work was source editing, Git and metadata/AST/hash QA. The upstream native Actions state is separately recorded in the PR snapshot and is not inferred from these server checks. No review approval or merge is implied.
+
+Browser Use was chosen as a high-star independent small-team project; current [YC company profile](https://www.ycombinator.com/companies/browser-use) and [founder hiring description](https://www.ycombinator.com/companies/browser-use/jobs/jDXD9an-software-engineer) describe a roughly5–6person team. Contribution rules and all-state duplicate searches were reviewed before implementation; no issue, claim comment or duplicate PR was created. AI assistance is disclosed in the PR. Original source retains its [MIT notice](upstream-LICENSE.txt). [Export original/public hashes](export-manifest.json), [complete file inventory](artifacts.json).

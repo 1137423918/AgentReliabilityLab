@@ -1,0 +1,70 @@
+{
+  "terminal": true,
+  "protocol_sha256": "1f22cbe276e272964aa0e41df36a37811a2ac14a2584327cac80bbba3b54a8db",
+  "phases": [
+    {
+      "name": "git-init-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.693,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.531,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-init-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.575,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.934,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "dependency-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 25.078,
+      "peak_owned_RSS_bytes": 114716672
+    },
+    {
+      "name": "pre-commit-initial",
+      "exit_code": 3,
+      "guard": null,
+      "wall_seconds": 182.303,
+      "peak_owned_RSS_bytes": 49741824
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "active_phase": "pre-commit-initial",
+  "error": {
+    "type": "AssertionError",
+    "message": "pre-commit-initial"
+  },
+  "owned_after": 0,
+  "wall_seconds": 213.075,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "8190d462ecd705d1cb8f32104f879b823e0e18a635e5f34e7cfc35e6fbf01f42"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": false
+}

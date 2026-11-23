@@ -1,0 +1,190 @@
+{
+  "terminal": true,
+  "protocol_sha256": "b343d5eec1b8dbb12bfdb8323a3e622624aac638adfc3c7cc2ce156856619d44",
+  "phases": [
+    {
+      "name": "git-init-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.536,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.536,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-init-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.555,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-index-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.549,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "node-identity",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.542,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "npm-identity",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.54,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "dependency-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.68,
+      "peak_owned_RSS_bytes": 111259648
+    },
+    {
+      "name": "pre-commit-initial",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 30.282,
+      "peak_owned_RSS_bytes": 827969536
+    },
+    {
+      "name": "pre-commit-confirm",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 23.406,
+      "peak_owned_RSS_bytes": 816140288
+    },
+    {
+      "name": "project-ruff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.531,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "project-ruff-format",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.551,
+      "peak_owned_RSS_bytes": 2883584
+    },
+    {
+      "name": "project-pyright",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 20.579,
+      "peak_owned_RSS_bytes": 773320704
+    },
+    {
+      "name": "identity-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.19,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "identity-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.712,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "baseline-regression",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 8.418,
+      "peak_owned_RSS_bytes": 118702080
+    },
+    {
+      "name": "candidate-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 12.317,
+      "peak_owned_RSS_bytes": 119271424
+    },
+    {
+      "name": "candidate-related",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 63.118,
+      "peak_owned_RSS_bytes": 234606592
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "active_phase": "candidate-related",
+  "node_runtime": {
+    "node_sha256": "2f822d544601dfff107f57d945b649d15c5bf6302595735a6bd9cdc7ee9669bd",
+    "archive_sha256": "cdeb8670a0c81f51b4dc4ac61919f9b1ad917b304bf8221eb939570663d240f8",
+    "version": "v22.23.5",
+    "archive_bytes": 31062912,
+    "prior_report_sha256": "92dba839db4318f03fd2488beb4a7912214d16a260372873a63d094a7731f635",
+    "read_only": true
+  },
+  "tool_caches_reused_from_terminal_v3": true,
+  "tested_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58"
+  },
+  "formatting_AST_unchanged": true,
+  "baseline_regression_test_sha256": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58",
+  "identity_baseline": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "browser_module": "[NODE_WORKSPACE]/baseline/browser_use/browser/browser.py",
+    "versions": {
+      "browser-use": "1.0.8",
+      "browser-harness": "0.1.13",
+      "pydantic": "2.14.3",
+      "pydantic-ai-slim": "2.66.0",
+      "mcp": "2.3.0",
+      "pytest": "9.0.2",
+      "ruff": "0.14.14",
+      "pyright": "1.1.408"
+    }
+  },
+  "identity_candidate": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "browser_module": "[NODE_WORKSPACE]/candidate/browser_use/browser/browser.py",
+    "versions": {
+      "browser-use": "1.0.8",
+      "browser-harness": "0.1.13",
+      "pydantic": "2.14.3",
+      "pydantic-ai-slim": "2.66.0",
+      "mcp": "2.3.0",
+      "pytest": "9.0.2",
+      "ruff": "0.14.14",
+      "pyright": "1.1.408"
+    }
+  },
+  "error": {
+    "type": "AssertionError",
+    "message": "candidate-related"
+  },
+  "owned_after": 0,
+  "wall_seconds": 184.856,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+    "tests/ci/test_login.py": "b1ec07b0091449da0ea2601219fc942f36ebddd5ae5fae0437667ee9689efb58"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": true
+}

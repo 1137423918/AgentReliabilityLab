@@ -1,0 +1,83 @@
+[INFO] Initializing environment for https://github.com/asottile/yesqa.
+[INFO] Initializing environment for https://github.com/codespell-project/codespell.
+[INFO] Initializing environment for https://github.com/codespell-project/codespell:tomli.
+[INFO] Initializing environment for https://github.com/asottile/pyupgrade.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Initializing environment for https://github.com/RobertCraigie/pyright-python.
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Installing environment for https://github.com/asottile/yesqa.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/codespell-project/codespell.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/asottile/pyupgrade.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/RobertCraigie/pyright-python.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+Strip unnecessary `# noqa`s..............................................Passed
+codespell................................................................Passed
+pyupgrade................................................................Passed
+ruff check...............................................................Passed
+ruff format..............................................................Failed
+- hook id: ruff-format
+- files were modified by this hook
+
+1 file reformatted, 1 file left unchanged
+
+pyright..................................................................Failed
+- hook id: pyright
+- exit code: 1
+
+WARNING: there is a new pyright version available (v1.1.404 -> v1.1.414).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+ * Install prebuilt node (26.13.1) ..... done.
+node: error while loading shared libraries: libatomic.so.1: cannot open shared object file: No such file or directory
+Traceback (most recent call last):
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/bin/pyright", line 6, in <module>
+    sys.exit(entrypoint())
+             ^^^^^^^^^^^^
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/lib/python3.11/site-packages/pyright/cli.py", line 31, in entrypoint
+    sys.exit(main(sys.argv[1:]))
+             ^^^^^^^^^^^^^^^^^^
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/lib/python3.11/site-packages/pyright/cli.py", line 18, in main
+    return run(*args, **kwargs).returncode
+           ^^^^^^^^^^^^^^^^^^^^
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/lib/python3.11/site-packages/pyright/cli.py", line 22, in run
+    pkg_dir = install_pyright(args, quiet=None)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/lib/python3.11/site-packages/pyright/_utils.py", line 69, in install_pyright
+    node.run(
+  File "[NODE_WORKSPACE]/cache/pre-commit/repovko9hvpy/py_env-python3.11/lib/python3.11/site-packages/pyright/node.py", line 173, in run
+    subprocess.run(node_args, env=env, **kwargs),
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[SERVER_HOME]/anaconda3/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['[NODE_WORKSPACE]/cache/pyright-python/nodeenv/bin/npm', 'install', 'pyright@1.1.404']' returned non-zero exit status 127.
+
+check python ast.........................................................Passed
+check toml...........................................(no files to check)Skipped
+check yaml...........................................(no files to check)Skipped
+check json...........................................(no files to check)Skipped
+check for merge conflicts................................................Passed
+check for broken symlinks............................(no files to check)Skipped
+detect destroyed symlinks................................................Passed
+check for case conflicts.................................................Passed
+check illegal windows names..........................(no files to check)Skipped
+check that scripts with shebangs are executable..........................Passed
+mixed line ending........................................................Passed
+fix utf-8 byte order marker..............................................Passed
+fix end of files.........................................................Passed
+detect private key.......................................................Passed
+debug statements (python)................................................Passed
+forbid submodules....................................(no files to check)Skipped
+check for added large files..............................................Passed

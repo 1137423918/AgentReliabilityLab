@@ -52,6 +52,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 | 上游 PR | 修复对象 |
 | --- | --- |
+| [Browser Use #6521](https://github.com/browser-use/browser-use/pull/6521) | 让云浏览器的分页下载查询和停止后补收沿用创建该会话的密钥 |
 | [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562) | 清理已结束的 MCP 会话注册，并保护已有连接与正在启动的传输 |
 | [OpenHands #7032](https://github.com/OpenHands/software-agent-sdk/pull/7032) | 撤销写入失败后保留可重试的编辑历史 |
 | [OpenHands #7050](https://github.com/OpenHands/software-agent-sdk/pull/7050) | 拒绝指向源文件自身的移动，避免删除源文件 |
@@ -61,6 +62,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 | [Agent Lightning #707](https://github.com/microsoft/agent-lightning/pull/707) | 删除后复用 rollout ID 时保留正确的完成分页与游标 |
 
 2026-11-23 跟进时原六条 PR 均为正式待审，尚未合并。OpenHands 两条仍需符合上游就绪政策的关联 issue；Agent Lightning 的 Actions 需要维护者批准运行。ADK 合入新主干后的当前提交已在 Python3.11 / 3.13 复验相关集合，每版2021通过、26预期失败；[本次日志与源码哈希](evidence/pr-followup-2026-11-23/adk-validation.json)。这些范围不等于完整上游 CI。后续新贡献优先独立开发者与小团队维护的活跃高星 Agent 项目。
+
+新增[Browser Use 云会话下载修复证据](evidence/browseruse-cloud-download-key/README.md)：同一三入口回归原版失败、修复后通过，分页和停止后补收均保留会话授权；相邻与完整非Chrome检查通过，范围和跳过项单列。已正式提交#6521，未合并，服务器结果不等于上游CI通过。
 
 新增[VoltAgent MCP 连接归属修复证据](evidence/voltagent-mcp-connection-ownership/README.md)：按审查补上会话清理和连接归属保护；拒绝第二次连接时保留已连接或正在启动的传输。上一版在同一组11项生命周期测试中2项失败，修复后11项及完整MCP包26项通过，源码与两份新增测试的严格类型检查、构建通过。保留[前一轮清理记录](evidence/voltagent-mcp-cleanup/README.md)；#1562为正式待审，服务器检查不等于上游CI通过。
 

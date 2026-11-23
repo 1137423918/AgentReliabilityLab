@@ -1,0 +1,165 @@
+"""Frozen Browser Use download-key regression and required server checks."""
+from pathlib import Path, PurePosixPath
+import ast
+import hashlib
+import json
+import os
+import shutil
+import signal
+import subprocess
+import tarfile
+import tempfile
+import time
+
+OUT=Path(__file__).resolve().parent
+spec=json.loads((OUT/'protocol.json').read_text())
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+assert not (OUT/'run-report.json').exists()
+assert sha(OUT/'run_cpu.py')==spec['controller_sha256'] and sha(OUT/'exec_child.py')==spec['wrapper_sha256']
+for profile in ['baseline','candidate']:assert sha(OUT/(profile+'-source.tar.gz'))==spec['archives'][profile]
+PREVIOUS=Path('[SERVER_WORKSPACE]/outputs/browser-use-download-key-stage66-20261124-v1')
+previous=json.loads((PREVIOUS/'run-report.json').read_text())
+assert previous['terminal'] and not previous['owned_after'] and previous['error']['message']=='git-init-baseline'
+assert len(previous['phases'])==1 and previous['phases'][0]['name']=='git-init-baseline' and previous['phases'][0]['exit_code']==1
+assert sha(PREVIOUS/'protocol.json')==spec['zero_test_predecessor_protocol_sha256']
+PREVIOUS2=Path('[SERVER_WORKSPACE]/outputs/browser-use-download-key-stage66-20261124-v2')
+p2=json.loads((PREVIOUS2/'run-report.json').read_text())
+assert p2['terminal'] and not p2['owned_after'] and p2['error']['message']=='pre-commit-initial' and p2['phases'][-1]['exit_code']==3
+assert not any('regression' in row['name'] for row in p2['phases']) and p2['lock_unchanged']
+assert sha(PREVIOUS2/'protocol.json')==spec['zero_test_predecessor_v2_protocol_sha256']
+PREVIOUS3=Path('[SERVER_WORKSPACE]/outputs/browser-use-download-key-stage66-20261124-v3')
+p3=json.loads((PREVIOUS3/'run-report.json').read_text())
+assert p3['terminal'] and not p3['owned_after'] and p3['error']['message']=='pre-commit-confirm' and p3['phases'][-1]['exit_code']==1
+assert not any('regression' in row['name'] for row in p3['phases']) and p3['lock_unchanged']
+assert sha(PREVIOUS3/'protocol.json')==spec['zero_test_predecessor_v3_protocol_sha256']
+previous_root=Path(json.loads((PREVIOUS3/'location.json').read_text())['root'])
+BASE=Path('[SERVER_WORKSPACE]');CORE=BASE/'envs/model-request-budget-20261121/bin/python';UV=BASE/'tools/uv-x86_64-unknown-linux-gnu/uv'
+assert CORE.is_file() and UV.is_file()
+os.umask(0o077);os.nice(19);os.sched_setaffinity(0,sorted(os.sched_getaffinity(0))[:4])
+ROOT=Path(tempfile.mkdtemp(prefix='agentlab-browseruse-download-stage66-'))
+(OUT/'location.json').write_text(json.dumps({'root':str(ROOT)})+'\n')
+parent_start=int(Path('/proc/self/stat').read_text().rsplit(')',1)[1].split()[19])
+env={k:v for k,v in os.environ.items() if k not in ['PYTHONPATH','LD_PRELOAD','LD_LIBRARY_PATH'] and not k.endswith(('_KEY','_TOKEN','_SECRET'))}
+env.update(CUDA_VISIBLE_DEVICES='',PYTHONDONTWRITEBYTECODE='1',PYTHONUNBUFFERED='1',OMP_NUM_THREADS='4',OPENBLAS_NUM_THREADS='4',MKL_NUM_THREADS='4',TMPDIR=str(ROOT),XDG_CACHE_HOME=str(ROOT/'cache'),UV_CACHE_DIR=str(ROOT/'cache/uv'),UV_PYTHON_INSTALL_DIR=str(ROOT/'pythons'),UV_CONCURRENT_DOWNLOADS='4',UV_CONCURRENT_BUILDS='1',UV_CONCURRENT_INSTALLS='4',ANONYMIZED_TELEMETRY='false',BROWSER_USE_AUTO_LOGIN='0',PRE_COMMIT_HOME=str(ROOT/'cache/pre-commit'))
+env.update(PRE_COMMIT_HOME=str(previous_root/'cache/pre-commit'),UV_CACHE_DIR=str(previous_root/'cache/uv'),NODE_OPTIONS='--max-old-space-size=2048')
+env.update(GIT_CONFIG_COUNT='1',GIT_CONFIG_KEY_0='http.version',GIT_CONFIG_VALUE_0='HTTP/1.1')
+env['PATH']=str(UV.parent)+':'+str(CORE.parent)+':'+env.get('PATH','/usr/bin:/bin')
+report={'terminal':False,'protocol_sha256':sha(OUT/'protocol.json'),'phases':[],'neural_calls':0,'cloud_browsers_created':0,'GPU_used':False,'CPU_affinity':sorted(os.sched_getaffinity(0))}
+child=None;known={};began=time.monotonic()
+memory=lambda:int(next(l.split()[1] for l in Path('/proc/meminfo').read_text().splitlines() if l.startswith('MemAvailable:')))*1024
+
+def save():
+ tmp=OUT/'run-report.tmp';tmp.write_text(json.dumps(report,indent=2)+'\n');os.replace(tmp,OUT/'run-report.json')
+def owned():
+ rows={}
+ for p in Path('/proc').glob('[0-9]*'):
+  try:
+   if p.stat().st_uid!=os.getuid():continue
+   s=(p/'stat').read_text().rsplit(')',1)[1].split();rows[int(p.name)]={'parent':int(s[1]),'start':int(s[19]),'state':s[0],'rss':int(s[21])*os.sysconf('SC_PAGE_SIZE')}
+  except (OSError,ValueError):pass
+ ids={child.pid} if child is not None and child.poll() is None and child.pid in rows else set()
+ ids.update(p for p,start in known.items() if p in rows and rows[p]['start']==start)
+ for _ in range(24):
+  old=len(ids);ids.update(p for p,v in rows.items() if v['parent'] in ids)
+  if len(ids)==old:break
+ ids={p for p in ids if rows[p]['state']!='Z'};known.update({p:rows[p]['start'] for p in ids})
+ return {p:rows[p] for p in ids}
+def stop():
+ for sig in [signal.SIGTERM,signal.SIGKILL]:
+  for pid,v in owned().items():
+   if owned().get(pid,{}).get('start')==v['start']:
+    try:os.kill(pid,sig)
+    except ProcessLookupError:pass
+  if child and child.poll() is None:
+   try:child.wait(timeout=3)
+   except subprocess.TimeoutExpired:pass
+  if not owned():break
+
+def run(name,command,cwd,cap=300,allowed=(0,)):
+ global child
+ env['PYTHONPATH']=str(cwd)
+ report['active_phase']=name;save();start=time.monotonic();peak=0;guard=None
+ command=[shutil.which(str(command[0]),path=env['PATH']) or str(command[0]),*command[1:]]
+ assert Path(command[0]).is_file(),'Missing executable: '+str(command[0])
+ argv=[str(CORE),str(OUT/'exec_child.py'),str(os.getpid()),str(parent_start),'cpu',*[str(x) for x in command]]
+ with (OUT/(name+'.log')).open('wb') as log:
+  child=subprocess.Popen(argv,cwd=cwd,env=env,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
+  while child.poll() is None:
+   rss=sum(v['rss'] for v in owned().values());peak=max(peak,rss)
+   if time.monotonic()-start>cap or time.monotonic()-began>2700 or rss>4*2**30 or memory()<8*2**30 or shutil.disk_usage('/tmp').free<4*2**30:
+    guard='phase/resource/job cap';stop();break
+   time.sleep(.5)
+  rc=child.wait()
+ row={'name':name,'exit_code':rc,'guard':guard,'wall_seconds':round(time.monotonic()-start,3),'peak_owned_RSS_bytes':peak};report['phases'].append(row);save();print(json.dumps(row),flush=True)
+ assert not guard and rc in allowed,name
+ return rc
+
+try:
+ assert memory()>=16*2**30 and shutil.disk_usage('/tmp').free>=8*2**30
+ for profile in ['baseline','candidate']:
+  root=ROOT/profile;root.mkdir()
+  with tarfile.open(OUT/(profile+'-source.tar.gz')) as archive:
+   for member in archive:
+    path=PurePosixPath(member.name);assert member.isfile() and not path.is_absolute() and '..' not in path.parts
+    dst=root/member.name;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(archive.extractfile(member).read())
+  assert all(sha(root/n)==v['sha256'] for n,v in spec['source_files'][profile].items())
+  run('git-init-'+profile,['git','init'],root)
+  run('git-index-'+profile,['git','add','.'],root)
+ candidate=ROOT/'candidate';baseline=ROOT/'baseline';python=candidate/'.venv/bin/python'
+ node_out=BASE/'outputs/lightning-terminal-validation-v4-stage53-20261123'
+ assert sha(node_out/'run-report.json')==spec['node_runtime']['prior_report_sha256']
+ node_root=Path(json.loads((node_out/'control-location.json').read_text())['root']);node_archive=node_root/'node.tar.xz'
+ assert sha(node_archive)==spec['node_runtime']['archive_sha256']
+ node_base=ROOT/'tools/node';node_base.mkdir(parents=True)
+ with tarfile.open(node_archive) as archive:
+  prefix='node-v22.23.5-linux-x64/'
+  for member in archive:
+   if member.name==prefix.rstrip('/') and member.isdir():continue
+   assert member.name.startswith(prefix)
+   rel=PurePosixPath(member.name[len(prefix):]);assert not rel.is_absolute() and '..' not in rel.parts
+   dst=node_base/str(rel)
+   if member.isdir():dst.mkdir(parents=True,exist_ok=True)
+   elif member.isfile():dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(archive.extractfile(member).read());dst.chmod(member.mode&0o777)
+ node=node_base/'bin/node';assert sha(node)==spec['node_runtime']['node_sha256']
+ (node_base/'bin/npm').symlink_to(node_base/'lib/node_modules/npm/bin/npm-cli.js')
+ env['PATH']=str(node_base/'bin')+':'+env['PATH']
+ run('node-identity',[node,'--version'],candidate,30)
+ assert (OUT/'node-identity.log').read_text().strip()==spec['node_runtime']['version']
+ run('npm-identity',[node_base/'bin/npm','--version'],candidate,30)
+ report['node_runtime']=spec['node_runtime'];report['tool_caches_reused_from_terminal_v3']=True
+ run('dependency-sync',[UV,'sync','--frozen','--all-extras','--python','3.11'],candidate,900)
+ env['PATH']=str(candidate/'.venv/bin')+':'+env['PATH']
+ original_AST={n:ast.dump(ast.parse((candidate/n).read_text()),include_attributes=False) for n in spec['changed_python']}
+ rc=run('pre-commit-initial',[python,'-m','pre_commit','run','--files',*spec['changed_python']],candidate,900,allowed=(0,1))
+ assert all(ast.dump(ast.parse((candidate/n).read_text()),include_attributes=False)==a for n,a in original_AST.items()),'Static hooks changed semantics'
+ if rc:run('pre-commit-confirm',[python,'-m','pre_commit','run','--files',*spec['changed_python']],candidate,600)
+ assert all(sha(candidate/n)==v['sha256'] for n,v in spec['source_files']['candidate'].items() if n not in spec['changed_python'])
+ run('project-ruff-check',[python,'-m','ruff','check','--no-fix',*spec['changed_python']],candidate,120)
+ run('project-ruff-format',[python,'-m','ruff','format','--check',*spec['changed_python']],candidate,120)
+ run('project-pyright',[python,'-m','pyright'],candidate,300)
+ shutil.copyfile(candidate/'tests/ci/test_login.py',baseline/'tests/ci/test_login.py')
+ report['tested_source_sha256']={n:sha(candidate/n) for n in spec['changed_python']};report['formatting_AST_unchanged']=True
+ report['baseline_regression_test_sha256']=sha(baseline/'tests/ci/test_login.py');assert report['baseline_regression_test_sha256']==report['tested_source_sha256']['tests/ci/test_login.py']
+ for name,root in [('baseline',baseline),('candidate',candidate)]:
+  code="import importlib.metadata as m,json,sys,browser_use.browser.browser as b;print(json.dumps({'python':sys.version,'browser_module':b.__file__,'versions':{k:m.version(k) for k in ['browser-use','browser-harness','pydantic','pydantic-ai-slim','mcp','pytest','ruff','pyright']}}))"
+  run('identity-'+name,[python,'-c',code],root)
+  identity=json.loads((OUT/('identity-'+name+'.log')).read_text());assert Path(identity['browser_module'])==root/'browser_use/browser/browser.py'
+  report['identity_'+name]=identity
+ regression=['-m','pytest','tests/ci/test_login.py','-k','test_cloud_downloads_use_the_creation_key_after_the_model_changes','-q']
+ run('baseline-regression',[python,*regression],baseline,180,allowed=(1,))
+ log=(OUT/'baseline-regression.log').read_text();assert '3 failed' in log and 'MissingAPIKeyError' in log and 'FAILED' in log
+ run('candidate-regression',[python,*regression],candidate,180)
+ assert '3 passed' in (OUT/'candidate-regression.log').read_text()
+ run('candidate-related',[python,'-m','pytest','tests/ci/test_login.py','tests/ci/test_browser.py','-m','not chrome','-q'],candidate,900)
+ run('candidate-nonchrome',[python,'-m','pytest','tests/ci','-m','not chrome','-q'],candidate,1200)
+ report['ready']=True
+except BaseException as error:
+ report['error']={'type':type(error).__name__,'message':str(error)[:500]}
+finally:
+ stop();report.update(terminal=True,owned_after=len(owned()),wall_seconds=round(time.monotonic()-began,3))
+ candidate=ROOT/'candidate'
+ report['final_source_sha256']={n:sha(candidate/n) for n in spec['changed_python'] if (candidate/n).is_file()}
+ report['lock_unchanged']=(candidate/'uv.lock').is_file() and sha(candidate/'uv.lock')==spec['source_files']['candidate']['uv.lock']['sha256']
+ report['source_unchanged_after_tests']=report.get('tested_source_sha256')==report['final_source_sha256']
+ save();print(json.dumps({k:report.get(k) for k in ['terminal','ready','error','owned_after','wall_seconds','lock_unchanged','source_unchanged_after_tests']}),flush=True)
+raise SystemExit(0 if report.get('ready') and not report.get('error') and not report['owned_after'] and report['lock_unchanged'] and report['source_unchanged_after_tests'] else 2)

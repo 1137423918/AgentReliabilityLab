@@ -1,0 +1,41 @@
+{
+  "scope": "Browser Use cloud-session download authorization regression; real request/auth/file-copy code with mocked external cloud HTTP. No provider, Chrome or real cloud session used.",
+  "upstream": "browser-use/browser-use",
+  "base_commit": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+  "candidate_commit": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+  "pull_request": "https://github.com/browser-use/browser-use/pull/6521",
+  "PR_merged": false,
+  "human_approval_claimed": false,
+  "regression": {
+    "baseline_failed": 3,
+    "candidate_passed": 3,
+    "same_test_bytes": true
+  },
+  "related": {
+    "line": "160 passed in 51.45s",
+    "passed": 160,
+    "skipped": 0,
+    "deselected": 0
+  },
+  "nonchrome": {
+    "line": "967 passed, 3 skipped, 140 deselected, 1 warning in 405.91s (0:06:45)",
+    "passed": 967,
+    "skipped": 3,
+    "deselected": 140
+  },
+  "counts_overlap": true,
+  "static_checks": "Pre-commit confirmation including Pyright1.1.404 plus project-locked Ruff0.14.14/Pyright1.1.408 all passed on same exact source before final validation.",
+  "failed_profiles_retained": [
+    "v1 execv relative git before tests",
+    "v2 GitHTTP2 before tests",
+    "v3 autoNode libatomic before tests",
+    "v4 actual3red3green/staticpass, related56fail104pass in foreign-owned default runtime; full selection not started"
+  ],
+  "runtime_diagnostic": "Same unchanged-base browser test fails in original directory ownership environment and passes with owned0700shortBH_HOME. No security guard disabled or existing user directory changed. Final candidate broad validation uses isolated runtime.",
+  "SDK_lock_unchanged": true,
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "homepage_updated": false,
+  "protocol_sha256": "a52843922f437a9fe61f49d12044d371c6ce6336ee4283a4a006e8675f5d8610",
+  "export_sha256": "3270b012d31d6d5337c0b4db5eb0f62301c04db62a6e3e8ecf41dc4050e36d47"
+}
