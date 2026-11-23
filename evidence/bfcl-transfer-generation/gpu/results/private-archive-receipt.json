@@ -1,0 +1,11 @@
+{
+  "relative_path": "studies/bfcl-generation-fixed250-stage75-20261124",
+  "manifest_sha256": "3ab297c7e345318492bca2083fe8997d714ebf2b26939ae1abeb4d389f8a6a22",
+  "files": 68,
+  "bytes": 6343582,
+  "journal_sha256": "d6c17db618a52c0cd94985783716643164c7296bdd33bf23f41de2f669c4866e",
+  "charged_attempts": 750,
+  "committed_results": 750,
+  "source_journal_unchanged": true,
+  "private_outputs_inputs_references_not_exported": true
+}

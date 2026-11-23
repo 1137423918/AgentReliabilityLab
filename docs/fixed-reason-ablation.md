@@ -1,6 +1,6 @@
 # 固定正文损失屏蔽的配对试验
 
-本页记录独立的新试验，不覆盖原Full训练的核验失败。方法在首次读取新BFCL参考答案前已[声明](../evidence/bfcl-transfer-scoring/v1/scoring-intent.json)。**两组均已完成32次更新、1,333次逻辑前向及完整最终核验，控制器退出0。** 尚未进行新的模型生成评测，不能据此声称工具调用效果提升。
+本页记录独立的新试验，不覆盖原Full训练的核验失败。方法在首次读取新BFCL参考答案前已[声明](../evidence/bfcl-transfer-scoring/v1/scoring-intent.json)。**两组均已完成32次更新、1,333次逻辑前向及完整最终核验，控制器退出0。** 后续[固定250题生成对照](bfcl-transfer-generation.md)已完成，生成成绩单独报告；整段NLL不替代调用匹配。
 
 两组均从同一Qwen2.5-3B-Instruct基座重新初始化LoRA，在同一张新准入的RTX3090上使用相同Full输入、顺序和32步调度。只改变固定推理正文是否计入损失，正常无需工具样本、标签和回答内容都保留；不读取BFCL参考答案来训练。
 
@@ -39,6 +39,6 @@ Masked的整段答案NLL比Reference高。该指标包含训练时被屏蔽的�
 
 整场1,005.314秒；Reference阶段461.856秒、Masked阶段443.303秒。这些是本次运行耗时，不构成速度收益结论。自有进程和GPU上下文已清理，所有原数据、掩码和旧生成账本保持原哈希；新试验没有未知调用，旧账本两次未知仍扣额。
 
-250条迁移输入的[评分链路](bfcl-transfer-scoring.md)已准备好，但**尚未分配或执行新生成评测**。下一步在固定输入和新声明的推理预算下比较base／新Reference32／新Masked32；不能复用旧Full32的生成分数替代新参考组，也不能重评旧199题来宣称改进。
+250条迁移输入的[新生成对照](bfcl-transfer-generation.md)现已完成：base／新Reference32／新Masked32各250份结果固定后统一评分。200条工具题分别为147/200（73.5%）、150/200（75.0%）、153/200（76.5%）。本新参考组使用已核验的独立step32权重，不复用旧Full32预测，也不重评旧199题来宣称改进。
 
 [训练入口](../benchmarks/train_fixed_reason_ablation.py) · [目标选择与调度审计](../benchmarks/fixed_reason_objective.py) · [数值控制](../extras/lora-training/test_fixed_reason_objective.py) · [CPU证据与GPU预先声明](../evidence/fixed-reason-ablation/README.md)。

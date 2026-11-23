@@ -1,0 +1,44 @@
+{
+  "roles": {
+    "base": {
+      "cases": 250,
+      "prompt_token_positions": 172731,
+      "generated_token_positions": 9200,
+      "median_generated_tokens": 28.0,
+      "p95_generated_tokens_nearest_rank": 94,
+      "min_generated_tokens": 7,
+      "max_generated_tokens": 138,
+      "EOS_terminated": 250,
+      "max_new_token_limit_reached": 0,
+      "generation_seconds_ge_90_without_EOS": 0,
+      "sum_generation_seconds": 499.3159
+    },
+    "reference32": {
+      "cases": 250,
+      "prompt_token_positions": 172731,
+      "generated_token_positions": 8901,
+      "median_generated_tokens": 28.0,
+      "p95_generated_tokens_nearest_rank": 88,
+      "min_generated_tokens": 7,
+      "max_generated_tokens": 128,
+      "EOS_terminated": 250,
+      "max_new_token_limit_reached": 0,
+      "generation_seconds_ge_90_without_EOS": 0,
+      "sum_generation_seconds": 610.3643
+    },
+    "masked32": {
+      "cases": 250,
+      "prompt_token_positions": 172731,
+      "generated_token_positions": 8820,
+      "median_generated_tokens": 27.0,
+      "p95_generated_tokens_nearest_rank": 87,
+      "min_generated_tokens": 7,
+      "max_generated_tokens": 154,
+      "EOS_terminated": 250,
+      "max_new_token_limit_reached": 0,
+      "generation_seconds_ge_90_without_EOS": 0,
+      "sum_generation_seconds": 611.6248
+    }
+  },
+  "scope": "Same250inputs/fixedmaximumtokens;sampled sequential single-run timings,notFLOPs or controlled speedup. No output text or scores used."
+}

@@ -1,0 +1,22 @@
+{
+  "files": {
+    "results/report.json": {
+      "bytes": 13149,
+      "sha256": "7f02cc847a760d6bb450e700cc4aba3ee8b2fb4207787cb47a11a6654a5e491e"
+    },
+    "results/case-flags.jsonl": {
+      "bytes": 688261,
+      "sha256": "3aa86c874a45a021aeabaed596455ff8d568fdd8fc6402bca4a428923f94155e"
+    },
+    "operator/score-run-report.json": {
+      "bytes": 56777,
+      "sha256": "44d17fc89076d2e317e0add8774863109d5e1ddb11cf53175e3764a7159c5f16"
+    },
+    "operator/score-offline-scoring.log": {
+      "bytes": 9837,
+      "sha256": "58b192b4dcddfbdb02833763ac7b80cac9f09f9f9327a29e8b5d35a96b5168fb"
+    }
+  },
+  "neural_calls": 0,
+  "no_raw_outputs_or_references_exported": true
+}

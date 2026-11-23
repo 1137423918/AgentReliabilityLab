@@ -1,0 +1,14 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.59s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  1.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.06s/it]
+{"variant": "base", "new_committed": 10, "last_case": 135}
+{"variant": "base", "new_committed": 20, "last_case": 145}
+{"variant": "base", "new_committed": 30, "last_case": 155}
+{"variant": "base", "new_committed": 40, "last_case": 165}
+{"variant": "base", "new_committed": 50, "last_case": 175}
+{"variant": "base", "new_committed": 60, "last_case": 185}
+{"variant": "base", "new_committed": 70, "last_case": 195}
+{"variant": "base", "new_committed": 80, "last_case": 205}
+{"variant": "base", "new_committed": 90, "last_case": 215}
+{"variant": "base", "new_committed": 100, "last_case": 225}
+{"variant": "base", "new_committed": 110, "last_case": 235}
+{"variant": "base", "new_committed": 120, "last_case": 245}

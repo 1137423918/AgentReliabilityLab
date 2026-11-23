@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-11-23T23:54:02.805909+00:00",
+  "journal_counts": {
+    "total_attempts": 750,
+    "total_committed": 750,
+    "unknown_still_charged": 0,
+    "role_counts": {
+      "base": 250,
+      "reference32": 250,
+      "masked32": 250
+    }
+  },
+  "sessions_terminal": [
+    49552,
+    9599,
+    38243,
+    19560,
+    19353,
+    54005
+  ],
+  "all6terminal_clean_sources_unchanged": true,
+  "scoring_not_yet_completed": true
+}

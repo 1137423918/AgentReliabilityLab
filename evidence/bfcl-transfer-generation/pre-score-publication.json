@@ -1,0 +1,9 @@
+{
+  "verified_utc": "2026-11-23T23:13:33.940380+00:00",
+  "commit": "8c9d7acd2d69d783a2740a83ca9a69864bb14866",
+  "url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/8c9d7acd2d69d783a2740a83ca9a69864bb14866/evidence/bfcl-transfer-generation/scoring-controls/operator/protocol.json",
+  "status": 200,
+  "protocol_sha256": "2b72d42334eace27752c4ead3ba554dee2ae44e902adce4a1a05ec3e94e4eca5",
+  "no_model_outputs_scored": true,
+  "controls_session_terminal": 13274
+}

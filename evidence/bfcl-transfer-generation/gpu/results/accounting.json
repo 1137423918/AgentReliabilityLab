@@ -1,0 +1,25 @@
+{
+  "protocol_sha256": "c3d66f9372ecabab34f47ddefa65a071dc90087840775c563159024fba1b388a",
+  "definition_owner_sha256": "a58eeff13c3163ed3c1392581e988a6f2c21401d0af8b1908d81b985a69a5367",
+  "journal_sha256": "d6c17db618a52c0cd94985783716643164c7296bdd33bf23f41de2f669c4866e",
+  "total_charged_attempts": 750,
+  "total_committed": 750,
+  "unknown_still_charged": 0,
+  "by_role": {
+    "base": {
+      "committed": 250,
+      "charged_attempts": 250
+    },
+    "reference32": {
+      "committed": 250,
+      "charged_attempts": 250
+    },
+    "masked32": {
+      "committed": 250,
+      "charged_attempts": 250
+    }
+  },
+  "all_controllers_terminal_clean": true,
+  "raw_outputs_and_token_vectors_private": true,
+  "no_scoring_feedback_used": true
+}

@@ -1,0 +1,8 @@
+{
+  "verified_utc": "2026-11-23T23:05:19.623569+00:00",
+  "commit": "0ac45b2c57f0ae714a56aefa5db9034a49eaf9fa",
+  "url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/0ac45b2c57f0ae714a56aefa5db9034a49eaf9fa/evidence/bfcl-transfer-generation/preregistered/protocol.json",
+  "HTTP": 200,
+  "protocol_sha256": "c3d66f9372ecabab34f47ddefa65a071dc90087840775c563159024fba1b388a",
+  "model_calls_before_publication": 0
+}
