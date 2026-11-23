@@ -1,0 +1,42 @@
+{
+  "files": {
+    "protocol.json": {
+      "original_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+      "public_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+      "bytes": 7789,
+      "normalized": false
+    },
+    "train_controller.py.txt": {
+      "original_sha256": "9006da692518b2cba03b2ed8b5982b460be374d87a7cd061a6b0748f06e74fee",
+      "public_sha256": "71ecd301d457906dcd1c0fb01e2ff72f7eadaeb4551747eef8d1bec7032b805f",
+      "bytes": 17016,
+      "normalized": true
+    },
+    "nvml_watch.py.txt": {
+      "original_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+      "public_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+      "bytes": 2049,
+      "normalized": false
+    },
+    "gpu_ownership.py.txt": {
+      "original_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+      "public_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+      "bytes": 695,
+      "normalized": false
+    },
+    "exec_gpu_child.py.txt": {
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443,
+      "normalized": false
+    },
+    "cpu_admission.py.txt": {
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "public_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870,
+      "normalized": false
+    }
+  },
+  "model_started_before_this_publication": false,
+  "source_policy": "Neural source is byte-identical to CPU preflight; operator paths normalized,original/public hashes explicit. Fresh server resource admission still required."
+}

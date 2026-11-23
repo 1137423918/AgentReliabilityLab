@@ -1,0 +1,11 @@
+test_changed_target_token_is_rejected (__main__.ObjectiveTests.test_changed_target_token_is_rejected) ... ok
+test_full_pair_validation_preserves_order_and_targets (__main__.ObjectiveTests.test_full_pair_validation_preserves_order_and_targets) ... ok
+test_shift_and_internal_masks (__main__.ObjectiveTests.test_shift_and_internal_masks) ... ok
+test_sparse_loss_and_all_logit_gradients_match_standard_causal_loss (__main__.ObjectiveTests.test_sparse_loss_and_all_logit_gradients_match_standard_causal_loss) ... ok
+test_update_normalization_matches_concatenated_active_targets (__main__.ObjectiveTests.test_update_normalization_matches_concatenated_active_targets) ... ok
+test_zero_active_or_unshifted_segment_fails (__main__.ObjectiveTests.test_zero_active_or_unshifted_segment_fails) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 9.855s
+
+OK
