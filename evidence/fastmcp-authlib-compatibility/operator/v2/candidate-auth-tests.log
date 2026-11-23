@@ -1,0 +1,56 @@
+============================= test session starts ==============================
+platform linux -- Python 3.11.4, pytest-8.4.1, pluggy-1.6.0
+rootdir: [COMPAT_RUNTIME]/candidate
+configfile: pyproject.toml
+plugins: asyncio-1.1.0, env-1.1.5, anyio-4.10.0, inline-snapshot-0.28.0, cov-6.2.1, flakefinder-1.1.0, xdist-3.8.0, timeout-2.4.0, report-0.2.1, httpx-0.35.0
+asyncio: mode=Mode.AUTO, asyncio_default_fixture_loop_scope=session, asyncio_default_test_loop_scope=session
+timeout: 5.0s
+timeout method: signal
+timeout func_only: False
+collected 279 items
+
+tests/server/auth/providers/test_auth0.py ............                   [  4%]
+tests/server/auth/providers/test_aws.py ...........                      [  8%]
+tests/server/auth/providers/test_azure.py ..........                     [ 11%]
+tests/server/auth/providers/test_descope.py ........                     [ 14%]
+tests/server/auth/providers/test_github.py .............                 [ 19%]
+tests/server/auth/providers/test_google.py ........                      [ 22%]
+tests/server/auth/providers/test_workos.py ..........                    [ 25%]
+tests/server/auth/test_auth_provider.py ...                              [ 26%]
+tests/server/auth/test_jwt_provider.py ................................. [ 38%]
+....................                                                     [ 45%]
+tests/server/auth/test_oauth_proxy.py ...................                [ 52%]
+tests/server/auth/test_oauth_proxy_redirect_validation.py .........      [ 55%]
+tests/server/auth/test_oauth_proxy_storage.py ........                   [ 58%]
+tests/server/auth/test_oidc_proxy.py ..........................          [ 68%]
+tests/server/auth/test_redirect_validation.py .............              [ 72%]
+tests/server/auth/test_remote_auth_provider.py ...................       [ 79%]
+tests/server/auth/test_static_token_verifier.py .....                    [ 81%]
+tests/client/auth/test_oauth_client.py .......                           [ 83%]
+tests/client/auth/test_oauth_token_expiry.py .....                       [ 85%]
+tests/server/http/test_bearer_auth_backend.py .......                    [ 88%]
+tests/server/http/test_http_auth_middleware.py ...                       [ 89%]
+tests/server/test_auth_integration.py .............................      [ 99%]
+tests/deprecated/test_bearer_auth_provider.py .                          [100%]
+
+=============================== warnings summary ===============================
+src/fastmcp/server/auth/providers/jwt.py:10
+  [COMPAT_RUNTIME]/candidate/src/fastmcp/server/auth/providers/jwt.py:10: AuthlibDeprecationWarning: authlib.jose module is deprecated, please use joserfc instead.
+  It will be compatible before version 2.0.0.
+    from authlib.jose import JsonWebKey, JsonWebToken
+
+.venv/lib/python3.11/site-packages/authlib/integrations/httpx_client/assertion_client.py:5
+  [COMPAT_RUNTIME]/candidate/.venv/lib/python3.11/site-packages/authlib/integrations/httpx_client/assertion_client.py:5: AuthlibDeprecationWarning: The httpx module is deprecated; please use httpx2 instead.
+    from ._compat import httpx2
+
+tests/server/auth/test_oauth_proxy.py::TestOAuthProxyE2E::test_full_oauth_flow_with_mock_provider
+  [COMPAT_RUNTIME]/candidate/.venv/lib/python3.11/site-packages/websockets/legacy/__init__.py:6: DeprecationWarning: websockets.legacy is deprecated; see https://websockets.readthedocs.io/en/stable/howto/upgrade.html for upgrade instructions
+    warnings.warn(  # deprecated in 14.0 - 2024-11-09
+
+tests/server/auth/test_oauth_proxy.py::TestOAuthProxyE2E::test_full_oauth_flow_with_mock_provider
+  [COMPAT_RUNTIME]/candidate/.venv/lib/python3.11/site-packages/uvicorn/protocols/websockets/websockets_impl.py:17: DeprecationWarning: websockets.server.WebSocketServerProtocol is deprecated
+    from websockets.server import WebSocketServerProtocol
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: [COMPAT_RUNTIME]/candidate-tests.xml -
+======================= 279 passed, 4 warnings in 12.91s =======================

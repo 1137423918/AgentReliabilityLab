@@ -1,0 +1,192 @@
+{
+  "files": {
+    "operator/v2/protocol.json": {
+      "bytes": 2425,
+      "sha256": "2e71cb406287eb39d9f83638d5909a25141d4713636e337c3ee498f19f7bafea",
+      "original_sha256": "455374239947d4402437a5d1bbe9ea79e10928b2c858b05be650fae4b7822db8"
+    },
+    "operator/v2/run_cpu.py": {
+      "bytes": 9422,
+      "sha256": "19b1dc777ee51092a7f69e66d6ec1bee1856ed21aa3247f3adc10d82b7e46f50",
+      "original_sha256": "e218e778181b6f5d8dc4946f8bb8078d8b067cf99578c1b3167b2f14f7ac8501"
+    },
+    "operator/v2/exec_child.py": {
+      "bytes": 443,
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8"
+    },
+    "operator/v2/cpu_admission.py": {
+      "bytes": 2870,
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+    },
+    "operator/v2/run-report.json": {
+      "bytes": 59391,
+      "sha256": "04331c110cec0a07b04df37af98308576175fbcc6d9d7a8e9c6ce8c31974dbda",
+      "original_sha256": "04331c110cec0a07b04df37af98308576175fbcc6d9d7a8e9c6ce8c31974dbda"
+    },
+    "operator/v2/test-harness/compat_plugin.py": {
+      "bytes": 396,
+      "sha256": "7db84c3bf5b7efe9a7ed2df18c990f68f8221126bc2a0ae36373828f9fdbaa10",
+      "original_sha256": "7db84c3bf5b7efe9a7ed2df18c990f68f8221126bc2a0ae36373828f9fdbaa10"
+    },
+    "operator/v2/test-harness/sitecustomize.py": {
+      "bytes": 622,
+      "sha256": "931cece3a8f04e1c767385d3db287b205731550ff88baac46f2b8b7de04dfcc4",
+      "original_sha256": "931cece3a8f04e1c767385d3db287b205731550ff88baac46f2b8b7de04dfcc4"
+    },
+    "operator/v2/baseline-checkout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "operator/v2/baseline-install.log": {
+      "bytes": 3208,
+      "sha256": "738f614707f0e441fe36ebba9770616905c5668b297d4d3288e00c140a99a3de",
+      "original_sha256": "0dc33c19bc155c91165876b351b1ed9d5392b707a362ef58a0b612dd833da93e"
+    },
+    "operator/v2/baseline-clone.log": {
+      "bytes": 1146,
+      "sha256": "38e203c07102eaf6951d1e0dd05b2f434afdd27a9b4029aa43f7bc740f385830",
+      "original_sha256": "38e203c07102eaf6951d1e0dd05b2f434afdd27a9b4029aa43f7bc740f385830"
+    },
+    "operator/v2/candidate-auth-tests.log": {
+      "bytes": 4074,
+      "sha256": "86cec4415c470a401e176f2b20b18df980f18fd712675752925909e4eb3d8dbe",
+      "original_sha256": "58c5b27fd82b758297230314b1c1a15404571d1e442b15da0e41f5248422656d"
+    },
+    "operator/v2/baseline-auth-tests.log": {
+      "bytes": 3430,
+      "sha256": "46701a58a42c7856878f856a22be7fa835fc2fedc04ce57289b3e487d7d50a52",
+      "original_sha256": "6d1741f6a7ade210a9421877bb9044c94497eb7c7cbe93da99a3b3dded6d50b5"
+    },
+    "operator/v2/candidate-clone.log": {
+      "bytes": 1146,
+      "sha256": "38e203c07102eaf6951d1e0dd05b2f434afdd27a9b4029aa43f7bc740f385830",
+      "original_sha256": "38e203c07102eaf6951d1e0dd05b2f434afdd27a9b4029aa43f7bc740f385830"
+    },
+    "operator/v2/baseline-versions.log": {
+      "bytes": 2635,
+      "sha256": "97a687ec8daef44fbdeabe3fad622b077d0e756dd00b37baaa0f9ffd2bfb2b08",
+      "original_sha256": "97a687ec8daef44fbdeabe3fad622b077d0e756dd00b37baaa0f9ffd2bfb2b08"
+    },
+    "operator/v2/candidate-install.log": {
+      "bytes": 2752,
+      "sha256": "54ed4ea444e1e3508d5c70d1684c45d2fae407df62bfb9e687dddbadffeaafb9",
+      "original_sha256": "8bc8333e9d1d268610c8d26de10c5f352d661a2ad7d5ab033b220433cd68dbad"
+    },
+    "operator/v2/candidate-versions.log": {
+      "bytes": 2656,
+      "sha256": "c0ba7c2cadfcc84d024e9dddf625979ac615d9df1236bfde4c3e053b2d9dd894",
+      "original_sha256": "c0ba7c2cadfcc84d024e9dddf625979ac615d9df1236bfde4c3e053b2d9dd894"
+    },
+    "operator/v2/candidate-checkout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "operator/v1/protocol.json": {
+      "bytes": 2106,
+      "sha256": "8ab167b6d193c5be671943d54f166a65769ef357db08be7d6481894f76536867",
+      "original_sha256": "ee52fd087c73ed34a1985f2596cf64900a1d652311f11c073d52552183df6ee9"
+    },
+    "operator/v1/run-report.json": {
+      "bytes": 57888,
+      "sha256": "02407788e6db78dba1b95c227ba1db4aa0cab9a908e20d718f595db7c77ba101",
+      "original_sha256": "02407788e6db78dba1b95c227ba1db4aa0cab9a908e20d718f595db7c77ba101"
+    },
+    "operator/v1/baseline-clone.log": {
+      "bytes": 242,
+      "sha256": "94d60bcbcaef16bb8525d25d0c138c9e5c26d64e6838978339953f6e07ce4552",
+      "original_sha256": "214cb1a5c0dc59a4258c87376e739f3e86d4d4b177de66533667fccc04849955"
+    },
+    "results/report.json": {
+      "bytes": 413285,
+      "sha256": "62f33f562a9728e03482a7a682e7091ea635a01d1017198de2eef9beee71be93",
+      "original_sha256": "62f33f562a9728e03482a7a682e7091ea635a01d1017198de2eef9beee71be93"
+    },
+    "results/baseline-tests.xml": {
+      "bytes": 39834,
+      "sha256": "98e173484e769490a0b0f16dff9ae780361a1b39c606c14ec49f507b606dfc80",
+      "original_sha256": "98e173484e769490a0b0f16dff9ae780361a1b39c606c14ec49f507b606dfc80"
+    },
+    "locks/baseline-uv.lock": {
+      "bytes": 336584,
+      "sha256": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18",
+      "original_sha256": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18"
+    },
+    "results/candidate-tests.xml": {
+      "bytes": 39834,
+      "sha256": "1d9d266a5dc578460de3cdde8c45ec5940d7ef6df6372479614440025098d376",
+      "original_sha256": "1d9d266a5dc578460de3cdde8c45ec5940d7ef6df6372479614440025098d376"
+    },
+    "locks/candidate-uv.lock": {
+      "bytes": 337583,
+      "sha256": "b1273f6292f2ed3e26658d1aadc2e875fd649c71d1df32354f67f854f3d8c96b",
+      "original_sha256": "b1273f6292f2ed3e26658d1aadc2e875fd649c71d1df32354f67f854f3d8c96b"
+    },
+    "source/LICENSE": {
+      "bytes": 11356,
+      "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+      "original_sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+    },
+    "source/pyproject.toml": {
+      "bytes": 3730,
+      "sha256": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf",
+      "original_sha256": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf"
+    },
+    "source/AGENTS.md": {
+      "bytes": 11486,
+      "sha256": "18a97aeadd67edcdb8de36e68d846fe4269850206840a51ebdb4755c106ac9d5",
+      "original_sha256": "18a97aeadd67edcdb8de36e68d846fe4269850206840a51ebdb4755c106ac9d5"
+    },
+    "results/source-file-manifests.json": {
+      "bytes": 141128,
+      "sha256": "6bbc2828f44e63b6e8572b2cc8037ff62dd4bec27e5bed886bbac85e61d39baa",
+      "original_sha256": "6bbc2828f44e63b6e8572b2cc8037ff62dd4bec27e5bed886bbac85e61d39baa"
+    },
+    "results/summary.json": {
+      "bytes": 906,
+      "sha256": "811c99cef57184f7646757d8bea54c99cd439b2133c1bdd0556230f0a93449e2",
+      "original_sha256": "811c99cef57184f7646757d8bea54c99cd439b2133c1bdd0556230f0a93449e2"
+    }
+  },
+  "summary": {
+    "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+    "same_selected_test_IDs": true,
+    "tests": {
+      "baseline": {
+        "tests": 279,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "candidate": {
+        "tests": 279,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "source_files_different": [
+      "uv.lock"
+    ],
+    "runtime_distribution_changes": {
+      "authlib": {
+        "baseline": "1.6.1",
+        "candidate": "1.9.10"
+      },
+      "joserfc": {
+        "baseline": null,
+        "candidate": "1.8.0"
+      }
+    },
+    "Python": "3.11.4",
+    "scope": "Historical FastMCP2.12.4 upstream auth/client auth/HTTP auth suite; not full repository CI, security proof, deployment approval or neural evaluation.",
+    "no_neural_calls": true,
+    "remaining_registry_resolutions_from_previous_scan": 16,
+    "no_new_scan_or_security_verdict": true,
+    "warnings_retained": true
+  },
+  "both_supervisors_terminal_owned_zero": true
+}

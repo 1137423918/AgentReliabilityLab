@@ -41,7 +41,7 @@
 - 显式处理开发/可选/条件 registry resolutions 与 editable/root 来源，拒绝未声明扫描条目；通过9项服务器单元控制，保留准备阶段失败及固定来源哈希。
 - 将外部项目扫描事实接入真实 MCP 服务，模型选择字段引用，消费端绑定本次读取的精确值与回执；4场脚本场景覆盖正常审查、跨项目引用和错误结论。真实9B完成两项已知任务、通过一项，共6次请求，另一项遗漏必要事实而失败，未宣称泛化准确率。
 
-[实现、实际结果与运行入口](../docs/dependency-upgrade.md)。候选扫描未替代兼容性测试或发布审批；FastMCP候选仍有16个受影响 registry resolutions。历史发布快照不代表项目当前部署。
+[实现、实际结果与运行入口](../docs/dependency-upgrade.md)。补充在原始／候选锁定环境执行同一批279项上游鉴权测试，两组全部通过，源码与测试不变；完整CI和发布审批未执行。FastMCP候选仍有16个受影响 registry resolutions。[兼容性证据](../docs/dependency-upgrade-compatibility.md)。历史发布快照不代表项目当前部署。
 
 ## Agent 开源项目缺陷修复
 

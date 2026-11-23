@@ -1,0 +1,37 @@
+{
+  "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+  "same_selected_test_IDs": true,
+  "tests": {
+    "baseline": {
+      "tests": 279,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "candidate": {
+      "tests": 279,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  },
+  "source_files_different": [
+    "uv.lock"
+  ],
+  "runtime_distribution_changes": {
+    "authlib": {
+      "baseline": "1.6.1",
+      "candidate": "1.9.10"
+    },
+    "joserfc": {
+      "baseline": null,
+      "candidate": "1.8.0"
+    }
+  },
+  "Python": "3.11.4",
+  "scope": "Historical FastMCP2.12.4 upstream auth/client auth/HTTP auth suite; not full repository CI, security proof, deployment approval or neural evaluation.",
+  "no_neural_calls": true,
+  "remaining_registry_resolutions_from_previous_scan": 16,
+  "no_new_scan_or_security_verdict": true,
+  "warnings_retained": true
+}

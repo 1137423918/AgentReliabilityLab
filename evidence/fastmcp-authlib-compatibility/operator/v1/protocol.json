@@ -1,0 +1,43 @@
+{
+  "declared_utc": "2026-11-23T23:16:51.102151+00:00",
+  "phase": "paired_historical_upstream_compatibility",
+  "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+  "candidate_source": "[DEPENDENCY_RUNTIME]/results/fastmcp-2.12.4-candidate",
+  "baseline_lock_sha256": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18",
+  "candidate_lock_sha256": "b1273f6292f2ed3e26658d1aadc2e875fd649c71d1df32354f67f854f3d8c96b",
+  "pyproject_sha256": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf",
+  "authlib_versions": {
+    "baseline": "1.6.1",
+    "candidate": "1.9.10"
+  },
+  "test_paths": [
+    "tests/server/auth",
+    "tests/client/auth",
+    "tests/server/http/test_bearer_auth_backend.py",
+    "tests/server/http/test_http_auth_middleware.py",
+    "tests/server/test_auth_integration.py",
+    "tests/deprecated/test_bearer_auth_provider.py"
+  ],
+  "test_selection": "All upstream cases under auth-related paths, excluding upstream integration/client_process markers, same IDs both arms; no snapshot updates or repairs to make candidate pass.",
+  "versions_policy": "Full existing baseline/candidate uv locks, uv sync --frozen --all-extras default dev group; no dependency substitutions. Registry and build metadata installation permitted in separate environments.",
+  "harness_sha256": {
+    "test-harness/compat_plugin.py": "7db84c3bf5b7efe9a7ed2df18c990f68f8221126bc2a0ae36373828f9fdbaa10",
+    "test-harness/sitecustomize.py": "931cece3a8f04e1c767385d3db287b205731550ff88baac46f2b8b7de04dfcc4"
+  },
+  "controller_sha256": "8f554ac629d6ce8e34d75ec05128b7df57afb68d964f8f84fa34b70d8faf574f",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "resource_caps": {
+    "CPU": 2,
+    "nice": 19,
+    "AS_GiB": 16,
+    "RSS_GiB": 8,
+    "host_admission_GiB": 32,
+    "host_floor_GiB": 24,
+    "job_seconds": 2400,
+    "install_phase_seconds": 900,
+    "tests_phase_seconds": 600
+  },
+  "neural_calls": 0,
+  "upstream_changes_or_PR": false
+}

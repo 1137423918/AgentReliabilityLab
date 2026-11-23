@@ -32,3 +32,5 @@ python -m agent_lab.dependency_review \
 直接消费已发布报告时，使用 `evidence/dependency-upgrade/corpus/catalog.json`。其 source URL 绑定含相同报告字节的不可变提交。沿用 [MCP 参考提交入口](reference-submission.md)，把 root/manifest 换为此目录，cases 换为 `benchmarks/dependency_review_cases.json`，case 选 `browser_use_1_0_8_integration_gate` 或 `fastmcp_2_12_4_integration_gate`，catalog policy 为 `all`。资源准入与本地模型部署应另外配置，运行时使用新的私有状态目录。
 
 早期 editable root 解析错误、稀疏源码和额外 no-build 限制均保留为失败准备记录；最后的标准 uv 流程修正这些实现/准备问题，没有放宽项目版本声明。14次实际离线扫描包含调试，不是14个独立项目。原始扫描留在服务器，公开投影省去公告正文，区分原始哈希与公开哈希。所有运行、测试在授权服务器完成，个人主页保持冻结。
+
+后续已在两个独立项目环境完成同一批279项上游鉴权相关测试，原始与候选锁文件均全部通过。实际环境变化为Authlib1.6.1→1.9.10及新增joserfc1.8.0，源码与测试未改；这是特定范围的兼容性证据，完整CI与发布审批尚未执行。[配对测试、日志与边界](dependency-upgrade-compatibility.md)。
