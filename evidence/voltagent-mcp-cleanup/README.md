@@ -101,3 +101,5 @@ Only logs, hashes and source snapshots were exported; dependencies, models,
 credentials and runtime directories stayed on the server. Public log paths/ANSI
 are normalized; source snapshots are exact tested bytes. Approval/merge is not
 claimed, and the personal homepage remains frozen.
+
+后续连接归属审查已继续修复：[最新11项生命周期 / 完整26项包测试](../voltagent-mcp-connection-ownership/README.md)。本页23项范围及PR审查状态是前一轮快照。

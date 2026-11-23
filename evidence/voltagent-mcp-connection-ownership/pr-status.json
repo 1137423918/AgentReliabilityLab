@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-11-23T14:48:22.082762+00:00",
+  "url": "https://github.com/VoltAgent/voltagent/pull/1562",
+  "state": "OPEN",
+  "draft": false,
+  "head": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+  "changed_files": 8,
+  "unresolved_inline_threads": 0,
+  "native_actions": [
+    {
+      "id": 45197915128,
+      "name": "PR Checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+      "html_url": "https://github.com/VoltAgent/voltagent/actions/runs/45197915128"
+    }
+  ],
+  "note": "Snapshot only. No human approval or upstream CI success inferred from external bot checks."
+}

@@ -1,0 +1,19 @@
+{
+  "source_head": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+  "baseline_head": "afa92332ed938c750f452cda8b5a68cbc7b6067e",
+  "same_fixture_sha256": "912fa8e701e056068918b559491c71f63233a9399fe44c5444dc914646246c86",
+  "baseline_lifecycle": {
+    "failed": 2,
+    "passed": 9
+  },
+  "candidate_lifecycle": {
+    "passed": 11
+  },
+  "complete_package": {
+    "passed": 26,
+    "includes_lifecycle": true,
+    "includes_notifications": 4
+  },
+  "scope": "Linux CPU package checks; no whole-monorepo, native CI or model-performance claim",
+  "input_export_sha256": "f876cee3f013d061452d69c90ccab4f8632da359e62a7b817b3b82137202acc1"
+}

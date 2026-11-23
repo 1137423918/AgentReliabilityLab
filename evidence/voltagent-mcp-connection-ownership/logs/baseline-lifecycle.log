@@ -1,0 +1,76 @@
+
+ RUN  v3.2.4 [CANDIDATE_RUN]/source/packages/mcp-server
+
+ ❯ src/server-lifecycle.spec.ts (11 tests | 2 failed) 528ms
+   ✓ notification registration lifecycle > releases completed stateless requests (streaming=false) 205ms
+   ✓ notification registration lifecycle > releases completed stateless requests (streaming=true) 118ms
+   ✓ notification registration lifecycle > releases a terminated stateful HTTP session 20ms
+   ✓ notification registration lifecycle > releases a closed external SSE session 3ms
+   ✓ notification registration lifecycle > releases the unconnected base server during shutdown 1ms
+   ✓ notification registration lifecycle > releases a stateless server when request handling throws 10ms
+   ✓ notification registration lifecycle > registers the base server again after reconnecting its transport 8ms
+   ✓ notification registration lifecycle > keeps a stateless streaming server until its response completes 129ms
+   × notification registration lifecycle > preserves an active connection when a second connection attempt is rejected 20ms
+     → expected undefined to be InMemoryTransport{ …(5) } // Object.is equality
+   × notification registration lifecycle > preserves a starting connection when another connection attempt is rejected 8ms
+     → expected undefined to be InMemoryTransport{ …(6) } // Object.is equality
+   ✓ notification registration lifecycle > cleans up an owned connection attempt when transport startup fails 4ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > preserves an active connection when a second connection attempt is rejected
+AssertionError: expected undefined to be InMemoryTransport{ …(5) } // Object.is equality
+
+- Expected: 
+InMemoryTransport {
+  "_messageQueue": [],
+  "_otherTransport": undefined,
+  "onclose": [Function anonymous],
+  "onerror": [Function anonymous],
+  "onmessage": [Function anonymous],
+}
+
++ Received: 
+undefined
+
+ ❯ src/server-lifecycle.spec.ts:280:38
+    278|       base.connectTransport("rejected", { transport: "stdio" }, reject…
+    279|     ).rejects.toThrow(/already connected/i);
+    280|     expect(base.mcpServer.transport).toBe(activeTransport);
+       |                                      ^
+    281|     expect(notificationRegistrations(server)).toEqual([1, 1]);
+    282|     const received = vi.fn();
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > preserves a starting connection when another connection attempt is rejected
+AssertionError: expected undefined to be InMemoryTransport{ …(6) } // Object.is equality
+
+- Expected: 
+InMemoryTransport {
+  "_messageQueue": [],
+  "_otherTransport": undefined,
+  "onclose": [Function anonymous],
+  "onerror": [Function anonymous],
+  "onmessage": [Function anonymous],
+}
+
++ Received: 
+undefined
+
+ ❯ src/server-lifecycle.spec.ts:318:40
+    316|         base.connectTransport("rejected", { transport: "stdio" }, reje…
+    317|       ).rejects.toThrow(/already connected/i);
+    318|       expect(base.mcpServer.transport).toBe(activeTransport);
+       |                                        ^
+    319|       expect(notificationRegistrations(server)).toEqual([1, 1]);
+    320|     } finally {
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 9 passed (11)
+   Start at  22:38:33
+   Duration  4.45s (transform 1.84s, setup 0ms, collect 3.00s, tests 528ms, environment 0ms, prepare 137ms)
+
