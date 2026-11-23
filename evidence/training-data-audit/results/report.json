@@ -1,0 +1,254 @@
+{
+  "upstream_commit": "111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1",
+  "pyarrow_version": "22.0.0",
+  "files": [
+    {
+      "file": "training/data/train.parquet",
+      "sha256": "7fe25035891f830994ee702427432b54ea696d16edfbc7da6d88eb9d9aca806b",
+      "bytes": 6739097,
+      "rows": 3905,
+      "expected_rows": 3905,
+      "matches_published_count": true,
+      "schema": "data_source: large_string\nprompt: list<element: struct<content: string, role: string>>\n  child 0, element: struct<content: string, role: string>\n      child 0, content: string\n      child 1, role: string\nability: large_string\nreward_model: struct<ground_truth: string, style: string>\n  child 0, ground_truth: string\n  child 1, style: string\nextra_info: struct<index: int64, input: string, instruction: string, original_id: string, output: string, pertur (... 66 chars omitted)\n  child 0, index: int64\n  child 1, input: string\n  child 2, instruction: string\n  child 3, original_id: string\n  child 4, output: string\n  child 5, perturbation: struct<mdp_category: string, type: string>\n      child 0, mdp_category: string\n      child 1, type: string\n  child 6, split: string\n__index_level_0__: int64\n-- schema metadata --\npandas: '{\"index_columns\": [\"__index_level_0__\"], \"column_indexes\": [{\"na' + 931",
+      "original_ids_nonempty_unique": 3905,
+      "empty_original_id_rows": 0,
+      "duplicate_original_id_rows_beyond_first": 0,
+      "duplicate_exact_prompt_rows_beyond_first": 0,
+      "perturbation_types": {
+        "TD": 382,
+        "same_name_E": 83,
+        "redundant": 84,
+        "same_name_A": 85,
+        "paraphrase_parameter_description": 330,
+        "CD_NT": 344,
+        "TD_AB": 308,
+        "CD": 374,
+        "same_name_B": 84,
+        "query_paraphrase": 331,
+        "TD_NT": 342,
+        "realistic_typos": 327,
+        "CD_AB": 316,
+        "same_name_C": 85,
+        "paraphrase_tool_description": 345,
+        "same_name_D": 85
+      },
+      "mdp_categories": {
+        "reward": 2066,
+        "action": 506,
+        "observation": 1333
+      },
+      "split_markers": {
+        "train": 3905
+      },
+      "mirror_or_shape_mismatches": {}
+    },
+    {
+      "file": "training/data/mixed_train.parquet",
+      "sha256": "ca071bbda0ab11e785f3791072d21eaad2568d01139f97ba2d24fc89afd3e9ca",
+      "bytes": 6635681,
+      "rows": 4000,
+      "expected_rows": 4000,
+      "matches_published_count": true,
+      "schema": "data_source: large_string\nprompt: list<element: struct<content: string, role: string>>\n  child 0, element: struct<content: string, role: string>\n      child 0, content: string\n      child 1, role: string\nability: large_string\nreward_model: struct<ground_truth: string, style: string>\n  child 0, ground_truth: string\n  child 1, style: string\nextra_info: struct<index: int64, input: string, instruction: string, original_id: string, output: string, pertur (... 66 chars omitted)\n  child 0, index: int64\n  child 1, input: string\n  child 2, instruction: string\n  child 3, original_id: string\n  child 4, output: string\n  child 5, perturbation: struct<mdp_category: string, type: string>\n      child 0, mdp_category: string\n      child 1, type: string\n  child 6, split: string\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 864",
+      "original_ids_nonempty_unique": 4000,
+      "empty_original_id_rows": 0,
+      "duplicate_original_id_rows_beyond_first": 0,
+      "duplicate_exact_prompt_rows_beyond_first": 10,
+      "perturbation_types": {
+        "TD_NT": 174,
+        "none": 2006,
+        "CD_NT": 174,
+        "paraphrase_tool_description": 156,
+        "CD": 195,
+        "TD": 186,
+        "same_name_E": 42,
+        "realistic_typos": 162,
+        "redundant": 43,
+        "paraphrase_parameter_description": 188,
+        "query_paraphrase": 187,
+        "TD_AB": 161,
+        "same_name_A": 44,
+        "CD_AB": 151,
+        "same_name_C": 44,
+        "same_name_B": 44,
+        "same_name_D": 43
+      },
+      "mdp_categories": {
+        "reward": 1041,
+        "none": 2006,
+        "observation": 693,
+        "action": 260
+      },
+      "split_markers": {
+        "train": 4000
+      },
+      "mirror_or_shape_mismatches": {}
+    },
+    {
+      "file": "training/data/test.parquet",
+      "sha256": "b89cfb004e7b6d0f266c462025f53868c4ec1a69c63c302d900c64ea25f45cf8",
+      "bytes": 141867,
+      "rows": 79,
+      "expected_rows": 79,
+      "matches_published_count": true,
+      "schema": "data_source: large_string\nprompt: list<element: struct<content: string, role: string>>\n  child 0, element: struct<content: string, role: string>\n      child 0, content: string\n      child 1, role: string\nability: large_string\nreward_model: struct<ground_truth: string, style: string>\n  child 0, ground_truth: string\n  child 1, style: string\nextra_info: struct<index: int64, input: string, instruction: string, original_id: string, output: string, pertur (... 66 chars omitted)\n  child 0, index: int64\n  child 1, input: string\n  child 2, instruction: string\n  child 3, original_id: string\n  child 4, output: string\n  child 5, perturbation: struct<mdp_category: string, type: string>\n      child 0, mdp_category: string\n      child 1, type: string\n  child 6, split: string\n-- schema metadata --\npandas: '{\"index_columns\": [{\"kind\": \"range\", \"name\": null, \"start\": 0, \"' + 862",
+      "original_ids_nonempty_unique": 79,
+      "empty_original_id_rows": 0,
+      "duplicate_original_id_rows_beyond_first": 0,
+      "duplicate_exact_prompt_rows_beyond_first": 0,
+      "perturbation_types": {
+        "same_name_B": 2,
+        "same_name_A": 2,
+        "paraphrase_parameter_description": 10,
+        "CD_NT": 8,
+        "redundant": 3,
+        "TD_NT": 10,
+        "TD": 4,
+        "TD_AB": 5,
+        "realistic_typos": 6,
+        "paraphrase_tool_description": 6,
+        "CD_AB": 4,
+        "same_name_E": 2,
+        "query_paraphrase": 7,
+        "CD": 6,
+        "same_name_D": 2,
+        "same_name_C": 2
+      },
+      "mdp_categories": {
+        "action": 13,
+        "observation": 29,
+        "reward": 37
+      },
+      "split_markers": {
+        "test": 79
+      },
+      "mirror_or_shape_mismatches": {}
+    }
+  ],
+  "comparisons": [
+    {
+      "left": "train",
+      "right": "mixed_train",
+      "overlap": {
+        "original_id": {
+          "distinct_shared_keys": 3905,
+          "left_rows": 3905,
+          "right_rows": 3905
+        },
+        "prompt_sha256": {
+          "distinct_shared_keys": 197,
+          "left_rows": 197,
+          "right_rows": 197
+        },
+        "prompt_gold_sha256": {
+          "distinct_shared_keys": 196,
+          "left_rows": 196,
+          "right_rows": 196
+        },
+        "user_turns_sha256": {
+          "distinct_shared_keys": 3011,
+          "left_rows": 3052,
+          "right_rows": 3061
+        },
+        "input_sha256": {
+          "distinct_shared_keys": 3012,
+          "left_rows": 3048,
+          "right_rows": 3059
+        }
+      }
+    },
+    {
+      "left": "train",
+      "right": "test",
+      "overlap": {
+        "original_id": {
+          "distinct_shared_keys": 0,
+          "left_rows": 0,
+          "right_rows": 0
+        },
+        "prompt_sha256": {
+          "distinct_shared_keys": 0,
+          "left_rows": 0,
+          "right_rows": 0
+        },
+        "prompt_gold_sha256": {
+          "distinct_shared_keys": 0,
+          "left_rows": 0,
+          "right_rows": 0
+        },
+        "user_turns_sha256": {
+          "distinct_shared_keys": 0,
+          "left_rows": 0,
+          "right_rows": 0
+        },
+        "input_sha256": {
+          "distinct_shared_keys": 0,
+          "left_rows": 0,
+          "right_rows": 0
+        }
+      }
+    },
+    {
+      "left": "mixed_train",
+      "right": "test",
+      "overlap": {
+        "original_id": {
+          "distinct_shared_keys": 79,
+          "left_rows": 79,
+          "right_rows": 79
+        },
+        "prompt_sha256": {
+          "distinct_shared_keys": 4,
+          "left_rows": 4,
+          "right_rows": 4
+        },
+        "prompt_gold_sha256": {
+          "distinct_shared_keys": 4,
+          "left_rows": 4,
+          "right_rows": 4
+        },
+        "user_turns_sha256": {
+          "distinct_shared_keys": 63,
+          "left_rows": 63,
+          "right_rows": 63
+        },
+        "input_sha256": {
+          "distinct_shared_keys": 63,
+          "left_rows": 63,
+          "right_rows": 63
+        }
+      }
+    }
+  ],
+  "official_clean_user_sequence_screen": {
+    "train": {
+      "distinct_shared_user_sequences": 0,
+      "training_or_validation_rows": 0,
+      "evaluation_records": 0
+    },
+    "mixed_train": {
+      "distinct_shared_user_sequences": 0,
+      "training_or_validation_rows": 0,
+      "evaluation_records": 0
+    },
+    "test": {
+      "distinct_shared_user_sequences": 0,
+      "training_or_validation_rows": 0,
+      "evaluation_records": 0
+    }
+  },
+  "official_clean_file_sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+  "audit_source_sha256": "d9049571f49f6af787c42b5d58068945a20a1e7198b2919820266efc08666c9a",
+  "model_inference": false,
+  "training_run": false,
+  "new_split_created": false,
+  "full_semantic_family_mapping_verified": false,
+  "training_evaluation_disjointness_verified": false,
+  "interpretation": [
+    "test.parquet is the released training-time validation file, not the official 3721-case benchmark.",
+    "Exact prompt or prompt+gold matches are literal reuse; shared metadata IDs alone require provenance interpretation.",
+    "Equal normalized user turns alone are screening candidates, not proof of identical tasks/toolkits/answers.",
+    "Zero matches under these fingerprints does not prove absence of semantic contamination or pretraining overlap.",
+    "No input is changed; no new training split, neural baseline or paper reproduction is claimed."
+  ]
+}

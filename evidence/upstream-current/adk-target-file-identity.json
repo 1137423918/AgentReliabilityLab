@@ -1,0 +1,22 @@
+{
+  "old_tested_candidate": "c71ca6a2d993ede60f9fd873b768a6d452db116f",
+  "current_head": "90815ad147fc652aa0cfeca7b1ec214903ae3089",
+  "reason": "External main merge; local candidate checkout not moved or pushed.",
+  "target_files": [
+    {
+      "path": "src/google/adk/artifacts/file_artifact_service.py",
+      "url": "https://raw.githubusercontent.com/google/adk-python/90815ad147fc652aa0cfeca7b1ec214903ae3089/src/google/adk/artifacts/file_artifact_service.py",
+      "new_head_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+      "tested_candidate_sha256": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+      "byte_identical": true
+    },
+    {
+      "path": "tests/unittests/artifacts/test_artifact_service.py",
+      "url": "https://raw.githubusercontent.com/google/adk-python/90815ad147fc652aa0cfeca7b1ec214903ae3089/tests/unittests/artifacts/test_artifact_service.py",
+      "new_head_sha256": "e07bf9fbe9e8dbd7399ddb9a267e8cb14bce7da0f9c9fb5d6e2d780398846f37",
+      "tested_candidate_sha256": "e07bf9fbe9e8dbd7399ddb9a267e8cb14bce7da0f9c9fb5d6e2d780398846f37",
+      "byte_identical": true
+    }
+  ],
+  "current_whole_head_tested": false
+}

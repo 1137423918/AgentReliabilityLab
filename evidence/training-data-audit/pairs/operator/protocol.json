@@ -1,0 +1,21 @@
+{
+  "profile": "paired-research-inputs-v1",
+  "declared_utc": "2026-11-23T02:06:21.488034+00:00",
+  "source_sha256": "889d1c182671521a134d342b7c4e3a927717632cb9869f44d87e951be4408860",
+  "operator_sha256": "730552f6a63f2e223251a91cfe3249243c23d191c93784cbf3fc3700da4f70a5",
+  "prior_audit_protocol_sha256": "df336e3138a2ffe8070eacfce02d53d9affbbb823ebf73a0ebb18b58d8e01e47",
+  "input_sha256": {
+    "train.parquet": "7fe25035891f830994ee702427432b54ea696d16edfbc7da6d88eb9d9aca806b",
+    "mixed_train.parquet": "ca071bbda0ab11e785f3791072d21eaad2568d01139f97ba2d24fc89afd3e9ca",
+    "test.parquet": "b89cfb004e7b6d0f266c462025f53868c4ec1a69c63c302d900c64ea25f45cf8"
+  },
+  "selection": "Sorted common metadata original_id in Full and Mixed, exclude all79 released val IDs. Require zero shared prompt/prompt+gold/input/normalized-user-turn fingerprints with original validation; fail rather than silently change selection. Preserve row content, schema and validation order.",
+  "expected_paired_training_rows_each": 3905,
+  "expected_validation_rows": 79,
+  "expected_Mixed_excluded_validation_IDs": 79,
+  "expected_Mixed_unpaired_extra_IDs": 16,
+  "compute": "GPU7 CPU only,4CPU,nice19,8GiBAS,4GiB sampledRSS,12GiBmemoryadmission/8floor,180seconds; same isolated Arrow22 env; no install/model/GPU/training.",
+  "no_retry_or_repair": true,
+  "training_tokens_or_update_budget_matched": false,
+  "full_semantic_deduplication": false
+}

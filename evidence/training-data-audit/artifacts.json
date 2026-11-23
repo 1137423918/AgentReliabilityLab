@@ -1,0 +1,167 @@
+{
+  "normalization": "Only readable operator runtime/server paths normalized; complete audit results, hash manifest, overlap-row references, source attachments, pinned PyPI metadata and predeclared protocol remain original bytes. No Parquet content, model weights, full prompts/answers, server credentials or environment directories are redistributed. Upstream converter attachment retains its license alongside it. Paired-input follow-up adds eight allowlisted metadata/source files; generated Parquets remain private, every7889 selected row independently matches the first audit manifest.",
+  "files": [
+    {
+      "path": "operator/install-pinned-wheel.log",
+      "original_sha256": "6aa149bfe2dba01707e2cab81df3c710ce16160cffaefe006d7a639af23b1d73",
+      "public_sha256": "6aa149bfe2dba01707e2cab81df3c710ce16160cffaefe006d7a639af23b1d73",
+      "public_bytes": 143
+    },
+    {
+      "path": "operator/audit-training-parquets.log",
+      "original_sha256": "fe7916adef8b539b43c2a59e0da241e10bfd24a18ffbd6171882dc0ae5ce868b",
+      "public_sha256": "fe7916adef8b539b43c2a59e0da241e10bfd24a18ffbd6171882dc0ae5ce868b",
+      "public_bytes": 1929
+    },
+    {
+      "path": "operator/run-report.json",
+      "original_sha256": "e8a841752ed7239137e5d99f3b8da736c47a1d1135f878df735b53786e044e11",
+      "public_sha256": "e8a841752ed7239137e5d99f3b8da736c47a1d1135f878df735b53786e044e11",
+      "public_bytes": 1715
+    },
+    {
+      "path": "operator/download-pinned-wheel-monitor.jsonl",
+      "original_sha256": "a75a0c9abf7c6151823c5f2777b22b2bde9eee8bdd8e15b1f60463105aacff6e",
+      "public_sha256": "a75a0c9abf7c6151823c5f2777b22b2bde9eee8bdd8e15b1f60463105aacff6e",
+      "public_bytes": 567
+    },
+    {
+      "path": "operator/protocol.json",
+      "original_sha256": "df336e3138a2ffe8070eacfce02d53d9affbbb823ebf73a0ebb18b58d8e01e47",
+      "public_sha256": "df336e3138a2ffe8070eacfce02d53d9affbbb823ebf73a0ebb18b58d8e01e47",
+      "public_bytes": 2810
+    },
+    {
+      "path": "operator/installed-integrity.log",
+      "original_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "public_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "public_bytes": 30
+    },
+    {
+      "path": "operator/new-isolated-venv.log",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public_bytes": 0
+    },
+    {
+      "path": "operator/install-pinned-wheel-monitor.jsonl",
+      "original_sha256": "4f75879fcf9e73340b9b8cee95eb9da1948b9ddc93702a6b709e0d7c0c7338d3",
+      "public_sha256": "4f75879fcf9e73340b9b8cee95eb9da1948b9ddc93702a6b709e0d7c0c7338d3",
+      "public_bytes": 844
+    },
+    {
+      "path": "operator/new-isolated-venv-monitor.jsonl",
+      "original_sha256": "1082c68280b277d832f51b76ec9eacadcaea890d45569aaa9e944f11fd57d982",
+      "public_sha256": "1082c68280b277d832f51b76ec9eacadcaea890d45569aaa9e944f11fd57d982",
+      "public_bytes": 1424
+    },
+    {
+      "path": "operator/audit-training-parquets-monitor.jsonl",
+      "original_sha256": "a29df687618a6209163797df513d2c300128837e2be6292013da0107797d3774",
+      "public_sha256": "a29df687618a6209163797df513d2c300128837e2be6292013da0107797d3774",
+      "public_bytes": 861
+    },
+    {
+      "path": "operator/installed-integrity-monitor.jsonl",
+      "original_sha256": "2eafd5e13ec636cb7c92ad7df822698a6036eb1a06860990356d042b34efb2f3",
+      "public_sha256": "2eafd5e13ec636cb7c92ad7df822698a6036eb1a06860990356d042b34efb2f3",
+      "public_bytes": 189
+    },
+    {
+      "path": "operator/download-pinned-wheel.log",
+      "original_sha256": "efe2c6d6f6d64bb1040822eb406a3135d4e6a52314ea9b006de94cc979313855",
+      "public_sha256": "efe2c6d6f6d64bb1040822eb406a3135d4e6a52314ea9b006de94cc979313855",
+      "public_bytes": 98
+    },
+    {
+      "path": "operator/run.py",
+      "original_sha256": "40dfee23a12f58f8634d9acfabeb91fef82d8746aa6ca7ad023f6905e5e46532",
+      "public_sha256": "1f35a70a226e21cdccddf7547a89e9d963dca27a0e3585b107b64986138aca74",
+      "public_bytes": 6929
+    },
+    {
+      "path": "results/record-manifest.jsonl",
+      "original_sha256": "821559703aa4abe590ea0b20726c10ccd6bba6db1b1475c0af95d269fce4f308",
+      "public_sha256": "821559703aa4abe590ea0b20726c10ccd6bba6db1b1475c0af95d269fce4f308",
+      "public_bytes": 5260482
+    },
+    {
+      "path": "results/overlap-details.jsonl",
+      "original_sha256": "8f874539b3ad3075c205ccdc120bde39ba70b8f591cb15e6b4d15be15e48b0a5",
+      "public_sha256": "8f874539b3ad3075c205ccdc120bde39ba70b8f591cb15e6b4d15be15e48b0a5",
+      "public_bytes": 1744834
+    },
+    {
+      "path": "results/report.json",
+      "original_sha256": "c57d94f00c2f8f3c82447c9e7d2e168f04c7600a3023db7b483ff63440afed20",
+      "public_sha256": "c57d94f00c2f8f3c82447c9e7d2e168f04c7600a3023db7b483ff63440afed20",
+      "public_bytes": 9981
+    },
+    {
+      "path": "tested-source/audit_toolrl_training.py",
+      "original_sha256": "d9049571f49f6af787c42b5d58068945a20a1e7198b2919820266efc08666c9a",
+      "public_sha256": "d9049571f49f6af787c42b5d58068945a20a1e7198b2919820266efc08666c9a",
+      "public_bytes": 9013
+    },
+    {
+      "path": "tested-source/upstream-converter.py.txt",
+      "original_sha256": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1",
+      "public_sha256": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1",
+      "public_bytes": 17703
+    },
+    {
+      "path": "UPSTREAM_LICENSE",
+      "original_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "public_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "public_bytes": 11358
+    },
+    {
+      "path": "pairs/operator/run.py",
+      "original_sha256": "730552f6a63f2e223251a91cfe3249243c23d191c93784cbf3fc3700da4f70a5",
+      "public_sha256": "4a9004878618557fa9fbc05087503f1e0d4007884aad85225d3ad2235e3d4447",
+      "public_bytes": 3826
+    },
+    {
+      "path": "pairs/operator/prepare.py",
+      "original_sha256": "889d1c182671521a134d342b7c4e3a927717632cb9869f44d87e951be4408860",
+      "public_sha256": "889d1c182671521a134d342b7c4e3a927717632cb9869f44d87e951be4408860",
+      "public_bytes": 6832
+    },
+    {
+      "path": "pairs/operator/monitor.jsonl",
+      "original_sha256": "ab0e01b1f3b506beaa390d4a13d030392df02a1f2abab130c0e0c39f00c29bd7",
+      "public_sha256": "ab0e01b1f3b506beaa390d4a13d030392df02a1f2abab130c0e0c39f00c29bd7",
+      "public_bytes": 2815
+    },
+    {
+      "path": "pairs/operator/prepare.log",
+      "original_sha256": "051daa121acaa22af93a843ed399c0361097e3ff15b6f854638dd7f510c24c6a",
+      "public_sha256": "051daa121acaa22af93a843ed399c0361097e3ff15b6f854638dd7f510c24c6a",
+      "public_bytes": 487
+    },
+    {
+      "path": "pairs/operator/run-report.json",
+      "original_sha256": "755ebcaa93cf8d64f5fb21b96e948ced639a26f94a949a4b80815f033bf00e0c",
+      "public_sha256": "755ebcaa93cf8d64f5fb21b96e948ced639a26f94a949a4b80815f033bf00e0c",
+      "public_bytes": 562
+    },
+    {
+      "path": "pairs/operator/protocol.json",
+      "original_sha256": "7da68d59c8a2679cce4f51c1f4208e6309b8c9b40f13915a0970b871304bbdb7",
+      "public_sha256": "7da68d59c8a2679cce4f51c1f4208e6309b8c9b40f13915a0970b871304bbdb7",
+      "public_bytes": 1433
+    },
+    {
+      "path": "pairs/results/report.json",
+      "original_sha256": "1fb586274dc6790d46cf9c4c60d9dfa6e08f498ddba46099af3392cbe6611ffe",
+      "public_sha256": "1fb586274dc6790d46cf9c4c60d9dfa6e08f498ddba46099af3392cbe6611ffe",
+      "public_bytes": 3142
+    },
+    {
+      "path": "pairs/results/selection-manifest.jsonl",
+      "original_sha256": "cee8e0cd8cef827f893655eee3d689cb14d02a9af2f67727887480f239940490",
+      "public_sha256": "cee8e0cd8cef827f893655eee3d689cb14d02a9af2f67727887480f239940490",
+      "public_bytes": 4073545
+    }
+  ]
+}

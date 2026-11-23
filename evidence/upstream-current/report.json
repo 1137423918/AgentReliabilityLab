@@ -1,0 +1,9 @@
+{
+  "checked_at_utc": "2026-11-23T01:57:54.996916+00:00",
+  "open": 5,
+  "draft": 1,
+  "merged": 0,
+  "human_approval_verified": false,
+  "changes": "External non-draft states7032/8278/14853; ADK head merges main, two tested target files byte-identical but whole current head not rerun; Copilot COMMENTED on14845/14853 is not human approval.",
+  "actions": "Read only, no upstream writes/comments/issues/ready/review requests/merge/attestation."
+}

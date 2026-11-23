@@ -1,0 +1,77 @@
+{
+  "upstream_commit": "111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1",
+  "pyarrow_version": "22.0.0",
+  "policy": "Sorted common nonempty original_id across train and mixed_train, excluding every released test.parquet original_id; validation content/order unchanged.",
+  "paired_training_ids": 3905,
+  "validation_rows": 79,
+  "excluded": {
+    "train": {
+      "validation_id_rows": 0,
+      "unpaired_non_validation_rows": 0,
+      "total_rows": 0
+    },
+    "mixed_train": {
+      "validation_id_rows": 79,
+      "unpaired_non_validation_rows": 16,
+      "total_rows": 95
+    }
+  },
+  "validation_fingerprint_intersections": {
+    "train": {
+      "prompt": 0,
+      "prompt_gold": 0,
+      "input": 0,
+      "normalized_user_turns": 0
+    },
+    "mixed_train": {
+      "prompt": 0,
+      "prompt_gold": 0,
+      "input": 0,
+      "normalized_user_turns": 0
+    }
+  },
+  "input_sha256": {
+    "train.parquet": "7fe25035891f830994ee702427432b54ea696d16edfbc7da6d88eb9d9aca806b",
+    "mixed_train.parquet": "ca071bbda0ab11e785f3791072d21eaad2568d01139f97ba2d24fc89afd3e9ca",
+    "test.parquet": "b89cfb004e7b6d0f266c462025f53868c4ec1a69c63c302d900c64ea25f45cf8"
+  },
+  "output_artifacts": [
+    {
+      "file": "train-paired.parquet",
+      "bytes": 4192661,
+      "sha256": "3fa5fe3e24010661bae6e344ae57f1000ddb4d34fceb26a3c9f3e8d0afbe529d",
+      "rows": 3905,
+      "canonical_rows_sha256": "04922fa81dfdd8e7ee701d3a114ef59d4ceab2cb9e9e2b41d4d3055d2c00f20c",
+      "row_content_and_schema_preserved": true
+    },
+    {
+      "file": "mixed_train-paired.parquet",
+      "bytes": 4032433,
+      "sha256": "a6231faee9ebbb2d79153901e361804349fb4002ffbc5e21c8a7eb33104b6807",
+      "rows": 3905,
+      "canonical_rows_sha256": "ddb6f1acf7f971703bb687e2ea546956649d36bdf773ef65a3cdb4eb01f89cd6",
+      "row_content_and_schema_preserved": true
+    },
+    {
+      "file": "test-paired.parquet",
+      "bytes": 100058,
+      "sha256": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+      "rows": 79,
+      "canonical_rows_sha256": "5a0bd592cc1dd28753cf32807c23307babce57e3dc18d1fa6e084b54e3661673",
+      "row_content_and_schema_preserved": true
+    }
+  ],
+  "source_sha256": "889d1c182671521a134d342b7c4e3a927717632cb9869f44d87e951be4408860",
+  "model_inference": false,
+  "training_run": false,
+  "official_benchmark_modified": false,
+  "semantic_deduplication_verified": false,
+  "limits": [
+    "Pairing follows released metadata IDs; it is not an independent semantic equivalence proof.",
+    "Exact/normalized fingerprint disjointness does not rule out paraphrases, tool-family overlap or pretraining contamination.",
+    "test.parquet remains the released perturbed validation distribution, not an independent clean validation set.",
+    "Training variants have paired IDs, not automatically equal tokens, update steps, perturbation proportions or effective compute.",
+    "The new Parquets are private research inputs; canonical row hashes support reconstruction despite byte differences across Arrow versions.",
+    "No neural score, trained checkpoint, official benchmark result or GRPO reproduction is produced."
+  ]
+}

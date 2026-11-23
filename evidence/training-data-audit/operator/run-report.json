@@ -1,0 +1,57 @@
+{
+  "terminal": true,
+  "protocol_sha256": "df336e3138a2ffe8070eacfce02d53d9affbbb823ebf73a0ebb18b58d8e01e47",
+  "source_archive_sha256": "13293449d4468eb6a671d5320a99dd98a61d4070a002ee82ec2009808a5901df",
+  "operator_sha256": "40dfee23a12f58f8634d9acfabeb91fef82d8746aa6ca7ad023f6905e5e46532",
+  "filesystem": "ext4",
+  "GPU_work_started": false,
+  "model_inference": false,
+  "training_run": false,
+  "phases": [
+    {
+      "phase": "download-pinned-wheel",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 1.894,
+      "peak_sampled_tree_RSS_bytes": 21626880,
+      "remaining_observed_owned_processes": []
+    },
+    {
+      "phase": "new-isolated-venv",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 4.772,
+      "peak_sampled_tree_RSS_bytes": 106917888,
+      "remaining_observed_owned_processes": []
+    },
+    {
+      "phase": "install-pinned-wheel",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 2.842,
+      "peak_sampled_tree_RSS_bytes": 65642496,
+      "remaining_observed_owned_processes": []
+    },
+    {
+      "phase": "installed-integrity",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 0.649,
+      "peak_sampled_tree_RSS_bytes": 40710144,
+      "remaining_observed_owned_processes": []
+    },
+    {
+      "phase": "audit-training-parquets",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 2.871,
+      "peak_sampled_tree_RSS_bytes": 248090624,
+      "remaining_observed_owned_processes": []
+    }
+  ],
+  "audit_completed": true,
+  "source_files_unchanged": true,
+  "core_distribution_pairs_unchanged": true,
+  "wall_seconds": 13.244,
+  "owned_processes_after": []
+}
