@@ -1,0 +1,49 @@
+{
+  "planned_cases": 199,
+  "scored_cases": 199,
+  "attempts_reserved": 201,
+  "unknown_still_charged": 2,
+  "full199_completed": true,
+  "aggregate_scores": {
+    "overall": {
+      "n": 199,
+      "correct": 107,
+      "score_sum": 107.0
+    },
+    "bfcl_v3": {
+      "n": 32,
+      "correct": 27,
+      "score_sum": 27.0
+    },
+    "apibank": {
+      "n": 74,
+      "correct": 32,
+      "score_sum": 32.0
+    },
+    "tooleyes": {
+      "n": 51,
+      "correct": 45,
+      "score_sum": 45.0
+    },
+    "toolalpaca": {
+      "n": 21,
+      "correct": 2,
+      "score_sum": 2.0
+    },
+    "rotbench": {
+      "n": 21,
+      "correct": 1,
+      "score_sum": 1.0
+    }
+  },
+  "partial_scores_are_not_comparable_to_full199": false,
+  "known_input_tokens": 193895,
+  "known_generated_token_ids": 11536,
+  "no_new_model_calls_or_rescoring": true,
+  "correct_fraction": 0.5376884422110553,
+  "required_key_violation_cases": 3,
+  "cases_without_parsed_tool_calls": 34,
+  "truncated_or_soft_time_stopped": 0,
+  "known_completed_generation_seconds": 902.0915,
+  "timing_excludes_unknown_attempts_and_model_load": true
+}

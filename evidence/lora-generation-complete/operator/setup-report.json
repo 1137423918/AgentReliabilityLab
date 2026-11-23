@@ -1,0 +1,66 @@
+{
+  "terminal": true,
+  "protocol_sha256": "395fad903d807b6f4389690cad07e44c1ae99d55a3fbda9af1ea27078a91790c",
+  "model_or_GPU_or_training": false,
+  "phases": [
+    {
+      "phase": "CPU-progress-and-dispatch-controls",
+      "returncode": 0,
+      "wall_seconds": 2.11,
+      "peak_sampled_owned_RSS_bytes": 48300032
+    },
+    {
+      "phase": "new-tokenizer-admission",
+      "returncode": 0,
+      "wall_seconds": 18.868,
+      "peak_sampled_owned_RSS_bytes": 673071104
+    },
+    {
+      "phase": "legacy-import-and280-cache-controls",
+      "returncode": 0,
+      "wall_seconds": 41.141,
+      "peak_sampled_owned_RSS_bytes": 36929536
+    }
+  ],
+  "private_fixed_checkpoint_backup_verified": true,
+  "ready": true,
+  "assembly": {
+    "CPU_only_no_model_or_rescoring": true,
+    "Mixed_new_calls_required": 199,
+    "all199_old_new_admission_cases_equal": true,
+    "cached_dispatch_controls": 280,
+    "definition_file_sha256": "87efd096a6a7db490a0e0463596446048459c6bae846425790ec7371750292b3",
+    "definition_owner_sha256": "7ae60226d469106e53513224aebfbf0e371b0e21388e9206caf44f24614ea7ef",
+    "legacy_attempts_imported": 281,
+    "legacy_inputs_unchanged": true,
+    "legacy_results_imported": 280,
+    "legacy_sources": [
+      {
+        "sha256": {
+          "calls.jsonl": "f8cddf9fa6faae7d87bf2eac4d02f18b1fa8891b503eff1cc04342a4ef418c27",
+          "controller": "6d1481caa70846462f2eebc16cc191bea593cdfe282fe04e3a4a2117dd9a692e",
+          "predictions.jsonl": "31f3c2dc733b6a3eba35fccd4c9037da62b855aaa3ec47a398caabd1b530af04",
+          "report.json": "e9a2ae06787132dc44cc21debc109422849d7b6843f2e1ae16f8e9529dca810d"
+        },
+        "variant": "base"
+      },
+      {
+        "sha256": {
+          "calls.jsonl": "c365d1b0556663335bbe94b599a7e1d22b3c7ae319b148f1f3854af8ab2c0f2b",
+          "controller": "a94d34dedcde0c49ebe86461ec088235d86f1ac02019a26459dea82ed62dbb31",
+          "predictions.jsonl": "6ca2082ccf39da3f414e236d557d86a87957dca61c9e9079f81a28f93884702b",
+          "report.json": "2cbe4f2e9f86617d815055e892ce3c6fb5b0f3c317dd61dd82647e2f93fd3097"
+        },
+        "variant": "full32"
+      }
+    ],
+    "model_or_scorer_callbacks": 0,
+    "new_admission_sha256": "4daecd085140ba068b2997276a18b143d0c7d8a0f5c58fd1d9c8604c496c933e",
+    "next_Full_new_calls_required": 118,
+    "ready": true,
+    "unknown_attempts_retained": 1
+  },
+  "source_files_unchanged": true,
+  "owned_after": 0,
+  "wall_seconds": 73.775
+}

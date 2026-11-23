@@ -1,0 +1,223 @@
+{
+  "status": "completed_resource_recovered_clean_comparison",
+  "all199_each_completed": true,
+  "variants": {
+    "base": {
+      "planned_cases": 199,
+      "scored_cases": 199,
+      "attempts_reserved": 199,
+      "unknown_still_charged": 0,
+      "full199_completed": true,
+      "aggregate_scores": {
+        "overall": {
+          "n": 199,
+          "correct": 118,
+          "score_sum": 119.66666666666666
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 26,
+          "score_sum": 26.0
+        },
+        "apibank": {
+          "n": 74,
+          "correct": 42,
+          "score_sum": 42.0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 47,
+          "score_sum": 47.0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 1,
+          "score_sum": 1.0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 2,
+          "score_sum": 3.666666666666667
+        }
+      },
+      "partial_scores_are_not_comparable_to_full199": false,
+      "known_input_tokens": 193895,
+      "known_generated_token_ids": 21089,
+      "no_new_model_calls_or_rescoring": true,
+      "correct_fraction": 0.592964824120603,
+      "required_key_violation_cases": 3,
+      "cases_without_parsed_tool_calls": 23,
+      "truncated_or_soft_time_stopped": 3,
+      "known_completed_generation_seconds": 1067.1273000000008,
+      "timing_excludes_unknown_attempts_and_model_load": true
+    },
+    "full32": {
+      "planned_cases": 199,
+      "scored_cases": 199,
+      "attempts_reserved": 201,
+      "unknown_still_charged": 2,
+      "full199_completed": true,
+      "aggregate_scores": {
+        "overall": {
+          "n": 199,
+          "correct": 107,
+          "score_sum": 107.0
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 27,
+          "score_sum": 27.0
+        },
+        "apibank": {
+          "n": 74,
+          "correct": 32,
+          "score_sum": 32.0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 45,
+          "score_sum": 45.0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 2,
+          "score_sum": 2.0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 1,
+          "score_sum": 1.0
+        }
+      },
+      "partial_scores_are_not_comparable_to_full199": false,
+      "known_input_tokens": 193895,
+      "known_generated_token_ids": 11536,
+      "no_new_model_calls_or_rescoring": true,
+      "correct_fraction": 0.5376884422110553,
+      "required_key_violation_cases": 3,
+      "cases_without_parsed_tool_calls": 34,
+      "truncated_or_soft_time_stopped": 0,
+      "known_completed_generation_seconds": 902.0915,
+      "timing_excludes_unknown_attempts_and_model_load": true
+    },
+    "mixed32": {
+      "planned_cases": 199,
+      "scored_cases": 199,
+      "attempts_reserved": 199,
+      "unknown_still_charged": 0,
+      "full199_completed": true,
+      "aggregate_scores": {
+        "overall": {
+          "n": 199,
+          "correct": 105,
+          "score_sum": 105.0
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 27,
+          "score_sum": 27.0
+        },
+        "apibank": {
+          "n": 74,
+          "correct": 30,
+          "score_sum": 30.0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 44,
+          "score_sum": 44.0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 2,
+          "score_sum": 2.0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 2,
+          "score_sum": 2.0
+        }
+      },
+      "partial_scores_are_not_comparable_to_full199": false,
+      "known_input_tokens": 193895,
+      "known_generated_token_ids": 13454,
+      "no_new_model_calls_or_rescoring": true,
+      "correct_fraction": 0.5276381909547738,
+      "required_key_violation_cases": 3,
+      "cases_without_parsed_tool_calls": 39,
+      "truncated_or_soft_time_stopped": 2,
+      "known_completed_generation_seconds": 1037.2493,
+      "timing_excludes_unknown_attempts_and_model_load": true
+    }
+  },
+  "paired": {
+    "full32-vs-base": {
+      "candidate": "full32",
+      "reference": "base",
+      "n": 199,
+      "both_correct": 97,
+      "both_incorrect": 71,
+      "candidate_only_correct": 10,
+      "reference_only_correct": 21,
+      "net_correct_change": -11,
+      "no_general_population_significance_claim": true
+    },
+    "mixed32-vs-base": {
+      "candidate": "mixed32",
+      "reference": "base",
+      "n": 199,
+      "both_correct": 93,
+      "both_incorrect": 69,
+      "candidate_only_correct": 12,
+      "reference_only_correct": 25,
+      "net_correct_change": -13,
+      "no_general_population_significance_claim": true
+    },
+    "mixed32-vs-full32": {
+      "candidate": "mixed32",
+      "reference": "full32",
+      "n": 199,
+      "both_correct": 100,
+      "both_incorrect": 87,
+      "candidate_only_correct": 5,
+      "reference_only_correct": 7,
+      "net_correct_change": -2,
+      "no_general_population_significance_claim": true
+    }
+  },
+  "attempts_reserved": 599,
+  "scored_results_committed": 597,
+  "unknown_attempts_still_charged": 2,
+  "unknown_attempts": [
+    {
+      "sequence": 281,
+      "variant": "full32",
+      "case_index": 82,
+      "request_sha256": "48bcfed151e040f74c8a9151238f762a663e5097e8bba87cda014714e42098f7",
+      "retry_permission_recorded": true
+    },
+    {
+      "sequence": 284,
+      "variant": "full32",
+      "case_index": 84,
+      "request_sha256": "22e74d9a44d605a4dee191fc2bc192e2cb4618781f6eaf6487220893e351f6f7",
+      "retry_permission_recorded": true
+    }
+  ],
+  "previous_282_results_byte_equivalent": true,
+  "new_model_calls_this_segment": 315,
+  "original597_no_retry_profile_remains_incomplete": true,
+  "recovery_limits": {
+    "case_attempts": 3,
+    "total_attempts": 603,
+    "variant_attempts": 201
+  },
+  "same_physical_GPU_all3": true,
+  "protocol_sha256": "070b6260383c051b19e38d7b108bcf35690949567f73692b0a4acb8dc68f8b35",
+  "training_updates": 0,
+  "official_clean_single_turn_only": true,
+  "not_all_perturbations_or_actual_tool_execution": true,
+  "generation_outputs_not_used_to_tune_protocol": true,
+  "no_new_model_calls_or_rescoring_by_exporter": true,
+  "homepage_updated": false
+}

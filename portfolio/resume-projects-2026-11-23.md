@@ -7,13 +7,13 @@
 **PyTorch · Transformers · PEFT / LoRA · Qwen2.5-3B · AgentRobustBench**
 
 - 审计工具调用训练 / 验证数据复用，构建同 ID 配对数据、文本关联分组与有效监督标签预算；在真实 3B 模型上完成 Full / Mixed 各 32 步 LoRA 训练，每组使用 65,536 个监督标签，保存检查点与逐步来源记录。
-- 实现跨进程的生成预算与结果恢复机制，模型调用前持久化扣额，恢复时复用首个已提交结果，未知尝试保留扣额；12 项 Linux CPU 控制通过，并在真实 GPU 中断后跳过 81 条旧结果、完成 2 条新增结果。
-- 完成新同后端基线全部 199 条生成评测，官方 correct 118/199；Full32 当前为 83/199、Mixed32 尚未生成，完整微调效果对照仍在进行。
+- 实现跨进程的生成预算与结果恢复机制，模型调用前持久化扣额，恢复时复用首个已提交结果，未知尝试保留扣额；12 项 Linux CPU 控制通过，并在真实 GPU 中断后复用已提交结果，最终三组各199条完成；599次预留中两次历史未知继续占额。
+- 完成同设备、相同199条输入的三组生成对照，官方correct：base 118/199、full32 107/199、mixed32 105/199；按同例哈希统计配对变化。本配方未显示微调后的 clean correct 提升；不能宣称扰动鲁棒性或泛化提升。
 - 对已保存预测补充双视图schema诊断，区分无效源声明、名称不匹配与参数约束问题；基线158/199例符合上游投影约束，其中41例仍未通过官方匹配，为后续方法选择提供错误分布，未宣称准确率提升。[方法与证据](../docs/tool-schema-diagnostics.md)
 
 这组经历能够支持数据审计、训练实现、实验可追溯与恢复工程的表述。Full 原训练的最终内存核验存在缺口，保存检查点的独立回放通过；Mixed 完整核验通过。当前生成证据不能支持微调准确率或扰动鲁棒性提升的结论。
 
-[训练配方与边界](../docs/lora-pilot.md) · [生成与恢复](../docs/generation-recovery.md) · [逐例证据](../evidence/lora-generation/README.md)
+[训练配方与边界](../docs/lora-pilot.md) · [完整生成对照](../docs/generation-complete.md) · [历史恢复设计](../docs/generation-recovery.md) · [逐例证据](../evidence/lora-generation/README.md)
 
 ## 可恢复 Agent 工作流与 MCP 证据服务
 
