@@ -90,3 +90,16 @@ extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_cleanup_controls \
 ## 中断通信证据持久化
 
 后续[私有wire日志](mcp-wire-journal.md)已接入本适配器。服务器真实MCP/TCP强杀控制恢复了15条事件与2份完整脚本模型回复，第三次未知继续扣额；日志故障场景仍完成已知上下文关闭。另8项日志控制与原10项清理场景通过。这些验证不加载模型、不补写旧GPU轨迹，也不恢复整个Agent工作流；[元数据与各自分母](../evidence/mcp-wire-journal/README.md)单列保存。
+
+
+## 真实9B运行与持久通信记录（2026-11-23）
+
+使用当前已提交的适配器、原MCP服务wheel、原问题顺序和固定九份报告，在授权GPU7的A6000上运行Qwen3.5-9B Q4_K_M。CUDA实际完整卸载33/33层，8192上下文；每题仍最多8次模型POST、7轮工作流，模型SDK重试为0。原报告目录和gold保持历史固定快照，题目明确不查询当前GitHub状态；它是已知问题的应用接入验证，不是held-out模型准确率。
+
+首题实际预留7次POST、58,111正文字节，取得7份完整HTTP200模型回复。模型执行了目录查询和5次报告读取，没有请求`submit_assessment`；第7份回复又要求读取一份报告，固定SDK在`parse_agent_output`处报`WorkflowRuntimeError`：达到7轮上限。结果未通过事实覆盖和最终提交验收；第二题按预声明的工作流失败终止规则未运行，不给它补算分数。
+
+40条通信事件、7份完整模型回复通过独立进程的只读reader恢复，帧链和writer关闭记录一致，尾部缺失字节为0。私有wire文件139,577字节、权限0600；模型账本7次预留均有完整回复匹配，本次没有未知请求。MCP返回`closed=true`确认同一审计上下文关闭；原生模型与MCP服务退出，两个端口关闭，自有进程为0，GPU上下文已释放。原始正文和审计能力留在服务器，公开[字段与哈希元数据](../evidence/mcp-gpu-wire/report.json)、[逐题结果](../evidence/mcp-gpu-wire/cases-summary.json)、[7次回复的工具选择和token统计](../evidence/mcp-gpu-wire/model-response-metadata.json)及[完整通信元数据](../evidence/mcp-gpu-wire/inflated_merged_claim/wire-metadata.json)。这验证了真实模型运行中的证据保留与关闭，不是整个Agent工作流恢复。
+
+启动前V1曾在共享存储完整文件核对的180秒限额处退出，当时模型未启动、神经请求为0。随后单独将22项运行文件与模型共6,701,572,936字节流式复制到节点本地ext4并核对SHA，耗时189.886秒；V2从本地副本复核相同字节，完成本次运行。模型、输入、评分与每题额度未因此改变。两场启动记录、实际执行器、协议、源码哈希与运行库元数据均随本目录保留；这不是单变量硬件速度比较，旧CPU超时和旧GPU中断仍按原结果保留。
+
+失败轨迹显示，在读取两份必需报告后，模型又读取了3份本题不需要的报告。轮次边界也已有上游[PR #23259](https://github.com/run-llama/llama_index/pull/23259)，未重复提交；第7份模型回复并非最终提交，因此不能推断边界修复单独就会让本题通过。后续应独立评估检索范围与预算感知策略，保留本场原始失败。上述结果不增加130项核心或脚本控制的计数。[公开文件清单与原始/规范化SHA](../evidence/mcp-gpu-wire/artifacts.json)。

@@ -1,0 +1,137 @@
+{
+  "protocol_sha256": "d2c635cdbad8b6ae8818bc9f278c6473a0d280e10859dc0027e0ddc39298621d",
+  "source_archive_sha256": "c4aeb951e1ad590bac6f625b0e55745a95ad7b522c3ca634b3db52e43f40ff1b",
+  "terminal": true,
+  "model_started": true,
+  "model_ready": true,
+  "MCP_installed_service": true,
+  "authorized_GPU7": true,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 5.923,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 158556160
+    },
+    {
+      "phase": "installed-service-identity",
+      "returncode": 0,
+      "wall_seconds": 2.123,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 63696896
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 73.301,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 14168064
+    },
+    {
+      "phase": "case-inflated_merged_claim",
+      "returncode": 2,
+      "wall_seconds": 14.838,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 330858496
+    },
+    {
+      "phase": "recover-wire-inflated_merged_claim",
+      "returncode": 0,
+      "wall_seconds": 0.618,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 7376896
+    }
+  ],
+  "GPU": {
+    "index": 5,
+    "name": "NVIDIA RTX A6000",
+    "compute_capability": "8.6",
+    "total_mib": 49140,
+    "used_mib": 0,
+    "utilization": 0,
+    "uuid_sha256": "d774aa0b77b116113f810a249e3d950a69f248eb28bf5b60b1300828d91f5b15",
+    "compute_clients": 0
+  },
+  "admission": [
+    {
+      "at": "2026-11-23T11:47:40.265756+00:00",
+      "card": {
+        "index": 5,
+        "name": "NVIDIA RTX A6000",
+        "compute_capability": "8.6",
+        "total_mib": 49140,
+        "used_mib": 0,
+        "utilization": 0,
+        "uuid_sha256": "d774aa0b77b116113f810a249e3d950a69f248eb28bf5b60b1300828d91f5b15",
+        "compute_clients": 0
+      }
+    },
+    {
+      "at": "2026-11-23T11:47:45.511136+00:00",
+      "card": {
+        "index": 5,
+        "name": "NVIDIA RTX A6000",
+        "compute_capability": "8.6",
+        "total_mib": 49140,
+        "used_mib": 0,
+        "utilization": 0,
+        "uuid_sha256": "d774aa0b77b116113f810a249e3d950a69f248eb28bf5b60b1300828d91f5b15",
+        "compute_clients": 0
+      }
+    }
+  ],
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "context_observed": 8192,
+  "own_GPU_compute_process_seen": true,
+  "declared_cases": 2,
+  "completed_cases": 1,
+  "cases_passed": 0,
+  "all_cases_passed": false,
+  "aborted_remaining": "Transport/workflow failure; no repeated query or unknown work",
+  "GPU_guard_reason": null,
+  "GPU_monitor": {
+    "peak_host_tree_RSS_bytes": 5996519424,
+    "peak_GPU_used_MiB": 5559,
+    "guard_reason": null
+  },
+  "GPU_probe_errors": [],
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "model_shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "mcp_shutdown": {
+    "wait_timeout": false,
+    "returncode": -15,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "GPU_after": {
+    "index": 5,
+    "name": "NVIDIA RTX A6000",
+    "compute_capability": "8.6",
+    "total_mib": 49140,
+    "used_mib": 0,
+    "utilization": 0,
+    "uuid_sha256": "d774aa0b77b116113f810a249e3d950a69f248eb28bf5b60b1300828d91f5b15",
+    "compute_clients": 0
+  },
+  "own_GPU_context_absent": true,
+  "ports_closed": {
+    "18866": true,
+    "18867": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": 21.847,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false,
+  "same_locked_agent_SDK_as_bootstrap": true,
+  "installed_wheel_identity_verified": true,
+  "native_runtime_and_model_hashes_verified": true
+}

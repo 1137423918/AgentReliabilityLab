@@ -1,0 +1,7 @@
+{
+  "mutable_state_root": "/tmp",
+  "filesystem": "ext2/ext3",
+  "free_GiB": 422.056,
+  "protocol_sha256": "d2c635cdbad8b6ae8818bc9f278c6473a0d280e10859dc0027e0ddc39298621d",
+  "neural_requests_started": 0
+}

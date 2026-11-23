@@ -1,0 +1,69 @@
+from pathlib import Path
+import sys,json,hashlib,base64,collections,stat,tarfile,re
+BASE=Path('<server-workspace>');OUT=BASE/'outputs/mcp-agent-gpu-stage58-v2-20261123'
+report=json.loads((OUT/'run-report.json').read_text());spec=json.loads((OUT/'protocol.json').read_text());owner=hashlib.sha256((OUT/'protocol.json').read_bytes()).hexdigest()
+assert report['terminal'] and report['owned_processes_after']==[] and all(report['ports_closed'].values())
+assert report['all_frozen_source_files_unchanged'] and report['own_GPU_context_absent'] and not report['secret_in_json_outputs']
+root=Path(json.loads((OUT/'control-location.json').read_text())['local_root']);code=root/'code';sys.path.insert(0,str(code))
+from agent_lab.wire_journal import read_wire_journal
+from agent_lab.request_budget import digest
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+export=OUT/'metadata-export';export.mkdir(mode=0o700)
+def write(name,value):
+ p=export/name;p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(value,indent=2)+'\n')
+keys=['protocol_sha256','source_archive_sha256','terminal','model_started','model_ready','MCP_installed_service','authorized_GPU7','phases','GPU','admission','offloaded_layers','total_layers','context_observed','own_GPU_compute_process_seen','declared_cases','completed_cases','cases_passed','all_cases_passed','aborted_remaining','operator_error','GPU_guard_reason','GPU_monitor','GPU_probe_errors','monitor_thread_stopped','sampler_thread_stopped','model_shutdown','mcp_shutdown','GPU_after','own_GPU_context_absent','ports_closed','model_api_key_file_remaining','service_wall_seconds','owned_processes_after','all_frozen_source_files_unchanged','secret_in_json_outputs','same_locked_agent_SDK_as_bootstrap','installed_wheel_identity_verified','native_runtime_and_model_hashes_verified']
+write('controller-summary.json',{k:report[k] for k in keys if k in report})
+records=[];case_rows=[];raw_hashes={}
+fields={'channel','kind','method','path','status','body_bytes','body_sha256','request_body_sha256','protocol_version'}
+for case in json.loads((OUT/'cases.json').read_text()):
+ cid=case['id'];state=root/'cases'/cid
+ row={'case':cid,'state_directory_exists':state.exists(),'result_present':(state/'result.json').exists()}
+ if not row['state_directory_exists']:
+  row['outcome']='not_started_after_declared_abort';case_rows.append(row);continue
+ budget_path=state/'journal/model-requests.json';wire_path=state/'journal/wire-events.jsonl'
+ before={str(p):sha(p) for p in [budget_path,wire_path] if p.exists()}
+ budget=json.loads(budget_path.read_text());identity=budget['identity'];entries=budget['reservations']
+ assert digest({k:v for k,v in budget.items() if k!='checksum'})==budget['checksum']
+ assert identity['owner_sha256']==owner and identity['limits']=={'max_requests':8,'max_request_bytes':65536,'max_total_request_bytes':262144}
+ assert len(entries)<=8 and sum(x['request_body_bytes'] for x in entries)<=262144 and all(0<x['request_body_bytes']<=65536 for x in entries)
+ recovered=read_wire_journal(wire_path,owner,identity['journal_id']);events=recovered['events'];model_requests=[x for x in events if x['channel']=='model' and x['kind']=='client_request_attempt' and x.get('method')=='POST'];responses=[x for x in events if x['channel']=='model' and x['kind']=='client_response']
+ request_counter=collections.Counter(x['request_body_sha256'] for x in entries);wire_counter=collections.Counter(x['body_sha256'] for x in model_requests)
+ assert not (request_counter-wire_counter), 'Every reserved request must be present in durable wire'
+ budget_public={'owner_sha256':owner,'journal_id_sha256':hashlib.sha256(identity['journal_id'].encode()).hexdigest(),'limits':identity['limits'],'reservations':entries,'original_file_sha256':sha(budget_path),'checksum_verified_privately':True,'reserved_requests':len(entries),'unknown_header_observations':sum(x['http_status'] is None for x in entries),'reserved_request_body_bytes':sum(x['request_body_bytes'] for x in entries)}
+ write(cid+'/budget-metadata.json',budget_public)
+ wire_public={'owner_sha256':owner,'journal_id_sha256':budget_public['journal_id_sha256'],'events':[ {k:v for k,v in e.items() if k in fields} for e in events],'valid_bytes':recovered['valid_bytes'],'tail_bytes':recovered['tail_bytes'],'last_frame_sha256':recovered['last_frame_sha256'],'original_file_sha256':recovered['file_sha256'],'file_mode':oct(stat.S_IMODE(wire_path.stat().st_mode)),'request_hashes_cover_all_budget_reservations':True,'unreserved_client_attempts':sum((wire_counter-request_counter).values())}
+ write(cid+'/wire-metadata.json',wire_public)
+ result=json.loads((state/'result.json').read_text()) if row['result_present'] else None
+ workflow_failures=[]
+ if result:
+  assert recovered['tail_bytes']==0 and events==result['wire_events'] and recovered['last_frame_sha256']==result['wire_journal']['last_frame_sha256']
+  for e in result['workflow_events']:
+   if e['type']=='WorkflowFailedEvent':
+    data=e['data'];workflow_failures.append({k:data[k] for k in ['step_name','exception','attempts','elapsed_seconds'] if k in data})
+  tool_trace=[{k:v for k,v in x.items() if k in ['tool','report_id','pointers','status','result_sha256']} for x in result['tool_trace']]
+  row.update(outcome='passed' if result['grading']['case_passed'] else 'failed',grading=result['grading'],error_type=(result.get('error') or {}).get('type'),workflow_failures=workflow_failures,tool_trace=tool_trace,mcp_close=result.get('mcp_close'),mcp_status_before_close=result.get('mcp_status_before_close'),wire_journal=result['wire_journal'],original_result_sha256=sha(state/'result.json'))
+ row.update(model_HTTP_reservations=len(entries),request_body_bytes=budget_public['reserved_request_body_bytes'],http_statuses=[x['http_status'] for x in entries],complete_model_response_bodies=len(responses),wire_events=len(events),torn_tail_bytes=recovered['tail_bytes'],private_body_file_sha256=recovered['file_sha256'])
+ after={str(p):sha(p) for p in [budget_path,wire_path] if p.exists()};assert before==after
+ row['raw_budget_and_wire_unchanged_by_export']=True
+ case_rows.append(row)
+write('cases-summary.json',{'declared_cases':2,'completed_cases':report.get('completed_cases',0),'passed_cases':report.get('cases_passed',0),'cases':case_rows,'free_prose_semantics_verified':False,'held_out_benchmark':False,'interpretation':'One known case failed at the fixed SDK iteration limit without a submission. The second case was not run under the predeclared abort rule; no score assigned to it.'})
+# Copy only protocol/code/identity/monitor metadata. Never copy result.json, model bodies, raw wire or native chat logs.
+for name in ['protocol.json','run.py','gpu_runtime.py','cpu_exec.py','launch-preflight.json','agent-sdk-identity.log','installed-service-identity.log','native-artifact-identity.log','native-artifact-identity-monitor.jsonl','gpu-runtime-manifest.json']:
+ src=OUT/name;dest=export/('operator/'+name if name.endswith('.py') else name);dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(src.read_bytes())
+for name in ['staging-protocol.json','staging-report.json','staging-copy.log']:
+ src=BASE/'outputs/mcp-native-staging-stage58-v1-20261123'/name;(export/('native-'+name)).write_bytes(src.read_bytes())
+v1=BASE/'outputs/mcp-agent-gpu-stage58-v1-20261123';prior=json.loads((v1/'run-report.json').read_text());assert prior['terminal'] and not prior['model_started'] and prior['owned_processes_after']==[]
+write('v1-pre-model-failure.json',{k:prior[k] for k in ['protocol_sha256','terminal','model_started','model_ready','operator_error','phases','owned_processes_after','ports_closed']})
+(export/'v1-protocol.json').write_bytes((v1/'protocol.json').read_bytes())
+startup=[]
+for line in (root/'server-public.log').read_text().splitlines():
+ if re.search(r'offloaded \d+/\d+ layers to GPU|\bn_ctx(?:_slot)?\s*=\s*\d+|CUDA0 model buffer size',line):startup.append(line)
+write('native-startup-observations.json',{'selected_lines':startup,'full_private_log_sha256':sha(root/'server-public.log'),'full_log_not_exported':True})
+for p in sorted(export.rglob('*')):
+ if p.is_file():records.append({'path':str(p.relative_to(export)),'sha256':sha(p),'bytes':p.stat().st_size})
+write('export-manifest.json',{'files':records,'no_raw_model_or_mcp_bodies_exported':True,'no_models_or_environments_exported':True,'budget_and_wire_read_only':True,'neural_requests_in_export':0})
+archive=OUT/'metadata-export.tar.gz'
+with tarfile.open(archive,'w:gz') as t:
+ for p in sorted(export.rglob('*')):
+  if p.is_file():t.add(p,arcname=str(p.relative_to(export)),recursive=False)
+print(json.dumps({'files':len(records)+1,'archive_bytes':archive.stat().st_size,'archive_sha256':sha(archive),'model_requests':sum(x.get('model_HTTP_reservations',0) for x in case_rows),'complete_model_reply_bodies':sum(x.get('complete_model_response_bodies',0) for x in case_rows),'model_or_training_started_by_export':False}),flush=True)

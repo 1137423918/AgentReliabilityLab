@@ -1,0 +1,249 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 830,
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1043,
+        "total_tokens": 1057,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 2,
+              "argument_keys": [],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1270,
+      "usage": {
+        "completion_tokens": 139,
+        "prompt_tokens": 1641,
+        "total_tokens": 1780,
+        "prompt_tokens_details": {
+          "cached_tokens": 1056
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 290,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 139,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "patch_move",
+              "pointers": [
+                "/related_suite_passed",
+                "/focused_passed",
+                "/new_checks_included",
+                "/overlapping_suites_not_added"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1037,
+      "usage": {
+        "completion_tokens": 78,
+        "prompt_tokens": 1978,
+        "total_tokens": 2056,
+        "prompt_tokens_details": {
+          "cached_tokens": 1637
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 152,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 58,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "upstream_prs",
+              "pointers": [
+                "/pull_requests"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1017,
+      "usage": {
+        "completion_tokens": 73,
+        "prompt_tokens": 2721,
+        "total_tokens": 2794,
+        "prompt_tokens_details": {
+          "cached_tokens": 2055
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 121,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 68,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "adk_cleanup",
+              "pointers": [
+                "/pr_state",
+                "/upstream_pr"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1051,
+      "usage": {
+        "completion_tokens": 77,
+        "prompt_tokens": 2992,
+        "total_tokens": 3069,
+        "prompt_tokens_details": {
+          "cached_tokens": 2793
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 103,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 117,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "core_current",
+              "pointers": [
+                "/full_suite_passed",
+                "/framework_case_count",
+                "/new_async_checks_included"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 996,
+      "usage": {
+        "completion_tokens": 66,
+        "prompt_tokens": 3257,
+        "total_tokens": 3323,
+        "prompt_tokens_details": {
+          "cached_tokens": 3068
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 79,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 88,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "historical_core",
+              "pointers": [
+                "/full_suite_passed",
+                "/new_tests_included"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1036,
+      "usage": {
+        "completion_tokens": 81,
+        "prompt_tokens": 3505,
+        "total_tokens": 3586,
+        "prompt_tokens_details": {
+          "cached_tokens": 3322
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 77,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 126,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "gpu_transport",
+              "pointers": [
+                "/overall_smoke_passed",
+                "/checks/0/passed",
+                "/checks/1/passed",
+                "/checks/2/passed"
+              ],
+              "fact_count": 0
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "error": {
+    "type": "ExceptionGroup",
+    "message": "unhandled errors in a TaskGroup (1 sub-exception)"
+  },
+  "trace_count": 6,
+  "model_complete_reply_bodies": 7,
+  "mcp_close": {
+    "closed": true
+  }
+}

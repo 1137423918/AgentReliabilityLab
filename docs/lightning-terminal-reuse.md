@@ -1,6 +1,6 @@
 # Agent Lightning：复用 rollout ID 后的完成分页修复
 
-针对 Agentic RL 基础设施 [Agent Lightning](https://github.com/microsoft/agent-lightning)，复现并修复了 rollout 生命周期与完成游标之间的关联错误。已提交 [PR #707](https://github.com/microsoft/agent-lightning/pull/707)，提交时为 **draft / open**，尚无合并结论。PR 披露了 OpenAI Codex 辅助，未作人工审阅或 CLA 证明。
+针对 Agentic RL 基础设施 [Agent Lightning](https://github.com/microsoft/agent-lightning)，复现并修复了 rollout 生命周期与完成游标之间的关联错误。已提交 [PR #707](https://github.com/microsoft/agent-lightning/pull/707)，提交时为 **draft / open**；2026-11-23已转为正式待审，尚无合并结论。PR 披露了 OpenAI Codex 辅助，未作人工审阅或 CLA 证明。
 
 ## 触发与影响
 

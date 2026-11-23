@@ -1,0 +1,92 @@
+{"file": "libggml-base.so.1.0.0", "expected_bytes": 941616, "copy_started": true}
+{"file": "libggml-base.so.1.0.0", "bytes": 941616, "hash_verified": true}
+{"file": "libggml-cpu.so", "expected_bytes": 1442536, "copy_started": true}
+{"file": "libggml-cpu.so", "bytes": 1442536, "hash_verified": true}
+{"file": "libggml-cuda.so", "expected_bytes": 74373336, "copy_started": true}
+{"file": "libggml-cuda.so", "bytes": 74373336, "hash_verified": true}
+{"file": "libggml.so.1.0.0", "expected_bytes": 56024, "copy_started": true}
+{"file": "libggml.so.1.0.0", "bytes": 56024, "hash_verified": true}
+{"file": "libllama-common.so.1.0.0", "expected_bytes": 6432760, "copy_started": true}
+{"file": "libllama-common.so.1.0.0", "bytes": 6432760, "hash_verified": true}
+{"file": "libllama-server-impl.so", "expected_bytes": 4513920, "copy_started": true}
+{"file": "libllama-server-impl.so", "bytes": 4513920, "hash_verified": true}
+{"file": "libllama.so.1.0.0", "expected_bytes": 5594088, "copy_started": true}
+{"file": "libllama.so.1.0.0", "bytes": 5594088, "hash_verified": true}
+{"file": "libmtmd.so.1.0.0", "expected_bytes": 2843848, "copy_started": true}
+{"file": "libmtmd.so.1.0.0", "bytes": 2843848, "hash_verified": true}
+{"file": "llama-server", "expected_bytes": 16664, "copy_started": true}
+{"file": "llama-server", "bytes": 16664, "hash_verified": true}
+{"file": "libgcc_s.so.1", "expected_bytes": 922624, "copy_started": true}
+{"file": "libgcc_s.so.1", "bytes": 922624, "hash_verified": true}
+{"file": "libgomp.so.1.0.0", "expected_bytes": 1674616, "copy_started": true}
+{"file": "libgomp.so.1.0.0", "bytes": 1674616, "hash_verified": true}
+{"file": "libstdc++.so.6.0.36", "expected_bytes": 23874544, "copy_started": true}
+{"file": "libstdc++.so.6.0.36", "bytes": 23874544, "hash_verified": true}
+{"file": "ld-linux-x86-64.so.2", "expected_bytes": 932688, "copy_started": true}
+{"file": "ld-linux-x86-64.so.2", "bytes": 932688, "hash_verified": true}
+{"file": "libc.so.6", "expected_bytes": 2549264, "copy_started": true}
+{"file": "libc.so.6", "bytes": 2549264, "hash_verified": true}
+{"file": "libcuda.so.575.57.08", "expected_bytes": 92316728, "copy_started": true}
+{"file": "libcuda.so.575.57.08", "bytes": 92316728, "hash_verified": true}
+{"file": "libdl.so.2", "expected_bytes": 15472, "copy_started": true}
+{"file": "libdl.so.2", "bytes": 15472, "hash_verified": true}
+{"file": "libm.so.6", "expected_bytes": 904752, "copy_started": true}
+{"file": "libm.so.6", "bytes": 904752, "hash_verified": true}
+{"file": "libpthread.so.0", "expected_bytes": 15488, "copy_started": true}
+{"file": "libpthread.so.0", "bytes": 15488, "hash_verified": true}
+{"file": "librt.so.1", "expected_bytes": 15648, "copy_started": true}
+{"file": "librt.so.1", "bytes": 15648, "hash_verified": true}
+{"file": "libcublas.so.12.9.2.10", "expected_bytes": 105140976, "copy_started": true}
+{"file": "libcublas.so.12.9.2.10", "bytes": 105140976, "hash_verified": true}
+{"file": "libcublasLt.so.12.9.2.10", "expected_bytes": 749210000, "copy_started": true}
+{"file": "libcublasLt.so.12.9.2.10", "bytes_copied": 134217728}
+{"file": "libcublasLt.so.12.9.2.10", "bytes_copied": 268435456}
+{"file": "libcublasLt.so.12.9.2.10", "bytes_copied": 402653184}
+{"file": "libcublasLt.so.12.9.2.10", "bytes_copied": 536870912}
+{"file": "libcublasLt.so.12.9.2.10", "bytes_copied": 671088640}
+{"file": "libcublasLt.so.12.9.2.10", "bytes": 749210000, "hash_verified": true}
+{"file": "libcudart.so.12.9.79", "expected_bytes": 741088, "copy_started": true}
+{"file": "libcudart.so.12.9.79", "bytes": 741088, "hash_verified": true}
+{"file": "model.gguf", "expected_bytes": 5627044256, "copy_started": true}
+{"file": "model.gguf", "bytes_copied": 134217728}
+{"file": "model.gguf", "bytes_copied": 268435456}
+{"file": "model.gguf", "bytes_copied": 402653184}
+{"file": "model.gguf", "bytes_copied": 536870912}
+{"file": "model.gguf", "bytes_copied": 671088640}
+{"file": "model.gguf", "bytes_copied": 805306368}
+{"file": "model.gguf", "bytes_copied": 939524096}
+{"file": "model.gguf", "bytes_copied": 1073741824}
+{"file": "model.gguf", "bytes_copied": 1207959552}
+{"file": "model.gguf", "bytes_copied": 1342177280}
+{"file": "model.gguf", "bytes_copied": 1476395008}
+{"file": "model.gguf", "bytes_copied": 1610612736}
+{"file": "model.gguf", "bytes_copied": 1744830464}
+{"file": "model.gguf", "bytes_copied": 1879048192}
+{"file": "model.gguf", "bytes_copied": 2013265920}
+{"file": "model.gguf", "bytes_copied": 2147483648}
+{"file": "model.gguf", "bytes_copied": 2281701376}
+{"file": "model.gguf", "bytes_copied": 2415919104}
+{"file": "model.gguf", "bytes_copied": 2550136832}
+{"file": "model.gguf", "bytes_copied": 2684354560}
+{"file": "model.gguf", "bytes_copied": 2818572288}
+{"file": "model.gguf", "bytes_copied": 2952790016}
+{"file": "model.gguf", "bytes_copied": 3087007744}
+{"file": "model.gguf", "bytes_copied": 3221225472}
+{"file": "model.gguf", "bytes_copied": 3355443200}
+{"file": "model.gguf", "bytes_copied": 3489660928}
+{"file": "model.gguf", "bytes_copied": 3623878656}
+{"file": "model.gguf", "bytes_copied": 3758096384}
+{"file": "model.gguf", "bytes_copied": 3892314112}
+{"file": "model.gguf", "bytes_copied": 4026531840}
+{"file": "model.gguf", "bytes_copied": 4160749568}
+{"file": "model.gguf", "bytes_copied": 4294967296}
+{"file": "model.gguf", "bytes_copied": 4429185024}
+{"file": "model.gguf", "bytes_copied": 4563402752}
+{"file": "model.gguf", "bytes_copied": 4697620480}
+{"file": "model.gguf", "bytes_copied": 4831838208}
+{"file": "model.gguf", "bytes_copied": 4966055936}
+{"file": "model.gguf", "bytes_copied": 5100273664}
+{"file": "model.gguf", "bytes_copied": 5234491392}
+{"file": "model.gguf", "bytes_copied": 5368709120}
+{"file": "model.gguf", "bytes_copied": 5502926848}
+{"file": "model.gguf", "bytes": 5627044256, "hash_verified": true}

@@ -1,0 +1,18 @@
+{
+  "selected_lines": [
+    "0.02.561.425 I load_tensors: offloaded 33/33 layers to GPU",
+    "0.02.561.435 I load_tensors:        CUDA0 model buffer size =  4810.28 MiB",
+    "0.03.901.342 I llama_context: n_ctx                 = 8192",
+    "0.04.057.820 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'",
+    "0.04.057.896 I slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192",
+    "0.08.974.492 I slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1043",
+    "0.09.634.894 I slot   operator(): id  0 | task 18 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1641",
+    "0.11.944.021 I slot   operator(): id  0 | task 160 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1978",
+    "0.13.288.864 I slot   operator(): id  0 | task 240 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 2721",
+    "0.14.600.834 I slot   operator(): id  0 | task 316 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 2992",
+    "0.15.864.600 I slot   operator(): id  0 | task 395 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 3257",
+    "0.16.902.206 I slot   operator(): id  0 | task 463 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 3505"
+  ],
+  "full_private_log_sha256": "e9f2ad30d94e2f20b2254bed667ec281bf4325d5534bb64ad5ff4b450231b490",
+  "full_log_not_exported": true
+}

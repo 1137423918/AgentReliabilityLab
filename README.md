@@ -35,6 +35,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 外部 MCP Agent 已支持[通信证据持久化](docs/mcp-wire-journal.md)：进程强杀后保留已保存的回复，未知请求继续扣额；日志写入故障不会阻止对已知审计上下文的关闭尝试。8项日志控制、2项真实MCP故障控制及原有10项生命周期场景在服务器通过，模型回复按脚本提供。
 
+真实Qwen3.5-9B GPU运行进一步保留了7份完整模型回复和40条通信事件，独立reader恢复验证通过，MCP关闭得到确认。首题因轮次上限未完成有效提交，第二题按规则未运行；[实际结果与失败分析](docs/mcp-agent.md)。
+
 **可恢复维护运行器**：结合 Deep Agents、LangGraph 检查点、隔离 Git worktree 和命令验收，保存工具进度、导出补丁并等待审阅。模型请求预算跨重启与修复轮次扣额，未知请求仍占额度。
 
 [恢复与运行入口](docs/durable-worker.md) · [持久请求预算](docs/model-request-budget.md) · [本机状态与共享归档](docs/local-state.md) · [真实 MCP/Agent 接入](docs/mcp-agent.md)。真实仓库参考计划的恢复检查与真实模型任务分别记录；目前没有通过验收的模型自主仓库修复成果。
@@ -50,7 +52,9 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 | [Google ADK #8278](https://github.com/google/adk-python/pull/8278) | 并发删除产物目录时处理已消失的条目 |
 | [Semantic Kernel #14845](https://github.com/microsoft/semantic-kernel/pull/14845) | 在锁外执行取消回调，避免重入死锁 |
 | [Semantic Kernel #14853](https://github.com/microsoft/semantic-kernel/pull/14853) | 调用方取消后仍处理后续异常与队列记账 |
-| [Agent Lightning #707（草稿）](https://github.com/microsoft/agent-lightning/pull/707) | 删除后复用 rollout ID 时保留正确的完成分页与游标 |
+| [Agent Lightning #707](https://github.com/microsoft/agent-lightning/pull/707) | 删除后复用 rollout ID 时保留正确的完成分页与游标 |
+
+2026-11-23 跟进时六条 PR 均为正式待审，尚未合并。OpenHands 两条仍需符合上游就绪政策的关联 issue；Agent Lightning 的 Actions 需要维护者批准运行。ADK 合入新主干后的当前提交已在 Python3.11 / 3.13 复验相关集合，每版2021通过、26预期失败；[本次日志与源码哈希](evidence/pr-followup-2026-11-23/adk-validation.json)。这些范围不等于完整上游 CI。后续新贡献优先独立开发者与小团队维护的活跃高星 Agent 项目。
 
 [Agent Lightning 实际复现与修复](docs/lightning-terminal-reuse.md)：原版四个状态回归失败，候选相关53项通过；类型检查单独完成，未宣称全仓库或训练栈验证。
 

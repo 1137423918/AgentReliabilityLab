@@ -1,0 +1,167 @@
+{
+  "declared_cases": 2,
+  "completed_cases": 1,
+  "passed_cases": 0,
+  "cases": [
+    {
+      "case": "inflated_merged_claim",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "patch_move",
+            "pointer": "/related_suite_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/focused_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/new_checks_included",
+            "reason": "missing"
+          },
+          {
+            "report_id": "patch_move",
+            "pointer": "/overlapping_suites_not_added",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/state",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/draft",
+            "reason": "missing"
+          },
+          {
+            "report_id": "upstream_prs",
+            "pointer": "/pull_requests/1/merged",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": "ExceptionGroup",
+      "workflow_failures": [
+        {
+          "step_name": "parse_agent_output",
+          "exception": {
+            "exception_type": "workflows.errors.WorkflowRuntimeError",
+            "exception_message": "Max iterations of 7 reached! Either something went wrong, or you can increase the max iterations with `.run(.., max_iterations=...)` or use `early_stopping_method='generate'` to generate a final response instead."
+          },
+          "attempts": 1,
+          "elapsed_seconds": 0.0008590221405029297
+        }
+      ],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "b8885c9a18039c6a5215622575ed4d351c32f2c8dd710c11eb0fec2fcc003126"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "patch_move",
+          "pointers": [
+            "/related_suite_passed",
+            "/focused_passed",
+            "/new_checks_included",
+            "/overlapping_suites_not_added"
+          ],
+          "result_sha256": "82b38633db7bb24ec14514f25478384a8fe68daf473815a7292fbd5fefe8b90c"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "upstream_prs",
+          "pointers": [
+            "/pull_requests"
+          ],
+          "result_sha256": "55b4ed3abec97fe21f34701811ad3fe76d14f2c93be8e6556c405044cea6034e"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "adk_cleanup",
+          "pointers": [
+            "/pr_state",
+            "/upstream_pr"
+          ],
+          "result_sha256": "83d632266751aa2414e555992686e58e6f8c5d3b37a33c03b3703149eab9a44a"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "core_current",
+          "pointers": [
+            "/full_suite_passed",
+            "/framework_case_count",
+            "/new_async_checks_included"
+          ],
+          "result_sha256": "437477893f96c8c8922e949d1ff8e90a17a2173c0677155c8c03b9da253b26cb"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "historical_core",
+          "pointers": [
+            "/full_suite_passed",
+            "/new_tests_included"
+          ],
+          "result_sha256": "a7ab3053e731e0236e6ea1ba6937fae3c930cbf1556db6d0b7b348d387108c14"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 6,
+        "reads_completed": 5,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "wire_journal": {
+        "file": "wire-events.jsonl",
+        "events_committed": 40,
+        "write_failed": false,
+        "write_error_type": null,
+        "last_sequence": 40,
+        "last_frame_sha256": "abc0435c4eb7775f81a4c7a0608ec4a95666e99a1a66f69e69cc0580c121edaf",
+        "committed_bytes": 139577,
+        "closed": true
+      },
+      "original_result_sha256": "9a543d1ed1a05506c273fa53f131477d07c7d2a10154b161c94b4600741a1ee4",
+      "model_HTTP_reservations": 7,
+      "request_body_bytes": 58111,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 7,
+      "wire_events": 40,
+      "torn_tail_bytes": 0,
+      "private_body_file_sha256": "c9d89bdf07a31b0b9cbea4d48a3a3413278a50a769e54f6119b2428ac823a4e3",
+      "raw_budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "case": "supported_contribution",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started_after_declared_abort"
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_benchmark": false,
+  "interpretation": "One known case failed at the fixed SDK iteration limit without a submission. The second case was not run under the predeclared abort rule; no score assigned to it."
+}

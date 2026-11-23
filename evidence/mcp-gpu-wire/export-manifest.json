@@ -1,0 +1,108 @@
+{
+  "files": [
+    {
+      "path": "agent-sdk-identity.log",
+      "sha256": "725e404ed261d9adc4d32d28e379b0f5a18f7768aec975ab722bb32b9eafa870",
+      "bytes": 2635
+    },
+    {
+      "path": "cases-summary.json",
+      "sha256": "3d1d737eb0cd586c4aa816f5de6b5c0a694e44e79239c7ad052119cbbb5db22c",
+      "bytes": 5409
+    },
+    {
+      "path": "controller-summary.json",
+      "sha256": "31c4530aa352f1d08425a4593d16c4e33b6a26d556275a5db469451f646db9ad",
+      "bytes": 3866
+    },
+    {
+      "path": "gpu-runtime-manifest.json",
+      "sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "bytes": 4703
+    },
+    {
+      "path": "inflated_merged_claim/budget-metadata.json",
+      "sha256": "a815f9243c7fd3d2acf8cb90c02149a2e2873e0a9744e95fca6d351eea68ae67",
+      "bytes": 2905
+    },
+    {
+      "path": "inflated_merged_claim/wire-metadata.json",
+      "sha256": "cd54586a8a9cfc7688e1f02c520c48c4ddb43e59e87f458c1058ba51f22a2ef2",
+      "bytes": 12188
+    },
+    {
+      "path": "installed-service-identity.log",
+      "sha256": "9060682ba5442ac73dc72939ea875a55e0342ff79fa91669c345b5592796b34f",
+      "bytes": 307
+    },
+    {
+      "path": "launch-preflight.json",
+      "sha256": "be23e534ee1326e1c3ffa9b633a0e911dbf7f95c2b07c43e0bc4cf2c447587b8",
+      "bytes": 208
+    },
+    {
+      "path": "native-artifact-identity-monitor.jsonl",
+      "sha256": "282bbd0039e299ecb29eb9ac4977d82d90f9bcd08fe0738f7d8b1e2ff7cd245c",
+      "bytes": 13637
+    },
+    {
+      "path": "native-artifact-identity.log",
+      "sha256": "46ad4e0924b6caa2c1ac41dac06dfd9a9705af6f6c952de39d68ad0ef901548c",
+      "bytes": 252
+    },
+    {
+      "path": "native-staging-copy.log",
+      "sha256": "acf4abd314042dda5b00195e95016e4349bd4cb743d9d0f98def1ee5e60a2795",
+      "bytes": 5812
+    },
+    {
+      "path": "native-staging-protocol.json",
+      "sha256": "9480ec34418da6c2869935db3f8a1ae051e3e8fbc24c9fd9eb44943f03479391",
+      "bytes": 7281
+    },
+    {
+      "path": "native-staging-report.json",
+      "sha256": "24876cfbd1779e3228c4304a10609dbc2dee2e0f91ba1bdde30c5893c30a1c77",
+      "bytes": 9217
+    },
+    {
+      "path": "native-startup-observations.json",
+      "sha256": "12d9be206a2b09c123b601f1d11057e23af916788c1efe340ae6332c9080c20b",
+      "bytes": 1428
+    },
+    {
+      "path": "operator/cpu_exec.py",
+      "sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "bytes": 336
+    },
+    {
+      "path": "operator/gpu_runtime.py",
+      "sha256": "ed79d1425ea91955c6acc88543262e6084898af951873ae99f32afc4ccd16f03",
+      "bytes": 3261
+    },
+    {
+      "path": "operator/run.py",
+      "sha256": "880ff37b2e56bd648570587c20e37a494a33a02c6a0c9053a35f2ff4e1e3e96a",
+      "bytes": 21133
+    },
+    {
+      "path": "protocol.json",
+      "sha256": "d2c635cdbad8b6ae8818bc9f278c6473a0d280e10859dc0027e0ddc39298621d",
+      "bytes": 11369
+    },
+    {
+      "path": "v1-pre-model-failure.json",
+      "sha256": "c21654318908fc9fae17da4f48afbfc9b88a1d260eabe7395ff8d223f734926f",
+      "bytes": 963
+    },
+    {
+      "path": "v1-protocol.json",
+      "sha256": "ff8cb17304eb6c9cc3e3c00ce913fbf770b3f3e3409ef1e8b1c67d260f844511",
+      "bytes": 10235
+    }
+  ],
+  "no_raw_model_or_mcp_bodies_exported": true,
+  "no_models_or_environments_exported": true,
+  "budget_and_wire_read_only": true,
+  "neural_requests_in_export": 0
+}

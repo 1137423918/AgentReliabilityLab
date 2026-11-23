@@ -1,0 +1,16 @@
+{
+  "repo": "run-llama/llama_index",
+  "head": "99d7433f6f71888951379ccca9294e272442c832",
+  "observed_sdk": "llama-index-core0.14.26",
+  "observed_workflow_failure": "parse_agent_output raises WorkflowRuntimeError when num_iterations reaches7, before dispatching the seventh requested tool.",
+  "existing_pr": {
+    "number": 23259,
+    "title": "fix(core): max_iterations=N permits N iterations, not N-1",
+    "url": "https://github.com/run-llama/llama_index/pull/23259",
+    "state": "OPEN",
+    "headRefOid": "3236c5c773df9e05f260372f96bdd78b54cd4dcd"
+  },
+  "decision": "Do not duplicate the existing boundary fix.",
+  "case_causality_limit": "The seventh model response requests another report read, not submit_assessment. Fixing the SDK boundary alone does not prove that this case would succeed. Extra unrelated reads are also observed.",
+  "no_model_retry_or_regrade": true
+}

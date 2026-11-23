@@ -1,0 +1,46 @@
+{
+  "observed_date": "2026-11-23",
+  "primary_candidate": {
+    "repo": "browser-use/browser-use",
+    "stars": 121813,
+    "head": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+    "team_evidence": "https://www.ycombinator.com/companies/browser-use",
+    "team_claim": "YC lists a small founding team; exact current employee count is not independently audited.",
+    "policy": "https://docs.browser-use.com/open-source/contributing",
+    "first_finding": "REPL startup listener remains serving when worker.log open fails before entering cleanup.",
+    "duplicate": "https://github.com/browser-use/browser-use/pull/6375",
+    "duplicate_author": "DevChiniwala",
+    "action": "No duplicate patch or PR; checkout left unchanged."
+  },
+  "secondary_candidate": {
+    "repo": "VoltAgent/voltagent",
+    "stars": 11003,
+    "head": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+    "team_evidence": "https://voltagent.dev/about/",
+    "policy": "https://voltagent.dev/docs/community/contributing/",
+    "action": "Eligible for later focused source investigation; no claimed completed project or contribution."
+  },
+  "deferred": [
+    {
+      "repo": "mem0ai/mem0",
+      "stars": 69368,
+      "reason": "Requires accepted issue, human contributor understanding and a separate personally signed CLA; do not autonomously assert or bypass these. App/evaluation use remains possible.",
+      "policy": "https://github.com/mem0ai/mem0/blob/f93aba4b53241ccd9db32903cd19d1ff7f0066f0/AGENTS.md"
+    }
+  ],
+  "excluded": [
+    {
+      "repo": "lastmile-ai/mcp-agent",
+      "reason": "Official team page says LastMile AI joined Meta Superintelligence Labs; does not fit latest small-independent-team preference.",
+      "source": "https://lastmileai.dev/about"
+    }
+  ],
+  "existing_pr_check": {
+    "global_open_count": 6,
+    "search_incomplete": false,
+    "no_additional_open_own_pr_found": true
+  },
+  "homepage_unchanged": true,
+  "new_prs": 0,
+  "new_issues_or_comments": 0
+}

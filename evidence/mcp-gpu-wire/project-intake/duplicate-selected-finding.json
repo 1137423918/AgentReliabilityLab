@@ -1,0 +1,14 @@
+{
+  "repo": "browser-use/browser-use",
+  "base": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+  "finding": "Listener created before worker.log open is outside the cleanup try/finally.",
+  "existing_pr": {
+    "number": 6375,
+    "title": "fix(repl): close the startup listener when setup fails",
+    "url": "https://github.com/browser-use/browser-use/pull/6375",
+    "state": "OPEN",
+    "headRefOid": "74681245c52cc10c6b29997432581c73bd1b7f3d"
+  },
+  "decision": "Do not prepare or submit duplicate patch.",
+  "no_source_edits": true
+}

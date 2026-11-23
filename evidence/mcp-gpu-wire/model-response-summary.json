@@ -1,0 +1,16 @@
+{
+  "known_model_complete_responses": 7,
+  "prompt_tokens_sum": 17137,
+  "completion_tokens_sum": 528,
+  "tool_names": [
+    "list_reports",
+    "read_report",
+    "read_report",
+    "read_report",
+    "read_report",
+    "read_report",
+    "read_report"
+  ],
+  "all_tool_argument_json_valid": true,
+  "no_final_submit_requested": true
+}
