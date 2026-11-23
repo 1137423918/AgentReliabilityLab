@@ -1,0 +1,54 @@
+{
+  "terminal": true,
+  "protocol_sha256": "0cb7283ea23f27f44e002976521f905d008627da7f0155bace5aacfa5e02cb4d",
+  "model_or_GPU_or_training": false,
+  "phases": [
+    {
+      "phase": "node-download",
+      "returncode": 0,
+      "wall_seconds": 9.031,
+      "peak_sampled_owned_RSS_bytes": 217112576
+    },
+    {
+      "phase": "node-identity",
+      "returncode": 0,
+      "wall_seconds": 1.576,
+      "peak_sampled_owned_RSS_bytes": 10092544
+    },
+    {
+      "phase": "pyright-version",
+      "returncode": 0,
+      "wall_seconds": 2.2,
+      "peak_sampled_owned_RSS_bytes": 83591168
+    },
+    {
+      "phase": "pyright-selected",
+      "returncode": 0,
+      "wall_seconds": 5.34,
+      "peak_sampled_owned_RSS_bytes": 289222656
+    },
+    {
+      "phase": "headers",
+      "returncode": 0,
+      "wall_seconds": 1.665,
+      "peak_sampled_owned_RSS_bytes": 16580608
+    }
+  ],
+  "inherited_same_source_checks": {
+    "focused_passed": 5,
+    "related_passed": 53,
+    "ruff_and_format_passed": true,
+    "original_prior_report_sha256": "aa978405d3e967f3e621686e676990e68298767aa71956e60e00fd060921881b",
+    "prior_failed_profile_remains_failed": true
+  },
+  "active_phase": "headers",
+  "node_artifact": {
+    "archive_sha256": "cdeb8670a0c81f51b4dc4ac61919f9b1ad917b304bf8221eb939570663d240f8",
+    "archive_bytes": 31062912,
+    "node_binary_sha256": "2f822d544601dfff107f57d945b649d15c5bf6302595735a6bd9cdc7ee9669bd"
+  },
+  "ready": true,
+  "owned_after": 0,
+  "source_files_unchanged": true,
+  "wall_seconds": 21.928
+}

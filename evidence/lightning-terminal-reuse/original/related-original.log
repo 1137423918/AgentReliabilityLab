@@ -1,0 +1,67 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.16, pytest-9.0.3, pluggy-1.6.0 -- /path/to/original-work/source/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /path/to/original-work/source
+configfile: pyproject.toml
+plugins: hydra-core-1.3.2, anyio-4.13.0, cov-7.1.0, asyncio-1.4.0, httpx-0.36.2
+asyncio: mode=Mode.STRICT, debug=False, asyncio_default_fixture_loop_scope=None, asyncio_default_test_loop_scope=function
+collecting ... collected 53 items / 4 deselected / 49 selected
+
+tests/server/test_endpoints.py::test_healthz PASSED                      [  2%]
+tests/server/test_endpoints.py::test_upstream_timeout_is_applied[300] PASSED [  4%]
+tests/server/test_endpoints.py::test_upstream_timeout_is_applied[3600] PASSED [  6%]
+tests/server/test_endpoints.py::test_auth_required PASSED                [  8%]
+tests/server/test_endpoints.py::test_rollout_endpoints PASSED            [ 10%]
+tests/server/test_endpoints.py::test_patch_rollout_rejects_unknown_top_level_fields[body0] PASSED [ 12%]
+tests/server/test_endpoints.py::test_patch_rollout_rejects_unknown_top_level_fields[body1] PASSED [ 14%]
+tests/server/test_endpoints.py::test_patch_rollout_rejects_unknown_top_level_fields[body2] PASSED [ 16%]
+tests/server/test_endpoints.py::test_list_rollouts_filters_by_state_in PASSED [ 18%]
+tests/server/test_endpoints.py::test_event_endpoints PASSED              [ 20%]
+tests/server/test_endpoints.py::test_delete_rollout PASSED               [ 22%]
+tests/server/test_endpoints.py::test_triplet_events_ignore_overflowing_logprobs[chat] PASSED [ 24%]
+tests/server/test_endpoints.py::test_triplet_events_ignore_overflowing_logprobs[completions] PASSED [ 26%]
+tests/server/test_endpoints.py::test_enqueue_with_client_rollout_id_is_idempotent PASSED [ 28%]
+tests/server/test_endpoints.py::test_re_enqueue_does_not_clobber_a_running_rollout PASSED [ 30%]
+tests/server/test_endpoints.py::test_triplet_events_keep_last_model_request_for_duplicate_prompt PASSED [ 32%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[None] PASSED [ 34%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids1] PASSED [ 36%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids2] PASSED [ 38%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids3] PASSED [ 40%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids4] PASSED [ 42%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids5] PASSED [ 44%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[bad-ids] PASSED [ 46%]
+tests/server/test_endpoints.py::test_triplet_events_do_not_dedupe_without_valid_prompt_tokens[prompt_token_ids7] PASSED [ 48%]
+tests/server/test_endpoints.py::test_model_endpoints PASSED              [ 51%]
+tests/server/test_endpoints.py::test_proxy_completion_endpoint PASSED    [ 53%]
+tests/server/test_endpoints.py::test_proxy_rejects_non_object_json_body["bad"] PASSED [ 55%]
+tests/server/test_endpoints.py::test_proxy_rejects_non_object_json_body[[]] PASSED [ 57%]
+tests/server/test_endpoints.py::test_proxy_rejects_non_object_json_body[42] PASSED [ 59%]
+tests/server/test_endpoints.py::test_proxy_rejects_non_object_json_body[null] PASSED [ 61%]
+tests/server/test_endpoints.py::test_proxy_error_triplet_preserves_status PASSED [ 63%]
+tests/server/test_endpoints.py::test_proxy_admin_endpoints PASSED        [ 65%]
+tests/server/test_endpoints.py::test_terminal_rollouts_cursor_pagination PASSED [ 67%]
+tests/server/test_endpoints.py::test_terminal_rollouts_deletion_preserves_existing_cursors PASSED [ 69%]
+tests/server/test_proxy_disconnect.py::test_disconnect_drains_only_abandoned_request[upstream] PASSED [ 71%]
+tests/server/test_proxy_disconnect.py::test_disconnect_drains_only_abandoned_request[retry_backoff] PASSED [ 73%]
+tests/server/test_proxy_disconnect.py::test_cancelled_handler_joins_forwarding_and_disconnect_watcher PASSED [ 75%]
+tests/test_client.py::test_sync_key_replaces_authorization_case_insensitively[headers0] PASSED [ 77%]
+tests/test_client.py::test_sync_key_replaces_authorization_case_insensitively[headers1] PASSED [ 79%]
+tests/test_client.py::test_sync_key_replaces_authorization_case_insensitively[headers2] PASSED [ 81%]
+tests/test_client.py::test_sync_key_replaces_authorization_case_insensitively[headers3] PASSED [ 83%]
+tests/test_client.py::test_async_key_replaces_authorization_case_insensitively[headers0] PASSED [ 85%]
+tests/test_client.py::test_async_key_replaces_authorization_case_insensitively[headers1] PASSED [ 87%]
+tests/test_client.py::test_async_key_replaces_authorization_case_insensitively[headers2] PASSED [ 89%]
+tests/test_client.py::test_async_key_replaces_authorization_case_insensitively[headers3] PASSED [ 91%]
+tests/test_client.py::test_sync_without_key_preserves_authorization[None] PASSED [ 93%]
+tests/test_client.py::test_sync_without_key_preserves_authorization[] PASSED [ 95%]
+tests/test_client.py::test_async_without_key_preserves_authorization[None] PASSED [ 97%]
+tests/test_client.py::test_async_without_key_preserves_authorization[] PASSED [100%]
+
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/fastapi/testclient.py:1
+  /path/to/original-work/source/.venv/lib/python3.12/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /path/to/private-agent-lab/outputs/lightning-terminal-original-stage53-20261123/related-original.xml -
+================= 49 passed, 4 deselected, 1 warning in 10.40s =================

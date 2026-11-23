@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="4" skipped="0" tests="5" time="1.695" timestamp="2026-11-23T17:13:55.998189+08:00" hostname="authorized-cpu-node"><testcase classname="tests.server.test_endpoints" name="test_terminal_rollouts_do_not_reuse_deleted_completion[queuing]" time="0.250"><failure message="AssertionError: assert [{'data_id': ...': 'queuing'}] == []&#10;  &#10;  Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': '9cf401df5d014e89ad4d8c44226e6c89', 'state': 'queuing'}&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     {...&#10;  &#10;  ...Full output truncated (6 lines hidden), use '-vv' to show">client = &lt;starlette.testclient.TestClient object at 0x7fd6dea8d7f0&gt;
+auth_headers = {'Authorization': 'Bearer test-secret-key'}
+replacement_state = 'queuing'
+
+    @pytest.mark.parametrize("replacement_state", ["queuing", "running", "succeeded", "failed"])
+    def test_terminal_rollouts_do_not_reuse_deleted_completion(
+        client: TestClient, auth_headers: dict[str, str], replacement_state: str
+    ):
+        rid = _terminal(client, auth_headers, "original", is_train=True)
+        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+        recreated = client.post(
+            "/api/rollouts",
+            json=[{"rollout_id": rid, "input": {"data_id": "replacement"}, "is_train": False}],
+            headers=auth_headers,
+        )
+        assert recreated.status_code == 201
+        if replacement_state != "queuing":
+            assert (
+                client.patch(f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers).status_code
+                == 200
+            )
+        if replacement_state in {"succeeded", "failed"}:
+            assert (
+                client.patch(
+                    f"/api/rollouts/{rid}", json={"status": {"state": replacement_state}}, headers=auth_headers
+                ).status_code
+                == 200
+            )
+    
+        # The deleted completion slot cannot resolve to the replacement rollout.
+        first = client.get("/api/rollouts/terminal", params={"after": 0, "limit": 1}, headers=auth_headers).json()
+&gt;       assert first["items"] == []
+E       AssertionError: assert [{'data_id': ...': 'queuing'}] == []
+E         
+E         Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': '9cf401df5d014e89ad4d8c44226e6c89', 'state': 'queuing'}
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     {...
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/server/test_endpoints.py:562: AssertionError</failure></testcase><testcase classname="tests.server.test_endpoints" name="test_terminal_rollouts_do_not_reuse_deleted_completion[running]" time="0.247"><failure message="AssertionError: assert [{'data_id': ...': 'running'}] == []&#10;  &#10;  Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'c2aee3d7cae14629b027861cc941af03', 'state': 'running'}&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     {...&#10;  &#10;  ...Full output truncated (6 lines hidden), use '-vv' to show">client = &lt;starlette.testclient.TestClient object at 0x7fd6de967a40&gt;
+auth_headers = {'Authorization': 'Bearer test-secret-key'}
+replacement_state = 'running'
+
+    @pytest.mark.parametrize("replacement_state", ["queuing", "running", "succeeded", "failed"])
+    def test_terminal_rollouts_do_not_reuse_deleted_completion(
+        client: TestClient, auth_headers: dict[str, str], replacement_state: str
+    ):
+        rid = _terminal(client, auth_headers, "original", is_train=True)
+        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+        recreated = client.post(
+            "/api/rollouts",
+            json=[{"rollout_id": rid, "input": {"data_id": "replacement"}, "is_train": False}],
+            headers=auth_headers,
+        )
+        assert recreated.status_code == 201
+        if replacement_state != "queuing":
+            assert (
+                client.patch(f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers).status_code
+                == 200
+            )
+        if replacement_state in {"succeeded", "failed"}:
+            assert (
+                client.patch(
+                    f"/api/rollouts/{rid}", json={"status": {"state": replacement_state}}, headers=auth_headers
+                ).status_code
+                == 200
+            )
+    
+        # The deleted completion slot cannot resolve to the replacement rollout.
+        first = client.get("/api/rollouts/terminal", params={"after": 0, "limit": 1}, headers=auth_headers).json()
+&gt;       assert first["items"] == []
+E       AssertionError: assert [{'data_id': ...': 'running'}] == []
+E         
+E         Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'c2aee3d7cae14629b027861cc941af03', 'state': 'running'}
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     {...
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/server/test_endpoints.py:562: AssertionError</failure></testcase><testcase classname="tests.server.test_endpoints" name="test_terminal_rollouts_do_not_reuse_deleted_completion[succeeded]" time="0.282"><failure message="AssertionError: assert [{'data_id': ... 'succeeded'}] == []&#10;  &#10;  Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'e3564f97645f47b39797f76f61a6cc93', 'state': 'succeeded'}&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     {...&#10;  &#10;  ...Full output truncated (6 lines hidden), use '-vv' to show">client = &lt;starlette.testclient.TestClient object at 0x7fd6de8330e0&gt;
+auth_headers = {'Authorization': 'Bearer test-secret-key'}
+replacement_state = 'succeeded'
+
+    @pytest.mark.parametrize("replacement_state", ["queuing", "running", "succeeded", "failed"])
+    def test_terminal_rollouts_do_not_reuse_deleted_completion(
+        client: TestClient, auth_headers: dict[str, str], replacement_state: str
+    ):
+        rid = _terminal(client, auth_headers, "original", is_train=True)
+        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+        recreated = client.post(
+            "/api/rollouts",
+            json=[{"rollout_id": rid, "input": {"data_id": "replacement"}, "is_train": False}],
+            headers=auth_headers,
+        )
+        assert recreated.status_code == 201
+        if replacement_state != "queuing":
+            assert (
+                client.patch(f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers).status_code
+                == 200
+            )
+        if replacement_state in {"succeeded", "failed"}:
+            assert (
+                client.patch(
+                    f"/api/rollouts/{rid}", json={"status": {"state": replacement_state}}, headers=auth_headers
+                ).status_code
+                == 200
+            )
+    
+        # The deleted completion slot cannot resolve to the replacement rollout.
+        first = client.get("/api/rollouts/terminal", params={"after": 0, "limit": 1}, headers=auth_headers).json()
+&gt;       assert first["items"] == []
+E       AssertionError: assert [{'data_id': ... 'succeeded'}] == []
+E         
+E         Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'e3564f97645f47b39797f76f61a6cc93', 'state': 'succeeded'}
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     {...
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/server/test_endpoints.py:562: AssertionError</failure></testcase><testcase classname="tests.server.test_endpoints" name="test_terminal_rollouts_do_not_reuse_deleted_completion[failed]" time="0.280"><failure message="AssertionError: assert [{'data_id': ...e': 'failed'}] == []&#10;  &#10;  Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'dde4ffacfae6434f9eb0c40ed404c6a2', 'state': 'failed'}&#10;  &#10;  Full diff:&#10;  - []&#10;  + [&#10;  +     {...&#10;  &#10;  ...Full output truncated (6 lines hidden), use '-vv' to show">client = &lt;starlette.testclient.TestClient object at 0x7fd6de8371d0&gt;
+auth_headers = {'Authorization': 'Bearer test-secret-key'}
+replacement_state = 'failed'
+
+    @pytest.mark.parametrize("replacement_state", ["queuing", "running", "succeeded", "failed"])
+    def test_terminal_rollouts_do_not_reuse_deleted_completion(
+        client: TestClient, auth_headers: dict[str, str], replacement_state: str
+    ):
+        rid = _terminal(client, auth_headers, "original", is_train=True)
+        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+        recreated = client.post(
+            "/api/rollouts",
+            json=[{"rollout_id": rid, "input": {"data_id": "replacement"}, "is_train": False}],
+            headers=auth_headers,
+        )
+        assert recreated.status_code == 201
+        if replacement_state != "queuing":
+            assert (
+                client.patch(f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers).status_code
+                == 200
+            )
+        if replacement_state in {"succeeded", "failed"}:
+            assert (
+                client.patch(
+                    f"/api/rollouts/{rid}", json={"status": {"state": replacement_state}}, headers=auth_headers
+                ).status_code
+                == 200
+            )
+    
+        # The deleted completion slot cannot resolve to the replacement rollout.
+        first = client.get("/api/rollouts/terminal", params={"after": 0, "limit": 1}, headers=auth_headers).json()
+&gt;       assert first["items"] == []
+E       AssertionError: assert [{'data_id': ...e': 'failed'}] == []
+E         
+E         Left contains one more item: {'data_id': 'replacement', 'is_train': False, 'rollout_id': 'dde4ffacfae6434f9eb0c40ed404c6a2', 'state': 'failed'}
+E         
+E         Full diff:
+E         - []
+E         + [
+E         +     {...
+E         
+E         ...Full output truncated (6 lines hidden), use '-vv' to show
+
+tests/server/test_endpoints.py:562: AssertionError</failure></testcase><testcase classname="tests.server.test_endpoints" name="test_terminal_rollouts_deletion_preserves_existing_cursors" time="0.256" /></testsuite></testsuites>

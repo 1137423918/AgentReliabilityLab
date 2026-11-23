@@ -1,0 +1,156 @@
+diff --git a/agentlightning/server/routes/rollouts.py b/agentlightning/server/routes/rollouts.py
+index f4598ef..3f8f0e2 100644
+--- a/agentlightning/server/routes/rollouts.py
++++ b/agentlightning/server/routes/rollouts.py
+@@ -23,7 +23,7 @@ from agentlightning.schemas import (
+     RolloutPatch,
+     RolloutState,
+ )
+-from agentlightning.server.store import _events, _rollouts, _terminal_order
++from agentlightning.server.store import _events, _rollouts, _terminal_order, _terminal_positions
+ 
+ router = APIRouter(tags=["rollouts"])
+ 
+@@ -148,6 +148,8 @@ async def list_terminal_rollouts(after: int = 0, limit: int = 1000) -> TerminalR
+     to fetch only rollouts that completed since the last call. Out-of-order
+     completions are never missed because the log is append-on-terminal-transition.
+     Returns only id/state/data_id/is_train — fetch events per rollout for details.
++    Deleted completions leave empty slots; cursors and total_terminal count log
++    positions, including those slots, rather than currently retained rollouts.
+     """
+     if after < 0:
+         after = 0
+@@ -157,6 +159,8 @@ async def list_terminal_rollouts(after: int = 0, limit: int = 1000) -> TerminalR
+     slice_ids = _terminal_order[after : after + limit]
+     items: list[TerminalRolloutItem] = []
+     for rid in slice_ids:
++        if rid is None:
++            continue
+         rollout = _rollouts.get(rid)
+         if rollout is None:
+             continue
+@@ -209,6 +213,7 @@ async def patch_rollout(rollout_id: str, body: RolloutPatch) -> Rollout:
+     _rollouts[rollout_id] = updated
+     if "state" in updates and updated_status.state in TERMINAL_STATES:
+         # One-way terminal transition (guarded above) => append exactly once.
++        _terminal_positions[rollout_id] = len(_terminal_order)
+         _terminal_order.append(rollout_id)
+     return updated
+ 
+@@ -216,5 +221,8 @@ async def patch_rollout(rollout_id: str, body: RolloutPatch) -> Rollout:
+ @router.delete("/rollouts/{rollout_id}", status_code=204)
+ async def delete_rollout(rollout_id: str) -> None:
+     """Delete a rollout and its events. Idempotent: missing id is a no-op."""
++    position = _terminal_positions.pop(rollout_id, None)
++    if position is not None:
++        _terminal_order[position] = None
+     _rollouts.pop(rollout_id, None)
+     _events.pop(rollout_id, None)
+diff --git a/agentlightning/server/store.py b/agentlightning/server/store.py
+index fcdb3a9..a8774f5 100644
+--- a/agentlightning/server/store.py
++++ b/agentlightning/server/store.py
+@@ -14,5 +14,6 @@ _rollouts: dict[str, Rollout] = {}
+ _events: dict[str, dict[str, list[Event]]] = {}
+ _models: dict[str, dict[str, Model]] = {}
+ 
+-# Completion-ordered ids enable cursor pagination without rescanning rollouts.
+-_terminal_order: list[str] = []
++# Deletion leaves a tombstone so existing completion cursors remain valid.
++_terminal_order: list[str | None] = []
++_terminal_positions: dict[str, int] = {}
+diff --git a/tests/server/conftest.py b/tests/server/conftest.py
+index 00f9e2d..9343be0 100644
+--- a/tests/server/conftest.py
++++ b/tests/server/conftest.py
+@@ -12,7 +12,7 @@ from fastapi import FastAPI
+ from fastapi.testclient import TestClient
+ 
+ from agentlightning.server.app import create_app
+-from agentlightning.server.store import _events, _models, _rollouts, _terminal_order
++from agentlightning.server.store import _events, _models, _rollouts, _terminal_order, _terminal_positions
+ 
+ AGL_KEY = "test-secret-key"
+ MODEL_NAME = "test-model"
+@@ -24,11 +24,13 @@ def clean_store() -> Iterator[None]:
+     _events.clear()
+     _models.clear()
+     _terminal_order.clear()
++    _terminal_positions.clear()
+     yield
+     _rollouts.clear()
+     _events.clear()
+     _models.clear()
+     _terminal_order.clear()
++    _terminal_positions.clear()
+ 
+ 
+ @pytest.fixture
+diff --git a/tests/server/test_endpoints.py b/tests/server/test_endpoints.py
+index e23fadf..d7da570 100644
+--- a/tests/server/test_endpoints.py
++++ b/tests/server/test_endpoints.py
+@@ -530,3 +530,63 @@ def test_terminal_rollouts_cursor_pagination(client: TestClient, auth_headers: d
+     page3 = client.get("/api/rollouts/terminal", params={"after": 3}, headers=auth_headers)
+     assert page3.json() == {"items": [], "next_after": 3, "total_terminal": 3}
+     assert pending not in {it["rollout_id"] for it in body1["items"] + body2["items"]}
++
++
++@pytest.mark.parametrize("replacement_state", ["queuing", "running", "succeeded", "failed"])
++def test_terminal_rollouts_do_not_reuse_deleted_completion(
++    client: TestClient, auth_headers: dict[str, str], replacement_state: str
++):
++    rid = _terminal(client, auth_headers, "original", is_train=True)
++    assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
++    recreated = client.post(
++        "/api/rollouts",
++        json=[{"rollout_id": rid, "input": {"data_id": "replacement"}, "is_train": False}],
++        headers=auth_headers,
++    )
++    assert recreated.status_code == 201
++    if replacement_state != "queuing":
++        assert (
++            client.patch(
++                f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers
++            ).status_code
++            == 200
++        )
++    if replacement_state in {"succeeded", "failed"}:
++        assert (
++            client.patch(
++                f"/api/rollouts/{rid}", json={"status": {"state": replacement_state}}, headers=auth_headers
++            ).status_code
++            == 200
++        )
++
++    # The deleted completion slot cannot resolve to the replacement rollout.
++    first = client.get("/api/rollouts/terminal", params={"after": 0, "limit": 1}, headers=auth_headers).json()
++    assert first["items"] == []
++    assert first["next_after"] == 1
++    rest = client.get("/api/rollouts/terminal", params={"after": 1}, headers=auth_headers).json()
++    if replacement_state in {"succeeded", "failed"}:
++        assert rest == {
++            "items": [{"rollout_id": rid, "state": replacement_state, "data_id": "replacement", "is_train": False}],
++            "next_after": 2,
++            "total_terminal": 2,
++        }
++    else:
++        assert rest == {"items": [], "next_after": 1, "total_terminal": 1}
++
++
++def test_terminal_rollouts_deletion_preserves_existing_cursors(client: TestClient, auth_headers: dict[str, str]):
++    rid_a = _terminal(client, auth_headers, "a", is_train=True)
++    rid_b = _terminal(client, auth_headers, "b", is_train=True)
++    rid_c = _terminal(client, auth_headers, "c", is_train=True)
++    before = client.get("/api/rollouts/terminal", params={"limit": 1}, headers=auth_headers).json()
++    assert before["next_after"] == 1
++    for rid in [rid_a, rid_b]:
++        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
++        assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
++    gap = client.get(
++        "/api/rollouts/terminal", params={"after": before["next_after"], "limit": 1}, headers=auth_headers
++    ).json()
++    assert gap == {"items": [], "next_after": 2, "total_terminal": 3}
++    after = client.get("/api/rollouts/terminal", params={"after": gap["next_after"]}, headers=auth_headers).json()
++    assert [item["rollout_id"] for item in after["items"]] == [rid_c]
++    assert after["next_after"] == 3

@@ -1,0 +1,9 @@
+{
+  "source": "https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt",
+  "resolved_url": "https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt",
+  "version": "v22.23.5",
+  "file": "node-v22.23.5-linux-x64.tar.xz",
+  "sha256": "cdeb8670a0c81f51b4dc4ac61919f9b1ad917b304bf8221eb939570663d240f8",
+  "pinned_url": "https://nodejs.org/dist/v22.23.5/node-v22.23.5-linux-x64.tar.xz",
+  "scope": "isolated Node for existing Pyright; no Python lock mutation"
+}

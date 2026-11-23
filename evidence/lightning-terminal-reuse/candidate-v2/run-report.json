@@ -1,0 +1,21 @@
+{
+  "terminal": true,
+  "protocol_sha256": "cd02554c124bec85663b567be27b4eaa9f3025cf311c87952b174d0bb3b8958d",
+  "model_or_GPU_or_training": false,
+  "phases": [
+    {
+      "phase": "git-init",
+      "returncode": 1,
+      "wall_seconds": 2.422,
+      "peak_sampled_owned_RSS_bytes": 10092544
+    }
+  ],
+  "active_phase": "git-init",
+  "error": {
+    "type": "AssertionError",
+    "message": "git-init"
+  },
+  "owned_after": 0,
+  "source_files_unchanged": true,
+  "wall_seconds": 3.979
+}

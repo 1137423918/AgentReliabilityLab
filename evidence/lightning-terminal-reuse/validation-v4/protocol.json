@@ -1,0 +1,297 @@
+{
+  "declared_utc": "2026-11-23T09:29:54.077532+00:00",
+  "upstream_commit": "2070bad5113e52f1aa2e5bdba822d4b24b197c05",
+  "hypothesis": "Confirmed original four state regressions failed; candidate tombstones deleted log slots with O(1) per-ID position index while retaining cursor offsets. Unchanged focused tests; same locked runtime.",
+  "controller_sha256": "b91736396a8fbd1b1557b1eea49bb5afefc56bf8dba5ee4f6c41a0206f8838cc",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "archive_sha256": "8db6c01374ae1c1f96ec101c109eb769cc77b8338c4138c17530a99c52790aa4",
+  "files": {
+    "pyproject.toml": {
+      "sha256": "956fc078a1bbc17b104e71bf9ca05872828d3c520386df14c09ab91286c6d852",
+      "bytes": 3430
+    },
+    "uv.lock": {
+      "sha256": "75994979bd7bcc4c391d9d96cb42be6bd8d05c4bbdbc19cd0970bc629f567daa",
+      "bytes": 695594
+    },
+    "README.md": {
+      "sha256": "081e9a6e2f11a88b9989106fb62cc5827fa66540390d330b48b244c90cad08c5",
+      "bytes": 11992
+    },
+    "LICENSE": {
+      "sha256": "8f71659370c5268d9a1dc962a46232540e8fca63462586d8efaa95aab492a208",
+      "bytes": 1046
+    },
+    "scripts/check_headers.py": {
+      "sha256": "5f10569c5316f9f88a98f05535dfb759024933637145062b0b90efc3acc3c5d9",
+      "bytes": 2502
+    },
+    "agentlightning/__init__.py": {
+      "sha256": "5fcd09a0f3f50242da83af44c305987c5f567c1f42d31159f3f060e9b29409ad",
+      "bytes": 95
+    },
+    "agentlightning/client.py": {
+      "sha256": "14401f958daf2b02fe2d973e5782461f4278fb27d95424ae8e4097c8698ebe0b",
+      "bytes": 2640
+    },
+    "agentlightning/config/__init__.py": {
+      "sha256": "d1151905e80769820118a797f1ff4fcd88a7d5fed38937273ebdf3fb4ab3071d",
+      "bytes": 104
+    },
+    "agentlightning/controller/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "agentlightning/controller/__main__.py": {
+      "sha256": "3c487993dbc1768dc2afe9a577431d19fa47ee71b7d93fd8e05edc666262d9dd",
+      "bytes": 1629
+    },
+    "agentlightning/controller/k8s_reconciler.py": {
+      "sha256": "c801c5462d17297f53a812a4216fcf9119b42c188d23072c5a6e5cdd963bc5bd",
+      "bytes": 15419
+    },
+    "agentlightning/controller/local_reconciler.py": {
+      "sha256": "c49f21804830b8cc37374bf26a849f062dd346820d98e757d3914c92da50685d",
+      "bytes": 11684
+    },
+    "agentlightning/hooks.py": {
+      "sha256": "21c7fe9474f05efe8403b0b583e14b13a9510efce3a1dc3c793c883036bce95b",
+      "bytes": 2146
+    },
+    "agentlightning/schemas.py": {
+      "sha256": "7bb7eafaba1af249668592042a5de7a0dea191a6dd3160383b8a723ffb15c674",
+      "bytes": 5280
+    },
+    "agentlightning/server/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "agentlightning/server/__main__.py": {
+      "sha256": "c4054d4aed63937c75691c079ed8e32a040d73d973f0f5247cfafbd506db3302",
+      "bytes": 604
+    },
+    "agentlightning/server/app.py": {
+      "sha256": "30602069cc51fd189f227e8ce03565e3dc0f23c9f0df538306765d7b167caf1d",
+      "bytes": 3279
+    },
+    "agentlightning/server/proxy.py": {
+      "sha256": "6fc6ff8478584c91ed2de08e2e7bb874764441698e1f32ff294ca81c5341baa4",
+      "bytes": 10683
+    },
+    "agentlightning/server/routes/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "agentlightning/server/routes/events.py": {
+      "sha256": "ae2d9fccef015136267164b8d2fd883a9b11aac062f94f82896ccc11433d0cb6",
+      "bytes": 9618
+    },
+    "agentlightning/server/routes/models.py": {
+      "sha256": "1594fc528d57c83cf8274d303f995db038e27468251657bdbef2fa32a6df0cd8",
+      "bytes": 850
+    },
+    "agentlightning/server/routes/proxy.py": {
+      "sha256": "41892d89e1da4ff8af9cf3bc05505b26a4073a395a0b67c2fa65bc024701831f",
+      "bytes": 5994
+    },
+    "agentlightning/server/routes/rollouts.py": {
+      "sha256": "53ea0a4f68e6932c690301b2cc485f8a113402ed46697ddaf87ce02f3054b3fb",
+      "bytes": 7413
+    },
+    "agentlightning/server/store.py": {
+      "sha256": "25118e4f85a1993d37683c4f6482d7de136f0eb7ded98b9582820fc6f9bd3fe6",
+      "bytes": 642
+    },
+    "agentlightning/verl/__init__.py": {
+      "sha256": "29a06785ebef69ace593067f1d0c5162b2f4ea9a685eed28637901f86ee2836f",
+      "bytes": 93
+    },
+    "agentlightning/verl/agl_rollout_manager.py": {
+      "sha256": "e60755f443d48f9c6a4a396d18499df63a0cefdfe63cb069c9ea5c6f346862ec",
+      "bytes": 28583
+    },
+    "agentlightning/verl/dataset.py": {
+      "sha256": "814f43dcc583aff1e11ac484436b7d9a28f778f59115966f046ac46407b9ece7",
+      "bytes": 1445
+    },
+    "agentlightning/verl/entrypoint.py": {
+      "sha256": "7923df55ae2d710e790e4372b475daa432468594ff821d4965927160671d0c83",
+      "bytes": 7154
+    },
+    "agentlightning/verl/per_rollout_loss.py": {
+      "sha256": "e3b727e62c779d9519df741474f60e57cb3a6bdaeead281dc0b01ab7ceee78d1",
+      "bytes": 5952
+    },
+    "agentlightning/verl/rollout_adapter.py": {
+      "sha256": "42c1764e9d734a07e4fd5a44fe144a02eb0916e16d36bd9f302ddc25e3651ac9",
+      "bytes": 47936
+    },
+    "agentlightning/verl/rollout_level_advantage.py": {
+      "sha256": "fd5fc06ddf0da69c221f68ea8a097d1cdd5953b61bc4e70a838080b6ae41e898",
+      "bytes": 6191
+    },
+    "agentlightning/verl/sc/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "agentlightning/verl/sc/int8_rollout.py": {
+      "sha256": "ec22bbe5ddc820b588794c41aa046a29c915b34a13ddcbd6d7b754e31c766308",
+      "bytes": 2092
+    },
+    "agentlightning/verl/sc/int8_worker.py": {
+      "sha256": "bfcbadf945032230f6972b3ca3066ad15d3fcc5474d4304915edd5287ac27596",
+      "bytes": 2516
+    },
+    "agentlightning/verl/sc/patches.py": {
+      "sha256": "4ab442b1bc2f0674f0b0fa21afedfbc1c3995bbfb9f7ae6f08c050cc272c88ce",
+      "bytes": 1125
+    },
+    "agentlightning/verl/sc/qwen35_packing.py": {
+      "sha256": "8dbc974f8b694ca309ae83bb75e0804f7db79168d3765773a7e87d41e21331c7",
+      "bytes": 2493
+    },
+    "agentlightning/verl/sc/score_centering.py": {
+      "sha256": "1b121303ce342096f3aef845aa0bd545c1fef0275de2b46c3fa1e524e95cdaae",
+      "bytes": 11644
+    },
+    "agentlightning/verl/sc/vllm_score_centering.py": {
+      "sha256": "cec06167b2cc74ac719475a4b9def8c44edc3f25fefa10c7a6dba52eaa36f31e",
+      "bytes": 4696
+    },
+    "agentlightning/verl/trainer.py": {
+      "sha256": "6cfb5d19d373f4338d8300a4c1672e5a1b30cafbb2ac1d121dfbd868955c358d",
+      "bytes": 36188
+    },
+    "agentlightning/verl/vllm_compat.py": {
+      "sha256": "afc35f35e0763f972240e98b790d01f1f4b0a3652a093f55ffeeaa89429838f7",
+      "bytes": 2457
+    },
+    "tests/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "tests/controller/test_k8s_reconciler.py": {
+      "sha256": "be42098bb0400dd99b6be91e58696a4d9b2f1f5aa1862bfd5da5b4a0c708c8d4",
+      "bytes": 1645
+    },
+    "tests/controller/test_local_reconciler.py": {
+      "sha256": "6f9b866f8a34a7b3007422a2fcc936a8f5ff60472fc7e26c441cf9646fdaeead",
+      "bytes": 9917
+    },
+    "tests/controller/test_local_reconciler_env.py": {
+      "sha256": "7fd611699f13c8151e04f1f22299be016aff3c352a64b06a9eea9504e583b0fa",
+      "bytes": 2287
+    },
+    "tests/controller/test_local_reconciler_platform.py": {
+      "sha256": "52315cd3ba1d502c07e845219e4ad94aeb8f911d4001e9127cbae2a539db47a3",
+      "bytes": 2106
+    },
+    "tests/examples/test_swe_smith_agent.py": {
+      "sha256": "a82234838496b469663057b82aeca73f1f7a63bf2d15611fdab1680768d46238",
+      "bytes": 15802
+    },
+    "tests/examples/test_swe_smith_images.py": {
+      "sha256": "9ee2e0d525283ec2d2b75e46e690b25f858a950bc0a88ad811a8484f9e1c2b82",
+      "bytes": 4198
+    },
+    "tests/server/__init__.py": {
+      "sha256": "0ed64f778922c80b3724d4e06891bf13238c12fb226440023168e47ac3c22042",
+      "bytes": 48
+    },
+    "tests/server/conftest.py": {
+      "sha256": "041a124080db037489d5e689b949a4343cac854c7552582ad2e64f8054bdc6b4",
+      "bytes": 1387
+    },
+    "tests/server/test_endpoints.py": {
+      "sha256": "9db8c5c9a6ee55964a8f6cd1acd0ddff2527792b0a546682961b1096f1bffbfe",
+      "bytes": 23386
+    },
+    "tests/server/test_proxy_disconnect.py": {
+      "sha256": "6e7e8e491c3169769df2d1f47ddc5bdceb5f380e7eedbe8f39e453758b16a623",
+      "bytes": 7917
+    },
+    "tests/test_client.py": {
+      "sha256": "0ce9d46575e8660c1e437bd3efd0bd3d7a12f27d49ba6afd0417cd85c7626c7f",
+      "bytes": 2414
+    },
+    "tests/test_package.py": {
+      "sha256": "012bf0424d08c2505b9c1aa373d97560a3a528b78ad90e168178ca148b5c38cc",
+      "bytes": 1607
+    },
+    "tests/verl/sc/test_int8_rollout.py": {
+      "sha256": "e6b0ac75397593f88656dd42776ea9011505629d5575ded716b5a57bbb7d5cf6",
+      "bytes": 1208
+    },
+    "tests/verl/sc/test_qwen35_packing.py": {
+      "sha256": "df70f5a6d67d4c1545ecf4c25e062ffe50e70b2ae1359f58e3698c86bbc01901",
+      "bytes": 3864
+    },
+    "tests/verl/sc/test_score_centering.py": {
+      "sha256": "d7a2da2959d2bdc597b18ba8bd60398353755452901ec59db0983400a556f26b",
+      "bytes": 5800
+    },
+    "tests/verl/sc/test_vllm_score_centering.py": {
+      "sha256": "f2262b5caa4bbafdd1ea9527cffaa904e5a679266cf33a395e83f3a49fdca8b8",
+      "bytes": 14968
+    },
+    "tests/verl/sc/test_vllm_weight_sync_cache.py": {
+      "sha256": "e6f90cb790b33d17eff9c297119aa4b2768b3128f58ed0f767a2c884c160848a",
+      "bytes": 1314
+    },
+    "tests/verl/test_agl_rollout_manager.py": {
+      "sha256": "1823befd046cba35374e747294801e0e17f5bb5debeeb3179fc4b35075aef196",
+      "bytes": 9216
+    },
+    "tests/verl/test_per_rollout_loss.py": {
+      "sha256": "0c6b57065529996618f8bb062a18a7070a1f9c5f41783c57305c743257d133c2",
+      "bytes": 2522
+    },
+    "tests/verl/test_rollout_adapter.py": {
+      "sha256": "e6b17382261f508680cc3b14a5c27476c0a61386c69da9ef779ba13b31d3bdc6",
+      "bytes": 42697
+    },
+    "tests/verl/test_rollout_level_advantage.py": {
+      "sha256": "f59cf4791109b15c472094953069fbc5ebe8015ea75ceff3baa43192bc4b2b94",
+      "bytes": 4867
+    },
+    "tests/verl/test_rollout_normalization_precision.py": {
+      "sha256": "0bd6614743b81899153ed9aa9bfa22c26134dca607f64ed5409e825bbc154cad",
+      "bytes": 1529
+    },
+    "tests/verl/test_vllm_compat.py": {
+      "sha256": "64c9ffae6e7fffe31699db4fd8008b766ec56ae4e14083dbebf3791e2db60fb4",
+      "bytes": 4248
+    }
+  },
+  "CPU_only": true,
+  "Python_required": "3.12",
+  "dependencies": "Unmodified official uv.lock, no defaultgroups; extra dev/groupdev only, no verl-cpu/torch/GPU stack. Fresh private env/cache/managed interpreter in server local filesystem.",
+  "selected_scope": "Changed-file Pyright and copiedPython header script; V3tests are not rerun or retroactively passed.",
+  "limits": {
+    "CPU": 4,
+    "nice": 19,
+    "address_space_GiB": 32,
+    "owned_RSS_GiB": 6,
+    "host_admission_GiB": 8,
+    "host_floor_GiB": 4,
+    "job_seconds": 1200,
+    "sync_seconds": 600,
+    "focused_seconds": 120,
+    "related_seconds": 240
+  },
+  "homepage_updates_authorized": false,
+  "no_issue_comment_ready_review_merge_CLA_or_human_attestation": true,
+  "original_protocol_sha256": "9b9474f0dc69a56b4858967acb078372529805c86a5bbf3eca3cb0efd0c37746",
+  "changed_files": [
+    "agentlightning/server/routes/rollouts.py",
+    "agentlightning/server/store.py",
+    "tests/server/conftest.py",
+    "tests/server/test_endpoints.py"
+  ],
+  "scope": "Validation only: inherited same-source V3focused5/related53/ruff/format; isolated pinned official Node22 for existing locked Pyright and upstream copyright checker. No pytest, lock/package/source mutation, GPU or training.",
+  "focused_test_AST_identical_to_original": true,
+  "candidate_revision_reason": "V3 source checks passed but Python Pyright wrapper auto-selected Node27 prerelease which nodeenv cannot parse. Pin officialNode22 artifact bySHA without changing officialPythonlock or candidate source.",
+  "validation_revision": "v4",
+  "prior_protocol_sha256": "a28d7195b24ddd4dd36401e2971abe09ce53b1424d42230744fbe0df31636cca",
+  "node_manifest_sha256": "5589bedd48ebafccf276f6de8b643b494c8617cb10354a54d81c97ddc260773f"
+}

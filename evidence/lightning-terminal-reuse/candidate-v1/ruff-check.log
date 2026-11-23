@@ -1,0 +1,23 @@
+E501 Line too long (121 > 120)
+   --> tests/server/test_endpoints.py:549:121
+    |
+547 |     if replacement_state != "queuing":
+548 |         assert (
+549 |             client.patch(f"/api/rollouts/{rid}", json={"status": {"state": "running"}}, headers=auth_headers).status_code
+    |                                                                                                                         ^
+550 |             == 200
+551 |         )
+    |
+
+E501 Line too long (127 > 120)
+   --> tests/server/test_endpoints.py:584:121
+    |
+582 |         assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+583 |         assert client.delete(f"/api/rollouts/{rid}", headers=auth_headers).status_code == 204
+584 |     gap = client.get("/api/rollouts/terminal", params={"after": before["next_after"], "limit": 1}, headers=auth_headers).json()
+    |                                                                                                                         ^^^^^^^
+585 |     assert gap == {"items": [], "next_after": 2, "total_terminal": 3}
+586 |     after = client.get("/api/rollouts/terminal", params={"after": gap["next_after"]}, headers=auth_headers).json()
+    |
+
+Found 2 errors.

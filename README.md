@@ -48,6 +48,9 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 | [Google ADK #8278](https://github.com/google/adk-python/pull/8278) | 并发删除产物目录时处理已消失的条目 |
 | [Semantic Kernel #14845](https://github.com/microsoft/semantic-kernel/pull/14845) | 在锁外执行取消回调，避免重入死锁 |
 | [Semantic Kernel #14853](https://github.com/microsoft/semantic-kernel/pull/14853) | 调用方取消后仍处理后续异常与队列记账 |
+| [Agent Lightning #707（草稿）](https://github.com/microsoft/agent-lightning/pull/707) | 删除后复用 rollout ID 时保留正确的完成分页与游标 |
+
+[Agent Lightning 实际复现与修复](docs/lightning-terminal-reuse.md)：原版四个状态回归失败，候选相关53项通过；类型检查单独完成，未宣称全仓库或训练栈验证。
 
 ## 复查材料
 

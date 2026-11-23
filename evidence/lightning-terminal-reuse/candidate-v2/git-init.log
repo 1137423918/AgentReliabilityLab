@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/path/to/private-agent-lab/outputs/lightning-terminal-candidate-v2-stage53-20261123/exec_child.py", line 7, in <module>
+    os.execv(sys.argv[4],sys.argv[4:])
+FileNotFoundError: [Errno 2] No such file or directory

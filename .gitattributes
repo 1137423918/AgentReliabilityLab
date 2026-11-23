@@ -6,3 +6,4 @@ evidence/**/*.jsonl -whitespace
 evidence/**/patch.diff -whitespace
 evidence/sk-cancelled-send/**/*.xml -whitespace
 evidence/sk-cancelled-send/**/tested-source/**/*.txt -whitespace
+evidence/lightning-terminal-reuse/**/*.xml -whitespace
