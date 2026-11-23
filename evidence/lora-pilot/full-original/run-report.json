@@ -1,0 +1,184 @@
+{
+  "terminal": true,
+  "status": "failed",
+  "protocol_sha256": "6cf0b7e8f3cf7751ce21b49a191a2fc69cdb3cb4b6020eb01969d4e5c45c17d1",
+  "driver_sha256": "e634db05a94105c86ddf705e3e3628ae8d7c2ebcf91037734794aac51ef007b1",
+  "training_started": true,
+  "GPU_work_started": true,
+  "phases": [
+    {
+      "variant": "train",
+      "returncode": -15,
+      "guard_reason": "GPU_telemetry_stale",
+      "wall_seconds": 476.749,
+      "peak_sampled_owned_RSS_bytes": 4758224896
+    }
+  ],
+  "completed_variants": [],
+  "GPU_probe_errors": [
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 0.013
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 14.117
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 19.77
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 28.497
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 40.196
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 60.88
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 83.845
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 100.372
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 119.943
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 128.312
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 136.128
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 162.713
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 189.419
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 194.959
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 227.412
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 272.835
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 281.18
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 299.802
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 308.161
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 314.137
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 337.288
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 356.051
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 372.706
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 379.395
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 387.683
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 409.831
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 415.594
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 421.507
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 445.489
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 451.351
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 459.755
+    },
+    {
+      "type": "TimeoutExpired",
+      "elapsed_seconds": 470.498
+    }
+  ],
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Training variant failed: train"
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": true,
+  "own_GPU_context_absent": true,
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 499.734,
+  "ledgers": {
+    "train": {
+      "forward_reserved": 1329,
+      "forward_completed": 1329,
+      "backward_completed": 774,
+      "optimizer_update_reserved": 32,
+      "optimizer_update_completed": 32,
+      "checkpoint_committed": 4,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    },
+    "mixed_train": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    }
+  }
+}

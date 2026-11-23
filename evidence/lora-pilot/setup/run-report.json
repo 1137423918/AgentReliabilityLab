@@ -1,0 +1,39 @@
+{
+  "terminal": true,
+  "setup_protocol_sha256": "f8fb48bb7fb61c5c0a42796cfe6fa66d6e0c3c9b917aed5de5618c1cdef817f9",
+  "operator_sha256": "641847cfb78fbc10dbd63598bf36eafb9bd72ad13dbe10a0e6274bdcee6feb4e",
+  "GPU_or_model_or_training": false,
+  "phases": [
+    {
+      "phase": "new-venv",
+      "returncode": 0,
+      "wall_seconds": 0.171
+    },
+    {
+      "phase": "install-pinned-peft",
+      "returncode": 0,
+      "wall_seconds": 1.463
+    },
+    {
+      "phase": "pip-check",
+      "returncode": 0,
+      "wall_seconds": 0.981
+    },
+    {
+      "phase": "CPU-runtime-identity",
+      "returncode": 0,
+      "wall_seconds": 11.238
+    }
+  ],
+  "staged_container_sha256": {
+    "baseline-site.tar": "da7a459ec02e820a439bb617cd095e5e55d4cc2a4b4b0263df48ae7077ccdb0f",
+    "prepared-data.tar": "465dffe16444ed069b024a2e2d4d11f79f573352b394423c2c79e08518c38438"
+  },
+  "all_cloned_runtime_files_verified": 32475,
+  "all_copied_data_files_verified": 11,
+  "all_model_files_verified": 11,
+  "runtime_ready": true,
+  "core_distribution_pairs_unchanged": true,
+  "owned_child_reaped": true,
+  "wall_seconds": 148.579
+}

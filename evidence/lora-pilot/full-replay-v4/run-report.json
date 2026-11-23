@@ -1,0 +1,128 @@
+{
+  "terminal": true,
+  "protocol_sha256": "2260c50e4a305f74b5eba1cd8506f1d695218ff3ae2fd157fe0a8eac2d548656",
+  "phases": [
+    {
+      "phase": "full_read_only_audit",
+      "returncode": 0,
+      "guard_reason": "foreign_compute_client",
+      "wall_seconds": 89.641,
+      "peak_sampled_owned_RSS_bytes": 8530907136
+    }
+  ],
+  "status": "failed",
+  "original_Full_run_remains_failed": true,
+  "Full_optimizer_updates_executed_this_controller": 0,
+  "original_Full_in_memory_final_hash_gap_remains": true,
+  "Mixed_training_started": false,
+  "GPU_work_started": true,
+  "admission_wait_seconds": 11.909,
+  "GPU": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 5.206081,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 4,
+    "observed_unix": 1795416044.8944743,
+    "sample_seconds": 1.424856,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "admission_samples": [
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 5.206081,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 1,
+      "observed_unix": 1795416034.5997827,
+      "sample_seconds": 0.018433,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 5.206081,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 3,
+      "observed_unix": 1795416041.469137,
+      "sample_seconds": 1.436891,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    }
+  ],
+  "current_phase": "full_read_only_audit",
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Follow-up phase failed: full_read_only_audit"
+  },
+  "model_shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": true,
+  "own_GPU_context_absent": true,
+  "GPU_after": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 5.206081,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 33,
+    "observed_unix": 1795416137.8365514,
+    "sample_seconds": 1.457656,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "ledgers": {
+    "full_read_only_audit": {
+      "forward_reserved": 277,
+      "forward_completed": 277,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    },
+    "mixed_train": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    }
+  },
+  "original_Full_files_unchanged": true,
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 109.931
+}

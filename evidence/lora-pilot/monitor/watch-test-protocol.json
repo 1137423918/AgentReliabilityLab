@@ -1,0 +1,10 @@
+{
+  "operator_sha256": "6dc280c1d5330898137a3807fd4e1410c20c38463bc2c9e7152e419f799bd8c2",
+  "watcher_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "expected_GPU_UUID_sha256": "56bd5a36790c2ac02298edadc08541bc3ad1e87a1c398c97da676b4bcfa1a3b2",
+  "scope": "bounded persistent selected-handle NVML monitor test; no model/optimization; no core or neural runtime mutation",
+  "sample_limit_seconds": 2,
+  "freshness_inter_sample_limit_seconds": 5,
+  "wall_seconds": 40
+}

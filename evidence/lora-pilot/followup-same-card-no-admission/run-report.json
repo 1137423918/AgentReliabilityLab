@@ -1,0 +1,69 @@
+{
+  "terminal": true,
+  "protocol_sha256": "fb913f124ed9eecd6842b119dec6cf6a91e58acd5e4def65ea166b03aa84f53d",
+  "phases": [],
+  "status": "failed",
+  "original_Full_run_remains_failed": true,
+  "Full_optimizer_updates_executed_this_controller": 0,
+  "original_Full_in_memory_final_hash_gap_remains": true,
+  "Mixed_training_started": false,
+  "GPU_work_started": false,
+  "admission_wait_seconds": 600.504,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Same RTX3090 not admitted within600s; no neural work started"
+  },
+  "model_shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": false,
+  "own_GPU_context_absent": true,
+  "GPU_after": {
+    "index": 1,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 4.469814,
+    "total_MiB": 24576,
+    "used_MiB": 21571,
+    "utilization": 87,
+    "sequence": 183,
+    "observed_unix": 1795415946.5778286,
+    "sample_seconds": 1.425043,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "56bd5a36790c2ac02298edadc08541bc3ad1e87a1c398c97da676b4bcfa1a3b2",
+    "compute_processes": 1
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "ledgers": {
+    "full_read_only_audit": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    },
+    "mixed_train": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    }
+  },
+  "original_Full_files_unchanged": true,
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 605.439
+}

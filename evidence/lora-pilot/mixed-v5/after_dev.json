@@ -1,0 +1,1388 @@
+{
+  "cases": [
+    {
+      "id_sha256": "00f14aa3b9be062d17437c3939734cec150a2b724740ee92e97c59a8439b6e3c",
+      "component_sha256": "4bff4895ece1f48d7c15493e4ef57af9620b11b6bdca3326374050a35732cd56",
+      "target_tokens": 65,
+      "loss_sum": 3.1945159435272217,
+      "mean_NLL": 0.049146399131188026
+    },
+    {
+      "id_sha256": "011c055c9da41a5daa5e88bbd30b3513eb57989fd192709dbc3d9ec91aa06f36",
+      "component_sha256": "34653b825f9e4dc6f4d8cc73a7cd268b3ab10efd38e3d7a68c5eb2e07ad41efe",
+      "target_tokens": 129,
+      "loss_sum": 12.53116226196289,
+      "mean_NLL": 0.0971407927283945
+    },
+    {
+      "id_sha256": "0336fdf7709d58b15aa87068933a5db8fdb2f4b5710af5345289353ad2575866",
+      "component_sha256": "02e65c836c55ef416ab5452b4a221588f97785071c7510dafabfea77b72dbfac",
+      "target_tokens": 53,
+      "loss_sum": 54.839786529541016,
+      "mean_NLL": 1.0347129533875663
+    },
+    {
+      "id_sha256": "03442ec953cce6ac8fe97f0d2e9a371b48f99005efdc5c16a311090964294d6f",
+      "component_sha256": "1225be2e54f3537241ca5a00038bb6435170641536a47a4cf8729acd3a838aad",
+      "target_tokens": 86,
+      "loss_sum": 1.5327610969543457,
+      "mean_NLL": 0.017822803452957506
+    },
+    {
+      "id_sha256": "064e3a39914538f9f0dbe086f2e2377235b62b91ef345bf0734efe6c09a25d67",
+      "component_sha256": "0b1c9d0f1e656479079d573dd7882f5bcaa45bfbbd7aaecba6709a81c3d096d7",
+      "target_tokens": 55,
+      "loss_sum": 28.709556579589844,
+      "mean_NLL": 0.5219919378107244
+    },
+    {
+      "id_sha256": "06d404557dd28d175728d47c32c245865f65bce30967815412adcea56e5b7334",
+      "component_sha256": "6434def138df6166ea79859c9bb4a8ed3625be911ad67bca72e8ad9533d5109b",
+      "target_tokens": 46,
+      "loss_sum": 4.571272850036621,
+      "mean_NLL": 0.09937549673992654
+    },
+    {
+      "id_sha256": "077826edf095254f26771ce4ad4ff800f246cc3dba8bc10d027fe59f65d857d0",
+      "component_sha256": "82d6dbd86ed3833d99ed78f5f091f554b383453f4a3386f378b60799475d8032",
+      "target_tokens": 59,
+      "loss_sum": 25.368549346923828,
+      "mean_NLL": 0.4299754126597259
+    },
+    {
+      "id_sha256": "0804a8b3626b87afaf825ae3c43a729fb011b4a78d837cf41c047728b328566b",
+      "component_sha256": "640982315c3e60f206f4647de50617b5c824b7ac87b9d53bdcd59a0a740468ac",
+      "target_tokens": 84,
+      "loss_sum": 0.48350465297698975,
+      "mean_NLL": 0.005756007773535592
+    },
+    {
+      "id_sha256": "08a8d66b2cdea5d1565ed8dc5f02f9353055845caec5b8a925eacb72286fc67e",
+      "component_sha256": "c7a330280f07e7f23a1b52a11e0e5c8d55bfb3bd355b271be757617564c24612",
+      "target_tokens": 46,
+      "loss_sum": 0.852912187576294,
+      "mean_NLL": 0.018541569295136826
+    },
+    {
+      "id_sha256": "0a0505aa4fa46d7327755fd5711a92182ece38fc24f3aede7d62df72a3129858",
+      "component_sha256": "7b7b6a27ac777ccd31c849962b2b994b2af52d6763bd5b37685c414c32a6bacf",
+      "target_tokens": 79,
+      "loss_sum": 0.31628909707069397,
+      "mean_NLL": 0.004003659456591063
+    },
+    {
+      "id_sha256": "0a87e10a66b9d845f82934792a01176be25ba44ea26b80fc81f58a4b301bad92",
+      "component_sha256": "5d604ea56a1f4f6082193ff315ff36cfe2aeb62c671a5ea8a18589918c81d636",
+      "target_tokens": 78,
+      "loss_sum": 2.3332414627075195,
+      "mean_NLL": 0.02991335208599384
+    },
+    {
+      "id_sha256": "0e863c6025fde67c911ae9395b600d668daf0f9386a7b7d4eb27c0823233b002",
+      "component_sha256": "99010a3bab48e4ddbe168a7121aee824d7ab2a85ba4a576c938777c7be56a330",
+      "target_tokens": 41,
+      "loss_sum": 0.3959064185619354,
+      "mean_NLL": 0.009656254111266718
+    },
+    {
+      "id_sha256": "1202ffe721ab3bb256387cb215140077d77cd86f7604055aa0a31d29a2952a42",
+      "component_sha256": "743e0d14acbbbb1078a0805f94956b56e17fc68d9d4d82ee100624f868abbac1",
+      "target_tokens": 128,
+      "loss_sum": 0.8763166666030884,
+      "mean_NLL": 0.006846223957836628
+    },
+    {
+      "id_sha256": "12bf81210b369e2f26e1e6d606a80caa1c9bb41e028c3f58456c7d1ffd86aafd",
+      "component_sha256": "c3296ad8f96bc91daa7743313dc0ec7d4da5749c4ae7aff001d88e7eb8807835",
+      "target_tokens": 233,
+      "loss_sum": 208.96990966796875,
+      "mean_NLL": 0.8968665650985783
+    },
+    {
+      "id_sha256": "183cac85e26b6487d931f9738c3b29778f09279feae8a491d8e0d60f463ae19e",
+      "component_sha256": "1ca65359322e6921f809a97dfb75b328b467ca9cf11178fef081fbd1fc0d0a9a",
+      "target_tokens": 74,
+      "loss_sum": 0.7450963258743286,
+      "mean_NLL": 0.010068869268572008
+    },
+    {
+      "id_sha256": "185bd9cacca2f70bc34909d73158eccaf79eb6114619fd5a0418319cd648c513",
+      "component_sha256": "2186c64b52517b672fc8e4fe366c317cc58b7d68d1c7f4c5a6e4ebb1348e0db5",
+      "target_tokens": 71,
+      "loss_sum": 0.4679630398750305,
+      "mean_NLL": 0.0065910287306342324
+    },
+    {
+      "id_sha256": "188a54719cbf81ea473dbd02676a94321ac1d94f7a0280c0fb24d20ae5083c4c",
+      "component_sha256": "b55e0743804e31371821bb9e0246847b6b9b5b38baf2e4bea255209f932edd65",
+      "target_tokens": 68,
+      "loss_sum": 0.9113006591796875,
+      "mean_NLL": 0.013401480282054228
+    },
+    {
+      "id_sha256": "198d9b3c22f8fd85a44fcad5b119fe96044d88b8026ede98f3537a751fc8cd5b",
+      "component_sha256": "ed848dd214bdc2e075c5a4de05ef0ac86d9c290043aec9e4c452af83d2cbe848",
+      "target_tokens": 65,
+      "loss_sum": 0.8379377722740173,
+      "mean_NLL": 0.01289135034267719
+    },
+    {
+      "id_sha256": "1c418ca529fdf44432432d826e3c2d0b9d612c00f7675853af54a567d15886d9",
+      "component_sha256": "424a8a14c5ef104c383a6842fe92c1bb0d48fa9c48deeb0b88ca832939246525",
+      "target_tokens": 74,
+      "loss_sum": 0.26905491948127747,
+      "mean_NLL": 0.003635877290287533
+    },
+    {
+      "id_sha256": "1c72ce7afafe892a8decc0e7ab90e5500332d35e8388d637145f2d0ea546735f",
+      "component_sha256": "f32bc57576c208ab285a393369d9c5b388fdc66086b12d72e7bf7b31778aa8d5",
+      "target_tokens": 65,
+      "loss_sum": 1.6201865673065186,
+      "mean_NLL": 0.024925947189331055
+    },
+    {
+      "id_sha256": "1c9845c4c023ab76b34845d3ea0ec6f342eff3fc23e38fac20671d225083561e",
+      "component_sha256": "0ed75a4dfc1ea38e542c2fb547adb9ca0567c9761305b2e8baed91a00fb89bea",
+      "target_tokens": 93,
+      "loss_sum": 0.7843705415725708,
+      "mean_NLL": 0.008434091844866353
+    },
+    {
+      "id_sha256": "1dfb33c34eebf3a7e1e34e85e9f775687a7f78ff54e4802b4bc2f78fe676f27d",
+      "component_sha256": "55b55e7be99a57fe015fb37adf4ba69e8492c60606b595b726e10b62db2266f0",
+      "target_tokens": 66,
+      "loss_sum": 0.4546062648296356,
+      "mean_NLL": 0.006887973709539933
+    },
+    {
+      "id_sha256": "201b6384243a5adc266c474e8825dc5014ce132eff934d9d44cbce122fa05cb3",
+      "component_sha256": "6486da24cef00ae91cc47bc9ca77ace34f4dc4835ceb411a862cb0cf3bab1be9",
+      "target_tokens": 133,
+      "loss_sum": 130.51304626464844,
+      "mean_NLL": 0.9813010997341988
+    },
+    {
+      "id_sha256": "2056a6fc42766fc88c6b9c98b5a29236e5fd611889781649b842588a4335cc73",
+      "component_sha256": "cba892ac0a8c0c80e64fa3f79ed61a14621925d4b6cf2874ac2b7d09ed265f5d",
+      "target_tokens": 97,
+      "loss_sum": 0.5492538809776306,
+      "mean_NLL": 0.005662411144099285
+    },
+    {
+      "id_sha256": "21c01a8f1400dea433261d17bc3374809685f908aef8ac0ee212c547768b50ff",
+      "component_sha256": "7d8e695306b13bc92f5b8df1dd69813f50d1caf90f633750755ea1f4b8ef0f2b",
+      "target_tokens": 96,
+      "loss_sum": 2.2633941173553467,
+      "mean_NLL": 0.023577022055784862
+    },
+    {
+      "id_sha256": "22656e98f5cad344cfcb7f8ae5557ea90403cf8b784a65038fde835167d027e9",
+      "component_sha256": "e1792f858fc4a027470986ebd271a016472f9eeca056b7274799802af234d2ca",
+      "target_tokens": 97,
+      "loss_sum": 5.011228084564209,
+      "mean_NLL": 0.05166214520169288
+    },
+    {
+      "id_sha256": "24955183dab2923787a4edff00f7d8ca95fcb4c0edc8d6ff68ecaa8bb4273935",
+      "component_sha256": "4f73cc86086f2645545adf55ee751ffa5ff51e08b3a587b2625b8ed8e71248b8",
+      "target_tokens": 142,
+      "loss_sum": 1.9151660203933716,
+      "mean_NLL": 0.013487084650657547
+    },
+    {
+      "id_sha256": "2657dade9509181151f26e6f32e8069b5f0ae2e296e0e0b55c63ec81226f0f5d",
+      "component_sha256": "6ffa50cfe1f55bfdfd41a60e2b7efd1500ce85bfe38f611c7bbae8195d33e998",
+      "target_tokens": 85,
+      "loss_sum": 72.2453384399414,
+      "mean_NLL": 0.8499451581169577
+    },
+    {
+      "id_sha256": "275ca24ef4078ff914f2891011b79615b9d9455ba6e99cf2b1aaf25e006119c3",
+      "component_sha256": "51296b0d8ff94f494f1d23c7e0305023fb7fe5b4c7ae3eb51793602bad7e8334",
+      "target_tokens": 73,
+      "loss_sum": 0.5169938206672668,
+      "mean_NLL": 0.007082107132428313
+    },
+    {
+      "id_sha256": "27a02a5699cab87bc5dadccc26ec6754aa25870a80ac66643ec0189006ecdbcb",
+      "component_sha256": "7b2035b8bc69c101c27ecfbd43f1c31ad3e87fd62c61bfa61534aeb0bb7228c2",
+      "target_tokens": 57,
+      "loss_sum": 0.2664239704608917,
+      "mean_NLL": 0.004674104744927925
+    },
+    {
+      "id_sha256": "28a45fe47a296f42378cb30ae6cecabf1df7a8d9a2798e0c8971a3514e68d683",
+      "component_sha256": "752f12ef2f7d934971ed7968d27698a3ac0adc8b8de45a31d19f5bdd4aba3ffc",
+      "target_tokens": 55,
+      "loss_sum": 0.20790055394172668,
+      "mean_NLL": 0.003780010071667758
+    },
+    {
+      "id_sha256": "2a6e8e276c60d62a464c8da494365dfa59256733be5febbe30eb77db2f6164b9",
+      "component_sha256": "ca21d220c33a1ad948a8bcfe8a20b5f664a23b11247eadc231a9839e62c75efe",
+      "target_tokens": 45,
+      "loss_sum": 0.9454024434089661,
+      "mean_NLL": 0.021008943186865914
+    },
+    {
+      "id_sha256": "2ae2261143d871a14c0994b6bb8277f1e6b1b0c402435cc7fb903d8325d58424",
+      "component_sha256": "99e7e5f1c0cf6e10901b23ee231f51f9cb4147f049bfd0e372d664823d9c6f27",
+      "target_tokens": 51,
+      "loss_sum": 0.2910788655281067,
+      "mean_NLL": 0.005707428735845229
+    },
+    {
+      "id_sha256": "2ae916d103787ef3fdd3f35126676305f6082801e44a9a60ece09ba30e05df27",
+      "component_sha256": "af30481d2e08ca9a2518ac2d9f082787c0d7f1dc1c04fd2effc6a415f6c86f45",
+      "target_tokens": 48,
+      "loss_sum": 0.8440701961517334,
+      "mean_NLL": 0.017584795753161114
+    },
+    {
+      "id_sha256": "2bb4bd69dc2501af11b222a0d33d20d9c364e397e6b6aeccf39e85516c9d3a12",
+      "component_sha256": "563b26049baacb0f57d2055c297794d4656254c55f9360e474bff1b3a23d068c",
+      "target_tokens": 53,
+      "loss_sum": 34.41349792480469,
+      "mean_NLL": 0.6493112816000884
+    },
+    {
+      "id_sha256": "2e82f83dc4e27389908fb0e74fcda5e4a7726e9a9b13ffb4395c1fe5512060c7",
+      "component_sha256": "115d947cbe81fa52c832071b4917e554a5d928df605d56e7eb50a3c417e5262e",
+      "target_tokens": 75,
+      "loss_sum": 89.66740417480469,
+      "mean_NLL": 1.1955653889973958
+    },
+    {
+      "id_sha256": "3160dfe17785ad367b17880c106cad7b1e4e8dede9b2ebfb271621b05a74b86c",
+      "component_sha256": "73bc089aa2485992b0ce87a10a0c9902cfdb6fa40eedf85aa269f3333a12bfcf",
+      "target_tokens": 46,
+      "loss_sum": 0.16129539906978607,
+      "mean_NLL": 0.003506421718908393
+    },
+    {
+      "id_sha256": "3ad38e25f674af83c0d1e6f53df97d67f8e501b8d2f9b7833074e86612d9e81d",
+      "component_sha256": "60bfe55043434d58edb4fb92b11bb72ef78a6c00b93da90b63f8911fb1e0af64",
+      "target_tokens": 93,
+      "loss_sum": 1.2566641569137573,
+      "mean_NLL": 0.013512517816276961
+    },
+    {
+      "id_sha256": "3cb77b8488e0db00bd90b8e7249e624a08c5f68a1264096e1967048a1ab3790e",
+      "component_sha256": "3a5d3db9a8e980b9f99f8630fcae88ed1a5cfbb7107750f8f63a34166827fa6f",
+      "target_tokens": 95,
+      "loss_sum": 23.658863067626953,
+      "mean_NLL": 0.2490406638697574
+    },
+    {
+      "id_sha256": "3d40c0475455d81095348ee71e3e35fc086795c2af608dd0b468b41a664b1cfa",
+      "component_sha256": "dafe1101d518b5a84c83594a8e55ae738fa251a51fc509f529e3d1f67a87a92f",
+      "target_tokens": 46,
+      "loss_sum": 0.19430574774742126,
+      "mean_NLL": 0.004224037994509158
+    },
+    {
+      "id_sha256": "410b7ece53cc701ef4ac0060b5cd43d602904c995261baf4bf640ee5f74bdb2e",
+      "component_sha256": "089a0fb75cba76f0a2c394ec87148b0e86bad59ce199086028e7a6a088c5cb4f",
+      "target_tokens": 66,
+      "loss_sum": 37.601165771484375,
+      "mean_NLL": 0.5697146329012784
+    },
+    {
+      "id_sha256": "41ab92528b0fd6561cd4164cb07725acc407213e901df884e38dfc4ddc867605",
+      "component_sha256": "71fa8934a8a23e52ca48352142efe8698db5e022d30986eb53a51f9cdb830b68",
+      "target_tokens": 118,
+      "loss_sum": 2.6237266063690186,
+      "mean_NLL": 0.022234971240415412
+    },
+    {
+      "id_sha256": "41f641b5899a8b165a95b8e669624b6b6e21da152da6b71460a5fa99110bc8af",
+      "component_sha256": "164c09d37b647ef8e3e5b0a5c7417caecd5ae373fc200dd57bf30ecc01d4a3f0",
+      "target_tokens": 54,
+      "loss_sum": 31.03546142578125,
+      "mean_NLL": 0.5747307671440972
+    },
+    {
+      "id_sha256": "42cd0dac2455c29364eebd0c0f682a03a60ad0ecf215dfc38ee116c526554519",
+      "component_sha256": "9d294166f8ea525649538e3049e652120d330c26a25c3bef679b8855b4977ac0",
+      "target_tokens": 190,
+      "loss_sum": 344.143798828125,
+      "mean_NLL": 1.8112831517269736
+    },
+    {
+      "id_sha256": "44d763eadb094a3a0f5d6378fb9310def8ecfefd5985a6a34598f99324134e5a",
+      "component_sha256": "d1a08f6843cf69a23e7f63c6410054c4ab0336e8d270070460a9e68c9547a4ff",
+      "target_tokens": 47,
+      "loss_sum": 0.6198117733001709,
+      "mean_NLL": 0.013187484538301509
+    },
+    {
+      "id_sha256": "467411084cbacde028c5a7602b81d7081d28aab2e8ed3ab6f17d51ff201a6d57",
+      "component_sha256": "6cf8473629ffeb97ea20999c5f4860d4ef9601037b0f8226a9098776851efb24",
+      "target_tokens": 67,
+      "loss_sum": 3.7037155628204346,
+      "mean_NLL": 0.05527933675851395
+    },
+    {
+      "id_sha256": "46c195080f07bac2454ef269b42ed811ea52bc6c163e0f186b6154d4673f0704",
+      "component_sha256": "0fd7cbc9a0ff6adcebc6c683c7172d3542d8c41bc08141270fc3e2abc6137533",
+      "target_tokens": 100,
+      "loss_sum": 9.90499210357666,
+      "mean_NLL": 0.0990499210357666
+    },
+    {
+      "id_sha256": "473061d559b819cc35b51e858c39780fb4497d57324182d7547a521869c18e0e",
+      "component_sha256": "45f43fcf0afa3ee4607a434c005123519b13484e45d7e98ec5750f3079cede3d",
+      "target_tokens": 49,
+      "loss_sum": 0.15482276678085327,
+      "mean_NLL": 0.0031596483016500666
+    },
+    {
+      "id_sha256": "478e706f79f340c00787361b1927c57ed825c977767adc151e02fb606c9861e9",
+      "component_sha256": "1e7bde3a183f90ac62776a8de6cba05bc6b6be405a86813f9878ac3929484850",
+      "target_tokens": 42,
+      "loss_sum": 0.6675727963447571,
+      "mean_NLL": 0.015894590389160884
+    },
+    {
+      "id_sha256": "479aec20068340c41e65beb7641575ceccb39e9af2bf417451f363eac8b23d8c",
+      "component_sha256": "beb5656676154df3aed0a7d9f3286917636881ea57e29e60bbcf679b763d5aa9",
+      "target_tokens": 58,
+      "loss_sum": 0.4386439621448517,
+      "mean_NLL": 0.007562826933531925
+    },
+    {
+      "id_sha256": "482ee14d2916d374b65f2f8e906abd644f8e53d83a9012038367bd47d27ff261",
+      "component_sha256": "33e5b07acb7cc584d08206e206330e7591ad4d377906096368c1652e2c7386ac",
+      "target_tokens": 42,
+      "loss_sum": 0.277179479598999,
+      "mean_NLL": 0.006599511419023786
+    },
+    {
+      "id_sha256": "4bf28d808e733e564e2ee661aac4ffccca303d0b3a3f445ab34d353f799bf255",
+      "component_sha256": "32b2f73d08bfa153246e1d9e267c9506687dcb6d973302a888368988ec190ccf",
+      "target_tokens": 70,
+      "loss_sum": 1.81442391872406,
+      "mean_NLL": 0.025920341696058002
+    },
+    {
+      "id_sha256": "4d2d7c4f4596ea81bf9ac0ac77b17dc4361997f065495f41161317e8ba58cf91",
+      "component_sha256": "eadd8edaf983042bea3217d81315965008fb62cce521840ad2dc6f64d91375f8",
+      "target_tokens": 88,
+      "loss_sum": 0.25970134139060974,
+      "mean_NLL": 0.0029511516067114744
+    },
+    {
+      "id_sha256": "4d46e1a7e743df6797041a7cd5b40671f9cfe0b3113e831edbbeafc0d5c4e465",
+      "component_sha256": "269e201c2e6000d0ed49e62d4177ebe08b4f8c9ef31963f3124dd9c824d6d6bf",
+      "target_tokens": 85,
+      "loss_sum": 54.665565490722656,
+      "mean_NLL": 0.6431242998908547
+    },
+    {
+      "id_sha256": "5015991503dcfc0334a56065c12fd2b8668cac6e89d9167ab991436252f7961f",
+      "component_sha256": "f2d53c1bbd6de43f55e039162ea6e9bbc55c819aca07f76285dd8e310c6ac03c",
+      "target_tokens": 53,
+      "loss_sum": 5.844051361083984,
+      "mean_NLL": 0.11026512002045254
+    },
+    {
+      "id_sha256": "5145a6150483a06ad46fc00a0868a56983095988884840ea7c3eaa1c67fb3f42",
+      "component_sha256": "9b5561016a28b6e81cbbadd3a1daf150ceab47fc3c22c85f34b84b00bae79ae6",
+      "target_tokens": 65,
+      "loss_sum": 1.4824928045272827,
+      "mean_NLL": 0.02280758160811204
+    },
+    {
+      "id_sha256": "5318f79fea01808d2db994b37b3d17b807da078d24a9296b19fe581b370b83b0",
+      "component_sha256": "04649c93534b9dab86b55b6d9f24681b2eb364b3b42dd5ff39c302ee68b14046",
+      "target_tokens": 69,
+      "loss_sum": 0.3170385956764221,
+      "mean_NLL": 0.004594762256180031
+    },
+    {
+      "id_sha256": "53c35cffaa97e16087317cdd9ee796df301f7b61859a32de6bea09e4e57da286",
+      "component_sha256": "584a7979bdd21b05397683b41347cf9eeea1c76eef1b812369b91e29fca97023",
+      "target_tokens": 59,
+      "loss_sum": 0.33406707644462585,
+      "mean_NLL": 0.005662153838044506
+    },
+    {
+      "id_sha256": "53cc827fa7781e388e4201ffaa2582053eaf8c77c3ad11e21ac288d32e1250f1",
+      "component_sha256": "c61099d86fd80dd24c8dcb8e4282971b96c70560b7467e0b690f128bb94fc3f2",
+      "target_tokens": 46,
+      "loss_sum": 0.6602668762207031,
+      "mean_NLL": 0.01435362774392833
+    },
+    {
+      "id_sha256": "549d75857a9e850e464d5e5a43d2f17d5fd7019e729d646722aee8451293b90c",
+      "component_sha256": "34382e69ac9debae60ab561e5a7b0d7a50adcebdf641ddd5b87ee3cbfc21850c",
+      "target_tokens": 93,
+      "loss_sum": 32.71086883544922,
+      "mean_NLL": 0.3517297724241851
+    },
+    {
+      "id_sha256": "55aa32d4ce79eb74c5b2d90e9eac22b3739ad292013d6d6530e46d10e3b798ad",
+      "component_sha256": "f02c01edb9b4dd0d9c6730beee61d07a4fa707d15cfef968e9179ed352082d32",
+      "target_tokens": 56,
+      "loss_sum": 0.23616470396518707,
+      "mean_NLL": 0.004217226856521198
+    },
+    {
+      "id_sha256": "56f4061383d8d968a682bf6b61e643404d2f10279f33901cbd44ae8f4dde1c75",
+      "component_sha256": "427e4ce2868d6d32c1b8bda1bab52ee564870ec3b4ee4d23051a4dd9d3add3fc",
+      "target_tokens": 268,
+      "loss_sum": 56.01211166381836,
+      "mean_NLL": 0.20900041665603866
+    },
+    {
+      "id_sha256": "58719f5d6c9d6424fe58640d52910553b38a3f0237be3c0b5139cd357c72c7f2",
+      "component_sha256": "d43ec50839552b1a5ce4213b88e829ede5b2603b0e839f791063a36c34228cb7",
+      "target_tokens": 115,
+      "loss_sum": 96.88396453857422,
+      "mean_NLL": 0.8424692568571671
+    },
+    {
+      "id_sha256": "5aa9d7fe2b85cf6e23a32ab10c1257ada7e9fb86378dd95d2c67117a0ff98d37",
+      "component_sha256": "a049dd635efeafb5ad9cb63badf5538ea0b5c018808b1b15c35bb20c7e4cbdc4",
+      "target_tokens": 71,
+      "loss_sum": 0.538641095161438,
+      "mean_NLL": 0.007586494298048423
+    },
+    {
+      "id_sha256": "5ae3e16f55d255788e32918f573142bb5bef506e100bc79180205332da552613",
+      "component_sha256": "65f253ea13480bf86739f6626f0310670bcb500de95dba0871684c79a93c7801",
+      "target_tokens": 78,
+      "loss_sum": 0.3194926381111145,
+      "mean_NLL": 0.0040960594629630065
+    },
+    {
+      "id_sha256": "5bebd3c8eb806b77826e5f5b6f3db24ce7eaa2731d8474557a299d13e835cb37",
+      "component_sha256": "841311d4de4c38072dbd0639b718c6b208502f83c6dae9dce28e6e974fb00296",
+      "target_tokens": 66,
+      "loss_sum": 58.87161636352539,
+      "mean_NLL": 0.8919941873261423
+    },
+    {
+      "id_sha256": "5c79f71f9df61180fe3af8b32493c561380a3b35082cbf73fb1edea78769eee7",
+      "component_sha256": "633b5407fb157c76503aec8ca343c1a88931cd4b3ce6ef780c17261a0b7cae33",
+      "target_tokens": 172,
+      "loss_sum": 14.673373222351074,
+      "mean_NLL": 0.08531030943227369
+    },
+    {
+      "id_sha256": "5c84651ce192695298abfd9dfbba94b2dc546036741c86d383a3de238c95d53d",
+      "component_sha256": "6a1391dd643edba60f5957bcc8fb16ce9df5fd4dbbb438eee169868be1e6f79a",
+      "target_tokens": 343,
+      "loss_sum": 524.5510864257812,
+      "mean_NLL": 1.5293034589672923
+    },
+    {
+      "id_sha256": "5d99ee022dbf5b32e44dd5fec6b1a307534e70ec77dfe4611bd1c74e7804f4c9",
+      "component_sha256": "acf5ac4dcf87ade4736ab6fa9fc2f9b1b4be549c5e0ea9853303a80d27b0a196",
+      "target_tokens": 74,
+      "loss_sum": 0.3940914273262024,
+      "mean_NLL": 0.005325559828732465
+    },
+    {
+      "id_sha256": "5e4b80afb4248fb1d87fd6223500436f07f87dfb7003c1fdba47b0c30033e703",
+      "component_sha256": "8abbda9334ba42cd7576ea59c3e8359d1f8a137a356722d068bf9743e070bd58",
+      "target_tokens": 46,
+      "loss_sum": 0.20807626843452454,
+      "mean_NLL": 0.004523397139880968
+    },
+    {
+      "id_sha256": "603dfbc5a19780a729e4bd70b733404bcafd656d61d814e8794360896685cd04",
+      "component_sha256": "2985a19e29348ab2c91e4b8352c3d3fa7e50fcdad6c2ef1b71ab820518382299",
+      "target_tokens": 129,
+      "loss_sum": 186.6878204345703,
+      "mean_NLL": 1.4471924064695374
+    },
+    {
+      "id_sha256": "614df6a23b54a421dbe978e46dc89297ecf44f0cbad1080928f850ebd214fce4",
+      "component_sha256": "0eeb3fc43dd1fa1f1f469896dc9a0036a17b35cc1dc423de097436ec3508a82a",
+      "target_tokens": 52,
+      "loss_sum": 0.858539879322052,
+      "mean_NLL": 0.016510382294654846
+    },
+    {
+      "id_sha256": "63560406d520e63796318dafa7992f2f133c87e720cca5ebc27ed424b562be37",
+      "component_sha256": "db9971c8478aff18ee15b8fb7ca42ae8d2a499cb1664d10e52e7847ae11651bd",
+      "target_tokens": 87,
+      "loss_sum": 1.578358769416809,
+      "mean_NLL": 0.018142054820882863
+    },
+    {
+      "id_sha256": "644327449d2b508f3af4b977490c16c6aa905a7ea33e92c4ac3cbd1cff923b80",
+      "component_sha256": "934faa3232eb2a67fa06b23338a5650df5e3456516e5cc8a9be802f7b3e88bb4",
+      "target_tokens": 83,
+      "loss_sum": 1.150625467300415,
+      "mean_NLL": 0.013862957437354398
+    },
+    {
+      "id_sha256": "64b34b414db0e1f32c6c04aae00bbf586c8ab14981f8cc3fe2fa8a8773e0ddab",
+      "component_sha256": "f6876c6c0336d642a706f998b0e9ab48b69cd972d7f4ef08c018665975639be8",
+      "target_tokens": 112,
+      "loss_sum": 0.8976526856422424,
+      "mean_NLL": 0.008014756121805735
+    },
+    {
+      "id_sha256": "66d70143c607f978b313ea98434c7b63873c9138a924da05a6a851a4a5392cb8",
+      "component_sha256": "ba853a0c88749a7a9dfad8cb011b2e43b7e0d1b21eb5e61ac5fa00352694d869",
+      "target_tokens": 84,
+      "loss_sum": 24.99779510498047,
+      "mean_NLL": 0.2975927988688151
+    },
+    {
+      "id_sha256": "67b4aea101366c8d9de97beb741fe9568362062f96cccf9eb622292ba356d3bf",
+      "component_sha256": "7b380d1b33fe249edae00450b8c40b97a7162768bb8ef3dc1037f661a9d3f3a0",
+      "target_tokens": 54,
+      "loss_sum": 16.62096405029297,
+      "mean_NLL": 0.3077956305609809
+    },
+    {
+      "id_sha256": "6830b55334006e5d1e337ec5bf19398751c16ea381b5425984f7c0629c558625",
+      "component_sha256": "633603901f8f980e45144b07683e50c90b1a38564dacbbacde8d747c4eb575e7",
+      "target_tokens": 90,
+      "loss_sum": 0.5378827452659607,
+      "mean_NLL": 0.005976474947399563
+    },
+    {
+      "id_sha256": "6932647b86cf6d952e56c2585e5145a0d7771b6e4eb6a4245d54c31fae6a079f",
+      "component_sha256": "8983902d17e44adf00e70e119c9b7bafe40406e8d660e174fdc9ae39d5d03a6b",
+      "target_tokens": 106,
+      "loss_sum": 1.0896879434585571,
+      "mean_NLL": 0.010280074938288275
+    },
+    {
+      "id_sha256": "694403b3e2afc70e359b47144e907d43dcbb40df9b7653c6e4574a51df961d9c",
+      "component_sha256": "3ee6be007a6120e3679096ced170f4590a8d0ae4c2956ba5e3997dbc59d5179f",
+      "target_tokens": 114,
+      "loss_sum": 2.1724085807800293,
+      "mean_NLL": 0.01905621562087745
+    },
+    {
+      "id_sha256": "69741b599e752ed696b117b2ca95d879f51f8656fdc4d2300b63be109168dbbf",
+      "component_sha256": "92b5e47973424fdef6d0327f09713d42796e4a1f86d65178d3725c55ede3691a",
+      "target_tokens": 79,
+      "loss_sum": 1.9207555055618286,
+      "mean_NLL": 0.024313360829896564
+    },
+    {
+      "id_sha256": "69e68e417a7611946ef2f5d5bd28d9b7d1275bc3bfb8d4cd55102dd9c7ff667d",
+      "component_sha256": "5dd7193e4ca9bf53e8850f1af27c62207298a5b569c7cff301f5195a521e8fac",
+      "target_tokens": 71,
+      "loss_sum": 1.8648555278778076,
+      "mean_NLL": 0.02626557081518039
+    },
+    {
+      "id_sha256": "6ac94be99af416403f227a429b9f5b5aa3ea3940f5898b4c27e257758df95ba9",
+      "component_sha256": "8f2341a6993969686abee1554cef9df8a8c8252828e66774f6ddc59159db102c",
+      "target_tokens": 58,
+      "loss_sum": 0.4238920211791992,
+      "mean_NLL": 0.007308483123779297
+    },
+    {
+      "id_sha256": "6b4dd53e8b3278704fb730f0788d45b70aaae471fe8ab6568c0db5a25c41e694",
+      "component_sha256": "f55ff6a702de4f28c22a19e64614ded6db87d81d91272ae1876aa36a7851af37",
+      "target_tokens": 47,
+      "loss_sum": 0.23319512605667114,
+      "mean_NLL": 0.004961598426737684
+    },
+    {
+      "id_sha256": "6e7478a9437049c961d2150f00bac8dbbe4c20f46dc7f7fa093c72b4552c6ae9",
+      "component_sha256": "acc672dd5a7c0ed8c68a538c0339d777d38dfc828fa796f69bd2a7f451eccf4e",
+      "target_tokens": 59,
+      "loss_sum": 32.394805908203125,
+      "mean_NLL": 0.549064506918697
+    },
+    {
+      "id_sha256": "742de41e427ad452bd975d9ab9e4a0ecd31984b6e30380685e0dd7e7778d85dc",
+      "component_sha256": "5fd439826a70ee1e3e0c00b444b3c66ff34f6b947524381f4c9ccf5f496cd768",
+      "target_tokens": 61,
+      "loss_sum": 31.861074447631836,
+      "mean_NLL": 0.522312695862817
+    },
+    {
+      "id_sha256": "746eca00ddffab46a1d7ff40975e9d0122fe3f4abc62b34c70bccf8e48431632",
+      "component_sha256": "38b4050a22492acda6db001de9927d01772d855dca846f5e31c187f20222901b",
+      "target_tokens": 58,
+      "loss_sum": 0.12185950577259064,
+      "mean_NLL": 0.0021010259615963905
+    },
+    {
+      "id_sha256": "790b8014377ee8c52fb919db0c57a3244a9ab911f0ef5b1a555f8a3af485704c",
+      "component_sha256": "c2fa2144a5666f0023aa7c6f2db244515af0e1801a274c928312f1a353238f58",
+      "target_tokens": 71,
+      "loss_sum": 51.86171340942383,
+      "mean_NLL": 0.7304466677383638
+    },
+    {
+      "id_sha256": "7dcbdbecf1a75c4dcc85b2c3b2a864fa9eb5129c55790ebdc2872ca50efd8dc6",
+      "component_sha256": "8873a73308da229577fa6e6f6d7ed4b859cc0f383b5cd0c8dd054d0be97a3171",
+      "target_tokens": 76,
+      "loss_sum": 14.511248588562012,
+      "mean_NLL": 0.19093748142844752
+    },
+    {
+      "id_sha256": "7f52c592f87865885a3bec4ab7bff09d71f0e0988234e3b49cff7846495ac7de",
+      "component_sha256": "8fb7c7526cdcc679e4df3ddaba6ea319d3ad54c099027fffb2be83ee2eb47c99",
+      "target_tokens": 57,
+      "loss_sum": 53.48146057128906,
+      "mean_NLL": 0.9382712380927906
+    },
+    {
+      "id_sha256": "8211f8c60956ba5dd56fa6b412638837928c5b1135a4d78d93e311a816767773",
+      "component_sha256": "6d33dd3f0fe7db53087a0038a85def96bbd026b5f7d69197e7f451e80e252b5e",
+      "target_tokens": 72,
+      "loss_sum": 9.061798095703125,
+      "mean_NLL": 0.12585830688476562
+    },
+    {
+      "id_sha256": "82a8e9ffe172550e1e1f616c7a1109c432e0f6a0b3852c9b0f634847769f2309",
+      "component_sha256": "fc9ee755573c61fa012200b29d5fe3259670af4628f7dcbc284bcd1b0b8558d0",
+      "target_tokens": 77,
+      "loss_sum": 111.5286636352539,
+      "mean_NLL": 1.4484242030552454
+    },
+    {
+      "id_sha256": "84875e8561ac5cb35bb93690213410ef846a010733fdc04a9c724c463d37d044",
+      "component_sha256": "ffd87411e3f626ada0299ec495055b2b2d9a650a2ce1beb3374af6f6676050e1",
+      "target_tokens": 57,
+      "loss_sum": 20.69431495666504,
+      "mean_NLL": 0.36305815713447437
+    },
+    {
+      "id_sha256": "84aa0fe0c00fb2331ce5bd3ead1c3524e23a1c7ba9bd7ae352b309a46f3ea92c",
+      "component_sha256": "d1cdd7e920dd662796874d2fe02d795a548a9ca57d5695eb17c4d59cd2b15e96",
+      "target_tokens": 49,
+      "loss_sum": 2.4432260990142822,
+      "mean_NLL": 0.049861757122740456
+    },
+    {
+      "id_sha256": "8670227aa439f2923571e8be8d7d6352d182748a0d150c3e2bea513a485445fa",
+      "component_sha256": "cb6abeca4c735e8d2247cbca0f34dd2ddb5829878926ae52452e7d53a67b3206",
+      "target_tokens": 67,
+      "loss_sum": 0.9577317833900452,
+      "mean_NLL": 0.014294504229702167
+    },
+    {
+      "id_sha256": "876f36c531013666f8fdc9bc3eb7a9cc63f688681acd3f618c5eb74318948e2a",
+      "component_sha256": "96b7e1c07a027d75cf4cb0bbced66b18e9ce7a959d2cf5c502f6efaacdab6936",
+      "target_tokens": 46,
+      "loss_sum": 0.17384953796863556,
+      "mean_NLL": 0.00377933778192686
+    },
+    {
+      "id_sha256": "88b2cdb067dcb674c6a32718c6895d1a7c583469679d4e4cb8f94f1f466fe42d",
+      "component_sha256": "0489642ba6d5497408551208a509f634fc5f3e109e39509348215295854b2dfe",
+      "target_tokens": 64,
+      "loss_sum": 2.0740315914154053,
+      "mean_NLL": 0.03240674361586571
+    },
+    {
+      "id_sha256": "8c1bb4a1fd99d36bc14d349f65e491c9b59cc8db694e4523005457ecdd10c0f5",
+      "component_sha256": "a9d69f5c726629d048888aa8ee9549a5e7073208c8fe7b051ceaa3ba237b3463",
+      "target_tokens": 49,
+      "loss_sum": 0.36398568749427795,
+      "mean_NLL": 0.007428279336617917
+    },
+    {
+      "id_sha256": "8c4ecf0396690566662a6094004edf1fe4ad6038defb7eb3ef76626307e6a82a",
+      "component_sha256": "d651504f96d6c5dd7e71a5b5591f54755ecdd7b93c4e76a1bfffad57794e7889",
+      "target_tokens": 175,
+      "loss_sum": 20.158390045166016,
+      "mean_NLL": 0.11519080025809152
+    },
+    {
+      "id_sha256": "8db83fee9ed15ef1af40fbdc1e9690ae7df3ce09396a21627f2579df23a31cab",
+      "component_sha256": "d5a91dc56b819797241ffad1bb74be28355279711f73c19d26fc5f55f40310a2",
+      "target_tokens": 100,
+      "loss_sum": 135.66122436523438,
+      "mean_NLL": 1.3566122436523438
+    },
+    {
+      "id_sha256": "8e51a4192eee7985f34b95b4314fc8931964797de926e653bf996b4458384311",
+      "component_sha256": "339d32aed045d1e2df1e41526cac9a04547b6dfd9edaf1bf2a6c3a5974d428ea",
+      "target_tokens": 162,
+      "loss_sum": 36.80964279174805,
+      "mean_NLL": 0.22722001723301263
+    },
+    {
+      "id_sha256": "8edae2cb00f8a2db68bd0efc018664409ebbfb46eba4991e0e986e6c478e7d67",
+      "component_sha256": "5697d136936564b7a423a37342d639867b123dd06b8e6b6537b90927ec6cbeb5",
+      "target_tokens": 56,
+      "loss_sum": 21.643524169921875,
+      "mean_NLL": 0.3864915030343192
+    },
+    {
+      "id_sha256": "8f105f6316f9c77111b89886ae0bdbdb4daaa5c76d6e7f5135f5675559de6f11",
+      "component_sha256": "36daff09125602c2e0f8bd79e4baccd68b8d17e5714caac898751e87d374c343",
+      "target_tokens": 68,
+      "loss_sum": 86.16779327392578,
+      "mean_NLL": 1.2671734304989086
+    },
+    {
+      "id_sha256": "911f630fbd0440f5574d5b7baa0cef66deef998b0afc0d14cd74647b2154b174",
+      "component_sha256": "736d22eaf2c53aeb67066c3f141a1308db75388c7530c16c68ebc3d5ff22c6f0",
+      "target_tokens": 60,
+      "loss_sum": 0.7677215337753296,
+      "mean_NLL": 0.012795358896255493
+    },
+    {
+      "id_sha256": "91d6ddac9933aa328a624b0c9a6e1e46c4f99189978c52d9fd97ba248da2fdb3",
+      "component_sha256": "72a07efd4976742b4288f913128ceeb6f35b6d2c8f220162f49d032879a761c1",
+      "target_tokens": 109,
+      "loss_sum": 11.057878494262695,
+      "mean_NLL": 0.10144842655286876
+    },
+    {
+      "id_sha256": "93110f13f2b62b8e0c099efdf59dbae307006ba764693148cd87ad4e77d9d510",
+      "component_sha256": "3a68f3b10f48a0bedc284bc6c362fe7120afdd323ea50ae6da9de785c46b519b",
+      "target_tokens": 63,
+      "loss_sum": 16.750043869018555,
+      "mean_NLL": 0.26587371220664374
+    },
+    {
+      "id_sha256": "93a3ff32375b0aef01d311aea38dde3630a80d1518593f91f4dbd85999e92289",
+      "component_sha256": "99c7369e94309f7774399885dacd2cb014f3ba357007b342ad10a20fe1dad8e8",
+      "target_tokens": 73,
+      "loss_sum": 30.414234161376953,
+      "mean_NLL": 0.4166333446763966
+    },
+    {
+      "id_sha256": "9408d5e4ead93acaf404babfa1efeb3133f65f17110362610d299af5b531cdcf",
+      "component_sha256": "02b0d79339483d5e5ef3387345703f1b6eb490ca2c3c40eb207d18f123999621",
+      "target_tokens": 50,
+      "loss_sum": 56.74149703979492,
+      "mean_NLL": 1.1348299407958984
+    },
+    {
+      "id_sha256": "947b2a70880dddd0cf013066bbbeed1f003c50ecbdb52cfd36dae76e88d52616",
+      "component_sha256": "737e4d5ba611f6bfbf27d691c83230f601151b885e36e280d73ccedf7023cbb6",
+      "target_tokens": 134,
+      "loss_sum": 1.5206092596054077,
+      "mean_NLL": 0.011347830295562744
+    },
+    {
+      "id_sha256": "97c8fcae07a4485b8e7ea906337f1c232b238bb3c7b391e1dab872416a4fdc25",
+      "component_sha256": "2b2bd3b52d5198b916ab53b7eebc8f4cc0c52764665f61134f147e4211bb6700",
+      "target_tokens": 78,
+      "loss_sum": 2.7128756046295166,
+      "mean_NLL": 0.034780456469609186
+    },
+    {
+      "id_sha256": "982da2eac9e83a348faadc3705a6ee06f6711c1e28596649c8a490ce78188b3c",
+      "component_sha256": "63bfe3138f6edb5c8e1bfc549c5df55f043f047211e2ac2e86b10aba522ebd9c",
+      "target_tokens": 62,
+      "loss_sum": 0.2246684730052948,
+      "mean_NLL": 0.0036236850484724966
+    },
+    {
+      "id_sha256": "9a9800f24f0517ec73f300cba5eb093acffe26723c510d4818c9ef48933435fc",
+      "component_sha256": "6b8d16a2272c74ef3efa1078fd58b41175c9da9018b262a47ea9723f17f872b8",
+      "target_tokens": 47,
+      "loss_sum": 0.22671069204807281,
+      "mean_NLL": 0.004823631745703677
+    },
+    {
+      "id_sha256": "9c3e1c23033e608629f0510f3bf7ec750fdc0993b333727d91169bdc64a511ba",
+      "component_sha256": "c72f365ed68ffe814e72e338594644d3f1719a10ac93c2e98cc0e0ef121fc2d4",
+      "target_tokens": 125,
+      "loss_sum": 6.296966075897217,
+      "mean_NLL": 0.05037572860717773
+    },
+    {
+      "id_sha256": "9cb822ee226b51b8fec27a1d9637b6642998d5ec34174a41cd7b3554f492e901",
+      "component_sha256": "9128984870233839f64b315f7a4063c2abbb54e4a256bf251cb94d5f4a907c6c",
+      "target_tokens": 51,
+      "loss_sum": 14.612784385681152,
+      "mean_NLL": 0.2865251840329638
+    },
+    {
+      "id_sha256": "9e6f541cf86ed8765fdc6ba952023ee91e4adb6ac64082ba9c1f8858d50038b9",
+      "component_sha256": "d7914593d408f8423320aa226e170c1d3b737969e97c09d57e79a1325c771eab",
+      "target_tokens": 92,
+      "loss_sum": 4.612853527069092,
+      "mean_NLL": 0.050139712250751
+    },
+    {
+      "id_sha256": "9f6d171fecc0a654ba480b0c00f26376ab13ddd094dbcd0ccb9f3dfd9325c080",
+      "component_sha256": "28a414dd9572a8f3cbcbd15ff2d86251750565ee8d17869b3ed6065ebe173d5a",
+      "target_tokens": 67,
+      "loss_sum": 0.2859230041503906,
+      "mean_NLL": 0.004267507524632696
+    },
+    {
+      "id_sha256": "9f93a42472d87583832e8c75fac5217cb9d723da85c55d79ec076f7221496ac1",
+      "component_sha256": "93a2f6b48d4f3105ec152fb119a89e364e5a702bf3f471c8e52289908dff517c",
+      "target_tokens": 71,
+      "loss_sum": 0.7733241319656372,
+      "mean_NLL": 0.01089188918261461
+    },
+    {
+      "id_sha256": "9fdfeba5776df83e7c66f83908d65a5d079b08f5671c92e198946adaedd37c7f",
+      "component_sha256": "e9d7e4d7db0199e6a3a09046f42aee520efbe178ecadf715cea87acb54a598da",
+      "target_tokens": 199,
+      "loss_sum": 225.68470764160156,
+      "mean_NLL": 1.134094008249254
+    },
+    {
+      "id_sha256": "a0d7ee7f16b8bafb1c0f27d55c1e31ff76127af217dd59008e82e5b7b2cd7bab",
+      "component_sha256": "a6e54355aa6e454d0e980d93fd9bbcb0c61188423c91134604d0007bf2d121f5",
+      "target_tokens": 72,
+      "loss_sum": 0.5121220946311951,
+      "mean_NLL": 0.007112806869877709
+    },
+    {
+      "id_sha256": "a350b0616c92ecb0040fd2fb733bffe76ef1cbd09197f6cad3f9be6a3b222393",
+      "component_sha256": "03439470a03125a0a98402f41285a85c3e03b4dd97a5dbf2d77faef63ee6eed9",
+      "target_tokens": 52,
+      "loss_sum": 3.238123655319214,
+      "mean_NLL": 0.06227160875613873
+    },
+    {
+      "id_sha256": "a3bf436a11bc6e673ca1d1b566a42d3d5a1f9950f4b930ef0eca4fa568375777",
+      "component_sha256": "1c2ef598e0ce28def4f5d6cf8ee9b2c92464ac5191ae2bdb1fb45f7ebe4eedb9",
+      "target_tokens": 96,
+      "loss_sum": 0.5517168045043945,
+      "mean_NLL": 0.005747050046920776
+    },
+    {
+      "id_sha256": "a45b49889f61af4bcfacbe02f1c2340e303ba13d355e91c522dc8259c9156000",
+      "component_sha256": "2290488887917af65f99c50161e64bf4551c8c5678783beddcc6c8a9ace546d1",
+      "target_tokens": 49,
+      "loss_sum": 0.2514248788356781,
+      "mean_NLL": 0.005131119976238329
+    },
+    {
+      "id_sha256": "a48627941601dc423e49dbe492f42f65e16540dd663f65b88f0821354915282a",
+      "component_sha256": "e0b362e5f104461ac5d2e0a32b814764f48dbbc42f358f7c5ecaad1ea45c1805",
+      "target_tokens": 64,
+      "loss_sum": 0.501556396484375,
+      "mean_NLL": 0.00783681869506836
+    },
+    {
+      "id_sha256": "a55b9ccb539160757e9d5f42eddd4847c6ad0abd085e9b94b3c7a130c62dcafc",
+      "component_sha256": "f04e8b396191d2255270e2947a42f6c40141286638bc7dd7088f006c9039cf76",
+      "target_tokens": 92,
+      "loss_sum": 11.760628700256348,
+      "mean_NLL": 0.1278329206549603
+    },
+    {
+      "id_sha256": "a77f9410ceafd54ee5695a4b6c80781a170c662b0d3560a653e3497c4c6cdf1d",
+      "component_sha256": "d7914593d408f8423320aa226e170c1d3b737969e97c09d57e79a1325c771eab",
+      "target_tokens": 70,
+      "loss_sum": 3.768725872039795,
+      "mean_NLL": 0.05383894102913993
+    },
+    {
+      "id_sha256": "a8e1ab8726ce31c4a9146a14cd0dbd41041e4aaed80debe99223ad01ee7502d3",
+      "component_sha256": "8a7437b97bf9bd7e163088733271bc9efc792d8fee46491a222561cf79ac216b",
+      "target_tokens": 79,
+      "loss_sum": 1.2236855030059814,
+      "mean_NLL": 0.015489689911468119
+    },
+    {
+      "id_sha256": "a9fb3c92a0e9726d0f3eea88a56f1bd86d6eb7e36205197a4481db46a1f4d083",
+      "component_sha256": "2b80fa9332da68e56945abb8f3c4ab9c2f152505d497e4bd522292fe55749d1d",
+      "target_tokens": 54,
+      "loss_sum": 1.6528825759887695,
+      "mean_NLL": 0.03060893659238462
+    },
+    {
+      "id_sha256": "ab1f089a70d3f18e1fdaf6a93edd782ecb472b2836bc38819f7f55e02fe4f75c",
+      "component_sha256": "de2e812497ae6079cf2c21efc8de2692fa9683445d5731bbcb86c338056395b2",
+      "target_tokens": 116,
+      "loss_sum": 51.0543212890625,
+      "mean_NLL": 0.4401234593884698
+    },
+    {
+      "id_sha256": "ae0d94b16c038f88829de5999914d913c122bd7217395eaa189c097b48029fec",
+      "component_sha256": "91f427102adcf2e697819395f34165a1b011781a231d41d929d60cfa5e7ddc66",
+      "target_tokens": 90,
+      "loss_sum": 0.5915197134017944,
+      "mean_NLL": 0.006572441260019938
+    },
+    {
+      "id_sha256": "ae14c2f5a83bb403c25b5aa07d822ea8c82e48c56113484a9c002232bb18b70f",
+      "component_sha256": "c2f0a4d522bed6a2553036cf755ab691ba208ad602fe683e7ae230d16c1c47d1",
+      "target_tokens": 200,
+      "loss_sum": 21.128246307373047,
+      "mean_NLL": 0.10564123153686523
+    },
+    {
+      "id_sha256": "ae4ad85cf9a07838754e042bc1ae4f73282abf194ce1af989921221c890c983a",
+      "component_sha256": "ab2f9678c6f6a521fae2d58aba1f350110540b7c99d6e668b5a7c9bcc21a5f00",
+      "target_tokens": 71,
+      "loss_sum": 12.761197090148926,
+      "mean_NLL": 0.1797351702837877
+    },
+    {
+      "id_sha256": "af2e716f94e9d044247d1f2dc9834c85ba849f990bb72d9c72a2cd90848c9637",
+      "component_sha256": "d6ae721f43dd5aa169aebf12254119b5d89f73c82416ea91c6631a61449b5b83",
+      "target_tokens": 53,
+      "loss_sum": 2.168112277984619,
+      "mean_NLL": 0.040907778829898475
+    },
+    {
+      "id_sha256": "b04cf7d3d7152d6acf248fd1fefb40ad88ebf8a51d457735b5ba1232ababed54",
+      "component_sha256": "8ba671d6ac638b252c1fca1c75ab4c6d3fc5f1a5cd5d1f5ddbc829c08951c875",
+      "target_tokens": 110,
+      "loss_sum": 1.4645682573318481,
+      "mean_NLL": 0.013314256884834983
+    },
+    {
+      "id_sha256": "b097cdf4005bdf859ee7af15b74bab780010fe208588fc6278d97c5c79d45e07",
+      "component_sha256": "e98068848be6bea303c6c082f117a2e183dd8e0a0d9a9852f5ebcbd74bc885d4",
+      "target_tokens": 47,
+      "loss_sum": 37.12187194824219,
+      "mean_NLL": 0.7898270627285572
+    },
+    {
+      "id_sha256": "b1b0cfb12e6ed12e12a5e0b4aa08f8c829e5defe299153af8b26bb188be0178c",
+      "component_sha256": "f536658dd2ee28b3e4367346c2069ed86da86facf759dd8117c040babc502e02",
+      "target_tokens": 50,
+      "loss_sum": 0.225606769323349,
+      "mean_NLL": 0.00451213538646698
+    },
+    {
+      "id_sha256": "b313bb8348116bb82106b2641f34b86b6ce014605a092e865a9360114c69a69c",
+      "component_sha256": "f9887373a5b906691c31785a0c4f137b0752a5548223991f4585f6ceeffa8889",
+      "target_tokens": 52,
+      "loss_sum": 0.14256690442562103,
+      "mean_NLL": 0.0027416712389542507
+    },
+    {
+      "id_sha256": "b34d2ea5aff7449c2f7877bdb0bdb57a42d821c64aeb5f0ea39663b361a39821",
+      "component_sha256": "0d8437aa56b382ee479d0406b213e7aa9d1ee31b7569897e873735de533b3c7b",
+      "target_tokens": 144,
+      "loss_sum": 2.1652653217315674,
+      "mean_NLL": 0.015036564734246995
+    },
+    {
+      "id_sha256": "b5286000c3d6d6d2eba90519bb321f0e02c353991bba9351975b2c8e19f4a7a8",
+      "component_sha256": "04c9b0129c9cfb90144d054c74465cf15306be543910fd8c06baf48bcf0abc05",
+      "target_tokens": 55,
+      "loss_sum": 2.2309863567352295,
+      "mean_NLL": 0.0405633883042769
+    },
+    {
+      "id_sha256": "b7475cf24a081a9bf2ff0857f6becf6c2a9a68f6822cc3d6e51cae34f9876b10",
+      "component_sha256": "a4dc7d2b9152b81b3881322d44d58150504614dae0443613686719d463d46a39",
+      "target_tokens": 101,
+      "loss_sum": 1.9510318040847778,
+      "mean_NLL": 0.01931714657509681
+    },
+    {
+      "id_sha256": "bab7bdffe6e81c0789c450327b33bb12cce3f01bb7690798ffed27c26d5382e0",
+      "component_sha256": "556ebb02e43bbc6fcc1e819e5224eeedda1e19e8c6c67eae6ffe983fc500ea60",
+      "target_tokens": 66,
+      "loss_sum": 11.160773277282715,
+      "mean_NLL": 0.16910262541337448
+    },
+    {
+      "id_sha256": "bb3bac54ba15ec4917530dc5b7879957f7b7485ba69d4ed3b40bac8a731f89f9",
+      "component_sha256": "ccf37f8b949cccfa70a1d9fa0eecbc3087b0fb5f8953fba4346e1b85eca0655a",
+      "target_tokens": 46,
+      "loss_sum": 2.7392427921295166,
+      "mean_NLL": 0.05954875635064166
+    },
+    {
+      "id_sha256": "bc9749eaa40fb45dbf3f2e555428c6d06edde058921560e3352f759e1405956c",
+      "component_sha256": "2df96ad5af6d0ed3c14d90f007cddd2dde70bcbadcfd19422f926343a38cfd83",
+      "target_tokens": 57,
+      "loss_sum": 0.33131614327430725,
+      "mean_NLL": 0.0058125639170931095
+    },
+    {
+      "id_sha256": "bcc6706d435666dc5cc26057beee02323e5ab86f44bcb9ce14216812601ce142",
+      "component_sha256": "d95740113cc43d5a96f5100ab8fe622274a7ea40be63c0242e21aa4ac02e80a7",
+      "target_tokens": 176,
+      "loss_sum": 54.800514221191406,
+      "mean_NLL": 0.31136655807495117
+    },
+    {
+      "id_sha256": "bd11029ae2dd5411c7c16e9a77957356f9be1c991ded88c832f6879e25fd3008",
+      "component_sha256": "ae4a65cac7a216d36c96d3888597ac1b8fe1b2bf928acb32fd9b365ef45d56f4",
+      "target_tokens": 88,
+      "loss_sum": 0.5098605155944824,
+      "mean_NLL": 0.005793869495391846
+    },
+    {
+      "id_sha256": "be1c1790b587e13c1306c09c4c584f14d1f80a89ee5b2cdaf3c0e96ac7213d03",
+      "component_sha256": "537f851e2ba9c6abc81646f803871fb088f0a46156b2635550e060271b3e6ea5",
+      "target_tokens": 155,
+      "loss_sum": 19.02375602722168,
+      "mean_NLL": 0.1227339098530431
+    },
+    {
+      "id_sha256": "be288085307679105aeb91007e6d5122d35746327b1764ade76585ca4815748a",
+      "component_sha256": "a271f45742f4ca4f0bc7a7589dbd4a09748ae891ad09cf777f74aa9727e35af1",
+      "target_tokens": 44,
+      "loss_sum": 0.13797135651111603,
+      "mean_NLL": 0.00313571264797991
+    },
+    {
+      "id_sha256": "c09699e0787828bf6a3a52996c138dc04b040c34a0e366f02fe53434bcdc9762",
+      "component_sha256": "aa360be915190bee126cdc05451601642bd6c53c3138384bb650c3f703909626",
+      "target_tokens": 83,
+      "loss_sum": 0.42193153500556946,
+      "mean_NLL": 0.00508351246994662
+    },
+    {
+      "id_sha256": "c1d9a443ca41fbff245c50a2d194dffa9d47245bd004d55b6ad54bf5b44249c1",
+      "component_sha256": "c697ae7756c05f3ba9d4adac232a55efc1d20768eafb33ae3d43a00d6012941b",
+      "target_tokens": 54,
+      "loss_sum": 0.6617520451545715,
+      "mean_NLL": 0.012254667502862436
+    },
+    {
+      "id_sha256": "c31325897305bf4a7dd08e78fd97d0f44c312ac41dcd5d0b93bc8315db677554",
+      "component_sha256": "6563f6b971eae00529fd7eb8eafb7cc62cbd4314fea55fdc4b6674bf5794a92c",
+      "target_tokens": 106,
+      "loss_sum": 11.790526390075684,
+      "mean_NLL": 0.11123138103844984
+    },
+    {
+      "id_sha256": "c67def52ff6343aa3f716225c4c3bd69b6f19657b5bf374edf27ed9da08d9b03",
+      "component_sha256": "8964fc35861c596718701bf1ad378c785f17d274692487667ada724b9aa6d99e",
+      "target_tokens": 434,
+      "loss_sum": 205.51121520996094,
+      "mean_NLL": 0.4735281456450713
+    },
+    {
+      "id_sha256": "c972322f2d41c74ffe0cb7888479741f1473f969ec104ae1d46535608695cdbf",
+      "component_sha256": "29a5743b3e1e495bf9733a519407e7f273eb2dec8fe0a105681c1608af52421f",
+      "target_tokens": 55,
+      "loss_sum": 1.54245924949646,
+      "mean_NLL": 0.028044713627208364
+    },
+    {
+      "id_sha256": "cce9f8156edc4d33353a24a06e17d22e751fb1662f9d71630058f870d9a850ad",
+      "component_sha256": "e568ec17ecaeebb87d72a6acf4119f8ede9f8ac45ffb0d2806755df63b24fc83",
+      "target_tokens": 61,
+      "loss_sum": 88.6136703491211,
+      "mean_NLL": 1.452683120477395
+    },
+    {
+      "id_sha256": "ce6a9ef96a91c4f8a140ae0c8ab5f4d9320bc1c82187ad2881bbec5807c3d321",
+      "component_sha256": "3415989a8ece651c2a0ab32c42a1544c74a320d10fb17803d923acab0023c9f9",
+      "target_tokens": 112,
+      "loss_sum": 1.0506983995437622,
+      "mean_NLL": 0.009381235710212163
+    },
+    {
+      "id_sha256": "ced3c1ead2708788d717db5beeedffa199228b4ccf27a5f36dd98c2f0f96a29d",
+      "component_sha256": "4d5c4cc274460fbfa17276897cbd3abd491abacfa8a8b9190428d2fcaec2c334",
+      "target_tokens": 73,
+      "loss_sum": 2.801300048828125,
+      "mean_NLL": 0.03837397327161815
+    },
+    {
+      "id_sha256": "cf29cf3f8749093052f53ae74737d8e5ee9a4697ff99991295c961de293b3a2b",
+      "component_sha256": "4a052d0ebd930389d8f820d7baf72542f997307c4c9fc52d3530961464dfa55b",
+      "target_tokens": 57,
+      "loss_sum": 13.725409507751465,
+      "mean_NLL": 0.24079665803072745
+    },
+    {
+      "id_sha256": "d04c7b4b1084f30d21c7b4382a230c1c48af91058bd0d02c94a890aebb321561",
+      "component_sha256": "0fa988eb465807c22ffa9abc9ea982959008f2381eb43658ae4853a444904488",
+      "target_tokens": 46,
+      "loss_sum": 9.345664978027344,
+      "mean_NLL": 0.20316662995711618
+    },
+    {
+      "id_sha256": "d05d97bc1b65968a8b30614344601639b84031c43f41a44546fc19b2931fb22d",
+      "component_sha256": "5d23e067c769779519998d898baa75dd38191214dc49a35edd63d184095b7c72",
+      "target_tokens": 50,
+      "loss_sum": 8.459722518920898,
+      "mean_NLL": 0.16919445037841796
+    },
+    {
+      "id_sha256": "d14482b36dba2b4db928ec6dff33f6143fb8562625821d5ba21d48f89dddcb35",
+      "component_sha256": "5e055286b8aa8dbf6c04c086cd03c05c567e740c512eda6060225209b028621b",
+      "target_tokens": 167,
+      "loss_sum": 20.18250274658203,
+      "mean_NLL": 0.12085330985977265
+    },
+    {
+      "id_sha256": "d189fa37f48f3241e62bd84d5c5eefbcb9a8f803f2dd49cb6bff71dfc8b2d83f",
+      "component_sha256": "ae3a5a65eabca74d8ddb51584dfc2cc5290baf27036bc6276ebfc5658185dddd",
+      "target_tokens": 53,
+      "loss_sum": 0.8755520582199097,
+      "mean_NLL": 0.016519850155092636
+    },
+    {
+      "id_sha256": "d19af14ae658c6892bdc919094b9fc564a7c510e28475f13cd48b08d8359264e",
+      "component_sha256": "a95178da5109108334bbfcc13635ff95e3120c0908a2e2d54d5256694572f080",
+      "target_tokens": 59,
+      "loss_sum": 0.46696707606315613,
+      "mean_NLL": 0.007914696204460274
+    },
+    {
+      "id_sha256": "d1ec2b22a37ef73f838fcfca1388a0455bb796c316d76e5d69fc4bdcc43502ef",
+      "component_sha256": "ea41518da864798b95d5464aeee8dc0117631c6e3e6ee1b2537142a112a5ab64",
+      "target_tokens": 77,
+      "loss_sum": 5.065088272094727,
+      "mean_NLL": 0.06578036717006139
+    },
+    {
+      "id_sha256": "d3ff8c65e0fa3abd8f9b96d7470806f5d8eeb9a18eef896ef2a6cca9b91a9c06",
+      "component_sha256": "d43ec50839552b1a5ce4213b88e829ede5b2603b0e839f791063a36c34228cb7",
+      "target_tokens": 53,
+      "loss_sum": 0.11516736447811127,
+      "mean_NLL": 0.002172969141096439
+    },
+    {
+      "id_sha256": "d71918930078ce119fbd6fac01baa7a2be424ff1154f1aa737f3375e8ba9d41f",
+      "component_sha256": "337325676813b09b127ab35bb034ef7d7412f71342ee12065c15832c2cf33a74",
+      "target_tokens": 47,
+      "loss_sum": 0.36442986130714417,
+      "mean_NLL": 0.0077538268363222165
+    },
+    {
+      "id_sha256": "d76e7377df86699414902884cb12776cc6909479786616d2a77869f154d47617",
+      "component_sha256": "ea10f6fa0405e36606a2bfecc1cc712003bd706a149713dacb672e8a30df6106",
+      "target_tokens": 73,
+      "loss_sum": 6.500190734863281,
+      "mean_NLL": 0.08904370869675728
+    },
+    {
+      "id_sha256": "d7b7c448ab4bae96d924cc431d7fbb2cd52685e90b32216dc28b121210170586",
+      "component_sha256": "8e2d33722d677826ad663590995315460d4d947dc8783accce4b441a31616b38",
+      "target_tokens": 68,
+      "loss_sum": 0.8985178470611572,
+      "mean_NLL": 0.013213497750899372
+    },
+    {
+      "id_sha256": "d9bd1f468547dba9f52bde1f3c71d92c521409c3c70fbc6de7c2f97ea38d807f",
+      "component_sha256": "488dc82a623d8a0efaaf95411bd28b2cceb2fb215f6eef9663534eaaaab68d05",
+      "target_tokens": 71,
+      "loss_sum": 0.9444103240966797,
+      "mean_NLL": 0.013301553860516615
+    },
+    {
+      "id_sha256": "decd15494dcd2f33dd965cf9baf40d3d4a61097c8e33c156e5348c6173049500",
+      "component_sha256": "8be4476c61e33c5ddb784fdbcefe5b9025893003f8aafa65ceed4bdd7d9a4cef",
+      "target_tokens": 82,
+      "loss_sum": 12.07666015625,
+      "mean_NLL": 0.14727634336890244
+    },
+    {
+      "id_sha256": "df8c55c4b0f3d8bc892df15198ac517d422d8336a7c9309d625463b530601369",
+      "component_sha256": "6ec4123f6e652f3b95a30af7ac67702d3a462f6c938d1eba3d57b59e8090a2bb",
+      "target_tokens": 49,
+      "loss_sum": 0.18520502746105194,
+      "mean_NLL": 0.003779694437980652
+    },
+    {
+      "id_sha256": "dfdb9febd01b5082d7e1255dd7942b5cf7434dac7af16a3112b3387ad6061273",
+      "component_sha256": "97b62d021fd02b62edbf4ea12396bc6c4c2a7db3931251f38fb9b6243f1c898d",
+      "target_tokens": 86,
+      "loss_sum": 0.8533760905265808,
+      "mean_NLL": 0.009922977796820708
+    },
+    {
+      "id_sha256": "e0698c26b2ddc42dac459931741371095bcb94b7fa62fd4b296520fe6c5d1b02",
+      "component_sha256": "518984b7e15ef2581be83ea136122032c242dc37b90220aff7c9d31cb87c7ea3",
+      "target_tokens": 121,
+      "loss_sum": 201.61386108398438,
+      "mean_NLL": 1.6662302568924328
+    },
+    {
+      "id_sha256": "e07c7bbcff9a867adfe26d1ab13b0bf16e00885cbb198d3a69569ca8ed26ce1d",
+      "component_sha256": "c6dfad0a985dc9b0c0de49709878520ab3b8aa4cd0a916e4dee22b014d629533",
+      "target_tokens": 83,
+      "loss_sum": 77.35358428955078,
+      "mean_NLL": 0.9319708950548287
+    },
+    {
+      "id_sha256": "e1d986d903f4fcd87df7f5f0c48d8145e04720d26ee479ba614002a8b4dc3184",
+      "component_sha256": "aa0d800793aae2a29aaad49f77b3f9b1338f616a83bd6010a58a7f034688f0d0",
+      "target_tokens": 51,
+      "loss_sum": 1.9606670141220093,
+      "mean_NLL": 0.0384444512572943
+    },
+    {
+      "id_sha256": "e46df88aa69fe21eec7517df67272a1061f6d5ed00df2686f1e1edba5ee0986d",
+      "component_sha256": "35f0eb0cf80f1ae82ee77cc67a4d07fd4ebe732d6bdc3478469c101ab94d2e7c",
+      "target_tokens": 88,
+      "loss_sum": 0.9578917622566223,
+      "mean_NLL": 0.010885133662007072
+    },
+    {
+      "id_sha256": "e4de5c9899482285e74eb1f30d64e48fc9dd7472bd5204162149faf059b7c7ec",
+      "component_sha256": "eca63d5bf462ca0037c945979d466423fca58247f1338c3ab2fa2e2cb5e351b5",
+      "target_tokens": 77,
+      "loss_sum": 0.8783634901046753,
+      "mean_NLL": 0.011407318053307471
+    },
+    {
+      "id_sha256": "e59043416db08d026cf6766089909af38b08df0d5d9d9338764075b34aee590a",
+      "component_sha256": "bc88f8b0d8e58efa6a24b0043aef690d2e6ec597366c42847a82544a666baaf9",
+      "target_tokens": 54,
+      "loss_sum": 1.9352976083755493,
+      "mean_NLL": 0.03583884459954721
+    },
+    {
+      "id_sha256": "e61ca27a93c6e70f66bff6bd6302b529d24d609fe0bf51f3d41280d793a5c25b",
+      "component_sha256": "cf9b77ec0d2e6645815f48960c0163ae0e21e63e1fb5cb809d1d634bd860ff93",
+      "target_tokens": 60,
+      "loss_sum": 0.3618888556957245,
+      "mean_NLL": 0.0060314809282620745
+    },
+    {
+      "id_sha256": "e691e5e100643ec08f33986d1c85df8950dc737c09b246db8a365399b53a633f",
+      "component_sha256": "d046fc542a73fb44a62bc7bc4a35937e489ea72f71b0f4cf4b7f834976d28cc1",
+      "target_tokens": 202,
+      "loss_sum": 180.67263793945312,
+      "mean_NLL": 0.894418999700263
+    },
+    {
+      "id_sha256": "e6ea6e26d4ee9956e9757360ff8e30146e034977baab29eaadea29f2cfc60790",
+      "component_sha256": "4d250a312458a4947dfcac911b98b62e3f7ce0a8e265ee4cc2ef0aeccc697529",
+      "target_tokens": 74,
+      "loss_sum": 0.8992558121681213,
+      "mean_NLL": 0.012152105569839478
+    },
+    {
+      "id_sha256": "e759c35707c408b0472137aebd63df7e8c454e5078b664cd6899616605f250bc",
+      "component_sha256": "2482d9bff427fdaf9f3e4ff89cc493577967aaec2e4bbc80dfb28c7bc59c35ac",
+      "target_tokens": 41,
+      "loss_sum": 2.007091760635376,
+      "mean_NLL": 0.048953457576472584
+    },
+    {
+      "id_sha256": "e76e3a0f7ca68ab3cdc4762dbd170fc7999d813cebe754f5097ca2f54f132ce3",
+      "component_sha256": "12254490ae6f2cc157c22102cfe7d7d5659126418b9eef9c900071d7866454a0",
+      "target_tokens": 86,
+      "loss_sum": 1.5478014945983887,
+      "mean_NLL": 0.01799769179765568
+    },
+    {
+      "id_sha256": "e7805f3441e0771e9c000e5150aef55616d554953f882757dc621ea2114c1463",
+      "component_sha256": "a4d32b9ae406b215f0063ad89326635f78f77914b631bb7504abd5b7e0051ea3",
+      "target_tokens": 56,
+      "loss_sum": 0.11135204136371613,
+      "mean_NLL": 0.001988429310066359
+    },
+    {
+      "id_sha256": "e897c464f11fa0f22d79b45f240d7714050ab8e1761926c538b30995d0301ace",
+      "component_sha256": "5cb624c2522f7a0acb50f015dc56de392eecad7909ca48652730c20338b41142",
+      "target_tokens": 61,
+      "loss_sum": 1.5493234395980835,
+      "mean_NLL": 0.02539874491144399
+    },
+    {
+      "id_sha256": "ea568a57f458352060835ea6fab5c216d28a6bd0a60f3207573f73c5fdc685bc",
+      "component_sha256": "cb2141273b15e579a154a6c125292ef05ed69aef9a66831b010edaf7b7891f1c",
+      "target_tokens": 52,
+      "loss_sum": 0.09925838559865952,
+      "mean_NLL": 0.0019088151076665292
+    },
+    {
+      "id_sha256": "ea73cd36b9e65524570cb666c0953351eee8c320530ce38b401aeb9e96a63334",
+      "component_sha256": "9501077eebb2c9d80e0bf6936504f1e7604dd1fb0a948f116671070195588038",
+      "target_tokens": 114,
+      "loss_sum": 20.118152618408203,
+      "mean_NLL": 0.17647502296849302
+    },
+    {
+      "id_sha256": "eb22e9837b3d2f22ca9c4fef29b034b3daa64d10b8a65d5a3c0e01876e11faef",
+      "component_sha256": "0fa988eb465807c22ffa9abc9ea982959008f2381eb43658ae4853a444904488",
+      "target_tokens": 40,
+      "loss_sum": 35.312828063964844,
+      "mean_NLL": 0.8828207015991211
+    },
+    {
+      "id_sha256": "ecbb4503d36c237780bb0e3a1973ddb91dec096234dc962740d2de79c46c83da",
+      "component_sha256": "f2e2f301b4090dca16af1740e9e1c1540957b118f22f44d2c99949b61c8354ae",
+      "target_tokens": 108,
+      "loss_sum": 50.474639892578125,
+      "mean_NLL": 0.4673577767831308
+    },
+    {
+      "id_sha256": "eccc628a81ce4b272976f798b8ca51387c8c46c0b9302b3f0a8597a7b3fba65f",
+      "component_sha256": "fa8dff2da70804b600560ec890d5e3f62a000958fcb07ae0940d4cdcc6f8d5a1",
+      "target_tokens": 70,
+      "loss_sum": 1.7663321495056152,
+      "mean_NLL": 0.02523331642150879
+    },
+    {
+      "id_sha256": "ee5f89e734aa95194605e532958186ac1915bf7f84fe3ad36b232d278efa95ac",
+      "component_sha256": "4afe6c5a57c0ce1c21cd594d6be1e7fb5a808dc44578200f2266aa066601df85",
+      "target_tokens": 82,
+      "loss_sum": 0.6046629548072815,
+      "mean_NLL": 0.0073739384732595305
+    },
+    {
+      "id_sha256": "efc3d32042e29b8fcbeb6ad7512b5ce108f9f3514ba5a7d14c1f2a2556c5e371",
+      "component_sha256": "92b2c81b384234807f306bfffc032b9c5302d9fb4823270a6c4fdec3637e25a8",
+      "target_tokens": 60,
+      "loss_sum": 0.5397592782974243,
+      "mean_NLL": 0.008995987971623738
+    },
+    {
+      "id_sha256": "f25ff82b5f9fc670a0190c59601d8c508edc2cd550932afa2aad459aa59b86ca",
+      "component_sha256": "caeb07408f63d4194d3bb11c649ae9f760bafcca93cc9d5a8683723c27bcd25e",
+      "target_tokens": 54,
+      "loss_sum": 1.6114861965179443,
+      "mean_NLL": 0.029842336972554524
+    },
+    {
+      "id_sha256": "f370ca8a327d9e1042430d0576b9dd79fee71d9eecff06258dfd3de1610b2540",
+      "component_sha256": "06465f80c113c091f5e81835237a5556742d180e65f747e9872aba1b876534ab",
+      "target_tokens": 48,
+      "loss_sum": 0.09808499366044998,
+      "mean_NLL": 0.002043437367926041
+    },
+    {
+      "id_sha256": "f4ab603b13265c5bb9fd33bdd070424465a0755e9b3078cb714ff911879d9e47",
+      "component_sha256": "93c98a0c9f41bb28d1c87118870064966483c50c8d4bd20ea6070dd7d4b48b74",
+      "target_tokens": 90,
+      "loss_sum": 0.5408586859703064,
+      "mean_NLL": 0.006009540955225627
+    },
+    {
+      "id_sha256": "f4ceb82fa7437a73d4909a48d04a9b53db0d7ddc6498322cc851127bc943d0f7",
+      "component_sha256": "7e65e1218402ee4eab0fd1a85233bb3ad304f13146bccdca9c64b441652bdd9e",
+      "target_tokens": 97,
+      "loss_sum": 0.6126288175582886,
+      "mean_NLL": 0.006315761005755552
+    },
+    {
+      "id_sha256": "faf0254263992f11bef361b4ed7b990fc43e396ed5e444f9b4917bca4b40a695",
+      "component_sha256": "091bbd91957efb28bc76257702076d12d711dfdd537d170d49e2176ad00f196a",
+      "target_tokens": 44,
+      "loss_sum": 0.12936046719551086,
+      "mean_NLL": 0.0029400106180797925
+    },
+    {
+      "id_sha256": "fdfba4038d4e280aa4710e4821b01ecf2f2d04d0186409abf1200bb391ba4ad5",
+      "component_sha256": "08f1d143ef033c8c9b0d15df979523b35058f96c6b870e02662115ee79c4b34b",
+      "target_tokens": 49,
+      "loss_sum": 0.21628360450267792,
+      "mean_NLL": 0.004413951112299549
+    },
+    {
+      "id_sha256": "fe643d2b3c7c2599616d77ad46d9ceda98884cd2abdffc34fcb07bf854588770",
+      "component_sha256": "dc2bfb3745edc29bb20e03459acc39b8b700cbc68624ad1cc632651db2cda48b",
+      "target_tokens": 76,
+      "loss_sum": 0.5223396420478821,
+      "mean_NLL": 0.006872890026945817
+    },
+    {
+      "id_sha256": "fefd4b0fbe0c7ef4aec4a05e229cc44a0946e421d6cb4dfc3bfb6392a2002ee2",
+      "component_sha256": "6f73378a757dca83977da1ab66f111acb3d5eb10e8d9bbb982c2c329dafcde38",
+      "target_tokens": 51,
+      "loss_sum": 0.1615532636642456,
+      "mean_NLL": 0.00316771105224011
+    }
+  ],
+  "count": 197,
+  "target_tokens": 16220,
+  "loss_sum": 4465.902342155576,
+  "token_weighted_NLL": 0.2753330667173598,
+  "perplexity": 1.3169692404495483
+}

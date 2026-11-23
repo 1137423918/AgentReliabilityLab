@@ -1,0 +1,44 @@
+{
+  "terminal": true,
+  "protocol_sha256": "6f29ffa5fff26a77fcac3f2e9db42f89a49b3e77fdc2f68c5dc29a3d1a367d4c",
+  "driver_sha256": "e634db05a94105c86ddf705e3e3628ae8d7c2ebcf91037734794aac51ef007b1",
+  "training_started": false,
+  "GPU_work_started": false,
+  "phases": [],
+  "completed_variants": [],
+  "operator_error": {
+    "type": "TimeoutExpired",
+    "message": "Command '['nvidia-smi', '--query-compute-apps=gpu_uuid,pid', '--format=csv,noheader,nounits']' timed out after 5 seconds"
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": false,
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 22.47,
+  "ledgers": {
+    "train": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    },
+    "mixed_train": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    }
+  }
+}

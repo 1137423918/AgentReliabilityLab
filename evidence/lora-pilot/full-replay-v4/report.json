@@ -1,0 +1,41 @@
+{
+  "status": "completed",
+  "training_run": false,
+  "optimizer_updates_executed": 0,
+  "original_Full_updates": 32,
+  "original_Full_training_labels": 65536,
+  "original_run_remains_terminal2": true,
+  "original_in_memory_final_base_hash_not_recorded": true,
+  "forward_reserved": 277,
+  "forward_completed": 277,
+  "checkpoint_manifest_verified": true,
+  "all_optimizer_step_tensors32": true,
+  "reconstructed_base_matches_original_initial": true,
+  "reloaded_adapter_parameter_hash": "f9b8e94d92b761499ded5cae7b0513703c361855649913a61c9e8cefdd581ac3",
+  "model_loaded": true,
+  "dev": {
+    "count": 197,
+    "target_tokens": 16220,
+    "loss_sum": 4500.656467489898,
+    "token_weighted_NLL": 0.2774757378230517,
+    "max_case_mean_NLL_difference": 0,
+    "all_cases_match_tolerance": true
+  },
+  "val": {
+    "count": 79,
+    "target_tokens": 6887,
+    "loss_sum": 2049.5609832555056,
+    "token_weighted_NLL": 0.2975985165174249,
+    "max_case_mean_NLL_difference": 0,
+    "all_cases_match_tolerance": true
+  },
+  "read_only_checkpoint_verified": true,
+  "disabled_adapter_matches_original_base_canary": true,
+  "checkpoint_files_unchanged": true,
+  "wall_seconds": 72.118,
+  "limitations": [
+    "This is a separate read-only reconstruction/replay, not completion of the original interrupted process.",
+    "The original in-memory post-training frozen-parameter hash remains missing; no retrospective pass is claimed.",
+    "Teacher-forced NLL is not generated tool accuracy."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "nvidia-ml-py",
+  "version": "12.575.51",
+  "requires_dist": null,
+  "url": "https://files.pythonhosted.org/packages/db/24/552ebea28f0570b9e65e62b50287a273804c9f997cc1c2dcd4e2d64b9e7d/nvidia_ml_py-12.575.51-py3-none-any.whl",
+  "filename": "nvidia_ml_py-12.575.51-py3-none-any.whl",
+  "bytes": 47547,
+  "sha256": "eb8641800d98ce40a22f479873f34b482e214a7e80349c63be51c3919845446e",
+  "metadata_origin": "https://pypi.org/pypi/nvidia-ml-py/12.575.51/json"
+}

@@ -1,0 +1,554 @@
+{"event": "forward_reserved", "sequence": 1, "role": "dev", "id_sha256": "00f14aa3b9be062d17437c3939734cec150a2b724740ee92e97c59a8439b6e3c"}
+{"event": "forward_completed", "sequence": 1, "role": "dev", "id_sha256": "00f14aa3b9be062d17437c3939734cec150a2b724740ee92e97c59a8439b6e3c", "loss_sum": 3.2139995098114014, "target_tokens": 65}
+{"event": "forward_reserved", "sequence": 2, "role": "dev", "id_sha256": "011c055c9da41a5daa5e88bbd30b3513eb57989fd192709dbc3d9ec91aa06f36"}
+{"event": "forward_completed", "sequence": 2, "role": "dev", "id_sha256": "011c055c9da41a5daa5e88bbd30b3513eb57989fd192709dbc3d9ec91aa06f36", "loss_sum": 12.601082801818848, "target_tokens": 129}
+{"event": "forward_reserved", "sequence": 3, "role": "dev", "id_sha256": "0336fdf7709d58b15aa87068933a5db8fdb2f4b5710af5345289353ad2575866"}
+{"event": "forward_completed", "sequence": 3, "role": "dev", "id_sha256": "0336fdf7709d58b15aa87068933a5db8fdb2f4b5710af5345289353ad2575866", "loss_sum": 53.24559783935547, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 4, "role": "dev", "id_sha256": "03442ec953cce6ac8fe97f0d2e9a371b48f99005efdc5c16a311090964294d6f"}
+{"event": "forward_completed", "sequence": 4, "role": "dev", "id_sha256": "03442ec953cce6ac8fe97f0d2e9a371b48f99005efdc5c16a311090964294d6f", "loss_sum": 1.5637996196746826, "target_tokens": 86}
+{"event": "forward_reserved", "sequence": 5, "role": "dev", "id_sha256": "064e3a39914538f9f0dbe086f2e2377235b62b91ef345bf0734efe6c09a25d67"}
+{"event": "forward_completed", "sequence": 5, "role": "dev", "id_sha256": "064e3a39914538f9f0dbe086f2e2377235b62b91ef345bf0734efe6c09a25d67", "loss_sum": 28.623409271240234, "target_tokens": 55}
+{"event": "forward_reserved", "sequence": 6, "role": "dev", "id_sha256": "06d404557dd28d175728d47c32c245865f65bce30967815412adcea56e5b7334"}
+{"event": "forward_completed", "sequence": 6, "role": "dev", "id_sha256": "06d404557dd28d175728d47c32c245865f65bce30967815412adcea56e5b7334", "loss_sum": 4.1516265869140625, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 7, "role": "dev", "id_sha256": "077826edf095254f26771ce4ad4ff800f246cc3dba8bc10d027fe59f65d857d0"}
+{"event": "forward_completed", "sequence": 7, "role": "dev", "id_sha256": "077826edf095254f26771ce4ad4ff800f246cc3dba8bc10d027fe59f65d857d0", "loss_sum": 25.54166030883789, "target_tokens": 59}
+{"event": "forward_reserved", "sequence": 8, "role": "dev", "id_sha256": "0804a8b3626b87afaf825ae3c43a729fb011b4a78d837cf41c047728b328566b"}
+{"event": "forward_completed", "sequence": 8, "role": "dev", "id_sha256": "0804a8b3626b87afaf825ae3c43a729fb011b4a78d837cf41c047728b328566b", "loss_sum": 0.46930769085884094, "target_tokens": 84}
+{"event": "forward_reserved", "sequence": 9, "role": "dev", "id_sha256": "08a8d66b2cdea5d1565ed8dc5f02f9353055845caec5b8a925eacb72286fc67e"}
+{"event": "forward_completed", "sequence": 9, "role": "dev", "id_sha256": "08a8d66b2cdea5d1565ed8dc5f02f9353055845caec5b8a925eacb72286fc67e", "loss_sum": 0.9387344121932983, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 10, "role": "dev", "id_sha256": "0a0505aa4fa46d7327755fd5711a92182ece38fc24f3aede7d62df72a3129858"}
+{"event": "forward_completed", "sequence": 10, "role": "dev", "id_sha256": "0a0505aa4fa46d7327755fd5711a92182ece38fc24f3aede7d62df72a3129858", "loss_sum": 0.3825012445449829, "target_tokens": 79}
+{"event": "forward_reserved", "sequence": 11, "role": "dev", "id_sha256": "0a87e10a66b9d845f82934792a01176be25ba44ea26b80fc81f58a4b301bad92"}
+{"event": "forward_completed", "sequence": 11, "role": "dev", "id_sha256": "0a87e10a66b9d845f82934792a01176be25ba44ea26b80fc81f58a4b301bad92", "loss_sum": 2.5938117504119873, "target_tokens": 78}
+{"event": "forward_reserved", "sequence": 12, "role": "dev", "id_sha256": "0e863c6025fde67c911ae9395b600d668daf0f9386a7b7d4eb27c0823233b002"}
+{"event": "forward_completed", "sequence": 12, "role": "dev", "id_sha256": "0e863c6025fde67c911ae9395b600d668daf0f9386a7b7d4eb27c0823233b002", "loss_sum": 0.46751120686531067, "target_tokens": 41}
+{"event": "forward_reserved", "sequence": 13, "role": "dev", "id_sha256": "1202ffe721ab3bb256387cb215140077d77cd86f7604055aa0a31d29a2952a42"}
+{"event": "forward_completed", "sequence": 13, "role": "dev", "id_sha256": "1202ffe721ab3bb256387cb215140077d77cd86f7604055aa0a31d29a2952a42", "loss_sum": 0.9891505241394043, "target_tokens": 128}
+{"event": "forward_reserved", "sequence": 14, "role": "dev", "id_sha256": "12bf81210b369e2f26e1e6d606a80caa1c9bb41e028c3f58456c7d1ffd86aafd"}
+{"event": "forward_completed", "sequence": 14, "role": "dev", "id_sha256": "12bf81210b369e2f26e1e6d606a80caa1c9bb41e028c3f58456c7d1ffd86aafd", "loss_sum": 209.74295043945312, "target_tokens": 233}
+{"event": "forward_reserved", "sequence": 15, "role": "dev", "id_sha256": "183cac85e26b6487d931f9738c3b29778f09279feae8a491d8e0d60f463ae19e"}
+{"event": "forward_completed", "sequence": 15, "role": "dev", "id_sha256": "183cac85e26b6487d931f9738c3b29778f09279feae8a491d8e0d60f463ae19e", "loss_sum": 0.942270815372467, "target_tokens": 74}
+{"event": "forward_reserved", "sequence": 16, "role": "dev", "id_sha256": "185bd9cacca2f70bc34909d73158eccaf79eb6114619fd5a0418319cd648c513"}
+{"event": "forward_completed", "sequence": 16, "role": "dev", "id_sha256": "185bd9cacca2f70bc34909d73158eccaf79eb6114619fd5a0418319cd648c513", "loss_sum": 0.591691792011261, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 17, "role": "dev", "id_sha256": "188a54719cbf81ea473dbd02676a94321ac1d94f7a0280c0fb24d20ae5083c4c"}
+{"event": "forward_completed", "sequence": 17, "role": "dev", "id_sha256": "188a54719cbf81ea473dbd02676a94321ac1d94f7a0280c0fb24d20ae5083c4c", "loss_sum": 1.0375869274139404, "target_tokens": 68}
+{"event": "forward_reserved", "sequence": 18, "role": "dev", "id_sha256": "198d9b3c22f8fd85a44fcad5b119fe96044d88b8026ede98f3537a751fc8cd5b"}
+{"event": "forward_completed", "sequence": 18, "role": "dev", "id_sha256": "198d9b3c22f8fd85a44fcad5b119fe96044d88b8026ede98f3537a751fc8cd5b", "loss_sum": 0.8989222645759583, "target_tokens": 65}
+{"event": "forward_reserved", "sequence": 19, "role": "dev", "id_sha256": "1c418ca529fdf44432432d826e3c2d0b9d612c00f7675853af54a567d15886d9"}
+{"event": "forward_completed", "sequence": 19, "role": "dev", "id_sha256": "1c418ca529fdf44432432d826e3c2d0b9d612c00f7675853af54a567d15886d9", "loss_sum": 0.30004411935806274, "target_tokens": 74}
+{"event": "forward_reserved", "sequence": 20, "role": "dev", "id_sha256": "1c72ce7afafe892a8decc0e7ab90e5500332d35e8388d637145f2d0ea546735f"}
+{"event": "forward_completed", "sequence": 20, "role": "dev", "id_sha256": "1c72ce7afafe892a8decc0e7ab90e5500332d35e8388d637145f2d0ea546735f", "loss_sum": 1.9786231517791748, "target_tokens": 65}
+{"event": "forward_reserved", "sequence": 21, "role": "dev", "id_sha256": "1c9845c4c023ab76b34845d3ea0ec6f342eff3fc23e38fac20671d225083561e"}
+{"event": "forward_completed", "sequence": 21, "role": "dev", "id_sha256": "1c9845c4c023ab76b34845d3ea0ec6f342eff3fc23e38fac20671d225083561e", "loss_sum": 0.7840660810470581, "target_tokens": 93}
+{"event": "forward_reserved", "sequence": 22, "role": "dev", "id_sha256": "1dfb33c34eebf3a7e1e34e85e9f775687a7f78ff54e4802b4bc2f78fe676f27d"}
+{"event": "forward_completed", "sequence": 22, "role": "dev", "id_sha256": "1dfb33c34eebf3a7e1e34e85e9f775687a7f78ff54e4802b4bc2f78fe676f27d", "loss_sum": 0.6102810502052307, "target_tokens": 66}
+{"event": "forward_reserved", "sequence": 23, "role": "dev", "id_sha256": "201b6384243a5adc266c474e8825dc5014ce132eff934d9d44cbce122fa05cb3"}
+{"event": "forward_completed", "sequence": 23, "role": "dev", "id_sha256": "201b6384243a5adc266c474e8825dc5014ce132eff934d9d44cbce122fa05cb3", "loss_sum": 130.35931396484375, "target_tokens": 133}
+{"event": "forward_reserved", "sequence": 24, "role": "dev", "id_sha256": "2056a6fc42766fc88c6b9c98b5a29236e5fd611889781649b842588a4335cc73"}
+{"event": "forward_completed", "sequence": 24, "role": "dev", "id_sha256": "2056a6fc42766fc88c6b9c98b5a29236e5fd611889781649b842588a4335cc73", "loss_sum": 0.6362897753715515, "target_tokens": 97}
+{"event": "forward_reserved", "sequence": 25, "role": "dev", "id_sha256": "21c01a8f1400dea433261d17bc3374809685f908aef8ac0ee212c547768b50ff"}
+{"event": "forward_completed", "sequence": 25, "role": "dev", "id_sha256": "21c01a8f1400dea433261d17bc3374809685f908aef8ac0ee212c547768b50ff", "loss_sum": 2.552675724029541, "target_tokens": 96}
+{"event": "forward_reserved", "sequence": 26, "role": "dev", "id_sha256": "22656e98f5cad344cfcb7f8ae5557ea90403cf8b784a65038fde835167d027e9"}
+{"event": "forward_completed", "sequence": 26, "role": "dev", "id_sha256": "22656e98f5cad344cfcb7f8ae5557ea90403cf8b784a65038fde835167d027e9", "loss_sum": 5.16217041015625, "target_tokens": 97}
+{"event": "forward_reserved", "sequence": 27, "role": "dev", "id_sha256": "24955183dab2923787a4edff00f7d8ca95fcb4c0edc8d6ff68ecaa8bb4273935"}
+{"event": "forward_completed", "sequence": 27, "role": "dev", "id_sha256": "24955183dab2923787a4edff00f7d8ca95fcb4c0edc8d6ff68ecaa8bb4273935", "loss_sum": 1.9934300184249878, "target_tokens": 142}
+{"event": "forward_reserved", "sequence": 28, "role": "dev", "id_sha256": "2657dade9509181151f26e6f32e8069b5f0ae2e296e0e0b55c63ec81226f0f5d"}
+{"event": "forward_completed", "sequence": 28, "role": "dev", "id_sha256": "2657dade9509181151f26e6f32e8069b5f0ae2e296e0e0b55c63ec81226f0f5d", "loss_sum": 72.48158264160156, "target_tokens": 85}
+{"event": "forward_reserved", "sequence": 29, "role": "dev", "id_sha256": "275ca24ef4078ff914f2891011b79615b9d9455ba6e99cf2b1aaf25e006119c3"}
+{"event": "forward_completed", "sequence": 29, "role": "dev", "id_sha256": "275ca24ef4078ff914f2891011b79615b9d9455ba6e99cf2b1aaf25e006119c3", "loss_sum": 0.7800536751747131, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 30, "role": "dev", "id_sha256": "27a02a5699cab87bc5dadccc26ec6754aa25870a80ac66643ec0189006ecdbcb"}
+{"event": "forward_completed", "sequence": 30, "role": "dev", "id_sha256": "27a02a5699cab87bc5dadccc26ec6754aa25870a80ac66643ec0189006ecdbcb", "loss_sum": 0.27301257848739624, "target_tokens": 57}
+{"event": "forward_reserved", "sequence": 31, "role": "dev", "id_sha256": "28a45fe47a296f42378cb30ae6cecabf1df7a8d9a2798e0c8971a3514e68d683"}
+{"event": "forward_completed", "sequence": 31, "role": "dev", "id_sha256": "28a45fe47a296f42378cb30ae6cecabf1df7a8d9a2798e0c8971a3514e68d683", "loss_sum": 0.19660890102386475, "target_tokens": 55}
+{"event": "forward_reserved", "sequence": 32, "role": "dev", "id_sha256": "2a6e8e276c60d62a464c8da494365dfa59256733be5febbe30eb77db2f6164b9"}
+{"event": "forward_completed", "sequence": 32, "role": "dev", "id_sha256": "2a6e8e276c60d62a464c8da494365dfa59256733be5febbe30eb77db2f6164b9", "loss_sum": 0.8347284197807312, "target_tokens": 45}
+{"event": "forward_reserved", "sequence": 33, "role": "dev", "id_sha256": "2ae2261143d871a14c0994b6bb8277f1e6b1b0c402435cc7fb903d8325d58424"}
+{"event": "forward_completed", "sequence": 33, "role": "dev", "id_sha256": "2ae2261143d871a14c0994b6bb8277f1e6b1b0c402435cc7fb903d8325d58424", "loss_sum": 0.46074050664901733, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 34, "role": "dev", "id_sha256": "2ae916d103787ef3fdd3f35126676305f6082801e44a9a60ece09ba30e05df27"}
+{"event": "forward_completed", "sequence": 34, "role": "dev", "id_sha256": "2ae916d103787ef3fdd3f35126676305f6082801e44a9a60ece09ba30e05df27", "loss_sum": 0.9502281546592712, "target_tokens": 48}
+{"event": "forward_reserved", "sequence": 35, "role": "dev", "id_sha256": "2bb4bd69dc2501af11b222a0d33d20d9c364e397e6b6aeccf39e85516c9d3a12"}
+{"event": "forward_completed", "sequence": 35, "role": "dev", "id_sha256": "2bb4bd69dc2501af11b222a0d33d20d9c364e397e6b6aeccf39e85516c9d3a12", "loss_sum": 34.565185546875, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 36, "role": "dev", "id_sha256": "2e82f83dc4e27389908fb0e74fcda5e4a7726e9a9b13ffb4395c1fe5512060c7"}
+{"event": "forward_completed", "sequence": 36, "role": "dev", "id_sha256": "2e82f83dc4e27389908fb0e74fcda5e4a7726e9a9b13ffb4395c1fe5512060c7", "loss_sum": 89.98792266845703, "target_tokens": 75}
+{"event": "forward_reserved", "sequence": 37, "role": "dev", "id_sha256": "3160dfe17785ad367b17880c106cad7b1e4e8dede9b2ebfb271621b05a74b86c"}
+{"event": "forward_completed", "sequence": 37, "role": "dev", "id_sha256": "3160dfe17785ad367b17880c106cad7b1e4e8dede9b2ebfb271621b05a74b86c", "loss_sum": 0.18472537398338318, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 38, "role": "dev", "id_sha256": "3ad38e25f674af83c0d1e6f53df97d67f8e501b8d2f9b7833074e86612d9e81d"}
+{"event": "forward_completed", "sequence": 38, "role": "dev", "id_sha256": "3ad38e25f674af83c0d1e6f53df97d67f8e501b8d2f9b7833074e86612d9e81d", "loss_sum": 1.2591063976287842, "target_tokens": 93}
+{"event": "forward_reserved", "sequence": 39, "role": "dev", "id_sha256": "3cb77b8488e0db00bd90b8e7249e624a08c5f68a1264096e1967048a1ab3790e"}
+{"event": "forward_completed", "sequence": 39, "role": "dev", "id_sha256": "3cb77b8488e0db00bd90b8e7249e624a08c5f68a1264096e1967048a1ab3790e", "loss_sum": 25.5296573638916, "target_tokens": 95}
+{"event": "forward_reserved", "sequence": 40, "role": "dev", "id_sha256": "3d40c0475455d81095348ee71e3e35fc086795c2af608dd0b468b41a664b1cfa"}
+{"event": "forward_completed", "sequence": 40, "role": "dev", "id_sha256": "3d40c0475455d81095348ee71e3e35fc086795c2af608dd0b468b41a664b1cfa", "loss_sum": 0.21801960468292236, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 41, "role": "dev", "id_sha256": "410b7ece53cc701ef4ac0060b5cd43d602904c995261baf4bf640ee5f74bdb2e"}
+{"event": "forward_completed", "sequence": 41, "role": "dev", "id_sha256": "410b7ece53cc701ef4ac0060b5cd43d602904c995261baf4bf640ee5f74bdb2e", "loss_sum": 38.209190368652344, "target_tokens": 66}
+{"event": "forward_reserved", "sequence": 42, "role": "dev", "id_sha256": "41ab92528b0fd6561cd4164cb07725acc407213e901df884e38dfc4ddc867605"}
+{"event": "forward_completed", "sequence": 42, "role": "dev", "id_sha256": "41ab92528b0fd6561cd4164cb07725acc407213e901df884e38dfc4ddc867605", "loss_sum": 2.700456380844116, "target_tokens": 118}
+{"event": "forward_reserved", "sequence": 43, "role": "dev", "id_sha256": "41f641b5899a8b165a95b8e669624b6b6e21da152da6b71460a5fa99110bc8af"}
+{"event": "forward_completed", "sequence": 43, "role": "dev", "id_sha256": "41f641b5899a8b165a95b8e669624b6b6e21da152da6b71460a5fa99110bc8af", "loss_sum": 30.706392288208008, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 44, "role": "dev", "id_sha256": "42cd0dac2455c29364eebd0c0f682a03a60ad0ecf215dfc38ee116c526554519"}
+{"event": "forward_completed", "sequence": 44, "role": "dev", "id_sha256": "42cd0dac2455c29364eebd0c0f682a03a60ad0ecf215dfc38ee116c526554519", "loss_sum": 345.2219543457031, "target_tokens": 190}
+{"event": "forward_reserved", "sequence": 45, "role": "dev", "id_sha256": "44d763eadb094a3a0f5d6378fb9310def8ecfefd5985a6a34598f99324134e5a"}
+{"event": "forward_completed", "sequence": 45, "role": "dev", "id_sha256": "44d763eadb094a3a0f5d6378fb9310def8ecfefd5985a6a34598f99324134e5a", "loss_sum": 0.7669004201889038, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 46, "role": "dev", "id_sha256": "467411084cbacde028c5a7602b81d7081d28aab2e8ed3ab6f17d51ff201a6d57"}
+{"event": "forward_completed", "sequence": 46, "role": "dev", "id_sha256": "467411084cbacde028c5a7602b81d7081d28aab2e8ed3ab6f17d51ff201a6d57", "loss_sum": 3.6662895679473877, "target_tokens": 67}
+{"event": "forward_reserved", "sequence": 47, "role": "dev", "id_sha256": "46c195080f07bac2454ef269b42ed811ea52bc6c163e0f186b6154d4673f0704"}
+{"event": "forward_completed", "sequence": 47, "role": "dev", "id_sha256": "46c195080f07bac2454ef269b42ed811ea52bc6c163e0f186b6154d4673f0704", "loss_sum": 10.676803588867188, "target_tokens": 100}
+{"event": "forward_reserved", "sequence": 48, "role": "dev", "id_sha256": "473061d559b819cc35b51e858c39780fb4497d57324182d7547a521869c18e0e"}
+{"event": "forward_completed", "sequence": 48, "role": "dev", "id_sha256": "473061d559b819cc35b51e858c39780fb4497d57324182d7547a521869c18e0e", "loss_sum": 0.15585796535015106, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 49, "role": "dev", "id_sha256": "478e706f79f340c00787361b1927c57ed825c977767adc151e02fb606c9861e9"}
+{"event": "forward_completed", "sequence": 49, "role": "dev", "id_sha256": "478e706f79f340c00787361b1927c57ed825c977767adc151e02fb606c9861e9", "loss_sum": 0.7779431939125061, "target_tokens": 42}
+{"event": "forward_reserved", "sequence": 50, "role": "dev", "id_sha256": "479aec20068340c41e65beb7641575ceccb39e9af2bf417451f363eac8b23d8c"}
+{"event": "forward_completed", "sequence": 50, "role": "dev", "id_sha256": "479aec20068340c41e65beb7641575ceccb39e9af2bf417451f363eac8b23d8c", "loss_sum": 0.4729212820529938, "target_tokens": 58}
+{"event": "forward_reserved", "sequence": 51, "role": "dev", "id_sha256": "482ee14d2916d374b65f2f8e906abd644f8e53d83a9012038367bd47d27ff261"}
+{"event": "forward_completed", "sequence": 51, "role": "dev", "id_sha256": "482ee14d2916d374b65f2f8e906abd644f8e53d83a9012038367bd47d27ff261", "loss_sum": 0.2652866840362549, "target_tokens": 42}
+{"event": "forward_reserved", "sequence": 52, "role": "dev", "id_sha256": "4bf28d808e733e564e2ee661aac4ffccca303d0b3a3f445ab34d353f799bf255"}
+{"event": "forward_completed", "sequence": 52, "role": "dev", "id_sha256": "4bf28d808e733e564e2ee661aac4ffccca303d0b3a3f445ab34d353f799bf255", "loss_sum": 1.775972604751587, "target_tokens": 70}
+{"event": "forward_reserved", "sequence": 53, "role": "dev", "id_sha256": "4d2d7c4f4596ea81bf9ac0ac77b17dc4361997f065495f41161317e8ba58cf91"}
+{"event": "forward_completed", "sequence": 53, "role": "dev", "id_sha256": "4d2d7c4f4596ea81bf9ac0ac77b17dc4361997f065495f41161317e8ba58cf91", "loss_sum": 0.2826431095600128, "target_tokens": 88}
+{"event": "forward_reserved", "sequence": 54, "role": "dev", "id_sha256": "4d46e1a7e743df6797041a7cd5b40671f9cfe0b3113e831edbbeafc0d5c4e465"}
+{"event": "forward_completed", "sequence": 54, "role": "dev", "id_sha256": "4d46e1a7e743df6797041a7cd5b40671f9cfe0b3113e831edbbeafc0d5c4e465", "loss_sum": 53.929969787597656, "target_tokens": 85}
+{"event": "forward_reserved", "sequence": 55, "role": "dev", "id_sha256": "5015991503dcfc0334a56065c12fd2b8668cac6e89d9167ab991436252f7961f"}
+{"event": "forward_completed", "sequence": 55, "role": "dev", "id_sha256": "5015991503dcfc0334a56065c12fd2b8668cac6e89d9167ab991436252f7961f", "loss_sum": 5.4700117111206055, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 56, "role": "dev", "id_sha256": "5145a6150483a06ad46fc00a0868a56983095988884840ea7c3eaa1c67fb3f42"}
+{"event": "forward_completed", "sequence": 56, "role": "dev", "id_sha256": "5145a6150483a06ad46fc00a0868a56983095988884840ea7c3eaa1c67fb3f42", "loss_sum": 1.5802717208862305, "target_tokens": 65}
+{"event": "forward_reserved", "sequence": 57, "role": "dev", "id_sha256": "5318f79fea01808d2db994b37b3d17b807da078d24a9296b19fe581b370b83b0"}
+{"event": "forward_completed", "sequence": 57, "role": "dev", "id_sha256": "5318f79fea01808d2db994b37b3d17b807da078d24a9296b19fe581b370b83b0", "loss_sum": 0.2898760139942169, "target_tokens": 69}
+{"event": "forward_reserved", "sequence": 58, "role": "dev", "id_sha256": "53c35cffaa97e16087317cdd9ee796df301f7b61859a32de6bea09e4e57da286"}
+{"event": "forward_completed", "sequence": 58, "role": "dev", "id_sha256": "53c35cffaa97e16087317cdd9ee796df301f7b61859a32de6bea09e4e57da286", "loss_sum": 0.2645663917064667, "target_tokens": 59}
+{"event": "forward_reserved", "sequence": 59, "role": "dev", "id_sha256": "53cc827fa7781e388e4201ffaa2582053eaf8c77c3ad11e21ac288d32e1250f1"}
+{"event": "forward_completed", "sequence": 59, "role": "dev", "id_sha256": "53cc827fa7781e388e4201ffaa2582053eaf8c77c3ad11e21ac288d32e1250f1", "loss_sum": 0.8267114162445068, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 60, "role": "dev", "id_sha256": "549d75857a9e850e464d5e5a43d2f17d5fd7019e729d646722aee8451293b90c"}
+{"event": "forward_completed", "sequence": 60, "role": "dev", "id_sha256": "549d75857a9e850e464d5e5a43d2f17d5fd7019e729d646722aee8451293b90c", "loss_sum": 33.021644592285156, "target_tokens": 93}
+{"event": "forward_reserved", "sequence": 61, "role": "dev", "id_sha256": "55aa32d4ce79eb74c5b2d90e9eac22b3739ad292013d6d6530e46d10e3b798ad"}
+{"event": "forward_completed", "sequence": 61, "role": "dev", "id_sha256": "55aa32d4ce79eb74c5b2d90e9eac22b3739ad292013d6d6530e46d10e3b798ad", "loss_sum": 0.3837320804595947, "target_tokens": 56}
+{"event": "forward_reserved", "sequence": 62, "role": "dev", "id_sha256": "56f4061383d8d968a682bf6b61e643404d2f10279f33901cbd44ae8f4dde1c75"}
+{"event": "forward_completed", "sequence": 62, "role": "dev", "id_sha256": "56f4061383d8d968a682bf6b61e643404d2f10279f33901cbd44ae8f4dde1c75", "loss_sum": 56.62764358520508, "target_tokens": 268}
+{"event": "forward_reserved", "sequence": 63, "role": "dev", "id_sha256": "58719f5d6c9d6424fe58640d52910553b38a3f0237be3c0b5139cd357c72c7f2"}
+{"event": "forward_completed", "sequence": 63, "role": "dev", "id_sha256": "58719f5d6c9d6424fe58640d52910553b38a3f0237be3c0b5139cd357c72c7f2", "loss_sum": 98.9183120727539, "target_tokens": 115}
+{"event": "forward_reserved", "sequence": 64, "role": "dev", "id_sha256": "5aa9d7fe2b85cf6e23a32ab10c1257ada7e9fb86378dd95d2c67117a0ff98d37"}
+{"event": "forward_completed", "sequence": 64, "role": "dev", "id_sha256": "5aa9d7fe2b85cf6e23a32ab10c1257ada7e9fb86378dd95d2c67117a0ff98d37", "loss_sum": 0.6009296774864197, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 65, "role": "dev", "id_sha256": "5ae3e16f55d255788e32918f573142bb5bef506e100bc79180205332da552613"}
+{"event": "forward_completed", "sequence": 65, "role": "dev", "id_sha256": "5ae3e16f55d255788e32918f573142bb5bef506e100bc79180205332da552613", "loss_sum": 0.34834417700767517, "target_tokens": 78}
+{"event": "forward_reserved", "sequence": 66, "role": "dev", "id_sha256": "5bebd3c8eb806b77826e5f5b6f3db24ce7eaa2731d8474557a299d13e835cb37"}
+{"event": "forward_completed", "sequence": 66, "role": "dev", "id_sha256": "5bebd3c8eb806b77826e5f5b6f3db24ce7eaa2731d8474557a299d13e835cb37", "loss_sum": 58.565528869628906, "target_tokens": 66}
+{"event": "forward_reserved", "sequence": 67, "role": "dev", "id_sha256": "5c79f71f9df61180fe3af8b32493c561380a3b35082cbf73fb1edea78769eee7"}
+{"event": "forward_completed", "sequence": 67, "role": "dev", "id_sha256": "5c79f71f9df61180fe3af8b32493c561380a3b35082cbf73fb1edea78769eee7", "loss_sum": 15.148537635803223, "target_tokens": 172}
+{"event": "forward_reserved", "sequence": 68, "role": "dev", "id_sha256": "5c84651ce192695298abfd9dfbba94b2dc546036741c86d383a3de238c95d53d"}
+{"event": "forward_completed", "sequence": 68, "role": "dev", "id_sha256": "5c84651ce192695298abfd9dfbba94b2dc546036741c86d383a3de238c95d53d", "loss_sum": 524.0143432617188, "target_tokens": 343}
+{"event": "forward_reserved", "sequence": 69, "role": "dev", "id_sha256": "5d99ee022dbf5b32e44dd5fec6b1a307534e70ec77dfe4611bd1c74e7804f4c9"}
+{"event": "forward_completed", "sequence": 69, "role": "dev", "id_sha256": "5d99ee022dbf5b32e44dd5fec6b1a307534e70ec77dfe4611bd1c74e7804f4c9", "loss_sum": 0.47944143414497375, "target_tokens": 74}
+{"event": "forward_reserved", "sequence": 70, "role": "dev", "id_sha256": "5e4b80afb4248fb1d87fd6223500436f07f87dfb7003c1fdba47b0c30033e703"}
+{"event": "forward_completed", "sequence": 70, "role": "dev", "id_sha256": "5e4b80afb4248fb1d87fd6223500436f07f87dfb7003c1fdba47b0c30033e703", "loss_sum": 0.2525346279144287, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 71, "role": "dev", "id_sha256": "603dfbc5a19780a729e4bd70b733404bcafd656d61d814e8794360896685cd04"}
+{"event": "forward_completed", "sequence": 71, "role": "dev", "id_sha256": "603dfbc5a19780a729e4bd70b733404bcafd656d61d814e8794360896685cd04", "loss_sum": 187.07847595214844, "target_tokens": 129}
+{"event": "forward_reserved", "sequence": 72, "role": "dev", "id_sha256": "614df6a23b54a421dbe978e46dc89297ecf44f0cbad1080928f850ebd214fce4"}
+{"event": "forward_completed", "sequence": 72, "role": "dev", "id_sha256": "614df6a23b54a421dbe978e46dc89297ecf44f0cbad1080928f850ebd214fce4", "loss_sum": 0.9974971413612366, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 73, "role": "dev", "id_sha256": "63560406d520e63796318dafa7992f2f133c87e720cca5ebc27ed424b562be37"}
+{"event": "forward_completed", "sequence": 73, "role": "dev", "id_sha256": "63560406d520e63796318dafa7992f2f133c87e720cca5ebc27ed424b562be37", "loss_sum": 1.6016019582748413, "target_tokens": 87}
+{"event": "forward_reserved", "sequence": 74, "role": "dev", "id_sha256": "644327449d2b508f3af4b977490c16c6aa905a7ea33e92c4ac3cbd1cff923b80"}
+{"event": "forward_completed", "sequence": 74, "role": "dev", "id_sha256": "644327449d2b508f3af4b977490c16c6aa905a7ea33e92c4ac3cbd1cff923b80", "loss_sum": 1.2374447584152222, "target_tokens": 83}
+{"event": "forward_reserved", "sequence": 75, "role": "dev", "id_sha256": "64b34b414db0e1f32c6c04aae00bbf586c8ab14981f8cc3fe2fa8a8773e0ddab"}
+{"event": "forward_completed", "sequence": 75, "role": "dev", "id_sha256": "64b34b414db0e1f32c6c04aae00bbf586c8ab14981f8cc3fe2fa8a8773e0ddab", "loss_sum": 1.1728092432022095, "target_tokens": 112}
+{"event": "forward_reserved", "sequence": 76, "role": "dev", "id_sha256": "66d70143c607f978b313ea98434c7b63873c9138a924da05a6a851a4a5392cb8"}
+{"event": "forward_completed", "sequence": 76, "role": "dev", "id_sha256": "66d70143c607f978b313ea98434c7b63873c9138a924da05a6a851a4a5392cb8", "loss_sum": 26.31462287902832, "target_tokens": 84}
+{"event": "forward_reserved", "sequence": 77, "role": "dev", "id_sha256": "67b4aea101366c8d9de97beb741fe9568362062f96cccf9eb622292ba356d3bf"}
+{"event": "forward_completed", "sequence": 77, "role": "dev", "id_sha256": "67b4aea101366c8d9de97beb741fe9568362062f96cccf9eb622292ba356d3bf", "loss_sum": 16.79006004333496, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 78, "role": "dev", "id_sha256": "6830b55334006e5d1e337ec5bf19398751c16ea381b5425984f7c0629c558625"}
+{"event": "forward_completed", "sequence": 78, "role": "dev", "id_sha256": "6830b55334006e5d1e337ec5bf19398751c16ea381b5425984f7c0629c558625", "loss_sum": 0.5940433740615845, "target_tokens": 90}
+{"event": "forward_reserved", "sequence": 79, "role": "dev", "id_sha256": "6932647b86cf6d952e56c2585e5145a0d7771b6e4eb6a4245d54c31fae6a079f"}
+{"event": "forward_completed", "sequence": 79, "role": "dev", "id_sha256": "6932647b86cf6d952e56c2585e5145a0d7771b6e4eb6a4245d54c31fae6a079f", "loss_sum": 1.4403142929077148, "target_tokens": 106}
+{"event": "forward_reserved", "sequence": 80, "role": "dev", "id_sha256": "694403b3e2afc70e359b47144e907d43dcbb40df9b7653c6e4574a51df961d9c"}
+{"event": "forward_completed", "sequence": 80, "role": "dev", "id_sha256": "694403b3e2afc70e359b47144e907d43dcbb40df9b7653c6e4574a51df961d9c", "loss_sum": 2.520437002182007, "target_tokens": 114}
+{"event": "forward_reserved", "sequence": 81, "role": "dev", "id_sha256": "69741b599e752ed696b117b2ca95d879f51f8656fdc4d2300b63be109168dbbf"}
+{"event": "forward_completed", "sequence": 81, "role": "dev", "id_sha256": "69741b599e752ed696b117b2ca95d879f51f8656fdc4d2300b63be109168dbbf", "loss_sum": 1.6215404272079468, "target_tokens": 79}
+{"event": "forward_reserved", "sequence": 82, "role": "dev", "id_sha256": "69e68e417a7611946ef2f5d5bd28d9b7d1275bc3bfb8d4cd55102dd9c7ff667d"}
+{"event": "forward_completed", "sequence": 82, "role": "dev", "id_sha256": "69e68e417a7611946ef2f5d5bd28d9b7d1275bc3bfb8d4cd55102dd9c7ff667d", "loss_sum": 1.651328206062317, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 83, "role": "dev", "id_sha256": "6ac94be99af416403f227a429b9f5b5aa3ea3940f5898b4c27e257758df95ba9"}
+{"event": "forward_completed", "sequence": 83, "role": "dev", "id_sha256": "6ac94be99af416403f227a429b9f5b5aa3ea3940f5898b4c27e257758df95ba9", "loss_sum": 0.47961512207984924, "target_tokens": 58}
+{"event": "forward_reserved", "sequence": 84, "role": "dev", "id_sha256": "6b4dd53e8b3278704fb730f0788d45b70aaae471fe8ab6568c0db5a25c41e694"}
+{"event": "forward_completed", "sequence": 84, "role": "dev", "id_sha256": "6b4dd53e8b3278704fb730f0788d45b70aaae471fe8ab6568c0db5a25c41e694", "loss_sum": 0.23735953867435455, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 85, "role": "dev", "id_sha256": "6e7478a9437049c961d2150f00bac8dbbe4c20f46dc7f7fa093c72b4552c6ae9"}
+{"event": "forward_completed", "sequence": 85, "role": "dev", "id_sha256": "6e7478a9437049c961d2150f00bac8dbbe4c20f46dc7f7fa093c72b4552c6ae9", "loss_sum": 32.648780822753906, "target_tokens": 59}
+{"event": "forward_reserved", "sequence": 86, "role": "dev", "id_sha256": "742de41e427ad452bd975d9ab9e4a0ecd31984b6e30380685e0dd7e7778d85dc"}
+{"event": "forward_completed", "sequence": 86, "role": "dev", "id_sha256": "742de41e427ad452bd975d9ab9e4a0ecd31984b6e30380685e0dd7e7778d85dc", "loss_sum": 32.69928741455078, "target_tokens": 61}
+{"event": "forward_reserved", "sequence": 87, "role": "dev", "id_sha256": "746eca00ddffab46a1d7ff40975e9d0122fe3f4abc62b34c70bccf8e48431632"}
+{"event": "forward_completed", "sequence": 87, "role": "dev", "id_sha256": "746eca00ddffab46a1d7ff40975e9d0122fe3f4abc62b34c70bccf8e48431632", "loss_sum": 0.11712944507598877, "target_tokens": 58}
+{"event": "forward_reserved", "sequence": 88, "role": "dev", "id_sha256": "790b8014377ee8c52fb919db0c57a3244a9ab911f0ef5b1a555f8a3af485704c"}
+{"event": "forward_completed", "sequence": 88, "role": "dev", "id_sha256": "790b8014377ee8c52fb919db0c57a3244a9ab911f0ef5b1a555f8a3af485704c", "loss_sum": 51.17097473144531, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 89, "role": "dev", "id_sha256": "7dcbdbecf1a75c4dcc85b2c3b2a864fa9eb5129c55790ebdc2872ca50efd8dc6"}
+{"event": "forward_completed", "sequence": 89, "role": "dev", "id_sha256": "7dcbdbecf1a75c4dcc85b2c3b2a864fa9eb5129c55790ebdc2872ca50efd8dc6", "loss_sum": 15.280370712280273, "target_tokens": 76}
+{"event": "forward_reserved", "sequence": 90, "role": "dev", "id_sha256": "7f52c592f87865885a3bec4ab7bff09d71f0e0988234e3b49cff7846495ac7de"}
+{"event": "forward_completed", "sequence": 90, "role": "dev", "id_sha256": "7f52c592f87865885a3bec4ab7bff09d71f0e0988234e3b49cff7846495ac7de", "loss_sum": 54.063045501708984, "target_tokens": 57}
+{"event": "forward_reserved", "sequence": 91, "role": "dev", "id_sha256": "8211f8c60956ba5dd56fa6b412638837928c5b1135a4d78d93e311a816767773"}
+{"event": "forward_completed", "sequence": 91, "role": "dev", "id_sha256": "8211f8c60956ba5dd56fa6b412638837928c5b1135a4d78d93e311a816767773", "loss_sum": 8.864054679870605, "target_tokens": 72}
+{"event": "forward_reserved", "sequence": 92, "role": "dev", "id_sha256": "82a8e9ffe172550e1e1f616c7a1109c432e0f6a0b3852c9b0f634847769f2309"}
+{"event": "forward_completed", "sequence": 92, "role": "dev", "id_sha256": "82a8e9ffe172550e1e1f616c7a1109c432e0f6a0b3852c9b0f634847769f2309", "loss_sum": 112.15681457519531, "target_tokens": 77}
+{"event": "forward_reserved", "sequence": 93, "role": "dev", "id_sha256": "84875e8561ac5cb35bb93690213410ef846a010733fdc04a9c724c463d37d044"}
+{"event": "forward_completed", "sequence": 93, "role": "dev", "id_sha256": "84875e8561ac5cb35bb93690213410ef846a010733fdc04a9c724c463d37d044", "loss_sum": 20.796079635620117, "target_tokens": 57}
+{"event": "forward_reserved", "sequence": 94, "role": "dev", "id_sha256": "84aa0fe0c00fb2331ce5bd3ead1c3524e23a1c7ba9bd7ae352b309a46f3ea92c"}
+{"event": "forward_completed", "sequence": 94, "role": "dev", "id_sha256": "84aa0fe0c00fb2331ce5bd3ead1c3524e23a1c7ba9bd7ae352b309a46f3ea92c", "loss_sum": 2.4640064239501953, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 95, "role": "dev", "id_sha256": "8670227aa439f2923571e8be8d7d6352d182748a0d150c3e2bea513a485445fa"}
+{"event": "forward_completed", "sequence": 95, "role": "dev", "id_sha256": "8670227aa439f2923571e8be8d7d6352d182748a0d150c3e2bea513a485445fa", "loss_sum": 0.9298494458198547, "target_tokens": 67}
+{"event": "forward_reserved", "sequence": 96, "role": "dev", "id_sha256": "876f36c531013666f8fdc9bc3eb7a9cc63f688681acd3f618c5eb74318948e2a"}
+{"event": "forward_completed", "sequence": 96, "role": "dev", "id_sha256": "876f36c531013666f8fdc9bc3eb7a9cc63f688681acd3f618c5eb74318948e2a", "loss_sum": 0.16291430592536926, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 97, "role": "dev", "id_sha256": "88b2cdb067dcb674c6a32718c6895d1a7c583469679d4e4cb8f94f1f466fe42d"}
+{"event": "forward_completed", "sequence": 97, "role": "dev", "id_sha256": "88b2cdb067dcb674c6a32718c6895d1a7c583469679d4e4cb8f94f1f466fe42d", "loss_sum": 2.067314624786377, "target_tokens": 64}
+{"event": "forward_reserved", "sequence": 98, "role": "dev", "id_sha256": "8c1bb4a1fd99d36bc14d349f65e491c9b59cc8db694e4523005457ecdd10c0f5"}
+{"event": "forward_completed", "sequence": 98, "role": "dev", "id_sha256": "8c1bb4a1fd99d36bc14d349f65e491c9b59cc8db694e4523005457ecdd10c0f5", "loss_sum": 0.42499077320098877, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 99, "role": "dev", "id_sha256": "8c4ecf0396690566662a6094004edf1fe4ad6038defb7eb3ef76626307e6a82a"}
+{"event": "forward_completed", "sequence": 99, "role": "dev", "id_sha256": "8c4ecf0396690566662a6094004edf1fe4ad6038defb7eb3ef76626307e6a82a", "loss_sum": 22.308382034301758, "target_tokens": 175}
+{"event": "forward_reserved", "sequence": 100, "role": "dev", "id_sha256": "8db83fee9ed15ef1af40fbdc1e9690ae7df3ce09396a21627f2579df23a31cab"}
+{"event": "forward_completed", "sequence": 100, "role": "dev", "id_sha256": "8db83fee9ed15ef1af40fbdc1e9690ae7df3ce09396a21627f2579df23a31cab", "loss_sum": 134.53683471679688, "target_tokens": 100}
+{"event": "forward_reserved", "sequence": 101, "role": "dev", "id_sha256": "8e51a4192eee7985f34b95b4314fc8931964797de926e653bf996b4458384311"}
+{"event": "forward_completed", "sequence": 101, "role": "dev", "id_sha256": "8e51a4192eee7985f34b95b4314fc8931964797de926e653bf996b4458384311", "loss_sum": 37.24473190307617, "target_tokens": 162}
+{"event": "forward_reserved", "sequence": 102, "role": "dev", "id_sha256": "8edae2cb00f8a2db68bd0efc018664409ebbfb46eba4991e0e986e6c478e7d67"}
+{"event": "forward_completed", "sequence": 102, "role": "dev", "id_sha256": "8edae2cb00f8a2db68bd0efc018664409ebbfb46eba4991e0e986e6c478e7d67", "loss_sum": 21.45514488220215, "target_tokens": 56}
+{"event": "forward_reserved", "sequence": 103, "role": "dev", "id_sha256": "8f105f6316f9c77111b89886ae0bdbdb4daaa5c76d6e7f5135f5675559de6f11"}
+{"event": "forward_completed", "sequence": 103, "role": "dev", "id_sha256": "8f105f6316f9c77111b89886ae0bdbdb4daaa5c76d6e7f5135f5675559de6f11", "loss_sum": 87.11170196533203, "target_tokens": 68}
+{"event": "forward_reserved", "sequence": 104, "role": "dev", "id_sha256": "911f630fbd0440f5574d5b7baa0cef66deef998b0afc0d14cd74647b2154b174"}
+{"event": "forward_completed", "sequence": 104, "role": "dev", "id_sha256": "911f630fbd0440f5574d5b7baa0cef66deef998b0afc0d14cd74647b2154b174", "loss_sum": 1.1117948293685913, "target_tokens": 60}
+{"event": "forward_reserved", "sequence": 105, "role": "dev", "id_sha256": "91d6ddac9933aa328a624b0c9a6e1e46c4f99189978c52d9fd97ba248da2fdb3"}
+{"event": "forward_completed", "sequence": 105, "role": "dev", "id_sha256": "91d6ddac9933aa328a624b0c9a6e1e46c4f99189978c52d9fd97ba248da2fdb3", "loss_sum": 11.168469429016113, "target_tokens": 109}
+{"event": "forward_reserved", "sequence": 106, "role": "dev", "id_sha256": "93110f13f2b62b8e0c099efdf59dbae307006ba764693148cd87ad4e77d9d510"}
+{"event": "forward_completed", "sequence": 106, "role": "dev", "id_sha256": "93110f13f2b62b8e0c099efdf59dbae307006ba764693148cd87ad4e77d9d510", "loss_sum": 16.825963973999023, "target_tokens": 63}
+{"event": "forward_reserved", "sequence": 107, "role": "dev", "id_sha256": "93a3ff32375b0aef01d311aea38dde3630a80d1518593f91f4dbd85999e92289"}
+{"event": "forward_completed", "sequence": 107, "role": "dev", "id_sha256": "93a3ff32375b0aef01d311aea38dde3630a80d1518593f91f4dbd85999e92289", "loss_sum": 30.682113647460938, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 108, "role": "dev", "id_sha256": "9408d5e4ead93acaf404babfa1efeb3133f65f17110362610d299af5b531cdcf"}
+{"event": "forward_completed", "sequence": 108, "role": "dev", "id_sha256": "9408d5e4ead93acaf404babfa1efeb3133f65f17110362610d299af5b531cdcf", "loss_sum": 58.326690673828125, "target_tokens": 50}
+{"event": "forward_reserved", "sequence": 109, "role": "dev", "id_sha256": "947b2a70880dddd0cf013066bbbeed1f003c50ecbdb52cfd36dae76e88d52616"}
+{"event": "forward_completed", "sequence": 109, "role": "dev", "id_sha256": "947b2a70880dddd0cf013066bbbeed1f003c50ecbdb52cfd36dae76e88d52616", "loss_sum": 1.5820121765136719, "target_tokens": 134}
+{"event": "forward_reserved", "sequence": 110, "role": "dev", "id_sha256": "97c8fcae07a4485b8e7ea906337f1c232b238bb3c7b391e1dab872416a4fdc25"}
+{"event": "forward_completed", "sequence": 110, "role": "dev", "id_sha256": "97c8fcae07a4485b8e7ea906337f1c232b238bb3c7b391e1dab872416a4fdc25", "loss_sum": 2.6098809242248535, "target_tokens": 78}
+{"event": "forward_reserved", "sequence": 111, "role": "dev", "id_sha256": "982da2eac9e83a348faadc3705a6ee06f6711c1e28596649c8a490ce78188b3c"}
+{"event": "forward_completed", "sequence": 111, "role": "dev", "id_sha256": "982da2eac9e83a348faadc3705a6ee06f6711c1e28596649c8a490ce78188b3c", "loss_sum": 0.23931950330734253, "target_tokens": 62}
+{"event": "forward_reserved", "sequence": 112, "role": "dev", "id_sha256": "9a9800f24f0517ec73f300cba5eb093acffe26723c510d4818c9ef48933435fc"}
+{"event": "forward_completed", "sequence": 112, "role": "dev", "id_sha256": "9a9800f24f0517ec73f300cba5eb093acffe26723c510d4818c9ef48933435fc", "loss_sum": 0.334347128868103, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 113, "role": "dev", "id_sha256": "9c3e1c23033e608629f0510f3bf7ec750fdc0993b333727d91169bdc64a511ba"}
+{"event": "forward_completed", "sequence": 113, "role": "dev", "id_sha256": "9c3e1c23033e608629f0510f3bf7ec750fdc0993b333727d91169bdc64a511ba", "loss_sum": 5.811079502105713, "target_tokens": 125}
+{"event": "forward_reserved", "sequence": 114, "role": "dev", "id_sha256": "9cb822ee226b51b8fec27a1d9637b6642998d5ec34174a41cd7b3554f492e901"}
+{"event": "forward_completed", "sequence": 114, "role": "dev", "id_sha256": "9cb822ee226b51b8fec27a1d9637b6642998d5ec34174a41cd7b3554f492e901", "loss_sum": 14.379765510559082, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 115, "role": "dev", "id_sha256": "9e6f541cf86ed8765fdc6ba952023ee91e4adb6ac64082ba9c1f8858d50038b9"}
+{"event": "forward_completed", "sequence": 115, "role": "dev", "id_sha256": "9e6f541cf86ed8765fdc6ba952023ee91e4adb6ac64082ba9c1f8858d50038b9", "loss_sum": 4.65032434463501, "target_tokens": 92}
+{"event": "forward_reserved", "sequence": 116, "role": "dev", "id_sha256": "9f6d171fecc0a654ba480b0c00f26376ab13ddd094dbcd0ccb9f3dfd9325c080"}
+{"event": "forward_completed", "sequence": 116, "role": "dev", "id_sha256": "9f6d171fecc0a654ba480b0c00f26376ab13ddd094dbcd0ccb9f3dfd9325c080", "loss_sum": 0.26118284463882446, "target_tokens": 67}
+{"event": "forward_reserved", "sequence": 117, "role": "dev", "id_sha256": "9f93a42472d87583832e8c75fac5217cb9d723da85c55d79ec076f7221496ac1"}
+{"event": "forward_completed", "sequence": 117, "role": "dev", "id_sha256": "9f93a42472d87583832e8c75fac5217cb9d723da85c55d79ec076f7221496ac1", "loss_sum": 0.9330703020095825, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 118, "role": "dev", "id_sha256": "9fdfeba5776df83e7c66f83908d65a5d079b08f5671c92e198946adaedd37c7f"}
+{"event": "forward_completed", "sequence": 118, "role": "dev", "id_sha256": "9fdfeba5776df83e7c66f83908d65a5d079b08f5671c92e198946adaedd37c7f", "loss_sum": 228.80084228515625, "target_tokens": 199}
+{"event": "forward_reserved", "sequence": 119, "role": "dev", "id_sha256": "a0d7ee7f16b8bafb1c0f27d55c1e31ff76127af217dd59008e82e5b7b2cd7bab"}
+{"event": "forward_completed", "sequence": 119, "role": "dev", "id_sha256": "a0d7ee7f16b8bafb1c0f27d55c1e31ff76127af217dd59008e82e5b7b2cd7bab", "loss_sum": 0.5660760998725891, "target_tokens": 72}
+{"event": "forward_reserved", "sequence": 120, "role": "dev", "id_sha256": "a350b0616c92ecb0040fd2fb733bffe76ef1cbd09197f6cad3f9be6a3b222393"}
+{"event": "forward_completed", "sequence": 120, "role": "dev", "id_sha256": "a350b0616c92ecb0040fd2fb733bffe76ef1cbd09197f6cad3f9be6a3b222393", "loss_sum": 3.5019736289978027, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 121, "role": "dev", "id_sha256": "a3bf436a11bc6e673ca1d1b566a42d3d5a1f9950f4b930ef0eca4fa568375777"}
+{"event": "forward_completed", "sequence": 121, "role": "dev", "id_sha256": "a3bf436a11bc6e673ca1d1b566a42d3d5a1f9950f4b930ef0eca4fa568375777", "loss_sum": 0.5822018980979919, "target_tokens": 96}
+{"event": "forward_reserved", "sequence": 122, "role": "dev", "id_sha256": "a45b49889f61af4bcfacbe02f1c2340e303ba13d355e91c522dc8259c9156000"}
+{"event": "forward_completed", "sequence": 122, "role": "dev", "id_sha256": "a45b49889f61af4bcfacbe02f1c2340e303ba13d355e91c522dc8259c9156000", "loss_sum": 0.2559288740158081, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 123, "role": "dev", "id_sha256": "a48627941601dc423e49dbe492f42f65e16540dd663f65b88f0821354915282a"}
+{"event": "forward_completed", "sequence": 123, "role": "dev", "id_sha256": "a48627941601dc423e49dbe492f42f65e16540dd663f65b88f0821354915282a", "loss_sum": 0.5690290331840515, "target_tokens": 64}
+{"event": "forward_reserved", "sequence": 124, "role": "dev", "id_sha256": "a55b9ccb539160757e9d5f42eddd4847c6ad0abd085e9b94b3c7a130c62dcafc"}
+{"event": "forward_completed", "sequence": 124, "role": "dev", "id_sha256": "a55b9ccb539160757e9d5f42eddd4847c6ad0abd085e9b94b3c7a130c62dcafc", "loss_sum": 12.016853332519531, "target_tokens": 92}
+{"event": "forward_reserved", "sequence": 125, "role": "dev", "id_sha256": "a77f9410ceafd54ee5695a4b6c80781a170c662b0d3560a653e3497c4c6cdf1d"}
+{"event": "forward_completed", "sequence": 125, "role": "dev", "id_sha256": "a77f9410ceafd54ee5695a4b6c80781a170c662b0d3560a653e3497c4c6cdf1d", "loss_sum": 4.084558010101318, "target_tokens": 70}
+{"event": "forward_reserved", "sequence": 126, "role": "dev", "id_sha256": "a8e1ab8726ce31c4a9146a14cd0dbd41041e4aaed80debe99223ad01ee7502d3"}
+{"event": "forward_completed", "sequence": 126, "role": "dev", "id_sha256": "a8e1ab8726ce31c4a9146a14cd0dbd41041e4aaed80debe99223ad01ee7502d3", "loss_sum": 1.1985409259796143, "target_tokens": 79}
+{"event": "forward_reserved", "sequence": 127, "role": "dev", "id_sha256": "a9fb3c92a0e9726d0f3eea88a56f1bd86d6eb7e36205197a4481db46a1f4d083"}
+{"event": "forward_completed", "sequence": 127, "role": "dev", "id_sha256": "a9fb3c92a0e9726d0f3eea88a56f1bd86d6eb7e36205197a4481db46a1f4d083", "loss_sum": 1.782434105873108, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 128, "role": "dev", "id_sha256": "ab1f089a70d3f18e1fdaf6a93edd782ecb472b2836bc38819f7f55e02fe4f75c"}
+{"event": "forward_completed", "sequence": 128, "role": "dev", "id_sha256": "ab1f089a70d3f18e1fdaf6a93edd782ecb472b2836bc38819f7f55e02fe4f75c", "loss_sum": 51.24710464477539, "target_tokens": 116}
+{"event": "forward_reserved", "sequence": 129, "role": "dev", "id_sha256": "ae0d94b16c038f88829de5999914d913c122bd7217395eaa189c097b48029fec"}
+{"event": "forward_completed", "sequence": 129, "role": "dev", "id_sha256": "ae0d94b16c038f88829de5999914d913c122bd7217395eaa189c097b48029fec", "loss_sum": 0.6652947068214417, "target_tokens": 90}
+{"event": "forward_reserved", "sequence": 130, "role": "dev", "id_sha256": "ae14c2f5a83bb403c25b5aa07d822ea8c82e48c56113484a9c002232bb18b70f"}
+{"event": "forward_completed", "sequence": 130, "role": "dev", "id_sha256": "ae14c2f5a83bb403c25b5aa07d822ea8c82e48c56113484a9c002232bb18b70f", "loss_sum": 21.550521850585938, "target_tokens": 200}
+{"event": "forward_reserved", "sequence": 131, "role": "dev", "id_sha256": "ae4ad85cf9a07838754e042bc1ae4f73282abf194ce1af989921221c890c983a"}
+{"event": "forward_completed", "sequence": 131, "role": "dev", "id_sha256": "ae4ad85cf9a07838754e042bc1ae4f73282abf194ce1af989921221c890c983a", "loss_sum": 13.339240074157715, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 132, "role": "dev", "id_sha256": "af2e716f94e9d044247d1f2dc9834c85ba849f990bb72d9c72a2cd90848c9637"}
+{"event": "forward_completed", "sequence": 132, "role": "dev", "id_sha256": "af2e716f94e9d044247d1f2dc9834c85ba849f990bb72d9c72a2cd90848c9637", "loss_sum": 2.514346122741699, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 133, "role": "dev", "id_sha256": "b04cf7d3d7152d6acf248fd1fefb40ad88ebf8a51d457735b5ba1232ababed54"}
+{"event": "forward_completed", "sequence": 133, "role": "dev", "id_sha256": "b04cf7d3d7152d6acf248fd1fefb40ad88ebf8a51d457735b5ba1232ababed54", "loss_sum": 1.7262071371078491, "target_tokens": 110}
+{"event": "forward_reserved", "sequence": 134, "role": "dev", "id_sha256": "b097cdf4005bdf859ee7af15b74bab780010fe208588fc6278d97c5c79d45e07"}
+{"event": "forward_completed", "sequence": 134, "role": "dev", "id_sha256": "b097cdf4005bdf859ee7af15b74bab780010fe208588fc6278d97c5c79d45e07", "loss_sum": 35.79994201660156, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 135, "role": "dev", "id_sha256": "b1b0cfb12e6ed12e12a5e0b4aa08f8c829e5defe299153af8b26bb188be0178c"}
+{"event": "forward_completed", "sequence": 135, "role": "dev", "id_sha256": "b1b0cfb12e6ed12e12a5e0b4aa08f8c829e5defe299153af8b26bb188be0178c", "loss_sum": 0.2091163545846939, "target_tokens": 50}
+{"event": "forward_reserved", "sequence": 136, "role": "dev", "id_sha256": "b313bb8348116bb82106b2641f34b86b6ce014605a092e865a9360114c69a69c"}
+{"event": "forward_completed", "sequence": 136, "role": "dev", "id_sha256": "b313bb8348116bb82106b2641f34b86b6ce014605a092e865a9360114c69a69c", "loss_sum": 0.12706248462200165, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 137, "role": "dev", "id_sha256": "b34d2ea5aff7449c2f7877bdb0bdb57a42d821c64aeb5f0ea39663b361a39821"}
+{"event": "forward_completed", "sequence": 137, "role": "dev", "id_sha256": "b34d2ea5aff7449c2f7877bdb0bdb57a42d821c64aeb5f0ea39663b361a39821", "loss_sum": 2.370854616165161, "target_tokens": 144}
+{"event": "forward_reserved", "sequence": 138, "role": "dev", "id_sha256": "b5286000c3d6d6d2eba90519bb321f0e02c353991bba9351975b2c8e19f4a7a8"}
+{"event": "forward_completed", "sequence": 138, "role": "dev", "id_sha256": "b5286000c3d6d6d2eba90519bb321f0e02c353991bba9351975b2c8e19f4a7a8", "loss_sum": 2.35117506980896, "target_tokens": 55}
+{"event": "forward_reserved", "sequence": 139, "role": "dev", "id_sha256": "b7475cf24a081a9bf2ff0857f6becf6c2a9a68f6822cc3d6e51cae34f9876b10"}
+{"event": "forward_completed", "sequence": 139, "role": "dev", "id_sha256": "b7475cf24a081a9bf2ff0857f6becf6c2a9a68f6822cc3d6e51cae34f9876b10", "loss_sum": 1.8917735815048218, "target_tokens": 101}
+{"event": "forward_reserved", "sequence": 140, "role": "dev", "id_sha256": "bab7bdffe6e81c0789c450327b33bb12cce3f01bb7690798ffed27c26d5382e0"}
+{"event": "forward_completed", "sequence": 140, "role": "dev", "id_sha256": "bab7bdffe6e81c0789c450327b33bb12cce3f01bb7690798ffed27c26d5382e0", "loss_sum": 10.901758193969727, "target_tokens": 66}
+{"event": "forward_reserved", "sequence": 141, "role": "dev", "id_sha256": "bb3bac54ba15ec4917530dc5b7879957f7b7485ba69d4ed3b40bac8a731f89f9"}
+{"event": "forward_completed", "sequence": 141, "role": "dev", "id_sha256": "bb3bac54ba15ec4917530dc5b7879957f7b7485ba69d4ed3b40bac8a731f89f9", "loss_sum": 2.891911745071411, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 142, "role": "dev", "id_sha256": "bc9749eaa40fb45dbf3f2e555428c6d06edde058921560e3352f759e1405956c"}
+{"event": "forward_completed", "sequence": 142, "role": "dev", "id_sha256": "bc9749eaa40fb45dbf3f2e555428c6d06edde058921560e3352f759e1405956c", "loss_sum": 0.43389883637428284, "target_tokens": 57}
+{"event": "forward_reserved", "sequence": 143, "role": "dev", "id_sha256": "bcc6706d435666dc5cc26057beee02323e5ab86f44bcb9ce14216812601ce142"}
+{"event": "forward_completed", "sequence": 143, "role": "dev", "id_sha256": "bcc6706d435666dc5cc26057beee02323e5ab86f44bcb9ce14216812601ce142", "loss_sum": 55.22658157348633, "target_tokens": 176}
+{"event": "forward_reserved", "sequence": 144, "role": "dev", "id_sha256": "bd11029ae2dd5411c7c16e9a77957356f9be1c991ded88c832f6879e25fd3008"}
+{"event": "forward_completed", "sequence": 144, "role": "dev", "id_sha256": "bd11029ae2dd5411c7c16e9a77957356f9be1c991ded88c832f6879e25fd3008", "loss_sum": 0.6517917513847351, "target_tokens": 88}
+{"event": "forward_reserved", "sequence": 145, "role": "dev", "id_sha256": "be1c1790b587e13c1306c09c4c584f14d1f80a89ee5b2cdaf3c0e96ac7213d03"}
+{"event": "forward_completed", "sequence": 145, "role": "dev", "id_sha256": "be1c1790b587e13c1306c09c4c584f14d1f80a89ee5b2cdaf3c0e96ac7213d03", "loss_sum": 21.36948585510254, "target_tokens": 155}
+{"event": "forward_reserved", "sequence": 146, "role": "dev", "id_sha256": "be288085307679105aeb91007e6d5122d35746327b1764ade76585ca4815748a"}
+{"event": "forward_completed", "sequence": 146, "role": "dev", "id_sha256": "be288085307679105aeb91007e6d5122d35746327b1764ade76585ca4815748a", "loss_sum": 0.1523745059967041, "target_tokens": 44}
+{"event": "forward_reserved", "sequence": 147, "role": "dev", "id_sha256": "c09699e0787828bf6a3a52996c138dc04b040c34a0e366f02fe53434bcdc9762"}
+{"event": "forward_completed", "sequence": 147, "role": "dev", "id_sha256": "c09699e0787828bf6a3a52996c138dc04b040c34a0e366f02fe53434bcdc9762", "loss_sum": 0.6610698699951172, "target_tokens": 83}
+{"event": "forward_reserved", "sequence": 148, "role": "dev", "id_sha256": "c1d9a443ca41fbff245c50a2d194dffa9d47245bd004d55b6ad54bf5b44249c1"}
+{"event": "forward_completed", "sequence": 148, "role": "dev", "id_sha256": "c1d9a443ca41fbff245c50a2d194dffa9d47245bd004d55b6ad54bf5b44249c1", "loss_sum": 0.7127138376235962, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 149, "role": "dev", "id_sha256": "c31325897305bf4a7dd08e78fd97d0f44c312ac41dcd5d0b93bc8315db677554"}
+{"event": "forward_completed", "sequence": 149, "role": "dev", "id_sha256": "c31325897305bf4a7dd08e78fd97d0f44c312ac41dcd5d0b93bc8315db677554", "loss_sum": 12.243088722229004, "target_tokens": 106}
+{"event": "forward_reserved", "sequence": 150, "role": "dev", "id_sha256": "c67def52ff6343aa3f716225c4c3bd69b6f19657b5bf374edf27ed9da08d9b03"}
+{"event": "forward_completed", "sequence": 150, "role": "dev", "id_sha256": "c67def52ff6343aa3f716225c4c3bd69b6f19657b5bf374edf27ed9da08d9b03", "loss_sum": 207.4456787109375, "target_tokens": 434}
+{"event": "forward_reserved", "sequence": 151, "role": "dev", "id_sha256": "c972322f2d41c74ffe0cb7888479741f1473f969ec104ae1d46535608695cdbf"}
+{"event": "forward_completed", "sequence": 151, "role": "dev", "id_sha256": "c972322f2d41c74ffe0cb7888479741f1473f969ec104ae1d46535608695cdbf", "loss_sum": 1.4808164834976196, "target_tokens": 55}
+{"event": "forward_reserved", "sequence": 152, "role": "dev", "id_sha256": "cce9f8156edc4d33353a24a06e17d22e751fb1662f9d71630058f870d9a850ad"}
+{"event": "forward_completed", "sequence": 152, "role": "dev", "id_sha256": "cce9f8156edc4d33353a24a06e17d22e751fb1662f9d71630058f870d9a850ad", "loss_sum": 88.33241271972656, "target_tokens": 61}
+{"event": "forward_reserved", "sequence": 153, "role": "dev", "id_sha256": "ce6a9ef96a91c4f8a140ae0c8ab5f4d9320bc1c82187ad2881bbec5807c3d321"}
+{"event": "forward_completed", "sequence": 153, "role": "dev", "id_sha256": "ce6a9ef96a91c4f8a140ae0c8ab5f4d9320bc1c82187ad2881bbec5807c3d321", "loss_sum": 1.086751103401184, "target_tokens": 112}
+{"event": "forward_reserved", "sequence": 154, "role": "dev", "id_sha256": "ced3c1ead2708788d717db5beeedffa199228b4ccf27a5f36dd98c2f0f96a29d"}
+{"event": "forward_completed", "sequence": 154, "role": "dev", "id_sha256": "ced3c1ead2708788d717db5beeedffa199228b4ccf27a5f36dd98c2f0f96a29d", "loss_sum": 3.138136386871338, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 155, "role": "dev", "id_sha256": "cf29cf3f8749093052f53ae74737d8e5ee9a4697ff99991295c961de293b3a2b"}
+{"event": "forward_completed", "sequence": 155, "role": "dev", "id_sha256": "cf29cf3f8749093052f53ae74737d8e5ee9a4697ff99991295c961de293b3a2b", "loss_sum": 14.013490676879883, "target_tokens": 57}
+{"event": "forward_reserved", "sequence": 156, "role": "dev", "id_sha256": "d04c7b4b1084f30d21c7b4382a230c1c48af91058bd0d02c94a890aebb321561"}
+{"event": "forward_completed", "sequence": 156, "role": "dev", "id_sha256": "d04c7b4b1084f30d21c7b4382a230c1c48af91058bd0d02c94a890aebb321561", "loss_sum": 9.381279945373535, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 157, "role": "dev", "id_sha256": "d05d97bc1b65968a8b30614344601639b84031c43f41a44546fc19b2931fb22d"}
+{"event": "forward_completed", "sequence": 157, "role": "dev", "id_sha256": "d05d97bc1b65968a8b30614344601639b84031c43f41a44546fc19b2931fb22d", "loss_sum": 8.238433837890625, "target_tokens": 50}
+{"event": "forward_reserved", "sequence": 158, "role": "dev", "id_sha256": "d14482b36dba2b4db928ec6dff33f6143fb8562625821d5ba21d48f89dddcb35"}
+{"event": "forward_completed", "sequence": 158, "role": "dev", "id_sha256": "d14482b36dba2b4db928ec6dff33f6143fb8562625821d5ba21d48f89dddcb35", "loss_sum": 20.852331161499023, "target_tokens": 167}
+{"event": "forward_reserved", "sequence": 159, "role": "dev", "id_sha256": "d189fa37f48f3241e62bd84d5c5eefbcb9a8f803f2dd49cb6bff71dfc8b2d83f"}
+{"event": "forward_completed", "sequence": 159, "role": "dev", "id_sha256": "d189fa37f48f3241e62bd84d5c5eefbcb9a8f803f2dd49cb6bff71dfc8b2d83f", "loss_sum": 0.9346088171005249, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 160, "role": "dev", "id_sha256": "d19af14ae658c6892bdc919094b9fc564a7c510e28475f13cd48b08d8359264e"}
+{"event": "forward_completed", "sequence": 160, "role": "dev", "id_sha256": "d19af14ae658c6892bdc919094b9fc564a7c510e28475f13cd48b08d8359264e", "loss_sum": 0.40042537450790405, "target_tokens": 59}
+{"event": "forward_reserved", "sequence": 161, "role": "dev", "id_sha256": "d1ec2b22a37ef73f838fcfca1388a0455bb796c316d76e5d69fc4bdcc43502ef"}
+{"event": "forward_completed", "sequence": 161, "role": "dev", "id_sha256": "d1ec2b22a37ef73f838fcfca1388a0455bb796c316d76e5d69fc4bdcc43502ef", "loss_sum": 5.222187042236328, "target_tokens": 77}
+{"event": "forward_reserved", "sequence": 162, "role": "dev", "id_sha256": "d3ff8c65e0fa3abd8f9b96d7470806f5d8eeb9a18eef896ef2a6cca9b91a9c06"}
+{"event": "forward_completed", "sequence": 162, "role": "dev", "id_sha256": "d3ff8c65e0fa3abd8f9b96d7470806f5d8eeb9a18eef896ef2a6cca9b91a9c06", "loss_sum": 0.1206710934638977, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 163, "role": "dev", "id_sha256": "d71918930078ce119fbd6fac01baa7a2be424ff1154f1aa737f3375e8ba9d41f"}
+{"event": "forward_completed", "sequence": 163, "role": "dev", "id_sha256": "d71918930078ce119fbd6fac01baa7a2be424ff1154f1aa737f3375e8ba9d41f", "loss_sum": 0.41819119453430176, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 164, "role": "dev", "id_sha256": "d76e7377df86699414902884cb12776cc6909479786616d2a77869f154d47617"}
+{"event": "forward_completed", "sequence": 164, "role": "dev", "id_sha256": "d76e7377df86699414902884cb12776cc6909479786616d2a77869f154d47617", "loss_sum": 7.892605304718018, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 165, "role": "dev", "id_sha256": "d7b7c448ab4bae96d924cc431d7fbb2cd52685e90b32216dc28b121210170586"}
+{"event": "forward_completed", "sequence": 165, "role": "dev", "id_sha256": "d7b7c448ab4bae96d924cc431d7fbb2cd52685e90b32216dc28b121210170586", "loss_sum": 0.8701955676078796, "target_tokens": 68}
+{"event": "forward_reserved", "sequence": 166, "role": "dev", "id_sha256": "d9bd1f468547dba9f52bde1f3c71d92c521409c3c70fbc6de7c2f97ea38d807f"}
+{"event": "forward_completed", "sequence": 166, "role": "dev", "id_sha256": "d9bd1f468547dba9f52bde1f3c71d92c521409c3c70fbc6de7c2f97ea38d807f", "loss_sum": 1.2317531108856201, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 167, "role": "dev", "id_sha256": "decd15494dcd2f33dd965cf9baf40d3d4a61097c8e33c156e5348c6173049500"}
+{"event": "forward_completed", "sequence": 167, "role": "dev", "id_sha256": "decd15494dcd2f33dd965cf9baf40d3d4a61097c8e33c156e5348c6173049500", "loss_sum": 12.04636287689209, "target_tokens": 82}
+{"event": "forward_reserved", "sequence": 168, "role": "dev", "id_sha256": "df8c55c4b0f3d8bc892df15198ac517d422d8336a7c9309d625463b530601369"}
+{"event": "forward_completed", "sequence": 168, "role": "dev", "id_sha256": "df8c55c4b0f3d8bc892df15198ac517d422d8336a7c9309d625463b530601369", "loss_sum": 0.17617729306221008, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 169, "role": "dev", "id_sha256": "dfdb9febd01b5082d7e1255dd7942b5cf7434dac7af16a3112b3387ad6061273"}
+{"event": "forward_completed", "sequence": 169, "role": "dev", "id_sha256": "dfdb9febd01b5082d7e1255dd7942b5cf7434dac7af16a3112b3387ad6061273", "loss_sum": 1.0583560466766357, "target_tokens": 86}
+{"event": "forward_reserved", "sequence": 170, "role": "dev", "id_sha256": "e0698c26b2ddc42dac459931741371095bcb94b7fa62fd4b296520fe6c5d1b02"}
+{"event": "forward_completed", "sequence": 170, "role": "dev", "id_sha256": "e0698c26b2ddc42dac459931741371095bcb94b7fa62fd4b296520fe6c5d1b02", "loss_sum": 202.01893615722656, "target_tokens": 121}
+{"event": "forward_reserved", "sequence": 171, "role": "dev", "id_sha256": "e07c7bbcff9a867adfe26d1ab13b0bf16e00885cbb198d3a69569ca8ed26ce1d"}
+{"event": "forward_completed", "sequence": 171, "role": "dev", "id_sha256": "e07c7bbcff9a867adfe26d1ab13b0bf16e00885cbb198d3a69569ca8ed26ce1d", "loss_sum": 76.028076171875, "target_tokens": 83}
+{"event": "forward_reserved", "sequence": 172, "role": "dev", "id_sha256": "e1d986d903f4fcd87df7f5f0c48d8145e04720d26ee479ba614002a8b4dc3184"}
+{"event": "forward_completed", "sequence": 172, "role": "dev", "id_sha256": "e1d986d903f4fcd87df7f5f0c48d8145e04720d26ee479ba614002a8b4dc3184", "loss_sum": 1.9392473697662354, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 173, "role": "dev", "id_sha256": "e46df88aa69fe21eec7517df67272a1061f6d5ed00df2686f1e1edba5ee0986d"}
+{"event": "forward_completed", "sequence": 173, "role": "dev", "id_sha256": "e46df88aa69fe21eec7517df67272a1061f6d5ed00df2686f1e1edba5ee0986d", "loss_sum": 1.1224284172058105, "target_tokens": 88}
+{"event": "forward_reserved", "sequence": 174, "role": "dev", "id_sha256": "e4de5c9899482285e74eb1f30d64e48fc9dd7472bd5204162149faf059b7c7ec"}
+{"event": "forward_completed", "sequence": 174, "role": "dev", "id_sha256": "e4de5c9899482285e74eb1f30d64e48fc9dd7472bd5204162149faf059b7c7ec", "loss_sum": 0.9649760127067566, "target_tokens": 77}
+{"event": "forward_reserved", "sequence": 175, "role": "dev", "id_sha256": "e59043416db08d026cf6766089909af38b08df0d5d9d9338764075b34aee590a"}
+{"event": "forward_completed", "sequence": 175, "role": "dev", "id_sha256": "e59043416db08d026cf6766089909af38b08df0d5d9d9338764075b34aee590a", "loss_sum": 1.947492003440857, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 176, "role": "dev", "id_sha256": "e61ca27a93c6e70f66bff6bd6302b529d24d609fe0bf51f3d41280d793a5c25b"}
+{"event": "forward_completed", "sequence": 176, "role": "dev", "id_sha256": "e61ca27a93c6e70f66bff6bd6302b529d24d609fe0bf51f3d41280d793a5c25b", "loss_sum": 0.41262322664260864, "target_tokens": 60}
+{"event": "forward_reserved", "sequence": 177, "role": "dev", "id_sha256": "e691e5e100643ec08f33986d1c85df8950dc737c09b246db8a365399b53a633f"}
+{"event": "forward_completed", "sequence": 177, "role": "dev", "id_sha256": "e691e5e100643ec08f33986d1c85df8950dc737c09b246db8a365399b53a633f", "loss_sum": 180.5915985107422, "target_tokens": 202}
+{"event": "forward_reserved", "sequence": 178, "role": "dev", "id_sha256": "e6ea6e26d4ee9956e9757360ff8e30146e034977baab29eaadea29f2cfc60790"}
+{"event": "forward_completed", "sequence": 178, "role": "dev", "id_sha256": "e6ea6e26d4ee9956e9757360ff8e30146e034977baab29eaadea29f2cfc60790", "loss_sum": 0.9674478769302368, "target_tokens": 74}
+{"event": "forward_reserved", "sequence": 179, "role": "dev", "id_sha256": "e759c35707c408b0472137aebd63df7e8c454e5078b664cd6899616605f250bc"}
+{"event": "forward_completed", "sequence": 179, "role": "dev", "id_sha256": "e759c35707c408b0472137aebd63df7e8c454e5078b664cd6899616605f250bc", "loss_sum": 1.669921636581421, "target_tokens": 41}
+{"event": "forward_reserved", "sequence": 180, "role": "dev", "id_sha256": "e76e3a0f7ca68ab3cdc4762dbd170fc7999d813cebe754f5097ca2f54f132ce3"}
+{"event": "forward_completed", "sequence": 180, "role": "dev", "id_sha256": "e76e3a0f7ca68ab3cdc4762dbd170fc7999d813cebe754f5097ca2f54f132ce3", "loss_sum": 1.8005784749984741, "target_tokens": 86}
+{"event": "forward_reserved", "sequence": 181, "role": "dev", "id_sha256": "e7805f3441e0771e9c000e5150aef55616d554953f882757dc621ea2114c1463"}
+{"event": "forward_completed", "sequence": 181, "role": "dev", "id_sha256": "e7805f3441e0771e9c000e5150aef55616d554953f882757dc621ea2114c1463", "loss_sum": 0.11623047292232513, "target_tokens": 56}
+{"event": "forward_reserved", "sequence": 182, "role": "dev", "id_sha256": "e897c464f11fa0f22d79b45f240d7714050ab8e1761926c538b30995d0301ace"}
+{"event": "forward_completed", "sequence": 182, "role": "dev", "id_sha256": "e897c464f11fa0f22d79b45f240d7714050ab8e1761926c538b30995d0301ace", "loss_sum": 1.7963919639587402, "target_tokens": 61}
+{"event": "forward_reserved", "sequence": 183, "role": "dev", "id_sha256": "ea568a57f458352060835ea6fab5c216d28a6bd0a60f3207573f73c5fdc685bc"}
+{"event": "forward_completed", "sequence": 183, "role": "dev", "id_sha256": "ea568a57f458352060835ea6fab5c216d28a6bd0a60f3207573f73c5fdc685bc", "loss_sum": 0.10452253371477127, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 184, "role": "dev", "id_sha256": "ea73cd36b9e65524570cb666c0953351eee8c320530ce38b401aeb9e96a63334"}
+{"event": "forward_completed", "sequence": 184, "role": "dev", "id_sha256": "ea73cd36b9e65524570cb666c0953351eee8c320530ce38b401aeb9e96a63334", "loss_sum": 21.376388549804688, "target_tokens": 114}
+{"event": "forward_reserved", "sequence": 185, "role": "dev", "id_sha256": "eb22e9837b3d2f22ca9c4fef29b034b3daa64d10b8a65d5a3c0e01876e11faef"}
+{"event": "forward_completed", "sequence": 185, "role": "dev", "id_sha256": "eb22e9837b3d2f22ca9c4fef29b034b3daa64d10b8a65d5a3c0e01876e11faef", "loss_sum": 36.533790588378906, "target_tokens": 40}
+{"event": "forward_reserved", "sequence": 186, "role": "dev", "id_sha256": "ecbb4503d36c237780bb0e3a1973ddb91dec096234dc962740d2de79c46c83da"}
+{"event": "forward_completed", "sequence": 186, "role": "dev", "id_sha256": "ecbb4503d36c237780bb0e3a1973ddb91dec096234dc962740d2de79c46c83da", "loss_sum": 51.17185592651367, "target_tokens": 108}
+{"event": "forward_reserved", "sequence": 187, "role": "dev", "id_sha256": "eccc628a81ce4b272976f798b8ca51387c8c46c0b9302b3f0a8597a7b3fba65f"}
+{"event": "forward_completed", "sequence": 187, "role": "dev", "id_sha256": "eccc628a81ce4b272976f798b8ca51387c8c46c0b9302b3f0a8597a7b3fba65f", "loss_sum": 1.6698986291885376, "target_tokens": 70}
+{"event": "forward_reserved", "sequence": 188, "role": "dev", "id_sha256": "ee5f89e734aa95194605e532958186ac1915bf7f84fe3ad36b232d278efa95ac"}
+{"event": "forward_completed", "sequence": 188, "role": "dev", "id_sha256": "ee5f89e734aa95194605e532958186ac1915bf7f84fe3ad36b232d278efa95ac", "loss_sum": 0.7919819951057434, "target_tokens": 82}
+{"event": "forward_reserved", "sequence": 189, "role": "dev", "id_sha256": "efc3d32042e29b8fcbeb6ad7512b5ce108f9f3514ba5a7d14c1f2a2556c5e371"}
+{"event": "forward_completed", "sequence": 189, "role": "dev", "id_sha256": "efc3d32042e29b8fcbeb6ad7512b5ce108f9f3514ba5a7d14c1f2a2556c5e371", "loss_sum": 0.641923189163208, "target_tokens": 60}
+{"event": "forward_reserved", "sequence": 190, "role": "dev", "id_sha256": "f25ff82b5f9fc670a0190c59601d8c508edc2cd550932afa2aad459aa59b86ca"}
+{"event": "forward_completed", "sequence": 190, "role": "dev", "id_sha256": "f25ff82b5f9fc670a0190c59601d8c508edc2cd550932afa2aad459aa59b86ca", "loss_sum": 1.5961052179336548, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 191, "role": "dev", "id_sha256": "f370ca8a327d9e1042430d0576b9dd79fee71d9eecff06258dfd3de1610b2540"}
+{"event": "forward_completed", "sequence": 191, "role": "dev", "id_sha256": "f370ca8a327d9e1042430d0576b9dd79fee71d9eecff06258dfd3de1610b2540", "loss_sum": 0.11723366379737854, "target_tokens": 48}
+{"event": "forward_reserved", "sequence": 192, "role": "dev", "id_sha256": "f4ab603b13265c5bb9fd33bdd070424465a0755e9b3078cb714ff911879d9e47"}
+{"event": "forward_completed", "sequence": 192, "role": "dev", "id_sha256": "f4ab603b13265c5bb9fd33bdd070424465a0755e9b3078cb714ff911879d9e47", "loss_sum": 0.7250093221664429, "target_tokens": 90}
+{"event": "forward_reserved", "sequence": 193, "role": "dev", "id_sha256": "f4ceb82fa7437a73d4909a48d04a9b53db0d7ddc6498322cc851127bc943d0f7"}
+{"event": "forward_completed", "sequence": 193, "role": "dev", "id_sha256": "f4ceb82fa7437a73d4909a48d04a9b53db0d7ddc6498322cc851127bc943d0f7", "loss_sum": 0.8261987566947937, "target_tokens": 97}
+{"event": "forward_reserved", "sequence": 194, "role": "dev", "id_sha256": "faf0254263992f11bef361b4ed7b990fc43e396ed5e444f9b4917bca4b40a695"}
+{"event": "forward_completed", "sequence": 194, "role": "dev", "id_sha256": "faf0254263992f11bef361b4ed7b990fc43e396ed5e444f9b4917bca4b40a695", "loss_sum": 0.2019978016614914, "target_tokens": 44}
+{"event": "forward_reserved", "sequence": 195, "role": "dev", "id_sha256": "fdfba4038d4e280aa4710e4821b01ecf2f2d04d0186409abf1200bb391ba4ad5"}
+{"event": "forward_completed", "sequence": 195, "role": "dev", "id_sha256": "fdfba4038d4e280aa4710e4821b01ecf2f2d04d0186409abf1200bb391ba4ad5", "loss_sum": 0.2877117693424225, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 196, "role": "dev", "id_sha256": "fe643d2b3c7c2599616d77ad46d9ceda98884cd2abdffc34fcb07bf854588770"}
+{"event": "forward_completed", "sequence": 196, "role": "dev", "id_sha256": "fe643d2b3c7c2599616d77ad46d9ceda98884cd2abdffc34fcb07bf854588770", "loss_sum": 0.6595989465713501, "target_tokens": 76}
+{"event": "forward_reserved", "sequence": 197, "role": "dev", "id_sha256": "fefd4b0fbe0c7ef4aec4a05e229cc44a0946e421d6cb4dfc3bfb6392a2002ee2"}
+{"event": "forward_completed", "sequence": 197, "role": "dev", "id_sha256": "fefd4b0fbe0c7ef4aec4a05e229cc44a0946e421d6cb4dfc3bfb6392a2002ee2", "loss_sum": 0.18902049958705902, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 198, "role": "val", "id_sha256": "b6067eb9c6213d0d7804646b4a07fe8850e3c484d3ad2b51e1616fabbbe90052"}
+{"event": "forward_completed", "sequence": 198, "role": "val", "id_sha256": "b6067eb9c6213d0d7804646b4a07fe8850e3c484d3ad2b51e1616fabbbe90052", "loss_sum": 0.6731415390968323, "target_tokens": 80}
+{"event": "forward_reserved", "sequence": 199, "role": "val", "id_sha256": "7830791e77e11904e84b1176471bacd98f1feaa748932bcf13928828832f941d"}
+{"event": "forward_completed", "sequence": 199, "role": "val", "id_sha256": "7830791e77e11904e84b1176471bacd98f1feaa748932bcf13928828832f941d", "loss_sum": 12.849987030029297, "target_tokens": 76}
+{"event": "forward_reserved", "sequence": 200, "role": "val", "id_sha256": "053ba2e463e4636802ec30dc209adf524213221ac970e788904c285d26ce8d6f"}
+{"event": "forward_completed", "sequence": 200, "role": "val", "id_sha256": "053ba2e463e4636802ec30dc209adf524213221ac970e788904c285d26ce8d6f", "loss_sum": 0.38501718640327454, "target_tokens": 95}
+{"event": "forward_reserved", "sequence": 201, "role": "val", "id_sha256": "6e6a809966533cfbde1d51ed7c5e0a647172796aab51f7208aa0fe776184ac83"}
+{"event": "forward_completed", "sequence": 201, "role": "val", "id_sha256": "6e6a809966533cfbde1d51ed7c5e0a647172796aab51f7208aa0fe776184ac83", "loss_sum": 0.46345582604408264, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 202, "role": "val", "id_sha256": "aac4aeec4faf6af987d160b859124ed22913f7ebb7333021ed889d2ab96687e8"}
+{"event": "forward_completed", "sequence": 202, "role": "val", "id_sha256": "aac4aeec4faf6af987d160b859124ed22913f7ebb7333021ed889d2ab96687e8", "loss_sum": 1.252972960472107, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 203, "role": "val", "id_sha256": "f56016dd5199ee715510179a5353b9879eadb65f6bc8f66481262b8d1895d6cf"}
+{"event": "forward_completed", "sequence": 203, "role": "val", "id_sha256": "f56016dd5199ee715510179a5353b9879eadb65f6bc8f66481262b8d1895d6cf", "loss_sum": 0.8118115663528442, "target_tokens": 59}
+{"event": "forward_reserved", "sequence": 204, "role": "val", "id_sha256": "14996a04f8cfb2446fc9b5c3b165141e571f2469d8a4699294f1f35e878a1ab2"}
+{"event": "forward_completed", "sequence": 204, "role": "val", "id_sha256": "14996a04f8cfb2446fc9b5c3b165141e571f2469d8a4699294f1f35e878a1ab2", "loss_sum": 27.705900192260742, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 205, "role": "val", "id_sha256": "ba20fec3957b5bb8cb6d4929823aea4cc7db5269bd7f3d45b02a955f6770e194"}
+{"event": "forward_completed", "sequence": 205, "role": "val", "id_sha256": "ba20fec3957b5bb8cb6d4929823aea4cc7db5269bd7f3d45b02a955f6770e194", "loss_sum": 13.178670883178711, "target_tokens": 61}
+{"event": "forward_reserved", "sequence": 206, "role": "val", "id_sha256": "c7c8e99ea76947c14d7aea0bf96c4a1fc8de957ddb3c45485613f8976418936e"}
+{"event": "forward_completed", "sequence": 206, "role": "val", "id_sha256": "c7c8e99ea76947c14d7aea0bf96c4a1fc8de957ddb3c45485613f8976418936e", "loss_sum": 27.89008140563965, "target_tokens": 45}
+{"event": "forward_reserved", "sequence": 207, "role": "val", "id_sha256": "e22ed1f75a05aabdfe422c54ce93ac1487279539a5e3240d6b916ed88c00b5e5"}
+{"event": "forward_completed", "sequence": 207, "role": "val", "id_sha256": "e22ed1f75a05aabdfe422c54ce93ac1487279539a5e3240d6b916ed88c00b5e5", "loss_sum": 1.7618736028671265, "target_tokens": 107}
+{"event": "forward_reserved", "sequence": 208, "role": "val", "id_sha256": "296b3e1edd04d4a266daa72219b835aaa6e27dc7b77c8a019a03f0d82f7d7c96"}
+{"event": "forward_completed", "sequence": 208, "role": "val", "id_sha256": "296b3e1edd04d4a266daa72219b835aaa6e27dc7b77c8a019a03f0d82f7d7c96", "loss_sum": 0.6743937134742737, "target_tokens": 86}
+{"event": "forward_reserved", "sequence": 209, "role": "val", "id_sha256": "04b0678150c23f0f892d04e6cbd2665683cd97ca9fc0bf2425960ce93175e10a"}
+{"event": "forward_completed", "sequence": 209, "role": "val", "id_sha256": "04b0678150c23f0f892d04e6cbd2665683cd97ca9fc0bf2425960ce93175e10a", "loss_sum": 8.88370418548584, "target_tokens": 69}
+{"event": "forward_reserved", "sequence": 210, "role": "val", "id_sha256": "66a904470cc34c7d18d2497c66074631a25a7b12fd2903f531dd80897be4e6e7"}
+{"event": "forward_completed", "sequence": 210, "role": "val", "id_sha256": "66a904470cc34c7d18d2497c66074631a25a7b12fd2903f531dd80897be4e6e7", "loss_sum": 1.9582511186599731, "target_tokens": 84}
+{"event": "forward_reserved", "sequence": 211, "role": "val", "id_sha256": "de39848c281ef7b6b20c5714102f223154f0509a1ae2b414ac809d1d2341983a"}
+{"event": "forward_completed", "sequence": 211, "role": "val", "id_sha256": "de39848c281ef7b6b20c5714102f223154f0509a1ae2b414ac809d1d2341983a", "loss_sum": 63.917911529541016, "target_tokens": 72}
+{"event": "forward_reserved", "sequence": 212, "role": "val", "id_sha256": "66450bee6ff7008dd9bc226310c87b921178bc1b60c6252373a1765d4a6983c0"}
+{"event": "forward_completed", "sequence": 212, "role": "val", "id_sha256": "66450bee6ff7008dd9bc226310c87b921178bc1b60c6252373a1765d4a6983c0", "loss_sum": 5.3710761070251465, "target_tokens": 62}
+{"event": "forward_reserved", "sequence": 213, "role": "val", "id_sha256": "d43f4482659a94437af3ce3915db3cf11e4dd8b945c70bcc810851c7253aade2"}
+{"event": "forward_completed", "sequence": 213, "role": "val", "id_sha256": "d43f4482659a94437af3ce3915db3cf11e4dd8b945c70bcc810851c7253aade2", "loss_sum": 19.964996337890625, "target_tokens": 120}
+{"event": "forward_reserved", "sequence": 214, "role": "val", "id_sha256": "7e072487892116c3f20f4b4a2451e3878c1a01e4f2ca12e4bc0cf10652577231"}
+{"event": "forward_completed", "sequence": 214, "role": "val", "id_sha256": "7e072487892116c3f20f4b4a2451e3878c1a01e4f2ca12e4bc0cf10652577231", "loss_sum": 3.351405143737793, "target_tokens": 87}
+{"event": "forward_reserved", "sequence": 215, "role": "val", "id_sha256": "c83dd530a0e30d203c7546cf52e2e85f1f9d96413deb0cab0141325ad6df9f2f"}
+{"event": "forward_completed", "sequence": 215, "role": "val", "id_sha256": "c83dd530a0e30d203c7546cf52e2e85f1f9d96413deb0cab0141325ad6df9f2f", "loss_sum": 0.8263957500457764, "target_tokens": 81}
+{"event": "forward_reserved", "sequence": 216, "role": "val", "id_sha256": "b140a86ad25d85db13ed52916af6b7034cf5eeb851761e12103e97a28ca666f6"}
+{"event": "forward_completed", "sequence": 216, "role": "val", "id_sha256": "b140a86ad25d85db13ed52916af6b7034cf5eeb851761e12103e97a28ca666f6", "loss_sum": 67.92153930664062, "target_tokens": 61}
+{"event": "forward_reserved", "sequence": 217, "role": "val", "id_sha256": "6d374e7e32edc3afbcfdb5c269d1a8c79124eb686979fd00e7df6d9914ae599e"}
+{"event": "forward_completed", "sequence": 217, "role": "val", "id_sha256": "6d374e7e32edc3afbcfdb5c269d1a8c79124eb686979fd00e7df6d9914ae599e", "loss_sum": 11.224379539489746, "target_tokens": 197}
+{"event": "forward_reserved", "sequence": 218, "role": "val", "id_sha256": "5b99fc5999fa96b2f93673246e9c68b00d6fa6c4af80fc6b6f8713e34f981293"}
+{"event": "forward_completed", "sequence": 218, "role": "val", "id_sha256": "5b99fc5999fa96b2f93673246e9c68b00d6fa6c4af80fc6b6f8713e34f981293", "loss_sum": 0.2808414697647095, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 219, "role": "val", "id_sha256": "2c63772e80c6ee116ade26d1e8516b12f7569a79a130ef2356dce076345f22aa"}
+{"event": "forward_completed", "sequence": 219, "role": "val", "id_sha256": "2c63772e80c6ee116ade26d1e8516b12f7569a79a130ef2356dce076345f22aa", "loss_sum": 337.6011047363281, "target_tokens": 447}
+{"event": "forward_reserved", "sequence": 220, "role": "val", "id_sha256": "2cc608f46c9fb5d565d1cc205a9aefbc5e9c45bbf704941f8be5ddc4f213d66b"}
+{"event": "forward_completed", "sequence": 220, "role": "val", "id_sha256": "2cc608f46c9fb5d565d1cc205a9aefbc5e9c45bbf704941f8be5ddc4f213d66b", "loss_sum": 1.4413628578186035, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 221, "role": "val", "id_sha256": "1e4ecd5e61ef2550f2bfb41e5fee55e9ca6f4555d93b36c0f93d4d6d0c7714bc"}
+{"event": "forward_completed", "sequence": 221, "role": "val", "id_sha256": "1e4ecd5e61ef2550f2bfb41e5fee55e9ca6f4555d93b36c0f93d4d6d0c7714bc", "loss_sum": 0.5713813304901123, "target_tokens": 53}
+{"event": "forward_reserved", "sequence": 222, "role": "val", "id_sha256": "2194bc6d0db1b6a835d0766bf971ab3bad57f256d4b0aafb5ce9523a1ce1428d"}
+{"event": "forward_completed", "sequence": 222, "role": "val", "id_sha256": "2194bc6d0db1b6a835d0766bf971ab3bad57f256d4b0aafb5ce9523a1ce1428d", "loss_sum": 4.445337295532227, "target_tokens": 85}
+{"event": "forward_reserved", "sequence": 223, "role": "val", "id_sha256": "4cdca9b91131f8fe213be6f006a0ce6a7f19c5d36536daff9036f7c358a76800"}
+{"event": "forward_completed", "sequence": 223, "role": "val", "id_sha256": "4cdca9b91131f8fe213be6f006a0ce6a7f19c5d36536daff9036f7c358a76800", "loss_sum": 5.059682369232178, "target_tokens": 88}
+{"event": "forward_reserved", "sequence": 224, "role": "val", "id_sha256": "210e71e29ef92017187cd9b8c566e5e97b17d065f83732b77b81887738a76b5e"}
+{"event": "forward_completed", "sequence": 224, "role": "val", "id_sha256": "210e71e29ef92017187cd9b8c566e5e97b17d065f83732b77b81887738a76b5e", "loss_sum": 55.84400939941406, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 225, "role": "val", "id_sha256": "0791a48526e3689b7b3060a0a267267c3af8b3bdbfbaabbf4b0423fd440b0f02"}
+{"event": "forward_completed", "sequence": 225, "role": "val", "id_sha256": "0791a48526e3689b7b3060a0a267267c3af8b3bdbfbaabbf4b0423fd440b0f02", "loss_sum": 135.1136932373047, "target_tokens": 112}
+{"event": "forward_reserved", "sequence": 226, "role": "val", "id_sha256": "8e0bee9537c7d7f7e41c34b82df5647a513ad2da6ad1dd3d060f1190a5541a9a"}
+{"event": "forward_completed", "sequence": 226, "role": "val", "id_sha256": "8e0bee9537c7d7f7e41c34b82df5647a513ad2da6ad1dd3d060f1190a5541a9a", "loss_sum": 2.2791476249694824, "target_tokens": 94}
+{"event": "forward_reserved", "sequence": 227, "role": "val", "id_sha256": "d7c9910b7967b3e1dde0f13186cd1e3ce6b3f3c36879daa4f3941313ca08e2b8"}
+{"event": "forward_completed", "sequence": 227, "role": "val", "id_sha256": "d7c9910b7967b3e1dde0f13186cd1e3ce6b3f3c36879daa4f3941313ca08e2b8", "loss_sum": 4.173116207122803, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 228, "role": "val", "id_sha256": "93c1575d64a282edac04567ae46483559fd6a960dc93039aa3ff3854ee760c69"}
+{"event": "forward_completed", "sequence": 228, "role": "val", "id_sha256": "93c1575d64a282edac04567ae46483559fd6a960dc93039aa3ff3854ee760c69", "loss_sum": 5.84520959854126, "target_tokens": 107}
+{"event": "forward_reserved", "sequence": 229, "role": "val", "id_sha256": "bbe05ee9a3464034504f66c578936d32417c73985fdb18fa5400945853857b35"}
+{"event": "forward_completed", "sequence": 229, "role": "val", "id_sha256": "bbe05ee9a3464034504f66c578936d32417c73985fdb18fa5400945853857b35", "loss_sum": 1.1279373168945312, "target_tokens": 51}
+{"event": "forward_reserved", "sequence": 230, "role": "val", "id_sha256": "8ab47fd29eceae0318f74edad45de358f4760b232c2314edcf52fe2101797744"}
+{"event": "forward_completed", "sequence": 230, "role": "val", "id_sha256": "8ab47fd29eceae0318f74edad45de358f4760b232c2314edcf52fe2101797744", "loss_sum": 226.6636199951172, "target_tokens": 167}
+{"event": "forward_reserved", "sequence": 231, "role": "val", "id_sha256": "6ab1d0c745f82ef0f55df3492f7de60ae9d25fea5ce1c2ef56370466ec78ecb6"}
+{"event": "forward_completed", "sequence": 231, "role": "val", "id_sha256": "6ab1d0c745f82ef0f55df3492f7de60ae9d25fea5ce1c2ef56370466ec78ecb6", "loss_sum": 15.037712097167969, "target_tokens": 104}
+{"event": "forward_reserved", "sequence": 232, "role": "val", "id_sha256": "9b8d283cfe0e8b984606579e83ec2f834bd400248f6bf4a37734a5b3e75f47e5"}
+{"event": "forward_completed", "sequence": 232, "role": "val", "id_sha256": "9b8d283cfe0e8b984606579e83ec2f834bd400248f6bf4a37734a5b3e75f47e5", "loss_sum": 297.06353759765625, "target_tokens": 241}
+{"event": "forward_reserved", "sequence": 233, "role": "val", "id_sha256": "b5d890e522ecfd62ec0b6b2ebeeb40ee09b727099b7c4af231f5129c67fc08b5"}
+{"event": "forward_completed", "sequence": 233, "role": "val", "id_sha256": "b5d890e522ecfd62ec0b6b2ebeeb40ee09b727099b7c4af231f5129c67fc08b5", "loss_sum": 0.7527127265930176, "target_tokens": 41}
+{"event": "forward_reserved", "sequence": 234, "role": "val", "id_sha256": "0407a9fcc1c42f45119a5e3e0986dda8af2d7324a3bfa650a3b0f2ff373ca58d"}
+{"event": "forward_completed", "sequence": 234, "role": "val", "id_sha256": "0407a9fcc1c42f45119a5e3e0986dda8af2d7324a3bfa650a3b0f2ff373ca58d", "loss_sum": 0.46020999550819397, "target_tokens": 69}
+{"event": "forward_reserved", "sequence": 235, "role": "val", "id_sha256": "658bde31fea9aafc986b1cb68a676ff4d3b42e2debc3c86b3a749d1a86eda5c0"}
+{"event": "forward_completed", "sequence": 235, "role": "val", "id_sha256": "658bde31fea9aafc986b1cb68a676ff4d3b42e2debc3c86b3a749d1a86eda5c0", "loss_sum": 1.3833444118499756, "target_tokens": 44}
+{"event": "forward_reserved", "sequence": 236, "role": "val", "id_sha256": "46785380dd174ee8725346558644a50d9e71b2de3e498552fc5af600b26f2d62"}
+{"event": "forward_completed", "sequence": 236, "role": "val", "id_sha256": "46785380dd174ee8725346558644a50d9e71b2de3e498552fc5af600b26f2d62", "loss_sum": 1.55087149143219, "target_tokens": 83}
+{"event": "forward_reserved", "sequence": 237, "role": "val", "id_sha256": "47097b9d871369f6309753f8610b6411e01d132809101fe3ea0c9675f46d426c"}
+{"event": "forward_completed", "sequence": 237, "role": "val", "id_sha256": "47097b9d871369f6309753f8610b6411e01d132809101fe3ea0c9675f46d426c", "loss_sum": 1.4197640419006348, "target_tokens": 84}
+{"event": "forward_reserved", "sequence": 238, "role": "val", "id_sha256": "a5fc075d10c6318cc255a25a8c3cadb87c70b6b1a226b02ecccaf44042437149"}
+{"event": "forward_completed", "sequence": 238, "role": "val", "id_sha256": "a5fc075d10c6318cc255a25a8c3cadb87c70b6b1a226b02ecccaf44042437149", "loss_sum": 4.1860198974609375, "target_tokens": 78}
+{"event": "forward_reserved", "sequence": 239, "role": "val", "id_sha256": "657f704849c8ccf89a7fab3eeb3d9bb867ac353f5b76f5ee1b7ddec389469d37"}
+{"event": "forward_completed", "sequence": 239, "role": "val", "id_sha256": "657f704849c8ccf89a7fab3eeb3d9bb867ac353f5b76f5ee1b7ddec389469d37", "loss_sum": 0.3320724666118622, "target_tokens": 96}
+{"event": "forward_reserved", "sequence": 240, "role": "val", "id_sha256": "631d990c1d81f456557ffadb9dda4f48fd8caa148b946355d78944887e3f20ec"}
+{"event": "forward_completed", "sequence": 240, "role": "val", "id_sha256": "631d990c1d81f456557ffadb9dda4f48fd8caa148b946355d78944887e3f20ec", "loss_sum": 0.27478182315826416, "target_tokens": 67}
+{"event": "forward_reserved", "sequence": 241, "role": "val", "id_sha256": "c7638584822c640b198fbcaf6658de80444a51518e54f2c346444b64d6112ade"}
+{"event": "forward_completed", "sequence": 241, "role": "val", "id_sha256": "c7638584822c640b198fbcaf6658de80444a51518e54f2c346444b64d6112ade", "loss_sum": 93.33604431152344, "target_tokens": 71}
+{"event": "forward_reserved", "sequence": 242, "role": "val", "id_sha256": "5ae6efcd7d683b5a4c013ab04f2318f064f0f52b0918c16cbb621675cf2c36d2"}
+{"event": "forward_completed", "sequence": 242, "role": "val", "id_sha256": "5ae6efcd7d683b5a4c013ab04f2318f064f0f52b0918c16cbb621675cf2c36d2", "loss_sum": 9.953749656677246, "target_tokens": 324}
+{"event": "forward_reserved", "sequence": 243, "role": "val", "id_sha256": "f4f42fc1f08fa16da2ac821e72ef703ccef6aeebd36c8d8dc02b00baac5950a0"}
+{"event": "forward_completed", "sequence": 243, "role": "val", "id_sha256": "f4f42fc1f08fa16da2ac821e72ef703ccef6aeebd36c8d8dc02b00baac5950a0", "loss_sum": 1.0138251781463623, "target_tokens": 80}
+{"event": "forward_reserved", "sequence": 244, "role": "val", "id_sha256": "f984380c11ecdac7fb54e5490fe9c9cddd8567c6bd1f132ff170a4812a99d945"}
+{"event": "forward_completed", "sequence": 244, "role": "val", "id_sha256": "f984380c11ecdac7fb54e5490fe9c9cddd8567c6bd1f132ff170a4812a99d945", "loss_sum": 2.808596611022949, "target_tokens": 67}
+{"event": "forward_reserved", "sequence": 245, "role": "val", "id_sha256": "3ebff3beb45cb7d4e234996eb6ad3e73d5191ba4fecc9dbdc12d4111b6983a71"}
+{"event": "forward_completed", "sequence": 245, "role": "val", "id_sha256": "3ebff3beb45cb7d4e234996eb6ad3e73d5191ba4fecc9dbdc12d4111b6983a71", "loss_sum": 2.080972909927368, "target_tokens": 70}
+{"event": "forward_reserved", "sequence": 246, "role": "val", "id_sha256": "b336fd97183bfbf572bd4c3b7c67329d0da7d75ee14dce2a50bd48ca212bab35"}
+{"event": "forward_completed", "sequence": 246, "role": "val", "id_sha256": "b336fd97183bfbf572bd4c3b7c67329d0da7d75ee14dce2a50bd48ca212bab35", "loss_sum": 17.383689880371094, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 247, "role": "val", "id_sha256": "14f9aab0b2d10667b72aec16b37b50e1d2587d8b099af568a53e30f47cd1f7e5"}
+{"event": "forward_completed", "sequence": 247, "role": "val", "id_sha256": "14f9aab0b2d10667b72aec16b37b50e1d2587d8b099af568a53e30f47cd1f7e5", "loss_sum": 51.00408172607422, "target_tokens": 62}
+{"event": "forward_reserved", "sequence": 248, "role": "val", "id_sha256": "2e89b29ec1dbea1ca65157283ae67ea497fb6d54c4fd6aca323a6eb265780d23"}
+{"event": "forward_completed", "sequence": 248, "role": "val", "id_sha256": "2e89b29ec1dbea1ca65157283ae67ea497fb6d54c4fd6aca323a6eb265780d23", "loss_sum": 2.248785972595215, "target_tokens": 65}
+{"event": "forward_reserved", "sequence": 249, "role": "val", "id_sha256": "ca0cd6344af4ba9959d0166fd052c2738769d35512a09d83b8aa67b8006e3f82"}
+{"event": "forward_completed", "sequence": 249, "role": "val", "id_sha256": "ca0cd6344af4ba9959d0166fd052c2738769d35512a09d83b8aa67b8006e3f82", "loss_sum": 0.6370130181312561, "target_tokens": 112}
+{"event": "forward_reserved", "sequence": 250, "role": "val", "id_sha256": "1bec9fd4a32b3019b4403370826fb6386dfba0aa1776985dd9d0820573c0724c"}
+{"event": "forward_completed", "sequence": 250, "role": "val", "id_sha256": "1bec9fd4a32b3019b4403370826fb6386dfba0aa1776985dd9d0820573c0724c", "loss_sum": 3.305832862854004, "target_tokens": 90}
+{"event": "forward_reserved", "sequence": 251, "role": "val", "id_sha256": "401e1f80c8155a5430ba436ffc44993f8a38071614cae5ad963d51a590261808"}
+{"event": "forward_completed", "sequence": 251, "role": "val", "id_sha256": "401e1f80c8155a5430ba436ffc44993f8a38071614cae5ad963d51a590261808", "loss_sum": 0.5721423029899597, "target_tokens": 64}
+{"event": "forward_reserved", "sequence": 252, "role": "val", "id_sha256": "20516d8d8d8342f69fb9687a299b685e02cc9504cf030f00715842e9413a1755"}
+{"event": "forward_completed", "sequence": 252, "role": "val", "id_sha256": "20516d8d8d8342f69fb9687a299b685e02cc9504cf030f00715842e9413a1755", "loss_sum": 0.29025545716285706, "target_tokens": 54}
+{"event": "forward_reserved", "sequence": 253, "role": "val", "id_sha256": "f305e05a7afcbf2fa737b0ad2df7cd18b9c64e66e898a69ed156c4cb188fa35f"}
+{"event": "forward_completed", "sequence": 253, "role": "val", "id_sha256": "f305e05a7afcbf2fa737b0ad2df7cd18b9c64e66e898a69ed156c4cb188fa35f", "loss_sum": 164.0574188232422, "target_tokens": 76}
+{"event": "forward_reserved", "sequence": 254, "role": "val", "id_sha256": "13ea70c04bb1d3cc0278d8ff468c5faa556a383b49481e3bee36f7776631ec20"}
+{"event": "forward_completed", "sequence": 254, "role": "val", "id_sha256": "13ea70c04bb1d3cc0278d8ff468c5faa556a383b49481e3bee36f7776631ec20", "loss_sum": 0.3196921944618225, "target_tokens": 69}
+{"event": "forward_reserved", "sequence": 255, "role": "val", "id_sha256": "633c130b40f76db91f8752dcfa97f00afea0b3264111cb05de669e94be0b2549"}
+{"event": "forward_completed", "sequence": 255, "role": "val", "id_sha256": "633c130b40f76db91f8752dcfa97f00afea0b3264111cb05de669e94be0b2549", "loss_sum": 2.142969846725464, "target_tokens": 73}
+{"event": "forward_reserved", "sequence": 256, "role": "val", "id_sha256": "e643599f9a2f63181ca03e9b856a1d2ebc4c6905eabbc2db1ce829619ed7a9fe"}
+{"event": "forward_completed", "sequence": 256, "role": "val", "id_sha256": "e643599f9a2f63181ca03e9b856a1d2ebc4c6905eabbc2db1ce829619ed7a9fe", "loss_sum": 21.21297836303711, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 257, "role": "val", "id_sha256": "723f589839f4b0d32d171b8dc29c6bf290a99ed229ce5dbdaf4124adbefa5a06"}
+{"event": "forward_completed", "sequence": 257, "role": "val", "id_sha256": "723f589839f4b0d32d171b8dc29c6bf290a99ed229ce5dbdaf4124adbefa5a06", "loss_sum": 0.24460014700889587, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 258, "role": "val", "id_sha256": "a40cf9fba9ef450465323ae1f0802fa74c3af788027faa318c782e8c347acd69"}
+{"event": "forward_completed", "sequence": 258, "role": "val", "id_sha256": "a40cf9fba9ef450465323ae1f0802fa74c3af788027faa318c782e8c347acd69", "loss_sum": 0.6149502992630005, "target_tokens": 45}
+{"event": "forward_reserved", "sequence": 259, "role": "val", "id_sha256": "04c04ab45d3b32bb6dd8a9e6e5aeb2ad1a11cfe4c76cc8284eff9c239913d635"}
+{"event": "forward_completed", "sequence": 259, "role": "val", "id_sha256": "04c04ab45d3b32bb6dd8a9e6e5aeb2ad1a11cfe4c76cc8284eff9c239913d635", "loss_sum": 23.661479949951172, "target_tokens": 55}
+{"event": "forward_reserved", "sequence": 260, "role": "val", "id_sha256": "bc8768cbe9629668f2a4615ab93b8bb323995d169a18c04921d4f1884e83bb9a"}
+{"event": "forward_completed", "sequence": 260, "role": "val", "id_sha256": "bc8768cbe9629668f2a4615ab93b8bb323995d169a18c04921d4f1884e83bb9a", "loss_sum": 9.244915008544922, "target_tokens": 101}
+{"event": "forward_reserved", "sequence": 261, "role": "val", "id_sha256": "f22ee831c81b064ea7553a96da36bff77a0aef2472b7706c4f0d0dc89e6965bf"}
+{"event": "forward_completed", "sequence": 261, "role": "val", "id_sha256": "f22ee831c81b064ea7553a96da36bff77a0aef2472b7706c4f0d0dc89e6965bf", "loss_sum": 32.17145538330078, "target_tokens": 104}
+{"event": "forward_reserved", "sequence": 262, "role": "val", "id_sha256": "62dcab7141511e4723391c6b81ce9979336fcb2018db691ec121e02580ec75b6"}
+{"event": "forward_completed", "sequence": 262, "role": "val", "id_sha256": "62dcab7141511e4723391c6b81ce9979336fcb2018db691ec121e02580ec75b6", "loss_sum": 0.6985690593719482, "target_tokens": 64}
+{"event": "forward_reserved", "sequence": 263, "role": "val", "id_sha256": "d31bb74a055efd5a6d4ebe20f792961dbbc02a5bafa1a2bf6becab8288a434f4"}
+{"event": "forward_completed", "sequence": 263, "role": "val", "id_sha256": "d31bb74a055efd5a6d4ebe20f792961dbbc02a5bafa1a2bf6becab8288a434f4", "loss_sum": 61.81546401977539, "target_tokens": 117}
+{"event": "forward_reserved", "sequence": 264, "role": "val", "id_sha256": "35b63e6d172922d863068bd251b87a7a937678804d180cacf2c5bd6beb84314a"}
+{"event": "forward_completed", "sequence": 264, "role": "val", "id_sha256": "35b63e6d172922d863068bd251b87a7a937678804d180cacf2c5bd6beb84314a", "loss_sum": 0.49235799908638, "target_tokens": 46}
+{"event": "forward_reserved", "sequence": 265, "role": "val", "id_sha256": "89a34e65534fc6e8c9605898af65f6beed0a96e7f930a6d6fe35f9e333ad0449"}
+{"event": "forward_completed", "sequence": 265, "role": "val", "id_sha256": "89a34e65534fc6e8c9605898af65f6beed0a96e7f930a6d6fe35f9e333ad0449", "loss_sum": 0.863545298576355, "target_tokens": 72}
+{"event": "forward_reserved", "sequence": 266, "role": "val", "id_sha256": "93c4995ec3655b8ade905865c928f9185bbc46a14ede00631936f3c0af9c95f9"}
+{"event": "forward_completed", "sequence": 266, "role": "val", "id_sha256": "93c4995ec3655b8ade905865c928f9185bbc46a14ede00631936f3c0af9c95f9", "loss_sum": 4.32346248626709, "target_tokens": 80}
+{"event": "forward_reserved", "sequence": 267, "role": "val", "id_sha256": "d51c59e898fe23ec4d2e9bc9fdb127b3aeefd444e86ff93a698d729ab162bc86"}
+{"event": "forward_completed", "sequence": 267, "role": "val", "id_sha256": "d51c59e898fe23ec4d2e9bc9fdb127b3aeefd444e86ff93a698d729ab162bc86", "loss_sum": 3.250441789627075, "target_tokens": 75}
+{"event": "forward_reserved", "sequence": 268, "role": "val", "id_sha256": "c88533ef670d41c3233c4447b29dcf0b611e43730567702aeec5d7b9fcc3a906"}
+{"event": "forward_completed", "sequence": 268, "role": "val", "id_sha256": "c88533ef670d41c3233c4447b29dcf0b611e43730567702aeec5d7b9fcc3a906", "loss_sum": 12.97284984588623, "target_tokens": 77}
+{"event": "forward_reserved", "sequence": 269, "role": "val", "id_sha256": "3e95389b852bdf46df65946335c562ef7c3de7a0208f4f02359729eb2a623f4c"}
+{"event": "forward_completed", "sequence": 269, "role": "val", "id_sha256": "3e95389b852bdf46df65946335c562ef7c3de7a0208f4f02359729eb2a623f4c", "loss_sum": 0.8320341110229492, "target_tokens": 66}
+{"event": "forward_reserved", "sequence": 270, "role": "val", "id_sha256": "416c5ab210361cff45dd52e7880830437a988a3fd4c72c107824020339e0aaa9"}
+{"event": "forward_completed", "sequence": 270, "role": "val", "id_sha256": "416c5ab210361cff45dd52e7880830437a988a3fd4c72c107824020339e0aaa9", "loss_sum": 43.84881591796875, "target_tokens": 232}
+{"event": "forward_reserved", "sequence": 271, "role": "val", "id_sha256": "38dca87cc1bf1b9cd963df1822b5feff0cf777d24fe08c8ed61b31ff2641a58d"}
+{"event": "forward_completed", "sequence": 271, "role": "val", "id_sha256": "38dca87cc1bf1b9cd963df1822b5feff0cf777d24fe08c8ed61b31ff2641a58d", "loss_sum": 35.938636779785156, "target_tokens": 49}
+{"event": "forward_reserved", "sequence": 272, "role": "val", "id_sha256": "bf2dbe0649055acbbad1d9b301464c23ef162ddb8a6cecd95d340b65b97b0e42"}
+{"event": "forward_completed", "sequence": 272, "role": "val", "id_sha256": "bf2dbe0649055acbbad1d9b301464c23ef162ddb8a6cecd95d340b65b97b0e42", "loss_sum": 0.29820024967193604, "target_tokens": 47}
+{"event": "forward_reserved", "sequence": 273, "role": "val", "id_sha256": "f09cec0d8468598be20744c0d424ba429828b0ec6765baa52dc97836ed3fa6ec"}
+{"event": "forward_completed", "sequence": 273, "role": "val", "id_sha256": "f09cec0d8468598be20744c0d424ba429828b0ec6765baa52dc97836ed3fa6ec", "loss_sum": 0.9897017478942871, "target_tokens": 103}
+{"event": "forward_reserved", "sequence": 274, "role": "val", "id_sha256": "f5c815cc3d6b4855de6ce5de0f2226c22f79c3a4adc67158b613485a6461c64e"}
+{"event": "forward_completed", "sequence": 274, "role": "val", "id_sha256": "f5c815cc3d6b4855de6ce5de0f2226c22f79c3a4adc67158b613485a6461c64e", "loss_sum": 70.3800277709961, "target_tokens": 72}
+{"event": "forward_reserved", "sequence": 275, "role": "val", "id_sha256": "d4244eb8cdce77f7f43041f44f69366fb483cc536d942a69c375548de8328da4"}
+{"event": "forward_completed", "sequence": 275, "role": "val", "id_sha256": "d4244eb8cdce77f7f43041f44f69366fb483cc536d942a69c375548de8328da4", "loss_sum": 0.4219910204410553, "target_tokens": 69}
+{"event": "forward_reserved", "sequence": 276, "role": "val", "id_sha256": "8bd95d5e230d754c4ca9e567b28ec3f8155e31100d91827fb18912d5cb2b567d"}
+{"event": "forward_completed", "sequence": 276, "role": "val", "id_sha256": "8bd95d5e230d754c4ca9e567b28ec3f8155e31100d91827fb18912d5cb2b567d", "loss_sum": 0.15500034391880035, "target_tokens": 52}
+{"event": "forward_reserved", "sequence": 277, "role": "disabled_adapter_base_canary", "id_sha256": "00f14aa3b9be062d17437c3939734cec150a2b724740ee92e97c59a8439b6e3c"}
+{"event": "forward_completed", "sequence": 277, "role": "disabled_adapter_base_canary", "id_sha256": "00f14aa3b9be062d17437c3939734cec150a2b724740ee92e97c59a8439b6e3c", "loss_sum": 93.72413635253906, "target_tokens": 65}

@@ -1,0 +1,123 @@
+{
+  "declared_utc": "2026-11-23T06:26:54.462331+00:00",
+  "project_base_commit": "7a80922048da2ba4ef7ee0b8a368cb77f62519a8",
+  "operator_sha256": "3c2294ffab97719ddb869e9c5a477e22478938af2b75a2bf629cfdd52ceca48e",
+  "driver_sha256": "e634db05a94105c86ddf705e3e3628ae8d7c2ebcf91037734794aac51ef007b1",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "data_sha256": {
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+    "train-tokenized.jsonl": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "mixed_train-tokenized.jsonl": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+    "test-tokenized.jsonl": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "dev_clean-tokenized.jsonl": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+    "train-schedule.json": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+    "mixed_train-schedule.json": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+    "report.json": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9"
+  },
+  "model_manifest_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+  "model_repository": "Qwen/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "runtime": "torch2.6.0+cu124,transformers4.57.6,peft0.18.0 copied+verified into fresh venv; sm86 nativeSDPA",
+  "CPU": 4,
+  "nice": 19,
+  "GPU_requirement": "Only original Full32 RTX3090 index1, UUID pinned. Idle>=23000MiB free/util<=5/no computePID; two fresh samples>=5s, advisory UUIDlock, freshsample; not scheduler reservation.",
+  "GPU_used_cap_MiB": 22528,
+  "host_RSS_cap_GiB": 24,
+  "host_admission_GiB": 32,
+  "host_floor_GiB": 24,
+  "CUDA_RLIMIT_AS": null,
+  "model_load_seconds": 300,
+  "operation_seconds": 300,
+  "variant_seconds": 1500,
+  "job_seconds": 3000,
+  "variants_order": [
+    "full_read_only_audit",
+    "mixed_train"
+  ],
+  "fresh_base_each_variant": true,
+  "base_dtype": "float16 no quantization",
+  "LoRA": {
+    "r": 8,
+    "alpha": 16,
+    "target_modules": [
+      "q_proj",
+      "v_proj"
+    ],
+    "dropout": 0.0,
+    "bias": "none",
+    "initialization": "PEFT default init_lora_weights=True;Bzero;seed42 immediately before attachment; initial trainables+frozen hashes must match across variants",
+    "trainable_dtype": "float32"
+  },
+  "optimizer": {
+    "name": "AdamW",
+    "lr": 0.0002,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "foreach": false,
+    "gradient_clip_norm": 1.0,
+    "scheduler": null
+  },
+  "amp": {
+    "GradScaler_init_scale": 1024,
+    "growth_interval": 2000,
+    "abort_on_nonfinite_or_skipped_update": true
+  },
+  "gradient_checkpointing": "use_reentrant=False;input_require_grads;use_cache=False;TF32false;model attention_dropout0",
+  "updates_per_variant": 32,
+  "supervised_labels_per_update": 2048,
+  "total_supervised_labels_per_variant": 65536,
+  "expected_training_segments": {
+    "train": 774,
+    "mixed_train": 772
+  },
+  "expected_training_input_exposures": {
+    "train": 573843,
+    "mixed_train": 537483
+  },
+  "loss": "Full causal context, logits_to_keep at shifted target positions; sum CE/2048 per segment, accumulate without extra division; first actual3B standard masked-loss equivalence abs1e-3/rel1e-4 required. Labels no truncation/repair.",
+  "teacher_evaluation": "Same197 clean dev +79 released perturbation validation, all assistant targets, before/after each final32-step variant; token-weighted NLL/perplexity only. No intermediate quality selection.",
+  "forward_cap_per_variant": 1400,
+  "expected_logical_forwards": {
+    "train": 1331,
+    "mixed_train": 1329
+  },
+  "controls": "Actual base standard/sparse loss, zeroB no-op, all frozen parameter hash before/after, all frozen gradientsNone each step, AdamW step states and changedadapter hashes every update, disabled-adapter base canary, finalcheckpoint safetensors reload/hash+canary.",
+  "checkpoints": "Every8 completed updates; safetensors adapter+optimizer/TorchRNG,JSONscaler/counters+manifest; atomic rename. Fixed finalstep32 for comparison. Resume not implemented; no autoretry or counter reset; partial ledgers stay charged.",
+  "checkpoints_private_no_weights_redistribution": true,
+  "subsequent_generation_evaluation_preregistered": "Once Full32 savedcheckpoint separately replay-verified and first Mixed32 fully completes, fresh base +both fixedstep32 on this same GPU/backend; all199 officialclean/originalmessages/parser/scorer,greedy42/new1024/context32768,no feedback/repair/retry. Separate controller/budget before generation; originalFullfailedprocess is never relabeled success.",
+  "not_GRPO_or_ToolRL_DR_reproduction": true,
+  "homepage_updates_authorized": false,
+  "no_old_model_run_regraded": true,
+  "no_user_repo_issue_or_attestation_actions": true,
+  "setup_protocol_sha256": "f8fb48bb7fb61c5c0a42796cfe6fa66d6e0c3c9b917aed5de5618c1cdef817f9",
+  "admission_wait_seconds": 600,
+  "admission_wait_counts_toward_job_wall": true,
+  "preexecution_metadata_revision": "Before any model start, add bounded same-controller idle-GPU wait and bind final recovered setup. All32-update/training/teacher-evaluation numeric settings and driver unchanged.",
+  "profile": "saved-Full32-read-only-replay-plus-first-Mixed32",
+  "admission_query_timeout_seconds": 15,
+  "active_GPU_query_timeout_seconds": 5,
+  "prior_admission_v1_terminal2_no_model_calls_or_updates": true,
+  "read_only_probe_retries_within_same_600s_controller": true,
+  "numeric_training_settings_unchanged": true,
+  "full_audit_driver_sha256": "de74035bd8f82bad9e6121ca04b6396ef0cfd347ffd6b1f1a213efd36a0fa6eb",
+  "watcher_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+  "pynvml_sha256": "5b7d66009922a16f382d88241c37a01faa82a1ac3aa28776041cd228f5801f13",
+  "expected_GPU_UUID_sha256": "56bd5a36790c2ac02298edadc08541bc3ad1e87a1c398c97da676b4bcfa1a3b2",
+  "original_full_protocol_sha256": "6cf0b7e8f3cf7751ce21b49a191a2fc69cdb3cb4b6020eb01969d4e5c45c17d1",
+  "Full_optimizer_updates_this_controller": 0,
+  "Full_original_in_memory_final_hash_gap_remains": true,
+  "original_Full_status_remains_failed": true,
+  "neural_driver_unchanged": true,
+  "telemetry": "Persistent cached selected NVML handle, sampled every2s; pinned SDK isolated from neural runtime.30s stale/foreign client/22528MiB guards unchanged; no synchronous nvidia-smi in neural loop.",
+  "same_physical_GPU_required": true,
+  "Full_read_only_forward_budget": 277,
+  "Full_audit_seconds": 600,
+  "prior_watcher_test_protocol_sha256": "6ddaf47e3bd2b7d98799e2435478d45b37bea5750417b597b090e68c327cae24"
+}

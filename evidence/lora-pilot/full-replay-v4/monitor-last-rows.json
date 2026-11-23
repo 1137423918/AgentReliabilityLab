@@ -1,0 +1,68 @@
+[
+  {
+    "elapsed_seconds": 86.288,
+    "owned_RSS_bytes": 1789849600,
+    "available_memory_bytes": 132001525760,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 0,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 0.415,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  },
+  {
+    "elapsed_seconds": 86.802,
+    "owned_RSS_bytes": 1789849600,
+    "available_memory_bytes": 132162703360,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 0,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 0.929,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  },
+  {
+    "elapsed_seconds": 87.316,
+    "owned_RSS_bytes": 1789849600,
+    "available_memory_bytes": 132002349056,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 0,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 1.443,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  },
+  {
+    "elapsed_seconds": 87.831,
+    "owned_RSS_bytes": 1797533696,
+    "available_memory_bytes": 132025544704,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 0,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 1.959,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  },
+  {
+    "elapsed_seconds": 88.346,
+    "owned_RSS_bytes": 1806045184,
+    "available_memory_bytes": 131954540544,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 0,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 2.485,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  },
+  {
+    "elapsed_seconds": 88.872,
+    "owned_RSS_bytes": 36900864,
+    "available_memory_bytes": 131958226944,
+    "GPU_used_MiB": 9203,
+    "foreign_compute_processes": 1,
+    "own_GPU_context_seen": true,
+    "observation_age_seconds": 3.0,
+    "telemetry_sequence": 31,
+    "sample_seconds": 1.581775
+  }
+]

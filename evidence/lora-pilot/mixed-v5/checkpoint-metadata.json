@@ -1,0 +1,53 @@
+{
+  "manifest_sha256": "fe0a49a492bc48e49618eaff60c3a3a6efbabba2bd4cd85c3b78b1272b4363cb",
+  "files": {
+    "adapter/README.md": {
+      "sha256": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+      "bytes": 5252
+    },
+    "adapter/adapter_config.json": {
+      "sha256": "f4cf00a2b705bc6c10650ae31cc0b68906f8d4b45e0f544d621fc260362c492e",
+      "bytes": 1001
+    },
+    "adapter/adapter_model.safetensors": {
+      "sha256": "61ff087b700040c66b368600c7e1f5e110fe793e94b60f8ef787adcc50171e9b",
+      "bytes": 7391728
+    },
+    "optimizer-and-rng.safetensors": {
+      "sha256": "bd5b263e2987650062148f3dade27b732647058adc5ba457ea16c7fc81206074",
+      "bytes": 14786120
+    },
+    "training-state.json": {
+      "sha256": "9f3f5e52b21869fc39f4d685a745049d4c07c07ca505078799ea2d7af69c0f50",
+      "bytes": 14993
+    }
+  },
+  "state": {
+    "completed_optimizer_updates": 32,
+    "training_labels": 65536,
+    "data_sha256": {
+      "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+      "train-tokenized.jsonl": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+      "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+      "mixed_train-tokenized.jsonl": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+      "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+      "test-tokenized.jsonl": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+      "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+      "dev_clean-tokenized.jsonl": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+      "train-schedule.json": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+      "mixed_train-schedule.json": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+      "report.json": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9"
+    },
+    "spec_sha256": "5402e43ed44432f6fa4aca7b5b51973248f7784c833644f3f6b53209e608adb2",
+    "adapter_sha256": "dd7851ce023c22558724a78254c85da6657f23b8e0bf968c7aa43c3f8dec965f",
+    "scaler_state": {
+      "scale": 1024.0,
+      "growth_factor": 2.0,
+      "backoff_factor": 0.5,
+      "growth_interval": 2000,
+      "_growth_tracker": 32
+    },
+    "resume_implemented": false
+  },
+  "payloads_not_exported": true
+}

@@ -1,0 +1,17 @@
+{
+  "terminal": true,
+  "passed": true,
+  "cases": [
+    "live_owned_start_identity",
+    "unrelated_live_process_is_foreign",
+    "mismatched_start_identity_is_foreign",
+    "cached_exited_owned_process_is_not_foreign",
+    "cached_exit_does_not_hide_unrelated_process",
+    "unrelated_process_left_running_by_classifier"
+  ],
+  "old_set_difference_misclassifies_exited_owned_PID": true,
+  "no_model_or_GPU_or_training": true,
+  "source_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+  "test_source_sha256": "cc80cab1ad63c0caa0cedbe07fc8dd595d7a9767cb1ec600c258e187e63b5b31",
+  "owned_after": 0
+}

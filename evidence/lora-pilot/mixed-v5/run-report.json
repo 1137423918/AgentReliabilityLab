@@ -1,0 +1,137 @@
+{
+  "terminal": true,
+  "protocol_sha256": "5402e43ed44432f6fa4aca7b5b51973248f7784c833644f3f6b53209e608adb2",
+  "phases": [
+    {
+      "phase": "mixed_train",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 455.992,
+      "peak_sampled_owned_RSS_bytes": 4463042560
+    }
+  ],
+  "status": "completed",
+  "original_Full_run_remains_failed": true,
+  "Full_optimizer_updates_executed_this_controller": 0,
+  "original_Full_in_memory_final_hash_gap_remains": true,
+  "Mixed_training_started": true,
+  "GPU_work_started": true,
+  "admission_wait_seconds": 11.692,
+  "GPU": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 5.00798,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 4,
+    "observed_unix": 1795416438.002421,
+    "sample_seconds": 1.435256,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "admission_samples": [
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 5.00798,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 1,
+      "observed_unix": 1795416427.7030654,
+      "sample_seconds": 0.020906,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 5.00798,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 3,
+      "observed_unix": 1795416434.5665321,
+      "sample_seconds": 1.42653,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    }
+  ],
+  "Full_saved_read_only_report_verified": true,
+  "Full_audit_forwards_executed_this_controller": 0,
+  "Full_saved_audit_files_sha256": {
+    "report.json": "3a4b4d706cecf473cae1dec96b27489259c44baa1041f709389ab28e1b498cee",
+    "dev.json": "076fc92d624ca5504257ede0c3c20c983a06564190402b6f996f6b61e30c6203",
+    "val.json": "6c133680a7bc44bf989d8d141f85900bc91faf34dd77af79c82808c56122ed59",
+    "events.jsonl": "844a61fcf85eebc63a23673fc0c7ebe9db282fb2c73891a38a1756d51f24bed0"
+  },
+  "current_phase": "mixed_train",
+  "Mixed_initial_state_matched_before_training": true,
+  "Mixed_complete": true,
+  "paired_initial_state_matched": true,
+  "followup_complete": true,
+  "Full_original_protocol_success": false,
+  "model_shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": true,
+  "own_GPU_context_absent": true,
+  "GPU_after": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 5.00798,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 146,
+    "observed_unix": 1795416900.7704496,
+    "sample_seconds": 1.509364,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "ledgers": {
+    "full_read_only_audit": {
+      "forward_reserved": 0,
+      "forward_completed": 0,
+      "backward_completed": 0,
+      "optimizer_update_reserved": 0,
+      "optimizer_update_completed": 0,
+      "checkpoint_committed": 0,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    },
+    "mixed_train": {
+      "forward_reserved": 1329,
+      "forward_completed": 1329,
+      "backward_completed": 772,
+      "optimizer_update_reserved": 32,
+      "optimizer_update_completed": 32,
+      "checkpoint_committed": 4,
+      "forward_unknown_still_charged": 0,
+      "optimizer_update_unknown_still_charged": 0,
+      "malformed_journal_lines": 0
+    }
+  },
+  "original_Full_files_unchanged": true,
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 479.411
+}

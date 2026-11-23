@@ -1,0 +1,7 @@
+{
+  "ownership_source_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+  "test_source_sha256": "cc80cab1ad63c0caa0cedbe07fc8dd595d7a9767cb1ec600c258e187e63b5b31",
+  "scope": "six real Linux CPU subprocess ownership controls; no model or GPU; retain foreign-client and30s stale guards",
+  "preserve_v4_failed_supervisor": true,
+  "v4_original_guard_PID_not_recorded_so_actual_identity_cannot_be_proved": true
+}

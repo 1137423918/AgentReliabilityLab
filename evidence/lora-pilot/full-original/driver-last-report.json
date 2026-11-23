@@ -1,0 +1,57 @@
+{
+  "status": "evaluating_after",
+  "variant": "train",
+  "spec_sha256": "6cf0b7e8f3cf7751ce21b49a191a2fc69cdb3cb4b6020eb01969d4e5c45c17d1",
+  "driver_sha256": "e634db05a94105c86ddf705e3e3628ae8d7c2ebcf91037734794aac51ef007b1",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "training_run": true,
+  "model_loaded": true,
+  "model_parameter_count": 3085938688,
+  "load_seconds": 35.078,
+  "GPU_name": "NVIDIA GeForce RTX 3090",
+  "completed_optimizer_updates": 32,
+  "completed_training_labels": 65536,
+  "logical_forward_reserved": 1320,
+  "logical_forward_completed": 1320,
+  "training_segments_backward_completed": 774,
+  "training_input_token_exposures": 573843,
+  "role_counts": {
+    "canary_standard": 1,
+    "canary_sparse": 1,
+    "canary_zero_adapter": 1,
+    "before_dev": 197,
+    "before_val": 79,
+    "training": 774,
+    "after_dev": 197,
+    "after_val": 70
+  },
+  "resume_supported": false,
+  "sparse_vs_standard_loss": {
+    "standard_sum": 93.72413635253906,
+    "selected_positions_sum": 93.72413635253906,
+    "target_tokens": 65,
+    "passed": true
+  },
+  "initial_adapter_sha256": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df",
+  "initial_frozen_parameters_sha256": "41694e8eb9d3bbf55a86fc898de7a19265c93b8720a47f4d84794fd7d040b888",
+  "trainable_parameter_count": 1843200,
+  "frozen_parameter_count": 3085938688,
+  "trainable_dtypes": [
+    "torch.float32"
+  ],
+  "zero_adapter_forward_equal": true,
+  "before_dev": {
+    "count": 197,
+    "target_tokens": 16220,
+    "loss_sum": 24157.373291015625,
+    "token_weighted_NLL": 1.4893571696063888,
+    "perplexity": 4.434244135720802
+  },
+  "before_val": {
+    "count": 79,
+    "target_tokens": 6887,
+    "loss_sum": 9933.03568649292,
+    "token_weighted_NLL": 1.4422877430656194,
+    "perplexity": 4.230362738083615
+  }
+}
