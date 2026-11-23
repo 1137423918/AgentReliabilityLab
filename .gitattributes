@@ -7,3 +7,6 @@ evidence/**/patch.diff -whitespace
 evidence/sk-cancelled-send/**/*.xml -whitespace
 evidence/sk-cancelled-send/**/tested-source/**/*.txt -whitespace
 evidence/lightning-terminal-reuse/**/*.xml -whitespace
+evidence/dependency-upgrade/candidates/*/uv-lock.diff -whitespace
+evidence/dependency-upgrade/inputs/fastmcp-2.12.4/pyproject.toml -whitespace
+evidence/dependency-upgrade/candidates/fastmcp-2.12.4/pyproject.toml -whitespace

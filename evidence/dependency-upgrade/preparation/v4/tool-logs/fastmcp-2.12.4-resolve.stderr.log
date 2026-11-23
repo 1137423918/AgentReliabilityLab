@@ -1,0 +1,6 @@
+Using CPython 3.11.4 interpreter at: [SERVER_WORKSPACE]/envs/model-request-budget-20261121/bin/python
+error: No solution found when resolving dependencies for split (markers: python_full_version >= '3.11')
+  cause: Because pytest-report==0.2.1 has no usable wheels and only pytest-report<=0.2.1 is available, we can conclude that pytest-report>=0.2.1 cannot be used.
+         And because fastmcp:dev depends on pytest-report>=0.2.1 and your project requires fastmcp:dev, we can conclude that your project's requirements are unsatisfiable.
+
+hint: Wheels are required for `pytest-report` because building from source is disabled for all packages (i.e., with `--no-build`)

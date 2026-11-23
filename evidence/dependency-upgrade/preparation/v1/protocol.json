@@ -1,0 +1,41 @@
+{
+  "declared_utc": "2026-11-23T18:50:33.615719+00:00",
+  "scope": "New external-data dependency upgrade review application; real OSV offline scan, actual uv isolated resolution, same-database rescan. No model calls or project installs. Inputs selected before scan outcomes.",
+  "input_manifest_sha256": "c40c9ca3794bf87e178730ae8371b3e829e1e98d980cdbe878c049fa16d3db74",
+  "files_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/dependency_review.py": "6dc882ae70fe1ad4d9d9ed7842cf27432e944e60c38b8b7762e1015f7317dbbe",
+    "tests/test_dependency_review.py": "1fa470951a3ac9c93fdd079485ae64a257eb082211e3ac0d007dc3dbd98206b8",
+    "inputs/input-manifest.json": "c40c9ca3794bf87e178730ae8371b3e829e1e98d980cdbe878c049fa16d3db74",
+    "inputs/browser-use-1.0.8/uv.lock": "b3bbe39a9a4689e725d8e6848e4299a2e38ff8c1650abae09a5cfdaf380f9da7",
+    "inputs/browser-use-1.0.8/pyproject.toml": "28a508fa4eacc5e4ef63ead7ca7a22add3e02d9e87f733e6a63467bae6382ce2",
+    "inputs/browser-use-1.0.8/LICENSE": "135c57671b0ee957669b05a0ca00cc06f645496d351e2e732832c6e276da9a5e",
+    "inputs/fastmcp-2.12.4/uv.lock": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18",
+    "inputs/fastmcp-2.12.4/pyproject.toml": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf",
+    "inputs/fastmcp-2.12.4/LICENSE": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1"
+  },
+  "archive_sha256": "0b5186f7afd5d1e72b952871a69420b3cdea09667be49f3f98056d3653b3d59d",
+  "controller_sha256": "c2517aab4dac411a93b93a3eb7d01f38053b39e2be74937e4453ce18b2238a0f",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "changed_python": [
+    "agent_lab/dependency_review.py",
+    "tests/test_dependency_review.py"
+  ],
+  "unit_controls": 8,
+  "target_policy": "Direct declaration first, descending scanner advisory-group count, lexicographic key; fixed before vulnerability results.",
+  "database_policy": "Download official PyPI all.zip once, record exact full-byte SHA256 and object generation before any scan. Both baseline and candidate use --offline and the same unmodified database.",
+  "max_snapshots": 2,
+  "max_resolver_calls": 2,
+  "max_OSV_scans": 4,
+  "model_calls": 0,
+  "GPU_used": false,
+  "per_scan_wall_seconds": 300,
+  "per_resolution_wall_seconds": 240,
+  "application_wall_seconds": 1900,
+  "job_wall_seconds": 2400,
+  "CPU_threads": 4,
+  "nice": 19,
+  "child_address_space_GiB": 32,
+  "sampled_owned_RSS_GiB": 3,
+  "host_memory_floor_GiB": 8
+}

@@ -1,0 +1,143 @@
+{
+  "project": {
+    "id": "fastmcp-2.12.4",
+    "repository": "PrefectHQ/fastmcp",
+    "tag": "v2.12.4",
+    "commit": "b96e6ebbb269a241801554383671ba9f2876901e"
+  },
+  "scope": "All locked registry resolutions, including optional, development and conditional packages; not an installed-environment inventory.",
+  "baseline_statistics": {
+    "scanned_registry_resolutions": 118,
+    "expected_registry_resolutions": 118,
+    "affected_resolutions": 17
+  },
+  "coverage": {
+    "before_registry_complete": true,
+    "after_registry_complete": true,
+    "local_or_other_source_entries": [
+      {
+        "name": "fastmcp",
+        "version": null,
+        "source": {
+          "editable": "."
+        }
+      }
+    ],
+    "nonregistry_scanner_records": [
+      {
+        "name": "fastmcp",
+        "version": null,
+        "sources": [
+          {
+            "editable": "."
+          }
+        ],
+        "scanner_advisory_ids": [],
+        "source_bytes_audited": false
+      }
+    ]
+  },
+  "execution": {
+    "candidate_prepared": true,
+    "project_environment_installed": false,
+    "resolver_metadata_backend_may_run": true,
+    "compatibility_tests_run": false
+  },
+  "resolution": {
+    "exit_code": 0,
+    "timed_out": false,
+    "original_requirements_changed": false
+  },
+  "target": {
+    "name": "authlib",
+    "declared_requirements": [
+      {
+        "group": "runtime",
+        "requirement": "authlib>=1.5.2"
+      }
+    ],
+    "before_versions": [
+      "authlib@1.6.1"
+    ],
+    "after_versions": [
+      "authlib@1.9.10"
+    ],
+    "version_changed": true,
+    "advisory_ids_before": [
+      "GHSA-6v38-4h7w-rj9h",
+      "GHSA-7432-952r-cw78",
+      "GHSA-7vr2-2fgp-9w7p",
+      "GHSA-8m4g-j4wp-wgcg",
+      "GHSA-9ggr-2464-2j32",
+      "GHSA-c5mf-xmp2-59rc",
+      "GHSA-c73q-w75p-j82v",
+      "GHSA-fch4-3c6x-j4gc",
+      "GHSA-fg6f-75jq-6523",
+      "GHSA-g7f3-828f-7h7m",
+      "GHSA-jj7h-c3hg-m23x",
+      "GHSA-jj8c-mmj3-mmgv",
+      "GHSA-m344-f55w-2m6j",
+      "GHSA-pq5p-34cr-23v9",
+      "GHSA-q686-2qmg-hqc7",
+      "GHSA-r95x-qfjj-fjj2",
+      "GHSA-w8p2-r796-3vmq",
+      "GHSA-wvwj-cvrp-7pv5",
+      "GHSA-x4rv-c3wx-4cr8",
+      "PYSEC-2026-1200",
+      "PYSEC-2026-1201",
+      "PYSEC-2026-1202",
+      "PYSEC-2026-1203",
+      "PYSEC-2026-188",
+      "PYSEC-2026-2116",
+      "PYSEC-2026-2117",
+      "PYSEC-2026-2119",
+      "PYSEC-2026-25",
+      "PYSEC-2026-287",
+      "PYSEC-2026-4354",
+      "PYSEC-2026-4355",
+      "PYSEC-2026-4356",
+      "PYSEC-2026-4357",
+      "PYSEC-2026-4358",
+      "PYSEC-2026-4359",
+      "PYSEC-2026-4360"
+    ],
+    "remaining_advisory_match_count": 0
+  },
+  "delta": {
+    "new_package_advisory_match_count": 0,
+    "new_package_advisory_matches": [],
+    "remaining_affected_registry_resolutions": 16
+  },
+  "provenance": {
+    "original_files": {
+      "uv.lock": {
+        "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/uv.lock",
+        "sha256": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18",
+        "bytes": 336584
+      },
+      "pyproject.toml": {
+        "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/pyproject.toml",
+        "sha256": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf",
+        "bytes": 3730
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/LICENSE",
+        "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+        "bytes": 11356
+      }
+    },
+    "database": {
+      "sha256": "364b26a5eb863e9d95957ada2ad0027a12a2a2ca80d91aa2e1db6dcd64dccaf9",
+      "offline": true,
+      "updated_during_scan": false
+    },
+    "baseline_scan_sha256": "2b24175be7014cd5baf2bacd540189a59e4ad3dcd5f01f2e59ae4b843be00e80",
+    "candidate_scan_sha256": "927f077370353a117c4bac3dedffbe1c7b3593f1a8038c145c8107fae242ae03",
+    "candidate_lock_sha256": "b1273f6292f2ed3e26658d1aadc2e875fd649c71d1df32354f67f854f3d8c96b",
+    "original_inputs_unchanged": true,
+    "candidate_source": {
+      "method": "independent-local-Git-clone",
+      "commit": "b96e6ebbb269a241801554383671ba9f2876901e"
+    }
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "terminal": true,
+  "protocol_sha256": "a35c881785c653bd06c67ef205bf22d99354bf09d36e7bd06abd4d27bcc01b94",
+  "phases": [
+    {
+      "name": "format-source",
+      "exit_code": 0,
+      "wall_seconds": 0.273,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "lint-source",
+      "exit_code": 0,
+      "wall_seconds": 0.24,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "application-unit-controls",
+      "exit_code": 0,
+      "wall_seconds": 0.452,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "uv-version",
+      "exit_code": 0,
+      "wall_seconds": 0.459,
+      "peak_owned_RSS_bytes": 8327168
+    },
+    {
+      "name": "python-identity",
+      "exit_code": 0,
+      "wall_seconds": 0.224,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "scanner-version",
+      "exit_code": 0,
+      "wall_seconds": 0.229,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "fetch-source-browser-use-1.0.8",
+      "exit_code": 0,
+      "wall_seconds": 3.625,
+      "peak_owned_RSS_bytes": 28114944
+    },
+    {
+      "name": "verify-source-browser-use-1.0.8",
+      "exit_code": 0,
+      "wall_seconds": 0.23,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "fetch-source-fastmcp-2.12.4",
+      "exit_code": 0,
+      "wall_seconds": 5.577,
+      "peak_owned_RSS_bytes": 29556736
+    },
+    {
+      "name": "verify-source-fastmcp-2.12.4",
+      "exit_code": 0,
+      "wall_seconds": 0.237,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "real-dependency-upgrade-preparation",
+      "exit_code": 0,
+      "wall_seconds": 28.078,
+      "peak_owned_RSS_bytes": 183005184
+    },
+    {
+      "name": "prepare-MCP-corpus",
+      "exit_code": 0,
+      "wall_seconds": 0.239,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "new_neural_calls": 0,
+  "GPU_used": false,
+  "active_phase": "prepare-MCP-corpus",
+  "tested_source_sha256": {
+    "agent_lab/dependency_review.py": "07e9c8b8acfcbaba06900343e189ce26dc4aa373e1c008dbbcd7c92b9a378dbb",
+    "tests/test_dependency_review.py": "ce827b100fd32ba632d3602b3d9f1eea9316773bc4f475a77d17c2a75e82a9fe",
+    "benchmarks/dependency_review_corpus.py": "7cb10065579d12bc3e48ad6680576be02ca6d43a6008323c51064c5f0dbfd5c3"
+  },
+  "scanner_download": {
+    "url": "https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_linux_amd64",
+    "sha256": "fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8",
+    "bytes": 58187936,
+    "headers": {
+      "Content-Length": "58187936",
+      "ETag": "\"0x8DF3E16BBD9EC6F\"",
+      "Last-Modified": "Mon, 09 Nov 2026 04:05:47 GMT",
+      "x-goog-generation": null
+    },
+    "download_seconds": 43.767
+  },
+  "database_download": {
+    "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+    "sha256": "364b26a5eb863e9d95957ada2ad0027a12a2a2ca80d91aa2e1db6dcd64dccaf9",
+    "bytes": 38296649,
+    "headers": {
+      "Content-Length": "38296649",
+      "ETag": "\"be1f00397f241a05cf8dd7f38f6524db\"",
+      "Last-Modified": "Mon, 23 Nov 2026 18:33:47 GMT",
+      "x-goog-generation": "1795458827300380"
+    },
+    "download_seconds": 3.038
+  },
+  "database_frozen_before_scan": true,
+  "tool_and_database_reused_after_full_byte_hash_verification": true,
+  "materialized_source_commits": {
+    "browser-use-1.0.8": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+    "fastmcp-2.12.4": "b96e6ebbb269a241801554383671ba9f2876901e"
+  },
+  "database_unchanged": true,
+  "reviews": {
+    "browser-use-1.0.8": {
+      "affected_resolutions": 2,
+      "selected_target": "pillow@12.3.0",
+      "review": {
+        "target_before": [
+          "pillow@12.3.0"
+        ],
+        "target_after": [
+          "pillow@12.3.0"
+        ],
+        "target_version_changed": false,
+        "target_affected_after": [
+          "pillow@12.3.0"
+        ],
+        "new_advisory_ids": [],
+        "new_advisory_matches": [],
+        "remaining_affected_resolutions": 2,
+        "ready_for_integration_tests": false,
+        "release_approved": false,
+        "compatibility_tests_run": false,
+        "all_dependency_findings_cleared": false
+      },
+      "reason": "Isolated candidate resolved and rescanned; integration tests remain required."
+    },
+    "fastmcp-2.12.4": {
+      "affected_resolutions": 17,
+      "selected_target": "authlib@1.6.1",
+      "review": {
+        "ready_for_integration_tests": false,
+        "release_approved": false
+      },
+      "reason": "Resolution failed or timed out under unchanged project requirements; no successful upgrade is claimed."
+    }
+  },
+  "MCP_corpus_prepared": true,
+  "ready": true,
+  "owned_after": 0,
+  "wall_seconds": 41.919,
+  "final_source_sha256": {
+    "agent_lab/dependency_review.py": "07e9c8b8acfcbaba06900343e189ce26dc4aa373e1c008dbbcd7c92b9a378dbb",
+    "tests/test_dependency_review.py": "ce827b100fd32ba632d3602b3d9f1eea9316773bc4f475a77d17c2a75e82a9fe",
+    "benchmarks/dependency_review_corpus.py": "7cb10065579d12bc3e48ad6680576be02ca6d43a6008323c51064c5f0dbfd5c3"
+  },
+  "source_unchanged_after_checks": true
+}

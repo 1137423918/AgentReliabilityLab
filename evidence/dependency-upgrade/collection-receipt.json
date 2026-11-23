@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "ebe17d42cbf7244ef4c4e7b7249484c488fad2b8042b212f89ff7974b2173245",
+  "archive_bytes": 877694,
+  "payload_hashes_verified": 154,
+  "terminal": true,
+  "ready": true,
+  "owned_after": 0,
+  "MCP_port_closed": true,
+  "formatted_source_files_synced": 4,
+  "input_sha_and_formatting_AST_checked": true,
+  "canonical_verifier_and_grader_unchanged": true,
+  "neural_calls": 0,
+  "project_snapshots": 2
+}

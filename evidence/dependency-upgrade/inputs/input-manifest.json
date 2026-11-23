@@ -1,0 +1,70 @@
+{
+  "declared_utc": "2026-11-23T18:45:58.512938+00:00",
+  "purpose": "Read-only real locked-dependency OSV scans and isolated uv upgrade review; no project environment is installed and no fix command is used. uv may install build-backend dependencies and execute pinned project metadata hooks in its isolated cache.",
+  "snapshots": [
+    {
+      "id": "browser-use-1.0.8",
+      "repository": "browser-use/browser-use",
+      "tag": "1.0.8",
+      "commit": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+      "files": {
+        "uv.lock": {
+          "url": "https://raw.githubusercontent.com/browser-use/browser-use/753d629d76eb2b670f4cf467f3355bbe750f6845/uv.lock",
+          "sha256": "b3bbe39a9a4689e725d8e6848e4299a2e38ff8c1650abae09a5cfdaf380f9da7",
+          "bytes": 385372
+        },
+        "pyproject.toml": {
+          "url": "https://raw.githubusercontent.com/browser-use/browser-use/753d629d76eb2b670f4cf467f3355bbe750f6845/pyproject.toml",
+          "sha256": "28a508fa4eacc5e4ef63ead7ca7a22add3e02d9e87f733e6a63467bae6382ce2",
+          "bytes": 4855
+        },
+        "LICENSE": {
+          "url": "https://raw.githubusercontent.com/browser-use/browser-use/753d629d76eb2b670f4cf467f3355bbe750f6845/LICENSE",
+          "sha256": "135c57671b0ee957669b05a0ca00cc06f645496d351e2e732832c6e276da9a5e",
+          "bytes": 1069
+        }
+      }
+    },
+    {
+      "id": "fastmcp-2.12.4",
+      "repository": "PrefectHQ/fastmcp",
+      "tag": "v2.12.4",
+      "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+      "files": {
+        "uv.lock": {
+          "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/uv.lock",
+          "sha256": "3c5529fccd86e704da26fe076383b136df7e967d59c3d0f8cbff201ab5a2de18",
+          "bytes": 336584
+        },
+        "pyproject.toml": {
+          "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/pyproject.toml",
+          "sha256": "0a0da0e56a7904c3c008b83e2b9975ec08a0b9f9cef452aa09289a4b5e7cb0cf",
+          "bytes": 3730
+        },
+        "LICENSE": {
+          "url": "https://raw.githubusercontent.com/PrefectHQ/fastmcp/b96e6ebbb269a241801554383671ba9f2876901e/LICENSE",
+          "sha256": "43070e2d4e532684de521b885f385d0841030efa2b1a20bafb76133a5e1379c1",
+          "bytes": 11356
+        }
+      }
+    }
+  ],
+  "scanner": {
+    "release": "v2.7.1",
+    "release_api_url": "https://api.github.com/repos/google/osv-scanner/releases/438731572",
+    "url": "https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_linux_amd64",
+    "bytes": 58187936,
+    "sha256": "fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8",
+    "checksums_url": "https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_SHA256SUMS",
+    "checksums_sha256": "f7d6b86d974ad856e2e944e3556d58033d76b7bb7126c76731129f1f1a12fd89"
+  },
+  "scan_count": 2,
+  "model_calls": 0,
+  "GPU_used": false,
+  "network_timeout_seconds": 300,
+  "per_scan_wall_seconds": 480,
+  "scope": "All packages in each uv.lock, including optional/development/conditional resolutions; not a deployed-environment inventory, reachability assessment or proof that exploitation is possible.",
+  "source_policy": "Candidate workspaces are independent local Git clones of complete admitted project commits, preserving README and dynamic VCS metadata. Original pyproject constraints remain byte-identical.",
+  "initial_manifest_sha256": "c40c9ca3794bf87e178730ae8371b3e829e1e98d980cdbe878c049fa16d3db74",
+  "revision_reason": "Corrected the initial overbroad no-install/no-project-execution intent after observed UV metadata preparation; original manifest and failed/partial profiles retained."
+}

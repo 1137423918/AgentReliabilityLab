@@ -1,0 +1,4 @@
+Starting filesystem walk for root: /
+Scanned [RUN_V3]/results/browser-use-1.0.8-candidate/uv.lock file and found 85 packages
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 37.004172ms elapsed, 37.004307ms wall time
+Loaded PyPI local db from [RUN_V1]/db/osv-scalibr/PyPI/all.zip

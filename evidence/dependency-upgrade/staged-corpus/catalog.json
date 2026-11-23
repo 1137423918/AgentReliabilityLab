@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "source_commit": "2fed22a94a96ee91fcb1820b056550a103905537b5d7b9256794d0b7b0646dd4",
+  "source_base": "https://example.invalid/pending-publication/",
+  "reports": [
+    {
+      "id": "browser_use_1_0_8",
+      "path": "browser_use_1_0_8.json",
+      "sha256": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4",
+      "description": "Prepared dependency upgrade observations for browser-use/browser-use 1.0.8; isolated resolver, fixed-database scans and target facts. No deployment approval.",
+      "fields": [
+        "/execution",
+        "/resolution",
+        "/coverage",
+        "/target",
+        "/delta",
+        "/provenance"
+      ]
+    },
+    {
+      "id": "fastmcp_2_12_4",
+      "path": "fastmcp_2_12_4.json",
+      "sha256": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a",
+      "description": "Prepared dependency upgrade observations for PrefectHQ/fastmcp v2.12.4; isolated resolver, fixed-database scans and target facts. No deployment approval.",
+      "fields": [
+        "/execution",
+        "/resolution",
+        "/coverage",
+        "/target",
+        "/delta",
+        "/provenance"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+diff --git a/uv.lock b/uv.lock
+index 9a5ad0c..df871ea 100644
+--- a/uv.lock
++++ b/uv.lock
+@@ -1,5 +1,5 @@
+ version = 1
+-revision = 2
++revision = 5
+ requires-python = ">=3.10"
+ resolution-markers = [
+     "python_full_version >= '3.11'",
+@@ -50,14 +50,16 @@ wheels = [
+ 
+ [[package]]
+ name = "authlib"
+-version = "1.6.1"
++version = "1.9.10"
+ source = { registry = "https://pypi.org/simple" }
+ dependencies = [
+     { name = "cryptography" },
++    { name = "joserfc", version = "1.7.7", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.11'" },
++    { name = "joserfc", version = "1.8.0", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version >= '3.11'" },
+ ]
+-sdist = { url = "https://files.pythonhosted.org/packages/8e/a1/d8d1c6f8bc922c0b87ae0d933a8ed57be1bef6970894ed79c2852a153cd3/authlib-1.6.1.tar.gz", hash = "sha256:4dffdbb1460ba6ec8c17981a4c67af7d8af131231b5a36a88a1e8c80c111cdfd", size = 159988, upload-time = "2025-07-20T07:38:42.834Z" }
++sdist = { url = "https://files.pythonhosted.org/packages/a9/7c/e1963d10d1d7203ca913a20e377893ec27489db27f5115f25ff50ef7b5bd/authlib-1.9.10.tar.gz", hash = "sha256:f7453c4a3f5975f94cc55223c4d48ff9c7d8d3b4e3d727ed2549edaeb9b85d50", size = 184323, upload-time = "2026-11-20T09:31:59.097Z" }
+ wheels = [
+-    { url = "https://files.pythonhosted.org/packages/f9/58/cc6a08053f822f98f334d38a27687b69c6655fb05cd74a7a5e70a2aeed95/authlib-1.6.1-py2.py3-none-any.whl", hash = "sha256:e9d2031c34c6309373ab845afc24168fe9e93dc52d252631f52642f21f5ed06e", size = 239299, upload-time = "2025-07-20T07:38:39.259Z" },
++    { url = "https://files.pythonhosted.org/packages/b9/93/a93953ac475b32552eed564d40632ff0ce1db4241a52d9cdcb16ae0480b7/authlib-1.9.10-py2.py3-none-any.whl", hash = "sha256:c62d10e1b23945c6d4c578a16170bfefe4879bd23d4be62edea494993dce70aa", size = 267693, upload-time = "2026-11-20T09:31:57.716Z" },
+ ]
+ 
+ [[package]]
+@@ -720,17 +722,17 @@ resolution-markers = [
+     "python_full_version < '3.11'",
+ ]
+ dependencies = [
+-    { name = "colorama", marker = "python_full_version < '3.11' and sys_platform == 'win32'" },
+-    { name = "decorator", marker = "python_full_version < '3.11'" },
+-    { name = "exceptiongroup", marker = "python_full_version < '3.11'" },
+-    { name = "jedi", marker = "python_full_version < '3.11'" },
+-    { name = "matplotlib-inline", marker = "python_full_version < '3.11'" },
+-    { name = "pexpect", marker = "python_full_version < '3.11' and sys_platform != 'emscripten' and sys_platform != 'win32'" },
+-    { name = "prompt-toolkit", marker = "python_full_version < '3.11'" },
+-    { name = "pygments", marker = "python_full_version < '3.11'" },
+-    { name = "stack-data", marker = "python_full_version < '3.11'" },
+-    { name = "traitlets", marker = "python_full_version < '3.11'" },
+-    { name = "typing-extensions", marker = "python_full_version < '3.11'" },
++    { name = "colorama", marker = "sys_platform == 'win32'" },
++    { name = "decorator" },
++    { name = "exceptiongroup" },
++    { name = "jedi" },
++    { name = "matplotlib-inline" },
++    { name = "pexpect", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
++    { name = "prompt-toolkit" },
++    { name = "pygments" },
++    { name = "stack-data" },
++    { name = "traitlets" },
++    { name = "typing-extensions" },
+ ]
+ sdist = { url = "https://files.pythonhosted.org/packages/85/31/10ac88f3357fc276dc8a64e8880c82e80e7459326ae1d0a211b40abf6665/ipython-8.37.0.tar.gz", hash = "sha256:ca815841e1a41a1e6b73a0b08f3038af9b2252564d01fc405356d34033012216", size = 5606088, upload-time = "2025-05-31T16:39:09.613Z" }
+ wheels = [
+@@ -745,17 +747,17 @@ resolution-markers = [
+     "python_full_version >= '3.11'",
+ ]
+ dependencies = [
+-    { name = "colorama", marker = "python_full_version >= '3.11' and sys_platform == 'win32'" },
+-    { name = "decorator", marker = "python_full_version >= '3.11'" },
+-    { name = "ipython-pygments-lexers", marker = "python_full_version >= '3.11'" },
+-    { name = "jedi", marker = "python_full_version >= '3.11'" },
+-    { name = "matplotlib-inline", marker = "python_full_version >= '3.11'" },
+-    { name = "pexpect", marker = "python_full_version >= '3.11' and sys_platform != 'emscripten' and sys_platform != 'win32'" },
+-    { name = "prompt-toolkit", marker = "python_full_version >= '3.11'" },
+-    { name = "pygments", marker = "python_full_version >= '3.11'" },
+-    { name = "stack-data", marker = "python_full_version >= '3.11'" },
+-    { name = "traitlets", marker = "python_full_version >= '3.11'" },
+-    { name = "typing-extensions", marker = "python_full_version == '3.11.*'" },
++    { name = "colorama", marker = "sys_platform == 'win32'" },
++    { name = "decorator" },
++    { name = "ipython-pygments-lexers" },
++    { name = "jedi" },
++    { name = "matplotlib-inline" },
++    { name = "pexpect", marker = "sys_platform != 'emscripten' and sys_platform != 'win32'" },
++    { name = "prompt-toolkit" },
++    { name = "pygments" },
++    { name = "stack-data" },
++    { name = "traitlets" },
++    { name = "typing-extensions", marker = "python_full_version < '3.12'" },
+ ]
+ sdist = { url = "https://files.pythonhosted.org/packages/54/80/406f9e3bde1c1fd9bf5a0be9d090f8ae623e401b7670d8f6fdf2ab679891/ipython-9.4.0.tar.gz", hash = "sha256:c033c6d4e7914c3d9768aabe76bbe87ba1dc66a92a05db6bfa1125d81f2ee270", size = 4385338, upload-time = "2025-07-01T11:11:30.606Z" }
+ wheels = [
+@@ -767,7 +769,7 @@ name = "ipython-pygments-lexers"
+ version = "1.1.1"
+ source = { registry = "https://pypi.org/simple" }
+ dependencies = [
+-    { name = "pygments", marker = "python_full_version >= '3.11'" },
++    { name = "pygments" },
+ ]
+ sdist = { url = "https://files.pythonhosted.org/packages/ef/4c/5dd1d8af08107f88c7f741ead7a40854b8ac24ddf9ae850afbcf698aa552/ipython_pygments_lexers-1.1.1.tar.gz", hash = "sha256:09c0138009e56b6854f9535736f4171d855c8c08a563a0dcd8022f78355c7e81", size = 8393, upload-time = "2025-01-17T11:24:34.505Z" }
+ wheels = [
+@@ -867,6 +869,36 @@ wheels = [
+     { url = "https://files.pythonhosted.org/packages/b3/4a/4175a563579e884192ba6e81725fc0448b042024419be8d83aa8a80a3f44/jiter-0.10.0-cp314-cp314t-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3aa96f2abba33dc77f79b4cf791840230375f9534e5fac927ccceb58c5e604a5", size = 354213, upload-time = "2025-05-18T19:04:41.894Z" },
+ ]
+ 
++[[package]]
++name = "joserfc"
++version = "1.7.7"
++source = { registry = "https://pypi.org/simple" }
++resolution-markers = [
++    "python_full_version < '3.11'",
++]
++dependencies = [
++    { name = "cryptography" },
++]
++sdist = { url = "https://files.pythonhosted.org/packages/bd/15/48ff246732232d35ee234228def22b52455fcc55577f06146602399a29b0/joserfc-1.7.7.tar.gz", hash = "sha256:471d0fd12a5a0d1c0942de280f39efe6f597878315033270b504d4d006d25510", size = 237446, upload-time = "2026-10-19T00:30:29.974Z" }
++wheels = [
++    { url = "https://files.pythonhosted.org/packages/df/9f/934db284aa22f37af59708e382903860d4b81329c137b1b0ed2745daeb65/joserfc-1.7.7-py3-none-any.whl", hash = "sha256:06979cfbab78bc802f14c0358f32969826cc26720e13cb38926ffdc86bc0cb2c", size = 71758, upload-time = "2026-10-19T00:30:28.498Z" },
++]
++
++[[package]]
++name = "joserfc"
++version = "1.8.0"
++source = { registry = "https://pypi.org/simple" }
++resolution-markers = [
++    "python_full_version >= '3.11'",
++]
++dependencies = [
++    { name = "cryptography" },
++]
++sdist = { url = "https://files.pythonhosted.org/packages/74/31/5c3f27e82c92a7bbe1f028033ff19e0251540395c9be244c01a50de42bdb/joserfc-1.8.0.tar.gz", hash = "sha256:cbf03cb2c6db8cc5289f1ef8718842e53dba244b4c0de5fefa0c0eaee4bde8db", size = 241023, upload-time = "2026-11-03T10:45:57.948Z" }
++wheels = [
++    { url = "https://files.pythonhosted.org/packages/5e/7e/7ffaae13415e8f51c8e8d5d1845f2de7a27ebf2717e97a38d7e7446d6030/joserfc-1.8.0-py3-none-any.whl", hash = "sha256:176b836ac7ed9a46a88629e24076314b475f33a75d0bad7f26146e572eed7c79", size = 73147, upload-time = "2026-11-03T10:45:56.531Z" },
++]
++
+ [[package]]
+ name = "jsonschema"
+ version = "4.25.0"

@@ -1,0 +1,36 @@
+[
+  {
+    "id": "browser_use_1_0_8_integration_gate",
+    "question": "Audit this prepared dependency-upgrade claim for browser-use/browser-use release 1.0.8: 'The isolated candidate satisfies the gate for integration testing.' The gate requires a prepared/rescanned candidate, resolver exit0, unchanged original requirements, complete registry inventory coverage before and after, a changed target version, zero remaining target advisory matches and zero newly introduced package/advisory matches. Verify every condition from this project's report, including null/unperformed outcomes. This is not deployment approval or proof of exploitability; optional/development resolutions are included. Return one evidence-backed verdict with references covering all eight conditions.",
+    "expected_supported": false,
+    "required_facts": {
+      "browser_use_1_0_8": {
+        "/execution/candidate_prepared": true,
+        "/resolution/exit_code": 0,
+        "/resolution/original_requirements_changed": false,
+        "/coverage/before_registry_complete": true,
+        "/coverage/after_registry_complete": true,
+        "/target/version_changed": false,
+        "/target/remaining_advisory_match_count": 62,
+        "/delta/new_package_advisory_match_count": 0
+      }
+    }
+  },
+  {
+    "id": "fastmcp_2_12_4_integration_gate",
+    "question": "Audit this prepared dependency-upgrade claim for PrefectHQ/fastmcp release v2.12.4: 'The isolated candidate satisfies the gate for integration testing.' The gate requires a prepared/rescanned candidate, resolver exit0, unchanged original requirements, complete registry inventory coverage before and after, a changed target version, zero remaining target advisory matches and zero newly introduced package/advisory matches. Verify every condition from this project's report, including null/unperformed outcomes. This is not deployment approval or proof of exploitability; optional/development resolutions are included. Return one evidence-backed verdict with references covering all eight conditions.",
+    "expected_supported": true,
+    "required_facts": {
+      "fastmcp_2_12_4": {
+        "/execution/candidate_prepared": true,
+        "/resolution/exit_code": 0,
+        "/resolution/original_requirements_changed": false,
+        "/coverage/before_registry_complete": true,
+        "/coverage/after_registry_complete": true,
+        "/target/version_changed": true,
+        "/target/remaining_advisory_match_count": 0,
+        "/delta/new_package_advisory_match_count": 0
+      }
+    }
+  }
+]

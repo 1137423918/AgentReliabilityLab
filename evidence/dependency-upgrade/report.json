@@ -1,0 +1,77 @@
+{
+  "scope": "Read-only upgrade preparation and evidence-backed review for two fixed external project releases. Real OSV/uv/MCP, scripted LLM controls only at this publication; real-model validation is not yet claimed.",
+  "projects": [
+    {
+      "project": "browser-use/browser-use",
+      "release": "1.0.8",
+      "commit": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+      "baseline_registry_resolutions": 84,
+      "baseline_affected_resolutions": 2,
+      "target": "pillow@12.3.0",
+      "candidate_registry_resolutions": 84,
+      "review": {
+        "target_before": [
+          "pillow@12.3.0"
+        ],
+        "target_after": [
+          "pillow@12.3.0"
+        ],
+        "target_version_changed": false,
+        "target_affected_after": [
+          "pillow@12.3.0"
+        ],
+        "new_advisory_ids": [],
+        "new_advisory_matches": [],
+        "remaining_affected_resolutions": 2,
+        "ready_for_integration_tests": false,
+        "release_approved": false,
+        "compatibility_tests_run": false,
+        "all_dependency_findings_cleared": false
+      },
+      "input_files_unchanged": true
+    },
+    {
+      "project": "PrefectHQ/fastmcp",
+      "release": "v2.12.4",
+      "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+      "baseline_registry_resolutions": 118,
+      "baseline_affected_resolutions": 17,
+      "target": "authlib@1.6.1",
+      "candidate_registry_resolutions": 120,
+      "review": {
+        "target_before": [
+          "authlib@1.6.1"
+        ],
+        "target_after": [
+          "authlib@1.9.10"
+        ],
+        "target_version_changed": true,
+        "target_affected_after": [],
+        "new_advisory_ids": [],
+        "new_advisory_matches": [],
+        "remaining_affected_resolutions": 16,
+        "ready_for_integration_tests": true,
+        "release_approved": false,
+        "compatibility_tests_run": false,
+        "all_dependency_findings_cleared": false
+      },
+      "input_files_unchanged": true
+    }
+  ],
+  "unit_controls_passed": 9,
+  "MCP_control_scenarios_passed": 4,
+  "scripted_model_POSTs": 12,
+  "neural_model_requests": 0,
+  "independent_project_snapshots": 2,
+  "offline_OSV_invocations_including_debugging": 14,
+  "counts_not_added_as_new_projects": true,
+  "canonical_verifier_and_grader_unchanged": true,
+  "project_environment_installed": false,
+  "uv_metadata_backend_installation_and_hooks_may_run": true,
+  "project_compatibility_tests_run": false,
+  "release_approved": false,
+  "homepage_updated": false,
+  "protocol_sha256": "248ee51a3d40523c2ce192bb59c56ab3321deb888b27ba88371ee208ed4fe07b",
+  "export_sha256": "ebe17d42cbf7244ef4c4e7b7249484c488fad2b8042b212f89ff7974b2173245",
+  "large_artifacts_retained_privately": "Original complete scans, full frozen PyPI database ZIP, scanner binary, Git clones and metadata caches remain on the authorized experiment server. Functional scan projections and original/public byte hashes are provided."
+}

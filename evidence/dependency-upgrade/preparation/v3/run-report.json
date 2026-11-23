@@ -1,0 +1,140 @@
+{
+  "terminal": true,
+  "protocol_sha256": "34ca72de4b320be94ea8c2c3c68e4ea9905cff89456357de9b89607c5e2d4f64",
+  "phases": [
+    {
+      "name": "format-source",
+      "exit_code": 0,
+      "wall_seconds": 0.447,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "lint-source",
+      "exit_code": 0,
+      "wall_seconds": 0.236,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "application-unit-controls",
+      "exit_code": 0,
+      "wall_seconds": 0.453,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "uv-version",
+      "exit_code": 0,
+      "wall_seconds": 0.67,
+      "peak_owned_RSS_bytes": 12255232
+    },
+    {
+      "name": "python-identity",
+      "exit_code": 0,
+      "wall_seconds": 0.246,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "scanner-version",
+      "exit_code": 0,
+      "wall_seconds": 0.459,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-editable-root-regression",
+      "exit_code": 1,
+      "wall_seconds": 0.462,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "real-dependency-upgrade-preparation",
+      "exit_code": 0,
+      "wall_seconds": 29.307,
+      "peak_owned_RSS_bytes": 179216384
+    },
+    {
+      "name": "prepare-MCP-corpus",
+      "exit_code": 0,
+      "wall_seconds": 0.227,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "new_neural_calls": 0,
+  "GPU_used": false,
+  "active_phase": "prepare-MCP-corpus",
+  "tested_source_sha256": {
+    "agent_lab/dependency_review.py": "a813726b1b3900b1e8d37a2c4846d12af7523614daac48a835d9ae37e0beb562",
+    "tests/test_dependency_review.py": "ce827b100fd32ba632d3602b3d9f1eea9316773bc4f475a77d17c2a75e82a9fe",
+    "benchmarks/dependency_review_corpus.py": "eaf619340d0d6d894f2380856dd0cb731ed9a7cf407665bfe0266e4668a0ee91"
+  },
+  "scanner_download": {
+    "url": "https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_linux_amd64",
+    "sha256": "fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8",
+    "bytes": 58187936,
+    "headers": {
+      "Content-Length": "58187936",
+      "ETag": "\"0x8DF3E16BBD9EC6F\"",
+      "Last-Modified": "Mon, 09 Nov 2026 04:05:47 GMT",
+      "x-goog-generation": null
+    },
+    "download_seconds": 43.767
+  },
+  "database_download": {
+    "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+    "sha256": "364b26a5eb863e9d95957ada2ad0027a12a2a2ca80d91aa2e1db6dcd64dccaf9",
+    "bytes": 38296649,
+    "headers": {
+      "Content-Length": "38296649",
+      "ETag": "\"be1f00397f241a05cf8dd7f38f6524db\"",
+      "Last-Modified": "Mon, 23 Nov 2026 18:33:47 GMT",
+      "x-goog-generation": "1795458827300380"
+    },
+    "download_seconds": 3.038
+  },
+  "database_frozen_before_scan": true,
+  "tool_and_database_reused_after_full_byte_hash_verification": true,
+  "database_unchanged": true,
+  "reviews": {
+    "browser-use-1.0.8": {
+      "affected_resolutions": 2,
+      "selected_target": "pillow@12.3.0",
+      "review": {
+        "target_before": [
+          "pillow@12.3.0"
+        ],
+        "target_after": [
+          "pillow@12.3.0"
+        ],
+        "target_version_changed": false,
+        "target_affected_after": [
+          "pillow@12.3.0"
+        ],
+        "new_advisory_ids": [],
+        "new_advisory_matches": [],
+        "remaining_affected_resolutions": 2,
+        "ready_for_integration_tests": false,
+        "release_approved": false,
+        "compatibility_tests_run": false,
+        "all_dependency_findings_cleared": false
+      },
+      "reason": "Isolated candidate resolved and rescanned; integration tests remain required."
+    },
+    "fastmcp-2.12.4": {
+      "affected_resolutions": 17,
+      "selected_target": "authlib@1.6.1",
+      "review": {
+        "ready_for_integration_tests": false,
+        "release_approved": false
+      },
+      "reason": "Resolution failed or timed out under unchanged project requirements; no successful upgrade is claimed."
+    }
+  },
+  "MCP_corpus_prepared": true,
+  "ready": true,
+  "owned_after": 0,
+  "wall_seconds": 35.321,
+  "final_source_sha256": {
+    "agent_lab/dependency_review.py": "a813726b1b3900b1e8d37a2c4846d12af7523614daac48a835d9ae37e0beb562",
+    "tests/test_dependency_review.py": "ce827b100fd32ba632d3602b3d9f1eea9316773bc4f475a77d17c2a75e82a9fe",
+    "benchmarks/dependency_review_corpus.py": "eaf619340d0d6d894f2380856dd0cb731ed9a7cf407665bfe0266e4668a0ee91"
+  },
+  "source_unchanged_after_checks": true
+}

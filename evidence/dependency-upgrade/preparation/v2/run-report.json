@@ -1,0 +1,98 @@
+{
+  "terminal": true,
+  "protocol_sha256": "4d1f8ba04b162b69d956a74113f462a6267c483fa679dd2e01524f64cc72361b",
+  "phases": [
+    {
+      "name": "format-source",
+      "exit_code": 0,
+      "wall_seconds": 0.232,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "lint-source",
+      "exit_code": 0,
+      "wall_seconds": 0.228,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "application-unit-controls",
+      "exit_code": 0,
+      "wall_seconds": 0.452,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "uv-version",
+      "exit_code": 0,
+      "wall_seconds": 2.065,
+      "peak_owned_RSS_bytes": 16986112
+    },
+    {
+      "name": "python-identity",
+      "exit_code": 0,
+      "wall_seconds": 0.226,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "scanner-version",
+      "exit_code": 0,
+      "wall_seconds": 0.237,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-editable-root-regression",
+      "exit_code": 1,
+      "wall_seconds": 0.505,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "real-dependency-upgrade-preparation",
+      "exit_code": 1,
+      "wall_seconds": 32.964,
+      "peak_owned_RSS_bytes": 179613696
+    }
+  ],
+  "new_neural_calls": 0,
+  "GPU_used": false,
+  "active_phase": "real-dependency-upgrade-preparation",
+  "tested_source_sha256": {
+    "agent_lab/dependency_review.py": "0e85b21f37fc8cd2440fd166df0926af475799ddd86ca3744a2e9c652b33dc6a",
+    "tests/test_dependency_review.py": "68846aa916af03b6c8267b723b36dce70b7697669272b0d3acc49487c6c0274f"
+  },
+  "scanner_download": {
+    "url": "https://github.com/google/osv-scanner/releases/download/v2.7.1/osv-scanner_linux_amd64",
+    "sha256": "fb7dab19a8bd9bbe5c3189f09d4b7ee1820c9553a23bac202648a56efd2f6ee8",
+    "bytes": 58187936,
+    "headers": {
+      "Content-Length": "58187936",
+      "ETag": "\"0x8DF3E16BBD9EC6F\"",
+      "Last-Modified": "Mon, 09 Nov 2026 04:05:47 GMT",
+      "x-goog-generation": null
+    },
+    "download_seconds": 43.767
+  },
+  "database_download": {
+    "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+    "sha256": "364b26a5eb863e9d95957ada2ad0027a12a2a2ca80d91aa2e1db6dcd64dccaf9",
+    "bytes": 38296649,
+    "headers": {
+      "Content-Length": "38296649",
+      "ETag": "\"be1f00397f241a05cf8dd7f38f6524db\"",
+      "Last-Modified": "Mon, 23 Nov 2026 18:33:47 GMT",
+      "x-goog-generation": "1795458827300380"
+    },
+    "download_seconds": 3.038
+  },
+  "database_frozen_before_scan": true,
+  "tool_and_database_reused_after_full_byte_hash_verification": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "real-dependency-upgrade-preparation"
+  },
+  "owned_after": 0,
+  "wall_seconds": 38.454,
+  "final_source_sha256": {
+    "agent_lab/dependency_review.py": "0e85b21f37fc8cd2440fd166df0926af475799ddd86ca3744a2e9c652b33dc6a",
+    "tests/test_dependency_review.py": "68846aa916af03b6c8267b723b36dce70b7697669272b0d3acc49487c6c0274f"
+  },
+  "source_unchanged_after_checks": true
+}

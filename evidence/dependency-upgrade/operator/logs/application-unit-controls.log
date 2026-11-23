@@ -1,0 +1,14 @@
+test_all_resolutions_and_conditional_direct_requirement_are_retained (test_dependency_review.DependencyReviewTests.test_all_resolutions_and_conditional_direct_requirement_are_retained) ... ok
+test_editable_root_is_reported_separately_from_registry_dependencies (test_dependency_review.DependencyReviewTests.test_editable_root_is_reported_separately_from_registry_dependencies) ... ok
+test_empty_or_malformed_scan_is_not_a_clean_bill (test_dependency_review.DependencyReviewTests.test_empty_or_malformed_scan_is_not_a_clean_bill) ... ok
+test_fixed_target_policy_prefers_declarations_over_larger_transitive_group (test_dependency_review.DependencyReviewTests.test_fixed_target_policy_prefers_declarations_over_larger_transitive_group) ... ok
+test_foreign_packages_and_unaccounted_advisories_are_rejected (test_dependency_review.DependencyReviewTests.test_foreign_packages_and_unaccounted_advisories_are_rejected) ... ok
+test_missing_scanner_packages_prevents_target_selection (test_dependency_review.DependencyReviewTests.test_missing_scanner_packages_prevents_target_selection) ... ok
+test_same_advisory_on_a_new_package_is_a_new_finding (test_dependency_review.DependencyReviewTests.test_same_advisory_on_a_new_package_is_a_new_finding) ... ok
+test_target_fix_does_not_imply_all_dependencies_or_release_are_ready (test_dependency_review.DependencyReviewTests.test_target_fix_does_not_imply_all_dependencies_or_release_are_ready) ... ok
+test_unchanged_target_cannot_be_reported_as_an_upgrade (test_dependency_review.DependencyReviewTests.test_unchanged_target_cannot_be_reported_as_an_upgrade) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.003s
+
+OK

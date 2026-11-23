@@ -1,0 +1,125 @@
+{
+  "cases": [
+    {
+      "case": "browser_use_1_0_8_integration_gate",
+      "scenario": "normal",
+      "control_passed": true,
+      "evidence_verified": true,
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "MCP_closed": true,
+      "scripted_model_POSTs": 3,
+      "actual_model_requests": 0,
+      "journal_body_hashes_match": true,
+      "capabilities_excluded_from_model_requests": true
+    },
+    {
+      "case": "fastmcp_2_12_4_integration_gate",
+      "scenario": "normal",
+      "control_passed": true,
+      "evidence_verified": true,
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "MCP_closed": true,
+      "scripted_model_POSTs": 3,
+      "actual_model_requests": 0,
+      "journal_body_hashes_match": true,
+      "capabilities_excluded_from_model_requests": true
+    },
+    {
+      "case": "browser_use_1_0_8_integration_gate",
+      "scenario": "wrong_project",
+      "control_passed": true,
+      "evidence_verified": true,
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/execution/candidate_prepared",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/resolution/exit_code",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/resolution/original_requirements_changed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/coverage/before_registry_complete",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/coverage/after_registry_complete",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/target/version_changed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/target/remaining_advisory_match_count",
+            "reason": "missing"
+          },
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/delta/new_package_advisory_match_count",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "MCP_closed": true,
+      "scripted_model_POSTs": 3,
+      "actual_model_requests": 0,
+      "journal_body_hashes_match": true,
+      "capabilities_excluded_from_model_requests": true
+    },
+    {
+      "case": "browser_use_1_0_8_integration_gate",
+      "scenario": "wrong_verdict",
+      "control_passed": true,
+      "evidence_verified": true,
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": false,
+        "required_fact_failures": [],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "MCP_closed": true,
+      "scripted_model_POSTs": 3,
+      "actual_model_requests": 0,
+      "journal_body_hashes_match": true,
+      "capabilities_excluded_from_model_requests": true
+    }
+  ],
+  "control_scenarios_passed": 4,
+  "scripted_model_POSTs": 12,
+  "neural_requests": 0,
+  "scope": "Real MCP/TCP/FunctionAgent and canonical source binding/grading; explicitly scripted model replies, not task accuracy."
+}

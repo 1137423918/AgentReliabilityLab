@@ -1,0 +1,149 @@
+"""One fresh server CPU profile: fixed metadata queries and real SDK controls."""
+from pathlib import Path, PurePosixPath
+import hashlib
+import json
+import os
+import shutil
+import signal
+import socket
+import subprocess
+import tarfile
+import tempfile
+import time
+import urllib.request
+
+OUT = Path(__file__).resolve().parent
+spec = json.loads((OUT/'protocol.json').read_text())
+sha = lambda p: hashlib.sha256(p.read_bytes()).hexdigest()
+assert not (OUT/'run-report.json').exists()
+assert sha(OUT/'run_cpu.py') == spec['controller_sha256']
+assert sha(OUT/'source.tar.gz') == spec['archive_sha256']
+assert sha(OUT/'exec_child.py') == spec['wrapper_sha256']
+SDK = Path('[OTHER_OWNED_WORKSPACE]/source/extras/mcp-agent/.venv/bin/python')
+CORE = Path('[SERVER_WORKSPACE]/envs/model-request-budget-20261121/bin/python')
+RUFF = Path('[OTHER_OWNED_WORKSPACE]/source/.venv/bin/ruff')
+assert SDK.is_file() and RUFF.is_file()
+os.umask(0o077)
+os.nice(19)
+os.sched_setaffinity(0, sorted(os.sched_getaffinity(0))[:4])
+ROOT = Path(tempfile.mkdtemp(prefix='agentlab-dependency-upgrade-stage67-'))
+SRC = ROOT/'source'; SRC.mkdir()
+parent_start = int(Path('/proc/self/stat').read_text().rsplit(')', 1)[1].split()[19])
+(OUT/'location.json').write_text(json.dumps({'root': str(ROOT), 'source': str(SRC)})+'\n')
+env = {k: v for k, v in os.environ.items() if k not in ['PYTHONPATH', 'LD_PRELOAD', 'LD_LIBRARY_PATH'] and not k.endswith(('_KEY', '_TOKEN'))}
+env.update(GOMEMLIMIT='512MiB', GOMAXPROCS='4', UV_PYTHON_DOWNLOADS='never', UV_CONCURRENT_DOWNLOADS='4', UV_CONCURRENT_BUILDS='1', UV_CONCURRENT_INSTALLS='4', CUDA_VISIBLE_DEVICES='', PYTHONDONTWRITEBYTECODE='1', OMP_NUM_THREADS='4', OPENBLAS_NUM_THREADS='4', MKL_NUM_THREADS='4', TMPDIR=str(ROOT), XDG_CACHE_HOME=str(ROOT/'cache'), HF_HUB_OFFLINE='1', TRANSFORMERS_OFFLINE='1')
+report = {'terminal': False, 'protocol_sha256': sha(OUT/'protocol.json'), 'phases': [], 'new_neural_calls': 0, 'GPU_used': False}
+child = server = None
+known = {}
+began = time.monotonic()
+memory = lambda: int(next(x.split()[1] for x in Path('/proc/meminfo').read_text().splitlines() if x.startswith('MemAvailable:')))*1024
+
+
+def save():
+    tmp = OUT/'run-report.tmp'; tmp.write_text(json.dumps(report, indent=2)+'\n'); os.replace(tmp, OUT/'run-report.json')
+
+
+def owned():
+    rows = {}
+    for p in Path('/proc').glob('[0-9]*'):
+        try:
+            if p.stat().st_uid != os.getuid(): continue
+            s = (p/'stat').read_text().rsplit(')', 1)[1].split()
+            rows[int(p.name)] = {'parent': int(s[1]), 'start': int(s[19]), 'state': s[0], 'rss': int(s[21])*os.sysconf('SC_PAGE_SIZE')}
+        except (OSError, ValueError): pass
+    ids = {p.pid for p in [child, server] if p is not None and p.poll() is None and p.pid in rows}
+    ids.update(p for p, start in known.items() if p in rows and rows[p]['start'] == start)
+    for _ in range(16):
+        old = len(ids); ids.update(p for p, row in rows.items() if row['parent'] in ids)
+        if len(ids) == old: break
+    ids = {p for p in ids if rows[p]['state'] != 'Z'}
+    known.update({p: rows[p]['start'] for p in ids})
+    return {p: rows[p] for p in ids}
+
+
+def stop():
+    for sig in [signal.SIGTERM, signal.SIGKILL]:
+        for pid, value in owned().items():
+            if owned().get(pid, {}).get('start') == value['start']:
+                try: os.kill(pid, sig)
+                except ProcessLookupError: pass
+        for p in [child, server]:
+            if p and p.poll() is None:
+                try: p.wait(timeout=3)
+                except subprocess.TimeoutExpired: pass
+        if not owned(): break
+
+
+def argv(command):
+    return [str(CORE), str(OUT/'exec_child.py'), str(os.getpid()), str(parent_start), 'cpu', *[str(x) for x in command]]
+
+
+def run(name, command, cap=120, cwd=SRC):
+    global child
+    report['active_phase'] = name; save(); start = time.monotonic(); peak = 0
+    with (OUT/(name+'.log')).open('wb') as log:
+        child = subprocess.Popen(argv(command), cwd=cwd, env=env, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+        while child.poll() is None:
+            rss = sum(v['rss'] for v in owned().values()); peak = max(peak, rss)
+            if time.monotonic()-start > cap or time.monotonic()-began > 2400 or rss > 3*2**30 or memory() < 8*2**30:
+                raise RuntimeError('CPU time/memory guard: '+name)
+            time.sleep(.2)
+        code = child.wait()
+    report['phases'].append({'name': name, 'exit_code': code, 'wall_seconds': round(time.monotonic()-start, 3), 'peak_owned_RSS_bytes': peak}); save()
+    assert code == 0, name
+
+
+
+def download(url, path, *, expected=None, cap_bytes=268435456):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    started=time.monotonic(); h=hashlib.sha256(); count=0
+    with urllib.request.urlopen(url, timeout=30) as response, path.open('xb') as stream:
+        headers={k:response.headers.get(k) for k in ['Content-Length','ETag','Last-Modified','x-goog-generation']}
+        while chunk:=response.read(1048576):
+            count+=len(chunk);assert count<=cap_bytes and time.monotonic()-started<180
+            h.update(chunk);stream.write(chunk)
+    actual=h.hexdigest()
+    if expected:assert actual==expected
+    return {'url':url,'sha256':actual,'bytes':count,'headers':headers,'download_seconds':round(time.monotonic()-started,3)}
+
+try:
+    assert memory()>=16*2**30 and shutil.disk_usage('/tmp').free>=8*2**30
+    with tarfile.open(OUT/'source.tar.gz') as archive:
+        for item in archive:
+            path=PurePosixPath(item.name);assert item.isfile() and not path.is_absolute() and '..' not in path.parts
+            dst=SRC/item.name;dst.parent.mkdir(parents=True,exist_ok=True);dst.write_bytes(archive.extractfile(item).read())
+    assert all(sha(SRC/rel)==v for rel,v in spec['files_sha256'].items())
+    env['PYTHONPATH']=str(SRC);env['UV_CACHE_DIR']=str(ROOT/'uv-cache')
+    run('format-source',[RUFF,'format',*spec['changed_python']])
+    run('lint-source',[RUFF,'check',*spec['changed_python']])
+    report['tested_source_sha256']={rel:sha(SRC/rel) for rel in spec['changed_python']}
+    run('application-unit-controls',[SDK,'-m','unittest','discover','-s','tests','-p','test_dependency_review.py','-v'])
+    UV=Path('[SERVER_WORKSPACE]/tools/uv-x86_64-unknown-linux-gnu/uv');assert UV.is_file()
+    run('uv-version',[UV,'--version'])
+    run('python-identity',[SDK,'-c',"import json,sys; print(json.dumps({'python':sys.version,'executable':sys.executable}))"])
+    inputs=json.loads((SRC/'inputs/input-manifest.json').read_text());selected=inputs['scanner'];scanner=ROOT/'tools/osv-scanner'
+    report['active_phase']='download-scanner';save()
+    report['scanner_download']=download(selected['url'],scanner,expected=selected['sha256'],cap_bytes=selected['bytes']);scanner.chmod(0o500)
+    checksums=ROOT/'tools/SHA256SUMS';report['checksums_download']=download(selected['checksums_url'],checksums,expected=selected['checksums_sha256'],cap_bytes=4096)
+    assert any(line.split()==[selected['sha256'],'osv-scanner_linux_amd64'] for line in checksums.read_text().splitlines())
+    run('scanner-version',[scanner,'--version'])
+    run('scanner-scan-help',[scanner,'scan','source','--help'])
+    report['active_phase']='download-frozen-database';save()
+    database=ROOT/'db/osv-scalibr/PyPI/all.zip'
+    report['database_download']=download('https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip',database);database.chmod(0o400)
+    report['database_frozen_before_scan']=True;save()
+    run('real-dependency-upgrade-preparation',[SDK,'-m','agent_lab.dependency_review','--inputs',SRC/'inputs','--output',ROOT/'results','--scanner',scanner,'--uv',UV,'--python',CORE,'--database',database,'--database-sha256',report['database_download']['sha256']],1900)
+    reports={snapshot['id']:json.loads((ROOT/'results'/(snapshot['id']+'-review.json')).read_text()) for snapshot in inputs['snapshots']}
+    assert all(r['original_inputs_unchanged'] and r['baseline']['registry_coverage_complete'] for r in reports.values())
+    assert sha(database)==report['database_download']['sha256']
+    report['database_unchanged']=True
+    report['reviews']={name:{'affected_resolutions':r['baseline']['affected_resolutions'],'selected_target':r['selected_target'],'review':r['review'],'reason':r['reason']} for name,r in reports.items()}
+    report['ready']=True
+except BaseException as error:
+    report['error']={'type':type(error).__name__,'message':str(error)[:800]}
+finally:
+    stop();report.update(terminal=True,owned_after=len(owned()),wall_seconds=round(time.monotonic()-began,3))
+    report['final_source_sha256']={rel:sha(SRC/rel) for rel in spec['changed_python'] if (SRC/rel).is_file()}
+    report['source_unchanged_after_checks']=report.get('tested_source_sha256')==report['final_source_sha256']
+    save();print(json.dumps({k:report.get(k) for k in ['terminal','ready','error','owned_after','wall_seconds','reviews','source_unchanged_after_checks']}),flush=True)
+raise SystemExit(0 if report.get('ready') and not report.get('error') and not report['owned_after'] and report['source_unchanged_after_checks'] else 2)

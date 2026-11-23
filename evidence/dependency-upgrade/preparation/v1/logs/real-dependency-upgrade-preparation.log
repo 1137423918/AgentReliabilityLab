@@ -1,0 +1,17 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "[RUN_V1]/source/agent_lab/dependency_review.py", line 407, in <module>
+    main()
+  File "[RUN_V1]/source/agent_lab/dependency_review.py", line 380, in main
+    report = prepare_snapshot(
+             ^^^^^^^^^^^^^^^^^
+  File "[RUN_V1]/source/agent_lab/dependency_review.py", line 288, in prepare_snapshot
+    baseline = scan_lock(
+               ^^^^^^^^^^
+  File "[RUN_V1]/source/agent_lab/dependency_review.py", line 268, in scan_lock
+    data = scanner_findings(json.loads(raw), locked)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "[RUN_V1]/source/agent_lab/dependency_review.py", line 106, in scanner_findings
+    raise ValueError(
+ValueError: Scanner returned a package absent from the pinned lock

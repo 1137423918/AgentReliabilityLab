@@ -1,0 +1,18 @@
+test_editable_root_is_reported_separately_from_registry_dependencies (__main__.DependencyReviewTests.test_editable_root_is_reported_separately_from_registry_dependencies) ... 
+  test_editable_root_is_reported_separately_from_registry_dependencies (__main__.DependencyReviewTests.test_editable_root_is_reported_separately_from_registry_dependencies) (locked_version=None, scanned_version='') ... ERROR
+
+======================================================================
+ERROR: test_editable_root_is_reported_separately_from_registry_dependencies (__main__.DependencyReviewTests.test_editable_root_is_reported_separately_from_registry_dependencies) (locked_version=None, scanned_version='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "[RUN_V3]/baseline/tests/test_dependency_review.py", line 89, in test_editable_root_is_reported_separately_from_registry_dependencies
+    result = scanner_findings(
+             ^^^^^^^^^^^^^^^^^
+  File "[RUN_V3]/baseline/agent_lab/dependency_review.py", line 113, in scanner_findings
+    raise ValueError(
+ValueError: Scanner returned a package absent from the pinned lock
+
+----------------------------------------------------------------------
+Ran 1 test in 0.002s
+
+FAILED (errors=1)

@@ -1,0 +1,5 @@
+Starting filesystem walk for root: /
+Scanned [RUN_V4]/source/inputs/fastmcp-2.12.4/uv.lock file and found 119 packages
+End status: 0 dirs visited, 1 inodes visited, 1 Extract calls, 32.572651ms elapsed, 32.572792ms wall time
+Filtered 1 local/unscannable package/s from the scan.
+Loaded PyPI local db from [RUN_V1]/db/osv-scalibr/PyPI/all.zip
