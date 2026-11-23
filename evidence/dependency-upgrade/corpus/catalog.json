@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "source_commit": "2323416f27bccfe22b8d419562af11128059f75b",
+  "source_base": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/2323416f27bccfe22b8d419562af11128059f75b/evidence/dependency-upgrade/corpus/",
+  "reports": [
+    {
+      "id": "browser_use_1_0_8",
+      "path": "browser_use_1_0_8.json",
+      "sha256": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4",
+      "description": "Prepared dependency upgrade observations for browser-use/browser-use 1.0.8; isolated resolver, fixed-database scans and target facts. No deployment approval.",
+      "fields": [
+        "/execution",
+        "/resolution",
+        "/coverage",
+        "/target",
+        "/delta",
+        "/provenance"
+      ]
+    },
+    {
+      "id": "fastmcp_2_12_4",
+      "path": "fastmcp_2_12_4.json",
+      "sha256": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a",
+      "description": "Prepared dependency upgrade observations for PrefectHQ/fastmcp v2.12.4; isolated resolver, fixed-database scans and target facts. No deployment approval.",
+      "fields": [
+        "/execution",
+        "/resolution",
+        "/coverage",
+        "/target",
+        "/delta",
+        "/provenance"
+      ]
+    }
+  ]
+}

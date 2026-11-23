@@ -5,8 +5,8 @@
       "bytes": 4216
     },
     "README.md": {
-      "sha256": "4a31f1ab0804da58cb99421ab4626d9620882c418b95ea8b44e8b739b5b814c2",
-      "bytes": 4959
+      "sha256": "be0402a12646a6b63845bdd69a3968cc63cfeacff1beea999b2e911f7e686ffe",
+      "bytes": 5006
     },
     "SDK-uv.lock": {
       "sha256": "866a6cfaabf0658345e83f76ebc7570be0eec90e46f6a92a850f70c927011cd0",
@@ -47,6 +47,10 @@
     "corpus/browser_use_1_0_8.json": {
       "sha256": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4",
       "bytes": 5039
+    },
+    "corpus/catalog.json": {
+      "sha256": "9581d97e5e6ead9e1ad2f4e5d273b57bb803d8122ddc4e6bd7abf34165d88f08",
+      "bytes": 1259
     },
     "corpus/fastmcp_2_12_4.json": {
       "sha256": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a",
