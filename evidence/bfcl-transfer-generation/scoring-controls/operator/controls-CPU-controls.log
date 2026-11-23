@@ -1,0 +1,11 @@
+test_guard_rejection_is_separate_from_decoder_failure (__main__.ScoringControls.test_guard_rejection_is_separate_from_decoder_failure) ... ok
+test_irrelevance_parse_failure_credit_is_visible (__main__.ScoringControls.test_irrelevance_parse_failure_credit_is_visible) ... ok
+test_paired_changes_and_exact_test (__main__.ScoringControls.test_paired_changes_and_exact_test) ... ok
+test_paired_undefined_is_not_dropped_or_scored_false (__main__.ScoringControls.test_paired_undefined_is_not_dropped_or_scored_false) ... ok
+test_partial_cohort_cannot_be_scored (__main__.ScoringControls.test_partial_cohort_cannot_be_scored) ... ok
+test_undefined_infrastructure_error_keeps_full_denominator (__main__.ScoringControls.test_undefined_infrastructure_error_keeps_full_denominator) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+OK

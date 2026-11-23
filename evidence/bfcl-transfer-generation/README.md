@@ -8,3 +8,6 @@ CPU preflight ready; **no new model predictions or scores at this initial public
 - Four published implementation/test files match CPU-preflighted bytes. The existing GenerationProgress implementation is unchanged; new integration controls are not neural results.
 
 Raw questions,prompts,token vectors,reference answers,model responses and weights remain private. Exact checkpoint identities and request hashes are bound before generation. No online scoring,checkpoint selection,prompt conversion or quality retry. Operator paths are normalized where specified; original/public hashes are distinct. See [scope and metric limits](../../docs/bfcl-transfer-generation.md).
+
+
+Offline scoring aggregation is frozen separately under `scoring-controls/`: six Linux-server controls pass, eight payload hashes verified, and both new source files match server bytes. No model outputs or scoring feedback were read for these controls. The actual three-role generation is in progress; all750 outputs must be committed before offline scoring.

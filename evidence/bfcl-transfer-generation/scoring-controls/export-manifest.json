@@ -1,0 +1,47 @@
+{
+  "files": {
+    "operator/protocol.json": {
+      "bytes": 3207,
+      "sha256": "2b72d42334eace27752c4ead3ba554dee2ae44e902adce4a1a05ec3e94e4eca5",
+      "original_sha256": "2b72d42334eace27752c4ead3ba554dee2ae44e902adce4a1a05ec3e94e4eca5"
+    },
+    "operator/run_cpu.py": {
+      "bytes": 7670,
+      "sha256": "85390905d6079b47553b1ca3e1528e72881b1efb52e962c671bb9064306b9b6e",
+      "original_sha256": "31c17bac91296d410ec2bdbb22295b90b64109bc582be0377721a484ef01b1f4"
+    },
+    "operator/exec_child.py": {
+      "bytes": 443,
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8"
+    },
+    "operator/cpu_admission.py": {
+      "bytes": 2870,
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+    },
+    "operator/controls-run-report.json": {
+      "bytes": 57860,
+      "sha256": "d405001871148983a21cd42ebbcba28e254b9df1ff61b184fa1c4676a7901c1f",
+      "original_sha256": "d405001871148983a21cd42ebbcba28e254b9df1ff61b184fa1c4676a7901c1f"
+    },
+    "operator/controls-CPU-controls.log": {
+      "bytes": 876,
+      "sha256": "8643fce419560706d580c07ef3deb7befae249a584cdda650d371d600b3c71cc",
+      "original_sha256": "8643fce419560706d580c07ef3deb7befae249a584cdda650d371d600b3c71cc"
+    },
+    "tested-source/benchmarks/score_bfcl_generation.py": {
+      "bytes": 10998,
+      "sha256": "ca2a2f19b6756ba4108d08dcc12dda3284fac0c720287c87f657321db742977b",
+      "original_sha256": "ca2a2f19b6756ba4108d08dcc12dda3284fac0c720287c87f657321db742977b"
+    },
+    "tested-source/extras/lora-training/test_bfcl_generation_scoring.py": {
+      "bytes": 2884,
+      "sha256": "77556375bf707650f54b5be080fe16a92ddbf4b20c36b1b3ad3a55e160520e5c",
+      "original_sha256": "77556375bf707650f54b5be080fe16a92ddbf4b20c36b1b3ad3a55e160520e5c"
+    }
+  },
+  "neural_calls": 0,
+  "controls": 6,
+  "no_model_outputs_read": true
+}
