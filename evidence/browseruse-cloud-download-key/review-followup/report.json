@@ -30,5 +30,13 @@
   "SDK_lock_unchanged": true,
   "homepage_updated": false,
   "protocol_sha256": "12255d03ebc31b518dde7abdb842fc92cdb10e333f0e47a8c4c6793d5ae85d76",
-  "export_sha256": "93259924f462e584dc6545bbf57dbdfbd6d4bb1da2fa97292188266616270ea9"
+  "export_sha256": "93259924f462e584dc6545bbf57dbdfbd6d4bb1da2fa97292188266616270ea9",
+  "native_CI": {
+    "snapshot": "pr-state.json",
+    "observed_utc": "2026-11-23T18:29:00.196462+00:00",
+    "same_candidate_commit": true,
+    "lint_package_docker_test_passed": true,
+    "unresolved_threads": 0,
+    "human_approval_claimed": false
+  }
 }

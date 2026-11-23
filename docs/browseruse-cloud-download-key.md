@@ -9,3 +9,5 @@
 服务器默认运行目录属主不匹配曾使较广测试失败。未修改项目安全检查或原目录：先在未修复源码重现相同错误，再以独立0700 `BH_HOME` 复验，最后在相同测试源码、相同锁定SDK下完成广泛检查。早期准备失败与原始失败分数都保留；服务器测试通过不代表上游CI或人工审查已通过。[源码、逐项结果和局限](../evidence/browseruse-cloud-download-key/README.md)。个人主页保持冻结。
 
 评审补充：超时创建随后返回时，后台停止成功后清除会话密钥；失败时保留密钥与归属，以便重试。新回归以首版PR提交c881c18为基线，两种停止路径均失败，修复后通过；与原版上游三入口回归的基线不同，不相加。最终相邻验证：162 passed in 42.00s；完整非Chrome选择：969 passed, 3 skipped, 140 deselected, 1 warning in 371.01s (0:06:11)。原生CI另按提交记录；[补充源码、失败对照与结果](../evidence/browseruse-cloud-download-key/review-followup/README.md)。
+
+最终同一提交a4473544的GitHub原生lint、package、Docker和test工作流均通过，涵盖Linux/Python3.11–3.14、macOS、Windows及Chrome检查；机器人复核通过、无未处理行内线程。该结果按[时间戳快照](../evidence/browseruse-cloud-download-key/review-followup/pr-state.json)独立记录，不表示人工批准或合并。
