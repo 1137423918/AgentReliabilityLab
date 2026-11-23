@@ -1,0 +1,32 @@
+{
+  "status": "fixed_budget_SFT_executed_generation_comparison_pending",
+  "Full_original_run_status": "failed",
+  "Full_original_final_in_memory_base_hash_missing": true,
+  "Full_independent_checkpoint_replay_completed": true,
+  "Full_independent_replay_supervisor_status": "failed_at_exit_guard",
+  "Full_replay_forwards": 277,
+  "Full_replay_optimizer_updates": 0,
+  "Full_replay_all_case_NLL_differences0": true,
+  "Mixed_run_status": "completed",
+  "Full_optimizer_updates": 32,
+  "Mixed_optimizer_updates": 32,
+  "supervised_labels_each": 65536,
+  "Full_backward_segments": 774,
+  "Mixed_backward_segments": 772,
+  "Full_input_token_exposures": 573843,
+  "Mixed_input_token_exposures": 537483,
+  "all_stage_neural_forward_reserved": 2935,
+  "all_stage_neural_forward_completed": 2935,
+  "all_stage_neural_forward_unknown": 0,
+  "Full_final_NLL": {
+    "dev": 0.2774757378230517,
+    "val": 0.2975985165174249
+  },
+  "Mixed_final_NLL": {
+    "dev": 0.2753330667173598,
+    "val": 0.2979337118400516
+  },
+  "original_Full_and_Mixed_physical_GPU_differ": true,
+  "single_seed_pilot_no_generation_accuracy_or_robustness_gain_claim": true,
+  "homepage_updated": false
+}

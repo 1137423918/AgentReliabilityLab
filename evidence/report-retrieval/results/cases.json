@@ -1,0 +1,1445 @@
+[
+  {
+    "id": "inflated_merged_claim",
+    "group": "previously_seen_development_question",
+    "query": "Against the pinned catalog snapshot (not live GitHub), audit this OpenHands#7050 contribution claim: 'The same-path patch fix has229 distinct tests, by adding203 related,22 focused and4 new checks; the PR is already merged.' Verify the reported totals, subset overlap and the matching PR's state/draft/merged fields. Give only exact observed evidence.",
+    "required_reports": [
+      "patch_move",
+      "upstream_prs"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "patch_move",
+          "upstream_prs"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "patch_move",
+          "adk_cleanup",
+          "upstream_prs",
+          "sk_cancelled_send"
+        ],
+        "required_recalled": [
+          "patch_move",
+          "upstream_prs"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1655,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "patch_move",
+          "upstream_prs",
+          "adk_cleanup",
+          "sk_cancelled_send"
+        ],
+        "required_recalled": [
+          "patch_move",
+          "upstream_prs"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1675,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "supported_contribution",
+    "group": "previously_seen_development_question",
+    "query": "Against the pinned catalog snapshot (not live GitHub), audit this contribution description: 'Three new baseline checks fail before the OpenHands same-path move fix. The candidate's203 related checks pass, including22 focused checks and4 new checks. This uses the real public executor with zero neural requests, and the overlapping groups must not be added again.' Verify each stated number and scope rather than automatically rejecting the statement.",
+    "required_reports": [
+      "patch_move"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "patch_move"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "patch_move",
+          "core_current",
+          "upstream_prs",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "patch_move"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1790,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "patch_move",
+          "upstream_prs",
+          "adk_cleanup",
+          "core_current"
+        ],
+        "required_recalled": [
+          "patch_move"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1808,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "training_progress",
+    "group": "operator_authored_diagnostic",
+    "query": "How many optimizer updates and supervised labels did the paired Full and Mixed LoRA training actually use?",
+    "required_reports": [
+      "lora_pilot"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "lora_pilot",
+          "context_budget",
+          "core_current",
+          "file_inventory"
+        ],
+        "required_recalled": [
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1424,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "lora_pilot",
+          "tool_schema",
+          "core_current",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1509,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "generation_progress",
+    "group": "operator_authored_diagnostic",
+    "query": "What is the current clean generation comparison progress for Base, Full32 and Mixed32, including unknown attempts still charged?",
+    "required_reports": [
+      "lora_generation"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "lora_generation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "lora_generation",
+          "lora_pilot",
+          "mcp_wire",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "lora_generation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1608,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "lora_generation",
+          "lora_pilot",
+          "mcp_wire",
+          "core_current"
+        ],
+        "required_recalled": [
+          "lora_generation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1539,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "training_vs_generation",
+    "group": "operator_authored_diagnostic",
+    "query": "Distinguish completion of LoRA training from completion of the clean generation comparison for Full and Mixed.",
+    "required_reports": [
+      "lora_pilot",
+      "lora_generation"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "lora_generation",
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "lora_pilot",
+          "lora_generation",
+          "context_budget",
+          "core_current"
+        ],
+        "required_recalled": [
+          "lora_generation",
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1399,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "lora_pilot",
+          "lora_generation",
+          "voltagent_cleanup",
+          "core_current"
+        ],
+        "required_recalled": [
+          "lora_generation",
+          "lora_pilot"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1492,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "real_gpu_audit",
+    "group": "operator_authored_diagnostic",
+    "query": "Did the actual Qwen3.5-9B A6000 report audit produce a validated final submission, and did the second case run?",
+    "required_reports": [
+      "mcp_gpu_wire"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "mcp_gpu_wire",
+          "lora_generation",
+          "adk_cpu",
+          "core_current"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1355,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "mcp_gpu_wire",
+          "lora_generation",
+          "mcp_cleanup",
+          "gpu_transport"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1438,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "wire_vs_application",
+    "group": "operator_authored_diagnostic",
+    "query": "Distinguish SIGKILL communication-log controls from actual 9B GPU report-audit task completion.",
+    "required_reports": [
+      "mcp_wire",
+      "mcp_gpu_wire"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire",
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "mcp_gpu_wire",
+          "mcp_wire",
+          "mcp_cleanup",
+          "file_inventory"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire",
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1409,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "mcp_gpu_wire",
+          "mcp_wire",
+          "mcp_cleanup",
+          "gpu_maintenance"
+        ],
+        "required_recalled": [
+          "mcp_gpu_wire",
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1374,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "gpu_smoke_vs_maintenance",
+    "group": "operator_authored_diagnostic",
+    "query": "Compare GPU transport smoke completion with the GPU repository-maintenance admission outcome; was maintenance actually started?",
+    "required_reports": [
+      "gpu_transport",
+      "gpu_maintenance"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "gpu_maintenance",
+          "gpu_transport"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "gpu_maintenance",
+          "gpu_transport",
+          "adk_cpu",
+          "mcp_gpu_wire"
+        ],
+        "required_recalled": [
+          "gpu_maintenance",
+          "gpu_transport"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1372,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "gpu_maintenance",
+          "gpu_transport",
+          "adk_cpu",
+          "mcp_gpu_wire"
+        ],
+        "required_recalled": [
+          "gpu_maintenance",
+          "gpu_transport"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1391,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "close_after_error",
+    "group": "operator_authored_diagnostic",
+    "query": "Did the MCP cleanup controls attempt close_audit when audit_status failed, or skip close after the status-query error?",
+    "required_reports": [
+      "mcp_cleanup"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "mcp_cleanup"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "mcp_cleanup",
+          "voltagent_cleanup",
+          "mcp_gpu_wire",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "mcp_cleanup"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1490,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "mcp_cleanup",
+          "voltagent_cleanup",
+          "mcp_wire",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "mcp_cleanup"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1518,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "durable_unknown",
+    "group": "operator_authored_diagnostic",
+    "query": "What do the durable wire-journal SIGKILL and disk-write failure controls establish about unknown requests and saved communication frames?",
+    "required_reports": [
+      "mcp_wire"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "gpu_maintenance",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1522,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "gpu_maintenance",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "mcp_wire"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1537,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "first_page_hints",
+    "group": "operator_authored_diagnostic",
+    "query": "Were Python declaration hints added beside unchanged first file pages, and did they track checkpointed source revisions?",
+    "required_reports": [
+      "read_index"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "read_index"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "read_index",
+          "context_budget",
+          "source_navigation",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "read_index"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1529,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "read_index",
+          "source_navigation",
+          "context_budget",
+          "file_inventory"
+        ],
+        "required_recalled": [
+          "read_index"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1454,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "source_definitions",
+    "group": "operator_authored_diagnostic",
+    "query": "Which Python navigation checks covered exact source definition boundaries, current virtual hashes and independent path contracts?",
+    "required_reports": [
+      "source_navigation"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "source_navigation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "source_navigation",
+          "read_index",
+          "core_current",
+          "patch_move"
+        ],
+        "required_recalled": [
+          "source_navigation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1640,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "source_navigation",
+          "read_index",
+          "patch_move",
+          "core_current"
+        ],
+        "required_recalled": [
+          "source_navigation"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1655,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "context_cost",
+    "group": "operator_authored_diagnostic",
+    "query": "Compare logical input-prefix tokens for sequential source pages, grep with spans and AST symbol retrieval; were these real inference usage?",
+    "required_reports": [
+      "context_budget"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "context_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "context_budget",
+          "adk_cleanup",
+          "adk_cpu",
+          "core_current"
+        ],
+        "required_recalled": [
+          "context_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1397,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "context_budget",
+          "read_index",
+          "source_navigation",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "context_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1526,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "state_filesystem",
+    "group": "operator_authored_diagnostic",
+    "query": "Which filesystem was admitted for checkpoint state, which network filesystems were rejected, and how was backup handled?",
+    "required_reports": [
+      "local_state"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "local_state"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "local_state",
+          "adk_cleanup",
+          "lora_pilot",
+          "mcp_service"
+        ],
+        "required_recalled": [
+          "local_state"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1578,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "local_state",
+          "mcp_service",
+          "sk_cancelled_send",
+          "voltagent_ownership"
+        ],
+        "required_recalled": [
+          "local_state"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1474,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "request_quota",
+    "group": "operator_authored_diagnostic",
+    "query": "Did a model HTTP attempt quota persist across maintenance recovery and repair retries while request bodies stayed comparable?",
+    "required_reports": [
+      "request_budget"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "request_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "request_budget",
+          "gpu_maintenance",
+          "adk_cpu",
+          "gpu_transport"
+        ],
+        "required_recalled": [
+          "request_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1368,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "request_budget",
+          "gpu_maintenance",
+          "gpu_transport",
+          "adk_cpu"
+        ],
+        "required_recalled": [
+          "request_budget"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1385,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "inventory_boundary",
+    "group": "operator_authored_diagnostic",
+    "query": "Did the task-visible file inventory also restrict direct backend reads and path aliases, beyond merely filtering a listing?",
+    "required_reports": [
+      "file_inventory"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "file_inventory"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "file_inventory",
+          "patch_move",
+          "read_index"
+        ],
+        "required_recalled": [
+          "file_inventory"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1249,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "file_inventory",
+          "patch_move",
+          "read_index"
+        ],
+        "required_recalled": [
+          "file_inventory"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1262,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "cancelled_send",
+    "group": "operator_authored_diagnostic",
+    "query": "For the Semantic Kernel cancelled send fix, what was checked about later exception observation, queue bookkeeping and whether the PR merged?",
+    "required_reports": [
+      "sk_cancelled_send"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "sk_cancelled_send"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "sk_cancelled_send",
+          "upstream_prs",
+          "voltagent_ownership",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "sk_cancelled_send"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1517,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "sk_cancelled_send",
+          "upstream_prs",
+          "voltagent_ownership",
+          "adk_cleanup"
+        ],
+        "required_recalled": [
+          "sk_cancelled_send"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1534,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "voltagent_rounds",
+    "group": "operator_authored_diagnostic",
+    "query": "Compare the earlier VoltAgent notification-registration cleanup with the later rejected-connection ownership fix, preserving their separate lifecycle test scopes.",
+    "required_reports": [
+      "voltagent_cleanup",
+      "voltagent_ownership"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "voltagent_cleanup",
+          "voltagent_ownership"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "voltagent_ownership",
+          "voltagent_cleanup",
+          "patch_move",
+          "historical_core"
+        ],
+        "required_recalled": [
+          "voltagent_cleanup",
+          "voltagent_ownership"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1596,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "voltagent_ownership",
+          "voltagent_cleanup",
+          "patch_move",
+          "historical_core"
+        ],
+        "required_recalled": [
+          "voltagent_cleanup",
+          "voltagent_ownership"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1613,
+        "within_4096_bytes": true
+      }
+    }
+  },
+  {
+    "id": "schema_vs_success",
+    "group": "operator_authored_diagnostic",
+    "query": "Do saved tool-call JSON schema validity and the exact upstream FC projection imply success under official matching?",
+    "required_reports": [
+      "tool_schema"
+    ],
+    "policies": {
+      "all": {
+        "selected": [
+          "core_current",
+          "patch_move",
+          "gpu_transport",
+          "gpu_maintenance",
+          "adk_cpu",
+          "historical_core",
+          "adk_cleanup",
+          "upstream_prs",
+          "mcp_service",
+          "context_budget",
+          "source_navigation",
+          "read_index",
+          "file_inventory",
+          "local_state",
+          "request_budget",
+          "mcp_cleanup",
+          "mcp_wire",
+          "mcp_gpu_wire",
+          "lora_generation",
+          "lora_pilot",
+          "sk_cancelled_send",
+          "voltagent_cleanup",
+          "voltagent_ownership",
+          "tool_schema"
+        ],
+        "required_recalled": [
+          "tool_schema"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 5272,
+        "within_4096_bytes": false
+      },
+      "overlap": {
+        "selected": [
+          "tool_schema",
+          "upstream_prs",
+          "adk_cleanup",
+          "lora_pilot"
+        ],
+        "required_recalled": [
+          "tool_schema"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1515,
+        "within_4096_bytes": true
+      },
+      "bm25": {
+        "selected": [
+          "tool_schema",
+          "upstream_prs",
+          "adk_cleanup",
+          "source_navigation"
+        ],
+        "required_recalled": [
+          "tool_schema"
+        ],
+        "all_required_present": true,
+        "required_recall": 1.0,
+        "serialized_result_bytes": 1553,
+        "within_4096_bytes": true
+      }
+    }
+  }
+]

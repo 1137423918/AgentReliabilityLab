@@ -1,0 +1,164 @@
+{
+  "scope": "Unblinded operator-authored report-retrieval diagnostics, not held-out model task accuracy.",
+  "metadata_only": true,
+  "fixed_before_retrieval_execution": true,
+  "queries": [
+    {
+      "id": "inflated_merged_claim",
+      "group": "previously_seen_development_question",
+      "query": "Against the pinned catalog snapshot (not live GitHub), audit this OpenHands#7050 contribution claim: 'The same-path patch fix has229 distinct tests, by adding203 related,22 focused and4 new checks; the PR is already merged.' Verify the reported totals, subset overlap and the matching PR's state/draft/merged fields. Give only exact observed evidence.",
+      "required_reports": [
+        "patch_move",
+        "upstream_prs"
+      ]
+    },
+    {
+      "id": "supported_contribution",
+      "group": "previously_seen_development_question",
+      "query": "Against the pinned catalog snapshot (not live GitHub), audit this contribution description: 'Three new baseline checks fail before the OpenHands same-path move fix. The candidate's203 related checks pass, including22 focused checks and4 new checks. This uses the real public executor with zero neural requests, and the overlapping groups must not be added again.' Verify each stated number and scope rather than automatically rejecting the statement.",
+      "required_reports": [
+        "patch_move"
+      ]
+    },
+    {
+      "id": "training_progress",
+      "group": "operator_authored_diagnostic",
+      "query": "How many optimizer updates and supervised labels did the paired Full and Mixed LoRA training actually use?",
+      "required_reports": [
+        "lora_pilot"
+      ]
+    },
+    {
+      "id": "generation_progress",
+      "group": "operator_authored_diagnostic",
+      "query": "What is the current clean generation comparison progress for Base, Full32 and Mixed32, including unknown attempts still charged?",
+      "required_reports": [
+        "lora_generation"
+      ]
+    },
+    {
+      "id": "training_vs_generation",
+      "group": "operator_authored_diagnostic",
+      "query": "Distinguish completion of LoRA training from completion of the clean generation comparison for Full and Mixed.",
+      "required_reports": [
+        "lora_pilot",
+        "lora_generation"
+      ]
+    },
+    {
+      "id": "real_gpu_audit",
+      "group": "operator_authored_diagnostic",
+      "query": "Did the actual Qwen3.5-9B A6000 report audit produce a validated final submission, and did the second case run?",
+      "required_reports": [
+        "mcp_gpu_wire"
+      ]
+    },
+    {
+      "id": "wire_vs_application",
+      "group": "operator_authored_diagnostic",
+      "query": "Distinguish SIGKILL communication-log controls from actual 9B GPU report-audit task completion.",
+      "required_reports": [
+        "mcp_wire",
+        "mcp_gpu_wire"
+      ]
+    },
+    {
+      "id": "gpu_smoke_vs_maintenance",
+      "group": "operator_authored_diagnostic",
+      "query": "Compare GPU transport smoke completion with the GPU repository-maintenance admission outcome; was maintenance actually started?",
+      "required_reports": [
+        "gpu_transport",
+        "gpu_maintenance"
+      ]
+    },
+    {
+      "id": "close_after_error",
+      "group": "operator_authored_diagnostic",
+      "query": "Did the MCP cleanup controls attempt close_audit when audit_status failed, or skip close after the status-query error?",
+      "required_reports": [
+        "mcp_cleanup"
+      ]
+    },
+    {
+      "id": "durable_unknown",
+      "group": "operator_authored_diagnostic",
+      "query": "What do the durable wire-journal SIGKILL and disk-write failure controls establish about unknown requests and saved communication frames?",
+      "required_reports": [
+        "mcp_wire"
+      ]
+    },
+    {
+      "id": "first_page_hints",
+      "group": "operator_authored_diagnostic",
+      "query": "Were Python declaration hints added beside unchanged first file pages, and did they track checkpointed source revisions?",
+      "required_reports": [
+        "read_index"
+      ]
+    },
+    {
+      "id": "source_definitions",
+      "group": "operator_authored_diagnostic",
+      "query": "Which Python navigation checks covered exact source definition boundaries, current virtual hashes and independent path contracts?",
+      "required_reports": [
+        "source_navigation"
+      ]
+    },
+    {
+      "id": "context_cost",
+      "group": "operator_authored_diagnostic",
+      "query": "Compare logical input-prefix tokens for sequential source pages, grep with spans and AST symbol retrieval; were these real inference usage?",
+      "required_reports": [
+        "context_budget"
+      ]
+    },
+    {
+      "id": "state_filesystem",
+      "group": "operator_authored_diagnostic",
+      "query": "Which filesystem was admitted for checkpoint state, which network filesystems were rejected, and how was backup handled?",
+      "required_reports": [
+        "local_state"
+      ]
+    },
+    {
+      "id": "request_quota",
+      "group": "operator_authored_diagnostic",
+      "query": "Did a model HTTP attempt quota persist across maintenance recovery and repair retries while request bodies stayed comparable?",
+      "required_reports": [
+        "request_budget"
+      ]
+    },
+    {
+      "id": "inventory_boundary",
+      "group": "operator_authored_diagnostic",
+      "query": "Did the task-visible file inventory also restrict direct backend reads and path aliases, beyond merely filtering a listing?",
+      "required_reports": [
+        "file_inventory"
+      ]
+    },
+    {
+      "id": "cancelled_send",
+      "group": "operator_authored_diagnostic",
+      "query": "For the Semantic Kernel cancelled send fix, what was checked about later exception observation, queue bookkeeping and whether the PR merged?",
+      "required_reports": [
+        "sk_cancelled_send"
+      ]
+    },
+    {
+      "id": "voltagent_rounds",
+      "group": "operator_authored_diagnostic",
+      "query": "Compare the earlier VoltAgent notification-registration cleanup with the later rejected-connection ownership fix, preserving their separate lifecycle test scopes.",
+      "required_reports": [
+        "voltagent_cleanup",
+        "voltagent_ownership"
+      ]
+    },
+    {
+      "id": "schema_vs_success",
+      "group": "operator_authored_diagnostic",
+      "query": "Do saved tool-call JSON schema validity and the exact upstream FC projection imply success under official matching?",
+      "required_reports": [
+        "tool_schema"
+      ]
+    }
+  ]
+}

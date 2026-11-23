@@ -1,0 +1,27 @@
+{
+  "candidate_head": "afa92332ed938c750f452cda8b5a68cbc7b6067e",
+  "baseline_head": "fffed2614bc4354f31f3a1dff50afec65b2412eb",
+  "upstream_base": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+  "baseline_lifecycle_failed": 8,
+  "candidate_lifecycle_passed": 8,
+  "complete_MCP_package_passed": 23,
+  "overlapping_counts_not_added": true,
+  "final_fixture_sha256": "a29142c25f419b2b0f8a7a096a91cf4774a67fd64a836bb18eb9e5fc49e7c8b4",
+  "new_strict_test_files": [
+    "src/capabilities/notifications.spec.ts",
+    "src/server-lifecycle.spec.ts"
+  ],
+  "initial_failed_candidate_preserved": true,
+  "second_typecheck_failure_preserved": true,
+  "non_lifecycle_files_identical_across_candidates": 7,
+  "debug_selected_tests": 1,
+  "debug_failed_due_to_old_expectation": 1,
+  "debug_skipped": 7,
+  "debug_GET_remained_until_client_close": true,
+  "debug_GET_lifetime_ms": 1069,
+  "debug_GET_closed_ms_after_client_close_started": 28,
+  "scope": "MCP package server CPU validation; not all-monorepo CI, neural scoring, or a proof that every resource is bounded.",
+  "new_dependency_install": false,
+  "dependency_packages_rebuilt_this_stage": false,
+  "MCP_server_package_rebuilt": true
+}

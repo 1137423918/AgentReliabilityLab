@@ -1,0 +1,610 @@
+{
+  "scope": "Secondary parsed-call diagnostics on fixed Stage52 saved predictions; not official rescoring, raw-format grading or tool execution.",
+  "protocol_sha256": "690be4731ab4754e42423ae0bf4b0e27327c56b1df4e1784e53ba2470bddb173",
+  "upstream_extracted_function_sha256": {
+    "_maybe_json_loads": "75eb5ae92c6e67f35709b04391e6fec9c48307de745ad68da0b06610284234ba",
+    "load_samples": "10421adcec8d42c5b2a5167ac017d7230ff0af2ce5d6a8bc2ec93f009b5bf2ed",
+    "_normalize_tool_schema": "51164eb606b27cd0b23129126fd9cdbd2971ff7e0628fbdb0d8f1a78548f6a42",
+    "is_multi_turn": "b98c1f8d1c74769f41f212140bc776002d0d0f418309f1610b4ca113c59a9626"
+  },
+  "versions": {
+    "jsonschema": "4.26.0",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1"
+  },
+  "input_tools": 879,
+  "inventory_views": {
+    "raw": {
+      "schema_eligible": 712,
+      "schema_invalid": 167
+    },
+    "upstream_fc_projection": {
+      "schema_eligible": 875,
+      "schema_invalid": 4
+    }
+  },
+  "all_known_by_variant": {
+    "base": {
+      "cases": 199,
+      "stored_official_correct": 118,
+      "views": {
+        "raw": {
+          "case_statuses": {
+            "all_calls_schema_valid": 105,
+            "no_parsed_calls": 23,
+            "not_all_calls_schema_valid": 71
+          },
+          "call_statuses": {
+            "schema_invalid": 58,
+            "schema_valid": 107,
+            "schema_violations": 3,
+            "unknown_tool": 54
+          },
+          "violation_occurrences": {
+            "required": 3
+          },
+          "cases_by_violation_keyword": {
+            "required": 3
+          },
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 27,
+            "false/no_parsed_calls": 23,
+            "false/not_all_calls_schema_valid": 31,
+            "true/all_calls_schema_valid": 78,
+            "true/not_all_calls_schema_valid": 40
+          }
+        },
+        "upstream_fc_projection": {
+          "case_statuses": {
+            "all_calls_schema_valid": 158,
+            "no_parsed_calls": 23,
+            "not_all_calls_schema_valid": 18
+          },
+          "call_statuses": {
+            "schema_invalid": 3,
+            "schema_valid": 160,
+            "schema_violations": 5,
+            "unknown_tool": 54
+          },
+          "violation_occurrences": {
+            "required": 3,
+            "type": 2
+          },
+          "cases_by_violation_keyword": {
+            "required": 3,
+            "type": 2
+          },
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 41,
+            "false/no_parsed_calls": 23,
+            "false/not_all_calls_schema_valid": 17,
+            "true/all_calls_schema_valid": 117,
+            "true/not_all_calls_schema_valid": 1
+          }
+        }
+      }
+    },
+    "full32": {
+      "cases": 83,
+      "stored_official_correct": 50,
+      "views": {
+        "raw": {
+          "case_statuses": {
+            "all_calls_schema_valid": 21,
+            "no_parsed_calls": 16,
+            "not_all_calls_schema_valid": 46
+          },
+          "call_statuses": {
+            "schema_invalid": 45,
+            "schema_valid": 22,
+            "unknown_tool": 1
+          },
+          "violation_occurrences": {},
+          "cases_by_violation_keyword": {},
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 5,
+            "false/no_parsed_calls": 16,
+            "false/not_all_calls_schema_valid": 12,
+            "true/all_calls_schema_valid": 16,
+            "true/not_all_calls_schema_valid": 34
+          }
+        },
+        "upstream_fc_projection": {
+          "case_statuses": {
+            "all_calls_schema_valid": 64,
+            "no_parsed_calls": 16,
+            "not_all_calls_schema_valid": 3
+          },
+          "call_statuses": {
+            "schema_valid": 65,
+            "schema_violations": 2,
+            "unknown_tool": 1
+          },
+          "violation_occurrences": {
+            "type": 2
+          },
+          "cases_by_violation_keyword": {
+            "type": 2
+          },
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 14,
+            "false/no_parsed_calls": 16,
+            "false/not_all_calls_schema_valid": 3,
+            "true/all_calls_schema_valid": 50
+          }
+        }
+      }
+    },
+    "mixed32": {
+      "cases": 0,
+      "stored_official_correct": 0,
+      "views": {
+        "raw": {
+          "case_statuses": {},
+          "call_statuses": {},
+          "violation_occurrences": {},
+          "cases_by_violation_keyword": {},
+          "stored_official_correct_cross_case_status": {}
+        },
+        "upstream_fc_projection": {
+          "case_statuses": {},
+          "call_statuses": {},
+          "violation_occurrences": {},
+          "cases_by_violation_keyword": {},
+          "stored_official_correct_cross_case_status": {}
+        }
+      }
+    }
+  },
+  "matched_prefix_by_variant": {
+    "base": {
+      "cases": 83,
+      "stored_official_correct": 54,
+      "views": {
+        "raw": {
+          "case_statuses": {
+            "all_calls_schema_valid": 25,
+            "no_parsed_calls": 10,
+            "not_all_calls_schema_valid": 48
+          },
+          "call_statuses": {
+            "schema_invalid": 46,
+            "schema_valid": 27,
+            "unknown_tool": 2
+          },
+          "violation_occurrences": {},
+          "cases_by_violation_keyword": {},
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 4,
+            "false/no_parsed_calls": 10,
+            "false/not_all_calls_schema_valid": 15,
+            "true/all_calls_schema_valid": 21,
+            "true/not_all_calls_schema_valid": 33
+          }
+        },
+        "upstream_fc_projection": {
+          "case_statuses": {
+            "all_calls_schema_valid": 68,
+            "no_parsed_calls": 10,
+            "not_all_calls_schema_valid": 5
+          },
+          "call_statuses": {
+            "schema_invalid": 1,
+            "schema_valid": 70,
+            "schema_violations": 2,
+            "unknown_tool": 2
+          },
+          "violation_occurrences": {
+            "type": 2
+          },
+          "cases_by_violation_keyword": {
+            "type": 2
+          },
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 15,
+            "false/no_parsed_calls": 10,
+            "false/not_all_calls_schema_valid": 4,
+            "true/all_calls_schema_valid": 53,
+            "true/not_all_calls_schema_valid": 1
+          }
+        }
+      }
+    },
+    "full32": {
+      "cases": 83,
+      "stored_official_correct": 50,
+      "views": {
+        "raw": {
+          "case_statuses": {
+            "all_calls_schema_valid": 21,
+            "no_parsed_calls": 16,
+            "not_all_calls_schema_valid": 46
+          },
+          "call_statuses": {
+            "schema_invalid": 45,
+            "schema_valid": 22,
+            "unknown_tool": 1
+          },
+          "violation_occurrences": {},
+          "cases_by_violation_keyword": {},
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 5,
+            "false/no_parsed_calls": 16,
+            "false/not_all_calls_schema_valid": 12,
+            "true/all_calls_schema_valid": 16,
+            "true/not_all_calls_schema_valid": 34
+          }
+        },
+        "upstream_fc_projection": {
+          "case_statuses": {
+            "all_calls_schema_valid": 64,
+            "no_parsed_calls": 16,
+            "not_all_calls_schema_valid": 3
+          },
+          "call_statuses": {
+            "schema_valid": 65,
+            "schema_violations": 2,
+            "unknown_tool": 1
+          },
+          "violation_occurrences": {
+            "type": 2
+          },
+          "cases_by_violation_keyword": {
+            "type": 2
+          },
+          "stored_official_correct_cross_case_status": {
+            "false/all_calls_schema_valid": 14,
+            "false/no_parsed_calls": 16,
+            "false/not_all_calls_schema_valid": 3,
+            "true/all_calls_schema_valid": 50
+          }
+        }
+      }
+    }
+  },
+  "paired": {
+    "case_count": 83,
+    "selection": "Interrupted prefix 1..83, not random; descriptive only; no full199 Full or Mixed claim",
+    "views": {
+      "raw": {
+        "base_not_valid/full_not_valid": 55,
+        "base_not_valid/full_valid": 3,
+        "base_valid/full_not_valid": 7,
+        "base_valid/full_valid": 18
+      },
+      "upstream_fc_projection": {
+        "base_not_valid/full_not_valid": 8,
+        "base_not_valid/full_valid": 7,
+        "base_valid/full_not_valid": 11,
+        "base_valid/full_valid": 57
+      }
+    }
+  },
+  "by_benchmark": {
+    "base": {
+      "apibank": {
+        "cases": 74,
+        "stored_official_correct": 42,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "all_calls_schema_valid": 33,
+              "no_parsed_calls": 13,
+              "not_all_calls_schema_valid": 28
+            },
+            "call_statuses": {
+              "schema_invalid": 26,
+              "schema_valid": 35,
+              "unknown_tool": 2
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 5,
+              "false/no_parsed_calls": 13,
+              "false/not_all_calls_schema_valid": 14,
+              "true/all_calls_schema_valid": 28,
+              "true/not_all_calls_schema_valid": 14
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 55,
+              "no_parsed_calls": 13,
+              "not_all_calls_schema_valid": 6
+            },
+            "call_statuses": {
+              "schema_invalid": 3,
+              "schema_valid": 57,
+              "schema_violations": 1,
+              "unknown_tool": 2
+            },
+            "violation_occurrences": {
+              "type": 1
+            },
+            "cases_by_violation_keyword": {
+              "type": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 14,
+              "false/no_parsed_calls": 13,
+              "false/not_all_calls_schema_valid": 5,
+              "true/all_calls_schema_valid": 41,
+              "true/not_all_calls_schema_valid": 1
+            }
+          }
+        }
+      },
+      "bfcl_v3": {
+        "cases": 32,
+        "stored_official_correct": 26,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "not_all_calls_schema_valid": 32
+            },
+            "call_statuses": {
+              "schema_invalid": 32
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/not_all_calls_schema_valid": 6,
+              "true/not_all_calls_schema_valid": 26
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 31,
+              "not_all_calls_schema_valid": 1
+            },
+            "call_statuses": {
+              "schema_valid": 31,
+              "schema_violations": 1
+            },
+            "violation_occurrences": {
+              "type": 1
+            },
+            "cases_by_violation_keyword": {
+              "type": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 5,
+              "false/not_all_calls_schema_valid": 1,
+              "true/all_calls_schema_valid": 26
+            }
+          }
+        }
+      },
+      "rotbench": {
+        "cases": 21,
+        "stored_official_correct": 2,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "all_calls_schema_valid": 20,
+              "not_all_calls_schema_valid": 1
+            },
+            "call_statuses": {
+              "schema_valid": 20,
+              "schema_violations": 1
+            },
+            "violation_occurrences": {
+              "required": 1
+            },
+            "cases_by_violation_keyword": {
+              "required": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 18,
+              "false/not_all_calls_schema_valid": 1,
+              "true/all_calls_schema_valid": 2
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 20,
+              "not_all_calls_schema_valid": 1
+            },
+            "call_statuses": {
+              "schema_valid": 20,
+              "schema_violations": 1
+            },
+            "violation_occurrences": {
+              "required": 1
+            },
+            "cases_by_violation_keyword": {
+              "required": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 18,
+              "false/not_all_calls_schema_valid": 1,
+              "true/all_calls_schema_valid": 2
+            }
+          }
+        }
+      },
+      "toolalpaca": {
+        "cases": 21,
+        "stored_official_correct": 1,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "all_calls_schema_valid": 1,
+              "no_parsed_calls": 10,
+              "not_all_calls_schema_valid": 10
+            },
+            "call_statuses": {
+              "schema_valid": 1,
+              "schema_violations": 2,
+              "unknown_tool": 52
+            },
+            "violation_occurrences": {
+              "required": 2
+            },
+            "cases_by_violation_keyword": {
+              "required": 2
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/no_parsed_calls": 10,
+              "false/not_all_calls_schema_valid": 10,
+              "true/all_calls_schema_valid": 1
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 1,
+              "no_parsed_calls": 10,
+              "not_all_calls_schema_valid": 10
+            },
+            "call_statuses": {
+              "schema_valid": 1,
+              "schema_violations": 2,
+              "unknown_tool": 52
+            },
+            "violation_occurrences": {
+              "required": 2
+            },
+            "cases_by_violation_keyword": {
+              "required": 2
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/no_parsed_calls": 10,
+              "false/not_all_calls_schema_valid": 10,
+              "true/all_calls_schema_valid": 1
+            }
+          }
+        }
+      },
+      "tooleyes": {
+        "cases": 51,
+        "stored_official_correct": 47,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "all_calls_schema_valid": 51
+            },
+            "call_statuses": {
+              "schema_valid": 51
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 4,
+              "true/all_calls_schema_valid": 47
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 51
+            },
+            "call_statuses": {
+              "schema_valid": 51
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 4,
+              "true/all_calls_schema_valid": 47
+            }
+          }
+        }
+      }
+    },
+    "full32": {
+      "apibank": {
+        "cases": 51,
+        "stored_official_correct": 23,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "all_calls_schema_valid": 21,
+              "no_parsed_calls": 16,
+              "not_all_calls_schema_valid": 14
+            },
+            "call_statuses": {
+              "schema_invalid": 13,
+              "schema_valid": 22,
+              "unknown_tool": 1
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 5,
+              "false/no_parsed_calls": 16,
+              "false/not_all_calls_schema_valid": 7,
+              "true/all_calls_schema_valid": 16,
+              "true/not_all_calls_schema_valid": 7
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 33,
+              "no_parsed_calls": 16,
+              "not_all_calls_schema_valid": 2
+            },
+            "call_statuses": {
+              "schema_valid": 34,
+              "schema_violations": 1,
+              "unknown_tool": 1
+            },
+            "violation_occurrences": {
+              "type": 1
+            },
+            "cases_by_violation_keyword": {
+              "type": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 10,
+              "false/no_parsed_calls": 16,
+              "false/not_all_calls_schema_valid": 2,
+              "true/all_calls_schema_valid": 23
+            }
+          }
+        }
+      },
+      "bfcl_v3": {
+        "cases": 32,
+        "stored_official_correct": 27,
+        "views": {
+          "raw": {
+            "case_statuses": {
+              "not_all_calls_schema_valid": 32
+            },
+            "call_statuses": {
+              "schema_invalid": 32
+            },
+            "violation_occurrences": {},
+            "cases_by_violation_keyword": {},
+            "stored_official_correct_cross_case_status": {
+              "false/not_all_calls_schema_valid": 5,
+              "true/not_all_calls_schema_valid": 27
+            }
+          },
+          "upstream_fc_projection": {
+            "case_statuses": {
+              "all_calls_schema_valid": 31,
+              "not_all_calls_schema_valid": 1
+            },
+            "call_statuses": {
+              "schema_valid": 31,
+              "schema_violations": 1
+            },
+            "violation_occurrences": {
+              "type": 1
+            },
+            "cases_by_violation_keyword": {
+              "type": 1
+            },
+            "stored_official_correct_cross_case_status": {
+              "false/all_calls_schema_valid": 4,
+              "false/not_all_calls_schema_valid": 1,
+              "true/all_calls_schema_valid": 27
+            }
+          }
+        }
+      }
+    },
+    "mixed32": {}
+  }
+}

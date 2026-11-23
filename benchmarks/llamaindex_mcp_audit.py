@@ -21,6 +21,7 @@ from mcp.client.streamable_http import streamable_http_client
 
 from agent_lab.async_request_budget import make_async_http_client, open_budget
 from agent_lab.evidence_audit import EvidenceError
+from agent_lab.report_retrieval import encoded as encode_catalog, rank_reports
 from agent_lab.wire_journal import DurableWireEvents
 from benchmarks.llamaindex_evidence_agent import AuditAssessment, DIRECT_SYSTEM
 
@@ -135,12 +136,22 @@ async def cleanup_audit(mcp_url, handle, wire, outcome):
 
 
 async def audit_via_mcp(
-    mcp_url, state_dir, question, *, base_url, model, owner_sha256, timeout=600
+    mcp_url,
+    state_dir,
+    question,
+    *,
+    base_url,
+    model,
+    owner_sha256,
+    timeout=600,
+    catalog_policy="all",
 ):
     from llama_index.core.agent.workflow import FunctionAgent
     from llama_index.core.tools import FunctionTool
     from llama_index.llms.openai_like import OpenAILike
 
+    if catalog_policy not in {"all", "bm25"}:
+        raise ValueError("Unknown catalog policy")
     parsed = urlsplit(mcp_url)
     if (
         parsed.scheme != "http"
@@ -263,6 +274,32 @@ async def audit_via_mcp(
                             )
                             return json.dumps({"error": str(exc)})
 
+                    async def ranked_reports(query: str = "") -> str:
+                        """Find up to4 reports by metadata; empty query uses the question.
+
+                        This is lexical search, not factual evidence. Use query="*"
+                        for the full catalog if relevant reports are missing, or
+                        retry with specific terms. Read the selected fields before
+                        submitting. Search uses one normal MCP listing operation.
+                        """
+                        catalog = json.loads(await list_reports())
+                        if query == "*":
+                            return encode_catalog(catalog)
+                        selected = rank_reports(catalog, query or question)
+                        trace.append(
+                            {
+                                "tool": "rank_report_catalog",
+                                "policy": "bm25",
+                                "query": query or question,
+                                "selected_ids": [r["id"] for r in selected["reports"]],
+                                "metadata_bytes": len(
+                                    encode_catalog(selected).encode()
+                                ),
+                                "catalog_bytes": len(encode_catalog(catalog).encode()),
+                            }
+                        )
+                        return encode_catalog(selected)
+
                     async def submit_assessment(**payload) -> str:
                         """Submit the final typed verdict and exact facts for remote receipt verification."""
                         try:
@@ -334,9 +371,24 @@ async def audit_via_mcp(
                             },
                             async_http_client=model_http,
                         )
+                        listing_tool = FunctionTool.from_defaults(async_fn=list_reports)
+                        system_prompt = DIRECT_SYSTEM
+                        if catalog_policy == "bm25":
+                            listing_tool = FunctionTool.from_defaults(
+                                async_fn=ranked_reports, name="list_reports"
+                            )
+                            system_prompt += (
+                                " The catalog is lexically ranked, not exhaustive."
+                                ' Use list_reports(query="*") if relevant reports are missing.'
+                                " Read only evidence needed for the claim. Plan to call"
+                                " submit_assessment by the sixth model response, within"
+                                " the unchanged seven-iteration workflow limit. Do not"
+                                " spend remaining rounds exploring unrelated reports."
+                            )
+                            outcome["catalog_policy"] = "bm25"
                         agent = FunctionAgent(
                             tools=[
-                                FunctionTool.from_defaults(async_fn=list_reports),
+                                listing_tool,
                                 FunctionTool.from_defaults(async_fn=read_report),
                                 FunctionTool.from_defaults(
                                     async_fn=submit_assessment,
@@ -345,7 +397,7 @@ async def audit_via_mcp(
                                 ),
                             ],
                             llm=llm,
-                            system_prompt=DIRECT_SYSTEM,
+                            system_prompt=system_prompt,
                             streaming=False,
                             allow_parallel_tool_calls=False,
                             timeout=timeout,
@@ -423,6 +475,7 @@ async def main():
     p.add_argument("--base-url", required=True)
     p.add_argument("--model", required=True)
     p.add_argument("--owner", required=True)
+    p.add_argument("--catalog-policy", choices=["all", "bm25"], default="all")
     args = p.parse_args()
     case = next(
         x
@@ -437,6 +490,7 @@ async def main():
         base_url=args.base_url,
         model=args.model,
         owner_sha256=args.owner,
+        catalog_policy=args.catalog_policy,
     )
     result["grading"] = grade_case(result, case)
     (args.state_dir / "result.json").write_text(

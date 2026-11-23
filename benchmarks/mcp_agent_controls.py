@@ -11,7 +11,9 @@ import threading
 from benchmarks.llamaindex_mcp_audit import audit_via_mcp
 
 
-async def run_case(args, scenario):
+async def run_case(
+    args, scenario, *, catalog_policy="all", question=None, listing_queries=None
+):
     catalog = json.loads(
         (args.code / "corpus/catalog.json").read_text(encoding="utf-8")
     )
@@ -49,6 +51,11 @@ async def run_case(args, scenario):
         plan = [plan[0], plan[-1]]
     if scenario == "plain_answer":
         plan = [(None, None)]
+    if listing_queries is not None:
+        assert scenario == "normal"
+        plan = [("list_reports", {"query": query}) for query in listing_queries] + plan[
+            1:
+        ]
     bodies = []
     errors = []
 
@@ -120,14 +127,18 @@ async def run_case(args, scenario):
     thread = threading.Thread(target=server.serve_forever, daemon=True)
     thread.start()
     try:
+        policy_options = (
+            {"catalog_policy": catalog_policy} if catalog_policy != "all" else {}
+        )
         result = await audit_via_mcp(
             args.mcp_url,
             args.state / scenario,
-            "Check the fixed report facts in this integration control.",
+            question or "Check the fixed report facts in this integration control.",
             base_url=f"http://127.0.0.1:{server.server_port}/v1",
             model="explicit-fake-mcp-agent",
             owner_sha256=args.owner,
             timeout=120,
+            **policy_options,
         )
     finally:
         await asyncio.to_thread(server.shutdown)
@@ -172,6 +183,7 @@ async def run_case(args, scenario):
         "backend_evidence_verified": result["evidence_verified"],
         "fake_model_posts": len(bodies),
         "mcp_context_closed": True,
+        "model_request_sha256": [hashlib.sha256(raw).hexdigest() for raw in bodies],
     }
 
 

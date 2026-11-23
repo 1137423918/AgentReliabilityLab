@@ -1,0 +1,168 @@
+{
+  "scope": "RealMCP/SDK/TCP,explicitlyscriptedmodelHTTP,zero neural/GPU; recovery of observed wireprefix only,no workflow replay",
+  "variants": {
+    "baseline": {
+      "model_POSTs_reserved": 3,
+      "HTTP_status_unknown_still_charged": 1,
+      "complete_wire_model_bodies_exported_as_hashes": 0,
+      "wire_events_exported_as_metadata": 0,
+      "cases": [
+        {
+          "case": "crash-control/journal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 1,
+          "budget_file_sha256": "16f026889928145b629495fc70f9b34d17a411229938982996dffb25b51c919c",
+          "wire_exists": false
+        }
+      ]
+    },
+    "candidate": {
+      "model_POSTs_reserved": 27,
+      "HTTP_status_unknown_still_charged": 3,
+      "complete_wire_model_bodies_exported_as_hashes": 24,
+      "wire_events_exported_as_metadata": 246,
+      "cases": [
+        {
+          "case": "crash-control/journal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 1,
+          "budget_file_sha256": "674f3c28f6853db02170e63bdd5426f1dfda1c0506bda894f2da3ab3a0024774",
+          "wire_exists": true,
+          "wire_events": 15,
+          "complete_model_bodies": 2,
+          "private_wire_sha256": "ce182b74b7d42f90786c8817c0dd50ba2ff6f2e922661ec189eae7c11afbb240",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-failure/normal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "2526271c397f37b653c3cb29a89ea850206c1f2436246c19c583c34124ab4fab",
+          "wire_exists": true,
+          "wire_events": 20,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "2fda97e2821a2a43df56094dab75364df2cb30ffded9840c9e069c0f73921d91",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/expired/journal",
+          "model_POSTs_reserved": 1,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "46a790fef3e3bb89cf969f1f9cb18652ca9009eaad3c6f5e1fefb603b0c92c66",
+          "wire_exists": true,
+          "wire_events": 14,
+          "complete_model_bodies": 1,
+          "private_wire_sha256": "74bd162ef67703fff9e0b5154cbd4f3d2239ca950637af86e35d676417e7e26d",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/external_cancel/journal",
+          "model_POSTs_reserved": 1,
+          "HTTP_status_unknown_still_charged": 1,
+          "budget_file_sha256": "b5714b85277f1ff7a0a809a841a46002fd6486e543892bb23448ce39dd7d0b20",
+          "wire_exists": true,
+          "wire_events": 15,
+          "complete_model_bodies": 0,
+          "private_wire_sha256": "2968ddabf5c0cf744b0ae3ed47c488413e5caa841135b096d3c4f91cfc595d93",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/forged_fact/forged_fact",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "97beff1fec89363e355cc2183f59b4b6555f3a2c4bf4e40e263fea643f7115a1",
+          "wire_exists": true,
+          "wire_events": 26,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "f99488b89d648f719a0378493b596974749fc1a4d9e5eea83cbe97017fc02dbd",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/model_timeout/journal",
+          "model_POSTs_reserved": 1,
+          "HTTP_status_unknown_still_charged": 1,
+          "budget_file_sha256": "600c3c527b00a6cac7de212da0cfd40d5767e0981a8119cba72ef611bd352b54",
+          "wire_exists": true,
+          "wire_events": 15,
+          "complete_model_bodies": 0,
+          "private_wire_sha256": "ed2c6df50ee1cbe145bc48f6a562d053a8d8c9cf98d095975dca02d689b97ab0",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/normal/normal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "43cb3ad9bb056e8dbefa6ef21c293de579151d6dbdb62368486f2511b7701897",
+          "wire_exists": true,
+          "wire_events": 26,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "a83f899bcc3fd869dd96c4b3c56e53c5c7ebdad5d06e23c20c287d21d9d25927",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/plain_answer/plain_answer",
+          "model_POSTs_reserved": 1,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "5bb9848e27d84129abfb26a1ded6e08cf6e0c6e6d43a4b4c737ca099b6dccdee",
+          "wire_exists": true,
+          "wire_events": 16,
+          "complete_model_bodies": 1,
+          "private_wire_sha256": "adb478d64c118e03313f521942cddd2a55a1b14abe5cbb50c4b647bb882482e5",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/status_error/normal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "cb81e43fa65cbbbf0e1aefa84d886054797a9ed5972b94cc4704f8d9359dd661",
+          "wire_exists": true,
+          "wire_events": 26,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "0258226530e5531b309b80bcc1669e7469e2d0dd67761590985aff965d659103",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/status_timeout/normal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "bf988bdcc91fbcd939c836f26271b17a4f819be68f6da3b48592a42426ede298",
+          "wire_exists": true,
+          "wire_events": 25,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "78e753a93afba6f71fc1443f77483909ec6946a13d11b896c2d174bb62b701ba",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-nine/unread_submission/unread_submission",
+          "model_POSTs_reserved": 2,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "3b8673a8700161972dc07c41eac13f6d208a25140818eacb5b5bd93864fd3f47",
+          "wire_exists": true,
+          "wire_events": 22,
+          "complete_model_bodies": 2,
+          "private_wire_sha256": "a77a01166c5fd65a50fcfffddb252f9e4da9b46a1f1f8ab486ec3c93395e93a9",
+          "tail_bytes": 0
+        },
+        {
+          "case": "cleanup-tool-error/status_tool_error/normal",
+          "model_POSTs_reserved": 3,
+          "HTTP_status_unknown_still_charged": 0,
+          "budget_file_sha256": "fa3ec367b6f720bac31a402f38405dc54cd3cc9378e2956528ed9788cec5cff7",
+          "wire_exists": true,
+          "wire_events": 26,
+          "complete_model_bodies": 3,
+          "private_wire_sha256": "eb7679aaf7cbce241c9e04e3cc7635f0f65ca7a980a25df13f9fcbc0982c943a",
+          "tail_bytes": 0
+        }
+      ]
+    }
+  },
+  "new_unit_controls_passed": 8,
+  "new_MCP_fault_controls_passed": 2,
+  "existing_MCP_cleanup_controls_passed": 10,
+  "neural_requests": 0,
+  "GPU_used": false,
+  "core130_rerun": false,
+  "old_real_model_runs_not_regraded": true,
+  "homepage_updated": false
+}

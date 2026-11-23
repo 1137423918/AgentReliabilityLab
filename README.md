@@ -38,6 +38,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 真实Qwen3.5-9B GPU运行进一步保留了7份完整模型回复和40条通信事件，独立reader恢复验证通过，MCP关闭得到确认。首题因轮次上限未完成有效提交，第二题按规则未运行；[实际结果与失败分析](docs/mcp-agent.md)。
 
+新增[报告目录词法检索](docs/report-retrieval.md)：在24份固定实际报告、19个预声明检索诊断中，BM25与关键词基线都覆盖必需报告，目录结果平均约1.5KB；三项真实MCP脚本集成场景通过。未显示BM25优于简单基线，真实模型任务收益仍待验证。
+
 **可恢复维护运行器**：结合 Deep Agents、LangGraph 检查点、隔离 Git worktree 和命令验收，保存工具进度、导出补丁并等待审阅。模型请求预算跨重启与修复轮次扣额，未知请求仍占额度。
 
 [恢复与运行入口](docs/durable-worker.md) · [持久请求预算](docs/model-request-budget.md) · [本机状态与共享归档](docs/local-state.md) · [真实 MCP/Agent 接入](docs/mcp-agent.md)。真实仓库参考计划的恢复检查与真实模型任务分别记录；目前没有通过验收的模型自主仓库修复成果。

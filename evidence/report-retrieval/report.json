@@ -1,0 +1,23 @@
+{
+  "scope": "CPU metadata retrieval diagnostics and explicitly scripted model integration; no neural task scores.",
+  "source_base_commit": "301220730b5c740ee847f0c119c02caf612b9f86",
+  "queries": 19,
+  "reports": 24,
+  "previously_seen_development_queries": 2,
+  "new_operator_authored_unblinded_queries": 17,
+  "unit_controls_passed": 7,
+  "ranked_MCP_scenarios_passed": 3,
+  "default_MCP_scenarios_each_profile": 4,
+  "default_scripted_POSTs_each_profile": 9,
+  "ranked_scripted_POSTs": 10,
+  "default_request_bodies_identical_to_baseline": true,
+  "new_neural_requests": 0,
+  "GPU_used": false,
+  "BM25_better_than_overlap_on_this_diagnostic": false,
+  "model_application_benefit_measured": false,
+  "directory_result_bytes_are_not_full_request_tokens": true,
+  "ranking_and_planning_prompt_changed_together": true,
+  "original_model_runs_or_scores_modified": false,
+  "protocol_sha256": "5e8184d42a03a549ee354b593089070fe431f2bc14b7534a96537fc2327a735d",
+  "export_sha256": "2b3e2cdcc03a51f41e64b903d2c6fffdb613570f3f310f4e81562bf181bd279d"
+}

@@ -1,0 +1,291 @@
+{
+  "version": 1,
+  "source_commit": "301220730b5c740ee847f0c119c02caf612b9f86",
+  "source_base": "https://github.com/1137423918/AgentReliabilityLab/blob/301220730b5c740ee847f0c119c02caf612b9f86/",
+  "reports": [
+    {
+      "id": "core_current",
+      "path": "evidence/async-budget/report.json",
+      "description": "Earlier116-test core snapshot; not current engineering validation",
+      "sha256": "f801d197992db9b03fbe9b845116aab157cdbd775596f6e2fc92ea269e537006",
+      "fields": [
+        "/full_suite_passed",
+        "/full_suite_skipped",
+        "/new_async_checks_included",
+        "/framework_case_count",
+        "/real_neural_requests"
+      ]
+    },
+    {
+      "id": "patch_move",
+      "path": "evidence/apply-move/report.json",
+      "description": "OpenHands same-path patch move fix and related test scopes",
+      "sha256": "72e0af3d196d194798c7b5bc212750a234f74956cca85fb849880d9fdd42ecd8",
+      "fields": [
+        "/baseline_new_checks_failed",
+        "/related_suite_passed",
+        "/focused_passed",
+        "/new_checks_included",
+        "/overlapping_suites_not_added",
+        "/real_public_executor",
+        "/mocked_filesystem",
+        "/neural_requests"
+      ]
+    },
+    {
+      "id": "gpu_transport",
+      "path": "evidence/gpu-smoke/report.json",
+      "description": "GPU transport smoke checks and their individual outcomes",
+      "sha256": "d21dce1331597931b7f123e0413a9807e0de43e06da65775234abf68379dc986",
+      "fields": [
+        "/overall_smoke_passed",
+        "/checks/0/passed",
+        "/checks/1/passed",
+        "/checks/2/passed",
+        "/repository_maintenance_run",
+        "/new_neural_repair"
+      ]
+    },
+    {
+      "id": "gpu_maintenance",
+      "path": "evidence/adk-gpu/no-idle-gpu/outcome.json",
+      "description": "GPU repository maintenance admission outcome",
+      "sha256": "d13887889741b728752282acdc74b3e2560ba4fe4f75df03fd900ed9bd719f38",
+      "fields": [
+        "/outcome",
+        "/model_service_started",
+        "/model_http_requests",
+        "/no_request_journal"
+      ]
+    },
+    {
+      "id": "adk_cpu",
+      "path": "evidence/adk-9b-cpu/report.json",
+      "description": "Real-model Google ADK CPU maintenance trajectory",
+      "sha256": "660c56be81f0f064fca582dd167151af2c2b4e8191e01ba7d0e4260907f717cc",
+      "fields": [
+        "/verified_trials",
+        "/outcome",
+        "/case"
+      ]
+    },
+    {
+      "id": "historical_core",
+      "path": "evidence/verification-tree/report.json",
+      "description": "Earlier Linux verifier descendant cleanup regression snapshot",
+      "sha256": "abc47e4214040b03a7797be6a372a76f36e049f7c4ac211f9e3ffc35964fa7e8",
+      "fields": [
+        "/full_suite_passed",
+        "/new_tests_included",
+        "/real_neural_model_requests"
+      ]
+    },
+    {
+      "id": "adk_cleanup",
+      "path": "evidence/adk-artifact-cleanup/report.json",
+      "description": "Google ADK artifact deletion candidate and versioned related tests",
+      "sha256": "b13f8bb40d645015626f27f90c1e93a31fe4309cbe00cab1fa419e7cfc84c31d",
+      "fields": [
+        "/scope",
+        "/base_commit",
+        "/upstream_repository",
+        "/upstream_pr",
+        "/pr_state",
+        "/stars_observed",
+        "/observed_date",
+        "/source_sha256",
+        "/baseline_source_sha256",
+        "/benchmark_sha256",
+        "/new_regressions",
+        "/related_suites"
+      ]
+    },
+    {
+      "id": "upstream_prs",
+      "path": "evidence/apply-move/upstream-snapshot.json",
+      "description": "Historical2026-11-21T10:16Z PR snapshot; inspect the matching PR number, not live GitHub",
+      "sha256": "fa850db1b557c6d18d31a4bd3ebad432008f966edacf98b629380fd4d86271be",
+      "fields": [
+        "/checked_at_utc",
+        "/pull_requests"
+      ]
+    },
+    {
+      "id": "mcp_service",
+      "path": "evidence/mcp-evidence/report.json",
+      "description": "MCP service engineering and non-neural network controls, separate from real model trials",
+      "sha256": "71f178e35bf84746233257c70513dbb3cad751f49a0a535ea664beb37bf46f1b",
+      "fields": [
+        "/full_suite_passed",
+        "/new_service_checks_included",
+        "/network_controls_passed",
+        "/network_controls_included_in_full_count",
+        "/model_requests"
+      ]
+    },
+    {
+      "id": "context_budget",
+      "path": "evidence/context-budget/report.json",
+      "description": "Source retrieval full-request token accounting: sequential pages, grep spans and AST symbols.",
+      "sha256": "412a4634de23acbd5ca65d8233aef9a5fa895a622ee67b1321250fed8cdfc9b1",
+      "fields": [
+        "/policies",
+        "/rendering"
+      ]
+    },
+    {
+      "id": "source_navigation",
+      "path": "evidence/source-navigation/report.json",
+      "description": "Python source navigation with current virtual source hashes and exact definition boundaries.",
+      "sha256": "f0b9a7e7be60a94e8b3dd788e1f6658901cc5a827e372cc5ec9ad33ff01553ed",
+      "fields": [
+        "/original_tests_per_case",
+        "/candidate_tests_per_case",
+        "/independent_contracts_per_case"
+      ]
+    },
+    {
+      "id": "read_index",
+      "path": "evidence/read-index/report.json",
+      "description": "Python declaration hints on the first file page; original pages unchanged after checkpoint resume.",
+      "sha256": "d602cc8627fd5e322e4628f2f146c6b104c497afdd2847beb508044f19732f7a",
+      "fields": [
+        "/original_read_pages_byte_identical",
+        "/annotation_tracks_current_virtual_revision"
+      ]
+    },
+    {
+      "id": "file_inventory",
+      "path": "evidence/file-inventory/report.json",
+      "description": "Task-visible file inventory and direct backend access checks; filtering and aliases.",
+      "sha256": "888c824f4021bba389c2e30e29b1080a08488b23fae189ce92b130ecc054dc0a",
+      "fields": [
+        "/wire_tools_and_backend_guard_verified",
+        "/same_alias_graph_isolation_verified",
+        "/full_suite"
+      ]
+    },
+    {
+      "id": "local_state",
+      "path": "evidence/local-state/report.json",
+      "description": "Local filesystem checkpoint admission, rejected network filesystems and shared backup handling.",
+      "sha256": "b076bbe7292f9e34a036c42263fe4d78f1f99210cb3d899a38cf02ecdf3d991a",
+      "fields": [
+        "/local_filesystem",
+        "/rejected_filesystem",
+        "/backup"
+      ]
+    },
+    {
+      "id": "request_budget",
+      "path": "evidence/model-request-budget/report.json",
+      "description": "Persistent model HTTP attempt budget across maintenance recovery and repair retries.",
+      "sha256": "a6dc125e53e2987f1ac38fc7cdba499fc3f22825c3dd3311b722bc8be9516b7c",
+      "fields": [
+        "/same_patch",
+        "/same_request_bodies",
+        "/cases"
+      ]
+    },
+    {
+      "id": "mcp_cleanup",
+      "path": "evidence/mcp-cleanup/report.json",
+      "description": "MCP audit status-query errors and explicit close_audit cleanup controls.",
+      "sha256": "309419810a07e880dbebc8cc8b206fba9152e4a6142daeb843c568525cbb14b5",
+      "fields": [
+        "/candidate_controls_passed",
+        "/core_snapshot_rerun",
+        "/verification"
+      ]
+    },
+    {
+      "id": "mcp_wire",
+      "path": "evidence/mcp-wire-journal/summary.json",
+      "description": "Durable MCP/model communication frames, SIGKILL unknown attempts and disk-write failure controls.",
+      "sha256": "7c65380efd8d6142da5bf77e9f7f24b86ad78a3ebf7f881ede32b69863b59411",
+      "fields": [
+        "/new_unit_controls_passed",
+        "/new_MCP_fault_controls_passed",
+        "/neural_requests"
+      ]
+    },
+    {
+      "id": "mcp_gpu_wire",
+      "path": "evidence/mcp-gpu-wire/report.json",
+      "description": "Actual Qwen3.5-9B A6000 report audit: saved responses, iteration-limit failure and unrun second case.",
+      "sha256": "2b5823a6c3f0309a518a7525d452b6a2be39e3fb33a7f1b1b18fc090dfa4f8c4",
+      "fields": [
+        "/completed_cases",
+        "/passed_cases",
+        "/outcome",
+        "/second_case"
+      ]
+    },
+    {
+      "id": "lora_generation",
+      "path": "evidence/lora-generation/summary.json",
+      "description": "Qwen2.5-3B clean generation comparison; base, Full32 and Mixed32 progress with charged unknown attempts.",
+      "sha256": "76d1b5a037cc78397da5e1f1e1097302c38ea2fb091a0f454caefe02d2d72511",
+      "fields": [
+        "/variants",
+        "/unknown_attempts_still_charged",
+        "/all3_complete_comparison"
+      ]
+    },
+    {
+      "id": "lora_pilot",
+      "path": "evidence/lora-pilot/summary.json",
+      "description": "Fixed-step paired Full32/Mixed32 LoRA training, supervised labels and saved-checkpoint replay.",
+      "sha256": "82f0e2fba21cd24ff7e376806d32e466bd0af87e07dcba303a55ef413c093f3c",
+      "fields": [
+        "/Full_optimizer_updates",
+        "/Mixed_optimizer_updates",
+        "/supervised_labels_each"
+      ]
+    },
+    {
+      "id": "sk_cancelled_send",
+      "path": "evidence/sk-cancelled-send/report.json",
+      "description": "Semantic Kernel cancelled send: later exception observation, queue bookkeeping and PR state.",
+      "sha256": "1a15a9725c1b921966b1b156b999f364fb7b0f7f26c17e8e2b20d322e425606b",
+      "fields": [
+        "/state",
+        "/draft",
+        "/merged",
+        "/human_review_attested"
+      ]
+    },
+    {
+      "id": "voltagent_cleanup",
+      "path": "evidence/voltagent-mcp-cleanup/analysis.json",
+      "description": "Earlier VoltAgent MCP notification-registration cleanup and eight-case lifecycle comparison.",
+      "sha256": "1ab47c29a1e5903bc505d18c122d6d6ca0fb6ce660abddb49baafcbc699be7d5",
+      "fields": [
+        "/baseline_lifecycle_failed",
+        "/candidate_lifecycle_passed",
+        "/complete_MCP_package_passed"
+      ]
+    },
+    {
+      "id": "voltagent_ownership",
+      "path": "evidence/voltagent-mcp-connection-ownership/analysis.json",
+      "description": "Later VoltAgent rejected-connection transport ownership fix with eleven lifecycle cases.",
+      "sha256": "ebe6bdaf1676f90763088e6795a33ab4ad677032dc4e61a36a9d64fbab752fcc",
+      "fields": [
+        "/baseline_lifecycle",
+        "/candidate_lifecycle",
+        "/complete_package"
+      ]
+    },
+    {
+      "id": "tool_schema",
+      "path": "evidence/tool-schema-diagnostics/results/summary.json",
+      "description": "Saved tool-call diagnostics: raw JSON schema and exact upstream FC projection; validity versus official matching.",
+      "sha256": "0758f337ffc7d71cbea42eb8c57afc53954aa74bbf25f6f691835b2355b1abaa",
+      "fields": [
+        "/all_known_by_variant",
+        "/paired"
+      ]
+    }
+  ]
+}

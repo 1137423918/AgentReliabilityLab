@@ -1,0 +1,316 @@
+{
+  "scope": "Fixed operator HTTP tool plan on a real Deep Agents repository; request-budget and SIGKILL recovery validation, not model inference or autonomous repair",
+  "model_inference": false,
+  "operator_plan": true,
+  "protocol_sha256": "58d0be4e8549ef016caa8030f1bdae62c9477429ff00aed30d9975ebfbcdf05d",
+  "same_patch": true,
+  "same_request_bodies": true,
+  "cases": [
+    {
+      "case": "normal",
+      "worker_returncode": 0,
+      "model_inference": false,
+      "operator_plan": true,
+      "interrupted": null,
+      "http_requests": [
+        {
+          "request_body_sha256": "ffef88e05fc3934389343b812303eac0f18b0cb8386f019659ca67e52b4bddfe",
+          "request_body_bytes": 8726,
+          "completed_tool_results": 0
+        },
+        {
+          "request_body_sha256": "f1e5f56b281f6bd8bd94f7fae0891afb6e47f2fae384f422661ec25f071fdf24",
+          "request_body_bytes": 9224,
+          "completed_tool_results": 1
+        },
+        {
+          "request_body_sha256": "5ffa2120b8d16de9f237a2f9e947be3867cc7b5c708c486e2bf7bbe7ee9584cd",
+          "request_body_bytes": 10218,
+          "completed_tool_results": 2
+        }
+      ],
+      "result": {
+        "status": "ready_for_review",
+        "task_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5",
+        "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+        "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+        "patch_bytes": 1573,
+        "model_mode": "local-openai",
+        "retained_ai_messages": 3,
+        "tool_results": 2,
+        "verification": [
+          {
+            "argv": [
+              "python",
+              "-c",
+              "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "8a3e9cc8e21832e06a4df33dfbdc4b8a69c6fc589be4702fba691c682ffa2c37"
+          },
+          {
+            "argv": [
+              "python",
+              "-c",
+              "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "4eb599f881e7fb11487f52c159f2c20965122ea59cfe8a1e8e964d9f3eec16fd",
+            "baseline_files": [
+              "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+            ],
+            "verification_view": "verification-worktrees/001",
+            "view_patch_sha256": "5019c6fc9a1d584b0a2de6b58ebfb932e45cd9ad21ad752edb7cd5105431a359",
+            "view_integrity_error": false
+          },
+          {
+            "argv": [
+              "python",
+              "-m",
+              "pytest",
+              "tests/unit_tests/backends/test_utils.py",
+              "--disable-socket",
+              "--allow-unix-socket",
+              "--benchmark-disable",
+              "-q"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "e8be67e5b4a0e5ce25a865c2aa1c345efe70c7b8a4c2b65567b7073dd2ea45a2"
+          },
+          {
+            "argv": [
+              "python",
+              "-c",
+              "import json\nfrom pathlib import Path\nfrom deepagents.backends.utils import validate_path\nimport deepagents\nassert Path(deepagents.__file__).resolve() == (Path.cwd()/'deepagents/__init__.py').resolve()\nCASES = [{'id': 'relative-posix', 'input': 'foo/bar', 'expected': {'value': '/foo/bar'}}, {'id': 'absolute-posix', 'input': '/workspace/file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'posix-dot-and-duplicate', 'input': '/./foo//bar', 'expected': {'value': '/foo/bar'}}, {'id': 'relative-backslash', 'input': 'foo\\\\bar\\\\baz', 'expected': {'value': '/foo/bar/baz'}}, {'id': 'mixed-separators', 'input': 'foo/bar\\\\baz/qux', 'expected': {'value': '/foo/bar/baz/qux'}}, {'id': 'backslash-dot-component', 'input': 'foo\\\\.\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-repeated-separator', 'input': 'foo\\\\\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-trailing-separator', 'input': 'foo\\\\bar\\\\', 'expected': {'value': '/foo/bar'}}, {'id': 'mixed-dot-component', 'input': '/workspace\\\\.\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'mixed-repeated-separator', 'input': '/workspace/\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'root', 'input': '/', 'expected': {'value': '/'}}, {'id': 'empty-existing-contract', 'input': '', 'expected': {'value': '/.'}}, {'id': 'dot-existing-contract', 'input': '.', 'expected': {'value': '/.'}}, {'id': 'dots-in-filename', 'input': 'foo..bar.txt', 'expected': {'value': '/foo..bar.txt'}}, {'id': 'dots-in-directory', 'input': 'backup..2024/data.csv', 'expected': {'value': '/backup..2024/data.csv'}}, {'id': 'traversal-relative', 'input': '../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-interior', 'input': 'foo/../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-backslash', 'input': 'foo\\\\..\\\\etc', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-mixed', 'input': '/workspace/..\\\\etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'home-expansion', 'input': '~/secret.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-backslash', 'input': 'C:\\\\Users\\\\file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-posix', 'input': 'D:/data/file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'allowed-prefix', 'input': '/workspace/file.txt', 'allowed_prefixes': ['/workspace/'], 'expected': {'value': '/workspace/file.txt'}}, {'id': 'forbidden-prefix', 'input': '/etc/passwd', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'prefix-boundary', 'input': '/workspace-evil/file', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'empty-allowlist', 'input': '/workspace/file.txt', 'allowed_prefixes': [], 'expected': {'error': 'ValueError'}}, {'id': 'unicode-posix', 'input': '/项目/论文.md', 'expected': {'value': '/项目/论文.md'}}, {'id': 'unicode-backslash-dot', 'input': '项目\\\\.\\\\论文.md', 'expected': {'value': '/项目/论文.md'}}]\nfailures=[]\nfor case in CASES:\n    kwargs={'allowed_prefixes':case['allowed_prefixes']} if 'allowed_prefixes' in case else {}\n    try:\n        value=validate_path(case['input'],**kwargs)\n        actual={'value':value}\n    except ValueError:\n        actual={'error':'ValueError'}\n    if actual != case['expected']:\n        failures.append({'id':case['id'],'expected':case['expected'],'actual':actual})\nprint(json.dumps({'total':len(CASES),'passed':len(CASES)-len(failures),'failures':failures},ensure_ascii=False))\nassert not failures, 'Independent path contracts failed'\n"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2"
+          }
+        ],
+        "model_request_budget_snapshot": {
+          "journal_id": "e8eb2453326e420dad6e58dcd0441160",
+          "owner_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5",
+          "limits": {
+            "max_requests": 3,
+            "max_request_bytes": 65536,
+            "max_total_request_bytes": 196608
+          },
+          "reserved_requests": 3,
+          "reserved_request_body_bytes": 28168,
+          "unobserved_reservations": 0
+        }
+      },
+      "budget_journal": {
+        "checksum": "aff4ea68318de9cbc0a47e7a66c009c363446b8ab8b75e838a91bb28cf537004",
+        "identity": {
+          "journal_id": "e8eb2453326e420dad6e58dcd0441160",
+          "limits": {
+            "max_request_bytes": 65536,
+            "max_requests": 3,
+            "max_total_request_bytes": 196608
+          },
+          "owner_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5"
+        },
+        "reservations": [
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 8726,
+            "request_body_sha256": "ffef88e05fc3934389343b812303eac0f18b0cb8386f019659ca67e52b4bddfe",
+            "reserved_at": "2026-11-20T20:46:51.550679+00:00",
+            "sequence": 1,
+            "transport_observation": "headers_received"
+          },
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 9224,
+            "request_body_sha256": "f1e5f56b281f6bd8bd94f7fae0891afb6e47f2fae384f422661ec25f071fdf24",
+            "reserved_at": "2026-11-20T20:46:51.634111+00:00",
+            "sequence": 2,
+            "transport_observation": "headers_received"
+          },
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 10218,
+            "request_body_sha256": "5ffa2120b8d16de9f237a2f9e947be3867cc7b5c708c486e2bf7bbe7ee9584cd",
+            "reserved_at": "2026-11-20T20:46:51.785460+00:00",
+            "sequence": 3,
+            "transport_observation": "headers_received"
+          }
+        ],
+        "version": 1
+      },
+      "same_ledger_after_resume": true
+    },
+    {
+      "case": "checkpoint-sigkill",
+      "worker_returncode": 0,
+      "model_inference": false,
+      "operator_plan": true,
+      "interrupted": {
+        "stage": "checkpoint",
+        "model_turns": 1,
+        "tool_results": 1,
+        "pending": [
+          "model"
+        ]
+      },
+      "http_requests": [
+        {
+          "request_body_sha256": "ffef88e05fc3934389343b812303eac0f18b0cb8386f019659ca67e52b4bddfe",
+          "request_body_bytes": 8726,
+          "completed_tool_results": 0
+        },
+        {
+          "request_body_sha256": "f1e5f56b281f6bd8bd94f7fae0891afb6e47f2fae384f422661ec25f071fdf24",
+          "request_body_bytes": 9224,
+          "completed_tool_results": 1
+        },
+        {
+          "request_body_sha256": "5ffa2120b8d16de9f237a2f9e947be3867cc7b5c708c486e2bf7bbe7ee9584cd",
+          "request_body_bytes": 10218,
+          "completed_tool_results": 2
+        }
+      ],
+      "result": {
+        "status": "ready_for_review",
+        "task_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5",
+        "base_commit": "744a797e3b9495539ca35571eeffd112a205f5c8",
+        "patch_sha256": "f5ac2b13753a106a3b8f45fb308acddc3cfba477b841c5dbbcbf0d083f39d406",
+        "patch_bytes": 1573,
+        "model_mode": "local-openai",
+        "retained_ai_messages": 3,
+        "tool_results": 2,
+        "verification": [
+          {
+            "argv": [
+              "python",
+              "-c",
+              "from pathlib import Path; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents'/'__init__.py'; print('imported_subject='+str(actual)); assert actual == expected.resolve()"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "df6bcd570ca092a052bdd22401d0b7c602e6ea986112a144fd4309aa6540c31e"
+          },
+          {
+            "argv": [
+              "python",
+              "-c",
+              "import os,hashlib,sys; from pathlib import Path; assert os.environ.get('AGENT_LAB_BASELINE_VIEW') == '1', 'Worker baseline-view capability required'; p=Path('tests/unit_tests/backends/test_utils.py'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '8c23e4cbc0a480e4209c4456418d13cbb4b0da2d120c707f3172e015befaf7c8'; import deepagents; actual=Path(deepagents.__file__).resolve(); expected=Path.cwd()/'deepagents/__init__.py'; print('frozen_subject='+str(actual)); assert actual==expected.resolve(); os.execv(sys.executable, [sys.executable, '-m', 'pytest', 'tests/unit_tests/backends/test_utils.py', '--disable-socket', '--allow-unix-socket', '--benchmark-disable', '-q'])"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "108516fff4d8f14ca2e8b6aa1fcf3bdbea8cfa330aeb4feb478c507f2d632a38",
+            "baseline_files": [
+              "libs/deepagents/tests/unit_tests/backends/test_utils.py"
+            ],
+            "verification_view": "verification-worktrees/001",
+            "view_patch_sha256": "5019c6fc9a1d584b0a2de6b58ebfb932e45cd9ad21ad752edb7cd5105431a359",
+            "view_integrity_error": false
+          },
+          {
+            "argv": [
+              "python",
+              "-m",
+              "pytest",
+              "tests/unit_tests/backends/test_utils.py",
+              "--disable-socket",
+              "--allow-unix-socket",
+              "--benchmark-disable",
+              "-q"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "c1ea85c70f90ca3da64a37426aed176453e04304d20a6583a38eacc8c8fc495d"
+          },
+          {
+            "argv": [
+              "python",
+              "-c",
+              "import json\nfrom pathlib import Path\nfrom deepagents.backends.utils import validate_path\nimport deepagents\nassert Path(deepagents.__file__).resolve() == (Path.cwd()/'deepagents/__init__.py').resolve()\nCASES = [{'id': 'relative-posix', 'input': 'foo/bar', 'expected': {'value': '/foo/bar'}}, {'id': 'absolute-posix', 'input': '/workspace/file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'posix-dot-and-duplicate', 'input': '/./foo//bar', 'expected': {'value': '/foo/bar'}}, {'id': 'relative-backslash', 'input': 'foo\\\\bar\\\\baz', 'expected': {'value': '/foo/bar/baz'}}, {'id': 'mixed-separators', 'input': 'foo/bar\\\\baz/qux', 'expected': {'value': '/foo/bar/baz/qux'}}, {'id': 'backslash-dot-component', 'input': 'foo\\\\.\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-repeated-separator', 'input': 'foo\\\\\\\\bar', 'expected': {'value': '/foo/bar'}}, {'id': 'backslash-trailing-separator', 'input': 'foo\\\\bar\\\\', 'expected': {'value': '/foo/bar'}}, {'id': 'mixed-dot-component', 'input': '/workspace\\\\.\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'mixed-repeated-separator', 'input': '/workspace/\\\\file.txt', 'expected': {'value': '/workspace/file.txt'}}, {'id': 'root', 'input': '/', 'expected': {'value': '/'}}, {'id': 'empty-existing-contract', 'input': '', 'expected': {'value': '/.'}}, {'id': 'dot-existing-contract', 'input': '.', 'expected': {'value': '/.'}}, {'id': 'dots-in-filename', 'input': 'foo..bar.txt', 'expected': {'value': '/foo..bar.txt'}}, {'id': 'dots-in-directory', 'input': 'backup..2024/data.csv', 'expected': {'value': '/backup..2024/data.csv'}}, {'id': 'traversal-relative', 'input': '../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-interior', 'input': 'foo/../etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-backslash', 'input': 'foo\\\\..\\\\etc', 'expected': {'error': 'ValueError'}}, {'id': 'traversal-mixed', 'input': '/workspace/..\\\\etc/passwd', 'expected': {'error': 'ValueError'}}, {'id': 'home-expansion', 'input': '~/secret.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-backslash', 'input': 'C:\\\\Users\\\\file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'windows-drive-posix', 'input': 'D:/data/file.txt', 'expected': {'error': 'ValueError'}}, {'id': 'allowed-prefix', 'input': '/workspace/file.txt', 'allowed_prefixes': ['/workspace/'], 'expected': {'value': '/workspace/file.txt'}}, {'id': 'forbidden-prefix', 'input': '/etc/passwd', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'prefix-boundary', 'input': '/workspace-evil/file', 'allowed_prefixes': ['/workspace/'], 'expected': {'error': 'ValueError'}}, {'id': 'empty-allowlist', 'input': '/workspace/file.txt', 'allowed_prefixes': [], 'expected': {'error': 'ValueError'}}, {'id': 'unicode-posix', 'input': '/项目/论文.md', 'expected': {'value': '/项目/论文.md'}}, {'id': 'unicode-backslash-dot', 'input': '项目\\\\.\\\\论文.md', 'expected': {'value': '/项目/论文.md'}}]\nfailures=[]\nfor case in CASES:\n    kwargs={'allowed_prefixes':case['allowed_prefixes']} if 'allowed_prefixes' in case else {}\n    try:\n        value=validate_path(case['input'],**kwargs)\n        actual={'value':value}\n    except ValueError:\n        actual={'error':'ValueError'}\n    if actual != case['expected']:\n        failures.append({'id':case['id'],'expected':case['expected'],'actual':actual})\nprint(json.dumps({'total':len(CASES),'passed':len(CASES)-len(failures),'failures':failures},ensure_ascii=False))\nassert not failures, 'Independent path contracts failed'\n"
+            ],
+            "returncode": 0,
+            "timed_out": false,
+            "log_sha256": "61fba6af221ab167b9b57e3faefd38de6fa71ed7c6e1e23ad05f61e5bcf904b2"
+          }
+        ],
+        "model_request_budget_snapshot": {
+          "journal_id": "935447895df74e2fa04925ab35c5f873",
+          "owner_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5",
+          "limits": {
+            "max_requests": 3,
+            "max_request_bytes": 65536,
+            "max_total_request_bytes": 196608
+          },
+          "reserved_requests": 3,
+          "reserved_request_body_bytes": 28168,
+          "unobserved_reservations": 0
+        }
+      },
+      "budget_journal": {
+        "checksum": "b65363bb6b503640822220d54b32f6669fb66fa7b54c7413ba449e63a26b5f96",
+        "identity": {
+          "journal_id": "935447895df74e2fa04925ab35c5f873",
+          "limits": {
+            "max_request_bytes": 65536,
+            "max_requests": 3,
+            "max_total_request_bytes": 196608
+          },
+          "owner_sha256": "5a5fa97301b172342bf8947b8f03d8ab338f2427c881fc4d82636a58c1fe27c5"
+        },
+        "reservations": [
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 8726,
+            "request_body_sha256": "ffef88e05fc3934389343b812303eac0f18b0cb8386f019659ca67e52b4bddfe",
+            "reserved_at": "2026-11-20T20:48:17.936794+00:00",
+            "sequence": 1,
+            "transport_observation": "headers_received"
+          },
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 9224,
+            "request_body_sha256": "f1e5f56b281f6bd8bd94f7fae0891afb6e47f2fae384f422661ec25f071fdf24",
+            "reserved_at": "2026-11-20T20:48:21.358819+00:00",
+            "sequence": 2,
+            "transport_observation": "headers_received"
+          },
+          {
+            "http_status": 200,
+            "path": "/v1/chat/completions",
+            "request_body_bytes": 10218,
+            "request_body_sha256": "5ffa2120b8d16de9f237a2f9e947be3867cc7b5c708c486e2bf7bbe7ee9584cd",
+            "reserved_at": "2026-11-20T20:48:21.417946+00:00",
+            "sequence": 3,
+            "transport_observation": "headers_received"
+          }
+        ],
+        "version": 1
+      },
+      "same_ledger_after_resume": true
+    }
+  ],
+  "source_sha256": {
+    "agent_lab/worker.py": "932e996a54bfac5cb731c04cc7d503c392e5439c7cc1d0a3152adb72eee7729d",
+    "agent_lab/models.py": "26f4cb9d70de7c44cc10b377a405e29e6652ef5563ccfa2636c8d560df8c058f",
+    "agent_lab/repair.py": "e2804d770870fa21f334bac6012205a70408f01623c996b410ada30412aad008",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "tests/test_request_budget.py": "b069b21a7a07c20c4af32b31a5032d8d050fc71e3a7bf312f60b39e997785b30",
+    "benchmarks/request_budget_recovery.py": "3b52292cc505aaf97ed8c54190bf52704d5838b7ed30d510e83281c268ec9485"
+  },
+  "limitations": [
+    "HTTP model is explicitly fake and returns operator-provided edits",
+    "verification groups overlap and are not added",
+    "no neural model/GPU",
+    "reserving an attempt does not prove provider acceptance or completion",
+    "no exactly-once API behavior or billed-token/money limit"
+  ]
+}

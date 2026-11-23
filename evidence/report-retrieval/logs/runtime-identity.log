@@ -1,0 +1,1 @@
+{"adapter": "[RUN]/source/benchmarks/llamaindex_mcp_audit.py", "packages": {"mcp": "2.3.0", "llama-index-core": "0.14.26", "llama-index-workflows": "2.26.1", "openai": "3.57.0", "httpx2": "2.16.2"}}

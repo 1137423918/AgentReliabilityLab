@@ -1,0 +1,12 @@
+test_does_not_read_files_use_answers_or_mutate_metadata (test_report_retrieval.ReportRetrievalTests.test_does_not_read_files_use_answers_or_mutate_metadata) ... ok
+test_identifier_tokens_and_repeated_query_terms (test_report_retrieval.ReportRetrievalTests.test_identifier_tokens_and_repeated_query_terms) ... ok
+test_idf_changes_ranking_against_overlap_baseline (test_report_retrieval.ReportRetrievalTests.test_idf_changes_ranking_against_overlap_baseline) ... ok
+test_invalid_queries_bounds_and_duplicate_ids (test_report_retrieval.ReportRetrievalTests.test_invalid_queries_bounds_and_duplicate_ids) ... ok
+test_ties_are_stable_across_manifest_order (test_report_retrieval.ReportRetrievalTests.test_ties_are_stable_across_manifest_order) ... ok
+test_whole_rows_and_multibyte_byte_bound (test_report_retrieval.ReportRetrievalTests.test_whole_rows_and_multibyte_byte_bound) ... ok
+test_zero_match_never_fills_with_unrelated_reports (test_report_retrieval.ReportRetrievalTests.test_zero_match_never_fills_with_unrelated_reports) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.009s
+
+OK

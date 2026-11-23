@@ -1,0 +1,156 @@
+{
+  "scope": "Opt-in complete file inventory hides ls on actual HTTP tool definitions and rejects unsolicited ls before backend execution. Real graph/fake model checks, not neural capability.",
+  "source_sha256": {
+    "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56",
+    "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+    "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3",
+    "tests/test_local_model.py": "a32c873255f126e180862e123db8eacd78fc13416dd134c9b0024366877b31b6",
+    "tests/test_file_inventory.py": "52bf2753a8db08df817ec59adda8a5fbd21be50269f6ca22b4dfedb14db4be0a"
+  },
+  "source_project_base": "175799ba9ffa3b67c8f385384298e1513359de4f",
+  "full_suite": {
+    "passed": 106,
+    "skipped": 0,
+    "new_inventory_checks_included": 6,
+    "unittest_seconds": 267.545
+  },
+  "focused_checks": 6,
+  "execution": [
+    {
+      "stage": "format",
+      "returncode": 0,
+      "wall_seconds": 0.06621699873358011,
+      "argv": [
+        "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+        "format",
+        "agent_lab/file_inventory.py",
+        "agent_lab/worker.py",
+        "agent_lab/inspect_run.py",
+        "tests/test_local_model.py",
+        "tests/test_file_inventory.py"
+      ]
+    },
+    {
+      "stage": "lint",
+      "returncode": 0,
+      "wall_seconds": 0.16624618973582983,
+      "argv": [
+        "<server-workspace>/envs/langflow-lfx-20261121/bin/ruff",
+        "check",
+        "agent_lab/file_inventory.py",
+        "agent_lab/worker.py",
+        "agent_lab/inspect_run.py",
+        "tests/test_local_model.py",
+        "tests/test_file_inventory.py"
+      ]
+    },
+    {
+      "stage": "focused",
+      "returncode": 0,
+      "wall_seconds": 25.5739140920341,
+      "argv": [
+        "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_file_inventory.py",
+        "-v"
+      ]
+    },
+    {
+      "stage": "full",
+      "returncode": 0,
+      "wall_seconds": 271.0453618587926,
+      "argv": [
+        "<server-workspace>/envs/model-request-budget-20261121/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ]
+    },
+    {
+      "stage": "wheel",
+      "returncode": 0,
+      "wall_seconds": 18.443264869973063,
+      "argv": [
+        "<server-workspace>/tools/uv-x86_64-unknown-linux-gnu/uv",
+        "build",
+        "--wheel",
+        "--out-dir",
+        "<server-workspace>/outputs/file-inventory-20261121/round2/dist"
+      ]
+    }
+  ],
+  "state_filesystem": "ext4",
+  "wire_tools_and_backend_guard_verified": true,
+  "same_alias_graph_isolation_verified": true,
+  "read_index_composition_verified": true,
+  "checkpoint_sigkill_resume_verified": true,
+  "cached_replay_and_changed_policy_rejection_verified": true,
+  "whole_catalog_cap_bytes": 8192,
+  "excluded_tool_names": [
+    "ls"
+  ],
+  "glob_retained": true,
+  "default_mode_unchanged": true,
+  "wheel": {
+    "wheel_bytes": 32978,
+    "wheel_sha256": "725b0d247525b2e4cb7f39762da51bb0875842a8c2b142e9604450b6961dbd24",
+    "module_sha256": {
+      "agent_lab/file_inventory.py": "a80c404a97b6719347a688f4062cc4975453e6dbedfec0c979a4d119617ead56",
+      "agent_lab/worker.py": "dc4f49e3228531887cbae8fa3fcb482bef6091de809cd1e7f5ec2224301e93cb",
+      "agent_lab/inspect_run.py": "cb2836b593b274aaa28575cb3ddcfe8c212af017c5e27ee0f956903d734d01c3"
+    },
+    "modules_byte_identical": true,
+    "entrypoint_returncode": 0,
+    "smoke_output": {
+      "worker_imported_from_extracted_wheel": true,
+      "actual_console_entrypoint": "agent_lab.worker:main",
+      "fake_http_roundtrip_verified": true,
+      "model_calls": 2,
+      "model_visible_ls": false,
+      "neural_generation": false
+    },
+    "neural_generation": false
+  },
+  "neural_generation": false,
+  "gpu_used": false,
+  "preflight_failures_preserved": [
+    {
+      "round": 0,
+      "focused_errors": 1,
+      "cause": "Test spy referenced old SDK backend name ls_info; current methods ls and als probed after correction."
+    },
+    {
+      "round": 1,
+      "full_tests_run": 106,
+      "error_records": 7,
+      "affected_test_methods": 4,
+      "cause": "Archive omitted eight existing historical replay fixtures, 2015 bytes; exact original files and hashes restored, no tests skipped."
+    }
+  ],
+  "limitations": [
+    "Linux Python3.11 pinned DeepAgents0.7.41 worker built-in graph; no full async/custom-graph compatibility matrix.",
+    "Complete catalog and tool filtering change together; no claimed neural/token/cost/latency benefit.",
+    "Not a filesystem sandbox; original manifest, quota, materialization, syntax and frozen acceptance remain separate.",
+    "Six focused checks are included within106, not added again. All model responses in these checks are explicitly fake."
+  ],
+  "runtime_versions": {
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "packages": {
+      "deepagents": "0.7.41",
+      "langchain": "1.5.2",
+      "langchain-core": "1.8.4",
+      "langchain-openai": "1.8.5",
+      "langgraph": "1.2.24",
+      "langgraph-checkpoint-sqlite": "3.1.3",
+      "jsonschema": "4.26.0"
+    }
+  }
+}

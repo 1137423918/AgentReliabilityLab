@@ -1,0 +1,73 @@
+{
+  "scenarios": [
+    {
+      "scenario": "ranked",
+      "case": "normal",
+      "passed": true,
+      "backend_evidence_verified": true,
+      "fake_model_posts": 3,
+      "mcp_context_closed": true,
+      "model_request_sha256": [
+        "116e6784f20bf5a481491003fc8a6dd979b29df17c0d85fc2c84ea0a67f1da3b",
+        "811dac0657c9655538c98572f9776c06e7065023b478941d435eaeb90b9353b0",
+        "da2734745236237906ed6393b52eb678dd68a333ec42ada9700358a3de0809c7"
+      ],
+      "ranked_catalog_events": [
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "query": "Audit the OpenHands same-path patch move: verify the related and focused tests, new failures and neural requests.",
+          "selected_ids": [
+            "patch_move",
+            "historical_core",
+            "adk_cleanup",
+            "request_budget"
+          ],
+          "metadata_bytes": 1629,
+          "catalog_bytes": 5272
+        }
+      ]
+    },
+    {
+      "scenario": "full_fallback",
+      "case": "normal",
+      "passed": true,
+      "backend_evidence_verified": true,
+      "fake_model_posts": 3,
+      "mcp_context_closed": true,
+      "model_request_sha256": [
+        "116e6784f20bf5a481491003fc8a6dd979b29df17c0d85fc2c84ea0a67f1da3b",
+        "49c97a3c29553c4d0a69b788ab2d036b594d06cd4a4fabca9fa005fde61e3e0b",
+        "5131cbd4d9247ee6cc10b3052266be73b4ddde2a995db6bdc8d44291552da33a"
+      ],
+      "ranked_catalog_events": []
+    },
+    {
+      "scenario": "zero_match_then_full",
+      "case": "normal",
+      "passed": true,
+      "backend_evidence_verified": true,
+      "fake_model_posts": 4,
+      "mcp_context_closed": true,
+      "model_request_sha256": [
+        "116e6784f20bf5a481491003fc8a6dd979b29df17c0d85fc2c84ea0a67f1da3b",
+        "3f51b3eb93fbd06a2a123d7ea20dc7185e5a2dd075901968719125919c56b13a",
+        "4ce9fbbd6abe9ab51027fa1e8dcc376853f19f7bba50103e1fdc60178ca1dc49",
+        "f62c2bce1318f88823538ded7b2560a0fd3811827331197ec6a97f9d7a86fb4a"
+      ],
+      "ranked_catalog_events": [
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "query": "zzzzunmatchedtoken",
+          "selected_ids": [],
+          "metadata_bytes": 246,
+          "catalog_bytes": 5272
+        }
+      ]
+    }
+  ],
+  "passed": 3,
+  "neural_requests": 0,
+  "scripted_model": true
+}
