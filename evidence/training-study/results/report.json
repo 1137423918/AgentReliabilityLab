@@ -1,0 +1,233 @@
+{
+  "source_sha256": "57f0d51a5a8daf0ce93bc1078e3699cdaf11871ae20265f3544447fc3352c256",
+  "input_sha256": {
+    "train": "3fa5fe3e24010661bae6e344ae57f1000ddb4d34fceb26a3c9f3e8d0afbe529d",
+    "mixed_train": "a6231faee9ebbb2d79153901e361804349fb4002ffbc5e21c8a7eb33104b6807",
+    "test": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32"
+  },
+  "benchmark_sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+  "model_inference": false,
+  "training_run": false,
+  "tokenized_rows": 7889,
+  "text_grouping": {
+    "components": 4114,
+    "sequence_keys": 4986,
+    "word_trigram_Jaccard_threshold": "4/5",
+    "candidate_pairs_checked": 710854,
+    "near_edges": 225,
+    "quarantined_components": 277,
+    "candidate_IDs_in_quarantine": 0,
+    "eligible_clean_components": 1941,
+    "dev_components": 194,
+    "train_components": 3642,
+    "train_vs_dev_val_benchmark_component_intersection": 0,
+    "semantic_isolation_proven": false
+  },
+  "selected_training_pairs": 3700,
+  "clean_development_rows": 197,
+  "released_validation_rows": 79,
+  "overlength_pairs": 1,
+  "token_distributions": {
+    "train": {
+      "prompt_tokens": {
+        "n": 3905,
+        "total": 2586398,
+        "min": 245,
+        "max": 4130,
+        "p50": 588,
+        "p90": 1050,
+        "p95": 1255,
+        "p99": 1751
+      },
+      "target_tokens": {
+        "n": 3905,
+        "total": 352637,
+        "min": 30,
+        "max": 708,
+        "p50": 75,
+        "p90": 143,
+        "p95": 186,
+        "p99": 340
+      },
+      "sequence_tokens": {
+        "n": 3905,
+        "total": 2939035,
+        "min": 286,
+        "max": 4370,
+        "p50": 670,
+        "p90": 1164,
+        "p95": 1384,
+        "p99": 1891
+      }
+    },
+    "mixed_train": {
+      "prompt_tokens": {
+        "n": 3905,
+        "total": 2391931,
+        "min": 246,
+        "max": 4130,
+        "p50": 539,
+        "p90": 964,
+        "p95": 1169,
+        "p99": 1637
+      },
+      "target_tokens": {
+        "n": 3905,
+        "total": 353365,
+        "min": 30,
+        "max": 708,
+        "p50": 75,
+        "p90": 143,
+        "p95": 188,
+        "p99": 340
+      },
+      "sequence_tokens": {
+        "n": 3905,
+        "total": 2745296,
+        "min": 291,
+        "max": 4370,
+        "p50": 624,
+        "p90": 1068,
+        "p95": 1306,
+        "p99": 1817
+      }
+    },
+    "test": {
+      "prompt_tokens": {
+        "n": 79,
+        "total": 46284,
+        "min": 273,
+        "max": 1596,
+        "p50": 562,
+        "p90": 868,
+        "p95": 1050,
+        "p99": 1596
+      },
+      "target_tokens": {
+        "n": 79,
+        "total": 6887,
+        "min": 41,
+        "max": 447,
+        "p50": 72,
+        "p90": 117,
+        "p95": 232,
+        "p99": 447
+      },
+      "sequence_tokens": {
+        "n": 79,
+        "total": 53171,
+        "min": 320,
+        "max": 1657,
+        "p50": 646,
+        "p90": 999,
+        "p95": 1186,
+        "p99": 1657
+      }
+    }
+  },
+  "training_variant_tokens": {
+    "train": {
+      "prompt_tokens": 2455268,
+      "target_tokens": 335822,
+      "sequence_tokens": 2791090
+    },
+    "mixed_train": {
+      "prompt_tokens": 2277897,
+      "target_tokens": 336489,
+      "sequence_tokens": 2614386
+    }
+  },
+  "planned_exposure": {
+    "train": {
+      "variant": "train",
+      "updates": 32,
+      "loss_tokens_per_update": 2048,
+      "loss_tokens_total": 65536,
+      "sequence_forwards": 774,
+      "input_token_exposures": 573843,
+      "unique_IDs_exposed": 743,
+      "data_cycles_completed": 0,
+      "actual_private_label_spans_checked": 774
+    },
+    "mixed_train": {
+      "variant": "mixed_train",
+      "updates": 32,
+      "loss_tokens_per_update": 2048,
+      "loss_tokens_total": 65536,
+      "sequence_forwards": 772,
+      "input_token_exposures": 537483,
+      "unique_IDs_exposed": 741,
+      "data_cycles_completed": 0,
+      "actual_private_label_spans_checked": 772
+    }
+  },
+  "private_artifacts": [
+    {
+      "file": "train.parquet",
+      "bytes": 3993347,
+      "sha256": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+      "rows": 3700,
+      "row_content_and_schema_roundtrip": true
+    },
+    {
+      "file": "train-tokenized.jsonl",
+      "bytes": 32811778,
+      "sha256": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+      "rows": 3700,
+      "labels_roundtrip_and_causal_shift_checked": true
+    },
+    {
+      "file": "mixed_train.parquet",
+      "bytes": 3851626,
+      "sha256": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+      "rows": 3700,
+      "row_content_and_schema_roundtrip": true
+    },
+    {
+      "file": "mixed_train-tokenized.jsonl",
+      "bytes": 30811020,
+      "sha256": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+      "rows": 3700,
+      "labels_roundtrip_and_causal_shift_checked": true
+    },
+    {
+      "file": "test.parquet",
+      "bytes": 100058,
+      "sha256": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+      "rows": 79,
+      "row_content_and_schema_roundtrip": true
+    },
+    {
+      "file": "test-tokenized.jsonl",
+      "bytes": 628917,
+      "sha256": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+      "rows": 79,
+      "labels_roundtrip_and_causal_shift_checked": true
+    },
+    {
+      "file": "dev_clean.parquet",
+      "bytes": 210065,
+      "sha256": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+      "rows": 197,
+      "row_content_and_schema_roundtrip": true
+    },
+    {
+      "file": "dev_clean-tokenized.jsonl",
+      "bytes": 1448927,
+      "sha256": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+      "rows": 197,
+      "labels_roundtrip_and_causal_shift_checked": true
+    }
+  ],
+  "policy": "Paired IDs and exact normalized user sequences form components; all lexical word-trigram Jaccard>=0.8 links are unioned. Components touching released validation or official clean user inputs quarantined. Lowest seeded SHA 10% eligible clean components held out. Training admits both variants <=4096 with no truncation. Dev deduplicates exact prompt+gold. Original files unchanged.",
+  "limits": [
+    "Grouping is text-based; paraphrases below threshold, tool-family and pretraining overlap are not ruled out.",
+    "Development comes from released training data, not an independently collected external distribution.",
+    "32x2048 assistant-label schedules are data plans, not executed optimizer updates or a model checkpoint.",
+    "Exact supervised-token/update budgets do not equalize sequence forwards, prompt exposures, FLOPs or data coverage.",
+    "Labels include assistant content and template ending. Segment loss must be summed then divided by2048 with no extra accumulation averaging.",
+    "Original validation79 remains complete even when its sequences exceed4096; future trainer evaluation admission is separate.",
+    "This prepares an SFT research pilot; it is not the original GRPO/ToolRL-DR training recipe."
+  ],
+  "wall_seconds": 90.428
+}

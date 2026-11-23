@@ -1,0 +1,26 @@
+{
+  "terminal": true,
+  "files": [
+    {
+      "file": "train-paired.parquet",
+      "bytes": 4192661,
+      "sha256": "3fa5fe3e24010661bae6e344ae57f1000ddb4d34fceb26a3c9f3e8d0afbe529d",
+      "source_and_copy_verified": true
+    },
+    {
+      "file": "mixed_train-paired.parquet",
+      "bytes": 4032433,
+      "sha256": "a6231faee9ebbb2d79153901e361804349fb4002ffbc5e21c8a7eb33104b6807",
+      "source_and_copy_verified": true
+    },
+    {
+      "file": "test-paired.parquet",
+      "bytes": 100058,
+      "sha256": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+      "source_and_copy_verified": true
+    }
+  ],
+  "source_unchanged": true,
+  "no_model_or_training": true,
+  "wall_seconds": 0.922
+}

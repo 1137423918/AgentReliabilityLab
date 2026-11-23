@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "train": {
+      "actual_shifted_supervised_labels_in_plan": 65536,
+      "optimizer_updates_planned": 32,
+      "segments_checked": 774,
+      "input_token_exposures": 573843,
+      "all_label_spans_contiguous_per_ID_cycle": true,
+      "optimizer_or_model_executed": false
+    },
+    "mixed_train": {
+      "actual_shifted_supervised_labels_in_plan": 65536,
+      "optimizer_updates_planned": 32,
+      "segments_checked": 772,
+      "input_token_exposures": 537483,
+      "all_label_spans_contiguous_per_ID_cycle": true,
+      "optimizer_or_model_executed": false
+    }
+  },
+  "paired_training_ID_order_identical": true,
+  "same_seed_schedule_ID_prefix_length": 741,
+  "train_dev_validation_component_overlap": 0,
+  "public_selected_rows": 7676,
+  "private_artifact_hashes_verified": 8,
+  "training_run": false
+}

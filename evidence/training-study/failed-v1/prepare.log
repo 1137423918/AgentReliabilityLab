@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/isolated/study-v1/prepare.py", line 239, in <module>
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--source',type=Path,required=True);p.add_argument('--model',type=Path,required=True);p.add_argument('--benchmark',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();prepare(a)
+                                                                                                                                                                                                                                                                                  ^^^^^^^^^^
+  File "/isolated/study-v1/prepare.py", line 107, in prepare
+    seq=tuple(normal(m.get('content') or '') for m in r['conversation'] if m['role']=='user')
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/isolated/study-v1/prepare.py", line 107, in <genexpr>
+    seq=tuple(normal(m.get('content') or '') for m in r['conversation'] if m['role']=='user')
+                                                                           ~^^^^^^^^
+TypeError: string indices must be integers, not 'str'

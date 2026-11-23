@@ -1,0 +1,118 @@
+{
+  "terminal": true,
+  "protocol_sha256": "af03ed23b51aa473b3e9e37fc393c12cb773e4da758340148425356d918798c1",
+  "source_sha256": "57f0d51a5a8daf0ce93bc1078e3699cdaf11871ae20265f3544447fc3352c256",
+  "operator_sha256": "f990dfd8a3d08f1e0d8740777b018eaa297e595cf55600ac8243896231ba0a18",
+  "tokenizer_identity": [
+    {
+      "file": "LICENSE",
+      "sha256": "ef52482bb785733093dc9a2e8edd8e764c77d12d8e9d8f10a80c9b547d32d0f9"
+    },
+    {
+      "file": "README.md",
+      "sha256": "2c74693e6ae36ba878124d465195b4dad0f71035b54ece1c9fd1553cc497ef8c"
+    },
+    {
+      "file": "config.json",
+      "sha256": "eed00b17e22553979d090fa492e587e92885e328914c8e0b0b78f0a0d3576b3b"
+    },
+    {
+      "file": "generation_config.json",
+      "sha256": "ea35dfb6fc5051b01114f9b995820d55dab01ed33ee490f6378b442af82c09f9"
+    },
+    {
+      "file": "merges.txt",
+      "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3"
+    },
+    {
+      "file": "model.safetensors.index.json",
+      "sha256": "bc8aaa0c87d4335177e01c765f1de0db81661c67c1a72fbfb0d521b09f5ddc56"
+    },
+    {
+      "file": "tokenizer.json",
+      "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539"
+    },
+    {
+      "file": "tokenizer_config.json",
+      "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583"
+    },
+    {
+      "file": "vocab.json",
+      "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910"
+    }
+  ],
+  "model_inference": false,
+  "training_run": false,
+  "GPU_work_started": false,
+  "filesystem": "ext4",
+  "CPU_child_started": true,
+  "returncode": 0,
+  "guard_reason": null,
+  "prepared_successfully": true,
+  "preparation_summary": {
+    "tokenized_rows": 7889,
+    "selected_training_pairs": 3700,
+    "clean_development_rows": 197,
+    "released_validation_rows": 79,
+    "overlength_pairs": 1,
+    "text_grouping": {
+      "components": 4114,
+      "sequence_keys": 4986,
+      "word_trigram_Jaccard_threshold": "4/5",
+      "candidate_pairs_checked": 710854,
+      "near_edges": 225,
+      "quarantined_components": 277,
+      "candidate_IDs_in_quarantine": 0,
+      "eligible_clean_components": 1941,
+      "dev_components": 194,
+      "train_components": 3642,
+      "train_vs_dev_val_benchmark_component_intersection": 0,
+      "semantic_isolation_proven": false
+    },
+    "training_variant_tokens": {
+      "train": {
+        "prompt_tokens": 2455268,
+        "target_tokens": 335822,
+        "sequence_tokens": 2791090
+      },
+      "mixed_train": {
+        "prompt_tokens": 2277897,
+        "target_tokens": 336489,
+        "sequence_tokens": 2614386
+      }
+    },
+    "planned_exposure": {
+      "train": {
+        "variant": "train",
+        "updates": 32,
+        "loss_tokens_per_update": 2048,
+        "loss_tokens_total": 65536,
+        "sequence_forwards": 774,
+        "input_token_exposures": 573843,
+        "unique_IDs_exposed": 743,
+        "data_cycles_completed": 0,
+        "actual_private_label_spans_checked": 774
+      },
+      "mixed_train": {
+        "variant": "mixed_train",
+        "updates": 32,
+        "loss_tokens_per_update": 2048,
+        "loss_tokens_total": 65536,
+        "sequence_forwards": 772,
+        "input_token_exposures": 537483,
+        "unique_IDs_exposed": 741,
+        "data_cycles_completed": 0,
+        "actual_private_label_spans_checked": 772
+      }
+    }
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "peak_sampled_RSS_bytes": 1577672704,
+  "wall_seconds": 99.078,
+  "source_and_inputs_unchanged": true,
+  "core_distribution_pairs_unchanged": true,
+  "tokenizer_identity_unchanged": true
+}

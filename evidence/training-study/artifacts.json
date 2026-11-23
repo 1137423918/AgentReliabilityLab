@@ -1,0 +1,174 @@
+{
+  "normalization": "Only marked operator source/log paths normalized. Original/public SHA separately bound. Reports/protocols/row-metadata/schedules retain original bytes. Selection and consumption checks are derived from private tokenized files, with no model/loss/optimizer execution. No raw IDs, full prompts, targets, token vectors, Parquets, weights, credentials or environments exported. Failed-v1 remains unchanged. After verifying the server archive, the transfer source tmp path was additionally normalized to /private/prepared-pairs-stage47; original SHA remains recorded.",
+  "files": [
+    {
+      "path": "failed-v1/run.py",
+      "original_sha256": "adfa443a7f737882095bf4d995968da9b1c4ab1d3522a797c088717a15f3faee",
+      "public_sha256": "a795f80bfbe9088a17810da32f30ce9dcc08391b8120548aa0be3dad475d0a56",
+      "public_bytes": 7762,
+      "paths_normalized": true
+    },
+    {
+      "path": "failed-v1/prepare.py",
+      "original_sha256": "005469f07821172c33a4c790a2340e1d88cc12a8afbde3502e7370c59e651d23",
+      "public_sha256": "005469f07821172c33a4c790a2340e1d88cc12a8afbde3502e7370c59e651d23",
+      "public_bytes": 16555,
+      "paths_normalized": true
+    },
+    {
+      "path": "failed-v1/exec_child.py",
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_bytes": 443,
+      "paths_normalized": true
+    },
+    {
+      "path": "failed-v1/protocol.json",
+      "original_sha256": "abb521bee068bbd69125e2794a0d1dd52410e2738c5fe8232777a8e30224931a",
+      "public_sha256": "abb521bee068bbd69125e2794a0d1dd52410e2738c5fe8232777a8e30224931a",
+      "public_bytes": 2448,
+      "paths_normalized": false
+    },
+    {
+      "path": "failed-v1/run-report.json",
+      "original_sha256": "ef1fcd5a38bf0ca15128fdd752fe0a9f39ab2050cef3443df02ed61440ce32d1",
+      "public_sha256": "ef1fcd5a38bf0ca15128fdd752fe0a9f39ab2050cef3443df02ed61440ce32d1",
+      "public_bytes": 2025,
+      "paths_normalized": false
+    },
+    {
+      "path": "failed-v1/prepare.log",
+      "original_sha256": "c7b18207799f4a65636f43c2f62d6f8c0e58bb41cf6af73664cf2d93b17685e4",
+      "public_sha256": "9e9b1355031618837477fe1626a4aeadaeaf088362a3cbd664693e33b0288153",
+      "public_bytes": 1212,
+      "paths_normalized": true
+    },
+    {
+      "path": "failed-v1/monitor.jsonl",
+      "original_sha256": "5d9a930684a3e0c9e42f57b32ddf2aa5566bbe6a19485b38f5643b7092757b3e",
+      "public_sha256": "5d9a930684a3e0c9e42f57b32ddf2aa5566bbe6a19485b38f5643b7092757b3e",
+      "public_bytes": 2205,
+      "paths_normalized": false
+    },
+    {
+      "path": "candidate-v2/run.py",
+      "original_sha256": "f990dfd8a3d08f1e0d8740777b018eaa297e595cf55600ac8243896231ba0a18",
+      "public_sha256": "8b41e60bf2a3548711dc852ff0fa72f113cc237966bb357847ff79516201b53b",
+      "public_bytes": 7830,
+      "paths_normalized": true
+    },
+    {
+      "path": "candidate-v2/prepare.py",
+      "original_sha256": "57f0d51a5a8daf0ce93bc1078e3699cdaf11871ae20265f3544447fc3352c256",
+      "public_sha256": "57f0d51a5a8daf0ce93bc1078e3699cdaf11871ae20265f3544447fc3352c256",
+      "public_bytes": 16814,
+      "paths_normalized": true
+    },
+    {
+      "path": "candidate-v2/exec_child.py",
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_bytes": 443,
+      "paths_normalized": true
+    },
+    {
+      "path": "candidate-v2/protocol.json",
+      "original_sha256": "af03ed23b51aa473b3e9e37fc393c12cb773e4da758340148425356d918798c1",
+      "public_sha256": "af03ed23b51aa473b3e9e37fc393c12cb773e4da758340148425356d918798c1",
+      "public_bytes": 2994,
+      "paths_normalized": false
+    },
+    {
+      "path": "candidate-v2/run-report.json",
+      "original_sha256": "32883859eaf3545328b3e73775f17da684dd638e6d151e613ab73c9d9e75fee0",
+      "public_sha256": "32883859eaf3545328b3e73775f17da684dd638e6d151e613ab73c9d9e75fee0",
+      "public_bytes": 3680,
+      "paths_normalized": false
+    },
+    {
+      "path": "candidate-v2/prepare.log",
+      "original_sha256": "33730c8469b68b0b518a64da5c7e4484f9e5d584bb603fcbe03f8d27e641f144",
+      "public_sha256": "33730c8469b68b0b518a64da5c7e4484f9e5d584bb603fcbe03f8d27e641f144",
+      "public_bytes": 1933,
+      "paths_normalized": true
+    },
+    {
+      "path": "candidate-v2/monitor.jsonl",
+      "original_sha256": "a6454e3b705fafeaef46a8410d7bb7a794bbd3b7c44233766f571c6029987a90",
+      "public_sha256": "a6454e3b705fafeaef46a8410d7bb7a794bbd3b7c44233766f571c6029987a90",
+      "public_bytes": 17513,
+      "paths_normalized": false
+    },
+    {
+      "path": "transfer/run.py",
+      "original_sha256": "9deb733f5b4ce1cba5b6c512c31a7c1774b17564694266b7fd7e974abbf97d8b",
+      "public_sha256": "24867c338987f5c553dfbd11ee6d73334d47cde1c78fa5208c87000ed6202855",
+      "public_bytes": 1110,
+      "paths_normalized": true,
+      "additional_local_path_normalization": true
+    },
+    {
+      "path": "transfer/report.json",
+      "original_sha256": "b8bac7c5cdc9e9b92df2d9348b5871c436f167a71d2ae99ac4444ea7b42da555",
+      "public_sha256": "b8bac7c5cdc9e9b92df2d9348b5871c436f167a71d2ae99ac4444ea7b42da555",
+      "public_bytes": 723,
+      "paths_normalized": false
+    },
+    {
+      "path": "results/report.json",
+      "original_sha256": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9",
+      "public_sha256": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9",
+      "public_bytes": 7101,
+      "paths_normalized": false
+    },
+    {
+      "path": "results/row-metadata.jsonl",
+      "original_sha256": "2289f06a1be956fa096daa7b51eb21015b729b091115cf94929541dac73304d2",
+      "public_sha256": "2289f06a1be956fa096daa7b51eb21015b729b091115cf94929541dac73304d2",
+      "public_bytes": 7108948,
+      "paths_normalized": false
+    },
+    {
+      "path": "results/near-edges.jsonl",
+      "original_sha256": "891033df732ae99e451a25aea450d63edba61b2957fd3153e17325f2debb0edd",
+      "public_sha256": "891033df732ae99e451a25aea450d63edba61b2957fd3153e17325f2debb0edd",
+      "public_bytes": 52464,
+      "paths_normalized": false
+    },
+    {
+      "path": "results/train-schedule.json",
+      "original_sha256": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+      "public_sha256": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+      "public_bytes": 325295,
+      "paths_normalized": false
+    },
+    {
+      "path": "results/mixed_train-schedule.json",
+      "original_sha256": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+      "public_sha256": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+      "public_bytes": 324347,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/export_metadata.py",
+      "original_sha256": "823ecff0637fbcbd4abfa2612e6de7f2e557c12392124dc7f9c72e6a087b48f4",
+      "public_sha256": "fb911b0ff0c535aedeb66641f21209af6a9a53e8df6ce066186e9a738268c4c5",
+      "public_bytes": 6573,
+      "paths_normalized": true
+    },
+    {
+      "path": "results/selected-rows.jsonl",
+      "original_sha256": null,
+      "public_sha256": "59b3089a01c1010cd3cff68634d61107e73e4d7e1805f1c7df90c368606b334a",
+      "public_bytes": 2804564,
+      "derived_metadata": true
+    },
+    {
+      "path": "results/consumption-check.json",
+      "original_sha256": null,
+      "public_sha256": "5c56eba1a3412515801d4f28c0d8cfdc97f2ba49970c24f09e7c07606f4d6f93",
+      "public_bytes": 838,
+      "derived_metadata": true
+    }
+  ]
+}

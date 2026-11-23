@@ -1,0 +1,33 @@
+{"phase": "grouped", "nodes": 4183, "components": 4114, "sequence_keys": 4986, "near_edges": 225, "candidate_pairs": 710854}
+{"phase": "tokenized", "rows": 250, "declared": 7889}
+{"phase": "tokenized", "rows": 500, "declared": 7889}
+{"phase": "tokenized", "rows": 750, "declared": 7889}
+{"phase": "tokenized", "rows": 1000, "declared": 7889}
+{"phase": "tokenized", "rows": 1250, "declared": 7889}
+{"phase": "tokenized", "rows": 1500, "declared": 7889}
+{"phase": "tokenized", "rows": 1750, "declared": 7889}
+{"phase": "tokenized", "rows": 2000, "declared": 7889}
+{"phase": "tokenized", "rows": 2250, "declared": 7889}
+{"phase": "tokenized", "rows": 2500, "declared": 7889}
+{"phase": "tokenized", "rows": 2750, "declared": 7889}
+{"phase": "tokenized", "rows": 3000, "declared": 7889}
+{"phase": "tokenized", "rows": 3250, "declared": 7889}
+{"phase": "tokenized", "rows": 3500, "declared": 7889}
+{"phase": "tokenized", "rows": 3750, "declared": 7889}
+{"phase": "tokenized", "rows": 4000, "declared": 7889}
+{"phase": "tokenized", "rows": 4250, "declared": 7889}
+{"phase": "tokenized", "rows": 4500, "declared": 7889}
+{"phase": "tokenized", "rows": 4750, "declared": 7889}
+{"phase": "tokenized", "rows": 5000, "declared": 7889}
+{"phase": "tokenized", "rows": 5250, "declared": 7889}
+{"phase": "tokenized", "rows": 5500, "declared": 7889}
+{"phase": "tokenized", "rows": 5750, "declared": 7889}
+{"phase": "tokenized", "rows": 6000, "declared": 7889}
+{"phase": "tokenized", "rows": 6250, "declared": 7889}
+{"phase": "tokenized", "rows": 6500, "declared": 7889}
+{"phase": "tokenized", "rows": 6750, "declared": 7889}
+{"phase": "tokenized", "rows": 7000, "declared": 7889}
+{"phase": "tokenized", "rows": 7250, "declared": 7889}
+{"phase": "tokenized", "rows": 7500, "declared": 7889}
+{"phase": "tokenized", "rows": 7750, "declared": 7889}
+{"completed": true, "training_pairs": 3700, "dev_rows": 197, "quarantined_IDs": 0, "training_run": false}
