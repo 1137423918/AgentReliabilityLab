@@ -1,0 +1,18 @@
+{
+  "definition_sha256": "87efd096a6a7db490a0e0463596446048459c6bae846425790ec7371750292b3",
+  "before": {
+    "state_sha256": "c07558b89591d6389f00578366b49c6daf3802976d3683bfb30c5fc5dc4e4cc8",
+    "attempts": 353,
+    "results": 350
+  },
+  "after": {
+    "state_sha256": "640f6b5af8059fab5a046eaaf97afb585c54c99be9278567da0db3f66763084d",
+    "attempts": 380,
+    "results": 377,
+    "concurrent_authorized_Stage68_progress": true,
+    "not_written_by_this_profile": true
+  },
+  "old_unknown_attempts_charged": true,
+  "application_requests_not_mixed_into_generation": true,
+  "concurrent_authorized_Stage68_progress": true
+}

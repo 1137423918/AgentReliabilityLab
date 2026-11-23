@@ -21,6 +21,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 ## Agent 应用
 
+**真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
+
 **MCP 报告证据服务**：读取固定来源 JSON，返回带来源哈希的回执，核对提交事实的值、类型和读取谱系。每次审计有独立句柄、TTL 和共享操作额度；事实核对不保证自由文本结论正确。
 
 提供[独立启动包](artifacts/agentlab-evidence-0.1.0-starter.zip)和[wheel](artifacts/agentlab_evidence-0.1.0-py3-none-any.whl)，无需模型权重。已有 Python3.11 / uv 的服务器可从源码启动本机服务：

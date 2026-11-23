@@ -1,0 +1,53 @@
+{
+  "claim_supported": true,
+  "facts": [
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/execution/candidate_prepared",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/resolution/exit_code",
+      "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/resolution/original_requirements_changed",
+      "value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/coverage/before_registry_complete",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/coverage/after_registry_complete",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/target/version_changed",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/target/remaining_advisory_match_count",
+      "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "report_id": "fastmcp_2_12_4",
+      "pointer": "/delta/new_package_advisory_match_count",
+      "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    }
+  ],
+  "citations": [
+    {
+      "report_id": "fastmcp_2_12_4",
+      "sha256": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a"
+    }
+  ],
+  "canonical_grading_recomputed_read_only": true,
+  "free_prose_not_exported": true
+}

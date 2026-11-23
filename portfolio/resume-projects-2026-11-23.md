@@ -31,6 +31,16 @@
 
 [维护运行器](../docs/durable-worker.md) · [跨重启请求预算](../docs/model-request-budget.md) · [MCP 服务与安装](../docs/mcp-evidence.md)
 
+## 真实开源项目依赖升级审查 Agent
+
+**Python · OSV-Scanner · uv · MCP · LlamaIndex FunctionAgent · Qwen3.5-9B**
+
+- 面向依赖维护流程，固定两个真实 Agent 项目的源码提交、锁文件与漏洞库，执行原始扫描、声明不变的目标解析和候选复扫；输出实际差异、目标残留及新增包/公告匹配，为兼容性测试准备证据。
+- 显式处理开发/可选/条件 registry resolutions 与 editable/root 来源，拒绝未声明扫描条目；通过9项服务器单元控制，保留准备阶段失败及固定来源哈希。
+- 将外部项目扫描事实接入真实 MCP 服务，模型选择字段引用，消费端绑定本次读取的精确值与回执；4场脚本场景覆盖正常审查、跨项目引用和错误结论。真实9B完成两项已知任务、通过一项，共6次请求，另一项遗漏必要事实而失败，未宣称泛化准确率。
+
+[实现、实际结果与运行入口](../docs/dependency-upgrade.md)。候选扫描未替代兼容性测试或发布审批；FastMCP候选仍有16个受影响 registry resolutions。历史发布快照不代表项目当前部署。
+
 ## Agent 开源项目缺陷修复
 
 在独立小团队维护的 Browser Use 中修复云会话下载未沿用创建密钥的问题，覆盖分页查询、切换模型后的保活会话及停止后的文件补收。使用真实鉴权、请求和落盘代码配合HTTP边界模拟，原版三个入口回归失败，候选通过；pre-commit、锁定工具检查及完整非Chrome选择通过，具体范围与跳过项见[证据](../docs/browseruse-cloud-download-key.md)。[PR #6521](https://github.com/browser-use/browser-use/pull/6521) 已正式提交，尚未合并。 同一PR继续落实评审反馈，补齐超时创建的停止后凭据清理与失败重试；最终服务器非Chrome选择969项通过，原始及补充回归分别保留失败基线，范围不相加。

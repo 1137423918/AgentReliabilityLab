@@ -1,0 +1,165 @@
+{
+  "case_plan": [
+    {
+      "policy": "all",
+      "submission_mode": "references",
+      "case": "browser_use_1_0_8_integration_gate",
+      "label": "references--all--browser_use_1_0_8_integration_gate"
+    },
+    {
+      "policy": "all",
+      "submission_mode": "references",
+      "case": "fastmcp_2_12_4_integration_gate",
+      "label": "references--all--fastmcp_2_12_4_integration_gate"
+    }
+  ],
+  "cases": [
+    {
+      "policy": "all",
+      "submission_mode": "references",
+      "case": "browser_use_1_0_8_integration_gate",
+      "label": "references--all--browser_use_1_0_8_integration_gate",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [
+          {
+            "report_id": "browser_use_1_0_8",
+            "pointer": "/resolution/original_requirements_changed",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": null,
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "82235c7aaa9927a5e098475ac43234f872820e9e0df4c9b7cea72e95f84593fd"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "browser_use_1_0_8",
+          "pointers": [
+            "/execution",
+            "/resolution",
+            "/coverage",
+            "/target",
+            "/delta",
+            "/provenance"
+          ],
+          "result_sha256": "a73ae8d415c2b4f4bd09ff0cd64219fe9e2836e92d6c1004750d7eb0a5684709"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "evidence_verified",
+          "result_sha256": "cf58dffe13cab866b80a348523bc48903f466a1fe029b58786234ddf04f996d4"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 3,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "0d006d59665b9a7f17ec9aa89372b12337d080bc8d6490213dd019eee5a671f5",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 3,
+      "request_body_bytes": 18349,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 3,
+      "unknown_header_observations": 0,
+      "wire_events": 26,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 5799,
+      "model_reported_completion_tokens": 827,
+      "budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "policy": "all",
+      "submission_mode": "references",
+      "case": "fastmcp_2_12_4_integration_gate",
+      "label": "references--all--fastmcp_2_12_4_integration_gate",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "passed",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": null,
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "82235c7aaa9927a5e098475ac43234f872820e9e0df4c9b7cea72e95f84593fd"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "fastmcp_2_12_4",
+          "pointers": [
+            "/execution",
+            "/resolution",
+            "/coverage",
+            "/target",
+            "/delta",
+            "/provenance"
+          ],
+          "result_sha256": "7cec07ad3ef04751758f63db154540f6088c980a241e44a63777d6ced9979a3b"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "evidence_verified",
+          "result_sha256": "72b415ddf504c135368eeb81c756185960302101c8d42802caeb4912080aaaed"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 3,
+        "reads_completed": 1,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "84e11bba0997355f177fbf017c6da79507c80b0e601ee1132bdb51dca06e61ae",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 3,
+      "request_body_bytes": 17103,
+      "http_statuses": [
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 3,
+      "unknown_header_observations": 0,
+      "wire_events": 26,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 5278,
+      "model_reported_completion_tokens": 432,
+      "budget_and_wire_unchanged_by_export": true
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_accuracy": false,
+  "no_new_model_calls_by_exporter": true
+}

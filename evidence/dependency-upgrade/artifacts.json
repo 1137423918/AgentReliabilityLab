@@ -5,8 +5,8 @@
       "bytes": 4216
     },
     "README.md": {
-      "sha256": "be0402a12646a6b63845bdd69a3968cc63cfeacff1beea999b2e911f7e686ffe",
-      "bytes": 5006
+      "sha256": "becb216afe229091dbb4e200188e04a5b1256205fd5418cd3f59f5a35bc710b1",
+      "bytes": 5182
     },
     "SDK-uv.lock": {
       "sha256": "866a6cfaabf0658345e83f76ebc7570be0eec90e46f6a92a850f70c927011cd0",
@@ -95,6 +95,126 @@
     "metadata-backend-distributions.json": {
       "sha256": "fdd11ab016a04dc63eb9bc2df255c55507b9aa2a0440ccd83615b917e2376879",
       "bytes": 177
+    },
+    "model-v1/README.md": {
+      "sha256": "e8ffe433c3c62df67f49bd5c9c44426bedce2abd890184f67cad2b3518ed2697",
+      "bytes": 3193
+    },
+    "model-v1/cases-summary.json": {
+      "sha256": "bc6f163e84b918e0f9e3b8cbcf036a00d861f3dca2bd2c106b6b40cc05f80bb6",
+      "bytes": 5146
+    },
+    "model-v1/cleanup.json": {
+      "sha256": "9405814900f0718e381fd6b4eb1b4974d59daa8705e542d73378b3befa38cdef",
+      "bytes": 216
+    },
+    "model-v1/controller-summary.json": {
+      "sha256": "0fae0aef0e29c579472b359686e38cfc39940060f703f3717a01fd5417f81dd1",
+      "bytes": 69995
+    },
+    "model-v1/export-manifest.json": {
+      "sha256": "b94751ea82e9efe085c0d14bbab78c21630a6fecf3cb7af548e34775002e0c3c",
+      "bytes": 8036
+    },
+    "model-v1/native/staging-protocol.json": {
+      "sha256": "5ba0d00f4383cd72d81ecf0f26f007f177335201d5a0a4a049f97987534aef60",
+      "bytes": 6624
+    },
+    "model-v1/native/staging-report.json": {
+      "sha256": "8f3a766a57364e172486c89b6f830a0ef64d52c2f3b0c9845318fee6689916d4",
+      "bytes": 9217
+    },
+    "model-v1/native/startup-observations.json": {
+      "sha256": "c38b4035f495594b8743eb77549718dad65935f397295ccd1b78dceee7598d6c",
+      "bytes": 1205
+    },
+    "model-v1/operator/agent-sdk-identity.log": {
+      "sha256": "30dc280cb9367b36b615daa9a8dd17e50b605b52aae0c0e9b03ab97508b13867",
+      "bytes": 2605
+    },
+    "model-v1/operator/cases.json": {
+      "sha256": "59fa369aa0fa803376d5fbfe4ca729764b78b59d9d5e489289ca029658c7ab9c",
+      "bytes": 2542
+    },
+    "model-v1/operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870
+    },
+    "model-v1/operator/cpu_exec.py.txt": {
+      "sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "bytes": 336
+    },
+    "model-v1/operator/gpu-runtime-manifest.json": {
+      "sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "bytes": 4703
+    },
+    "model-v1/operator/gpu_runtime.py.txt": {
+      "sha256": "167700941c9e2dc2147f2c1a85275b9597c5fc51cdae25ab0331d413f4e0b7ed",
+      "bytes": 3248
+    },
+    "model-v1/operator/native-artifact-identity.log": {
+      "sha256": "3bc02d5f98ef54ea1bd88aefc2fc22f7fb2c858a9cb76b1f351a36e72c33b5e7",
+      "bytes": 7556
+    },
+    "model-v1/operator/protocol.json": {
+      "sha256": "3e6ec3b73e9b5a67ba654f7854d8124e3f78da9ad3db3b3e800d4d34e17cd275",
+      "bytes": 8976
+    },
+    "model-v1/operator/run_model.py.txt": {
+      "sha256": "4be5040642f1599d978e3f0f380097a9b94f2a5c4a348d8e0a91ce4c9551fda6",
+      "bytes": 28193
+    },
+    "model-v1/original-generation-state.json": {
+      "sha256": "1b0a62145bed2c65f4c5aaaf141f1252af9781162d2f109685c124394d61d5e3",
+      "bytes": 628
+    },
+    "model-v1/references--all--browser_use_1_0_8_integration_gate/budget-metadata.json": {
+      "sha256": "cabc9b5f201c8c1ccbd164a67e378f18f7974566868bfeea9239ac38b3502b9f",
+      "bytes": 1457
+    },
+    "model-v1/references--all--browser_use_1_0_8_integration_gate/model-response-metadata.json": {
+      "sha256": "06b1ef6a1085385b191e2aa49c60541faa4ad27340c2d544595b502ef4f9d8b5",
+      "bytes": 4335
+    },
+    "model-v1/references--all--browser_use_1_0_8_integration_gate/submission-metadata.json": {
+      "sha256": "c443c14114a0961cb23527177520a625134f9eb79259eae0efbb731f91d9fdd9",
+      "bytes": 1848
+    },
+    "model-v1/references--all--browser_use_1_0_8_integration_gate/wire-metadata.json": {
+      "sha256": "adc5cfab7cd5d94526b62cc847a366edead44a19498484b51c5292c3c1c81510",
+      "bytes": 7855
+    },
+    "model-v1/references--all--fastmcp_2_12_4_integration_gate/budget-metadata.json": {
+      "sha256": "c12991dd5b9d4eb5cf2cc7c697c296a97433af15029f7827f5b3e21a3115327c",
+      "bytes": 1457
+    },
+    "model-v1/references--all--fastmcp_2_12_4_integration_gate/model-response-metadata.json": {
+      "sha256": "0a14d14d0cccd8bf9dbce0b24f035c803dd59cc07d43dabf597a2d701586d4b9",
+      "bytes": 4309
+    },
+    "model-v1/references--all--fastmcp_2_12_4_integration_gate/submission-metadata.json": {
+      "sha256": "29b1ff50c0a84a2da53fbe2bddbbd01f196c0a28a39f630588e296f6315c6a6d",
+      "bytes": 1824
+    },
+    "model-v1/references--all--fastmcp_2_12_4_integration_gate/wire-metadata.json": {
+      "sha256": "1a6ef3635e3940535044608f57faa63624386951b6033357903995179771b9d7",
+      "bytes": 7853
+    },
+    "model-v1/tested-source/agent_lab/evidence_submission.py": {
+      "sha256": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+      "bytes": 3722
+    },
+    "model-v1/tested-source/agent_lab/report_retrieval.py": {
+      "sha256": "fc11bc23b5f6bbc1eb2871da3fd13c7ffc7a4c4779e603f72e937e5ca6babdb8",
+      "bytes": 5661
+    },
+    "model-v1/tested-source/benchmarks/evidence_audit_case.py": {
+      "sha256": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+      "bytes": 3937
+    },
+    "model-v1/tested-source/benchmarks/llamaindex_mcp_audit.py": {
+      "sha256": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+      "bytes": 24156
     },
     "operator/exec_child.py.txt": {
       "sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
@@ -645,5 +765,5 @@
       "bytes": 3937
     }
   },
-  "scope": "Allowlisted CPU source/evidence plus authored explanation; original/public hashes distinguish projections. No database/binary/cache/model wire or credentials."
+  "scope": "Public source and metadata; raw model bodies, capabilities, weights and advisory DB stay private."
 }

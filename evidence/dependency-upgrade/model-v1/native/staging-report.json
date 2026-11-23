@@ -1,0 +1,298 @@
+{
+  "terminal": true,
+  "ready": true,
+  "neural_requests": 0,
+  "filesystem": "ext2/ext3",
+  "protocol_sha256": "3eda8972cc973a5c871d662804f81e776cc52eac87f0031df2972666e9c969b5",
+  "child_returncode": 0,
+  "artifacts": {
+    "files": [
+      {
+        "destination": "bin/libggml-base.so.1.0.0",
+        "sha256": "139b57e8ea8c7c57bd7ea562737175a85281ac931de402e0ae8b4ea38521dad2",
+        "bytes": 941616,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039507,
+          "bytes": 941616,
+          "mtime_ns": 1795447693293286213,
+          "ctime_ns": 1795447693318285928
+        }
+      },
+      {
+        "destination": "bin/libggml-cpu.so",
+        "sha256": "dc2c9ae37e92272f9e95bfc1bc0c9fb0cc05b4d4bcbb0ef88d1784e559380653",
+        "bytes": 1442536,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039510,
+          "bytes": 1442536,
+          "mtime_ns": 1795447693748281027,
+          "ctime_ns": 1795447693771280765
+        }
+      },
+      {
+        "destination": "bin/libggml-cuda.so",
+        "sha256": "52d2257263d798c0ea8a97a4279fef05f3b5abd41344245e27ea1bc4e820991f",
+        "bytes": 74373336,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039511,
+          "bytes": 74373336,
+          "mtime_ns": 1795447695964255771,
+          "ctime_ns": 1795447696257252431
+        }
+      },
+      {
+        "destination": "bin/libggml.so.1.0.0",
+        "sha256": "149155712c732ae8b81c0fbd6e269fb5d20979f00bd6e80f9375c39d0bd03120",
+        "bytes": 56024,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039516,
+          "bytes": 56024,
+          "mtime_ns": 1795447696452250209,
+          "ctime_ns": 1795447696500249662
+        }
+      },
+      {
+        "destination": "bin/libllama-common.so.1.0.0",
+        "sha256": "347cfa5b225f6ed77c6e10dfbce04d739999c90c6e64e8fefda2b500edccaf7c",
+        "bytes": 6432760,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039517,
+          "bytes": 6432760,
+          "mtime_ns": 1795447697425239119,
+          "ctime_ns": 1795447697525237980
+        }
+      },
+      {
+        "destination": "bin/libllama-server-impl.so",
+        "sha256": "c691fda06649ef3a2472732a5832e0f0f09541d25e9ca8df044e4d7bbbafdc40",
+        "bytes": 4513920,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039518,
+          "bytes": 4513920,
+          "mtime_ns": 1795447699707213110,
+          "ctime_ns": 1795447699782212256
+        }
+      },
+      {
+        "destination": "bin/libllama.so.1.0.0",
+        "sha256": "518b2be6bb289ecd9995c29c09196c869fd5d57918ca0aef48459580607f3891",
+        "bytes": 5594088,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039519,
+          "bytes": 5594088,
+          "mtime_ns": 1795447700776200927,
+          "ctime_ns": 1795447700865199912
+        }
+      },
+      {
+        "destination": "bin/libmtmd.so.1.0.0",
+        "sha256": "6431d17e3a38983ee09132521c040f3d0f764d5c8e6400814cecfa7c4cecbbfa",
+        "bytes": 2843848,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039520,
+          "bytes": 2843848,
+          "mtime_ns": 1795447701543192185,
+          "ctime_ns": 1795447701656190897
+        }
+      },
+      {
+        "destination": "bin/llama-server",
+        "sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+        "bytes": 16664,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039521,
+          "bytes": 16664,
+          "mtime_ns": 1795447701800189256,
+          "ctime_ns": 1795447701806189187
+        }
+      },
+      {
+        "destination": "bin/libgcc_s.so.1",
+        "sha256": "5444fbe71e8cfe3bd05cdf2b44bd8c2e553e6e7e276977089b5e4e1a1ceed531",
+        "bytes": 922624,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039522,
+          "bytes": 922624,
+          "mtime_ns": 1795447702472181597,
+          "ctime_ns": 1795447702575180423
+        }
+      },
+      {
+        "destination": "bin/libgomp.so.1.0.0",
+        "sha256": "34324e0835be6e103844d7c416bec42834cf803d3ba8d9519df15ced19914dfe",
+        "bytes": 1674616,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039523,
+          "bytes": 1674616,
+          "mtime_ns": 1795447705638145513,
+          "ctime_ns": 1795447705677145068
+        }
+      },
+      {
+        "destination": "bin/libstdc++.so.6.0.36",
+        "sha256": "10f0d3c46c070acd4abea2ccf2500ff0ec77e9b90154b82ea2720dba05510cb9",
+        "bytes": 23874544,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039524,
+          "bytes": 23874544,
+          "mtime_ns": 1795447707269126924,
+          "ctime_ns": 1795447707389125556
+        }
+      },
+      {
+        "destination": "bin/ld-linux-x86-64.so.2",
+        "sha256": "47a5ee38bf8b4a04d125f0da8420a78ce4b6fff0bde9a7cf49cb9aefd1f69548",
+        "bytes": 932688,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039525,
+          "bytes": 932688,
+          "mtime_ns": 1795447708310115059,
+          "ctime_ns": 1795447708414113874
+        }
+      },
+      {
+        "destination": "bin/libc.so.6",
+        "sha256": "c369ef07996c64bebe781176323170fe42e0cf83d4bcb4e7bce2860bcb8f9ae8",
+        "bytes": 2549264,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039526,
+          "bytes": 2549264,
+          "mtime_ns": 1795447709533101120,
+          "ctime_ns": 1795447709774098374
+        }
+      },
+      {
+        "destination": "bin/libcuda.so.575.57.08",
+        "sha256": "f2470aa637fa72422534edeaeb9de19afe3d0646388baf7ffb5337b2edafc59e",
+        "bytes": 92316728,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039527,
+          "bytes": 92316728,
+          "mtime_ns": 1795447715956027915,
+          "ctime_ns": 1795447716258024473
+        }
+      },
+      {
+        "destination": "bin/libdl.so.2",
+        "sha256": "e36bd87e03dc6dd015d64b809734d27e9e8d4d1698b27d0a21f4a9e075c8aed4",
+        "bytes": 15472,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039790,
+          "bytes": 15472,
+          "mtime_ns": 1795447716512021578,
+          "ctime_ns": 1795447716534021327
+        }
+      },
+      {
+        "destination": "bin/libm.so.6",
+        "sha256": "a4ba3d1c54d209fc3541fac47f8de8ea2293bb95b876dd4820b430af61833d7e",
+        "bytes": 904752,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039791,
+          "bytes": 904752,
+          "mtime_ns": 1795447717241013269,
+          "ctime_ns": 1795447717309012494
+        }
+      },
+      {
+        "destination": "bin/libpthread.so.0",
+        "sha256": "5adb93b79cdf901866fd688081f1bd236ac7280d22e797bf313ca076d21ee208",
+        "bytes": 15488,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039792,
+          "bytes": 15488,
+          "mtime_ns": 1795447717464010728,
+          "ctime_ns": 1795447717494010386
+        }
+      },
+      {
+        "destination": "bin/librt.so.1",
+        "sha256": "c52c1229df24f2bc2c1b2cbb100cff3476fbabf40eaa8e714205a1e4857a5d6b",
+        "bytes": 15648,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039793,
+          "bytes": 15648,
+          "mtime_ns": 1795447717524010044,
+          "ctime_ns": 1795447717533009941
+        }
+      },
+      {
+        "destination": "bin/libcublas.so.12.9.2.10",
+        "sha256": "5757ab5839fb4f203ca47ecb336110d10f4a5606b1e097f195fbca89774569e2",
+        "bytes": 105140976,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039794,
+          "bytes": 105140976,
+          "mtime_ns": 1795447721329966665,
+          "ctime_ns": 1795447721624963303
+        }
+      },
+      {
+        "destination": "bin/libcublasLt.so.12.9.2.10",
+        "sha256": "2c9006a75c74b3bea2dc7ae2ec38ab038b0e45ea02cb4b717a915e8a5796acb1",
+        "bytes": 749210000,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039795,
+          "bytes": 749210000,
+          "mtime_ns": 1795447747825664681,
+          "ctime_ns": 1795447749778642422
+        }
+      },
+      {
+        "destination": "bin/libcudart.so.12.9.79",
+        "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7",
+        "bytes": 741088,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039796,
+          "bytes": 741088,
+          "mtime_ns": 1795447819980842291,
+          "ctime_ns": 1795447820075841208
+        }
+      },
+      {
+        "destination": "model.gguf",
+        "sha256": "cd76ec205963b3b33350093e6904d9de16c4e666fd104e1f632d25c7f15f2a13",
+        "bytes": 5627044256,
+        "fingerprint": {
+          "device": 2051,
+          "inode": 17039797,
+          "bytes": 5627044256,
+          "mtime_ns": 1795448109382535325,
+          "ctime_ns": 1795448111440511644
+        }
+      }
+    ],
+    "all_hashes_verified_during_copy": true,
+    "model_never_loaded": true
+  },
+  "shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "owned_after": 0,
+  "wall_seconds": 420.277
+}

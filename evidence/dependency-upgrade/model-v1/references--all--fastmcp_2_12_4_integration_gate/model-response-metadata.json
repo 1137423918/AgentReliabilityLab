@@ -1,0 +1,145 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 832,
+      "body_sha256": "19e89a866bf33cbfa60443367e11a30a4392baa4e9d24a4d6ef2a21953fec5bc",
+      "request_body_sha256": "f98dc9e4196494e9278d018292ac21120bb22a2f1095d44ce3da5148787a92ce",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 998,
+        "total_tokens": 1012,
+        "prompt_tokens_details": {
+          "cached_tokens": 860
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 2,
+              "argument_json_valid": true,
+              "argument_keys": [],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 972,
+      "body_sha256": "b32c4b5f178cd4df089b835add85b27e382e7cd09aa2e18f47da1c22edc27a29",
+      "request_body_sha256": "2295839d2f4833f98b3934dff98003c350929d6e793f4e00585997a3d3327801",
+      "usage": {
+        "completion_tokens": 69,
+        "prompt_tokens": 1225,
+        "total_tokens": 1294,
+        "prompt_tokens_details": {
+          "cached_tokens": 1011
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 120,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "fastmcp_2_12_4",
+              "pointers": [
+                "/execution",
+                "/resolution",
+                "/coverage",
+                "/target",
+                "/delta",
+                "/provenance"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 2094,
+      "body_sha256": "48a94bad0a494d90f2ef13b0a78aedca5389c4d482df08fbe2836cebcfcf82a6",
+      "request_body_sha256": "1e6137eaa1046c62e1fbb275a914899013c1026a10048a3b0f20375a1bc89a20",
+      "usage": {
+        "completion_tokens": 349,
+        "prompt_tokens": 3055,
+        "total_tokens": 3404,
+        "prompt_tokens_details": {
+          "cached_tokens": 1293
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1182,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "claim_supported",
+                "explanation",
+                "facts"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 8,
+              "selected_fact_references": [
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/execution/candidate_prepared"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/resolution/exit_code"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/resolution/original_requirements_changed"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/coverage/before_registry_complete"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/coverage/after_registry_complete"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/target/version_changed"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/target/remaining_advisory_match_count"
+                },
+                {
+                  "report_id": "fastmcp_2_12_4",
+                  "pointer": "/delta/new_package_advisory_match_count"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

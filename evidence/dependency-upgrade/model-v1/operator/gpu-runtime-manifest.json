@@ -1,0 +1,142 @@
+{
+  "created_unix": 1795433086.672148,
+  "runtime_files": [
+    {
+      "basename": "libggml-base.so.1.0.0",
+      "bytes": 941616,
+      "sha256": "139b57e8ea8c7c57bd7ea562737175a85281ac931de402e0ae8b4ea38521dad2"
+    },
+    {
+      "basename": "libggml-cpu.so",
+      "bytes": 1442536,
+      "sha256": "dc2c9ae37e92272f9e95bfc1bc0c9fb0cc05b4d4bcbb0ef88d1784e559380653"
+    },
+    {
+      "basename": "libggml-cuda.so",
+      "bytes": 74373336,
+      "sha256": "52d2257263d798c0ea8a97a4279fef05f3b5abd41344245e27ea1bc4e820991f"
+    },
+    {
+      "basename": "libggml.so.1.0.0",
+      "bytes": 56024,
+      "sha256": "149155712c732ae8b81c0fbd6e269fb5d20979f00bd6e80f9375c39d0bd03120"
+    },
+    {
+      "basename": "libllama-common.so.1.0.0",
+      "bytes": 6432760,
+      "sha256": "347cfa5b225f6ed77c6e10dfbce04d739999c90c6e64e8fefda2b500edccaf7c"
+    },
+    {
+      "basename": "libllama-server-impl.so",
+      "bytes": 4513920,
+      "sha256": "c691fda06649ef3a2472732a5832e0f0f09541d25e9ca8df044e4d7bbbafdc40"
+    },
+    {
+      "basename": "libllama.so.1.0.0",
+      "bytes": 5594088,
+      "sha256": "518b2be6bb289ecd9995c29c09196c869fd5d57918ca0aef48459580607f3891"
+    },
+    {
+      "basename": "libmtmd.so.1.0.0",
+      "bytes": 2843848,
+      "sha256": "6431d17e3a38983ee09132521c040f3d0f764d5c8e6400814cecfa7c4cecbbfa"
+    },
+    {
+      "basename": "llama-server",
+      "bytes": 16664,
+      "sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4"
+    },
+    {
+      "basename": "libgcc_s.so.1",
+      "bytes": 922624,
+      "sha256": "5444fbe71e8cfe3bd05cdf2b44bd8c2e553e6e7e276977089b5e4e1a1ceed531"
+    },
+    {
+      "basename": "libgomp.so.1.0.0",
+      "bytes": 1674616,
+      "sha256": "34324e0835be6e103844d7c416bec42834cf803d3ba8d9519df15ced19914dfe"
+    },
+    {
+      "basename": "libstdc++.so.6.0.36",
+      "bytes": 23874544,
+      "sha256": "10f0d3c46c070acd4abea2ccf2500ff0ec77e9b90154b82ea2720dba05510cb9"
+    },
+    {
+      "basename": "ld-linux-x86-64.so.2",
+      "bytes": 932688,
+      "sha256": "47a5ee38bf8b4a04d125f0da8420a78ce4b6fff0bde9a7cf49cb9aefd1f69548"
+    },
+    {
+      "basename": "libc.so.6",
+      "bytes": 2549264,
+      "sha256": "c369ef07996c64bebe781176323170fe42e0cf83d4bcb4e7bce2860bcb8f9ae8"
+    },
+    {
+      "basename": "libcuda.so.575.57.08",
+      "bytes": 92316728,
+      "sha256": "f2470aa637fa72422534edeaeb9de19afe3d0646388baf7ffb5337b2edafc59e"
+    },
+    {
+      "basename": "libdl.so.2",
+      "bytes": 15472,
+      "sha256": "e36bd87e03dc6dd015d64b809734d27e9e8d4d1698b27d0a21f4a9e075c8aed4"
+    },
+    {
+      "basename": "libm.so.6",
+      "bytes": 904752,
+      "sha256": "a4ba3d1c54d209fc3541fac47f8de8ea2293bb95b876dd4820b430af61833d7e"
+    },
+    {
+      "basename": "libpthread.so.0",
+      "bytes": 15488,
+      "sha256": "5adb93b79cdf901866fd688081f1bd236ac7280d22e797bf313ca076d21ee208"
+    },
+    {
+      "basename": "librt.so.1",
+      "bytes": 15648,
+      "sha256": "c52c1229df24f2bc2c1b2cbb100cff3476fbabf40eaa8e714205a1e4857a5d6b"
+    },
+    {
+      "basename": "libcublas.so.12.9.2.10",
+      "bytes": 105140976,
+      "sha256": "5757ab5839fb4f203ca47ecb336110d10f4a5606b1e097f195fbca89774569e2"
+    },
+    {
+      "basename": "libcublasLt.so.12.9.2.10",
+      "bytes": 749210000,
+      "sha256": "2c9006a75c74b3bea2dc7ae2ec38ab038b0e45ea02cb4b717a915e8a5796acb1"
+    },
+    {
+      "basename": "libcudart.so.12.9.79",
+      "bytes": 741088,
+      "sha256": "256e6409e4f06f618e1fb53d4844a6b81cdded1013afa8ade40c22f99eb133b7"
+    }
+  ],
+  "symlinks": {
+    "libmtmd.so.1": "libmtmd.so.1.0.0",
+    "libllama.so.1": "libllama.so.1.0.0",
+    "libggml-base.so": "libggml-base.so.1.0.0",
+    "libggml.so": "libggml.so.1.0.0",
+    "libllama.so": "libllama.so.1.0.0",
+    "libmtmd.so": "libmtmd.so.1.0.0",
+    "libllama-common.so.1": "libllama-common.so.1.0.0",
+    "libggml-base.so.1": "libggml-base.so.1.0.0",
+    "libggml.so.1": "libggml.so.1.0.0",
+    "libllama-common.so": "libllama-common.so.1.0.0",
+    "libgomp.so": "libgomp.so.1.0.0",
+    "libstdc++.so": "libstdc++.so.6.0.36",
+    "libstdc++.so.6": "libstdc++.so.6.0.36",
+    "libgomp.so.1": "libgomp.so.1.0.0",
+    "libcuda.so": "libcuda.so.575.57.08",
+    "libcuda.so.1": "libcuda.so.575.57.08",
+    "libcudart.so.12": "libcudart.so.12.9.79",
+    "libcublasLt.so": "libcublasLt.so.12.9.2.10",
+    "libcublasLt.so.12": "libcublasLt.so.12.9.2.10",
+    "libcublas.so": "libcublas.so.12.9.2.10",
+    "libcudart.so": "libcudart.so.12.9.79",
+    "libcublas.so.12": "libcublas.so.12.9.2.10"
+  },
+  "server_sha256": "e63f0e6144a3d8813b0e004183270684d54f3de7a2ec204f5de6b8abb253bbd4",
+  "no_model_copied": true,
+  "old_runtime_not_modified": true
+}

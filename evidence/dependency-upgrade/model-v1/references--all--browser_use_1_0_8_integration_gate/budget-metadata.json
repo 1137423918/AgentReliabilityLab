@@ -1,0 +1,40 @@
+{
+  "owner_sha256": "3e6ec3b73e9b5a67ba654f7854d8124e3f78da9ad3db3b3e800d4d34e17cd275",
+  "journal_id_sha256": "34634eee70099e785b254572abf51e6e002a1df02292310425a2eb9617eb51fb",
+  "limits": {
+    "max_request_bytes": 65536,
+    "max_requests": 8,
+    "max_total_request_bytes": 262144
+  },
+  "reservations": [
+    {
+      "http_status": 200,
+      "path": "/v1/chat/completions",
+      "request_body_bytes": 3735,
+      "request_body_sha256": "e56d60019838c19ddf3e92bea5652e36c29cda80ab2f6e2dabbd38b63efe34ec",
+      "reserved_at": "2026-11-23T19:45:55.383954+00:00",
+      "sequence": 1,
+      "transport_observation": "headers_received"
+    },
+    {
+      "http_status": 200,
+      "path": "/v1/chat/completions",
+      "request_body_bytes": 4696,
+      "request_body_sha256": "d0ac2f099f99ad1a9612dd7c3e8ebf756a27b9fd350474f43ac6d115084f7225",
+      "reserved_at": "2026-11-23T19:45:59.712457+00:00",
+      "sequence": 2,
+      "transport_observation": "headers_received"
+    },
+    {
+      "http_status": 200,
+      "path": "/v1/chat/completions",
+      "request_body_bytes": 9918,
+      "request_body_sha256": "057d6bd4ea9787778299d99af3d6d3d159cd57646e1d4cf0dbd4cbe3dab9b82a",
+      "reserved_at": "2026-11-23T19:46:10.431378+00:00",
+      "sequence": 3,
+      "transport_observation": "headers_received"
+    }
+  ],
+  "original_file_sha256": "58bb79081077c2f1a551ce43fdd930f0e93d31b009b14672ebd420fdf4e7fe98",
+  "checksum_verified_privately": true
+}

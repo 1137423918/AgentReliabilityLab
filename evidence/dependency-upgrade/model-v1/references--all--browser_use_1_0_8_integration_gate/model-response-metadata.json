@@ -1,0 +1,145 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 830,
+      "body_sha256": "f011729fbe1fbb527c4b70e03f126d66427a0d477729b79b2f01be8747470e84",
+      "request_body_sha256": "e56d60019838c19ddf3e92bea5652e36c29cda80ab2f6e2dabbd38b63efe34ec",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 995,
+        "total_tokens": 1009,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 2,
+              "argument_json_valid": true,
+              "argument_keys": [],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1523,
+      "body_sha256": "556e1fe8cece735ceef29cbd13dde385367fb8b926b4f591f366cddbed1d1a6b",
+      "request_body_sha256": "d0ac2f099f99ad1a9612dd7c3e8ebf756a27b9fd350474f43ac6d115084f7225",
+      "usage": {
+        "completion_tokens": 190,
+        "prompt_tokens": 1222,
+        "total_tokens": 1412,
+        "prompt_tokens_details": {
+          "cached_tokens": 1008
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 549,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 123,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "browser_use_1_0_8",
+              "pointers": [
+                "/execution",
+                "/resolution",
+                "/coverage",
+                "/target",
+                "/delta",
+                "/provenance"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 3239,
+      "body_sha256": "f3dd495a621a7f71957c80107381e0a68a2e8f82d374b6d1d63a332d78535e86",
+      "request_body_sha256": "057d6bd4ea9787778299d99af3d6d3d159cd57646e1d4cf0dbd4cbe3dab9b82a",
+      "usage": {
+        "completion_tokens": 623,
+        "prompt_tokens": 3582,
+        "total_tokens": 4205,
+        "prompt_tokens_details": {
+          "cached_tokens": 1411
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 1199,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1123,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "claim_supported",
+                "explanation",
+                "facts"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 8,
+              "selected_fact_references": [
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/execution/candidate_prepared"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/resolution/exit_code"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/provenance/original_inputs_unchanged"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/coverage/before_registry_complete"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/coverage/after_registry_complete"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/target/version_changed"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/target/remaining_advisory_match_count"
+                },
+                {
+                  "report_id": "browser_use_1_0_8",
+                  "pointer": "/delta/new_package_advisory_match_count"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "selected_lines": [
+    "0.45.303.303 I load_tensors: offloaded 33/33 layers to GPU",
+    "0.45.303.328 I load_tensors:        CUDA0 model buffer size =  4810.28 MiB",
+    "0.46.172.040 I llama_context: n_ctx                 = 8192",
+    "0.48.202.856 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'",
+    "0.48.203.001 I slot   load_model: id  0 | task -1 | new slot, n_ctx = 8192",
+    "0.53.485.681 I slot   operator(): id  0 | task 0 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 995",
+    "0.57.805.990 I slot   operator(): id  0 | task 18 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1222",
+    "1.08.521.250 I slot   operator(): id  0 | task 210 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 3582",
+    "1.24.584.452 I slot   operator(): id  0 | task 836 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 998",
+    "1.25.004.111 I slot   operator(): id  0 | task 852 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 1225",
+    "1.28.513.772 I slot   operator(): id  0 | task 923 | new prompt, n_ctx_slot = 8192, n_keep = 0, task.n_tokens = 3055"
+  ],
+  "full_log_not_exported": true
+}

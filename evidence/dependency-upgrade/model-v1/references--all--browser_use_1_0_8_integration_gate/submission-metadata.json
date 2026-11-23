@@ -1,0 +1,53 @@
+{
+  "claim_supported": false,
+  "facts": [
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/execution/candidate_prepared",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/resolution/exit_code",
+      "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/provenance/original_inputs_unchanged",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/coverage/before_registry_complete",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/coverage/after_registry_complete",
+      "value_sha256": "b5bea41b6c623f7c09f1bf24dcae58ebab3c0cdd90ad966bc43a45b44867e12b"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/target/version_changed",
+      "value_sha256": "fcbcf165908dd18a9e49f7ff27810176db8e9f63b4352213741664245224f8aa"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/target/remaining_advisory_match_count",
+      "value_sha256": "81b8a03f97e8787c53fe1a86bda042b6f0de9b0ec9c09357e107c99ba4d6948a"
+    },
+    {
+      "report_id": "browser_use_1_0_8",
+      "pointer": "/delta/new_package_advisory_match_count",
+      "value_sha256": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9"
+    }
+  ],
+  "citations": [
+    {
+      "report_id": "browser_use_1_0_8",
+      "sha256": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4"
+    }
+  ],
+  "canonical_grading_recomputed_read_only": true,
+  "free_prose_not_exported": true
+}
