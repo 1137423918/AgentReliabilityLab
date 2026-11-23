@@ -1,0 +1,49 @@
+{
+  "observed_utc": "2026-11-23T13:27:41.350117+00:00",
+  "pr_url": "https://github.com/VoltAgent/voltagent/pull/1562",
+  "state": "OPEN",
+  "draft": false,
+  "head": "fffed2614bc4354f31f3a1dff50afec65b2412eb",
+  "mergeable": "MERGEABLE",
+  "changed_files": 6,
+  "unresolved_inline_threads": 0,
+  "reviewDecision": null,
+  "maintainer_approval_or_merge_claimed": false,
+  "changeset_detected_by_upstream_bot": true,
+  "native_actions_runs": [
+    {
+      "id": 45182715145,
+      "name": "PR Checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "url": "https://github.com/VoltAgent/voltagent/actions/runs/45182715145"
+    }
+  ],
+  "external_check_snapshot": {
+    "state": "PENDING",
+    "contexts": {
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": "Mg"
+      },
+      "nodes": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137720376796,
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "IN_PROGRESS",
+          "conclusion": null,
+          "detailsUrl": "https://www.cubic.dev/pr/VoltAgent/voltagent/pull/1562"
+        },
+        {
+          "__typename": "StatusContext",
+          "context": "CodeRabbit",
+          "state": "PENDING",
+          "targetUrl": null,
+          "description": "Review in progress"
+        }
+      ]
+    }
+  },
+  "scope": "Server package tests passed; native Actions requires upstream approval. External review dashboards not inspected. Bot summaries are not human approval."
+}

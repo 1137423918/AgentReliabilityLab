@@ -1,0 +1,16 @@
+{
+  "version": "8.10.5",
+  "dist": {
+    "shasum": "4370a069f21873a0ad83c785b8048ed8caf6e6e9",
+    "tarball": "https://registry.npmjs.org/pnpm/-/pnpm-8.10.5.tgz",
+    "fileCount": 684,
+    "integrity": "sha512-nBYfQz2FVRxY8bOhCxjMPfcrWgLSyu5lZswFtvIK3e+UfnldkMOQM7+S3lUXfq1p2H9iqdqtyR56LjtY9JNToA==",
+    "signatures": [
+      {
+        "sig": "MEQCIGXD3zgetfch2PogbjJnk0faLHCWfH8JyK0zZHoBN4DnAiBVdQrdfho+LueT8mbXX5C23H3G+SrRzbV2v+9Kg8XLdQ==",
+        "keyid": "SHA256:jl3bwswu80PjjokCgh0o2w5c2U4LhQAE57gj9cz1kzA"
+      }
+    ],
+    "unpackedSize": 14967331
+  }
+}

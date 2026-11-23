@@ -1,0 +1,21 @@
+
+> @voltagent/logger@2.0.2 build [RUN]/source/packages/logger
+> tsup
+
+CLI Building entry: src/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.0
+CLI Using tsup config: [RUN]/source/packages/logger/tsup.config.ts
+CLI Target: es2022
+CJS Build start
+ESM Build start
+ESM dist/index.mjs     11.33 KB
+ESM dist/index.mjs.map 23.66 KB
+ESM ⚡️ Build success in 260ms
+CJS dist/index.js     13.83 KB
+CJS dist/index.js.map 23.81 KB
+CJS ⚡️ Build success in 276ms
+DTS Build start
+DTS ⚡️ Build success in 2572ms
+DTS dist/index.d.ts  6.61 KB
+DTS dist/index.d.mts 6.61 KB

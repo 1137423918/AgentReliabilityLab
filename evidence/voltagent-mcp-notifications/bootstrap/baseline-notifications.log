@@ -1,0 +1,77 @@
+
+ RUN  v3.2.4 [RUN]/source/packages/mcp-server
+
+ ❯ src/capabilities/notifications.spec.ts (4 tests | 3 failed) 141ms
+   × capability notifications with disconnected servers > delivers prompt changes while ignoring unconnected and closed servers 86ms
+     → promise rejected "Error: Not connected" instead of resolving
+   × capability notifications with disconnected servers > delivers resource list changes while ignoring unconnected and closed servers 21ms
+     → promise rejected "Error: Not connected" instead of resolving
+   × capability notifications with disconnected servers > delivers resource updates while ignoring unconnected and closed servers 22ms
+     → promise rejected "Error: Not connected" instead of resolving
+   ✓ capability notifications with disconnected servers > still propagates notification errors from connected servers 9ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/capabilities/notifications.spec.ts > capability notifications with disconnected servers > delivers prompt changes while ignoring unconnected and closed servers
+AssertionError: promise rejected "Error: Not connected" instead of resolving
+ ❯ src/capabilities/notifications.spec.ts:59:40
+     57|     active.client.setNotificationHandler(PromptListChangedNotification…
+     58| 
+     59|     await expect(bridge.notifyChanged()).resolves.toBeUndefined();
+       |                                        ^
+     60|     await vi.waitFor(() => expect(received).toHaveBeenCalledTimes(1));
+     61|     await active.client.close();
+
+Caused by: Error: Not connected
+ ❯ Server.notification ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/shared/protocol.ts:1305:19
+ ❯ Server.sendPromptListChanged ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/server/index.ts:648:21
+ ❯ src/capabilities/prompts.ts:95:71
+ ❯ PromptBridge.notifyChanged src/capabilities/prompts.ts:95:48
+ ❯ src/capabilities/notifications.spec.ts:59:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+ FAIL  src/capabilities/notifications.spec.ts > capability notifications with disconnected servers > delivers resource list changes while ignoring unconnected and closed servers
+AssertionError: promise rejected "Error: Not connected" instead of resolving
+ ❯ src/capabilities/notifications.spec.ts:77:44
+     75|     active.client.setNotificationHandler(ResourceListChangedNotificati…
+     76| 
+     77|     await expect(bridge.notifyListChanged()).resolves.toBeUndefined();
+       |                                            ^
+     78|     await vi.waitFor(() => expect(received).toHaveBeenCalledTimes(1));
+     79|     await active.client.close();
+
+Caused by: Error: Not connected
+ ❯ Server.notification ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/shared/protocol.ts:1305:19
+ ❯ Server.sendResourceListChanged ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/server/index.ts:638:21
+ ❯ src/capabilities/resources.ts:127:71
+ ❯ ResourceBridge.notifyListChanged src/capabilities/resources.ts:127:48
+ ❯ src/capabilities/notifications.spec.ts:77:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/3]⎯
+
+ FAIL  src/capabilities/notifications.spec.ts > capability notifications with disconnected servers > delivers resource updates while ignoring unconnected and closed servers
+AssertionError: promise rejected "Error: Not connected" instead of resolving
+ ❯ src/capabilities/notifications.spec.ts:96:56
+     94|     active.client.setNotificationHandler(ResourceUpdatedNotificationSc…
+     95| 
+     96|     await expect(bridge.notifyUpdated("volt://changed")).resolves.toBe…
+       |                                                        ^
+     97|     await vi.waitFor(() => expect(received).toHaveBeenCalledTimes(1));
+     98|     await active.client.close();
+
+Caused by: Error: Not connected
+ ❯ Server.notification ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/shared/protocol.ts:1305:19
+ ❯ Server.sendResourceUpdated ../../node_modules/.pnpm/@modelcontextprotocol+sdk@1.30.0_zod@3.25.76/node_modules/@modelcontextprotocol/sdk/src/server/index.ts:631:21
+ ❯ src/capabilities/resources.ts:120:55
+ ❯ ResourceBridge.notifyUpdated src/capabilities/resources.ts:120:32
+ ❯ src/capabilities/notifications.spec.ts:96:25
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/3]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 failed | 1 passed (4)
+   Start at  21:06:12
+   Duration  1.14s (transform 75ms, setup 0ms, collect 278ms, tests 141ms, environment 0ms, prepare 88ms)
+

@@ -1,0 +1,7 @@
+{
+  "matching_job_runtime_processes": 0,
+  "model_calls": 0,
+  "GPU_used": false,
+  "scope": "Same-UID process argv/cwd under the unique job root after terminal controllers",
+  "processes": []
+}

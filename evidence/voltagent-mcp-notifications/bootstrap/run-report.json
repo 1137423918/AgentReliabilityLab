@@ -1,0 +1,34 @@
+{
+  "terminal": true,
+  "phases": [
+    {
+      "name": "node-version",
+      "exit_code": 0,
+      "wall_seconds": 0.23
+    },
+    {
+      "name": "pnpm-version",
+      "exit_code": 0,
+      "wall_seconds": 0.536
+    },
+    {
+      "name": "install",
+      "exit_code": 0,
+      "wall_seconds": 239.202
+    },
+    {
+      "name": "baseline-notifications",
+      "exit_code": 1,
+      "wall_seconds": 3.292
+    }
+  ],
+  "model_or_GPU": false,
+  "upstream_commit": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+  "initial_available_memory_bytes": 296432357376,
+  "node_sha256": "2f822d544601dfff107f57d945b649d15c5bf6302595735a6bd9cdc7ee9669bd",
+  "active_phase": "baseline-notifications",
+  "pnpm_archive_sha256": "a4bd9bb7b48214bbfcd95f264bd75bb70d100e5d4b58808f5cd6ab40c6ac21c5",
+  "ready": true,
+  "owned_child_running": false,
+  "lock_unchanged": true
+}

@@ -1,0 +1,4 @@
+
+> @voltagent/mcp-server@2.2.0 typecheck [RUN]/source/packages/mcp-server
+> tsc --noEmit
+

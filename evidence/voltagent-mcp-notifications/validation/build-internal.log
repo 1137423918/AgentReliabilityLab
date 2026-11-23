@@ -1,0 +1,63 @@
+
+> @voltagent/internal@1.0.3 build [RUN]/source/packages/internal
+> tsup
+
+CLI Building entry: src/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.0
+CLI Using tsup config: [RUN]/source/packages/internal/tsup.config.ts
+CLI Building entry: src/test/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.0
+CLI Using tsup config: [RUN]/source/packages/internal/tsup.config.ts
+CLI Building entry: src/utils/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.0
+CLI Using tsup config: [RUN]/source/packages/internal/tsup.config.ts
+CLI Building entry: src/types/index.ts
+CLI Using tsconfig: tsconfig.json
+CLI tsup v8.5.0
+CLI Using tsup config: [RUN]/source/packages/internal/tsup.config.ts
+CLI Target: es2022
+CJS Build start
+ESM Build start
+CLI Target: es2022
+CJS Build start
+ESM Build start
+CLI Target: es2022
+CJS Build start
+ESM Build start
+ESM dist/test/index.mjs     1.66 KB
+ESM dist/test/index.mjs.map 2.77 KB
+ESM ⚡️ Build success in 652ms
+CJS dist/test/index.js     2.93 KB
+CJS dist/test/index.js.map 3.06 KB
+CJS ⚡️ Build success in 663ms
+CJS dist/utils/index.js     4.54 KB
+CJS dist/utils/index.js.map 8.82 KB
+CJS ⚡️ Build success in 700ms
+CJS dist/main/index.js     6.35 KB
+CJS dist/main/index.js.map 11.34 KB
+CJS ⚡️ Build success in 762ms
+ESM dist/utils/index.mjs     3.29 KB
+ESM dist/utils/index.mjs.map 8.36 KB
+ESM ⚡️ Build success in 757ms
+ESM dist/main/index.mjs     4.79 KB
+ESM dist/main/index.mjs.map 11.07 KB
+ESM ⚡️ Build success in 849ms
+DTS Build start
+DTS Build start
+DTS Build start
+DTS Build start
+DTS ⚡️ Build success in 3496ms
+DTS dist/types/index.d.ts  983.00 B
+DTS dist/types/index.d.mts 983.00 B
+DTS ⚡️ Build success in 4120ms
+DTS dist/test/index.d.ts  1.19 KB
+DTS dist/test/index.d.mts 1.19 KB
+DTS ⚡️ Build success in 4382ms
+DTS dist/main/index.d.ts  9.69 KB
+DTS dist/main/index.d.mts 9.69 KB
+DTS ⚡️ Build success in 4253ms
+DTS dist/utils/index.d.ts  4.02 KB
+DTS dist/utils/index.d.mts 4.02 KB

@@ -1,0 +1,77 @@
+{
+  "terminal": true,
+  "phases": [
+    {
+      "name": "format-typescript",
+      "exit_code": 0,
+      "wall_seconds": 1.727
+    },
+    {
+      "name": "candidate-notifications",
+      "exit_code": 0,
+      "wall_seconds": 4.469
+    },
+    {
+      "name": "build-internal",
+      "exit_code": 0,
+      "wall_seconds": 7.891
+    },
+    {
+      "name": "build-logger",
+      "exit_code": 0,
+      "wall_seconds": 5.102
+    },
+    {
+      "name": "build-core",
+      "exit_code": 0,
+      "wall_seconds": 20.402
+    },
+    {
+      "name": "package-suite",
+      "exit_code": 0,
+      "wall_seconds": 7.335
+    },
+    {
+      "name": "package-typecheck",
+      "exit_code": 0,
+      "wall_seconds": 6.204
+    },
+    {
+      "name": "regression-typecheck",
+      "exit_code": 0,
+      "wall_seconds": 4.88
+    },
+    {
+      "name": "package-build",
+      "exit_code": 0,
+      "wall_seconds": 9.172
+    },
+    {
+      "name": "lint-changed",
+      "exit_code": 0,
+      "wall_seconds": 1.43
+    },
+    {
+      "name": "markdown-format",
+      "exit_code": 0,
+      "wall_seconds": 1.381
+    }
+  ],
+  "upstream_commit": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+  "baseline_three_regressions_failed": true,
+  "baseline_live_failure_control_passed": true,
+  "model_or_GPU": false,
+  "active_phase": "markdown-format",
+  "ready": true,
+  "owned_child_running": false,
+  "wall_seconds": 72.721,
+  "source_sha256": {
+    "packages/mcp-server/src/capabilities/capabilities.spec.ts": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+    "packages/mcp-server/src/capabilities/notifications.spec.ts": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+    "packages/mcp-server/src/capabilities/prompts.ts": "a6fce48d3535066bcc2d4e3ae91c60ac3441918a815704fddc0d67f914ba031a",
+    "packages/mcp-server/src/capabilities/resources.ts": "6cafcacfb7b3813edfda197ebc91f899fb34f54fd563948dbe8d722bdb0928c9",
+    "packages/mcp-server/README.md": "6dad21ed12ea6a460b6abcb02dc45eb000c8408cbd1aeb86a6ff2e9047b2958d",
+    ".changeset/fair-mcp-notifications.md": "5998f4deb8198de4f5d087955a363983916ff3f3e427a7585affdf3c77f6870b"
+  },
+  "lock_unchanged": true
+}

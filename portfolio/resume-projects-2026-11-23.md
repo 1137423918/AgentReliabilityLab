@@ -31,6 +31,8 @@
 
 ## Agent 开源项目缺陷修复
 
+在小团队维护的 VoltAgent 中修复 MCP 通知向未连接或已关闭会话发送导致报错的问题；使用真实 MCP SDK 客户端复现原版3项失败，修复后4项回归及完整MCP包15项测试通过，并完成类型检查与构建。已正式提交 [PR #1562](https://github.com/VoltAgent/voltagent/pull/1562)，尚未合并。[源码与验证证据](../evidence/voltagent-mcp-notifications/README.md)
+
 为 OpenHands SDK、Google ADK、Semantic Kernel 和 Agent Lightning 提交文件系统与异步生命周期修复，提供原版失败、候选回归、固定源码与测试范围。具体提交包括写入失败后的编辑历史保留、移动到源文件自身时的数据保护、并发删除目录处理，以及取消回调重入和调用方取消后的异常 / 队列记账。
 
 在 Agent Lightning 中复现删除后复用 rollout ID 导致完成分页引用新任务的问题，使用日志空位与位置索引保持既有游标有效；原版四种状态回归失败，候选服务端与客户端53项测试通过，修改文件类型检查通过。已提交PR，并于2026-11-23转为正式待审；尚未合并。[修复与证据](../docs/lightning-terminal-reuse.md) · [PR #707](https://github.com/microsoft/agent-lightning/pull/707)

@@ -1,0 +1,46 @@
+{
+  "repository": "VoltAgent/voltagent",
+  "observed_stars": 11003,
+  "upstream_commit": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+  "team_source": "https://voltagent.dev/about/",
+  "team_observation": "Official page lists two cofounder/team leaders; small independent team candidate, not proof of exact employee count.",
+  "contribution_guide": "https://voltagent.dev/docs/community/contributing/",
+  "root_agents_read": true,
+  "source_instructions": "safeStringify required instead of JSON.stringify; existing patterns, type safety, package tests, patch changeset.",
+  "issue_work_scope": "Newly found bug, not claiming or commenting on an existing issue. No new issue created.",
+  "open_pr_pages_complete": true,
+  "open_pr_count_reviewed": 130,
+  "dedup_queries": [
+    {
+      "query": "repo:VoltAgent/voltagent is:pr \"Not connected\"",
+      "count": 1,
+      "complete": true,
+      "result_numbers": [
+        1096
+      ]
+    },
+    {
+      "query": "repo:VoltAgent/voltagent is:pr \"sendResourceUpdated\"",
+      "count": 0,
+      "complete": true,
+      "result_numbers": []
+    },
+    {
+      "query": "repo:VoltAgent/voltagent is:pr \"sendPromptListChanged\"",
+      "count": 0,
+      "complete": true,
+      "result_numbers": []
+    },
+    {
+      "query": "repo:VoltAgent/voltagent is:pr \"mcp-server\" \"notification\"",
+      "count": 2,
+      "complete": true,
+      "result_numbers": [
+        1522,
+        1288
+      ]
+    }
+  ],
+  "matching_existing_patch_found": false,
+  "scope": "Skip notification targets with no attached transport. No subscription ownership or bridge registry retention redesign."
+}
