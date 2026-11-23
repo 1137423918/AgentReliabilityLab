@@ -1,0 +1,19 @@
+{
+  "status": "completed",
+  "phases": [
+    {
+      "phase": "controls",
+      "exit_code": 0
+    },
+    {
+      "phase": "analysis",
+      "exit_code": 0
+    }
+  ],
+  "protocol_sha256": "690be4731ab4754e42423ae0bf4b0e27327c56b1df4e1784e53ba2470bddb173",
+  "wall_seconds": 5.753,
+  "ledger_after_sha256": "c485cf3ad69116dc6d24b0051e36c57820a1f3ffb7e7de0cb7b817e36be93275",
+  "owned_children_running": 0,
+  "new_neural_calls": 0,
+  "GPU_used": false
+}

@@ -1,0 +1,18 @@
+test_bool_is_not_integer_but_integral_float_is (__main__.ContractControls.test_bool_is_not_integer_but_integral_float_is) ... ok
+test_combinators_and_boolean_schemas (__main__.ContractControls.test_combinators_and_boolean_schemas) ... ok
+test_duplicate_name_not_silently_overwritten (__main__.ContractControls.test_duplicate_name_not_silently_overwritten) ... ok
+test_format_is_annotation_without_checker (__main__.ContractControls.test_format_is_annotation_without_checker) ... ok
+test_invalid_alias_schema_and_unsupported_dialect (__main__.ContractControls.test_invalid_alias_schema_and_unsupported_dialect) ... ok
+test_json_domain_rejects_python_extensions (__main__.ContractControls.test_json_domain_rejects_python_extensions) ... ok
+test_local_reference_and_remote_reference_never_network (__main__.ContractControls.test_local_reference_and_remote_reference_never_network) ... ok
+test_missing_required_and_no_mutation (__main__.ContractControls.test_missing_required_and_no_mutation) ... ok
+test_nested_array_enum_and_numeric_constraints (__main__.ContractControls.test_nested_array_enum_and_numeric_constraints) ... ok
+test_no_vacuous_case_pass_or_unknown_name_success (__main__.ContractControls.test_no_vacuous_case_pass_or_unknown_name_success) ... ok
+test_optional_and_additional_properties_default_allow (__main__.ContractControls.test_optional_and_additional_properties_default_allow) ... ok
+test_parameter_presence_precedence_and_falsey_inputs (__main__.ContractControls.test_parameter_presence_precedence_and_falsey_inputs) ... ok
+test_schema_failure_is_not_model_violation (__main__.ContractControls.test_schema_failure_is_not_model_violation) ... ok
+
+----------------------------------------------------------------------
+Ran 13 tests in 0.015s
+
+OK

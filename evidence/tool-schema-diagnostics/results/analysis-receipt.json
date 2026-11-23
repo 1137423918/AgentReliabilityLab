@@ -1,0 +1,18 @@
+{
+  "protocol_sha256": "690be4731ab4754e42423ae0bf4b0e27327c56b1df4e1784e53ba2470bddb173",
+  "ledger_before_sha256": "c485cf3ad69116dc6d24b0051e36c57820a1f3ffb7e7de0cb7b817e36be93275",
+  "ledger_after_sha256": "c485cf3ad69116dc6d24b0051e36c57820a1f3ffb7e7de0cb7b817e36be93275",
+  "input_and_source_unchanged": true,
+  "attempts": 284,
+  "known_results": 282,
+  "unknown_attempts": 2,
+  "new_neural_calls": 0,
+  "official_scorer_calls": 0,
+  "raw_output_parser_calls": 0,
+  "wall_seconds": 3.57,
+  "output_sha256": {
+    "case-diagnostics.jsonl": "870aa686f60a5c22054377b591e6c399789e54d8acfc30c4a45223b24de11067",
+    "schema-inventory.jsonl": "c1d559e9d890b978655cae93dcc040fff788304b305410537ee961ffd8f2f097",
+    "summary.json": "0758f337ffc7d71cbea42eb8c57afc53954aa74bbf25f6f691835b2355b1abaa"
+  }
+}

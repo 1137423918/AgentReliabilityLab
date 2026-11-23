@@ -1,0 +1,85 @@
+{
+  "scope": "Metadata and tested own-source snapshots. No private ledger, model output, arguments, prompts, answers, weights or environment.",
+  "archive_sha256": "0590e6195fd109cd77e0625e1ebe345385972dc2e01c8191dacc1bb317244200",
+  "archive_bytes": 59950,
+  "protocol_sha256": "690be4731ab4754e42423ae0bf4b0e27327c56b1df4e1784e53ba2470bddb173",
+  "project_base_commit": "b9cf8200e3fd4a4abe08c5b2f61c3567af41e555",
+  "normalizations": {
+    "operator/run_controller.py.txt": {
+      "original_sha256": "c1d826b481989c2f40a5e415bba5c9209ddb58d1373ba5f7af7d125a5b31e699",
+      "public_sha256": "c3f671b2e027e0d8dfe546c4d7af83d459f605d91eee6eed37b5825d510d5ce4",
+      "normalization": "Private server paths/hostname replaced; original hashes remain in protocol where applicable. Public text is not an executable controller."
+    },
+    "operator/export_metadata.py.txt": {
+      "original_sha256": "73ff9b7c3056c03c73bbc37c58590df5fbffdcc066772f4c38fdde127071d9a1",
+      "public_sha256": "16a62d3c63911edb93dcf3385dd7d307d410333a8796f7e6636e3346b33d97ce",
+      "normalization": "Private server paths/hostname replaced; original hashes remain in protocol where applicable. Public text is not an executable controller."
+    }
+  },
+  "files": {
+    "export-manifest.json": {
+      "sha256": "cbf9002028dd7dfd91ab9f1ca9c4ae6a77bf4099dab1e28b3d8c5fc80754fbf6",
+      "bytes": 1286
+    },
+    "operator/admission.json": {
+      "sha256": "9ac0f2496022648a008ba7619d3bd24db48f0a9cf65345e08eb2b2c70f2d7d66",
+      "bytes": 268
+    },
+    "operator/controls.log": {
+      "sha256": "57d90ad5f8812cc4bfe2fd543e94b5a0b5d7b4d80e58e3ae1db8247dde6221b9",
+      "bytes": 1764
+    },
+    "operator/export_metadata.py.txt": {
+      "sha256": "16a62d3c63911edb93dcf3385dd7d307d410333a8796f7e6636e3346b33d97ce",
+      "bytes": 1961
+    },
+    "operator/post-analysis-source-checks.json": {
+      "sha256": "f517af2a91876beca194d094207f0f12502035899cf476c8d7619382acbb2426",
+      "bytes": 372
+    },
+    "operator/protocol.json": {
+      "sha256": "690be4731ab4754e42423ae0bf4b0e27327c56b1df4e1784e53ba2470bddb173",
+      "bytes": 3912
+    },
+    "operator/run-report.json": {
+      "sha256": "3f2c80fbb9415de0efcd1e97b2840f592d6b6372d3ecf443c0882b2a2dce4e77",
+      "bytes": 452
+    },
+    "operator/run_controller.py.txt": {
+      "sha256": "c3f671b2e027e0d8dfe546c4d7af83d459f605d91eee6eed37b5825d510d5ce4",
+      "bytes": 4588
+    },
+    "results/analysis-receipt.json": {
+      "sha256": "5370671ad105ff7618ad28f000a581b6bc84396ad74e34f88a70938f333290a6",
+      "bytes": 805
+    },
+    "results/case-diagnostics.jsonl": {
+      "sha256": "870aa686f60a5c22054377b591e6c399789e54d8acfc30c4a45223b24de11067",
+      "bytes": 196695
+    },
+    "results/schema-inventory.jsonl": {
+      "sha256": "c1d559e9d890b978655cae93dcc040fff788304b305410537ee961ffd8f2f097",
+      "bytes": 81778
+    },
+    "results/summary.json": {
+      "sha256": "0758f337ffc7d71cbea42eb8c57afc53954aa74bbf25f6f691835b2355b1abaa",
+      "bytes": 19065
+    },
+    "tested-source/agent_lab/__init__.py": {
+      "sha256": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+      "bytes": 83
+    },
+    "tested-source/agent_lab/tool_schema.py": {
+      "sha256": "b7ef1806e89562ccf78eef43887f5cedccda464f503e8a6ad190f3999d6836dd",
+      "bytes": 5507
+    },
+    "tested-source/benchmarks/diagnose_saved_tool_calls.py": {
+      "sha256": "044b1504a91ce0595991ce91a9d6ce05b0aeeb6486e3988948e7aa53223048e4",
+      "bytes": 10208
+    },
+    "tested-source/benchmarks/test_tool_schema.py": {
+      "sha256": "6e482f3f57908206dfb14a77b20d0452093d82e3430ec90c0b911104994be21e",
+      "bytes": 5647
+    }
+  }
+}

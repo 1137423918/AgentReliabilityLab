@@ -1,0 +1,71 @@
+{
+  "declared_utc": "2026-11-23T12:34:26.998722+00:00",
+  "project_base_commit": "b9cf8200e3fd4a4abe08c5b2f61c3567af41e555",
+  "scope": "Secondary parsed-call diagnostics on fixed Stage52 saved predictions; not official rescoring, raw-format grading or tool execution.",
+  "analysis_source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/tool_schema.py": "b7ef1806e89562ccf78eef43887f5cedccda464f503e8a6ad190f3999d6836dd",
+    "benchmarks/test_tool_schema.py": "6e482f3f57908206dfb14a77b20d0452093d82e3430ec90c0b911104994be21e",
+    "benchmarks/diagnose_saved_tool_calls.py": "044b1504a91ce0595991ce91a9d6ce05b0aeeb6486e3988948e7aa53223048e4"
+  },
+  "controller_sha256": "c1d826b481989c2f40a5e415bba5c9209ddb58d1373ba5f7af7d125a5b31e699",
+  "upstream_commit": "111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1",
+  "upstream_source_sha256": {
+    "scripts/run_eval.py": "3f4a8d37b11a01374e41c9dbedafdf17a7fdd92515818da8196efee35b2be34e",
+    "leaderboard/scoring/eval_results.py": "ddaf243edee6641a9610c8593ef9e8e38f633a633fc5aec937727a5cd3562d6b",
+    "hf_data/datasets/api_eval/clean.jsonl": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "extracted_function_sha256": {
+    "_maybe_json_loads": "75eb5ae92c6e67f35709b04391e6fec9c48307de745ad68da0b06610284234ba",
+    "load_samples": "10421adcec8d42c5b2a5167ac017d7230ff0af2ce5d6a8bc2ec93f009b5bf2ed",
+    "_normalize_tool_schema": "51164eb606b27cd0b23129126fd9cdbd2971ff7e0628fbdb0d8f1a78548f6a42",
+    "is_multi_turn": "b98c1f8d1c74769f41f212140bc776002d0d0f418309f1610b4ca113c59a9626"
+  },
+  "ledger_sha256": "c485cf3ad69116dc6d24b0051e36c57820a1f3ffb7e7de0cb7b817e36be93275",
+  "definition_owner_sha256": "7ae60226d469106e53513224aebfbf0e371b0e21388e9206caf44f24614ea7ef",
+  "versions": {
+    "jsonschema": "4.26.0",
+    "referencing": "0.37.0",
+    "rpds-py": "2026.9.1"
+  },
+  "environment_lock_sha256": "866a6cfaabf0658345e83f76ebc7570be0eec90e46f6a92a850f70c927011cd0",
+  "schema_dialect": "https://json-schema.org/draft/2020-12/schema",
+  "views": [
+    "Original raw parameters schema, without alias repair",
+    "Exact pinned upstream FC projection; descriptive alternative, not schema sent in original use_fc=False text prompts"
+  ],
+  "original_use_fc": false,
+  "policy": {
+    "no_raw_output_reparse": true,
+    "strict_json_text_syntax_is_not_scored": true,
+    "no_coercion_defaults_gold_fill": true,
+    "additionalProperties_default_allowed": true,
+    "format_checker": null,
+    "reference_network_retrieval": false,
+    "arguments_must_be_finite_JSON_object": true,
+    "parameters_key_presence_precedes_arguments": true,
+    "unassessable_schema_not_model_error": true,
+    "schema_eligibility_is_syntax_only_references_may_fail_at_instance_time": true,
+    "case_pass_requires_nonempty_calls_and_all_valid": true,
+    "invalid_list_str_alias_not_repaired": true,
+    "duplicate_names_ambiguous": true,
+    "official_scores_carried_only": true
+  },
+  "outputs": "Only hashes, ordinals, benchmark, stored official numbers, statuses, keyword counts; no arguments/names/raw outputs/prompts/gold/weights/tokens/secret paths",
+  "comparison": "Base199 independent. Matched prefix1..83 base/Full descriptive, nonrandom interruption selection. Mixed0 not evaluated. No causal training benefit or full199 Full claim.",
+  "CPU_count": 2,
+  "nice": 19,
+  "address_space_GiB": 2,
+  "CPU_seconds_each": 90,
+  "phase_wall_seconds": 120,
+  "host_admission_GiB": 16,
+  "tmp_min_free_GiB": 2,
+  "new_neural_calls": 0,
+  "official_scorer_calls": 0,
+  "controls_count": 13,
+  "controls_run_before_predictions": true,
+  "schema_input_inventories_available_before_protocol": true,
+  "predictions_not_inspected_for_this_diagnostic_before_freeze": true,
+  "homepage_updates": false
+}

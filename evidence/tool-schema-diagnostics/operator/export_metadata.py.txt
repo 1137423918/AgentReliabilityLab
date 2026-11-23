@@ -1,0 +1,35 @@
+"""Export only analysis metadata; never read the generation ledger/predictions."""
+import base64
+import hashlib
+import io
+import json
+from pathlib import Path
+import tarfile
+
+root = Path('[SERVER_OUTPUTS]/tool-schema-stage59-20261123-v1')
+location = json.loads((root/'location.json').read_text())
+work = Path(location['work'])
+entries = {}
+for name in ['summary.json','case-diagnostics.jsonl','schema-inventory.jsonl','analysis-receipt.json']:
+    entries['results/'+name] = (root/'analysis'/name).read_bytes()
+for name in ['admission.json','run-report.json','controls.log']:
+    raw = (root/name).read_text().replace(str(work), '[RUN]').replace('[COMPUTE_NODE]', '[COMPUTE_NODE]')
+    entries['operator/'+name] = raw.encode()
+entries['operator/protocol.json'] = (work/'source/protocol.json').read_bytes()
+assert len(entries['results/case-diagnostics.jsonl'].splitlines()) == 282
+assert len(entries['results/schema-inventory.jsonl'].splitlines()) == 199
+assert 'Ran 13 tests' in entries['operator/controls.log'].decode()
+assert json.loads(entries['operator/run-report.json'])['status'] == 'completed'
+for name, raw in entries.items():
+    assert len(raw) < 2*1024*1024
+    assert all(x not in raw for x in [b'raw_output"', b'body_base64', b'golden_answers', b'/tmp/agentlab', b'/data1/', b'Bearer ']), name
+manifest = {'scope':'Allowlisted metadata only; full predictions/arguments/prompts/gold remain on server','files':{n:{'bytes':len(v),'sha256':hashlib.sha256(v).hexdigest()} for n,v in sorted(entries.items())}}
+entries['export-manifest.json'] = (json.dumps(manifest, indent=2)+'\n').encode()
+buf = io.BytesIO()
+with tarfile.open(fileobj=buf, mode='w:gz') as tar:
+    for name, raw in sorted(entries.items()):
+        item = tarfile.TarInfo(name);item.size=len(raw);item.mode=0o600
+        tar.addfile(item,io.BytesIO(raw))
+raw = buf.getvalue()
+print('EXPORT_SHA256:'+hashlib.sha256(raw).hexdigest())
+print('EXPORT_BASE64:'+base64.b64encode(raw).decode())

@@ -15,6 +15,7 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 - [数据复用审计](docs/training-data.md)与[开发集、真实分词和标签预算](docs/training-study.md)。
 - [实际 LoRA 配方、结果与核验边界](docs/lora-pilot.md)及[完整证据](evidence/lora-pilot/README.md)。
 - [持久生成进度、真实恢复与当前部分结果](docs/generation-recovery.md)：12 项服务器 CPU 控制通过，已评分结果不重新生成或评分。
+- [已保存调用的schema诊断](docs/tool-schema-diagnostics.md)：分别核对原始schema和上游FC投影。基线158/199例符合投影约束，其中41例仍未通过官方匹配；结构有效性不等于任务成功，部分Full对照尚无提升证据。
 - [原 P100 工具调用基线](docs/tool-use-baseline.md)：119/199 官方 correct，属于历史设备条件，不改判为新设备结果。
 - [工具调用研究路线与评分器审计](docs/robust-tool-use.md)。
 
