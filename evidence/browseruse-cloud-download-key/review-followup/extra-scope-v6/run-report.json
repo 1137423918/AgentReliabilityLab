@@ -1,0 +1,97 @@
+{
+  "terminal": true,
+  "protocol_sha256": "490948277bb00d68443ce37d443d55ce054aae344abdfe17f9fc07866ed8baee",
+  "phases": [
+    {
+      "name": "identity-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.042,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "identity-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.532,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "git-init",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "git-add",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "pre-commit-initial",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 82.138,
+      "peak_owned_RSS_bytes": 832745472
+    },
+    {
+      "name": "pre-commit-confirm",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 23.214,
+      "peak_owned_RSS_bytes": 831213568
+    },
+    {
+      "name": "project-ruff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.543,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "project-ruff-format",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.61,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "project-pyright",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 6.36,
+      "peak_owned_RSS_bytes": 373858304
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "harness_runtime_isolation": {
+    "new_private_home": true,
+    "mode": "0o700",
+    "owned_by_current_user": true,
+    "security_checks_disabled": false
+  },
+  "active_phase": "project-pyright",
+  "error": {
+    "type": "AssertionError",
+    "message": "project-pyright"
+  },
+  "owned_after": 0,
+  "wall_seconds": 118.085,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "506f39c7bac89eaa58c75cec7c42ffd89e39c170e90744ac6e3dc8438aa2f096",
+    "tests/ci/test_login.py": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": false
+}

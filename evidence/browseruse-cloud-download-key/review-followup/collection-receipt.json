@@ -1,0 +1,9 @@
+{
+  "archive_sha256": "93259924f462e584dc6545bbf57dbdfbd6d4bb1da2fa97292188266616270ea9",
+  "archive_bytes": 212374,
+  "payload_hashes_verified": 32,
+  "candidate_ready": true,
+  "formatted_source_synced": 2,
+  "local_input_hashes_checked": true,
+  "formatting_AST_unchanged": null
+}

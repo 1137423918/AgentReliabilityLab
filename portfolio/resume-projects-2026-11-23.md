@@ -33,7 +33,7 @@
 
 ## Agent 开源项目缺陷修复
 
-在独立小团队维护的 Browser Use 中修复云会话下载未沿用创建密钥的问题，覆盖分页查询、切换模型后的保活会话及停止后的文件补收。使用真实鉴权、请求和落盘代码配合HTTP边界模拟，原版三个入口回归失败，候选通过；pre-commit、锁定工具检查及完整非Chrome选择通过，具体范围与跳过项见[证据](../docs/browseruse-cloud-download-key.md)。[PR #6521](https://github.com/browser-use/browser-use/pull/6521) 已正式提交，尚未合并。
+在独立小团队维护的 Browser Use 中修复云会话下载未沿用创建密钥的问题，覆盖分页查询、切换模型后的保活会话及停止后的文件补收。使用真实鉴权、请求和落盘代码配合HTTP边界模拟，原版三个入口回归失败，候选通过；pre-commit、锁定工具检查及完整非Chrome选择通过，具体范围与跳过项见[证据](../docs/browseruse-cloud-download-key.md)。[PR #6521](https://github.com/browser-use/browser-use/pull/6521) 已正式提交，尚未合并。 同一PR继续落实评审反馈，补齐超时创建的停止后凭据清理与失败重试；最终服务器非Chrome选择969项通过，原始及补充回归分别保留失败基线，范围不相加。
 
 在小团队维护的 VoltAgent 中修复 MCP 断连通知报错、已结束会话注册累积，以及第二次连接被拒绝时误关活跃传输的问题；通过真实 HTTP/MCP 客户端和可控启动时序复现，上一版在同一组11项生命周期测试中2项失败，修复后11项及完整MCP包26项通过，并完成源码、两份新增测试的严格类型检查及构建。清理保留活跃流、基座重连和正在启动的连接。已正式提交 [PR #1562](https://github.com/VoltAgent/voltagent/pull/1562)，尚未合并。[源码与验证证据](../evidence/voltagent-mcp-connection-ownership/README.md)
 

@@ -1,0 +1,27 @@
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__ test_late_cloud_create_releases_its_key_only_after_a_successful_stop[True] __
+tests/ci/test_login.py:759: in test_late_cloud_create_releases_its_key_only_after_a_successful_stop
+    assert browser._cloud_key == () and browser._creating is None
+E   AssertionError: assert (('bu_ffffffff...fffffffffff',) == ()
+E     
+E     Left contains one more item: 'bu_ffffffffffffffffffffffffffffffffffffffff'
+E     Use -v to get more diff)
+----------------------------- Captured stderr call -----------------------------
+WARNING  [browser_use.browser.browser] A cloud browser is still being created; it will be stopped when it is.
+INFO     [browser_use.browser.browser] Browser Use cloud browser b1 (us proxy, billed until it stops). Browser('chromium') runs a local one.
+_ test_late_cloud_create_releases_its_key_only_after_a_successful_stop[False] __
+tests/ci/test_login.py:759: in test_late_cloud_create_releases_its_key_only_after_a_successful_stop
+    assert browser._cloud_key == () and browser._creating is None
+E   AssertionError: assert (('bu_ffffffff...fffffffffff',) == ()
+E     
+E     Left contains one more item: 'bu_ffffffffffffffffffffffffffffffffffffffff'
+E     Use -v to get more diff)
+----------------------------- Captured stderr call -----------------------------
+WARNING  [browser_use.browser.browser] A cloud browser is still being created; it will be stopped when it is.
+INFO     [browser_use.browser.browser] Browser Use cloud browser b1 (us proxy, billed until it stops). Browser('chromium') runs a local one.
+WARNING  [browser_use.browser.browser] Could not stop cloud browser b1 (it stays registered for retry): temporary stop failure
+=========================== short test summary info ============================
+FAILED tests/ci/test_login.py::test_late_cloud_create_releases_its_key_only_after_a_successful_stop[True]
+FAILED tests/ci/test_login.py::test_late_cloud_create_releases_its_key_only_after_a_successful_stop[False]
+2 failed in 1.80s

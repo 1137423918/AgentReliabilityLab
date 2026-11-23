@@ -1,0 +1,134 @@
+{
+  "terminal": true,
+  "protocol_sha256": "12255d03ebc31b518dde7abdb842fc92cdb10e333f0e47a8c4c6793d5ae85d76",
+  "phases": [
+    {
+      "name": "identity-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.072,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "identity-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.529,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-init",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.554,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-add",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.554,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "pre-commit-initial",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 27.22,
+      "peak_owned_RSS_bytes": 834289664
+    },
+    {
+      "name": "pre-commit-confirm",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 28.683,
+      "peak_owned_RSS_bytes": 827494400
+    },
+    {
+      "name": "project-ruff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.571,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "project-ruff-format",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.528,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "baseline-extra-test-pyright",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 5.774,
+      "peak_owned_RSS_bytes": 375238656
+    },
+    {
+      "name": "project-pyright",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 14.261,
+      "peak_owned_RSS_bytes": 808869888
+    },
+    {
+      "name": "baseline-review-regression",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 5.684,
+      "peak_owned_RSS_bytes": 119029760
+    },
+    {
+      "name": "candidate-review-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.68,
+      "peak_owned_RSS_bytes": 118415360
+    },
+    {
+      "name": "candidate-related",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 46.425,
+      "peak_owned_RSS_bytes": 232054784
+    },
+    {
+      "name": "candidate-nonchrome",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 376.96,
+      "peak_owned_RSS_bytes": 347947008
+    }
+  ],
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "CPU_affinity": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "harness_runtime_isolation": {
+    "new_private_home": true,
+    "mode": "0o700",
+    "owned_by_current_user": true,
+    "security_checks_disabled": false
+  },
+  "active_phase": "candidate-nonchrome",
+  "tested_source_sha256": {
+    "browser_use/browser/browser.py": "506f39c7bac89eaa58c75cec7c42ffd89e39c170e90744ac6e3dc8438aa2f096",
+    "tests/ci/test_login.py": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d"
+  },
+  "baseline_regression_test_sha256": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d",
+  "ready": true,
+  "owned_after": 0,
+  "wall_seconds": 517.218,
+  "final_source_sha256": {
+    "browser_use/browser/browser.py": "506f39c7bac89eaa58c75cec7c42ffd89e39c170e90744ac6e3dc8438aa2f096",
+    "tests/ci/test_login.py": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d"
+  },
+  "lock_unchanged": true,
+  "source_unchanged_after_tests": true
+}

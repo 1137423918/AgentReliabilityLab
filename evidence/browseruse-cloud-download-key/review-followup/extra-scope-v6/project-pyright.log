@@ -1,0 +1,7 @@
+WARNING: there is a new pyright version available (v1.1.408 -> v1.1.414).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+[PREVIOUS_RUN]/candidate/tests/ci/test_login.py
+  [PREVIOUS_RUN]/candidate/tests/ci/test_login.py:551:39 - error: Argument of type "dict[Any, Any]" cannot be assigned to parameter "hdrs" of type "Message[str, str]" in function "__init__" (reportArgumentType)
+  [PREVIOUS_RUN]/candidate/tests/ci/test_login.py:580:10 - error: "request" is not a known attribute of module "urllib" (reportAttributeAccessIssue)
+2 errors, 0 warnings, 0 informations

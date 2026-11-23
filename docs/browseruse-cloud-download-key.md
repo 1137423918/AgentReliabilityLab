@@ -7,3 +7,5 @@
 同一参数化回归覆盖列表、直接复制和停止后三种入口，以及两页结果、停止后才列出的文件、请求头与实际文件内容。原版3项失败，候选3项通过。相邻回归：160 passed in 51.45s；完整非Chrome选择：967 passed, 3 skipped, 140 deselected, 1 warning in 405.91s (0:06:45)。这些范围重叠，不相加。pre-commit和项目锁定的Ruff/Pyright检查通过；所有检查在授权CPU服务器执行，云端HTTP响应按脚本提供，没有调用付费模型或真实云浏览器。
 
 服务器默认运行目录属主不匹配曾使较广测试失败。未修改项目安全检查或原目录：先在未修复源码重现相同错误，再以独立0700 `BH_HOME` 复验，最后在相同测试源码、相同锁定SDK下完成广泛检查。早期准备失败与原始失败分数都保留；服务器测试通过不代表上游CI或人工审查已通过。[源码、逐项结果和局限](../evidence/browseruse-cloud-download-key/README.md)。个人主页保持冻结。
+
+评审补充：超时创建随后返回时，后台停止成功后清除会话密钥；失败时保留密钥与归属，以便重试。新回归以首版PR提交c881c18为基线，两种停止路径均失败，修复后通过；与原版上游三入口回归的基线不同，不相加。最终相邻验证：162 passed in 42.00s；完整非Chrome选择：969 passed, 3 skipped, 140 deselected, 1 warning in 371.01s (0:06:11)。原生CI另按提交记录；[补充源码、失败对照与结果](../evidence/browseruse-cloud-download-key/review-followup/README.md)。

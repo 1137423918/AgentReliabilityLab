@@ -1,0 +1,220 @@
+{
+  "observed_utc": "2026-11-23T18:13:16.262987+00:00",
+  "number": 6521,
+  "url": "https://github.com/browser-use/browser-use/pull/6521",
+  "title": "fix: use the cloud session key for downloads",
+  "state": "OPEN",
+  "draft": false,
+  "head": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+  "base": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+  "files": [
+    {
+      "path": "browser_use/browser/browser.py",
+      "additions": 5,
+      "deletions": 4
+    },
+    {
+      "path": "tests/ci/test_login.py",
+      "additions": 63,
+      "deletions": 0
+    }
+  ],
+  "unresolved_threads": 1,
+  "native_actions": [
+    {
+      "id": 45234255794,
+      "name": "Claude Code",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45234255794"
+    },
+    {
+      "id": 45234254807,
+      "name": "Claude Code",
+      "status": "completed",
+      "conclusion": "skipped",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45234254807"
+    },
+    {
+      "id": 45233666493,
+      "name": "test",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45233666493"
+    },
+    {
+      "id": 45233666879,
+      "name": "lint",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45233666879"
+    },
+    {
+      "id": 45233666513,
+      "name": "package",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45233666513"
+    },
+    {
+      "id": 45233666362,
+      "name": "docker",
+      "status": "completed",
+      "conclusion": "success",
+      "head_sha": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+      "html_url": "https://github.com/browser-use/browser-use/actions/runs/45233666362"
+    }
+  ],
+  "checks": [
+    {
+      "__typename": "CheckRun",
+      "name": "claude",
+      "status": "COMPLETED",
+      "conclusion": "SKIPPED"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "smoke (linux/amd64)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "syntax-errors",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-build",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (ubuntu-latest, py3.11)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "smoke (linux/arm64)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (macos-latest, py3.11)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (windows-latest, py3.11)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (ubuntu-latest, py3.12)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (ubuntu-latest, py3.13)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "unit (ubuntu-latest, py3.14)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "build_publish_image",
+      "status": "COMPLETED",
+      "conclusion": "SKIPPED"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "code-style",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-ubuntu-latest-py-3.11",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "chrome (ubuntu)",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-ubuntu-latest-py-3.13",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-macos-latest-py-3.11",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-macos-latest-py-3.13",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-windows-latest-py-3.11",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "pip-install-on-windows-latest-py-3.13",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "type-checker",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "Mintlify Preview (fork)",
+      "status": "COMPLETED",
+      "conclusion": "NEUTRAL"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "GitGuardian Security Checks",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    },
+    {
+      "__typename": "CheckRun",
+      "name": "cubic \u00b7 AI code reviewer",
+      "status": "COMPLETED",
+      "conclusion": "SUCCESS"
+    }
+  ],
+  "human_approval_claimed": false
+}

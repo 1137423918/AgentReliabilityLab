@@ -1,0 +1,7 @@
+WARNING: there is a new pyright version available (v1.1.408 -> v1.1.414).
+Please install the new version or set PYRIGHT_PYTHON_FORCE_VERSION to `latest`
+
+[RUN]/candidate/browser_use/mcp/cli_mcp.py
+  [RUN]/candidate/browser_use/mcp/cli_mcp.py:141:10 - warning: Import "pythoncom" could not be resolved from source (reportMissingModuleSource)
+  [RUN]/candidate/browser_use/mcp/cli_mcp.py:142:10 - warning: Import "win32com.client" could not be resolved from source (reportMissingModuleSource)
+0 errors, 2 warnings, 0 informations

@@ -1,0 +1,197 @@
+{
+  "files": {
+    "operator/protocol.json": {
+      "sha256": "12255d03ebc31b518dde7abdb842fc92cdb10e333f0e47a8c4c6793d5ae85d76",
+      "original_sha256": "12255d03ebc31b518dde7abdb842fc92cdb10e333f0e47a8c4c6793d5ae85d76",
+      "bytes": 46636,
+      "normalized": true
+    },
+    "operator/run-report.json": {
+      "sha256": "69f6f29d8de020d7c63cdd83ea2dbdfe007efcb92a3958c8585e9b91c0b6cda7",
+      "original_sha256": "69f6f29d8de020d7c63cdd83ea2dbdfe007efcb92a3958c8585e9b91c0b6cda7",
+      "bytes": 3411,
+      "normalized": true
+    },
+    "operator/run_cpu.py.txt": {
+      "sha256": "ce30abf56a074713c7f95d271af509a752546c957c842bca15ba15b82be3b30b",
+      "original_sha256": "9419e0a8735195f710bd1df37c6965aa5d9ec78190cba928873986804d4b121e",
+      "bytes": 10038,
+      "normalized": true
+    },
+    "operator/exec_child.py.txt": {
+      "sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443,
+      "normalized": true
+    },
+    "logs/baseline-extra-test-pyright.log": {
+      "sha256": "76d4a745354d4e6b4553654cfd48ef6fbbe602d0137d7ff6e309e7e2130de861",
+      "original_sha256": "659b0d3890ef88d004b87e3be5120f2d2fad811ecac4e739549d2d7394a0f09e",
+      "bytes": 569,
+      "normalized": true
+    },
+    "logs/baseline-review-regression.log": {
+      "sha256": "87b1fa2d069d25c69f3395692a936d3a5a0a64b9506dc15232cd4580cb4041be",
+      "original_sha256": "87b1fa2d069d25c69f3395692a936d3a5a0a64b9506dc15232cd4580cb4041be",
+      "bytes": 2126,
+      "normalized": true
+    },
+    "logs/candidate-nonchrome.log": {
+      "sha256": "ff6a1ea6413e6a870e846798893b500b51e324ee26a2d4a931d45217c2117fba",
+      "original_sha256": "af9bae20f929a678a7593d84a8bb857ad4a16ae4a0520850e81597e89f24d155",
+      "bytes": 1767,
+      "normalized": true
+    },
+    "logs/candidate-related.log": {
+      "sha256": "360d001c01da547c31d93a6a87ee713cb2478ceef4225001c30d13eb08c67874",
+      "original_sha256": "360d001c01da547c31d93a6a87ee713cb2478ceef4225001c30d13eb08c67874",
+      "bytes": 296,
+      "normalized": true
+    },
+    "logs/candidate-review-regression.log": {
+      "sha256": "2b5ed8f88f5d4aba2bb00363dc3650435dc8faf20f56c6b9829163245f610d43",
+      "original_sha256": "2b5ed8f88f5d4aba2bb00363dc3650435dc8faf20f56c6b9829163245f610d43",
+      "bytes": 98,
+      "normalized": true
+    },
+    "logs/git-add.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "normalized": true
+    },
+    "logs/git-init.log": {
+      "sha256": "25ae169df0cc0a53076d996ff1f0269740c0dc6537e09e54bb12288d325e7a34",
+      "original_sha256": "d5794c85023aabea5dc5fe52d4ab4e0fb13a2306e264a72e76f69b1e22c2456c",
+      "bytes": 540,
+      "normalized": true
+    },
+    "logs/identity-baseline.log": {
+      "sha256": "5641380bc316556003ec4196c13e0ed96017b69ff0b481786df6b57f9d65bdca",
+      "original_sha256": "e65292e7ffe43320216a2f3d6f4aa2042b4456228401273c060f623adc8b6a73",
+      "bytes": 68,
+      "normalized": true
+    },
+    "logs/identity-candidate.log": {
+      "sha256": "d5e5aba80af25dc5ff6cab872b0092efba96ea6bb4979b7ca4fa167e18fc5859",
+      "original_sha256": "f14d132e00c5a070258087f30146b56887a0f7057208cc1f40b072ad217095e1",
+      "bytes": 69,
+      "normalized": true
+    },
+    "logs/pre-commit-confirm.log": {
+      "sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "original_sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "bytes": 1840,
+      "normalized": true
+    },
+    "logs/pre-commit-initial.log": {
+      "sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "original_sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "bytes": 1840,
+      "normalized": true
+    },
+    "logs/project-pyright.log": {
+      "sha256": "8d8043e74bb2a3281456c49aaa651fab2e08d763d22e7097dbe5c5ebbb2a17a5",
+      "original_sha256": "f76b94dba8906a8d5471084aa87c0bf67e3d0782a8002f7aa0988d6425a3a2ca",
+      "bytes": 528,
+      "normalized": true
+    },
+    "logs/project-ruff-check.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "normalized": true
+    },
+    "logs/project-ruff-format.log": {
+      "sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      "original_sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      "bytes": 26,
+      "normalized": true
+    },
+    "tested-source/baseline/browser_use/browser/browser.py": {
+      "sha256": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+      "original_sha256": "e6cd9fb3f5412d333f086498b8d884f5a9d4ce15a2b26aac5f15f0dff709928b",
+      "bytes": 65780,
+      "normalized": false
+    },
+    "tested-source/baseline/tests/ci/test_login.py": {
+      "sha256": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d",
+      "original_sha256": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d",
+      "bytes": 33892,
+      "normalized": false
+    },
+    "tested-source/candidate/browser_use/browser/browser.py": {
+      "sha256": "506f39c7bac89eaa58c75cec7c42ffd89e39c170e90744ac6e3dc8438aa2f096",
+      "original_sha256": "506f39c7bac89eaa58c75cec7c42ffd89e39c170e90744ac6e3dc8438aa2f096",
+      "bytes": 65805,
+      "normalized": false
+    },
+    "tested-source/candidate/tests/ci/test_login.py": {
+      "sha256": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d",
+      "original_sha256": "f8563dd5b7344c99620931501bd87601774ed471704d2c2d9c0983fceec0039d",
+      "bytes": 33892,
+      "normalized": false
+    },
+    "extra-scope-v6/protocol.json": {
+      "sha256": "490948277bb00d68443ce37d443d55ce054aae344abdfe17f9fc07866ed8baee",
+      "original_sha256": "490948277bb00d68443ce37d443d55ce054aae344abdfe17f9fc07866ed8baee",
+      "bytes": 46254,
+      "normalized": true
+    },
+    "extra-scope-v6/run-report.json": {
+      "sha256": "b63207d1d96b035f7cae3c3d596edd465dc51bb9ddc6090112313a351fa81c68",
+      "original_sha256": "b63207d1d96b035f7cae3c3d596edd465dc51bb9ddc6090112313a351fa81c68",
+      "bytes": 2297,
+      "normalized": true
+    },
+    "extra-scope-v6/run_cpu.py.txt": {
+      "sha256": "e8c809a70a09ada1cce5e3ac270cbe8e9609da43024f15ab908b9ad530a2d938",
+      "original_sha256": "fc1715c1fa608fc285d7722bc63622138b192dbbcd0ef821868c935b012b57a2",
+      "bytes": 9295,
+      "normalized": true
+    },
+    "extra-scope-v6/project-pyright.log": {
+      "sha256": "a8b90cdcc4506d3ae79ddbd930e6801b8d5a022c151e8f823d9d6035df080017",
+      "original_sha256": "9c72edb37e96e8e601f4f48fe475dcc675c7c37be0c3c265a27bc56516f9c54a",
+      "bytes": 599,
+      "normalized": true
+    },
+    "extra-scope-v6/pre-commit-initial.log": {
+      "sha256": "7dbcd1ced523e7b405f49104d3511aaf6bf767ef20e345ec0258bd7ae8ec243d",
+      "original_sha256": "7dbcd1ced523e7b405f49104d3511aaf6bf767ef20e345ec0258bd7ae8ec243d",
+      "bytes": 3438,
+      "normalized": true
+    },
+    "extra-scope-v6/pre-commit-confirm.log": {
+      "sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "original_sha256": "bfec8f9e74688ac303170612a55934f6e787ebfe4ae3cca8409176dd199204d9",
+      "bytes": 1840,
+      "normalized": true
+    },
+    "extra-scope-v6/project-ruff-check.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "normalized": true
+    },
+    "extra-scope-v6/project-ruff-format.log": {
+      "sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      "original_sha256": "3bc53bf3e981a98a34a852e175bf9b77af841edea74fca595d9aedcbaf9a4938",
+      "bytes": 26,
+      "normalized": true
+    },
+    "uv.lock": {
+      "sha256": "b3bbe39a9a4689e725d8e6848e4299a2e38ff8c1650abae09a5cfdaf380f9da7",
+      "original_sha256": "b3bbe39a9a4689e725d8e6848e4299a2e38ff8c1650abae09a5cfdaf380f9da7",
+      "bytes": 385372,
+      "normalized": false
+    },
+    "cleanup.json": {
+      "sha256": "3bf3a0b25d3e8a74283708c1990d90fb16c418953cb012b1da3cbcd5d3dfabad",
+      "original_sha256": "3bf3a0b25d3e8a74283708c1990d90fb16c418953cb012b1da3cbcd5d3dfabad",
+      "bytes": 160,
+      "normalized": true
+    }
+  },
+  "scope": "Terminal review regression metadata/logs/exact changed source/frozen lock, including earlier extra-scope type-check failure."
+}

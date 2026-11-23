@@ -1,0 +1,34 @@
+{
+  "scope": "Review follow-up: timed-out create stops must release the captured key only after a successful late stop; failed stops retain the credential for retry. Real completion callback, auth lookup and Request construction, mocked external HTTP.",
+  "candidate_commit": "a4473544a95100b2b750cdf28e0b7f121be9c46e",
+  "review_baseline_commit": "c881c18c60e95d3ef7393cab2b13bf48690cf2e9",
+  "pull_request": "https://github.com/browser-use/browser-use/pull/6521",
+  "PR_merged": false,
+  "human_approval_claimed": false,
+  "regression": {
+    "review_baseline_failed": 2,
+    "candidate_passed": 2,
+    "same_test_bytes": true,
+    "manually_completed_future": true,
+    "retry_sleep_stubbed": true,
+    "real_delayed_cloud_request": false
+  },
+  "related": {
+    "line": "162 passed in 42.00s",
+    "passed": 162
+  },
+  "nonchrome": {
+    "line": "969 passed, 3 skipped, 140 deselected, 1 warning in 371.01s (0:06:11)",
+    "passed": 969
+  },
+  "counts_overlap": true,
+  "original_download_regression": "The original 3 failing/passing cases against upstream753d629 remain unchanged and are included in both final suites. The new 2-case regression has a different baseline (c881c18). Do not sum them as one baseline.",
+  "static_checks": "Required pre-commit hooks, locked Ruff check/format and repository-configured locked Pyright passed. An extra explicit-file Pyright scope checks pre-existing tests excluded by the repository configuration; the same 2 old errors were confirmed on the review baseline and retained, not relabeled as passing.",
+  "neural_calls": 0,
+  "cloud_browsers_created": 0,
+  "GPU_used": false,
+  "SDK_lock_unchanged": true,
+  "homepage_updated": false,
+  "protocol_sha256": "12255d03ebc31b518dde7abdb842fc92cdb10e333f0e47a8c4c6793d5ae85d76",
+  "export_sha256": "93259924f462e584dc6545bbf57dbdfbd6d4bb1da2fa97292188266616270ea9"
+}

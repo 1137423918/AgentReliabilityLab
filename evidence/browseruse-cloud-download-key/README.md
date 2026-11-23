@@ -1,6 +1,8 @@
 # Browser Use: retain the cloud session key for downloads
 
-2026-11-24. Formal [PR #6521](https://github.com/browser-use/browser-use/pull/6521), open and unmerged at the [recorded snapshot](pr-state.json). Source `c881c18c60e95d3ef7393cab2b13bf48690cf2e9` against `753d629d76eb2b670f4cf467f3355bbe750f6845`; two changed upstream files. This is a concrete framework fix, not a model task score or production cloud validation.
+Latest review follow-up: source `a4473544a95100b2b750cdf28e0b7f121be9c46e` additionally clears the key after a successful late stop, retains it for retry on failure, and passes 969 non-Chrome cases on the server. See [the separate follow-up evidence](review-followup/README.md) for its2-case red/green, exact source and timestamped nativeCI. The initial c881c18/967-pass evidence below remains unchanged.
+
+Initial submission evidence, 2026-11-24. Formal [PR #6521](https://github.com/browser-use/browser-use/pull/6521), open and unmerged at the [recorded snapshot](pr-state.json). Source `c881c18c60e95d3ef7393cab2b13bf48690cf2e9` against `753d629d76eb2b670f4cf467f3355bbe750f6845`; two changed upstream files. This is a concrete framework fix, not a model task score or production cloud validation.
 
 A browser created through `ChatBrowserUse(api_key=...)` can use that fallback key to create its cloud session while download-list requests omit it. With no environment/stored key, listing and copying fail, including the final copy after stop. A later agent using a different model clears the current model fallback; downloads must belong to the session's creation key. Both paginated listing paths now reuse that key. The synchronous stop retains it until the final collection finishes, and the asynchronous stop clears it when releasing the session. No new public API; credential precedence at session creation is unchanged.
 
