@@ -1,0 +1,13 @@
+test_base_parameter_name_canonicalization (__main__.GenerationAdapterTests.test_base_parameter_name_canonicalization) ... ok
+test_changed_inference_setting_fails_request_identity (__main__.GenerationAdapterTests.test_changed_inference_setting_fails_request_identity) ... ok
+test_changed_prompt_vector_fails_before_dispatch (__main__.GenerationAdapterTests.test_changed_prompt_vector_fails_before_dispatch) ... ok
+test_cooperative_chunks_keep_whole_cohort (__main__.GenerationAdapterTests.test_cooperative_chunks_keep_whole_cohort) ... ok
+test_deadline_never_reserves_an_unstarted_case (__main__.GenerationAdapterTests.test_deadline_never_reserves_an_unstarted_case) ... ok
+test_later_role_waits_for_complete_predecessor (__main__.GenerationAdapterTests.test_later_role_waits_for_complete_predecessor) ... ok
+test_reservation_precedes_callback_and_bad_outputs_are_cached (__main__.GenerationAdapterTests.test_reservation_precedes_callback_and_bad_outputs_are_cached) ... ok
+test_unknown_stays_charged_and_requires_stopped_resource_evidence (__main__.GenerationAdapterTests.test_unknown_stays_charged_and_requires_stopped_resource_evidence) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.036s
+
+OK

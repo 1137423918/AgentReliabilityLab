@@ -17,6 +17,7 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 - [迁移评测输入准入](docs/bfcl-transfer-admission.md)：在读取参考答案前锁定250条BFCL派生输入，完成保护数据关联检查和10项CPU控制；尚未运行新模型评测，不是完整BFCL成绩。
 - [迁移评分与参考绑定](docs/bfcl-transfer-scoring.md)：14项CPU控制和250条参考构造校验调用通过；保留原匹配规则，并拦截表达式求值分支、单列解析状态。这是评分链路验证，尚无新模型成绩。
 - [固定正文屏蔽配对试验](docs/fixed-reason-ablation.md)：同初始化、同输入与同卡的两组各32步训练及完整核验已完成，共2,666次逻辑前向／零未知。整段验证NLL为Reference0.297588、Masked0.671653；外部生成效果尚未验证。
+- [固定250题生成对照](docs/bfcl-transfer-generation.md)：base／新Reference32／新Masked32的推理协议已冻结，8项CPU控制与输入身份核验通过；尚未生成或评分新的输出。
 - [实际 LoRA 配方、结果与核验边界](docs/lora-pilot.md)及[完整证据](evidence/lora-pilot/README.md)。
 - [持久生成进度与恢复阶段记录](docs/generation-recovery.md)：12 项服务器 CPU 控制通过，已评分结果不重新生成或评分；最终结果见上方完整对照。
 - [已保存调用的schema诊断](docs/tool-schema-diagnostics.md)：分别核对原始schema和上游FC投影。基线158/199例符合投影约束，其中41例仍未通过官方匹配；结构有效性不等于任务成功，部分Full对照尚无提升证据。
