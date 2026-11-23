@@ -1,0 +1,150 @@
+{
+  "declared_utc": "2026-11-23T21:20:19.178159+00:00",
+  "scope": "Question-only deterministic admission of a text-decontaminated BFCL-derived transfer subset. No gold reads, model calls, optimizer updates, full BFCL score or pretraining-isolation claim.",
+  "BFCL_repository": "ShishirPatil/gorilla",
+  "BFCL_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+  "quotas": {
+    "live_simple": 50,
+    "live_multiple": 50,
+    "parallel": 50,
+    "parallel_multiple": 50,
+    "irrelevance": 50
+  },
+  "category_files": {
+    "live_simple": "BFCL_v4_live_simple.json",
+    "live_multiple": "BFCL_v4_live_multiple.json",
+    "parallel": "BFCL_v4_parallel.json",
+    "parallel_multiple": "BFCL_v4_parallel_multiple.json",
+    "irrelevance": "BFCL_v4_irrelevance.json"
+  },
+  "expected_category_rows": {
+    "live_simple": 258,
+    "live_multiple": 1053,
+    "parallel": 200,
+    "parallel_multiple": 200,
+    "irrelevance": 240
+  },
+  "question_files": {
+    "BFCL_v4_live_simple.json": {
+      "bytes": 260140,
+      "git_blob_sha1": "e8f4b8d33c07753affc77bfc4a646f94109de5af"
+    },
+    "BFCL_v4_live_multiple.json": {
+      "bytes": 3891277,
+      "git_blob_sha1": "b7c108f2edc86563fd3e1363e5f6fd961452d142"
+    },
+    "BFCL_v4_parallel.json": {
+      "bytes": 171896,
+      "git_blob_sha1": "04040475c8c77facf4f3e75e7079607c25c557d2"
+    },
+    "BFCL_v4_parallel_multiple.json": {
+      "bytes": 347080,
+      "git_blob_sha1": "832039d6758e2569d65342b3fc9524924a03832a"
+    },
+    "BFCL_v4_irrelevance.json": {
+      "bytes": 159940,
+      "git_blob_sha1": "0077629949f2d52734cef2f110b0d040d8c47554"
+    }
+  },
+  "selection_seed": "agentlab-stage72-bfcl-transfer-admission-v1",
+  "max_prompt_tokens": 8192,
+  "pair_cap": 20000000,
+  "normalization": "NFKC/casefold/whitespace; exact user-turn tuple and same original ID unions; word trigram Jaccard >=4/5 for >=8 words; transitive components.",
+  "selection_policy": "Quarantine every component touching actual Full/Mixed train3700/dev197/val79/oldclean199. Hash-seed per-category ID order, category round-robin, one case per remaining component. Fail quota/context/pair caps rather than relax or score-select replacements.",
+  "prompt_policy": "Pinned default classic/python/no-tag/json/plaintext mapping branch, native tokenizer chat template. No tool schema repair, answer matching, prompt truncation or response-driven exclusions.",
+  "source_sha256": {
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmarks/prepare_bfcl_transfer.py": "1fa46415fc03d616dc9cb7d43da2c10711bec207cb5dfc98f4ee6fd2064e5cab",
+    "extras/lora-training/test_bfcl_transfer.py": "3a82125d1b8b6928d98a3be45bc3c545e6384b3fc16f5379edb62d7894862add",
+    "upstream/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "upstream/default_prompts.py": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205"
+  },
+  "protected_rows": {
+    "train.parquet": 3700,
+    "mixed_train.parquet": 3700,
+    "dev_clean.parquet": 197,
+    "test.parquet": 79
+  },
+  "protected_data_sha256": {
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32"
+  },
+  "old_benchmark_sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+  "tokenizer_assets": [
+    {
+      "path": "LICENSE",
+      "bytes": 7388,
+      "lfs_sha256": null,
+      "git_blob_sha1": "ed317377ac0abff39f17eec693ce664f4b8152af",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/LICENSE"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4930,
+      "lfs_sha256": null,
+      "git_blob_sha1": "0b87f6362ee8ad33b2223afb47134264380f13fe",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/README.md"
+    },
+    {
+      "path": "config.json",
+      "bytes": 661,
+      "lfs_sha256": null,
+      "git_blob_sha1": "51b83fbd4e2d363b60235b9c8d494046a83c1cbf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/config.json"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 242,
+      "lfs_sha256": null,
+      "git_blob_sha1": "bf077f03dc569cfb8a90b3ec1ad20365a620bad6",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/generation_config.json"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "lfs_sha256": null,
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/merges.txt"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 35581,
+      "lfs_sha256": null,
+      "git_blob_sha1": "38047c6284a25427043f0ab040f623a2a20dd093",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/model.safetensors.index.json"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7031645,
+      "lfs_sha256": null,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer.json"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 7305,
+      "lfs_sha256": null,
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "lfs_sha256": null,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/vocab.json"
+    }
+  ],
+  "model_repository": "Qwen/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "pyarrow": "22.0.0"
+  },
+  "proposed_later_generation": "Three independently pinned base/newFull-reference/newFull-mask roles on the same fresh-admitted GPU,1536 output-token cap,one greedy request per250 admitted cases each. Separate future inference protocol required; no model allocation in this CPU admission.",
+  "scoring_unresolved": "Official AST parser contains eval branches. Isolate or predeclare strict literal guard and report metric limits before any model scoring. Do not execute generated expressions unsandboxed or silently claim full official harness.",
+  "output_policy": "Only count/hash/ordinal/publicBFCL-ID admission metadata, source and protocol exported. Questions, prompts, gold, vectors, credentials and weights private. Homepage remains frozen."
+}

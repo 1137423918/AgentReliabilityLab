@@ -1,0 +1,143 @@
+{
+  "files": {
+    "v1/operator/protocol.json": {
+      "sha256": "678531ca5d7a7571a8fcd6e4fa3694762e310334e6fd5149d9bd29a5065c80e3",
+      "original_sha256": "678531ca5d7a7571a8fcd6e4fa3694762e310334e6fd5149d9bd29a5065c80e3",
+      "bytes": 7906,
+      "normalized": true
+    },
+    "v1/operator/run-report.json": {
+      "sha256": "bd6bb7a667b5fdc070248dd02f4c829b137bd02733d1d20adf4092408dc5939b",
+      "original_sha256": "44a5b9e8c54687c9974b6dfcb3d02258e249b1364081c0effcf6788a8f7978e4",
+      "bytes": 56541,
+      "normalized": true
+    },
+    "v1/operator/run_cpu.py.txt": {
+      "sha256": "fa766c37c364fdaa4ddab7ec3c46fa1ed7aa02afac849c0de51f1e64ae8e3dfb",
+      "original_sha256": "59fa008fe3bdb6434bf5c172e8d641926cdb4d7cd73b0e7148c7e170e8fc075a",
+      "bytes": 7579,
+      "normalized": true
+    },
+    "v1/operator/exec_child.py.txt": {
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "bytes": 443,
+      "normalized": true
+    },
+    "v1/operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870,
+      "normalized": true
+    },
+    "v2/operator/protocol.json": {
+      "sha256": "a6e7782e4a577c572c12384b7ef21e8efeaa8ccc33961a1945237cbf0c5e24e2",
+      "original_sha256": "a6e7782e4a577c572c12384b7ef21e8efeaa8ccc33961a1945237cbf0c5e24e2",
+      "bytes": 8059,
+      "normalized": true
+    },
+    "v2/operator/run-report.json": {
+      "sha256": "02e059e3f70455a5f8cc1cc4d452979be067f0cea779f3818a000c891a9d640b",
+      "original_sha256": "02e059e3f70455a5f8cc1cc4d452979be067f0cea779f3818a000c891a9d640b",
+      "bytes": 56946,
+      "normalized": true
+    },
+    "v2/operator/run_cpu.py.txt": {
+      "sha256": "5b79b5545f812205e70ec96acbc96d4abf3e30e4544fa4202ce8d08fd986204b",
+      "original_sha256": "3c48a96cf0a6d3cbface091a32f5e22bd43c7a0648104c0bc9e639f6d0ae2421",
+      "bytes": 7605,
+      "normalized": true
+    },
+    "v2/operator/exec_child.py.txt": {
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "bytes": 443,
+      "normalized": true
+    },
+    "v2/operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870,
+      "normalized": true
+    },
+    "v2/operator/CPU-controls.log": {
+      "sha256": "711e01d8f41939af47145632ff082b4480f10641433006e00e50fbb08e350f3e",
+      "original_sha256": "711e01d8f41939af47145632ff082b4480f10641433006e00e50fbb08e350f3e",
+      "bytes": 1253,
+      "normalized": true
+    },
+    "v2/operator/runtime-identity.log": {
+      "sha256": "cfb72445fb25508b2f1af739bd0907464ae41af86d94fe9417257552957efd27",
+      "original_sha256": "cfb72445fb25508b2f1af739bd0907464ae41af86d94fe9417257552957efd27",
+      "bytes": 113,
+      "normalized": true
+    },
+    "v2/operator/question-admission.log": {
+      "sha256": "51e431328f5b852963d91e424db8e4df72ef6b5e142efc745c8005409373fd35",
+      "original_sha256": "51e431328f5b852963d91e424db8e4df72ef6b5e142efc745c8005409373fd35",
+      "bytes": 900,
+      "normalized": true
+    },
+    "results/report.json": {
+      "sha256": "dee7d412059abe99436852ba1da7551c4c7965545ebf12e7b02b3e7ba243b730",
+      "original_sha256": "dee7d412059abe99436852ba1da7551c4c7965545ebf12e7b02b3e7ba243b730",
+      "bytes": 644,
+      "normalized": true
+    },
+    "results/admission.json": {
+      "sha256": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9",
+      "original_sha256": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9",
+      "bytes": 135059,
+      "normalized": true
+    },
+    "results/candidate-metadata.jsonl": {
+      "sha256": "4b696685030d52175b64529388d9f8b9888f70bde697ae2a811fae9a3d99b22b",
+      "original_sha256": "4b696685030d52175b64529388d9f8b9888f70bde697ae2a811fae9a3d99b22b",
+      "bytes": 926367,
+      "normalized": true
+    },
+    "tested-source/benchmarks/__init__.py": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "normalized": false
+    },
+    "tested-source/benchmarks/prepare_bfcl_transfer.py": {
+      "sha256": "1fa46415fc03d616dc9cb7d43da2c10711bec207cb5dfc98f4ee6fd2064e5cab",
+      "original_sha256": "1fa46415fc03d616dc9cb7d43da2c10711bec207cb5dfc98f4ee6fd2064e5cab",
+      "bytes": 13149,
+      "normalized": false
+    },
+    "tested-source/extras/lora-training/test_bfcl_transfer.py": {
+      "sha256": "3a82125d1b8b6928d98a3be45bc3c545e6384b3fc16f5379edb62d7894862add",
+      "original_sha256": "3a82125d1b8b6928d98a3be45bc3c545e6384b3fc16f5379edb62d7894862add",
+      "bytes": 4702,
+      "normalized": false
+    },
+    "tested-source/upstream/LICENSE": {
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "original_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "normalized": false
+    },
+    "tested-source/upstream/default_prompts.py": {
+      "sha256": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205",
+      "original_sha256": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205",
+      "bytes": 9118,
+      "normalized": false
+    },
+    "selection-intent.json": {
+      "sha256": "080e8df193fd50e8a19bbaaa26748560057b7da94eaae8cd8e1c0603dcc958f0",
+      "original_sha256": "080e8df193fd50e8a19bbaaa26748560057b7da94eaae8cd8e1c0603dcc958f0",
+      "bytes": 7159,
+      "normalized": true
+    },
+    "cleanup.json": {
+      "sha256": "85401dddfe6b37077ca8dac3f168a9242eb44cc051fe238c61966ece0dd20c50",
+      "original_sha256": "85401dddfe6b37077ca8dac3f168a9242eb44cc051fe238c61966ece0dd20c50",
+      "bytes": 185,
+      "normalized": true
+    }
+  },
+  "scope": "Admission/count/hash/public BFCL IDs and source only; no private questions, prompts, answers, vectors or weights."
+}

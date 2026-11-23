@@ -1,0 +1,15 @@
+test_exact_short_text_and_shared_id_groups (__main__.TransferAdmissionTests.test_exact_short_text_and_shared_id_groups) ... ok
+test_gold_is_rejected (__main__.TransferAdmissionTests.test_gold_is_rejected) ... ok
+test_lexical_pair_budget_fails_closed (__main__.TransferAdmissionTests.test_lexical_pair_budget_fails_closed) ... ok
+test_literal_constants_do_not_execute_source (__main__.TransferAdmissionTests.test_literal_constants_do_not_execute_source) ... ok
+test_multiturn_is_rejected (__main__.TransferAdmissionTests.test_multiturn_is_rejected) ... ok
+test_near_groups_are_transitive (__main__.TransferAdmissionTests.test_near_groups_are_transitive) ... ok
+test_nfkc_case_and_whitespace (__main__.TransferAdmissionTests.test_nfkc_case_and_whitespace) ... ok
+test_prompt_composition_keeps_input_unchanged (__main__.TransferAdmissionTests.test_prompt_composition_keeps_input_unchanged) ... ok
+test_quota_does_not_fall_back (__main__.TransferAdmissionTests.test_quota_does_not_fall_back) ... ok
+test_selection_is_order_independent_with_unique_components (__main__.TransferAdmissionTests.test_selection_is_order_independent_with_unique_components) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.003s
+
+OK
