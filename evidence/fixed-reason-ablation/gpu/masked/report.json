@@ -1,0 +1,102 @@
+{
+  "status": "completed",
+  "variant": "masked",
+  "source_variant": "train",
+  "mask_preparation": {
+    "rows": 3700,
+    "removed_fixed_reason_labels": 56071,
+    "retained_full_dataset_labels": 279751,
+    "inputs_order_and_original_targets_unchanged": true
+  },
+  "spec_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+  "driver_sha256": "a0a67d72eff67a4b05d0c53a182b499d3ff55ea296e5b54d3b6e0a867619a090",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "training_run": true,
+  "completed_optimizer_updates": 32,
+  "completed_training_labels": 54187,
+  "logical_forward_reserved": 1333,
+  "logical_forward_completed": 1333,
+  "training_segments_backward_completed": 774,
+  "training_input_token_exposures": 573843,
+  "role_counts": {
+    "canary_standard": 1,
+    "canary_sparse": 1,
+    "canary_masked_standard": 1,
+    "canary_masked_sparse": 1,
+    "canary_zero_adapter": 1,
+    "before_dev": 197,
+    "before_val": 79,
+    "training": 774,
+    "after_dev": 197,
+    "after_val": 79,
+    "canary_disable_after_training": 1,
+    "canary_reloaded_checkpoint": 1
+  },
+  "resume_supported": false,
+  "model_loaded": true,
+  "model_parameter_count": 3085938688,
+  "load_seconds": 47.201,
+  "GPU_name": "NVIDIA GeForce RTX 3090",
+  "sparse_vs_standard_loss": {
+    "standard_sum": 93.72413635253906,
+    "selected_positions_sum": 93.72413635253906,
+    "target_tokens": 65,
+    "passed": true
+  },
+  "masked_loss_canary": {
+    "standard_sum": 268.9461364746094,
+    "selected_sum": 268.9461364746094,
+    "active_labels": 193,
+    "passed": true
+  },
+  "initial_adapter_sha256": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df",
+  "initial_frozen_parameters_sha256": "41694e8eb9d3bbf55a86fc898de7a19265c93b8720a47f4d84794fd7d040b888",
+  "trainable_parameter_count": 1843200,
+  "frozen_parameter_count": 3085938688,
+  "trainable_dtypes": [
+    "torch.float32"
+  ],
+  "zero_adapter_forward_equal": true,
+  "before_dev": {
+    "count": 197,
+    "target_tokens": 16220,
+    "loss_sum": 24157.373291015625,
+    "token_weighted_NLL": 1.4893571696063888,
+    "perplexity": 4.434244135720802
+  },
+  "before_val": {
+    "count": 79,
+    "target_tokens": 6887,
+    "loss_sum": 9933.03568649292,
+    "token_weighted_NLL": 1.4422877430656194,
+    "perplexity": 4.230362738083615
+  },
+  "after_dev": {
+    "count": 197,
+    "target_tokens": 16220,
+    "loss_sum": 11174.716366052628,
+    "token_weighted_NLL": 0.6889467549970794,
+    "perplexity": 1.991616767771589
+  },
+  "after_val": {
+    "count": 79,
+    "target_tokens": 6887,
+    "loss_sum": 4625.673384666443,
+    "token_weighted_NLL": 0.6716528800154556,
+    "perplexity": 1.957470111420315
+  },
+  "frozen_parameters_unchanged": true,
+  "disabled_adapter_matches_base": true,
+  "adapter_reload_verified": true,
+  "final_adapter_sha256": "0a89d8fe7dae49a9ad574bc803eed69b8a0fbc79d102b46e2f48b8073a68e461",
+  "checkpoint_directory": "step-032",
+  "logical_forward_unknown": 0,
+  "wall_seconds": 424.739,
+  "limitations": [
+    "Fixed32-update SFT pilot, not GRPO or original ToolRL-DR reproduction.",
+    "Teacher-forced held-out NLL is not generated tool-call accuracy or actual tool execution.",
+    "Inputs/order/segments/updates matched; effective labels and vocabulary-projection work differ, no equal-FLOPs claim.",
+    "Text-grouped development uses released training sources; semantic/pretraining isolation unknown.",
+    "Only LoRA and optimizer/RNG states saved privately; no base weights or checkpoints published."
+  ]
+}

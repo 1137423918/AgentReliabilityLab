@@ -13,10 +13,10 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 同后端三组 clean 生成对照已完成：**base 118/199、full32 107/199、mixed32 105/199**。本配方未显示微调后的 clean correct 提升；不能宣称扰动鲁棒性或泛化提升。 资源恢复保留全部旧结果，最终599次预留/597条已提交，两个历史未知仍扣额。[完整对照与边界](docs/generation-complete.md)。
 
 - [数据复用审计](docs/training-data.md)与[开发集、真实分词和标签预算](docs/training-study.md)。
-- [监督目标与行为审计](docs/training-alignment.md)：固定推理文本占Full监督标签16.7%；对全部597条已保存结果进行配对诊断，并准备只屏蔽固定正文的损失掩码。尚未用新掩码训练，未宣称效果提升。
+- [监督目标与行为审计](docs/training-alignment.md)：固定推理文本占Full监督标签16.7%；对全部597条已保存结果进行配对诊断，并准备只屏蔽固定正文的损失掩码，后续配对训练结果见下方。
 - [迁移评测输入准入](docs/bfcl-transfer-admission.md)：在读取参考答案前锁定250条BFCL派生输入，完成保护数据关联检查和10项CPU控制；尚未运行新模型评测，不是完整BFCL成绩。
 - [迁移评分与参考绑定](docs/bfcl-transfer-scoring.md)：14项CPU控制和250条参考构造校验调用通过；保留原匹配规则，并拦截表达式求值分支、单列解析状态。这是评分链路验证，尚无新模型成绩。
-- [固定正文屏蔽配对试验](docs/fixed-reason-ablation.md)：6项损失／梯度数值控制与真实数据调度预检通过，独立GPU训练协议已冻结；尚无新训练或生成成绩。
+- [固定正文屏蔽配对试验](docs/fixed-reason-ablation.md)：同初始化、同输入与同卡的两组各32步训练及完整核验已完成，共2,666次逻辑前向／零未知。整段验证NLL为Reference0.297588、Masked0.671653；外部生成效果尚未验证。
 - [实际 LoRA 配方、结果与核验边界](docs/lora-pilot.md)及[完整证据](evidence/lora-pilot/README.md)。
 - [持久生成进度与恢复阶段记录](docs/generation-recovery.md)：12 项服务器 CPU 控制通过，已评分结果不重新生成或评分；最终结果见上方完整对照。
 - [已保存调用的schema诊断](docs/tool-schema-diagnostics.md)：分别核对原始schema和上游FC投影。基线158/199例符合投影约束，其中41例仍未通过官方匹配；结构有效性不等于任务成功，部分Full对照尚无提升证据。

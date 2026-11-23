@@ -1,0 +1,9 @@
+{
+  "matching_runtime_processes": 0,
+  "controller_terminal": true,
+  "matched_training_complete": true,
+  "own_GPU_context_absent": true,
+  "source_and_inputs_unchanged": true,
+  "model_generation_calls": 0,
+  "private_checkpoint_and_data_bodies_not_exported": true
+}

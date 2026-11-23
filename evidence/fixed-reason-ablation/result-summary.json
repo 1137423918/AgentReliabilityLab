@@ -1,0 +1,58 @@
+{
+  "status": "matched_training_completed",
+  "protocol_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+  "pre_model_publication": {
+    "publication_commit": "e271b338633809cfcc772e2cc11885bd7c52624e",
+    "verified_utc": "2026-11-23T21:59:53.565962+00:00",
+    "HTTP": 200,
+    "protocol_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+    "before_GPU_launch": true,
+    "new_model_forwards_executed_before_public_verification": 0
+  },
+  "same_physical_GPU": true,
+  "total_logical_forwards_reserved": 2666,
+  "total_logical_forwards_completed": 2666,
+  "total_optimizer_updates": 64,
+  "new_unknown_forwards_or_updates": 0,
+  "training_resume_or_quality_retries": false,
+  "training_original_source_variant": "Full train3700",
+  "per_arm_input_token_exposures": 573843,
+  "per_arm_training_segments": 774,
+  "profiles": {
+    "reference": {
+      "updates": 32,
+      "active_training_labels": 65536,
+      "before_dev_NLL": 1.4893571696063888,
+      "before_val_NLL": 1.4422877430656194,
+      "after_dev_NLL": 0.2774598203700509,
+      "after_val_NLL": 0.2975882442190181,
+      "frozen_parameters_unchanged": true,
+      "adapter_reload_verified": true,
+      "final_adapter_sha256": "32d58200e02f4d53035c1b123b0b68df0d0e028272265d2f4666cef3b25d1424"
+    },
+    "masked": {
+      "updates": 32,
+      "active_training_labels": 54187,
+      "before_dev_NLL": 1.4893571696063888,
+      "before_val_NLL": 1.4422877430656194,
+      "after_dev_NLL": 0.6889467549970794,
+      "after_val_NLL": 0.6716528800154556,
+      "frozen_parameters_unchanged": true,
+      "adapter_reload_verified": true,
+      "final_adapter_sha256": "0a89d8fe7dae49a9ad574bc803eed69b8a0fbc79d102b46e2f48b8073a68e461"
+    }
+  },
+  "final_checkpoint_archive_verified": true,
+  "owned_processes_after": 0,
+  "own_GPU_context_absent": true,
+  "inputs_and_sources_unchanged": true,
+  "wall_seconds": 1005.314,
+  "old_Full_failed_run_preserved": true,
+  "old_generation_results_and_caps_unchanged": true,
+  "old_unknown_attempts_still_charged": 2,
+  "new_generation_allocated_or_executed": 0,
+  "not_tool_call_accuracy_or_robustness_gain": true,
+  "whole_assistant_NLL_includes_masked_prose": true,
+  "single_seed_fixed32_pilot": true,
+  "weights_optimizer_states_targets_and_vectors_private": true
+}

@@ -1,0 +1,37 @@
+{
+  "archive_complete": true,
+  "receipt": {
+    "controller_sha256": "c323192ad49a5987d94fba8d31417f313987c5cdf39f4846ec7043851e4a2d9d",
+    "protocol_sha256": "5a23c1ec65d46b4d6d565c42b76d00118e1edfc362f97b85d82584c8b64a75e2",
+    "models": {
+      "reference32": {
+        "checkpoint_manifest_sha256": "b8ce4eef1acf14db4b718e3b86bd664bf5c15562e534d8bc6faaf61ec84d3053",
+        "adapter_parameter_sha256": "32d58200e02f4d53035c1b123b0b68df0d0e028272265d2f4666cef3b25d1424",
+        "checkpoint_files_sha256": {
+          "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+          "adapter/adapter_config.json": "646c1787157238bb79181dca68a17c7e4a39738b51f59b803ac5e2cd02c2e5d3",
+          "adapter/adapter_model.safetensors": "01ffa8f69c8eaf0a8f2358cb253897b4cbe014a685d0151d9a6d9d89f4daba85",
+          "optimizer-and-rng.safetensors": "86be60b185dc1d830bd093d48b7144d9e76eade8d00d94d22fce3207b51bcf1e",
+          "training-state.json": "8247f95607f7c84d36af23ca57ab24d06618cb02ed978a4844740a080e3ed535"
+        },
+        "completed_optimizer_updates": 32
+      },
+      "masked32": {
+        "checkpoint_manifest_sha256": "501d552cf79f89ad2205e7ceadfc18f953d0f00781a18724b91b51724ee0c388",
+        "adapter_parameter_sha256": "0a89d8fe7dae49a9ad574bc803eed69b8a0fbc79d102b46e2f48b8073a68e461",
+        "checkpoint_files_sha256": {
+          "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+          "adapter/adapter_config.json": "646c1787157238bb79181dca68a17c7e4a39738b51f59b803ac5e2cd02c2e5d3",
+          "adapter/adapter_model.safetensors": "3b4f9497ec1fae59ce531fba3c562229e0e425f5c008fb4874083614ff1f20bc",
+          "optimizer-and-rng.safetensors": "b3da3beface0358b1531498abd59017b6235959f36250002b18b091059348cdf",
+          "training-state.json": "78df4d7ef27ec4b183f61b78d8078c97bab77d3d678dc2de013f4baf9287d336"
+        },
+        "completed_optimizer_updates": 32
+      }
+    },
+    "archive_relative_path": "models/fixed-reason-matched32-stage74-20261124",
+    "no_new_training_or_generation": true,
+    "weights_and_optimizer_states_private": true
+  },
+  "receipt_sha256": "9fdceadf95b9da26bd1f9ea16d837db824ad9ea260f4f458f707c351e0fa81e9"
+}
