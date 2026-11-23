@@ -1,0 +1,181 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 940,
+      "body_sha256": "04cc2d7692a7bf8f9344cec97f956e2e5e54fc6ac09aeecfd1308b136b97c649",
+      "request_body_sha256": "889698f519bcd131dc8100a04195d1f73a6061ac49ac7a31cf1be38d6824fbe1",
+      "usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 1100,
+        "total_tokens": 1143,
+        "prompt_tokens_details": {
+          "cached_tokens": 999
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 104,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "query"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1350,
+      "body_sha256": "53eaf5ab6cdb7a2108bb2a5abee994e0e6b909537c025b0b8c2f98a53878c621",
+      "request_body_sha256": "3ce9d21518783f20d00aeafc616a798490745593d2e6a96131754d9c219817d0",
+      "usage": {
+        "completion_tokens": 150,
+        "prompt_tokens": 1563,
+        "total_tokens": 1713,
+        "prompt_tokens_details": {
+          "cached_tokens": 1142
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 390,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 120,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_generation",
+              "pointers": [
+                "/variants",
+                "/unknown_attempts_still_charged",
+                "/all3_complete_comparison"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 997,
+      "body_sha256": "73648a18de2694ff3e2736919b318e5e1bac8927e859e70bb1a752c849a4eb0a",
+      "request_body_sha256": "86077e5e1eac8307a220e1ee3efe1f67f9bc6155efa874f21328b93200e46171",
+      "usage": {
+        "completion_tokens": 69,
+        "prompt_tokens": 2502,
+        "total_tokens": 2571,
+        "prompt_tokens_details": {
+          "cached_tokens": 1559
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 78,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 93,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_pilot",
+              "pointers": [
+                "/Full_optimizer_updates",
+                "/Mixed_optimizer_updates"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 3563,
+      "body_sha256": "793f80a2a87a2bb2467a680a680b4f83929ec984e100e8175237df323e417dad",
+      "request_body_sha256": "dc6ddb4424b0b6b3b9fb35c24f7dac9afb2a246728355187dd11fc5cf7346d83",
+      "usage": {
+        "completion_tokens": 758,
+        "prompt_tokens": 2758,
+        "total_tokens": 3516,
+        "prompt_tokens_details": {
+          "cached_tokens": 2570
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 1531,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1101,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "claim_supported",
+                "explanation",
+                "facts"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 8,
+              "selected_fact_references": [
+                {
+                  "report_id": "lora_pilot",
+                  "pointer": "/Full_optimizer_updates"
+                },
+                {
+                  "report_id": "lora_pilot",
+                  "pointer": "/Mixed_optimizer_updates"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/base/full199_completed"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/base/scored_cases"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/Full32/full199_completed"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/Full32/scored_cases"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/Full32/unknown_still_charged"
+                },
+                {
+                  "report_id": "lora_generation",
+                  "pointer": "/variants/Mixed32/full199_completed"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

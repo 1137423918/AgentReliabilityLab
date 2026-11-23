@@ -1,0 +1,8 @@
+{
+  "archive_sha256": "66cb0fe499886fa335ec307530b0769dc260a53e61b09863a9b306b6fedf6407",
+  "archive_bytes": 24863,
+  "payload_hashes_verified": 23,
+  "source_synced": 5,
+  "all_source_AST_unchanged_by_formatting": true,
+  "local_inputs_checked_before_sync": true
+}

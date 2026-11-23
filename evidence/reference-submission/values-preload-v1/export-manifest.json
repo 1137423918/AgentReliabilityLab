@@ -1,0 +1,113 @@
+{
+  "files": {
+    "controller-summary.json": {
+      "sha256": "3de3ed380ef6ac35db44bd5521385895ad9fcd6955522b8c1bd12ff41b01c3f4",
+      "original_sha256": "3de3ed380ef6ac35db44bd5521385895ad9fcd6955522b8c1bd12ff41b01c3f4",
+      "bytes": 1266,
+      "normalized": true
+    },
+    "cases-summary.json": {
+      "sha256": "efbb9b406fd34623a28ccc132049d62e5746b74d74423c3a7fbfbe1e5536d885",
+      "original_sha256": "efbb9b406fd34623a28ccc132049d62e5746b74d74423c3a7fbfbe1e5536d885",
+      "bytes": 1515,
+      "normalized": true
+    },
+    "operator/protocol.json": {
+      "sha256": "52fc2ddfc8bb841f816ea2b0e04e28b079a9332a6b0993f9e17668071982c5fd",
+      "original_sha256": "52fc2ddfc8bb841f816ea2b0e04e28b079a9332a6b0993f9e17668071982c5fd",
+      "bytes": 9507,
+      "normalized": true
+    },
+    "operator/run.py.txt": {
+      "sha256": "a7ba958de154586638eb3eaddcfca5d85a5596acc63d75fc607c9803d715c987",
+      "original_sha256": "cf8c7687ea65e3bf177a4231d0e3252a959dda4b618fa26fb55c07c5d9eb76dd",
+      "bytes": 21796,
+      "normalized": true
+    },
+    "operator/gpu_runtime.py.txt": {
+      "sha256": "167700941c9e2dc2147f2c1a85275b9597c5fc51cdae25ab0331d413f4e0b7ed",
+      "original_sha256": "f9e6ea140106575976b35b481bbb6d89bc9d4835a0bb77c14edae6543f2d1918",
+      "bytes": 3248,
+      "normalized": true
+    },
+    "operator/cpu_exec.py.txt": {
+      "sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "original_sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "bytes": 336,
+      "normalized": true
+    },
+    "operator/agent-sdk-identity.log": {
+      "sha256": "30dc280cb9367b36b615daa9a8dd17e50b605b52aae0c0e9b03ab97508b13867",
+      "original_sha256": "30dc280cb9367b36b615daa9a8dd17e50b605b52aae0c0e9b03ab97508b13867",
+      "bytes": 2605,
+      "normalized": true
+    },
+    "operator/native-artifact-identity.log": {
+      "sha256": "46ad4e0924b6caa2c1ac41dac06dfd9a9705af6f6c952de39d68ad0ef901548c",
+      "original_sha256": "46ad4e0924b6caa2c1ac41dac06dfd9a9705af6f6c952de39d68ad0ef901548c",
+      "bytes": 252,
+      "normalized": true
+    },
+    "operator/gpu-runtime-manifest.json": {
+      "sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "original_sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "bytes": 4703,
+      "normalized": true
+    },
+    "operator/cases.json": {
+      "sha256": "b3b5e957f03d7d5a5be8ce310708e8e2c84cda44da58fa0bb6f85933d9f7a69d",
+      "original_sha256": "b3b5e957f03d7d5a5be8ce310708e8e2c84cda44da58fa0bb6f85933d9f7a69d",
+      "bytes": 1976,
+      "normalized": true
+    },
+    "native/staging-protocol.json": {
+      "sha256": "5ba0d00f4383cd72d81ecf0f26f007f177335201d5a0a4a049f97987534aef60",
+      "original_sha256": "3eda8972cc973a5c871d662804f81e776cc52eac87f0031df2972666e9c969b5",
+      "bytes": 6624,
+      "normalized": true
+    },
+    "native/staging-report.json": {
+      "sha256": "8f3a766a57364e172486c89b6f830a0ef64d52c2f3b0c9845318fee6689916d4",
+      "original_sha256": "8f3a766a57364e172486c89b6f830a0ef64d52c2f3b0c9845318fee6689916d4",
+      "bytes": 9217,
+      "normalized": true
+    },
+    "tested-source/benchmarks/llamaindex_mcp_audit.py": {
+      "sha256": "7259248c499d57892b1d00412db3825a685af5262c4522c206a720452d1c59a9",
+      "original_sha256": "7259248c499d57892b1d00412db3825a685af5262c4522c206a720452d1c59a9",
+      "bytes": 21844,
+      "normalized": false
+    },
+    "tested-source/agent_lab/report_retrieval.py": {
+      "sha256": "fc11bc23b5f6bbc1eb2871da3fd13c7ffc7a4c4779e603f72e937e5ca6babdb8",
+      "original_sha256": "fc11bc23b5f6bbc1eb2871da3fd13c7ffc7a4c4779e603f72e937e5ca6babdb8",
+      "bytes": 5661,
+      "normalized": false
+    },
+    "tested-source/benchmarks/evidence_audit_case.py": {
+      "sha256": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+      "original_sha256": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+      "bytes": 3937,
+      "normalized": false
+    },
+    "native/startup-observations.json": {
+      "sha256": "ad482855fdbc00b7fbd9c5d0b9b72c67daa9cde0fcd3245f8c2b493d3121c8df",
+      "original_sha256": "ad482855fdbc00b7fbd9c5d0b9b72c67daa9cde0fcd3245f8c2b493d3121c8df",
+      "bytes": 60,
+      "normalized": true
+    },
+    "original-generation-state.json": {
+      "sha256": "934ebc8e98943056792137cec9d30f2f74bf05e157de58e514f1d52996deecd4",
+      "original_sha256": "934ebc8e98943056792137cec9d30f2f74bf05e157de58e514f1d52996deecd4",
+      "bytes": 202,
+      "normalized": true
+    },
+    "cleanup.json": {
+      "sha256": "230952f1b0532ae893630c2406f6ecb806fc7ad944bd6ffd6ae6e3db6d4f4263",
+      "original_sha256": "230952f1b0532ae893630c2406f6ecb806fc7ad944bd6ffd6ae6e3db6d4f4263",
+      "bytes": 216,
+      "normalized": true
+    }
+  },
+  "scope": "Metadata/source only; private model/MCP bodies, capabilities, environment, weights excluded."
+}

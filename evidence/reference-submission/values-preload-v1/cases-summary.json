@@ -1,0 +1,57 @@
+{
+  "case_plan": [
+    {
+      "policy": "all",
+      "case": "training_is_not_complete_generation"
+    },
+    {
+      "policy": "bm25",
+      "case": "separate_voltagent_validation_rounds"
+    },
+    {
+      "policy": "bm25",
+      "case": "training_is_not_complete_generation"
+    },
+    {
+      "policy": "all",
+      "case": "separate_voltagent_validation_rounds"
+    }
+  ],
+  "cases": [
+    {
+      "policy": "all",
+      "case": "training_is_not_complete_generation",
+      "label": "all--training_is_not_complete_generation",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    },
+    {
+      "policy": "bm25",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "bm25--separate_voltagent_validation_rounds",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    },
+    {
+      "policy": "bm25",
+      "case": "training_is_not_complete_generation",
+      "label": "bm25--training_is_not_complete_generation",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    },
+    {
+      "policy": "all",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "all--separate_voltagent_validation_rounds",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_accuracy": false,
+  "no_new_model_calls_by_exporter": true
+}

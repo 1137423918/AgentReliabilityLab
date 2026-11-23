@@ -1,0 +1,112 @@
+{
+  "cases": [
+    {
+      "label": "all--training_is_not_complete_generation",
+      "read_report_ids": [
+        "lora_generation",
+        "lora_pilot"
+      ],
+      "submission_errors": [
+        {
+          "status": "rejected",
+          "known_errors": [
+            "Every citation must support an observed fact"
+          ],
+          "error_sha256": "cf703b96f9cb5a738edcf7d52db8c4b50018d8bd5781107550d0292db4a6e1d0",
+          "error_first_line_type": "remote_or_other"
+        }
+      ],
+      "schema_validation": [
+        {
+          "typed_schema_valid": true
+        }
+      ],
+      "citation_metadata": [
+        {
+          "keys": [
+            "report_id",
+            "sha256"
+          ],
+          "report_id": "lora_generation",
+          "sha_character_length": 64,
+          "sha_matches_observed_source": true
+        },
+        {
+          "keys": [
+            "report_id",
+            "sha256"
+          ],
+          "report_id": "lora_pilot",
+          "sha_character_length": 64,
+          "sha_matches_observed_source": true
+        }
+      ]
+    },
+    {
+      "label": "bm25--separate_voltagent_validation_rounds",
+      "read_report_ids": [
+        "voltagent_ownership",
+        "voltagent_cleanup"
+      ],
+      "submission_errors": [
+        {
+          "status": "rejected",
+          "known_errors": [
+            "Claimed fact differs from actual report"
+          ],
+          "error_sha256": "0bacab4f28f9205d8f76d1fec58aed34464885abf722348c25ae2cb34724418f",
+          "error_first_line_type": "remote_or_other"
+        }
+      ],
+      "schema_validation": [
+        {
+          "typed_schema_valid": true
+        }
+      ],
+      "citation_metadata": [
+        {
+          "keys": [
+            "report_id",
+            "sha256"
+          ],
+          "report_id": "voltagent_ownership",
+          "sha_character_length": 64,
+          "sha_matches_observed_source": true
+        },
+        {
+          "keys": [
+            "report_id",
+            "sha256"
+          ],
+          "report_id": "voltagent_cleanup",
+          "sha_character_length": 64,
+          "sha_matches_observed_source": true
+        }
+      ]
+    },
+    {
+      "label": "bm25--training_is_not_complete_generation",
+      "read_report_ids": [
+        "lora_generation",
+        "lora_pilot"
+      ],
+      "submission_errors": [
+        {
+          "status": "rejected",
+          "known_errors": [],
+          "error_sha256": "db223381e22b5f25ab06cde2d489663398ec5d34977c6d5f4fbcc79ebff1106a",
+          "error_first_line_type": "pydantic"
+        }
+      ],
+      "schema_validation": [
+        {
+          "argument_JSON_valid": false,
+          "finish_reason": "length"
+        }
+      ],
+      "citation_metadata": []
+    }
+  ],
+  "no_model_calls": true,
+  "raw_arguments_not_exported": true
+}

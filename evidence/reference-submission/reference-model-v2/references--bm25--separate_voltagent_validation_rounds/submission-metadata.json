@@ -1,0 +1,42 @@
+{
+  "claim_supported": true,
+  "facts": [
+    {
+      "report_id": "voltagent_ownership",
+      "pointer": "/candidate_lifecycle",
+      "value_sha256": "3a3ef8910ae60f3ef780236a4558a51e0600200d11279bf7e0cb059d0ffb69f9"
+    },
+    {
+      "report_id": "voltagent_ownership",
+      "pointer": "/complete_package",
+      "value_sha256": "fa9b536440b80c88edef0bcc634d0ef19fd3478b7238e95f86fbad28b0ab920c"
+    },
+    {
+      "report_id": "voltagent_ownership",
+      "pointer": "/baseline_lifecycle",
+      "value_sha256": "89f004d28578973c62ad5c2c20367f1b0069dc1724527d3ea7add96382234fd3"
+    },
+    {
+      "report_id": "voltagent_cleanup",
+      "pointer": "/candidate_lifecycle_passed",
+      "value_sha256": "2c624232cdd221771294dfbb310aca000a0df6ac8b66b696d90ef06fdefb64a3"
+    },
+    {
+      "report_id": "voltagent_cleanup",
+      "pointer": "/complete_MCP_package_passed",
+      "value_sha256": "535fa30d7e25dd8a49f1536779734ec8286108d115da5045d77f3b4185d8f790"
+    }
+  ],
+  "citations": [
+    {
+      "report_id": "voltagent_cleanup",
+      "sha256": "1ab47c29a1e5903bc505d18c122d6d6ca0fb6ce660abddb49baafcbc699be7d5"
+    },
+    {
+      "report_id": "voltagent_ownership",
+      "sha256": "ebe6bdaf1676f90763088e6795a33ab4ad677032dc4e61a36a9d64fbab752fcc"
+    }
+  ],
+  "canonical_grading_recomputed_read_only": true,
+  "free_prose_not_exported": true
+}

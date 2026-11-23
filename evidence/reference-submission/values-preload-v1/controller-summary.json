@@ -1,0 +1,44 @@
+{
+  "protocol_sha256": "52fc2ddfc8bb841f816ea2b0e04e28b079a9332a6b0993f9e17668071982c5fd",
+  "source_archive_sha256": "e2bc92ebc2f17d3b924d9221c1541cb4dc37ec5e15be2eb0a60bbfc01a692ce8",
+  "terminal": true,
+  "model_started": false,
+  "model_ready": false,
+  "MCP_service_from_source": true,
+  "authorized_compute_port": 22012,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 10.043,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 166563840
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 43.686,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 14016512
+    }
+  ],
+  "operator_error": {
+    "type": "AssertionError",
+    "message": "Fresh host admission failed"
+  },
+  "GPU_guard_reason": null,
+  "GPU_monitor": null,
+  "GPU_probe_errors": [],
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "ports_closed": {
+    "18870": true,
+    "18871": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": null,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false,
+  "native_runtime_and_model_hashes_verified": true
+}

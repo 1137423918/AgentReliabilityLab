@@ -1,0 +1,175 @@
+{
+  "terminal": true,
+  "protocol_sha256": "10fc33edaa69d9846b72a6870b0614b429874cc05e807a9d23e051adb0a541b2",
+  "phases": [
+    {
+      "name": "format-changed",
+      "exit_code": 0,
+      "wall_seconds": 1.615,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "lint-changed",
+      "exit_code": 0,
+      "wall_seconds": 0.831,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "reference-unit-controls",
+      "exit_code": 0,
+      "wall_seconds": 0.75,
+      "peak_owned_RSS_bytes": 8650752
+    },
+    {
+      "name": "runtime-identity",
+      "exit_code": 0,
+      "wall_seconds": 3.128,
+      "peak_owned_RSS_bytes": 59113472
+    },
+    {
+      "name": "baseline-MCP-controls",
+      "exit_code": 0,
+      "wall_seconds": 9.595,
+      "peak_owned_RSS_bytes": 275623936
+    },
+    {
+      "name": "default-candidate-MCP-controls",
+      "exit_code": 0,
+      "wall_seconds": 10.696,
+      "peak_owned_RSS_bytes": 274112512
+    },
+    {
+      "name": "reference-MCP-controls",
+      "exit_code": 0,
+      "wall_seconds": 11.687,
+      "peak_owned_RSS_bytes": 273465344
+    }
+  ],
+  "new_neural_calls": 0,
+  "GPU_used": false,
+  "initial_memory_bytes": 122734931968,
+  "active_phase": "reference-MCP-controls",
+  "tested_source_sha256": {
+    "agent_lab/evidence_submission.py": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+    "benchmarks/llamaindex_mcp_audit.py": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+    "benchmarks/mcp_agent_controls.py": "8debb9ac98033ec842c40ba31a16e39fefa942943bca628911f0c239e0964949",
+    "benchmarks/reference_submission_controls.py": "f583c53459ec28c1c442ab0c1cb14ecc281ff04db418db1f4a6a2dc8ac6edcb8",
+    "tests/test_evidence_submission.py": "4548e4e8bf9024bcee02dc71f954537f1c137116f9ccdcd78a0b3812c7e7fc3e"
+  },
+  "runtime": {
+    "adapter": "[RUN]/source/benchmarks/llamaindex_mcp_audit.py",
+    "packages": {
+      "mcp": "2.3.0",
+      "llama-index-core": "0.14.26",
+      "llama-index-workflows": "2.26.1",
+      "openai": "3.57.0",
+      "httpx2": "2.16.2"
+    }
+  },
+  "default_request_bodies_identical": true,
+  "default_model_POSTs_per_profile": 9,
+  "reference_controls": {
+    "cases": [
+      {
+        "case": "normal",
+        "passed": true,
+        "backend_evidence_verified": true,
+        "fake_model_posts": 3,
+        "mcp_context_closed": true,
+        "model_request_sha256": [
+          "6a6d037c5932396df1dc067126cba84466e06dd3b53ecc91acf0d93c1690a102",
+          "81657778ab328b6ecc5a28f407f8dbb0b3c016fac13732fb59f7b8567e5f21a0",
+          "b7a473ee6a7b3a8b73e2300bed9d2bfb5678ae1dbc29bbbd5b1ee3f1aa1bf6f2"
+        ],
+        "submission_schema_fields": [
+          "claim_supported",
+          "explanation",
+          "facts"
+        ]
+      },
+      {
+        "case": "forged_fact",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 3,
+        "mcp_context_closed": true,
+        "model_request_sha256": [
+          "6a6d037c5932396df1dc067126cba84466e06dd3b53ecc91acf0d93c1690a102",
+          "81657778ab328b6ecc5a28f407f8dbb0b3c016fac13732fb59f7b8567e5f21a0",
+          "b7a473ee6a7b3a8b73e2300bed9d2bfb5678ae1dbc29bbbd5b1ee3f1aa1bf6f2"
+        ],
+        "submission_schema_fields": [
+          "claim_supported",
+          "explanation",
+          "facts"
+        ]
+      },
+      {
+        "case": "unread_submission",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 2,
+        "mcp_context_closed": true,
+        "model_request_sha256": [
+          "6a6d037c5932396df1dc067126cba84466e06dd3b53ecc91acf0d93c1690a102",
+          "81657778ab328b6ecc5a28f407f8dbb0b3c016fac13732fb59f7b8567e5f21a0"
+        ],
+        "submission_schema_fields": [
+          "claim_supported",
+          "explanation",
+          "facts"
+        ]
+      },
+      {
+        "case": "plain_answer",
+        "passed": true,
+        "backend_evidence_verified": false,
+        "fake_model_posts": 1,
+        "mcp_context_closed": true,
+        "model_request_sha256": [
+          "6a6d037c5932396df1dc067126cba84466e06dd3b53ecc91acf0d93c1690a102"
+        ],
+        "submission_schema_fields": [
+          "claim_supported",
+          "explanation",
+          "facts"
+        ]
+      },
+      {
+        "scenario": "unused_read_not_cited",
+        "case": "normal",
+        "passed": true,
+        "backend_evidence_verified": true,
+        "fake_model_posts": 4,
+        "mcp_context_closed": true,
+        "model_request_sha256": [
+          "6a6d037c5932396df1dc067126cba84466e06dd3b53ecc91acf0d93c1690a102",
+          "81657778ab328b6ecc5a28f407f8dbb0b3c016fac13732fb59f7b8567e5f21a0",
+          "1818c683dca73dd1106b76363a0e427fe54392a6395191c531cc87957d16bee1",
+          "0f5a2821378ff81bcf50c1399dcbbd7976f1d8ffd5a83cf3e8878d3d606e0fe3"
+        ],
+        "submission_schema_fields": [
+          "claim_supported",
+          "explanation",
+          "facts"
+        ]
+      }
+    ],
+    "passed": 5,
+    "neural_calls": 0,
+    "scripted_model_POSTs": 13
+  },
+  "ready": true,
+  "MCP_server_exit_code": -15,
+  "MCP_port_closed": true,
+  "owned_after": 0,
+  "wall_seconds": 46.53,
+  "final_source_sha256": {
+    "agent_lab/evidence_submission.py": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+    "benchmarks/llamaindex_mcp_audit.py": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+    "benchmarks/mcp_agent_controls.py": "8debb9ac98033ec842c40ba31a16e39fefa942943bca628911f0c239e0964949",
+    "benchmarks/reference_submission_controls.py": "f583c53459ec28c1c442ab0c1cb14ecc281ff04db418db1f4a6a2dc8ac6edcb8",
+    "tests/test_evidence_submission.py": "4548e4e8bf9024bcee02dc71f954537f1c137116f9ccdcd78a0b3812c7e7fc3e"
+  },
+  "unformatted_inputs_unchanged": true
+}

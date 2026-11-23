@@ -1,0 +1,66 @@
+{
+  "scope": "Known-artifact application development; not held-out model accuracy, autonomous repository repair, or a causal retrieval benchmark.",
+  "corpus_reports": 24,
+  "corpus_source_commit": "301220730b5c740ee847f0c119c02caf612b9f86",
+  "values_source_commit": "281dd0b6a702cb1890890f3d9de4c2022dc7f07a",
+  "references_source_commit": "6861ce1f477d30602323a9fbf515b6a144b47147",
+  "frozen_questions": 2,
+  "required_leaf_facts_each": 7,
+  "values_model": {
+    "planned": 4,
+    "completed": 3,
+    "passed": 0,
+    "not_started": 1,
+    "HTTP_attempts": 12,
+    "complete_model_reply_bodies": 12,
+    "unknown_attempts": 0,
+    "stop": "GPU_observation_stale; final all/VoltAgent task not started"
+  },
+  "reference_model": {
+    "planned": 2,
+    "completed": 2,
+    "passed": 1,
+    "not_started": 0,
+    "HTTP_attempts": 8,
+    "complete_model_reply_bodies": 8,
+    "unmatched_reply_count": 0,
+    "guard_reason": null,
+    "evaluation_completed": true
+  },
+  "combined_application_HTTP_attempts": 20,
+  "application_group_cap": 32,
+  "maximum_after_declared_profile": 28,
+  "preload_failures": [
+    {
+      "profile": "values-preload-v1",
+      "model_HTTP_attempts": 0
+    },
+    {
+      "profile": "reference-preload-v1",
+      "model_HTTP_attempts": 0
+    }
+  ],
+  "CPU_controls": {
+    "module": 8,
+    "reference_real_MCP_scripted_scenarios": 5,
+    "reference_scripted_model_POSTs": 13,
+    "legacy_scenarios_each": 4,
+    "legacy_scripted_model_POSTs_each": 9,
+    "legacy_all9_serialized_request_bodies_identical": true,
+    "neural_calls": 0
+  },
+  "canonical_verifier_and_grader_unchanged": true,
+  "model_still_selects_verdict_and_fact_references": true,
+  "values_and_source_hashes_bound_from_actual_reads": true,
+  "no_gold_in_MCP_catalog": true,
+  "free_prose_semantics_verified": false,
+  "blind_evaluation": false,
+  "model_training_performed": false,
+  "old_results_regraded": false,
+  "homepage_updated": false,
+  "native_identity_mode": {
+    "cached_unchanged_stat_files": 23,
+    "freshly_rehashed_files": 0
+  },
+  "resources": "Shared node; four selected logical CPUs on distinct cores/nice19; SMT siblings not reserved. Explicit model-v2 admission uses two5s idle+iowait deltas, global load diagnostic only. GPU/RSS/memory/30s stale guards unchanged. Latency not controlled across profiles."
+}

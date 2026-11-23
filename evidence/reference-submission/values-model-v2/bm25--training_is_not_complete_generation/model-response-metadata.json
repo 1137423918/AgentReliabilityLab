@@ -1,0 +1,139 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 941,
+      "body_sha256": "0d2ea05aa339297805e557cd951efc41c7b859708d39513bc687a74b338e4e76",
+      "request_body_sha256": "a2fb73dbf5f9a92736bc5948fe6d33fa1ba33ea00b7859f487fd4ea9724c7fab",
+      "usage": {
+        "completion_tokens": 43,
+        "prompt_tokens": 1190,
+        "total_tokens": 1233,
+        "prompt_tokens_details": {
+          "cached_tokens": 1089
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 104,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "query"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1459,
+      "body_sha256": "f1678276a12cdfd189da8ffb54e91b3bbfea3d8291c9ae9e973a1fa56e37ddb3",
+      "request_body_sha256": "fe299421e6f3406a64e790a5a638b51f8b63b68bb3edd4484599afb25b63429c",
+      "usage": {
+        "completion_tokens": 164,
+        "prompt_tokens": 1653,
+        "total_tokens": 1817,
+        "prompt_tokens_details": {
+          "cached_tokens": 1232
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 498,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 120,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_generation",
+              "pointers": [
+                "/variants",
+                "/unknown_attempts_still_charged",
+                "/all3_complete_comparison"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1006,
+      "body_sha256": "2d104b380684471ac64230f1986bb13d85032d1c53ba7d8390c0451e38b1716e",
+      "request_body_sha256": "1c0aeaeb85e997ed12f5cf4a7adc0d549c2196c7029ccd1f39b8149603593fda",
+      "usage": {
+        "completion_tokens": 69,
+        "prompt_tokens": 2606,
+        "total_tokens": 2675,
+        "prompt_tokens_details": {
+          "cached_tokens": 1649
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 84,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 93,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_pilot",
+              "pointers": [
+                "/Full_optimizer_updates",
+                "/Mixed_optimizer_updates"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 4451,
+      "body_sha256": "cda47647796aed9825a1bc1c4e2ef8d59ba0482151acae081c52ccbbb8d12ad9",
+      "request_body_sha256": "e96410f41fde109aeee550dd92ecd3febef6a30a67d4ef7ba1456f1e2a424009",
+      "usage": {
+        "completion_tokens": 1024,
+        "prompt_tokens": 2862,
+        "total_tokens": 3886,
+        "prompt_tokens_details": {
+          "cached_tokens": 2674
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "length",
+          "content_bytes": 1849,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1637,
+              "argument_json_valid": false
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "case_plan": [
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "references--bm25--separate_voltagent_validation_rounds"
+    },
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "training_is_not_complete_generation",
+      "label": "references--bm25--training_is_not_complete_generation"
+    }
+  ],
+  "cases": [
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "references--bm25--separate_voltagent_validation_rounds",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    },
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "training_is_not_complete_generation",
+      "label": "references--bm25--training_is_not_complete_generation",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_accuracy": false,
+  "no_new_model_calls_by_exporter": true
+}

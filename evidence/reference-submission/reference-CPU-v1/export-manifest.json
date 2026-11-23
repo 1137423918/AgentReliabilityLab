@@ -1,0 +1,142 @@
+{
+  "files": {
+    "run-report.json": {
+      "sha256": "330125a5c7f8ab9b50fa0a6d60bc06a36d2677bee90a25f76f6bd2230ce007db",
+      "original_sha256": "1021fb669ce64a434347377b0eb7123897e7209f2497444b5de298460b7a2f56",
+      "bytes": 5834,
+      "normalized": true
+    },
+    "operator/protocol.json": {
+      "sha256": "10fc33edaa69d9846b72a6870b0614b429874cc05e807a9d23e051adb0a541b2",
+      "original_sha256": "10fc33edaa69d9846b72a6870b0614b429874cc05e807a9d23e051adb0a541b2",
+      "bytes": 7749,
+      "normalized": false
+    },
+    "operator/run_cpu.py.txt": {
+      "sha256": "ccb73ce8a44ed67150d91b77cf0f28c29a8fcc04759281c69d6de8983cb259d7",
+      "original_sha256": "45065bf6df802e898917bb3e8f2f6b2a2b8280b3713fd5cddc31a720d623402d",
+      "bytes": 9022,
+      "normalized": true
+    },
+    "operator/exec_child.py.txt": {
+      "sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443,
+      "normalized": false
+    },
+    "logs/format-changed.log": {
+      "sha256": "a68018e0301d06e8ccd1518cd8a969c43dde8ed9a317509ad15bbc8d7198ea0f",
+      "original_sha256": "a68018e0301d06e8ccd1518cd8a969c43dde8ed9a317509ad15bbc8d7198ea0f",
+      "bytes": 20,
+      "normalized": true
+    },
+    "logs/lint-changed.log": {
+      "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "original_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+      "bytes": 19,
+      "normalized": true
+    },
+    "logs/reference-unit-controls.log": {
+      "sha256": "ad863788c82dc769545a99c3328fc0912d37488e8753b9ea04513eb79bf002b5",
+      "original_sha256": "ad863788c82dc769545a99c3328fc0912d37488e8753b9ea04513eb79bf002b5",
+      "bytes": 1466,
+      "normalized": true
+    },
+    "logs/runtime-identity.log": {
+      "sha256": "b880225680ca41800d71d18ecc507b3215568f2f96269ce2f36835172c5290d2",
+      "original_sha256": "508821140a3e9ef6ec6b29495ae977b738b1ed51784cc2cdd26736f00bc43f76",
+      "bytes": 199,
+      "normalized": true
+    },
+    "logs/baseline-MCP-controls.log": {
+      "sha256": "e193c47b0473d7fffcfab86acd9e2fecce6d11a1bb4d8ae6cd9321f8239d8129",
+      "original_sha256": "e193c47b0473d7fffcfab86acd9e2fecce6d11a1bb4d8ae6cd9321f8239d8129",
+      "bytes": 1607,
+      "normalized": true
+    },
+    "logs/default-candidate-MCP-controls.log": {
+      "sha256": "e193c47b0473d7fffcfab86acd9e2fecce6d11a1bb4d8ae6cd9321f8239d8129",
+      "original_sha256": "e193c47b0473d7fffcfab86acd9e2fecce6d11a1bb4d8ae6cd9321f8239d8129",
+      "bytes": 1607,
+      "normalized": true
+    },
+    "logs/reference-MCP-controls.log": {
+      "sha256": "6071deb1befce3328e1499a4ed6092cc5435b3062308810965bc074f20b1ed10",
+      "original_sha256": "6071deb1befce3328e1499a4ed6092cc5435b3062308810965bc074f20b1ed10",
+      "bytes": 2123,
+      "normalized": true
+    },
+    "logs/mcp-server.log": {
+      "sha256": "3b83e278bf1b3fe45ed7c3eb76f3319c5dd545cf08a3d4ce277610795aa3f76f",
+      "original_sha256": "3b83e278bf1b3fe45ed7c3eb76f3319c5dd545cf08a3d4ce277610795aa3f76f",
+      "bytes": 542,
+      "normalized": true
+    },
+    "controls/baseline.json": {
+      "sha256": "c8bab272745bc4059dc0d0db7d7b1f0fbb9ed484d870d0bea052863d928a2bee",
+      "original_sha256": "c8bab272745bc4059dc0d0db7d7b1f0fbb9ed484d870d0bea052863d928a2bee",
+      "bytes": 2120,
+      "normalized": true
+    },
+    "controls/default-candidate.json": {
+      "sha256": "c8bab272745bc4059dc0d0db7d7b1f0fbb9ed484d870d0bea052863d928a2bee",
+      "original_sha256": "c8bab272745bc4059dc0d0db7d7b1f0fbb9ed484d870d0bea052863d928a2bee",
+      "bytes": 2120,
+      "normalized": true
+    },
+    "controls/ranked.json": {
+      "sha256": "ad9013ce2876a27d786967a10f2b56c0fe25f6e415475af1745ce6b4f9e87b74",
+      "original_sha256": "ad9013ce2876a27d786967a10f2b56c0fe25f6e415475af1745ce6b4f9e87b74",
+      "bytes": 2707,
+      "normalized": true
+    },
+    "tested-source/agent_lab/evidence_submission.py": {
+      "sha256": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+      "original_sha256": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+      "bytes": 3722,
+      "normalized": false
+    },
+    "tested-source/benchmarks/llamaindex_mcp_audit.py": {
+      "sha256": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+      "original_sha256": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+      "bytes": 24156,
+      "normalized": false
+    },
+    "tested-source/benchmarks/mcp_agent_controls.py": {
+      "sha256": "8debb9ac98033ec842c40ba31a16e39fefa942943bca628911f0c239e0964949",
+      "original_sha256": "8debb9ac98033ec842c40ba31a16e39fefa942943bca628911f0c239e0964949",
+      "bytes": 9274,
+      "normalized": false
+    },
+    "tested-source/benchmarks/reference_submission_controls.py": {
+      "sha256": "f583c53459ec28c1c442ab0c1cb14ecc281ff04db418db1f4a6a2dc8ac6edcb8",
+      "original_sha256": "f583c53459ec28c1c442ab0c1cb14ecc281ff04db418db1f4a6a2dc8ac6edcb8",
+      "bytes": 2175,
+      "normalized": false
+    },
+    "tested-source/tests/test_evidence_submission.py": {
+      "sha256": "4548e4e8bf9024bcee02dc71f954537f1c137116f9ccdcd78a0b3812c7e7fc3e",
+      "original_sha256": "4548e4e8bf9024bcee02dc71f954537f1c137116f9ccdcd78a0b3812c7e7fc3e",
+      "bytes": 6389,
+      "normalized": false
+    },
+    "tested-input/evidence/report-retrieval/corpus/catalog.json": {
+      "sha256": "e5234baa2b8dee2a3f6d0e43a055ae2c9491cf9c74ce1889659853b183bf8b9c",
+      "original_sha256": "e5234baa2b8dee2a3f6d0e43a055ae2c9491cf9c74ce1889659853b183bf8b9c",
+      "bytes": 10579,
+      "normalized": false
+    },
+    "tested-source/baseline-adapter.py": {
+      "sha256": "7259248c499d57892b1d00412db3825a685af5262c4522c206a720452d1c59a9",
+      "original_sha256": "7259248c499d57892b1d00412db3825a685af5262c4522c206a720452d1c59a9",
+      "bytes": 21844,
+      "normalized": false
+    },
+    "cleanup.json": {
+      "sha256": "2b819e76a7b94a950960ee5b997401bbbeb41ffb6b545a99b8ea9dc9bc34fbaa",
+      "bytes": 200,
+      "normalized": false
+    }
+  },
+  "scope": "Metadata and tested source only; model wire bodies, capability handles, environment and weights excluded."
+}

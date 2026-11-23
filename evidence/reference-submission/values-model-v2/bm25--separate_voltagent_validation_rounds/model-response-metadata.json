@@ -1,0 +1,149 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 897,
+      "body_sha256": "91dc50a8fb2079098f1156a305e09c90a4c53a0182e09afe55208a792d8d3e74",
+      "request_body_sha256": "8b01f4988bc43731d1ee66b5d76122efc729ede45dae5f38519b87d4ba3f016d",
+      "usage": {
+        "completion_tokens": 35,
+        "prompt_tokens": 1190,
+        "total_tokens": 1225,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 65,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "query"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1254,
+      "body_sha256": "bb65506c4afa3762d96d3b5f7f96114ebdda67c9848c387516d68976217a77cd",
+      "request_body_sha256": "b5a697853211c419de8bcd548636115f66055d2007cff07b05adb24422b33374",
+      "usage": {
+        "completion_tokens": 125,
+        "prompt_tokens": 1636,
+        "total_tokens": 1761,
+        "prompt_tokens_details": {
+          "cached_tokens": 1224
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 304,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 115,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "voltagent_ownership",
+              "pointers": [
+                "/baseline_lifecycle",
+                "/candidate_lifecycle",
+                "/complete_package"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1131,
+      "body_sha256": "a0b2392b599fed48c59ae8db932e7b0c5b09d8445caddec31c18aff60a95ecf6",
+      "request_body_sha256": "f3f26cc9e95706a4770626655ad46038ec804978fd8b2e2b6aca5734460c0b30",
+      "usage": {
+        "completion_tokens": 95,
+        "prompt_tokens": 1988,
+        "total_tokens": 2083,
+        "prompt_tokens_details": {
+          "cached_tokens": 1760
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 162,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 138,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "voltagent_cleanup",
+              "pointers": [
+                "/baseline_lifecycle_failed",
+                "/candidate_lifecycle_passed",
+                "/complete_MCP_package_passed"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 3731,
+      "body_sha256": "600f6bd890ae89d2ca7ec94568a039d804b22dbc2a706ea0708141e2799c2729",
+      "request_body_sha256": "3e7fd83f0bfa9b806b306e7f0e241cebc25cc6c08d6a06e5307d31b8fa77d262",
+      "usage": {
+        "completion_tokens": 816,
+        "prompt_tokens": 2280,
+        "total_tokens": 3096,
+        "prompt_tokens_details": {
+          "cached_tokens": 2082
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 1430,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1354,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "claim_supported",
+                "explanation",
+                "facts",
+                "citations"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 5
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

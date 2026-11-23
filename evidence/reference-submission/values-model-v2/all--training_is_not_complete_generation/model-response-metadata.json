@@ -1,0 +1,147 @@
+{
+  "responses": [
+    {
+      "http_status": 200,
+      "body_bytes": 833,
+      "body_sha256": "403cee898c45e6518a93df0b98aca1b887d87638ffb96a88a807164c756385a6",
+      "request_body_sha256": "53b2259aee2b61fc192e628c0cf01c4318c8d9c3dd51562f65e0a1a0d21c8de2",
+      "usage": {
+        "completion_tokens": 14,
+        "prompt_tokens": 1051,
+        "total_tokens": 1065,
+        "prompt_tokens_details": {
+          "cached_tokens": 0
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 17,
+          "tool_calls": [
+            {
+              "name": "list_reports",
+              "argument_bytes": 2,
+              "argument_json_valid": true,
+              "argument_keys": [],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1924,
+      "body_sha256": "48bc24a326cdf951ec2d17061df79b3eb6f0db9529b93a21fc448051ed6bb7d2",
+      "request_body_sha256": "976244c509f9eeb1ee65896b1bde5843308128454b0a3d9f253085b52c34d58b",
+      "usage": {
+        "completion_tokens": 267,
+        "prompt_tokens": 2376,
+        "total_tokens": 2643,
+        "prompt_tokens_details": {
+          "cached_tokens": 1064
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 961,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 120,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_generation",
+              "pointers": [
+                "/variants",
+                "/unknown_attempts_still_charged",
+                "/all3_complete_comparison"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 1052,
+      "body_sha256": "090d78f4b541ed78f3966dfa6e8708dbbbac3965c00e1551de9c0c5deada2187",
+      "request_body_sha256": "8d617248f976e57e358d102eee26f7b2683081cad63176359d46804236535fee",
+      "usage": {
+        "completion_tokens": 79,
+        "prompt_tokens": 3432,
+        "total_tokens": 3511,
+        "prompt_tokens_details": {
+          "cached_tokens": 2372
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 100,
+          "tool_calls": [
+            {
+              "name": "read_report",
+              "argument_bytes": 120,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "report_id",
+                "pointers"
+              ],
+              "report_id": "lora_pilot",
+              "pointers": [
+                "/Full_optimizer_updates",
+                "/Mixed_optimizer_updates",
+                "/supervised_labels_each"
+              ],
+              "fact_count": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "http_status": 200,
+      "body_bytes": 4066,
+      "body_sha256": "bd874dbea45b59d0f811249888617d0ba03633549b174015a5351baa54538c35",
+      "request_body_sha256": "5ef037400e3ffac6a12338944f2d38a99e87d70429ee4942c4b3d0b2e3f50e0c",
+      "usage": {
+        "completion_tokens": 982,
+        "prompt_tokens": 3711,
+        "total_tokens": 4693,
+        "prompt_tokens_details": {
+          "cached_tokens": 3510
+        }
+      },
+      "choices": [
+        {
+          "finish_reason": "tool_calls",
+          "content_bytes": 1524,
+          "tool_calls": [
+            {
+              "name": "submit_assessment",
+              "argument_bytes": 1577,
+              "argument_json_valid": true,
+              "argument_keys": [
+                "claim_supported",
+                "explanation",
+                "facts",
+                "citations"
+              ],
+              "report_id": null,
+              "pointers": null,
+              "fact_count": 8
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

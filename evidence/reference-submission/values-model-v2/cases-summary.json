@@ -1,0 +1,392 @@
+{
+  "case_plan": [
+    {
+      "policy": "all",
+      "case": "training_is_not_complete_generation"
+    },
+    {
+      "policy": "bm25",
+      "case": "separate_voltagent_validation_rounds"
+    },
+    {
+      "policy": "bm25",
+      "case": "training_is_not_complete_generation"
+    },
+    {
+      "policy": "all",
+      "case": "separate_voltagent_validation_rounds"
+    }
+  ],
+  "cases": [
+    {
+      "policy": "all",
+      "case": "training_is_not_complete_generation",
+      "label": "all--training_is_not_complete_generation",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Full_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Mixed_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/base/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/full32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/mixed32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/unknown_attempts_still_charged",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/all3_complete_comparison",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": "EvidenceError",
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "9a39c4e955cea7e12a911cfcc31477b1a8be9abe9449dd793d215715dc7d1197"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_generation",
+          "pointers": [
+            "/variants",
+            "/unknown_attempts_still_charged",
+            "/all3_complete_comparison"
+          ],
+          "result_sha256": "3e0b56458c95596f8184139afe20b80a983c1bec67fca50f12b7133e457bb394"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_pilot",
+          "pointers": [
+            "/Full_optimizer_updates",
+            "/Mixed_optimizer_updates",
+            "/supervised_labels_each"
+          ],
+          "result_sha256": "8ad520e3859f169e1bc655a05cb4bdf27f164f5804926ee95935c7a8829809b8"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "rejected",
+          "result_sha256": "99f73bf8b61cfe8e87b1dad3edf2746ff2a2078c4195383bba0dbb8a592cacc2"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 4,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "52c8c5b93c627d9540f46c556334b0586d3b479e300b1e4e4905faa8f39a7ae6",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 4,
+      "request_body_bytes": 40180,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 4,
+      "unknown_header_observations": 0,
+      "wire_events": 30,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 10570,
+      "model_reported_completion_tokens": 1342,
+      "budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "policy": "bm25",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "bm25--separate_voltagent_validation_rounds",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "voltagent_ownership",
+            "pointer": "/baseline_lifecycle/failed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_ownership",
+            "pointer": "/baseline_lifecycle/passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_ownership",
+            "pointer": "/candidate_lifecycle/passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_ownership",
+            "pointer": "/complete_package/passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_ownership",
+            "pointer": "/complete_package/includes_lifecycle",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_cleanup",
+            "pointer": "/candidate_lifecycle_passed",
+            "reason": "missing"
+          },
+          {
+            "report_id": "voltagent_cleanup",
+            "pointer": "/complete_MCP_package_passed",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": "EvidenceError",
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "9a39c4e955cea7e12a911cfcc31477b1a8be9abe9449dd793d215715dc7d1197"
+        },
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "selected_ids": [
+            "voltagent_ownership",
+            "voltagent_cleanup",
+            "upstream_prs",
+            "mcp_gpu_wire"
+          ],
+          "metadata_bytes": 1423,
+          "catalog_bytes": 5272
+        },
+        {
+          "tool": "read_report",
+          "report_id": "voltagent_ownership",
+          "pointers": [
+            "/baseline_lifecycle",
+            "/candidate_lifecycle",
+            "/complete_package"
+          ],
+          "result_sha256": "61f36e6dc5f7947104e164100b7cd7cfcb0bd2a691817659b9301ff18994f444"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "voltagent_cleanup",
+          "pointers": [
+            "/baseline_lifecycle_failed",
+            "/candidate_lifecycle_passed",
+            "/complete_MCP_package_passed"
+          ],
+          "result_sha256": "60d05d881baada46465d07d3e5f473f6fa7a68e43aa3bfa4751e89003494a0ab"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "rejected",
+          "result_sha256": "a4be80289440447b4ce962e4f10404b2d01ade1bb512329fe9f447f3b7168a6d"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 4,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "de596ff50ff78016c7cb29aab9f1f3c6e6308d26b4f62100186b92a45877da75",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 4,
+      "request_body_bytes": 26161,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 4,
+      "unknown_header_observations": 0,
+      "wire_events": 30,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 7094,
+      "model_reported_completion_tokens": 1071,
+      "budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "policy": "bm25",
+      "case": "training_is_not_complete_generation",
+      "label": "bm25--training_is_not_complete_generation",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Full_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Mixed_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/base/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/full32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/mixed32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/unknown_attempts_still_charged",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/all3_complete_comparison",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": "EvidenceError",
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "9a39c4e955cea7e12a911cfcc31477b1a8be9abe9449dd793d215715dc7d1197"
+        },
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "selected_ids": [
+            "lora_generation",
+            "lora_pilot",
+            "mcp_wire",
+            "source_navigation"
+          ],
+          "metadata_bytes": 1524,
+          "catalog_bytes": 5272
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_generation",
+          "pointers": [
+            "/variants",
+            "/unknown_attempts_still_charged",
+            "/all3_complete_comparison"
+          ],
+          "result_sha256": "3e0b56458c95596f8184139afe20b80a983c1bec67fca50f12b7133e457bb394"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_pilot",
+          "pointers": [
+            "/Full_optimizer_updates",
+            "/Mixed_optimizer_updates"
+          ],
+          "result_sha256": "f1267f6baa3e685dd65809307070a220521c687d2ae4cc42bac1ce1403304fde"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "rejected",
+          "result_sha256": "99c630e0cf5d3089b2735d18853ee649bb3475679ed9ca7534410e6a39bcc054"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 3,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "de51477d5692e8073f56e3321410804de7987f5399e6e0d4c8a94a240add5d03",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 4,
+      "request_body_bytes": 29665,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 4,
+      "unknown_header_observations": 0,
+      "wire_events": 28,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 8311,
+      "model_reported_completion_tokens": 1300,
+      "budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "policy": "all",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "all--separate_voltagent_validation_rounds",
+      "state_directory_exists": false,
+      "result_present": false,
+      "outcome": "not_started"
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_accuracy": false,
+  "no_new_model_calls_by_exporter": true
+}

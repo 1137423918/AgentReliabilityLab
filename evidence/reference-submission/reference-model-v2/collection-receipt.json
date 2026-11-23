@@ -1,0 +1,8 @@
+{
+  "profile": "model-v2",
+  "archive_sha256": "411b56a6a766cff384f05a386084412a53fea65f38d18e7e70f7b96ba4dd3e3e",
+  "archive_bytes": 50155,
+  "payload_hashes_verified": 28,
+  "local_code_matches_tested_source": true,
+  "no_code_synchronized": true
+}

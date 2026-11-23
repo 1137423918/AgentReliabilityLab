@@ -1,0 +1,411 @@
+{
+  "protocol_sha256": "da35864b5d11d5a377021ecae56725e34a74d95969f5de80b0fbb7e09027e73c",
+  "source_archive_sha256": "deb89b66c4cb71e664f2303349f03b340fa6935cb65309c762da052d1f2034f5",
+  "terminal": true,
+  "model_started": false,
+  "model_ready": false,
+  "MCP_service_from_source": true,
+  "authorized_compute_port": 22012,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 8.928,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 158560256
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 158.631,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 14094336
+    }
+  ],
+  "declared_cases": 2,
+  "completed_cases": 0,
+  "cases_passed": 0,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Same host admission thresholds not met within300s; no model started"
+  },
+  "GPU_guard_reason": null,
+  "GPU_monitor": null,
+  "GPU_probe_errors": [],
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "ports_closed": {
+    "18870": true,
+    "18871": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": null,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false,
+  "native_runtime_and_model_hashes_verified": true,
+  "host_admission_samples": [
+    {
+      "observed_utc": "2026-11-23T16:19:49.001097+00:00",
+      "elapsed_seconds": 0.0,
+      "available_memory_bytes": 121133895680,
+      "load_average_1m": 115.06,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:19:54.844765+00:00",
+      "elapsed_seconds": 5.844,
+      "available_memory_bytes": 121487060992,
+      "load_average_1m": 120.74,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:00.177650+00:00",
+      "elapsed_seconds": 11.177,
+      "available_memory_bytes": 121587224576,
+      "load_average_1m": 119.56,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:05.319175+00:00",
+      "elapsed_seconds": 16.318,
+      "available_memory_bytes": 121615925248,
+      "load_average_1m": 118.15,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:11.081390+00:00",
+      "elapsed_seconds": 22.08,
+      "available_memory_bytes": 124323774464,
+      "load_average_1m": 117.18,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:16.465959+00:00",
+      "elapsed_seconds": 27.465,
+      "available_memory_bytes": 124152590336,
+      "load_average_1m": 116.28,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:21.573434+00:00",
+      "elapsed_seconds": 32.572,
+      "available_memory_bytes": 120760090624,
+      "load_average_1m": 121.47,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:26.736448+00:00",
+      "elapsed_seconds": 37.735,
+      "available_memory_bytes": 121494261760,
+      "load_average_1m": 116.54,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:31.988287+00:00",
+      "elapsed_seconds": 42.987,
+      "available_memory_bytes": 121611251712,
+      "load_average_1m": 116.18,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:37.383338+00:00",
+      "elapsed_seconds": 48.382,
+      "available_memory_bytes": 121506836480,
+      "load_average_1m": 111.6,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:42.922560+00:00",
+      "elapsed_seconds": 53.922,
+      "available_memory_bytes": 124307681280,
+      "load_average_1m": 107.71,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:48.252822+00:00",
+      "elapsed_seconds": 59.252,
+      "available_memory_bytes": 124405645312,
+      "load_average_1m": 104.21,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:54.113955+00:00",
+      "elapsed_seconds": 65.113,
+      "available_memory_bytes": 123151228928,
+      "load_average_1m": 98.18,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:20:59.709374+00:00",
+      "elapsed_seconds": 70.708,
+      "available_memory_bytes": 123124281344,
+      "load_average_1m": 95.36,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:04.923996+00:00",
+      "elapsed_seconds": 75.923,
+      "available_memory_bytes": 123371872256,
+      "load_average_1m": 98.86,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:10.138457+00:00",
+      "elapsed_seconds": 81.137,
+      "available_memory_bytes": 124069076992,
+      "load_average_1m": 95.66,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:15.337160+00:00",
+      "elapsed_seconds": 86.336,
+      "available_memory_bytes": 124153307136,
+      "load_average_1m": 93.21,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:20.707771+00:00",
+      "elapsed_seconds": 91.707,
+      "available_memory_bytes": 121230356480,
+      "load_average_1m": 94.23,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:26.006409+00:00",
+      "elapsed_seconds": 97.005,
+      "available_memory_bytes": 122924105728,
+      "load_average_1m": 95.5,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:31.378608+00:00",
+      "elapsed_seconds": 102.378,
+      "available_memory_bytes": 123035127808,
+      "load_average_1m": 96.5,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:36.702944+00:00",
+      "elapsed_seconds": 107.702,
+      "available_memory_bytes": 122881380352,
+      "load_average_1m": 104.15,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:42.268211+00:00",
+      "elapsed_seconds": 113.267,
+      "available_memory_bytes": 123252158464,
+      "load_average_1m": 100.93,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:21:51.745947+00:00",
+      "elapsed_seconds": 122.745,
+      "available_memory_bytes": 124395769856,
+      "load_average_1m": 100.81,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:22:48.263824+00:00",
+      "elapsed_seconds": 179.263,
+      "available_memory_bytes": 123861983232,
+      "load_average_1m": 128.32,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:22:53.710008+00:00",
+      "elapsed_seconds": 184.709,
+      "available_memory_bytes": 120851308544,
+      "load_average_1m": 126.78,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:00.111460+00:00",
+      "elapsed_seconds": 191.11,
+      "available_memory_bytes": 122431787008,
+      "load_average_1m": 120.62,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:05.491395+00:00",
+      "elapsed_seconds": 196.49,
+      "available_memory_bytes": 122585804800,
+      "load_average_1m": 119.37,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:10.763636+00:00",
+      "elapsed_seconds": 201.763,
+      "available_memory_bytes": 122134343680,
+      "load_average_1m": 118.06,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:15.931639+00:00",
+      "elapsed_seconds": 206.931,
+      "available_memory_bytes": 122551734272,
+      "load_average_1m": 113.81,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:21.193085+00:00",
+      "elapsed_seconds": 212.192,
+      "available_memory_bytes": 124387164160,
+      "load_average_1m": 112.94,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:26.609112+00:00",
+      "elapsed_seconds": 217.608,
+      "available_memory_bytes": 124339261440,
+      "load_average_1m": 109.03,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:31.836073+00:00",
+      "elapsed_seconds": 222.835,
+      "available_memory_bytes": 119962574848,
+      "load_average_1m": 109.02,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:37.012128+00:00",
+      "elapsed_seconds": 228.011,
+      "available_memory_bytes": 122616487936,
+      "load_average_1m": 108.86,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:42.304622+00:00",
+      "elapsed_seconds": 233.304,
+      "available_memory_bytes": 122283208704,
+      "load_average_1m": 108.87,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:48.142794+00:00",
+      "elapsed_seconds": 239.142,
+      "available_memory_bytes": 122781446144,
+      "load_average_1m": 105.44,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:53.576371+00:00",
+      "elapsed_seconds": 244.575,
+      "available_memory_bytes": 122173894656,
+      "load_average_1m": 105.48,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:23:58.939373+00:00",
+      "elapsed_seconds": 249.938,
+      "available_memory_bytes": 124263395328,
+      "load_average_1m": 106.09,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:24:04.280087+00:00",
+      "elapsed_seconds": 255.279,
+      "available_memory_bytes": 124461867008,
+      "load_average_1m": 106.49,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:24:09.729142+00:00",
+      "elapsed_seconds": 260.728,
+      "available_memory_bytes": 121063411712,
+      "load_average_1m": 106.37,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T16:25:17.088851+00:00",
+      "elapsed_seconds": 328.088,
+      "available_memory_bytes": 121320292352,
+      "load_average_1m": 109.14,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    }
+  ],
+  "prior_real_model_attempts_charged": 12,
+  "current_real_model_attempts_charged": 0
+}

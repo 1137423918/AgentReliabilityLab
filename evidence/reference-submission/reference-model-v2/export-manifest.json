@@ -1,0 +1,173 @@
+{
+  "files": {
+    "controller-summary.json": {
+      "sha256": "63eb6c51cb3c19284afcd13c4486ec8449f4796a6cade5d0fcc2815f95651d14",
+      "original_sha256": "63eb6c51cb3c19284afcd13c4486ec8449f4796a6cade5d0fcc2815f95651d14",
+      "bytes": 71524,
+      "normalized": true
+    },
+    "references--bm25--separate_voltagent_validation_rounds/budget-metadata.json": {
+      "sha256": "b30d76e8b53fb8952aca10330132d8f38f6dd54b4ed7a35289fa2ce914abc0ac",
+      "original_sha256": "b30d76e8b53fb8952aca10330132d8f38f6dd54b4ed7a35289fa2ce914abc0ac",
+      "bytes": 1793,
+      "normalized": true
+    },
+    "references--bm25--separate_voltagent_validation_rounds/wire-metadata.json": {
+      "sha256": "1569ba8da5d1006feeef6174d8f893e4718eab2f00d211eed2bcaaca7ba7c115",
+      "original_sha256": "1569ba8da5d1006feeef6174d8f893e4718eab2f00d211eed2bcaaca7ba7c115",
+      "bytes": 9022,
+      "normalized": true
+    },
+    "references--bm25--separate_voltagent_validation_rounds/submission-metadata.json": {
+      "sha256": "b53b7f02bcb4939e3d472fcd0ecef90a425d0625cdf36110400b2fa1bf95f45b",
+      "original_sha256": "b53b7f02bcb4939e3d472fcd0ecef90a425d0625cdf36110400b2fa1bf95f45b",
+      "bytes": 1359,
+      "normalized": true
+    },
+    "references--bm25--separate_voltagent_validation_rounds/model-response-metadata.json": {
+      "sha256": "b0e21f839e243d027ae8e27e35434debea95a95a595883eddbad22221e3b16b6",
+      "original_sha256": "b0e21f839e243d027ae8e27e35434debea95a95a595883eddbad22221e3b16b6",
+      "bytes": 4935,
+      "normalized": true
+    },
+    "references--bm25--training_is_not_complete_generation/budget-metadata.json": {
+      "sha256": "6ebf9022b1b568dcd39a98e147b39330c9b39477cce7eda9440a7c331e8c64ea",
+      "original_sha256": "6ebf9022b1b568dcd39a98e147b39330c9b39477cce7eda9440a7c331e8c64ea",
+      "bytes": 1793,
+      "normalized": true
+    },
+    "references--bm25--training_is_not_complete_generation/wire-metadata.json": {
+      "sha256": "d81340bdd67642650ab4c91ab5c4ed4a25999fbd016919cca27adac42e2b8978",
+      "original_sha256": "d81340bdd67642650ab4c91ab5c4ed4a25999fbd016919cca27adac42e2b8978",
+      "bytes": 8446,
+      "normalized": true
+    },
+    "references--bm25--training_is_not_complete_generation/submission-metadata.json": {
+      "sha256": "caec0c912329d0e3035b32b6ab6dad796523ab91b3883373913c3f1a8e6dbcdd",
+      "original_sha256": "caec0c912329d0e3035b32b6ab6dad796523ab91b3883373913c3f1a8e6dbcdd",
+      "bytes": 149,
+      "normalized": true
+    },
+    "references--bm25--training_is_not_complete_generation/model-response-metadata.json": {
+      "sha256": "df68c918015c05364cfe5b82f0e841743472f8372e67c5a6b6ba8b59cf08276d",
+      "original_sha256": "df68c918015c05364cfe5b82f0e841743472f8372e67c5a6b6ba8b59cf08276d",
+      "bytes": 5349,
+      "normalized": true
+    },
+    "cases-summary.json": {
+      "sha256": "ea3521b07cb5db98ba4494e5017b3cf4f2c5ab5473c77e196d190c46d41e06d0",
+      "original_sha256": "ea3521b07cb5db98ba4494e5017b3cf4f2c5ab5473c77e196d190c46d41e06d0",
+      "bytes": 7320,
+      "normalized": true
+    },
+    "operator/protocol.json": {
+      "sha256": "8d21ebd1d2903b427ed160a3ce93705f796f0fa88926a18c7fd3b545c2688811",
+      "original_sha256": "8d21ebd1d2903b427ed160a3ce93705f796f0fa88926a18c7fd3b545c2688811",
+      "bytes": 14520,
+      "normalized": true
+    },
+    "operator/run_model.py.txt": {
+      "sha256": "5d40b10fd16502ed73b0732b39c72bd4611bb770583196462e0d77cfd05cd147",
+      "original_sha256": "86d620ce78379c3d88a11b5e84f31adf73e3ecd82b7cbcc4253d8d7d3cb96f1a",
+      "bytes": 26267,
+      "normalized": true
+    },
+    "operator/gpu_runtime.py.txt": {
+      "sha256": "167700941c9e2dc2147f2c1a85275b9597c5fc51cdae25ab0331d413f4e0b7ed",
+      "original_sha256": "f9e6ea140106575976b35b481bbb6d89bc9d4835a0bb77c14edae6543f2d1918",
+      "bytes": 3248,
+      "normalized": true
+    },
+    "operator/cpu_exec.py.txt": {
+      "sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "original_sha256": "9caf8aa1b4bb7a462b1635824f7df9a9508d726258ad02123e7e222c98a98fcb",
+      "bytes": 336,
+      "normalized": true
+    },
+    "operator/cpu_admission.py.txt": {
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870,
+      "normalized": true
+    },
+    "operator/agent-sdk-identity.log": {
+      "sha256": "30dc280cb9367b36b615daa9a8dd17e50b605b52aae0c0e9b03ab97508b13867",
+      "original_sha256": "30dc280cb9367b36b615daa9a8dd17e50b605b52aae0c0e9b03ab97508b13867",
+      "bytes": 2605,
+      "normalized": true
+    },
+    "operator/native-artifact-identity.log": {
+      "sha256": "3bc02d5f98ef54ea1bd88aefc2fc22f7fb2c858a9cb76b1f351a36e72c33b5e7",
+      "original_sha256": "3bc02d5f98ef54ea1bd88aefc2fc22f7fb2c858a9cb76b1f351a36e72c33b5e7",
+      "bytes": 7556,
+      "normalized": true
+    },
+    "operator/gpu-runtime-manifest.json": {
+      "sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "original_sha256": "3df431c0478ee280dfaf89d7aa1e5c1f0524ed96ae6cab40087818124a8ef1f1",
+      "bytes": 4703,
+      "normalized": true
+    },
+    "operator/cases.json": {
+      "sha256": "b3b5e957f03d7d5a5be8ce310708e8e2c84cda44da58fa0bb6f85933d9f7a69d",
+      "original_sha256": "b3b5e957f03d7d5a5be8ce310708e8e2c84cda44da58fa0bb6f85933d9f7a69d",
+      "bytes": 1976,
+      "normalized": true
+    },
+    "native/staging-protocol.json": {
+      "sha256": "5ba0d00f4383cd72d81ecf0f26f007f177335201d5a0a4a049f97987534aef60",
+      "original_sha256": "3eda8972cc973a5c871d662804f81e776cc52eac87f0031df2972666e9c969b5",
+      "bytes": 6624,
+      "normalized": true
+    },
+    "native/staging-report.json": {
+      "sha256": "8f3a766a57364e172486c89b6f830a0ef64d52c2f3b0c9845318fee6689916d4",
+      "original_sha256": "8f3a766a57364e172486c89b6f830a0ef64d52c2f3b0c9845318fee6689916d4",
+      "bytes": 9217,
+      "normalized": true
+    },
+    "tested-source/benchmarks/llamaindex_mcp_audit.py": {
+      "sha256": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+      "original_sha256": "43f582ea30c55650df23dd76e83d3f5d9f18acb38de8f7c88ab04c0bb160d597",
+      "bytes": 24156,
+      "normalized": false
+    },
+    "tested-source/agent_lab/report_retrieval.py": {
+      "sha256": "fc11bc23b5f6bbc1eb2871da3fd13c7ffc7a4c4779e603f72e937e5ca6babdb8",
+      "original_sha256": "fc11bc23b5f6bbc1eb2871da3fd13c7ffc7a4c4779e603f72e937e5ca6babdb8",
+      "bytes": 5661,
+      "normalized": false
+    },
+    "tested-source/agent_lab/evidence_submission.py": {
+      "sha256": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+      "original_sha256": "5e1641f9e84eb8ca37d8141f1b6f26c0e8c34e65c4b405eb47b180f103029180",
+      "bytes": 3722,
+      "normalized": false
+    },
+    "tested-source/benchmarks/evidence_audit_case.py": {
+      "sha256": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+      "original_sha256": "e8c3d5c6d9d6e83d0a5dd81c99876a67c1118b686cf99cfdd348dd7b60804563",
+      "bytes": 3937,
+      "normalized": false
+    },
+    "native/startup-observations.json": {
+      "sha256": "74617613bf27bb12ec88286388a8c4dfa0e98c76059be812943fe06f15f3c621",
+      "original_sha256": "74617613bf27bb12ec88286388a8c4dfa0e98c76059be812943fe06f15f3c621",
+      "bytes": 1455,
+      "normalized": true
+    },
+    "original-generation-state.json": {
+      "sha256": "934ebc8e98943056792137cec9d30f2f74bf05e157de58e514f1d52996deecd4",
+      "original_sha256": "934ebc8e98943056792137cec9d30f2f74bf05e157de58e514f1d52996deecd4",
+      "bytes": 202,
+      "normalized": true
+    },
+    "cleanup.json": {
+      "sha256": "85c52e9d61bf32d95af8aaa4fce7bfb4a4ff613d7cf6091366a7b48e7a2e4e6a",
+      "original_sha256": "85c52e9d61bf32d95af8aaa4fce7bfb4a4ff613d7cf6091366a7b48e7a2e4e6a",
+      "bytes": 216,
+      "normalized": true
+    }
+  },
+  "scope": "Metadata/source only; private model/MCP bodies, capabilities, environment, weights excluded."
+}

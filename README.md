@@ -40,6 +40,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 新增[报告目录词法检索](docs/report-retrieval.md)：在24份固定实际报告、19个预声明检索诊断中，BM25与关键词基线都覆盖必需报告，目录结果平均约1.5KB；三项真实MCP脚本集成场景通过。未显示BM25优于简单基线，真实模型任务收益仍待验证。
 
+新增可选[字段引用提交](docs/reference-submission.md)：模型选择结论和字段，适配器从本次真实MCP读取绑定精确值与来源，原核验器和评分不变。真实9B在两项已知报告核对任务中通过一项；另一项因生成不存在的大小写路径被拒绝。此前三次失败、第四项未启动以及本次8次完整模型回复均保留，不据此宣称泛化能力或BM25收益。
+
 **可恢复维护运行器**：结合 Deep Agents、LangGraph 检查点、隔离 Git worktree 和命令验收，保存工具进度、导出补丁并等待审阅。模型请求预算跨重启与修复轮次扣额，未知请求仍占额度。
 
 [恢复与运行入口](docs/durable-worker.md) · [持久请求预算](docs/model-request-budget.md) · [本机状态与共享归档](docs/local-state.md) · [真实 MCP/Agent 接入](docs/mcp-agent.md)。真实仓库参考计划的恢复检查与真实模型任务分别记录；目前没有通过验收的模型自主仓库修复成果。

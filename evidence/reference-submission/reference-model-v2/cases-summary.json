@@ -1,0 +1,234 @@
+{
+  "case_plan": [
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "references--bm25--separate_voltagent_validation_rounds"
+    },
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "training_is_not_complete_generation",
+      "label": "references--bm25--training_is_not_complete_generation"
+    }
+  ],
+  "cases": [
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "separate_voltagent_validation_rounds",
+      "label": "references--bm25--separate_voltagent_validation_rounds",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "passed",
+      "grading": {
+        "evidence_verified": true,
+        "verdict_correct": true,
+        "required_fact_failures": [],
+        "case_passed": true,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": null,
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "9a39c4e955cea7e12a911cfcc31477b1a8be9abe9449dd793d215715dc7d1197"
+        },
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "selected_ids": [
+            "voltagent_ownership",
+            "voltagent_cleanup",
+            "upstream_prs",
+            "mcp_gpu_wire"
+          ],
+          "metadata_bytes": 1423,
+          "catalog_bytes": 5272
+        },
+        {
+          "tool": "read_report",
+          "report_id": "voltagent_ownership",
+          "pointers": [
+            "/baseline_lifecycle",
+            "/candidate_lifecycle",
+            "/complete_package"
+          ],
+          "result_sha256": "61f36e6dc5f7947104e164100b7cd7cfcb0bd2a691817659b9301ff18994f444"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "voltagent_cleanup",
+          "pointers": [
+            "/baseline_lifecycle_failed",
+            "/candidate_lifecycle_passed",
+            "/complete_MCP_package_passed"
+          ],
+          "result_sha256": "60d05d881baada46465d07d3e5f473f6fa7a68e43aa3bfa4751e89003494a0ab"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "evidence_verified",
+          "result_sha256": "55da857dd5eb95f58504e88f951fde5c498bc39aada114f28063fb7e40e7ebd4"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 4,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "e1d5a9121388d076dcce97aad1fec41f10fedec78756e3a93eb9605b9dae845a",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 4,
+      "request_body_bytes": 25268,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 4,
+      "unknown_header_observations": 0,
+      "wire_events": 30,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 6567,
+      "model_reported_completion_tokens": 415,
+      "budget_and_wire_unchanged_by_export": true
+    },
+    {
+      "policy": "bm25",
+      "submission_mode": "references",
+      "case": "training_is_not_complete_generation",
+      "label": "references--bm25--training_is_not_complete_generation",
+      "state_directory_exists": true,
+      "result_present": true,
+      "outcome": "failed",
+      "grading": {
+        "evidence_verified": false,
+        "verdict_correct": false,
+        "required_fact_failures": [
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Full_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_pilot",
+            "pointer": "/Mixed_optimizer_updates",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/base/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/full32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/variants/mixed32/scored_cases",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/unknown_attempts_still_charged",
+            "reason": "missing"
+          },
+          {
+            "report_id": "lora_generation",
+            "pointer": "/all3_complete_comparison",
+            "reason": "missing"
+          }
+        ],
+        "case_passed": false,
+        "free_prose_semantics_verified": false,
+        "scope": "Known fixed query; structured verdict, exact fact coverage and source/read lineage only"
+      },
+      "error_type": "EvidenceError",
+      "workflow_failures": [],
+      "tool_trace": [
+        {
+          "tool": "list_reports",
+          "result_sha256": "9a39c4e955cea7e12a911cfcc31477b1a8be9abe9449dd793d215715dc7d1197"
+        },
+        {
+          "tool": "rank_report_catalog",
+          "policy": "bm25",
+          "selected_ids": [
+            "lora_generation",
+            "lora_pilot",
+            "mcp_wire",
+            "source_navigation"
+          ],
+          "metadata_bytes": 1524,
+          "catalog_bytes": 5272
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_generation",
+          "pointers": [
+            "/variants",
+            "/unknown_attempts_still_charged",
+            "/all3_complete_comparison"
+          ],
+          "result_sha256": "3e0b56458c95596f8184139afe20b80a983c1bec67fca50f12b7133e457bb394"
+        },
+        {
+          "tool": "read_report",
+          "report_id": "lora_pilot",
+          "pointers": [
+            "/Full_optimizer_updates",
+            "/Mixed_optimizer_updates"
+          ],
+          "result_sha256": "f1267f6baa3e685dd65809307070a220521c687d2ae4cc42bac1ce1403304fde"
+        },
+        {
+          "tool": "submit_assessment",
+          "status": "rejected",
+          "result_sha256": "5ffbb23ad86b9c7f7a0ade93e706e8d7d6b1bfa3249a5faece040c4a4152c8d6"
+        }
+      ],
+      "mcp_close": {
+        "closed": true
+      },
+      "mcp_status_before_close": {
+        "operations_spent": 3,
+        "reads_completed": 2,
+        "max_operations": 16,
+        "max_reads": 8
+      },
+      "original_result_sha256": "71ce3150ef41c94b25aabd8a15af7c5a524641cf1aee63566aaec4ced8428d4e",
+      "wire_writer_closed": true,
+      "model_HTTP_reservations": 4,
+      "request_body_bytes": 29277,
+      "http_statuses": [
+        200,
+        200,
+        200,
+        200
+      ],
+      "complete_model_response_bodies": 4,
+      "unknown_header_observations": 0,
+      "wire_events": 28,
+      "tail_bytes": 0,
+      "missing_wire_reservations": 0,
+      "model_reported_prompt_tokens": 7923,
+      "model_reported_completion_tokens": 1020,
+      "budget_and_wire_unchanged_by_export": true
+    }
+  ],
+  "free_prose_semantics_verified": false,
+  "held_out_accuracy": false,
+  "no_new_model_calls_by_exporter": true
+}

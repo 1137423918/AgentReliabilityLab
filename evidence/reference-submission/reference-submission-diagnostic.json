@@ -1,0 +1,75 @@
+{
+  "cases": [
+    {
+      "label": "references--bm25--separate_voltagent_validation_rounds",
+      "read_report_ids": [
+        "voltagent_ownership",
+        "voltagent_cleanup"
+      ],
+      "submissions": [
+        {
+          "status": "evidence_verified",
+          "error_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "known_reference_coverage_error": false
+        }
+      ],
+      "drafts": [
+        {
+          "schema_valid": true,
+          "draft_claim_supported": true,
+          "reference_count": 5,
+          "invalid_or_unread_references": [],
+          "binding": {
+            "accepted": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "references--bm25--training_is_not_complete_generation",
+      "read_report_ids": [
+        "lora_generation",
+        "lora_pilot"
+      ],
+      "submissions": [
+        {
+          "status": "rejected",
+          "error_sha256": "253580d8fb3ed637709f1fb8fb3841b4a6a846db7fd3f71ad23018470b44457a",
+          "known_reference_coverage_error": true
+        }
+      ],
+      "drafts": [
+        {
+          "schema_valid": true,
+          "draft_claim_supported": false,
+          "reference_count": 8,
+          "invalid_or_unread_references": [
+            {
+              "report_id": "lora_generation",
+              "pointer": "/variants/Full32/full199_completed"
+            },
+            {
+              "report_id": "lora_generation",
+              "pointer": "/variants/Full32/scored_cases"
+            },
+            {
+              "report_id": "lora_generation",
+              "pointer": "/variants/Full32/unknown_still_charged"
+            },
+            {
+              "report_id": "lora_generation",
+              "pointer": "/variants/Mixed32/full199_completed"
+            }
+          ],
+          "binding": {
+            "accepted": false,
+            "known_error": "Reference was not covered by this audit's reads"
+          }
+        }
+      ]
+    }
+  ],
+  "no_model_calls": true,
+  "saved_results_unchanged": true,
+  "raw_arguments_and_prose_not_exported": true
+}

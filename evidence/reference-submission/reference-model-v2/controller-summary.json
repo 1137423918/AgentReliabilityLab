@@ -1,0 +1,3605 @@
+{
+  "protocol_sha256": "8d21ebd1d2903b427ed160a3ce93705f796f0fa88926a18c7fd3b545c2688811",
+  "source_archive_sha256": "deb89b66c4cb71e664f2303349f03b340fa6935cb65309c762da052d1f2034f5",
+  "terminal": true,
+  "model_started": true,
+  "model_ready": true,
+  "MCP_service_from_source": true,
+  "authorized_compute_port": 22012,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 6.332,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 18313216
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 2.208,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 12128256
+    },
+    {
+      "phase": "case-references--bm25--separate_voltagent_validation_rounds",
+      "returncode": 0,
+      "wall_seconds": 31.48,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 205627392
+    },
+    {
+      "phase": "recover-wire-references--bm25--separate_voltagent_validation_rounds",
+      "returncode": 0,
+      "wall_seconds": 0.683,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 7196672
+    },
+    {
+      "phase": "case-references--bm25--training_is_not_complete_generation",
+      "returncode": 2,
+      "wall_seconds": 33.284,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 206860288
+    },
+    {
+      "phase": "recover-wire-references--bm25--training_is_not_complete_generation",
+      "returncode": 0,
+      "wall_seconds": 0.755,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 7237632
+    }
+  ],
+  "GPU": {
+    "index": 6,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 3,
+    "utilization": 0,
+    "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+    "compute_clients": 0
+  },
+  "admission": [
+    {
+      "at": "2026-11-23T16:49:25.161617+00:00",
+      "card": {
+        "index": 6,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+        "compute_clients": 0
+      }
+    },
+    {
+      "at": "2026-11-23T16:49:37.664127+00:00",
+      "card": {
+        "index": 6,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+        "compute_clients": 0
+      }
+    }
+  ],
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "context_observed": 8192,
+  "own_GPU_compute_process_seen": true,
+  "declared_cases": 2,
+  "completed_cases": 2,
+  "cases_passed": 1,
+  "all_cases_passed": false,
+  "evaluation_completed": true,
+  "GPU_guard_reason": null,
+  "GPU_monitor": {
+    "peak_host_tree_RSS_bytes": 5995200512,
+    "peak_GPU_used_MiB": 5551,
+    "guard_reason": null
+  },
+  "GPU_probe_errors": [],
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "model_shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "mcp_shutdown": {
+    "wait_timeout": false,
+    "returncode": -15,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "GPU_after": {
+    "index": 6,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 3,
+    "utilization": 0,
+    "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+    "compute_clients": 0
+  },
+  "own_GPU_context_absent": true,
+  "ports_closed": {
+    "18870": true,
+    "18871": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": 134.169,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false,
+  "native_runtime_and_model_hashes_verified": true,
+  "native_identity_mode": {
+    "cached_unchanged_stat_files": 23,
+    "freshly_rehashed_files": 0
+  },
+  "runtime_CPU_affinity": [
+    15,
+    39,
+    42,
+    53
+  ],
+  "host_admission_samples": [
+    {
+      "selected_cpus": [
+        42,
+        53,
+        15,
+        39
+      ],
+      "selected_logical_cpus": [
+        {
+          "cpu": 42,
+          "package": 1,
+          "core": 27,
+          "siblings": "42,86",
+          "deltas": [
+            [
+              6,
+              0,
+              5,
+              488,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              11,
+              483,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9779559118236473,
+            0.9679358717434869
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9779559118236473,
+            0.9679358717434869
+          ]
+        },
+        {
+          "cpu": 53,
+          "package": 0,
+          "core": 11,
+          "siblings": "9,53",
+          "deltas": [
+            [
+              7,
+              0,
+              5,
+              382,
+              105,
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              10,
+              272,
+              210,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7655310621242485,
+            0.544
+          ],
+          "iowait_fractions": [
+            0.21042084168336672,
+            0.42
+          ],
+          "nonexecuting_fractions": [
+            0.9759519038076152,
+            0.964
+          ]
+        },
+        {
+          "cpu": 15,
+          "package": 0,
+          "core": 20,
+          "siblings": "15,59",
+          "deltas": [
+            [
+              6,
+              0,
+              7,
+              106,
+              380,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              11,
+              193,
+              287,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.2124248496993988,
+            0.38755020080321284
+          ],
+          "iowait_fractions": [
+            0.7615230460921844,
+            0.5763052208835341
+          ],
+          "nonexecuting_fractions": [
+            0.9739478957915831,
+            0.963855421686747
+          ]
+        },
+        {
+          "cpu": 39,
+          "package": 1,
+          "core": 24,
+          "siblings": "39,83",
+          "deltas": [
+            [
+              7,
+              0,
+              7,
+              484,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              11,
+              480,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.969939879759519,
+            0.9619238476953907
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.969939879759519,
+            0.9619238476953907
+          ]
+        }
+      ],
+      "allowed_CPU_count": 88,
+      "sample_interval_seconds": [
+        5.000819603912532,
+        5.0006212163716555
+      ],
+      "minimum_nonexecuting_fraction": 0.8,
+      "required_logical_CPUs": 4,
+      "physical_cores_exclusive": false,
+      "load_average_diagnostic_only": [
+        82.73,
+        92.3,
+        95.6
+      ],
+      "all_logical_CPU_samples": {
+        "0": {
+          "deltas": [
+            [
+              103,
+              0,
+              28,
+              270,
+              70,
+              2,
+              24,
+              0
+            ],
+            [
+              52,
+              0,
+              35,
+              319,
+              64,
+              1,
+              25,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5432595573440644,
+            0.6431451612903226
+          ],
+          "iowait_fractions": [
+            0.14084507042253522,
+            0.12903225806451613
+          ],
+          "nonexecuting_fractions": [
+            0.6841046277665996,
+            0.7721774193548387
+          ]
+        },
+        "1": {
+          "deltas": [
+            [
+              7,
+              0,
+              14,
+              415,
+              51,
+              1,
+              9,
+              0
+            ],
+            [
+              22,
+              0,
+              29,
+              320,
+              119,
+              1,
+              5,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8350100603621731,
+            0.6451612903225806
+          ],
+          "iowait_fractions": [
+            0.10261569416498995,
+            0.2399193548387097
+          ],
+          "nonexecuting_fractions": [
+            0.937625754527163,
+            0.8850806451612904
+          ]
+        },
+        "2": {
+          "deltas": [
+            [
+              10,
+              0,
+              11,
+              465,
+              10,
+              1,
+              2,
+              0
+            ],
+            [
+              109,
+              0,
+              13,
+              337,
+              39,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9318637274549099,
+            0.674
+          ],
+          "iowait_fractions": [
+            0.02004008016032064,
+            0.078
+          ],
+          "nonexecuting_fractions": [
+            0.9519038076152304,
+            0.752
+          ]
+        },
+        "3": {
+          "deltas": [
+            [
+              11,
+              0,
+              13,
+              418,
+              56,
+              0,
+              2,
+              0
+            ],
+            [
+              27,
+              0,
+              7,
+              393,
+              71,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.836,
+            0.7875751503006012
+          ],
+          "iowait_fractions": [
+            0.112,
+            0.14228456913827656
+          ],
+          "nonexecuting_fractions": [
+            0.948,
+            0.9298597194388778
+          ]
+        },
+        "4": {
+          "deltas": [
+            [
+              21,
+              0,
+              17,
+              419,
+              41,
+              0,
+              1,
+              0
+            ],
+            [
+              186,
+              0,
+              68,
+              211,
+              34,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8396793587174348,
+            0.422
+          ],
+          "iowait_fractions": [
+            0.08216432865731463,
+            0.068
+          ],
+          "nonexecuting_fractions": [
+            0.9218436873747495,
+            0.49
+          ]
+        },
+        "5": {
+          "deltas": [
+            [
+              187,
+              0,
+              42,
+              179,
+              89,
+              1,
+              0,
+              0
+            ],
+            [
+              152,
+              0,
+              34,
+              179,
+              134,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.35943775100401604,
+            0.3587174348697395
+          ],
+          "iowait_fractions": [
+            0.178714859437751,
+            0.2685370741482966
+          ],
+          "nonexecuting_fractions": [
+            0.5381526104417671,
+            0.627254509018036
+          ]
+        },
+        "6": {
+          "deltas": [
+            [
+              47,
+              0,
+              14,
+              383,
+              53,
+              1,
+              1,
+              0
+            ],
+            [
+              104,
+              0,
+              24,
+              249,
+              122,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7675350701402806,
+            0.49899799599198397
+          ],
+          "iowait_fractions": [
+            0.1062124248496994,
+            0.24448897795591182
+          ],
+          "nonexecuting_fractions": [
+            0.87374749498998,
+            0.7434869739478958
+          ]
+        },
+        "7": {
+          "deltas": [
+            [
+              12,
+              0,
+              9,
+              444,
+              8,
+              1,
+              23,
+              0
+            ],
+            [
+              10,
+              0,
+              10,
+              422,
+              0,
+              2,
+              50,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8933601609657947,
+            0.854251012145749
+          ],
+          "iowait_fractions": [
+            0.01609657947686117,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9094567404426559,
+            0.854251012145749
+          ]
+        },
+        "8": {
+          "deltas": [
+            [
+              7,
+              0,
+              8,
+              460,
+              21,
+              0,
+              0,
+              0
+            ],
+            [
+              29,
+              0,
+              11,
+              458,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9274193548387096,
+            0.9178356713426854
+          ],
+          "iowait_fractions": [
+            0.04233870967741935,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.969758064516129,
+            0.9178356713426854
+          ]
+        },
+        "9": {
+          "deltas": [
+            [
+              6,
+              0,
+              7,
+              284,
+              201,
+              1,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              10,
+              437,
+              1,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5691382765531062,
+            0.8775100401606426
+          ],
+          "iowait_fractions": [
+            0.4028056112224449,
+            0.002008032128514056
+          ],
+          "nonexecuting_fractions": [
+            0.9719438877755511,
+            0.8795180722891566
+          ]
+        },
+        "10": {
+          "deltas": [
+            [
+              9,
+              0,
+              13,
+              393,
+              79,
+              1,
+              2,
+              0
+            ],
+            [
+              91,
+              0,
+              70,
+              333,
+              0,
+              2,
+              2,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7907444668008048,
+            0.6686746987951807
+          ],
+          "iowait_fractions": [
+            0.158953722334004,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9496981891348089,
+            0.6686746987951807
+          ]
+        },
+        "11": {
+          "deltas": [
+            [
+              16,
+              0,
+              6,
+              406,
+              68,
+              0,
+              1,
+              0
+            ],
+            [
+              73,
+              0,
+              34,
+              231,
+              161,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8169014084507042,
+            0.462
+          ],
+          "iowait_fractions": [
+            0.13682092555331993,
+            0.322
+          ],
+          "nonexecuting_fractions": [
+            0.9537223340040242,
+            0.784
+          ]
+        },
+        "12": {
+          "deltas": [
+            [
+              7,
+              0,
+              6,
+              487,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              41,
+              0,
+              10,
+              297,
+              149,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.974,
+            0.5963855421686747
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.2991967871485944
+          ],
+          "nonexecuting_fractions": [
+            0.974,
+            0.8955823293172691
+          ]
+        },
+        "13": {
+          "deltas": [
+            [
+              161,
+              0,
+              9,
+              163,
+              166,
+              1,
+              1,
+              0
+            ],
+            [
+              126,
+              0,
+              12,
+              351,
+              9,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.3253493013972056,
+            0.7034068136272545
+          ],
+          "iowait_fractions": [
+            0.3313373253493014,
+            0.018036072144288578
+          ],
+          "nonexecuting_fractions": [
+            0.656686626746507,
+            0.7214428857715431
+          ]
+        },
+        "14": {
+          "deltas": [
+            [
+              6,
+              0,
+              6,
+              486,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              143,
+              0,
+              64,
+              129,
+              162,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9739478957915831,
+            0.25851703406813625
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.3246492985971944
+          ],
+          "nonexecuting_fractions": [
+            0.9739478957915831,
+            0.5831663326653307
+          ]
+        },
+        "15": {
+          "deltas": [
+            [
+              6,
+              0,
+              7,
+              106,
+              380,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              11,
+              193,
+              287,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.2124248496993988,
+            0.38755020080321284
+          ],
+          "iowait_fractions": [
+            0.7615230460921844,
+            0.5763052208835341
+          ],
+          "nonexecuting_fractions": [
+            0.9739478957915831,
+            0.963855421686747
+          ]
+        },
+        "16": {
+          "deltas": [
+            [
+              6,
+              0,
+              7,
+              218,
+              268,
+              0,
+              0,
+              0
+            ],
+            [
+              17,
+              0,
+              13,
+              344,
+              123,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.43687374749499,
+            0.6907630522088354
+          ],
+          "iowait_fractions": [
+            0.5370741482965932,
+            0.2469879518072289
+          ],
+          "nonexecuting_fractions": [
+            0.9739478957915831,
+            0.9377510040160643
+          ]
+        },
+        "17": {
+          "deltas": [
+            [
+              5,
+              0,
+              9,
+              334,
+              149,
+              0,
+              1,
+              0
+            ],
+            [
+              52,
+              0,
+              23,
+              246,
+              176,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6706827309236948,
+            0.4939759036144578
+          ],
+          "iowait_fractions": [
+            0.2991967871485944,
+            0.3534136546184739
+          ],
+          "nonexecuting_fractions": [
+            0.9698795180722891,
+            0.8473895582329317
+          ]
+        },
+        "18": {
+          "deltas": [
+            [
+              228,
+              0,
+              4,
+              256,
+              10,
+              1,
+              0,
+              0
+            ],
+            [
+              51,
+              0,
+              11,
+              401,
+              36,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5130260521042084,
+            0.8003992015968064
+          ],
+          "iowait_fractions": [
+            0.02004008016032064,
+            0.0718562874251497
+          ],
+          "nonexecuting_fractions": [
+            0.533066132264529,
+            0.872255489021956
+          ]
+        },
+        "19": {
+          "deltas": [
+            [
+              65,
+              0,
+              5,
+              405,
+              22,
+              1,
+              0,
+              0
+            ],
+            [
+              186,
+              0,
+              7,
+              294,
+              12,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8132530120481928,
+            0.588
+          ],
+          "iowait_fractions": [
+            0.04417670682730924,
+            0.024
+          ],
+          "nonexecuting_fractions": [
+            0.857429718875502,
+            0.612
+          ]
+        },
+        "20": {
+          "deltas": [
+            [
+              6,
+              0,
+              6,
+              485,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              26,
+              0,
+              6,
+              434,
+              33,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9738955823293173,
+            0.868
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.066
+          ],
+          "nonexecuting_fractions": [
+            0.9738955823293173,
+            0.934
+          ]
+        },
+        "21": {
+          "deltas": [
+            [
+              6,
+              0,
+              5,
+              488,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              110,
+              0,
+              67,
+              296,
+              25,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9740518962075848,
+            0.5943775100401606
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.050200803212851405
+          ],
+          "nonexecuting_fractions": [
+            0.9740518962075848,
+            0.6445783132530121
+          ]
+        },
+        "22": {
+          "deltas": [
+            [
+              8,
+              0,
+              17,
+              472,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              63,
+              0,
+              10,
+              417,
+              9,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9458917835671342,
+            0.8356713426853707
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.018036072144288578
+          ],
+          "nonexecuting_fractions": [
+            0.9458917835671342,
+            0.8537074148296593
+          ]
+        },
+        "23": {
+          "deltas": [
+            [
+              7,
+              0,
+              14,
+              225,
+              253,
+              0,
+              0,
+              0
+            ],
+            [
+              46,
+              0,
+              10,
+              443,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.45090180360721444,
+            0.886
+          ],
+          "iowait_fractions": [
+            0.5070140280561122,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9579158316633266,
+            0.886
+          ]
+        },
+        "24": {
+          "deltas": [
+            [
+              9,
+              0,
+              6,
+              484,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              101,
+              0,
+              37,
+              361,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.969939879759519,
+            0.722
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.969939879759519,
+            0.722
+          ]
+        },
+        "25": {
+          "deltas": [
+            [
+              32,
+              0,
+              5,
+              464,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              0,
+              11,
+              478,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9261477045908184,
+            0.9579158316633266
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9261477045908184,
+            0.9579158316633266
+          ]
+        },
+        "26": {
+          "deltas": [
+            [
+              9,
+              0,
+              11,
+              477,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              206,
+              252,
+              0,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.959758551307847,
+            0.5396145610278372
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.959758551307847,
+            0.5396145610278372
+          ]
+        },
+        "27": {
+          "deltas": [
+            [
+              7,
+              0,
+              7,
+              485,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              29,
+              0,
+              6,
+              463,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.97,
+            0.929718875502008
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.97,
+            0.929718875502008
+          ]
+        },
+        "28": {
+          "deltas": [
+            [
+              16,
+              0,
+              11,
+              471,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              10,
+              482,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9457831325301205,
+            0.9659318637274549
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9457831325301205,
+            0.9659318637274549
+          ]
+        },
+        "29": {
+          "deltas": [
+            [
+              27,
+              0,
+              5,
+              466,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              9,
+              442,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9338677354709419,
+            0.8857715430861723
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9338677354709419,
+            0.8857715430861723
+          ]
+        },
+        "30": {
+          "deltas": [
+            [
+              6,
+              0,
+              3,
+              489,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              38,
+              0,
+              9,
+              452,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9819277108433735,
+            0.904
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9819277108433735,
+            0.904
+          ]
+        },
+        "31": {
+          "deltas": [
+            [
+              22,
+              0,
+              17,
+              460,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              13,
+              0,
+              13,
+              471,
+              0,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9218436873747495,
+            0.9438877755511023
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9218436873747495,
+            0.9438877755511023
+          ]
+        },
+        "32": {
+          "deltas": [
+            [
+              22,
+              0,
+              36,
+              302,
+              139,
+              0,
+              0,
+              0
+            ],
+            [
+              59,
+              0,
+              10,
+              429,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6052104208416834,
+            0.8597194388777555
+          ],
+          "iowait_fractions": [
+            0.2785571142284569,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.8837675350701403,
+            0.8597194388777555
+          ]
+        },
+        "33": {
+          "deltas": [
+            [
+              8,
+              0,
+              7,
+              484,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              116,
+              0,
+              62,
+              320,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9660678642714571,
+            0.642570281124498
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9660678642714571,
+            0.642570281124498
+          ]
+        },
+        "34": {
+          "deltas": [
+            [
+              8,
+              0,
+              10,
+              480,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              47,
+              0,
+              8,
+              443,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.96,
+            0.8895582329317269
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.96,
+            0.8895582329317269
+          ]
+        },
+        "35": {
+          "deltas": [
+            [
+              7,
+              0,
+              10,
+              482,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              9,
+              442,
+              0,
+              0,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9659318637274549,
+            0.884
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9659318637274549,
+            0.884
+          ]
+        },
+        "36": {
+          "deltas": [
+            [
+              11,
+              0,
+              14,
+              474,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              17,
+              0,
+              18,
+              460,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9461077844311377,
+            0.9292929292929293
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9461077844311377,
+            0.9292929292929293
+          ]
+        },
+        "37": {
+          "deltas": [
+            [
+              4,
+              0,
+              196,
+              278,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              13,
+              0,
+              45,
+              405,
+              34,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5791666666666667,
+            0.8148893360160966
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.06841046277665996
+          ],
+          "nonexecuting_fractions": [
+            0.5791666666666667,
+            0.8832997987927566
+          ]
+        },
+        "38": {
+          "deltas": [
+            [
+              42,
+              0,
+              8,
+              450,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              15,
+              474,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9,
+            0.9498997995991983
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9,
+            0.9498997995991983
+          ]
+        },
+        "39": {
+          "deltas": [
+            [
+              7,
+              0,
+              7,
+              484,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              11,
+              480,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.969939879759519,
+            0.9619238476953907
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.969939879759519,
+            0.9619238476953907
+          ]
+        },
+        "40": {
+          "deltas": [
+            [
+              4,
+              0,
+              5,
+              482,
+              7,
+              0,
+              0,
+              0
+            ],
+            [
+              42,
+              0,
+              13,
+              385,
+              59,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9678714859437751,
+            0.7715430861723447
+          ],
+          "iowait_fractions": [
+            0.014056224899598393,
+            0.11823647294589178
+          ],
+          "nonexecuting_fractions": [
+            0.9819277108433735,
+            0.8897795591182365
+          ]
+        },
+        "41": {
+          "deltas": [
+            [
+              17,
+              0,
+              4,
+              477,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              115,
+              0,
+              72,
+              312,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9578313253012049,
+            0.624
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9578313253012049,
+            0.624
+          ]
+        },
+        "42": {
+          "deltas": [
+            [
+              6,
+              0,
+              5,
+              488,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              5,
+              0,
+              11,
+              483,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9779559118236473,
+            0.9679358717434869
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9779559118236473,
+            0.9679358717434869
+          ]
+        },
+        "43": {
+          "deltas": [
+            [
+              12,
+              0,
+              14,
+              473,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              119,
+              0,
+              67,
+              312,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9441117764471058,
+            0.6265060240963856
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9441117764471058,
+            0.6265060240963856
+          ]
+        },
+        "44": {
+          "deltas": [
+            [
+              60,
+              0,
+              5,
+              428,
+              3,
+              3,
+              0,
+              0
+            ],
+            [
+              167,
+              0,
+              65,
+              267,
+              0,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8577154308617234,
+            0.5329341317365269
+          ],
+          "iowait_fractions": [
+            0.006012024048096192,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.8637274549098196,
+            0.5329341317365269
+          ]
+        },
+        "45": {
+          "deltas": [
+            [
+              7,
+              0,
+              6,
+              247,
+              239,
+              1,
+              1,
+              0
+            ],
+            [
+              89,
+              0,
+              5,
+              309,
+              96,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.4930139720558882,
+            0.618
+          ],
+          "iowait_fractions": [
+            0.47704590818363274,
+            0.192
+          ],
+          "nonexecuting_fractions": [
+            0.9700598802395209,
+            0.81
+          ]
+        },
+        "46": {
+          "deltas": [
+            [
+              7,
+              0,
+              11,
+              480,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              54,
+              0,
+              9,
+              306,
+              128,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9619238476953907,
+            0.6132264529058116
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.2565130260521042
+          ],
+          "nonexecuting_fractions": [
+            0.9619238476953907,
+            0.8697394789579158
+          ]
+        },
+        "47": {
+          "deltas": [
+            [
+              8,
+              0,
+              5,
+              86,
+              399,
+              1,
+              0,
+              0
+            ],
+            [
+              40,
+              0,
+              19,
+              358,
+              81,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.17234468937875752,
+            0.717434869739479
+          ],
+          "iowait_fractions": [
+            0.7995991983967936,
+            0.1623246492985972
+          ],
+          "nonexecuting_fractions": [
+            0.9719438877755511,
+            0.8797595190380761
+          ]
+        },
+        "48": {
+          "deltas": [
+            [
+              40,
+              0,
+              15,
+              278,
+              165,
+              0,
+              0,
+              0
+            ],
+            [
+              6,
+              0,
+              12,
+              466,
+              13,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5582329317269076,
+            0.9357429718875502
+          ],
+          "iowait_fractions": [
+            0.3313253012048193,
+            0.02610441767068273
+          ],
+          "nonexecuting_fractions": [
+            0.8895582329317269,
+            0.9618473895582329
+          ]
+        },
+        "49": {
+          "deltas": [
+            [
+              12,
+              0,
+              11,
+              476,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              80,
+              0,
+              67,
+              339,
+              12,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9539078156312625,
+            0.678
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.024
+          ],
+          "nonexecuting_fractions": [
+            0.9539078156312625,
+            0.702
+          ]
+        },
+        "50": {
+          "deltas": [
+            [
+              116,
+              0,
+              8,
+              360,
+              14,
+              1,
+              0,
+              0
+            ],
+            [
+              16,
+              0,
+              142,
+              341,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7214428857715431,
+            0.6833667334669339
+          ],
+          "iowait_fractions": [
+            0.028056112224448898,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.749498997995992,
+            0.6833667334669339
+          ]
+        },
+        "51": {
+          "deltas": [
+            [
+              16,
+              0,
+              11,
+              470,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              196,
+              0,
+              103,
+              183,
+              17,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9456740442655935,
+            0.366
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.034
+          ],
+          "nonexecuting_fractions": [
+            0.9456740442655935,
+            0.4
+          ]
+        },
+        "52": {
+          "deltas": [
+            [
+              6,
+              0,
+              6,
+              486,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              46,
+              0,
+              10,
+              281,
+              158,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.972,
+            0.5665322580645161
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.3185483870967742
+          ],
+          "nonexecuting_fractions": [
+            0.972,
+            0.8850806451612904
+          ]
+        },
+        "53": {
+          "deltas": [
+            [
+              7,
+              0,
+              5,
+              382,
+              105,
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              10,
+              272,
+              210,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7655310621242485,
+            0.544
+          ],
+          "iowait_fractions": [
+            0.21042084168336672,
+            0.42
+          ],
+          "nonexecuting_fractions": [
+            0.9759519038076152,
+            0.964
+          ]
+        },
+        "54": {
+          "deltas": [
+            [
+              9,
+              0,
+              11,
+              421,
+              57,
+              0,
+              0,
+              0
+            ],
+            [
+              27,
+              0,
+              7,
+              460,
+              3,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8453815261044176,
+            0.9218436873747495
+          ],
+          "iowait_fractions": [
+            0.1144578313253012,
+            0.006012024048096192
+          ],
+          "nonexecuting_fractions": [
+            0.9598393574297188,
+            0.9278557114228457
+          ]
+        },
+        "55": {
+          "deltas": [
+            [
+              8,
+              0,
+              5,
+              193,
+              292,
+              0,
+              0,
+              0
+            ],
+            [
+              47,
+              0,
+              8,
+              389,
+              54,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.38755020080321284,
+            0.779559118236473
+          ],
+          "iowait_fractions": [
+            0.5863453815261044,
+            0.10821643286573146
+          ],
+          "nonexecuting_fractions": [
+            0.9738955823293173,
+            0.8877755511022044
+          ]
+        },
+        "56": {
+          "deltas": [
+            [
+              30,
+              0,
+              47,
+              347,
+              74,
+              0,
+              0,
+              0
+            ],
+            [
+              37,
+              0,
+              54,
+              147,
+              260,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6967871485943775,
+            0.294
+          ],
+          "iowait_fractions": [
+            0.14859437751004015,
+            0.52
+          ],
+          "nonexecuting_fractions": [
+            0.8453815261044176,
+            0.814
+          ]
+        },
+        "57": {
+          "deltas": [
+            [
+              56,
+              0,
+              15,
+              256,
+              170,
+              2,
+              0,
+              0
+            ],
+            [
+              59,
+              0,
+              19,
+              139,
+              281,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.5130260521042084,
+            0.278
+          ],
+          "iowait_fractions": [
+            0.3406813627254509,
+            0.562
+          ],
+          "nonexecuting_fractions": [
+            0.8537074148296593,
+            0.84
+          ]
+        },
+        "58": {
+          "deltas": [
+            [
+              10,
+              0,
+              7,
+              332,
+              148,
+              1,
+              0,
+              0
+            ],
+            [
+              38,
+              0,
+              21,
+              387,
+              53,
+              0,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6666666666666666,
+            0.774
+          ],
+          "iowait_fractions": [
+            0.2971887550200803,
+            0.106
+          ],
+          "nonexecuting_fractions": [
+            0.963855421686747,
+            0.88
+          ]
+        },
+        "59": {
+          "deltas": [
+            [
+              23,
+              0,
+              5,
+              245,
+              227,
+              0,
+              0,
+              0
+            ],
+            [
+              197,
+              0,
+              67,
+              48,
+              187,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.49,
+            0.09580838323353294
+          ],
+          "iowait_fractions": [
+            0.454,
+            0.37325349301397204
+          ],
+          "nonexecuting_fractions": [
+            0.944,
+            0.469061876247505
+          ]
+        },
+        "60": {
+          "deltas": [
+            [
+              201,
+              0,
+              25,
+              29,
+              244,
+              1,
+              0,
+              0
+            ],
+            [
+              370,
+              0,
+              27,
+              48,
+              53,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.058,
+            0.09619238476953908
+          ],
+          "iowait_fractions": [
+            0.488,
+            0.1062124248496994
+          ],
+          "nonexecuting_fractions": [
+            0.546,
+            0.20240480961923848
+          ]
+        },
+        "61": {
+          "deltas": [
+            [
+              5,
+              0,
+              6,
+              486,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              111,
+              0,
+              65,
+              323,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9759036144578314,
+            0.646
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9759036144578314,
+            0.646
+          ]
+        },
+        "62": {
+          "deltas": [
+            [
+              156,
+              0,
+              6,
+              336,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              51,
+              0,
+              19,
+              378,
+              48,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6733466933867736,
+            0.7590361445783133
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0963855421686747
+          ],
+          "nonexecuting_fractions": [
+            0.6733466933867736,
+            0.8554216867469879
+          ]
+        },
+        "63": {
+          "deltas": [
+            [
+              59,
+              0,
+              8,
+              416,
+              11,
+              4,
+              0,
+              0
+            ],
+            [
+              37,
+              0,
+              13,
+              411,
+              37,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8353413654618473,
+            0.822
+          ],
+          "iowait_fractions": [
+            0.02208835341365462,
+            0.074
+          ],
+          "nonexecuting_fractions": [
+            0.857429718875502,
+            0.896
+          ]
+        },
+        "64": {
+          "deltas": [
+            [
+              6,
+              0,
+              8,
+              409,
+              73,
+              1,
+              0,
+              0
+            ],
+            [
+              114,
+              0,
+              69,
+              295,
+              20,
+              0,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.8229376257545271,
+            0.591182364729459
+          ],
+          "iowait_fractions": [
+            0.14688128772635814,
+            0.04008016032064128
+          ],
+          "nonexecuting_fractions": [
+            0.9698189134808853,
+            0.6312625250501002
+          ]
+        },
+        "65": {
+          "deltas": [
+            [
+              55,
+              0,
+              39,
+              355,
+              48,
+              0,
+              0,
+              0
+            ],
+            [
+              9,
+              0,
+              11,
+              420,
+              60,
+              1,
+              1,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.7142857142857143,
+            0.8366533864541833
+          ],
+          "iowait_fractions": [
+            0.096579476861167,
+            0.11952191235059761
+          ],
+          "nonexecuting_fractions": [
+            0.8108651911468813,
+            0.9561752988047809
+          ]
+        },
+        "66": {
+          "deltas": [
+            [
+              8,
+              0,
+              7,
+              483,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              122,
+              0,
+              73,
+              301,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.966,
+            0.6056338028169014
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.966,
+            0.6056338028169014
+          ]
+        },
+        "67": {
+          "deltas": [
+            [
+              7,
+              0,
+              4,
+              490,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              114,
+              0,
+              64,
+              321,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9780439121756487,
+            0.642
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9780439121756487,
+            0.642
+          ]
+        },
+        "68": {
+          "deltas": [
+            [
+              17,
+              0,
+              6,
+              477,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              7,
+              0,
+              11,
+              479,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.954,
+            0.9618473895582329
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.954,
+            0.9618473895582329
+          ]
+        },
+        "69": {
+          "deltas": [
+            [
+              5,
+              0,
+              4,
+              489,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              49,
+              0,
+              9,
+              434,
+              6,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9819277108433735,
+            0.8714859437751004
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.012048192771084338
+          ],
+          "nonexecuting_fractions": [
+            0.9819277108433735,
+            0.8835341365461847
+          ]
+        },
+        "70": {
+          "deltas": [
+            [
+              6,
+              0,
+              6,
+              488,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              8,
+              0,
+              12,
+              478,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.976,
+            0.9579158316633266
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.976,
+            0.9579158316633266
+          ]
+        },
+        "71": {
+          "deltas": [
+            [
+              26,
+              0,
+              6,
+              467,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              42,
+              0,
+              13,
+              434,
+              7,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.935871743486974,
+            0.8732394366197183
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.014084507042253521
+          ],
+          "nonexecuting_fractions": [
+            0.935871743486974,
+            0.8873239436619719
+          ]
+        },
+        "72": {
+          "deltas": [
+            [
+              12,
+              0,
+              7,
+              480,
+              0,
+              1,
+              1,
+              0
+            ],
+            [
+              50,
+              0,
+              8,
+              441,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9580838323353293,
+            0.8837675350701403
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9580838323353293,
+            0.8837675350701403
+          ]
+        },
+        "73": {
+          "deltas": [
+            [
+              16,
+              0,
+              58,
+              425,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              8,
+              443,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.85,
+            0.8877755511022044
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.85,
+            0.8877755511022044
+          ]
+        },
+        "74": {
+          "deltas": [
+            [
+              210,
+              0,
+              5,
+              206,
+              77,
+              1,
+              1,
+              0
+            ],
+            [
+              15,
+              0,
+              12,
+              467,
+              4,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.412,
+            0.935871743486974
+          ],
+          "iowait_fractions": [
+            0.154,
+            0.008016032064128256
+          ],
+          "nonexecuting_fractions": [
+            0.566,
+            0.9438877755511023
+          ]
+        },
+        "75": {
+          "deltas": [
+            [
+              6,
+              0,
+              6,
+              488,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              49,
+              0,
+              7,
+              443,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.976,
+            0.8877755511022044
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.976,
+            0.8877755511022044
+          ]
+        },
+        "76": {
+          "deltas": [
+            [
+              5,
+              0,
+              157,
+              323,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              148,
+              0,
+              72,
+              277,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.6659793814432989,
+            0.5562248995983936
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.6659793814432989,
+            0.5562248995983936
+          ]
+        },
+        "77": {
+          "deltas": [
+            [
+              15,
+              0,
+              24,
+              459,
+              1,
+              0,
+              0,
+              0
+            ],
+            [
+              17,
+              0,
+              28,
+              453,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.9198396793587175,
+            0.9096385542168675
+          ],
+          "iowait_fractions": [
+            0.002004008016032064,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.9218436873747495,
+            0.9096385542168675
+          ]
+        },
+        "78": {
+          "deltas": [
+            [
+              5,
+              0,
+              7,
+              488,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              139,
+              0,
+              75,
+              211,
+              73,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.976,
+            0.4228456913827655
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.1462925851703407
+          ],
+          "nonexecuting_fractions": [
+            0.976,
+            0.5691382765531062
+          ]
+        },
+        "79": {
+          "deltas": [
+            [
+              13,
+              0,
+              13,
+              383,
+              90,
+              1,
+              0,
+              0
+            ],
+            [
+              119,
+              0,
+              73,
+              306,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.766,
+            0.6144578313253012
+          ],
+          "iowait_fractions": [
+            0.18,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.946,
+            0.6144578313253012
+          ]
+        },
+        "80": {
+          "deltas": [
+            [
+              7,
+              0,
+              21,
+              471,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              10,
+              0,
+              44,
+              443,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.942,
+            0.8913480885311871
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.942,
+            0.8913480885311871
+          ]
+        },
+        "81": {
+          "deltas": [
+            [
+              7,
+              0,
+              4,
+              489,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              236,
+              0,
+              4,
+              257,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.978,
+            0.5160642570281124
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.978,
+            0.5160642570281124
+          ]
+        },
+        "82": {
+          "deltas": [
+            [
+              6,
+              0,
+              7,
+              486,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              78,
+              0,
+              13,
+              407,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.972,
+            0.8172690763052208
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.972,
+            0.8172690763052208
+          ]
+        },
+        "83": {
+          "deltas": [
+            [
+              6,
+              0,
+              5,
+              489,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              51,
+              0,
+              13,
+              435,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.978,
+            0.8717434869739479
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.978,
+            0.8717434869739479
+          ]
+        },
+        "84": {
+          "deltas": [
+            [
+              442,
+              0,
+              2,
+              15,
+              38,
+              2,
+              0,
+              0
+            ],
+            [
+              124,
+              0,
+              73,
+              286,
+              15,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.03006012024048096,
+            0.5731462925851704
+          ],
+          "iowait_fractions": [
+            0.07615230460921844,
+            0.03006012024048096
+          ],
+          "nonexecuting_fractions": [
+            0.1062124248496994,
+            0.6032064128256514
+          ]
+        },
+        "85": {
+          "deltas": [
+            [
+              5,
+              0,
+              7,
+              487,
+              0,
+              1,
+              0,
+              0
+            ],
+            [
+              16,
+              0,
+              13,
+              468,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.974,
+            0.9416498993963782
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.974,
+            0.9416498993963782
+          ]
+        },
+        "86": {
+          "deltas": [
+            [
+              8,
+              0,
+              7,
+              484,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              119,
+              0,
+              62,
+              318,
+              0,
+              1,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.968,
+            0.636
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.968,
+            0.636
+          ]
+        },
+        "87": {
+          "deltas": [
+            [
+              5,
+              0,
+              5,
+              490,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              48,
+              0,
+              7,
+              444,
+              0,
+              0,
+              0,
+              0
+            ]
+          ],
+          "valid": true,
+          "idle_fractions": [
+            0.98,
+            0.8897795591182365
+          ],
+          "iowait_fractions": [
+            0.0,
+            0.0
+          ],
+          "nonexecuting_fractions": [
+            0.98,
+            0.8897795591182365
+          ]
+        }
+      },
+      "process_affinity_changed": false,
+      "observed_utc": "2026-11-23T16:49:14.213558+00:00",
+      "available_memory_bytes": 129504866304,
+      "admitted": true
+    }
+  ],
+  "prior_real_model_attempts_charged": 12,
+  "current_real_model_attempts_charged": 8
+}

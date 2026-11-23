@@ -1,0 +1,38 @@
+[
+  {
+    "id": "training_is_not_complete_generation",
+    "question": "Against the pinned report catalog, audit this claim: 'Base, Full32 and Mixed32 have all completed their 199-case clean generation evaluations with no unknown attempts, because both adapters have already received32 optimizer updates.' Verify both update counts, each variant's scored-case count, unknown attempts still charged and whether the three-way generation comparison is complete. Use exact observed facts; this is a fixed snapshot, not live progress.",
+    "expected_supported": false,
+    "required_facts": {
+      "lora_pilot": {
+        "/Full_optimizer_updates": 32,
+        "/Mixed_optimizer_updates": 32
+      },
+      "lora_generation": {
+        "/variants/base/scored_cases": 199,
+        "/variants/full32/scored_cases": 83,
+        "/variants/mixed32/scored_cases": 0,
+        "/unknown_attempts_still_charged": 2,
+        "/all3_complete_comparison": false
+      }
+    }
+  },
+  {
+    "id": "separate_voltagent_validation_rounds",
+    "question": "Against the pinned report catalog, audit this claim: 'The later VoltAgent connection-ownership fix passes11 lifecycle cases, included within26 complete MCP package tests. Its preceding reviewed head fails2 and passes9 in the same lifecycle fixture. The earlier notification-cleanup validation separately passed8 lifecycle and23 package tests; these historical scopes must remain separate rather than being added.' Verify each number and the inclusion flag using only those fixed reports.",
+    "expected_supported": true,
+    "required_facts": {
+      "voltagent_ownership": {
+        "/baseline_lifecycle/failed": 2,
+        "/baseline_lifecycle/passed": 9,
+        "/candidate_lifecycle/passed": 11,
+        "/complete_package/passed": 26,
+        "/complete_package/includes_lifecycle": true
+      },
+      "voltagent_cleanup": {
+        "/candidate_lifecycle_passed": 8,
+        "/complete_MCP_package_passed": 23
+      }
+    }
+  }
+]

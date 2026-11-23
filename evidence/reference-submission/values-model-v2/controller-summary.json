@@ -1,0 +1,175 @@
+{
+  "protocol_sha256": "87e358bbe622f47c1f6ed3cff453f7c4f6454c4be220c802eeba043498255898",
+  "source_archive_sha256": "e2bc92ebc2f17d3b924d9221c1541cb4dc37ec5e15be2eb0a60bbfc01a692ce8",
+  "terminal": true,
+  "model_started": true,
+  "model_ready": true,
+  "MCP_service_from_source": true,
+  "authorized_compute_port": 22012,
+  "phases": [
+    {
+      "phase": "agent-sdk-identity",
+      "returncode": 0,
+      "wall_seconds": 8.874,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 158670848
+    },
+    {
+      "phase": "native-artifact-identity",
+      "returncode": 0,
+      "wall_seconds": 81.95,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 14049280
+    },
+    {
+      "phase": "case-all--training_is_not_complete_generation",
+      "returncode": 2,
+      "wall_seconds": 49.586,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 209842176
+    },
+    {
+      "phase": "recover-wire-all--training_is_not_complete_generation",
+      "returncode": 0,
+      "wall_seconds": 3.044,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 10297344
+    },
+    {
+      "phase": "case-bm25--separate_voltagent_validation_rounds",
+      "returncode": 2,
+      "wall_seconds": 39.573,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 207142912
+    },
+    {
+      "phase": "recover-wire-bm25--separate_voltagent_validation_rounds",
+      "returncode": 0,
+      "wall_seconds": 1.775,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 5931008
+    },
+    {
+      "phase": "case-bm25--training_is_not_complete_generation",
+      "returncode": 2,
+      "wall_seconds": 38.672,
+      "guard_reason": null,
+      "peak_sampled_driver_tree_rss_bytes": 205733888
+    },
+    {
+      "phase": "recover-wire-bm25--training_is_not_complete_generation",
+      "returncode": -15,
+      "wall_seconds": 0.642,
+      "guard_reason": "GPU_observation_stale",
+      "peak_sampled_driver_tree_rss_bytes": 7176192
+    }
+  ],
+  "GPU": {
+    "index": 6,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 3,
+    "utilization": 0,
+    "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+    "compute_clients": 0
+  },
+  "admission": [
+    {
+      "at": "2026-11-23T15:46:15.207424+00:00",
+      "card": {
+        "index": 6,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+        "compute_clients": 0
+      }
+    },
+    {
+      "at": "2026-11-23T15:46:27.205779+00:00",
+      "card": {
+        "index": 6,
+        "name": "NVIDIA GeForce RTX 3090",
+        "compute_capability": "8.6",
+        "total_mib": 24576,
+        "used_mib": 3,
+        "utilization": 0,
+        "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+        "compute_clients": 0
+      }
+    }
+  ],
+  "offloaded_layers": 33,
+  "total_layers": 33,
+  "context_observed": 8192,
+  "own_GPU_compute_process_seen": true,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Phase failed: recover-wire-bm25--training_is_not_complete_generation"
+  },
+  "GPU_guard_reason": "GPU_observation_stale",
+  "GPU_monitor": {
+    "peak_host_tree_RSS_bytes": 5993304064,
+    "peak_GPU_used_MiB": 5551,
+    "guard_reason": "GPU_observation_stale"
+  },
+  "GPU_probe_errors": [],
+  "monitor_thread_stopped": true,
+  "sampler_thread_stopped": true,
+  "model_shutdown": {
+    "wait_timeout": false,
+    "returncode": 0,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "mcp_shutdown": {
+    "wait_timeout": false,
+    "returncode": -15,
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "GPU_after": {
+    "index": 6,
+    "name": "NVIDIA GeForce RTX 3090",
+    "compute_capability": "8.6",
+    "total_mib": 24576,
+    "used_mib": 3,
+    "utilization": 0,
+    "uuid_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+    "compute_clients": 0
+  },
+  "own_GPU_context_absent": true,
+  "ports_closed": {
+    "18870": true,
+    "18871": true
+  },
+  "model_api_key_file_remaining": false,
+  "service_wall_seconds": 197.051,
+  "owned_processes_after": [],
+  "all_frozen_source_files_unchanged": true,
+  "secret_in_json_outputs": false,
+  "native_runtime_and_model_hashes_verified": true,
+  "host_admission_samples": [
+    {
+      "observed_utc": "2026-11-23T15:46:03.320948+00:00",
+      "elapsed_seconds": 0.0,
+      "available_memory_bytes": 113984565248,
+      "load_average_1m": 88.61,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": false
+    },
+    {
+      "observed_utc": "2026-11-23T15:46:08.708879+00:00",
+      "elapsed_seconds": 5.388,
+      "available_memory_bytes": 114354638848,
+      "load_average_1m": 83.23,
+      "allowed_CPU_count": 88,
+      "maximum_load_average_1m": 84,
+      "admitted": true
+    }
+  ]
+}
