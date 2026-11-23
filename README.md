@@ -33,6 +33,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 绑定 `127.0.0.1:18856`；[安装、客户端及接口](docs/mcp-evidence.md)说明独立启动包和自有报告目录的使用方式。服务器实测 130 项核心回归通过、零跳过，另八项安装控制通过；两种范围不累加，也不是神经模型成绩。[安装证据](evidence/evidence-package/README.md)。
 
+外部 MCP Agent 已支持[通信证据持久化](docs/mcp-wire-journal.md)：进程强杀后保留已保存的回复，未知请求继续扣额；日志写入故障不会阻止对已知审计上下文的关闭尝试。8项日志控制、2项真实MCP故障控制及原有10项生命周期场景在服务器通过，模型回复按脚本提供。
+
 **可恢复维护运行器**：结合 Deep Agents、LangGraph 检查点、隔离 Git worktree 和命令验收，保存工具进度、导出补丁并等待审阅。模型请求预算跨重启与修复轮次扣额，未知请求仍占额度。
 
 [恢复与运行入口](docs/durable-worker.md) · [持久请求预算](docs/model-request-budget.md) · [本机状态与共享归档](docs/local-state.md) · [真实 MCP/Agent 接入](docs/mcp-agent.md)。真实仓库参考计划的恢复检查与真实模型任务分别记录；目前没有通过验收的模型自主仓库修复成果。

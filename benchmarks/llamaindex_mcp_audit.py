@@ -21,6 +21,7 @@ from mcp.client.streamable_http import streamable_http_client
 
 from agent_lab.async_request_budget import make_async_http_client, open_budget
 from agent_lab.evidence_audit import EvidenceError
+from agent_lab.wire_journal import DurableWireEvents
 from benchmarks.llamaindex_evidence_agent import AuditAssessment, DIRECT_SYSTEM
 
 
@@ -83,13 +84,29 @@ async def cleanup_audit(mcp_url, handle, wire, outcome):
     status error nor the workflow's canceled transport may skip the close.
     There is one close attempt, no replay, renewal or replacement audit.
     """
+
+    class CleanupEvents:
+        def append(self, event):
+            # A failed disk must not prevent closing the already-known capability.
+            try:
+                wire.append(event)
+            except Exception as exc:
+                outcome["cleanup_wire_error_count"] = (
+                    outcome.get("cleanup_wire_error_count", 0) + 1
+                )
+                errors = outcome.setdefault("cleanup_wire_errors", [])
+                if len(errors) < 8:
+                    errors.append(
+                        {"type": type(exc).__name__, "kind": event.get("kind")}
+                    )
+
     try:
         async with asyncio.timeout(10):
             async with httpx2.AsyncClient(
                 trust_env=False,
                 follow_redirects=False,
                 timeout=10,
-                event_hooks=hooks("mcp", wire),
+                event_hooks=hooks("mcp", CleanupEvents()),
             ) as http:
                 async with Client(
                     streamable_http_client(mcp_url, http_client=http), cache=None
@@ -141,7 +158,9 @@ async def audit_via_mcp(
         "max_total_request_bytes": 262144,
     }
     budget = open_budget(state_dir, owner_sha256, limits, create=True)
-    wire = []
+    wire = DurableWireEvents(
+        budget.directory / "wire-events.jsonl", owner_sha256, budget.journal_id
+    )
     trace = []
     events = []
     receipts = []
@@ -155,7 +174,7 @@ async def audit_via_mcp(
         "evidence_verified": False,
         "backend": "external_mcp2",
         "tool_trace": trace,
-        "wire_events": wire,
+        "wire_events": wire.events,
         "workflow_events": events,
         "submissions": submissions,
     }
@@ -371,8 +390,12 @@ async def audit_via_mcp(
         outcome["evidence_verified"] = False
         outcome["error"] = {"type": type(exc).__name__, "message": str(exc)}
     finally:
-        if handle is not None:
-            await cleanup_audit(mcp_url, handle, wire, outcome)
+        try:
+            if handle is not None:
+                await cleanup_audit(mcp_url, handle, wire, outcome)
+        finally:
+            wire.close()
+            outcome["wire_journal"] = wire.status()
     outcome["receipts_received"] = receipts
     outcome["versions"] = {
         n: importlib.metadata.version(n)

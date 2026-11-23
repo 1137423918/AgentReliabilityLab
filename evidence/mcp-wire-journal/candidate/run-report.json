@@ -1,0 +1,313 @@
+{
+  "terminal": true,
+  "protocol_sha256": "b1f78b35790358825aa011b8617f5331a0aee0e42a269e3dc3f0a0803b52b289",
+  "model_or_GPU_or_training": false,
+  "phases": [
+    {
+      "phase": "identity-before",
+      "returncode": 0,
+      "wall_seconds": 2.807,
+      "peak_sampled_owned_RSS_bytes": 64880640
+    },
+    {
+      "phase": "ruff-version",
+      "returncode": 0,
+      "wall_seconds": 0.97,
+      "peak_sampled_owned_RSS_bytes": 8650752
+    },
+    {
+      "phase": "ruff-check",
+      "returncode": 0,
+      "wall_seconds": 1.053,
+      "peak_sampled_owned_RSS_bytes": 9371648
+    },
+    {
+      "phase": "ruff-format-check",
+      "returncode": 0,
+      "wall_seconds": 0.235,
+      "peak_sampled_owned_RSS_bytes": 5767168
+    },
+    {
+      "phase": "wire-unit-controls",
+      "returncode": 0,
+      "wall_seconds": 0.907,
+      "peak_sampled_owned_RSS_bytes": 43253760
+    },
+    {
+      "phase": "candidate-SIGKILL",
+      "returncode": 0,
+      "wall_seconds": 10.72,
+      "peak_sampled_owned_RSS_bytes": 259309568
+    },
+    {
+      "phase": "cleanup-wire-failure",
+      "returncode": 0,
+      "wall_seconds": 15.908,
+      "peak_sampled_owned_RSS_bytes": 407404544
+    },
+    {
+      "phase": "existing-nine-cleanup-controls",
+      "returncode": 0,
+      "wall_seconds": 34.777,
+      "peak_sampled_owned_RSS_bytes": 418562048
+    },
+    {
+      "phase": "existing-valid-tool-error",
+      "returncode": 0,
+      "wall_seconds": 10.022,
+      "peak_sampled_owned_RSS_bytes": 418906112
+    },
+    {
+      "phase": "identity-after",
+      "returncode": 0,
+      "wall_seconds": 36.126,
+      "peak_sampled_owned_RSS_bytes": 66322432
+    }
+  ],
+  "active_phase": "identity-after",
+  "runtime": {
+    "adapter": "/path/to/candidate-wire-work/source/benchmarks/llamaindex_mcp_audit.py",
+    "packages": {
+      "mcp": "2.3.0",
+      "llama-index-core": "0.14.26",
+      "llama-index-workflows": "2.26.1",
+      "openai": "3.57.0",
+      "httpx2": "2.16.2"
+    }
+  },
+  "ruff_binary_sha256": "bb47c7d132ad251bacbf66ae8191fd6968b23a47bee3af7d0c40fffe5afcb41f",
+  "crash_control": {
+    "scenario": "SIGKILL_after_two_bodies_during_third_POST",
+    "passed": true,
+    "explicit_scripted_model": true,
+    "neural_requests": 0,
+    "GPU_used": false,
+    "agent_returncode": -9,
+    "model_attempts": 3,
+    "model_complete_reply_bodies": 2,
+    "budget_unknown_still_charged": 1,
+    "result_file_exists": false,
+    "durable_trace_exists": true,
+    "child_close_calls_before_kill": 0,
+    "recovered_events": 15,
+    "recovered_model_requests": 3,
+    "recovered_complete_model_bodies": 2,
+    "recovered_read_report_requests": 1,
+    "response_body_hashes": [
+      "f82e220422f1356d114546f39d6f0d154dadf18152bdfce5b7b040d3ab8c5184",
+      "a93f1a3e51efe0b24e6ab92b09e944fb9b89507ac4f757f9ff0dca2eb7a83363"
+    ],
+    "synthetic_authorization_key_absent": true,
+    "journal_mode": "0600",
+    "budget_unchanged_by_recovery": true,
+    "operator_closed_abandoned_context": true,
+    "agent_close_confirmed": false,
+    "wall_seconds": 8.176,
+    "server_terminal": true
+  },
+  "cleanup_failure_control": {
+    "scenario": "cleanup_trace_write_failure",
+    "passed": true,
+    "explicit_scripted_model": true,
+    "neural_requests": 0,
+    "GPU_used": false,
+    "fake_model_posts": 3,
+    "injected_write_failures": 1,
+    "agent_close_confirmed": true,
+    "independent_context_closed": true,
+    "trace_write_failed_reported": true,
+    "recovered_prefix_events": 20,
+    "server_terminal": true
+  },
+  "existing_nine": {
+    "cases": [
+      {
+        "case": "normal",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 7.297,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "forged_fact",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.515,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "unread_submission",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.225,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "plain_answer",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.027,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "status_error",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.456,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "status_timeout",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 3.6,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "model_timeout",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 6.456,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "external_cancel",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 1.016,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      },
+      {
+        "case": "expired",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 5.927,
+        "tool_calls": [
+          "begin_audit",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      }
+    ],
+    "passed": 9,
+    "failed": 0,
+    "explicit_fake_model": true,
+    "neural_requests": 0,
+    "GPU_used": false
+  },
+  "existing_tool_error": {
+    "cases": [
+      {
+        "case": "status_tool_error",
+        "passed": true,
+        "independent_status_unknown_or_expired": true,
+        "wall_seconds": 6.827,
+        "tool_calls": [
+          "begin_audit",
+          "list_reports",
+          "read_report",
+          "verify_assessment",
+          "audit_status",
+          "close_audit",
+          "audit_status"
+        ],
+        "audit_contexts_created": 1,
+        "close_attempts": 1,
+        "server_terminal": true
+      }
+    ],
+    "passed": 1,
+    "failed": 0,
+    "explicit_fake_model": true,
+    "neural_requests": 0,
+    "GPU_used": false
+  },
+  "SDK_versions_unchanged": true,
+  "original_source_and_lock_unchanged": true,
+  "ready": true,
+  "owned_after": 0,
+  "source_files_unchanged": true,
+  "wall_seconds": 138.471
+}

@@ -1,0 +1,14 @@
+{
+  "scenario": "cleanup_trace_write_failure",
+  "passed": true,
+  "explicit_scripted_model": true,
+  "neural_requests": 0,
+  "GPU_used": false,
+  "fake_model_posts": 3,
+  "injected_write_failures": 1,
+  "agent_close_confirmed": true,
+  "independent_context_closed": true,
+  "trace_write_failed_reported": true,
+  "recovered_prefix_events": 20,
+  "server_terminal": true
+}

@@ -1,0 +1,20 @@
+{
+  "scenario": "SIGKILL_after_two_bodies_during_third_POST",
+  "passed": false,
+  "explicit_scripted_model": true,
+  "neural_requests": 0,
+  "GPU_used": false,
+  "agent_returncode": -9,
+  "model_attempts": 3,
+  "model_complete_reply_bodies": 2,
+  "budget_unknown_still_charged": 1,
+  "result_file_exists": false,
+  "durable_trace_exists": false,
+  "child_close_calls_before_kill": 0,
+  "failure": "Complete wire bodies were memory-only and disappeared with SIGKILL",
+  "budget_unchanged_by_recovery": true,
+  "operator_closed_abandoned_context": true,
+  "agent_close_confirmed": false,
+  "wall_seconds": 7.672,
+  "server_terminal": true
+}

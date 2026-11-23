@@ -1,0 +1,152 @@
+{
+  "identity": {
+    "journal_id": "aeb37d6e61744152b2858607f0a6204e",
+    "max_bytes": 8388608,
+    "max_events": 192,
+    "owner_sha256": "b1f78b35790358825aa011b8617f5331a0aee0e42a269e3dc3f0a0803b52b289",
+    "type": "identity",
+    "version": 1
+  },
+  "events": [
+    {
+      "body_bytes": 245,
+      "body_sha256": "1a7861003208ad1aac36dc693b343980bd0d6692257bdb9cd7cec3222bc84062",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 348,
+      "body_sha256": "cac0602bbe816ba0db66548a6df2ebc465de574a04738d67384853c56de2bed7",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "1a7861003208ad1aac36dc693b343980bd0d6692257bdb9cd7cec3222bc84062",
+      "status": 200
+    },
+    {
+      "body_bytes": 240,
+      "body_sha256": "e333e60bf44dff24d17a9462095184370969d9b8b180dc99565224274836213a",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 2581,
+      "body_sha256": "68ba8a02f2100d904f976f117811ebad2530e0ef69160e077bf069d4f47af75a",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "e333e60bf44dff24d17a9462095184370969d9b8b180dc99565224274836213a",
+      "status": 200
+    },
+    {
+      "body_bytes": 276,
+      "body_sha256": "d275a44611ef037c2148c8133081902fc7860af46f0f5c0898cafb5a3563e339",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 768,
+      "body_sha256": "fdfe054ae4e43c39dfbb02b3335370207698bdfea2b24c5e417c023947b6e6c8",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "d275a44611ef037c2148c8133081902fc7860af46f0f5c0898cafb5a3563e339",
+      "status": 200
+    },
+    {
+      "body_bytes": 3126,
+      "body_sha256": "94397829791bcca74de0af34d91874234aea73843094d98f4d5baecfa861728b",
+      "channel": "model",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/v1/chat/completions",
+      "protocol_version": null
+    },
+    {
+      "body_bytes": 322,
+      "body_sha256": "3d28992c53a5ebc9b8541f454ac49bd2c91afd9e1bc89e9a8ea0df578eb3fa0b",
+      "channel": "model",
+      "kind": "client_response",
+      "request_body_sha256": "94397829791bcca74de0af34d91874234aea73843094d98f4d5baecfa861728b",
+      "status": 200
+    },
+    {
+      "body_bytes": 245,
+      "body_sha256": "1a7861003208ad1aac36dc693b343980bd0d6692257bdb9cd7cec3222bc84062",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 348,
+      "body_sha256": "cac0602bbe816ba0db66548a6df2ebc465de574a04738d67384853c56de2bed7",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "1a7861003208ad1aac36dc693b343980bd0d6692257bdb9cd7cec3222bc84062",
+      "status": 200
+    },
+    {
+      "body_bytes": 322,
+      "body_sha256": "525e8d2daea730dda3768eaef5cc93e9b6acfe3a17c79312dc5958ca819f1985",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 410,
+      "body_sha256": "d730419849875f23e31dece0686f664b3e49db7b1b036bab406e7ba32aa9e2a3",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "525e8d2daea730dda3768eaef5cc93e9b6acfe3a17c79312dc5958ca819f1985",
+      "status": 200
+    },
+    {
+      "body_bytes": 240,
+      "body_sha256": "a3919812efb140ffdea6c7732b786ede091457dbb0385d54600c70fa2b63b157",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 2581,
+      "body_sha256": "4a2ba716d44fa901167b9877433bfe03d333ea5ea45b81c15529208c0f31b92b",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "a3919812efb140ffdea6c7732b786ede091457dbb0385d54600c70fa2b63b157",
+      "status": 200
+    },
+    {
+      "body_bytes": 321,
+      "body_sha256": "eac6d16f471a01569724f83e5fce49d5acf1511feda67b8fd21cbcc9d22990c2",
+      "channel": "mcp",
+      "kind": "client_request_attempt",
+      "method": "POST",
+      "path": "/mcp",
+      "protocol_version": "2026-07-28"
+    },
+    {
+      "body_bytes": 267,
+      "body_sha256": "0fde138198aa02fba69909cbf48e3d36dbd88337d90c7df02fb71caebc4a6230",
+      "channel": "mcp",
+      "kind": "client_response",
+      "request_body_sha256": "eac6d16f471a01569724f83e5fce49d5acf1511feda67b8fd21cbcc9d22990c2",
+      "status": 200
+    }
+  ],
+  "valid_bytes": 24530,
+  "tail_bytes": 0,
+  "last_frame_sha256": "ef328268d8e834ccd457fbc1625eef31703fa1ce3d38ee5e448fa18f29bdadd7",
+  "file_sha256": "adb478d64c118e03313f521942cddd2a55a1b14abe5cbb50c4b647bb882482e5"
+}

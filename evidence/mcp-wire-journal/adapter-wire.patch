@@ -1,0 +1,1009 @@
+diff --git a/agent_lab/wire_journal.py b/agent_lab/wire_journal.py
+new file mode 100644
+index 0000000..f369e77
+--- /dev/null
++++ b/agent_lab/wire_journal.py
+@@ -0,0 +1,317 @@
++"""Private append-only wire evidence; recover a verified prefix after process death.
++
++Checksums detect accidental damage, not a malicious owner. This log does not
++resume an agent, replay tools, or prove that a request reached its server.
++"""
++
++import argparse
++import base64
++import hashlib
++import json
++import os
++from pathlib import Path
++import re
++import stat
++
++MAX_BYTES = 8 * 1024**2
++MAX_EVENTS = 192
++MAX_FRAME_BYTES = 1024**2
++ZERO = "0" * 64
++
++
++class WireJournalError(ValueError):
++    pass
++
++
++def packed(value):
++    return json.dumps(
++        value,
++        ensure_ascii=False,
++        sort_keys=True,
++        separators=(",", ":"),
++        allow_nan=False,
++    ).encode()
++
++
++def _identity(owner, journal_id):
++    if (
++        not isinstance(owner, str)
++        or not re.fullmatch(r"[a-f0-9]{64}", owner)
++        or not isinstance(journal_id, str)
++        or not re.fullmatch(r"[a-f0-9]{32}", journal_id)
++    ):
++        raise WireJournalError("Invalid wire journal identity")
++
++
++def _limits(events, size):
++    if (
++        type(events) is not int
++        or not 1 <= events <= MAX_EVENTS
++        or type(size) is not int
++        or not 1024 <= size <= MAX_BYTES
++    ):
++        raise WireJournalError("Invalid wire journal bounds")
++
++
++def _event(event):
++    common = {"channel", "kind", "body_base64", "body_bytes", "body_sha256"}
++    if not isinstance(event, dict) or event.get("channel") not in {"mcp", "model"}:
++        raise WireJournalError("Invalid wire event channel")
++    if event.get("kind") == "client_request_attempt":
++        expected = common | {"path", "method", "protocol_version"}
++        if (
++            not isinstance(event.get("path"), str)
++            or not isinstance(event.get("method"), str)
++            or not 1 <= len(event["path"]) <= 2048
++            or not 1 <= len(event["method"]) <= 16
++            or event.get("protocol_version") is not None
++            and not isinstance(event["protocol_version"], str)
++        ):
++            raise WireJournalError("Invalid request metadata")
++    elif event.get("kind") == "client_response":
++        expected = common | {"status", "request_body_sha256"}
++        if (
++            type(event.get("status")) is not int
++            or not 100 <= event["status"] <= 599
++            or not isinstance(event.get("request_body_sha256"), str)
++            or not re.fullmatch(r"[a-f0-9]{64}", event["request_body_sha256"])
++        ):
++            raise WireJournalError("Invalid response metadata")
++    else:
++        raise WireJournalError("Invalid wire event kind")
++    if (
++        set(event) != expected
++        or not isinstance(event["body_base64"], str)
++        or len(event["body_base64"]) > MAX_FRAME_BYTES
++    ):
++        raise WireJournalError("Unexpected wire fields or oversized body")
++    raw = base64.b64decode(event["body_base64"], validate=True)
++    if (
++        type(event["body_bytes"]) is not int
++        or event["body_bytes"] != len(raw)
++        or hashlib.sha256(raw).hexdigest() != event["body_sha256"]
++    ):
++        raise WireJournalError("Wire body length or digest does not match")
++
++
++class DurableWireEvents:
++    """Create once in an admitted private state directory; never reopen for writing."""
++
++    def __init__(
++        self, path, owner, journal_id, *, max_events=MAX_EVENTS, max_bytes=MAX_BYTES
++    ):
++        _identity(owner, journal_id)
++        _limits(max_events, max_bytes)
++        self.path = Path(path)
++        self.max_events, self.max_bytes = max_events, max_bytes
++        self.events = []
++        self.failed = False
++        self.error_type = None
++        self._next = 0
++        self._previous = ZERO
++        self._bytes = 0
++        self._fd = os.open(
++            self.path,
++            os.O_WRONLY
++            | os.O_APPEND
++            | os.O_CREAT
++            | os.O_EXCL
++            | os.O_NOFOLLOW
++            | os.O_CLOEXEC,
++            0o600,
++        )
++        try:
++            self._write_record(
++                {
++                    "type": "identity",
++                    "version": 1,
++                    "owner_sha256": owner,
++                    "journal_id": journal_id,
++                    "max_events": max_events,
++                    "max_bytes": max_bytes,
++                }
++            )
++            parent = os.open(self.path.parent, os.O_RDONLY | os.O_DIRECTORY)
++            try:
++                os.fsync(parent)
++            finally:
++                os.close(parent)
++        except BaseException:
++            self.close()
++            raise
++
++    def _write_record(self, record):
++        frame = {
++            "sequence": self._next,
++            "previous_sha256": self._previous,
++            "record": record,
++        }
++        checksum = hashlib.sha256(packed(frame)).hexdigest()
++        data = packed({**frame, "sha256": checksum}) + b"\n"
++        if len(data) > MAX_FRAME_BYTES or self._bytes + len(data) > self.max_bytes:
++            raise WireJournalError("Wire evidence byte limit exhausted")
++        view = memoryview(data)
++        while view:
++            written = os.write(self._fd, view)
++            if written <= 0:
++                raise OSError("Wire journal write made no progress")
++            view = view[written:]
++        os.fsync(self._fd)
++        self._next += 1
++        self._previous = checksum
++        self._bytes += len(data)
++
++    def append(self, event):
++        if self._fd is None or self.failed:
++            raise WireJournalError(
++                "Wire journal is closed or has a prior write failure"
++            )
++        try:
++            if len(self.events) >= self.max_events:
++                raise WireJournalError("Invalid wire event or event count exhausted")
++            _event(event)
++            saved = json.loads(packed(event))
++            self._write_record({"type": "event", "event": saved})
++            self.events.append(saved)
++        except Exception as exc:
++            self.failed, self.error_type = True, type(exc).__name__
++            raise
++
++    def close(self):
++        if self._fd is not None:
++            os.close(self._fd)
++            self._fd = None
++
++    def status(self):
++        return {
++            "file": self.path.name,
++            "events_committed": len(self.events),
++            "write_failed": self.failed,
++            "write_error_type": self.error_type,
++            "last_sequence": self._next - 1,
++            "last_frame_sha256": self._previous,
++            "committed_bytes": self._bytes,
++            "closed": self._fd is None,
++        }
++
++
++def _pairs(items):
++    result = {}
++    for key, value in items:
++        if key in result:
++            raise WireJournalError("Duplicate frame key")
++        result[key] = value
++    return result
++
++
++def read_wire_journal(path, owner, journal_id):
++    """Read only. A torn final line is reported, never truncated or replayed.
++
++    A newline-terminated corrupt frame rejects the file. A valid prefix does
++    not assert workflow completion or that any unrecorded action did not occur.
++    """
++    _identity(owner, journal_id)
++    fd = os.open(path, os.O_RDONLY | os.O_NOFOLLOW | os.O_CLOEXEC | os.O_NONBLOCK)
++    try:
++        info = os.fstat(fd)
++        if not stat.S_ISREG(info.st_mode) or info.st_size > MAX_BYTES:
++            raise WireJournalError("Wire journal must be a bounded regular file")
++        with os.fdopen(fd, "rb", closefd=False) as stream:
++            data = stream.read(MAX_BYTES + 1)
++    finally:
++        os.close(fd)
++    if len(data) > MAX_BYTES:
++        raise WireJournalError("Wire journal exceeds its size bound")
++    end = data.rfind(b"\n") + 1
++    previous, events, identity = ZERO, [], None
++    for sequence, line in enumerate(data[:end].splitlines()):
++        if len(line) + 1 > MAX_FRAME_BYTES:
++            raise WireJournalError("Wire frame exceeds its size bound")
++        try:
++            frame = json.loads(line, object_pairs_hook=_pairs)
++            checksum = frame.pop("sha256")
++            if (
++                set(frame) != {"sequence", "previous_sha256", "record"}
++                or type(frame["sequence"]) is not int
++                or frame["sequence"] != sequence
++                or frame["previous_sha256"] != previous
++                or checksum != hashlib.sha256(packed(frame)).hexdigest()
++            ):
++                raise WireJournalError("Wire frame identity or checksum changed")
++            record = frame["record"]
++            if sequence == 0:
++                if (
++                    set(record)
++                    != {
++                        "type",
++                        "version",
++                        "owner_sha256",
++                        "journal_id",
++                        "max_events",
++                        "max_bytes",
++                    }
++                    or record["type"] != "identity"
++                    or type(record["version"]) is not int
++                    or record["version"] != 1
++                    or record["owner_sha256"] != owner
++                    or record["journal_id"] != journal_id
++                ):
++                    raise WireJournalError(
++                        "Wire journal belongs to a different attempt budget"
++                    )
++                _limits(record["max_events"], record["max_bytes"])
++                identity = record
++            else:
++                if (
++                    set(record) != {"type", "event"}
++                    or record["type"] != "event"
++                    or not isinstance(record["event"], dict)
++                ):
++                    raise WireJournalError("Invalid wire event record")
++                _event(record["event"])
++                events.append(record["event"])
++            previous = checksum
++        except (KeyError, ValueError, TypeError, AttributeError) as exc:
++            raise WireJournalError("Missing or inconsistent wire frame") from exc
++    if (
++        identity is None
++        or len(events) > identity["max_events"]
++        or len(data) > identity["max_bytes"]
++    ):
++        raise WireJournalError("Missing identity or wire evidence bounds exceeded")
++    return {
++        "identity": identity,
++        "events": events,
++        "valid_bytes": end,
++        "tail_bytes": len(data) - end,
++        "last_frame_sha256": previous,
++        "file_sha256": hashlib.sha256(data).hexdigest(),
++    }
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("path", type=Path)
++    parser.add_argument("--owner", required=True)
++    parser.add_argument("--journal-id", required=True)
++    args = parser.parse_args()
++    result = read_wire_journal(args.path, args.owner, args.journal_id)
++    # Raw bodies can contain audit capabilities; the CLI emits only metadata.
++    fields = {
++        "channel",
++        "kind",
++        "method",
++        "path",
++        "status",
++        "body_bytes",
++        "body_sha256",
++        "request_body_sha256",
++    }
++    result["events"] = [
++        {k: v for k, v in event.items() if k in fields} for event in result["events"]
++    ]
++    print(json.dumps(result, indent=2))
++
++
++if __name__ == "__main__":
++    main()
+diff --git a/benchmarks/llamaindex_mcp_audit.py b/benchmarks/llamaindex_mcp_audit.py
+index 3e7567d..8bcc31f 100644
+--- a/benchmarks/llamaindex_mcp_audit.py
++++ b/benchmarks/llamaindex_mcp_audit.py
+@@ -21,6 +21,7 @@ from mcp.client.streamable_http import streamable_http_client
+ 
+ from agent_lab.async_request_budget import make_async_http_client, open_budget
+ from agent_lab.evidence_audit import EvidenceError
++from agent_lab.wire_journal import DurableWireEvents
+ from benchmarks.llamaindex_evidence_agent import AuditAssessment, DIRECT_SYSTEM
+ 
+ 
+@@ -83,13 +84,29 @@ async def cleanup_audit(mcp_url, handle, wire, outcome):
+     status error nor the workflow's canceled transport may skip the close.
+     There is one close attempt, no replay, renewal or replacement audit.
+     """
++
++    class CleanupEvents:
++        def append(self, event):
++            # A failed disk must not prevent closing the already-known capability.
++            try:
++                wire.append(event)
++            except Exception as exc:
++                outcome["cleanup_wire_error_count"] = (
++                    outcome.get("cleanup_wire_error_count", 0) + 1
++                )
++                errors = outcome.setdefault("cleanup_wire_errors", [])
++                if len(errors) < 8:
++                    errors.append(
++                        {"type": type(exc).__name__, "kind": event.get("kind")}
++                    )
++
+     try:
+         async with asyncio.timeout(10):
+             async with httpx2.AsyncClient(
+                 trust_env=False,
+                 follow_redirects=False,
+                 timeout=10,
+-                event_hooks=hooks("mcp", wire),
++                event_hooks=hooks("mcp", CleanupEvents()),
+             ) as http:
+                 async with Client(
+                     streamable_http_client(mcp_url, http_client=http), cache=None
+@@ -141,7 +158,9 @@ async def audit_via_mcp(
+         "max_total_request_bytes": 262144,
+     }
+     budget = open_budget(state_dir, owner_sha256, limits, create=True)
+-    wire = []
++    wire = DurableWireEvents(
++        budget.directory / "wire-events.jsonl", owner_sha256, budget.journal_id
++    )
+     trace = []
+     events = []
+     receipts = []
+@@ -155,7 +174,7 @@ async def audit_via_mcp(
+         "evidence_verified": False,
+         "backend": "external_mcp2",
+         "tool_trace": trace,
+-        "wire_events": wire,
++        "wire_events": wire.events,
+         "workflow_events": events,
+         "submissions": submissions,
+     }
+@@ -371,8 +390,12 @@ async def audit_via_mcp(
+         outcome["evidence_verified"] = False
+         outcome["error"] = {"type": type(exc).__name__, "message": str(exc)}
+     finally:
+-        if handle is not None:
+-            await cleanup_audit(mcp_url, handle, wire, outcome)
++        try:
++            if handle is not None:
++                await cleanup_audit(mcp_url, handle, wire, outcome)
++        finally:
++            wire.close()
++            outcome["wire_journal"] = wire.status()
+     outcome["receipts_received"] = receipts
+     outcome["versions"] = {
+         n: importlib.metadata.version(n)
+diff --git a/benchmarks/mcp_wire_controls.py b/benchmarks/mcp_wire_controls.py
+new file mode 100644
+index 0000000..5384b9c
+--- /dev/null
++++ b/benchmarks/mcp_wire_controls.py
+@@ -0,0 +1,408 @@
++"""Real MCP/TCP process-death controls with explicitly scripted model replies."""
++
++import argparse
++import asyncio
++import base64
++import hashlib
++from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
++import json
++import os
++from pathlib import Path
++import signal
++import socket
++import subprocess
++import sys
++import threading
++import time
++from types import SimpleNamespace
++from unittest.mock import patch
++
++import httpx2
++from mcp import Client
++from mcp.client.streamable_http import streamable_http_client
++import uvicorn
++
++from benchmarks.llamaindex_mcp_audit import audit_via_mcp, call_tool
++from benchmarks.mcp_agent_controls import run_case
++from benchmarks.mcp_cleanup_controls import FaultBoundary, call_status
++from benchmarks.mcp_evidence_server import create_app
++
++
++async def child(args):
++    result = await audit_via_mcp(
++        args.mcp_url,
++        args.state / "journal",
++        "Read the pinned patch_move report.",
++        base_url=args.base_url,
++        model="explicit-wire-control",
++        owner_sha256=args.owner,
++        timeout=120,
++    )
++    (args.state / "unexpected-result.json").write_text(json.dumps(result) + "\n")
++
++
++async def killed_agent(args):
++    """Hold the third POST in flight; kill only the spawned agent process."""
++    args.state.mkdir(exist_ok=False)
++    reached = threading.Event()
++    release = threading.Event()
++    bodies, replies, errors = [], [], []
++    key = os.urandom(24).hex()
++    plan = [
++        ("list_reports", {}),
++        (
++            "read_report",
++            {"report_id": "patch_move", "pointers": ["/related_suite_passed"]},
++        ),
++    ]
++
++    class Handler(BaseHTTPRequestHandler):
++        def log_message(self, *unused):
++            pass
++
++        def do_POST(self):
++            try:
++                assert self.headers.get("Authorization") == "Bearer " + key
++                raw = self.rfile.read(int(self.headers["Content-Length"]))
++                bodies.append(raw)
++                index = len(bodies) - 1
++                assert index <= 2, "Unexpected retry"
++                if index == 2:
++                    reached.set()
++                    release.wait(30)
++                    return  # No HTTP headers/body for this deliberately unknown request.
++                name, arguments = plan[index]
++                value = {
++                    "id": "explicit-wire-control-" + str(index),
++                    "object": "chat.completion",
++                    "created": 0,
++                    "model": "explicit-wire-control",
++                    "choices": [
++                        {
++                            "index": 0,
++                            "message": {
++                                "role": "assistant",
++                                "content": None,
++                                "tool_calls": [
++                                    {
++                                        "id": "control-" + str(index),
++                                        "type": "function",
++                                        "function": {
++                                            "name": name,
++                                            "arguments": json.dumps(arguments),
++                                        },
++                                    }
++                                ],
++                            },
++                            "finish_reason": "tool_calls",
++                        }
++                    ],
++                    "usage": {
++                        "prompt_tokens": 1,
++                        "completion_tokens": 1,
++                        "total_tokens": 2,
++                    },
++                }
++                encoded = json.dumps(value).encode()
++                replies.append(encoded)
++                self.send_response(200)
++                self.send_header("Content-Type", "application/json")
++                self.send_header("Content-Length", str(len(encoded)))
++                self.end_headers()
++                self.wfile.write(encoded)
++            except Exception as exc:
++                errors.append(type(exc).__name__)
++                self.send_error(500)
++
++    app = FaultBoundary(
++        create_app(args.code / "corpus", args.code / "corpus/catalog.json"), "wire"
++    )
++    sock = socket.socket()
++    sock.bind(("127.0.0.1", 0))
++    port = sock.getsockname()[1]
++    server = uvicorn.Server(uvicorn.Config(app, log_level="error", access_log=False))
++    serving = asyncio.create_task(server.serve(sockets=[sock]))
++    model = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
++    model.daemon_threads = True
++    thread = threading.Thread(target=model.serve_forever, daemon=True)
++    thread.start()
++    process = None
++    report = {
++        "scenario": "SIGKILL_after_two_bodies_during_third_POST",
++        "passed": False,
++        "explicit_scripted_model": True,
++        "neural_requests": 0,
++        "GPU_used": False,
++    }
++    started = time.monotonic()
++    try:
++        async with asyncio.timeout(10):
++            while not server.started:
++                if serving.done():
++                    await serving
++                    raise AssertionError("MCP server exited before startup")
++                await asyncio.sleep(0.01)
++        env = dict(os.environ, AGENT_LAB_EVIDENCE_KEY=key)
++        with (args.state / "child.log").open("wb") as log:
++            process = subprocess.Popen(
++                [
++                    sys.executable,
++                    "-m",
++                    "benchmarks.mcp_wire_controls",
++                    "--child",
++                    "--state",
++                    str(args.state),
++                    "--owner",
++                    args.owner,
++                    "--mcp-url",
++                    f"http://127.0.0.1:{port}/mcp",
++                    "--base-url",
++                    f"http://127.0.0.1:{model.server_port}/v1",
++                ],
++                env=env,
++                stdout=log,
++                stderr=subprocess.STDOUT,
++            )
++            async with asyncio.timeout(90):
++                while not reached.is_set():
++                    if process.poll() is not None:
++                        raise AssertionError(
++                            "Agent exited before third controlled POST"
++                        )
++                    await asyncio.sleep(0.02)
++            os.kill(process.pid, signal.SIGKILL)
++            rc = await asyncio.to_thread(process.wait, 10)
++        assert (
++            rc == -signal.SIGKILL
++            and len(bodies) == 3
++            and len(replies) == 2
++            and not errors
++        )
++        assert len(app.handles) == 1 and app.calls.count("read_report") == 1
++        assert app.calls.count("close_audit") == 0
++        budget_path = args.state / "journal/model-requests.json"
++        before = hashlib.sha256(budget_path.read_bytes()).hexdigest()
++        budget = json.loads(budget_path.read_text())
++        attempts = budget["reservations"]
++        assert len(attempts) == 3 and [x["http_status"] for x in attempts] == [
++            200,
++            200,
++            None,
++        ]
++        assert not (args.state / "unexpected-result.json").exists()
++        path = args.state / "journal/wire-events.jsonl"
++        report.update(
++            agent_returncode=rc,
++            model_attempts=3,
++            model_complete_reply_bodies=2,
++            budget_unknown_still_charged=1,
++            result_file_exists=False,
++            durable_trace_exists=path.exists(),
++            child_close_calls_before_kill=0,
++        )
++        if path.exists():
++            from agent_lab.wire_journal import read_wire_journal
++
++            recovered = read_wire_journal(
++                path, args.owner, budget["identity"]["journal_id"]
++            )
++            events = recovered["events"]
++            requests = [
++                x
++                for x in events
++                if x["channel"] == "model" and x["kind"] == "client_request_attempt"
++            ]
++            responses = [
++                x
++                for x in events
++                if x["channel"] == "model" and x["kind"] == "client_response"
++            ]
++            assert (
++                len(requests) == 3
++                and len(responses) == 2
++                and recovered["tail_bytes"] == 0
++            )
++            assert [base64.b64decode(x["body_base64"]) for x in requests] == bodies
++            assert [base64.b64decode(x["body_base64"]) for x in responses] == replies
++            assert (
++                key.encode() not in path.read_bytes()
++                and path.stat().st_mode & 0o777 == 0o600
++            )
++            mcp_reads = []
++            for event in events:
++                if (
++                    event["channel"] != "mcp"
++                    or event["kind"] != "client_request_attempt"
++                ):
++                    continue
++                body = json.loads(base64.b64decode(event["body_base64"]))
++                if body.get("method") == "tools/call":
++                    mcp_reads.append(body["params"]["name"])
++            assert mcp_reads.count("read_report") == 1
++            report.update(
++                passed=True,
++                recovered_events=len(events),
++                recovered_model_requests=3,
++                recovered_complete_model_bodies=2,
++                recovered_read_report_requests=1,
++                response_body_hashes=[hashlib.sha256(b).hexdigest() for b in replies],
++                synthetic_authorization_key_absent=True,
++                journal_mode="0600",
++            )
++        else:
++            report["failure"] = (
++                "Complete wire bodies were memory-only and disappeared with SIGKILL"
++            )
++        assert hashlib.sha256(budget_path.read_bytes()).hexdigest() == before
++        report["budget_unchanged_by_recovery"] = True
++        async with httpx2.AsyncClient(trust_env=False, timeout=5) as http:
++            async with Client(
++                streamable_http_client(
++                    f"http://127.0.0.1:{port}/mcp", http_client=http
++                ),
++                cache=None,
++            ) as remote:
++                closed = await call_tool(
++                    remote, "close_audit", {"audit_id": app.handles[0]}
++                )
++                assert closed == {"closed": True}
++        report["operator_closed_abandoned_context"] = True
++        report["agent_close_confirmed"] = False
++    finally:
++        if process is not None and process.poll() is None:
++            process.kill()
++            await asyncio.to_thread(process.wait, 10)
++        release.set()
++        await asyncio.to_thread(model.shutdown)
++        model.server_close()
++        thread.join(timeout=5)
++        server.should_exit = True
++        await asyncio.wait_for(serving, timeout=10)
++        sock.close()
++        report.update(
++            wall_seconds=round(time.monotonic() - started, 3),
++            server_terminal=serving.done(),
++        )
++        (args.state / "report.json").write_text(json.dumps(report, indent=2) + "\n")
++    print(json.dumps(report), flush=True)
++    return 0 if report["passed"] else 2
++
++
++async def cleanup_write_failure(args):
++    """A failed trace write during cleanup must not block the actual close."""
++    from agent_lab.wire_journal import DurableWireEvents, read_wire_journal
++
++    args.state.mkdir(exist_ok=False)
++    boundary = FaultBoundary(
++        create_app(args.code / "corpus", args.code / "corpus/catalog.json"), "wire"
++    )
++    sock = socket.socket()
++    sock.bind(("127.0.0.1", 0))
++    url = f"http://127.0.0.1:{sock.getsockname()[1]}/mcp"
++    server = uvicorn.Server(
++        uvicorn.Config(boundary, log_level="error", access_log=False)
++    )
++    serving = asyncio.create_task(server.serve(sockets=[sock]))
++    original = DurableWireEvents.append
++    failures = 0
++
++    def fail_status(writer, event):
++        nonlocal failures
++        if event["channel"] == "mcp" and event["kind"] == "client_request_attempt":
++            body = json.loads(base64.b64decode(event["body_base64"]))
++            if body.get("params", {}).get("name") == "audit_status":
++                failures += 1
++                writer.failed, writer.error_type = True, "OSError"
++                raise OSError("Injected trace storage failure during cleanup")
++        return original(writer, event)
++
++    report = {
++        "scenario": "cleanup_trace_write_failure",
++        "passed": False,
++        "explicit_scripted_model": True,
++        "neural_requests": 0,
++        "GPU_used": False,
++    }
++    try:
++        async with asyncio.timeout(10):
++            while not server.started:
++                if serving.done():
++                    await serving
++                    raise AssertionError("MCP server exited before startup")
++                await asyncio.sleep(0.01)
++        child_args = SimpleNamespace(
++            code=args.code, state=args.state, owner=args.owner, mcp_url=url
++        )
++        with patch.object(DurableWireEvents, "append", fail_status):
++            await run_case(child_args, "normal")
++        result = json.loads((args.state / "normal-result.json").read_text())
++        assert (
++            failures == 1
++            and result["evidence_verified"]
++            and result["mcp_close"] == {"closed": True}
++        )
++        assert (
++            result["cleanup_wire_error_count"] > 0
++            and result["wire_journal"]["write_failed"]
++        )
++        assert (
++            result["wire_journal"]["closed"]
++            and boundary.calls.count("close_audit") == 1
++        )
++        budget = json.loads((args.state / "normal/model-requests.json").read_text())
++        assert len(budget["reservations"]) == 3 and all(
++            r["http_status"] == 200 for r in budget["reservations"]
++        )
++        recovered = read_wire_journal(
++            args.state / "normal/wire-events.jsonl",
++            args.owner,
++            budget["identity"]["journal_id"],
++        )
++        assert (
++            recovered["events"] == result["wire_events"]
++            and recovered["tail_bytes"] == 0
++        )
++        status = await call_status(url, boundary.handles[0])
++        assert status["is_error"] and any(
++            "Unknown or expired" in t for t in status["content"]
++        )
++        report.update(
++            passed=True,
++            fake_model_posts=3,
++            injected_write_failures=failures,
++            agent_close_confirmed=True,
++            independent_context_closed=True,
++            trace_write_failed_reported=True,
++            recovered_prefix_events=len(recovered["events"]),
++        )
++    finally:
++        server.should_exit = True
++        await asyncio.wait_for(serving, timeout=10)
++        sock.close()
++        report["server_terminal"] = serving.done()
++        (args.state / "report.json").write_text(json.dumps(report, indent=2) + "\n")
++    print(json.dumps(report), flush=True)
++    return 0
++
++
++def main():
++    parser = argparse.ArgumentParser(description=__doc__)
++    parser.add_argument("--code", type=Path)
++    parser.add_argument("--state", type=Path, required=True)
++    parser.add_argument("--owner", required=True)
++    parser.add_argument("--child", action="store_true")
++    parser.add_argument("--mcp-url")
++    parser.add_argument("--base-url")
++    parser.add_argument("--cleanup-write-error", action="store_true")
++    args = parser.parse_args()
++    return asyncio.run(
++        child(args)
++        if args.child
++        else cleanup_write_failure(args)
++        if args.cleanup_write_error
++        else killed_agent(args)
++    )
++
++
++if __name__ == "__main__":
++    raise SystemExit(main())
+diff --git a/extras/mcp-agent/test_wire_journal.py b/extras/mcp-agent/test_wire_journal.py
+new file mode 100644
+index 0000000..e82caf7
+--- /dev/null
++++ b/extras/mcp-agent/test_wire_journal.py
+@@ -0,0 +1,188 @@
++"""Stdlib CPU controls for private wire prefix recovery; no model requests."""
++
++import base64
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import tempfile
++import unittest
++from unittest.mock import patch
++
++ROOT = Path(__file__).resolve().parents[2]
++sys.path.insert(0, str(ROOT))
++from agent_lab.wire_journal import (  # noqa: E402 - standalone optional-runtime control
++    DurableWireEvents,
++    WireJournalError,
++    read_wire_journal,
++)
++
++OWNER, JOURNAL = "a" * 64, "b" * 32
++
++
++def event(body=b'{"audit_id":"private-control-capability"}'):
++    return {
++        "channel": "model",
++        "kind": "client_request_attempt",
++        "path": "/v1/chat/completions",
++        "method": "POST",
++        "protocol_version": None,
++        "body_base64": base64.b64encode(body).decode(),
++        "body_bytes": len(body),
++        "body_sha256": hashlib.sha256(body).hexdigest(),
++    }
++
++
++class WireControls(unittest.TestCase):
++    def setUp(self):
++        self.temp = tempfile.TemporaryDirectory(prefix="agentlab-wire-control-")
++        self.root = Path(self.temp.name)
++        self.path = self.root / "wire-events.jsonl"
++        self.writers = []
++
++    def tearDown(self):
++        for writer in self.writers:
++            writer.close()
++        self.temp.cleanup()
++
++    def writer(self, path=None, **kwargs):
++        writer = DurableWireEvents(path or self.path, OWNER, JOURNAL, **kwargs)
++        self.writers.append(writer)
++        return writer
++
++    def test_private_file_deep_copy_roundtrip_and_no_reopen(self):
++        writer = self.writer()
++        item = event()
++        writer.append(item)
++        item["path"] = "/changed-after-commit"
++        writer.close()
++        writer.close()
++        before = self.path.read_bytes()
++        recovered = read_wire_journal(self.path, OWNER, JOURNAL)
++        self.assertEqual(recovered["events"], [event()])
++        self.assertEqual(writer.events, [event()])
++        self.assertEqual(recovered["tail_bytes"], 0)
++        self.assertEqual(self.path.stat().st_mode & 0o777, 0o600)
++        with self.assertRaises(FileExistsError):
++            self.writer()
++        with self.assertRaises(WireJournalError):
++            writer.append(event())
++        self.assertEqual(self.path.read_bytes(), before)
++
++    def test_partial_write_keeps_prefix_and_never_repairs_or_reuses_file(self):
++        writer = self.writer()
++        writer.append(event(b"first"))
++        original = __import__("os").write
++        count = 0
++
++        def broken(fd, data):
++            nonlocal count
++            if fd != writer._fd:
++                return original(fd, data)
++            count += 1
++            if count == 1:
++                return original(fd, data[:13])
++            raise OSError("Injected partial-write failure")
++
++        with (
++            patch("agent_lab.wire_journal.os.write", side_effect=broken),
++            self.assertRaises(OSError),
++        ):
++            writer.append(event(b"second"))
++        writer.close()
++        before = self.path.read_bytes()
++        recovered = read_wire_journal(self.path, OWNER, JOURNAL)
++        self.assertEqual(recovered["events"], [event(b"first")])
++        self.assertEqual(recovered["tail_bytes"], 13)
++        self.assertTrue(writer.status()["write_failed"])
++        self.assertEqual(self.path.read_bytes(), before)
++        with self.assertRaises(FileExistsError):
++            self.writer()
++
++    def test_newline_terminated_corruption_rejects_instead_of_skipping(self):
++        writer = self.writer()
++        writer.append(event())
++        writer.close()
++        self.path.write_bytes(
++            self.path.read_bytes().replace(
++                b"client_request_attempt", b"client_request_attempX"
++            )
++        )
++        before = self.path.read_bytes()
++        with self.assertRaises(WireJournalError):
++            read_wire_journal(self.path, OWNER, JOURNAL)
++        self.assertEqual(self.path.read_bytes(), before)
++
++    def test_owner_or_budget_identity_mismatch_fails_closed(self):
++        self.writer().close()
++        for owner, journal in [("c" * 64, JOURNAL), (OWNER, "d" * 32)]:
++            with self.subTest(owner=owner), self.assertRaises(WireJournalError):
++                read_wire_journal(self.path, owner, journal)
++
++    def test_missing_or_torn_header_and_symlink_are_not_accepted(self):
++        with self.assertRaises(FileNotFoundError):
++            read_wire_journal(self.path, OWNER, JOURNAL)
++        self.path.write_bytes(b'{"partial":')
++        with self.assertRaises(WireJournalError):
++            read_wire_journal(self.path, OWNER, JOURNAL)
++        link = self.root / "link"
++        link.symlink_to(self.path)
++        with self.assertRaises(OSError):
++            read_wire_journal(link, OWNER, JOURNAL)
++
++    def test_count_and_byte_bounds_preserve_previous_commits(self):
++        writer = self.writer(max_events=1)
++        writer.append(event())
++        before = self.path.read_bytes()
++        with self.assertRaises(WireJournalError):
++            writer.append(event(b"second"))
++        self.assertEqual(self.path.read_bytes(), before)
++        bounded = self.writer(self.root / "bounded", max_bytes=1024)
++        before = bounded.path.read_bytes()
++        with self.assertRaises(WireJournalError):
++            bounded.append(event(b"x" * 1200))
++        self.assertEqual(bounded.path.read_bytes(), before)
++
++    def test_extra_headers_or_wrong_body_digest_never_enter_journal(self):
++        bad = [
++            dict(event(), Authorization="not-a-real-key"),
++            dict(event(), body_sha256="0" * 64),
++        ]
++        for i, item in enumerate(bad):
++            writer = self.writer(self.root / ("bad%d" % i))
++            before = writer.path.read_bytes()
++            with self.assertRaises(WireJournalError):
++                writer.append(item)
++            self.assertEqual(writer.path.read_bytes(), before)
++            self.assertTrue(writer.failed)
++
++    def test_cli_emits_metadata_without_raw_capability_body(self):
++        writer = self.writer()
++        writer.append(event())
++        writer.close()
++        result = subprocess.run(
++            [
++                sys.executable,
++                "-m",
++                "agent_lab.wire_journal",
++                str(self.path),
++                "--owner",
++                OWNER,
++                "--journal-id",
++                JOURNAL,
++            ],
++            cwd=ROOT,
++            capture_output=True,
++            text=True,
++            timeout=10,
++        )
++        self.assertEqual(result.returncode, 0, result.stderr)
++        public = json.loads(result.stdout)
++        self.assertEqual(public["events"][0]["body_sha256"], event()["body_sha256"])
++        self.assertNotIn("body_base64", result.stdout)
++        self.assertNotIn("private-control-capability", result.stdout)
++
++
++if __name__ == "__main__":
++    unittest.main(verbosity=2)

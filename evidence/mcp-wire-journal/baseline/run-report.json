@@ -1,0 +1,61 @@
+{
+  "terminal": true,
+  "protocol_sha256": "9a695099bcb359b4cb0ef4d3380b92ef5966a4d6b33a0911b7a6a5293cc27da2",
+  "model_or_GPU_or_training": false,
+  "phases": [
+    {
+      "phase": "dependency-sync",
+      "returncode": 0,
+      "wall_seconds": 25.148,
+      "peak_sampled_owned_RSS_bytes": 92020736
+    },
+    {
+      "phase": "identity",
+      "returncode": 0,
+      "wall_seconds": 2.694,
+      "peak_sampled_owned_RSS_bytes": 67043328
+    },
+    {
+      "phase": "original-SIGKILL",
+      "returncode": 2,
+      "wall_seconds": 10.798,
+      "peak_sampled_owned_RSS_bytes": 281792512
+    }
+  ],
+  "uv_binary_sha256": "b73acdf73b96c3ac9e56d2fa933427b3ee6a901e3cce6ba1e3ecb3f91ca0d86a",
+  "active_phase": "original-SIGKILL",
+  "runtime": {
+    "adapter": "/path/to/baseline-wire-work/source/benchmarks/llamaindex_mcp_audit.py",
+    "packages": {
+      "mcp": "2.3.0",
+      "llama-index-core": "0.14.26",
+      "llama-index-workflows": "2.26.1",
+      "openai": "3.57.0",
+      "httpx2": "2.16.2"
+    }
+  },
+  "baseline_control": {
+    "scenario": "SIGKILL_after_two_bodies_during_third_POST",
+    "passed": false,
+    "explicit_scripted_model": true,
+    "neural_requests": 0,
+    "GPU_used": false,
+    "agent_returncode": -9,
+    "model_attempts": 3,
+    "model_complete_reply_bodies": 2,
+    "budget_unknown_still_charged": 1,
+    "result_file_exists": false,
+    "durable_trace_exists": false,
+    "child_close_calls_before_kill": 0,
+    "failure": "Complete wire bodies were memory-only and disappeared with SIGKILL",
+    "budget_unchanged_by_recovery": true,
+    "operator_closed_abandoned_context": true,
+    "agent_close_confirmed": false,
+    "wall_seconds": 7.672,
+    "server_terminal": true
+  },
+  "ready": true,
+  "owned_after": 0,
+  "source_files_unchanged": true,
+  "wall_seconds": 44.83
+}

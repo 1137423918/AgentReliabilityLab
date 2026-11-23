@@ -1,0 +1,13 @@
+test_cli_emits_metadata_without_raw_capability_body (test_wire_journal.WireControls.test_cli_emits_metadata_without_raw_capability_body) ... ok
+test_count_and_byte_bounds_preserve_previous_commits (test_wire_journal.WireControls.test_count_and_byte_bounds_preserve_previous_commits) ... ok
+test_extra_headers_or_wrong_body_digest_never_enter_journal (test_wire_journal.WireControls.test_extra_headers_or_wrong_body_digest_never_enter_journal) ... ok
+test_missing_or_torn_header_and_symlink_are_not_accepted (test_wire_journal.WireControls.test_missing_or_torn_header_and_symlink_are_not_accepted) ... ok
+test_newline_terminated_corruption_rejects_instead_of_skipping (test_wire_journal.WireControls.test_newline_terminated_corruption_rejects_instead_of_skipping) ... ok
+test_owner_or_budget_identity_mismatch_fails_closed (test_wire_journal.WireControls.test_owner_or_budget_identity_mismatch_fails_closed) ... ok
+test_partial_write_keeps_prefix_and_never_repairs_or_reuses_file (test_wire_journal.WireControls.test_partial_write_keeps_prefix_and_never_repairs_or_reuses_file) ... ok
+test_private_file_deep_copy_roundtrip_and_no_reopen (test_wire_journal.WireControls.test_private_file_deep_copy_roundtrip_and_no_reopen) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.220s
+
+OK

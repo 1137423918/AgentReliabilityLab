@@ -86,3 +86,7 @@ extras/mcp-agent/.venv/bin/python -m benchmarks.mcp_cleanup_controls \
 ## 后续GPU消费实验
 
 [独立记录](../evidence/mcp-agent-gpu/README.md)：已安装服务与真实9B GPU启动成功，但共享显卡保护中止首题；零已完成评分，缺完整wire/最终答案。旧CPU记录及后续十控制保持各自范围。后续[算法与应用路线](robust-tool-use.md)单列准备/实测状态。
+
+## 中断通信证据持久化
+
+后续[私有wire日志](mcp-wire-journal.md)已接入本适配器。服务器真实MCP/TCP强杀控制恢复了15条事件与2份完整脚本模型回复，第三次未知继续扣额；日志故障场景仍完成已知上下文关闭。另8项日志控制与原10项清理场景通过。这些验证不加载模型、不补写旧GPU轨迹，也不恢复整个Agent工作流；[元数据与各自分母](../evidence/mcp-wire-journal/README.md)单列保存。
