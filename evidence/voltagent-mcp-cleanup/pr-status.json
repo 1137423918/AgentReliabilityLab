@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-11-23T14:13:32.862871+00:00",
+  "pr_url": "https://github.com/VoltAgent/voltagent/pull/1562",
+  "state": "OPEN",
+  "draft": false,
+  "head": "afa92332ed938c750f452cda8b5a68cbc7b6067e",
+  "mergeable": "MERGEABLE",
+  "changed_files": 8,
+  "unresolved_inline_threads": 0,
+  "initial_review_thread_marked_resolved_by_reviewer": true,
+  "maintainer_approval_or_merge_claimed": false,
+  "native_actions": [
+    {
+      "id": 45190965225,
+      "name": "PR Checks",
+      "status": "completed",
+      "conclusion": "action_required",
+      "url": "https://github.com/VoltAgent/voltagent/actions/runs/45190965225"
+    }
+  ],
+  "external_checks": {
+    "state": "PENDING",
+    "contexts": {
+      "pageInfo": {
+        "hasNextPage": false,
+        "endCursor": "Mg"
+      },
+      "nodes": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137748931435,
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "IN_PROGRESS",
+          "conclusion": null,
+          "detailsUrl": "https://www.cubic.dev/pr/VoltAgent/voltagent/pull/1562"
+        },
+        {
+          "__typename": "StatusContext",
+          "context": "CodeRabbit",
+          "state": "SUCCESS",
+          "targetUrl": null,
+          "description": "Review completed"
+        }
+      ]
+    }
+  },
+  "review_source": "Read on GitHub only; external review dashboards not accessed."
+}

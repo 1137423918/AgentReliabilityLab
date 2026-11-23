@@ -1,0 +1,65 @@
+{
+  "terminal": true,
+  "phases": [
+    {
+      "name": "format-lifecycle-fixture",
+      "exit_code": 0,
+      "wall_seconds": 53.919
+    },
+    {
+      "name": "baseline-lifecycle",
+      "exit_code": 1,
+      "wall_seconds": 12.46
+    },
+    {
+      "name": "format-candidate",
+      "exit_code": 0,
+      "wall_seconds": 3.686
+    },
+    {
+      "name": "candidate-lifecycle",
+      "exit_code": 0,
+      "wall_seconds": 6.237
+    },
+    {
+      "name": "package-suite",
+      "exit_code": 0,
+      "wall_seconds": 9.836
+    },
+    {
+      "name": "package-typecheck",
+      "exit_code": 0,
+      "wall_seconds": 7.075
+    },
+    {
+      "name": "new-regressions-typecheck",
+      "exit_code": 2,
+      "wall_seconds": 6.548
+    }
+  ],
+  "upstream_base": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+  "baseline_PR_head": "fffed2614bc4354f31f3a1dff50afec65b2412eb",
+  "new_model_calls": 0,
+  "GPU_used": false,
+  "reuse_frozen_dependency_environment": true,
+  "initial_available_memory_bytes": 291982151680,
+  "active_phase": "new-regressions-typecheck",
+  "same_lifecycle_fixture_sha256": "a032ae6d2fc5c96f20812d04ba63d7e64f67aec47ecdc1cb2aa6897140bcb1b4",
+  "error": {
+    "type": "AssertionError",
+    "message": "new-regressions-typecheck"
+  },
+  "owned_child_running": false,
+  "wall_seconds": 104.515,
+  "source_sha256": {
+    "packages/mcp-server/src/capabilities/capabilities.spec.ts": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+    "packages/mcp-server/src/capabilities/notifications.spec.ts": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+    "packages/mcp-server/src/capabilities/prompts.ts": "fa09bb462034f59f7223fadd91e7abc531e3509f2be6c39c33b042ce25c15e4a",
+    "packages/mcp-server/src/capabilities/resources.ts": "bc37032bdc90ab229d1597f38b9b95fb6a40f6894a59fe1afae80420ccac0b6d",
+    "packages/mcp-server/src/server.ts": "64c50a6a20e3758db6df10aea5d2028214c03505ee7c74cd54803f131ef412e3",
+    "packages/mcp-server/src/server-lifecycle.spec.ts": "a032ae6d2fc5c96f20812d04ba63d7e64f67aec47ecdc1cb2aa6897140bcb1b4",
+    "packages/mcp-server/README.md": "4036874f373659352a6f2ce31c973da2f5771a6cdcf95efe86acbc11de522562",
+    ".changeset/fair-mcp-notifications.md": "c9e9ade2a1c908ddc75b01ec53befd500ff217c89a1f7965926bff3258d0ce47"
+  },
+  "lock_unchanged": true
+}

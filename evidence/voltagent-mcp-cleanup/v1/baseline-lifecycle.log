@@ -1,0 +1,191 @@
+
+ RUN  v3.2.4 [V1_RUN]/source/packages/mcp-server
+
+ ❯ src/server-lifecycle.spec.ts (8 tests | 8 failed) 6323ms
+   × notification registration lifecycle > releases completed stateless requests (streaming=false) 1160ms
+     → expected [ 5, 5 ] to deeply equal [ 1, 1 ]
+   × notification registration lifecycle > releases completed stateless requests (streaming=true) 1059ms
+     → expected [ 5, 5 ] to deeply equal [ 1, 1 ]
+   × notification registration lifecycle > releases a terminated stateful HTTP session 1041ms
+     → expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+   × notification registration lifecycle > releases a closed external SSE session 4ms
+     → expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+   × notification registration lifecycle > releases the unconnected base server during shutdown 2ms
+     → expected [ 1, 1 ] to deeply equal [ +0, +0 ]
+   × notification registration lifecycle > releases a stateless server when request handling throws 1013ms
+     → expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+   × notification registration lifecycle > registers the base server again after reconnecting its transport 1008ms
+     → expected [ 1, 1 ] to deeply equal [ +0, +0 ]
+   × notification registration lifecycle > keeps a stateless streaming server until its response completes 1033ms
+     → expected [ 4, 4 ] to deeply equal [ 1, 1 ]
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 8 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=true)
+AssertionError: expected [ 5, 5 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   5,
++   5,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:110:74
+    108|       for (let i = 0; i < 5; i++) {
+    109|         await client.listTools();
+    110|         await vi.waitFor(() => expect(notificationRegistrations(server…
+       |                                                                          ^
+    111|       }
+    112|     },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases a terminated stateful HTTP session
+AssertionError: expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   2,
++   2,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:120:70
+    118|     expect(notificationRegistrations(server)).toEqual([2, 2]);
+    119|     await transport.terminateSession();
+    120|     await vi.waitFor(() => expect(notificationRegistrations(server)).t…
+       |                                                                      ^
+    121|   });
+    122| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases a closed external SSE session
+AssertionError: expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   2,
++   2,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:132:47
+    130|     await server.closeExternalSseSession(session.sessionId);
+    131|     await session.completion;
+    132|     expect(notificationRegistrations(server)).toEqual([1, 1]);
+       |                                               ^
+    133|   });
+    134| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases the unconnected base server during shutdown
+AssertionError: expected [ 1, 1 ] to deeply equal [ +0, +0 ]
+
+- Expected
++ Received
+
+  [
+-   0,
+-   0,
++   1,
++   1,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:139:47
+    137|     expect(notificationRegistrations(server)).toEqual([1, 1]);
+    138|     await server.close();
+    139|     expect(notificationRegistrations(server)).toEqual([0, 0]);
+       |                                               ^
+    140|   });
+    141| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[4/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > releases a stateless server when request handling throws
+AssertionError: expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   2,
++   2,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:167:70
+    165|     expect(response.status).toBe(500);
+    166|     await response.text();
+    167|     await vi.waitFor(() => expect(notificationRegistrations(server)).t…
+       |                                                                      ^
+    168|   });
+    169| 
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[5/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > registers the base server again after reconnecting its transport
+AssertionError: expected [ 1, 1 ] to deeply equal [ +0, +0 ]
+
+- Expected
++ Received
+
+  [
+-   0,
+-   0,
++   1,
++   1,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:191:72
+    189|       await vi.waitFor(() => expect(received).toHaveBeenCalledTimes(1)…
+    190|       await client.close();
+    191|       await vi.waitFor(() => expect(notificationRegistrations(server))…
+       |                                                                        ^
+    192|     }
+    193|   });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[6/8]⎯
+
+ FAIL  src/server-lifecycle.spec.ts > notification registration lifecycle > keeps a stateless streaming server until its response completes
+AssertionError: expected [ 4, 4 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   4,
++   4,
+  ]
+
+ ❯ src/server-lifecycle.spec.ts:216:70
+    214|     );
+    215|     const { client } = await connectClient(await exposeHttpServer(serv…
+    216|     await vi.waitFor(() => expect(notificationRegistrations(server)).t…
+       |                                                                      ^
+    217|     const request = client.callTool({ name: "delayed", arguments: {} }…
+    218|     void request.catch(() => {});
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[7/8]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  8 failed (8)
+   Start at  21:44:31
+   Duration  10.26s (transform 1.98s, setup 0ms, collect 3.28s, tests 6.32s, environment 0ms, prepare 140ms)
+

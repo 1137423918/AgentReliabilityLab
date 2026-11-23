@@ -1,0 +1,232 @@
+{
+  "archive": {
+    "archive_sha256": "82557df2adf1367089427629debeed7641103a642794a43a576dd5e13c0a06b7",
+    "archive_bytes": 56798,
+    "payload_hashes_verified": 52,
+    "formatted_source_files_synchronized": 8,
+    "local_inputs_matched_before_sync": true
+  },
+  "candidate_head": "afa92332ed938c750f452cda8b5a68cbc7b6067e",
+  "files": {
+    "analysis.json": {
+      "sha256": "1ab47c29a1e5903bc505d18c122d6d6ca0fb6ce660abddb49baafcbc699be7d5",
+      "bytes": 1182
+    },
+    "baseline-source.json": {
+      "sha256": "6746c000de001e79e7ce91b4e9ba16f81497778c72a98fe3c91d8686393e7a1b",
+      "bytes": 1082
+    },
+    "cleanup.json": {
+      "sha256": "b7d68c4b21b54e52f9c3841703976041042752b4c09a06bdae087c7a5c449d8a",
+      "bytes": 219
+    },
+    "debug/stream-lifetime-debug-v2.log": {
+      "sha256": "47bc1c5e3c1982abecd9230b5106505e5822d9daa2b464b91af6e30210ab8c00",
+      "bytes": 3382
+    },
+    "debug/stream-lifetime-debug.log": {
+      "sha256": "98bb9c43567b6fc10e95ef62af360f83a4a555098e4d5c4f79f95e728e1a8724",
+      "bytes": 78
+    },
+    "export-manifest.json": {
+      "sha256": "d92d9b816b31aa639a8232fc5710188e0aa03f4ff0532b4ef1599269c94334a5",
+      "bytes": 14559
+    },
+    "pr-status.json": {
+      "sha256": "896f3ab5dcd929dbb0c1dc2b728f19c663865aed12c73da66c1a4b8caa4c7fad",
+      "bytes": 1405
+    },
+    "v1/baseline-lifecycle.log": {
+      "sha256": "74511047d4f29337eb5062e4722338a6b62017a2c89434bac7ad08fc4711a5b0",
+      "bytes": 6463
+    },
+    "v1/candidate-lifecycle.log": {
+      "sha256": "944ac48f002e4a559850cfbf387aa5819d9f3f1a9ac1b08a4a238f61987738f3",
+      "bytes": 2806
+    },
+    "v1/format-candidate.log": {
+      "sha256": "1e2762cfe7b4f28d945009b0d60efe1be283f8a5f2a1632122fefe53f0102ae3",
+      "bytes": 44
+    },
+    "v1/format-lifecycle-fixture.log": {
+      "sha256": "9ab524eab43c517df77fce1cdb50d8ec3a822a9f63e4f4e262c1d4e8aaf1b5bc",
+      "bytes": 38
+    },
+    "v1/run-report.json": {
+      "sha256": "fd6da4a9e11ea07a385fb37e4c555f7fea7d0a9d0ac60e39d72b0d6c0795e384",
+      "bytes": 2017
+    },
+    "v1/tested-source/.changeset/fair-mcp-notifications.md": {
+      "sha256": "c9e9ade2a1c908ddc75b01ec53befd500ff217c89a1f7965926bff3258d0ce47",
+      "bytes": 382
+    },
+    "v1/tested-source/packages/mcp-server/README.md": {
+      "sha256": "4036874f373659352a6f2ce31c973da2f5771a6cdcf95efe86acbc11de522562",
+      "bytes": 2334
+    },
+    "v1/tested-source/packages/mcp-server/src/capabilities/capabilities.spec.ts": {
+      "sha256": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+      "bytes": 5157
+    },
+    "v1/tested-source/packages/mcp-server/src/capabilities/notifications.spec.ts": {
+      "sha256": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+      "bytes": 4268
+    },
+    "v1/tested-source/packages/mcp-server/src/capabilities/prompts.ts": {
+      "sha256": "fa09bb462034f59f7223fadd91e7abc531e3509f2be6c39c33b042ce25c15e4a",
+      "bytes": 3537
+    },
+    "v1/tested-source/packages/mcp-server/src/capabilities/resources.ts": {
+      "sha256": "bc37032bdc90ab229d1597f38b9b95fb6a40f6894a59fe1afae80420ccac0b6d",
+      "bytes": 4857
+    },
+    "v1/tested-source/packages/mcp-server/src/server-lifecycle.spec.ts": {
+      "sha256": "cad3128d323b383733db795ab3d299e9a2df36cf9968e2cdb816454d674bc5b0",
+      "bytes": 8375
+    },
+    "v1/tested-source/packages/mcp-server/src/server.ts": {
+      "sha256": "64c50a6a20e3758db6df10aea5d2028214c03505ee7c74cd54803f131ef412e3",
+      "bytes": 45214
+    },
+    "v2/baseline-lifecycle.log": {
+      "sha256": "36b15b364978cc76ef3e891a44e951ab3a31ff44ffe331d78e25f7fb56b823b7",
+      "bytes": 6486
+    },
+    "v2/candidate-lifecycle.log": {
+      "sha256": "7d061ee365f292a8ffa2e9a6e2313089149d1b96d36d8e1b9aab384832efde7f",
+      "bytes": 285
+    },
+    "v2/format-candidate.log": {
+      "sha256": "87022e5b3e13e06738d3c0510ad8194a9532efde47924a12ed95c8d472634ffd",
+      "bytes": 43
+    },
+    "v2/format-lifecycle-fixture.log": {
+      "sha256": "2bf7e363f0740f0700e5ec4aa603f274e673fe29a461bccc26beb2c5c56c2cbd",
+      "bytes": 38
+    },
+    "v2/new-regressions-typecheck.log": {
+      "sha256": "91e6275334efb5107d750763ca47ebebeb80e1ac9a645b51fdb3200241721d18",
+      "bytes": 375
+    },
+    "v2/package-suite.log": {
+      "sha256": "b61ed204993b0ce46a0e4c069afbf0395346afee3be62bbad692658a0c32158e",
+      "bytes": 489
+    },
+    "v2/package-typecheck.log": {
+      "sha256": "c6adec6c92573dcc2f349d34e77f6f2a48b6a2ef33bc8db1b79fc6aec2fdb9aa",
+      "bytes": 93
+    },
+    "v2/run-report.json": {
+      "sha256": "6aa68cba4c331411cbb4afa7b6659659f0de14e4fb7115b89f0af0ab1f2ef3b7",
+      "bytes": 2328
+    },
+    "v2/tested-source/.changeset/fair-mcp-notifications.md": {
+      "sha256": "c9e9ade2a1c908ddc75b01ec53befd500ff217c89a1f7965926bff3258d0ce47",
+      "bytes": 382
+    },
+    "v2/tested-source/packages/mcp-server/README.md": {
+      "sha256": "4036874f373659352a6f2ce31c973da2f5771a6cdcf95efe86acbc11de522562",
+      "bytes": 2334
+    },
+    "v2/tested-source/packages/mcp-server/src/capabilities/capabilities.spec.ts": {
+      "sha256": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+      "bytes": 5157
+    },
+    "v2/tested-source/packages/mcp-server/src/capabilities/notifications.spec.ts": {
+      "sha256": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+      "bytes": 4268
+    },
+    "v2/tested-source/packages/mcp-server/src/capabilities/prompts.ts": {
+      "sha256": "fa09bb462034f59f7223fadd91e7abc531e3509f2be6c39c33b042ce25c15e4a",
+      "bytes": 3537
+    },
+    "v2/tested-source/packages/mcp-server/src/capabilities/resources.ts": {
+      "sha256": "bc37032bdc90ab229d1597f38b9b95fb6a40f6894a59fe1afae80420ccac0b6d",
+      "bytes": 4857
+    },
+    "v2/tested-source/packages/mcp-server/src/server-lifecycle.spec.ts": {
+      "sha256": "a032ae6d2fc5c96f20812d04ba63d7e64f67aec47ecdc1cb2aa6897140bcb1b4",
+      "bytes": 9494
+    },
+    "v2/tested-source/packages/mcp-server/src/server.ts": {
+      "sha256": "64c50a6a20e3758db6df10aea5d2028214c03505ee7c74cd54803f131ef412e3",
+      "bytes": 45214
+    },
+    "v3/baseline-lifecycle.log": {
+      "sha256": "f7129fc9293c227f102d6b66f0f5af14a05ac8c6fca2ee26c033180e72896f25",
+      "bytes": 6486
+    },
+    "v3/candidate-lifecycle.log": {
+      "sha256": "610cf3ccbac12a17fb47c749d8e97308455bc1453c5f48b74d6588501bdf1558",
+      "bytes": 285
+    },
+    "v3/format-candidate.log": {
+      "sha256": "a8f2d5584ad235bb65ab004876d73479d2a9bdcbd5e52533e224ffff2f0196de",
+      "bytes": 44
+    },
+    "v3/format-lifecycle-fixture.log": {
+      "sha256": "2bf7e363f0740f0700e5ec4aa603f274e673fe29a461bccc26beb2c5c56c2cbd",
+      "bytes": 38
+    },
+    "v3/lint-changed.log": {
+      "sha256": "6cfa2dd35cda0300f2370a60fcf511a3727bc332918a9b3722336023df6fb18b",
+      "bytes": 43
+    },
+    "v3/markdown-format.log": {
+      "sha256": "17aa973d3f004560237d9a95171210b0671deff23d61628eecf7322ff5938f20",
+      "bytes": 66
+    },
+    "v3/new-regressions-typecheck.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "v3/package-build.log": {
+      "sha256": "efd8152eb136dbc8636b8080fa2f33a582cccf816ba3c319318ce4d6505eb76e",
+      "bytes": 596
+    },
+    "v3/package-suite.log": {
+      "sha256": "aca5822bb6af977b881653d5d1d9cc8fa44f63a07b9066201395404c40086ff3",
+      "bytes": 490
+    },
+    "v3/package-typecheck.log": {
+      "sha256": "132a924a94634cb96e2fbbad6fd68c095264a5b7318e9a5579aa238479c79102",
+      "bytes": 93
+    },
+    "v3/run-report.json": {
+      "sha256": "1456259aa16ccd4b4449058d04fe8533711f7b3b6b6e19355b047ca71efc0e43",
+      "bytes": 2526
+    },
+    "v3/tested-source/.changeset/fair-mcp-notifications.md": {
+      "sha256": "c9e9ade2a1c908ddc75b01ec53befd500ff217c89a1f7965926bff3258d0ce47",
+      "bytes": 382
+    },
+    "v3/tested-source/packages/mcp-server/README.md": {
+      "sha256": "4036874f373659352a6f2ce31c973da2f5771a6cdcf95efe86acbc11de522562",
+      "bytes": 2334
+    },
+    "v3/tested-source/packages/mcp-server/src/capabilities/capabilities.spec.ts": {
+      "sha256": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+      "bytes": 5157
+    },
+    "v3/tested-source/packages/mcp-server/src/capabilities/notifications.spec.ts": {
+      "sha256": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+      "bytes": 4268
+    },
+    "v3/tested-source/packages/mcp-server/src/capabilities/prompts.ts": {
+      "sha256": "fa09bb462034f59f7223fadd91e7abc531e3509f2be6c39c33b042ce25c15e4a",
+      "bytes": 3537
+    },
+    "v3/tested-source/packages/mcp-server/src/capabilities/resources.ts": {
+      "sha256": "bc37032bdc90ab229d1597f38b9b95fb6a40f6894a59fe1afae80420ccac0b6d",
+      "bytes": 4857
+    },
+    "v3/tested-source/packages/mcp-server/src/server-lifecycle.spec.ts": {
+      "sha256": "a29142c25f419b2b0f8a7a096a91cf4774a67fd64a836bb18eb9e5fc49e7c8b4",
+      "bytes": 9504
+    },
+    "v3/tested-source/packages/mcp-server/src/server.ts": {
+      "sha256": "64c50a6a20e3758db6df10aea5d2028214c03505ee7c74cd54803f131ef412e3",
+      "bytes": 45214
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "matching_runtime_processes": 0,
+  "root_count": 6,
+  "scope": "Same-UID argv/cwd under the old dependency, three candidate, and diagnostic roots after terminal runs",
+  "new_neural_calls": 0,
+  "GPU_used": false
+}

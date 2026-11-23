@@ -3,6 +3,9 @@
 [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562) is open as a
 regular PR. Commit `fffed2614bc4354f31f3a1dff50afec65b2412eb`, based on upstream
 `e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c`. No approval or merge is claimed.
+This is the first-patch snapshot. The subsequent
+[registration-cleanup review fix](../voltagent-mcp-cleanup/README.md) retains this
+record and adds final23-test validation at a newer PR head.
 The [dated status snapshot](pr-status.json) records native Actions run45182715145
 as `completed/action_required`; an upstream maintainer must approve its execution.
 

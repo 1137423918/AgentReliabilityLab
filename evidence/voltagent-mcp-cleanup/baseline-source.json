@@ -1,0 +1,14 @@
+{
+  "baseline_PR_head": "fffed2614bc4354f31f3a1dff50afec65b2412eb",
+  "baseline_source_sha256": {
+    "packages/mcp-server/src/capabilities/capabilities.spec.ts": "002e97c3b3e5fe7a1bf6bd8dd14e42f14395a56cc7ec9be6c117d9d4fa8a616e",
+    "packages/mcp-server/src/capabilities/notifications.spec.ts": "6f7ebcc21568b6474d0b00a53c85130c9de253c765f57eacb4e40d69bb48f0c1",
+    "packages/mcp-server/src/capabilities/prompts.ts": "a6fce48d3535066bcc2d4e3ae91c60ac3441918a815704fddc0d67f914ba031a",
+    "packages/mcp-server/src/capabilities/resources.ts": "6cafcacfb7b3813edfda197ebc91f899fb34f54fd563948dbe8d722bdb0928c9",
+    "packages/mcp-server/src/server.ts": "0695fa125624553957e8cf9d1b164e03aed540b035da352ad708dcf0b7f4139c",
+    "packages/mcp-server/README.md": "6dad21ed12ea6a460b6abcb02dc45eb000c8408cbd1aeb86a6ff2e9047b2958d",
+    ".changeset/fair-mcp-notifications.md": "5998f4deb8198de4f5d087955a363983916ff3f3e427a7585affdf3c77f6870b"
+  },
+  "declared_package_license": "MIT",
+  "same_dependency_lock_sha256": "fa866ef0b4476afa12b798892884ef1d3ade2c07c01cf9abe2ab2f95c0c66c75"
+}

@@ -48,7 +48,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 | 上游 PR | 修复对象 |
 | --- | --- |
-| [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562) | 跳过无连接的 MCP 通知目标，保留在线发送错误报告 |
+| [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562) | 清理已结束的 MCP 会话注册，保留活跃流与通知错误报告 |
 | [OpenHands #7032](https://github.com/OpenHands/software-agent-sdk/pull/7032) | 撤销写入失败后保留可重试的编辑历史 |
 | [OpenHands #7050](https://github.com/OpenHands/software-agent-sdk/pull/7050) | 拒绝指向源文件自身的移动，避免删除源文件 |
 | [Google ADK #8278](https://github.com/google/adk-python/pull/8278) | 并发删除产物目录时处理已消失的条目 |
@@ -58,7 +58,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 2026-11-23 跟进时原六条 PR 均为正式待审，尚未合并。OpenHands 两条仍需符合上游就绪政策的关联 issue；Agent Lightning 的 Actions 需要维护者批准运行。ADK 合入新主干后的当前提交已在 Python3.11 / 3.13 复验相关集合，每版2021通过、26预期失败；[本次日志与源码哈希](evidence/pr-followup-2026-11-23/adk-validation.json)。这些范围不等于完整上游 CI。后续新贡献优先独立开发者与小团队维护的活跃高星 Agent 项目。
 
-新增[VoltAgent MCP 通知修复证据](evidence/voltagent-mcp-notifications/README.md)：固定主干原版3项回归失败，修复后全部4项回归及完整MCP包15项测试通过，源码与新增测试的类型检查、构建通过。已正式提交 #1562，尚待上游审查；这些是服务器包检查，不是完整上游CI结果。
+新增[VoltAgent MCP 生命周期修复证据](evidence/voltagent-mcp-cleanup/README.md)：按审查补上已结束会话/请求的注册清理。首版PR在同一组8项生命周期测试中失败，修复后8项及完整MCP包23项测试通过，源码与两份新增测试的严格类型检查、构建通过。活跃GET/SSE响应保持到结束；#1562为正式待审，服务器检查不等于上游CI通过。
 
 [Agent Lightning 实际复现与修复](docs/lightning-terminal-reuse.md)：原版四个状态回归失败，候选相关53项通过；类型检查单独完成，未宣称全仓库或训练栈验证。
 

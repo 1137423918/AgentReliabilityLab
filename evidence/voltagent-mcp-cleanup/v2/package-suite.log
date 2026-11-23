@@ -1,0 +1,14 @@
+
+ RUN  v3.2.4 [V2_RUN]/source/packages/mcp-server
+
+ ✓ src/server.spec.ts (3 tests) 288ms
+ ✓ src/server-lifecycle.spec.ts (8 tests) 487ms
+ ✓ src/capabilities/capabilities.spec.ts (6 tests) 21ms
+ ✓ src/capabilities/notifications.spec.ts (4 tests) 40ms
+ ✓ src/adapters/tool.spec.ts (2 tests) 9ms
+
+ Test Files  5 passed (5)
+      Tests  23 passed (23)
+   Start at  21:57:55
+   Duration  8.03s (transform 2.43s, setup 0ms, collect 8.67s, tests 845ms, environment 2ms, prepare 740ms)
+

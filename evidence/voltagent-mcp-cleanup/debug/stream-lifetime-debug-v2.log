@@ -1,0 +1,75 @@
+
+ RUN  v3.2.4 [DEBUG_RUN]/packages/mcp-server
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_REQUEST 1795442008107 POST
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_FINISH 1795442008133 POST 200
+OBSERVE_CLOSE 1795442008134 POST 200
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_REQUEST 1795442008151 POST
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_FINISH 1795442008156 POST 202
+OBSERVE_CLOSE 1795442008156 POST 202
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_REQUEST 1795442008163 GET
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_REQUEST 1795442008173 POST
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_FINISH 1795442008178 POST 200
+OBSERVE_CLOSE 1795442008178 POST 200
+
+stdout | lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+OBSERVE_BEFORE_CLIENT_CLOSE 1795442009204
+
+stdout | lifetime-debug.spec.ts
+OBSERVE_CLOSE 1795442009232 GET 200
+
+ ❯ lifetime-debug.spec.ts (8 tests | 1 failed | 7 skipped) 1189ms
+   × notification registration lifecycle > releases completed stateless requests (streaming=false) 1187ms
+     → expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+   ↓ notification registration lifecycle > releases completed stateless requests (streaming=true)
+   ↓ notification registration lifecycle > releases a terminated stateful HTTP session
+   ↓ notification registration lifecycle > releases a closed external SSE session
+   ↓ notification registration lifecycle > releases the unconnected base server during shutdown
+   ↓ notification registration lifecycle > releases a stateless server when request handling throws
+   ↓ notification registration lifecycle > registers the base server again after reconnecting its transport
+   ↓ notification registration lifecycle > keeps a stateless streaming server until its response completes
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  lifetime-debug.spec.ts > notification registration lifecycle > releases completed stateless requests (streaming=false)
+AssertionError: expected [ 2, 2 ] to deeply equal [ 1, 1 ]
+
+- Expected
++ Received
+
+  [
+-   1,
+-   1,
++   2,
++   2,
+  ]
+
+ ❯ lifetime-debug.spec.ts:114:74
+    112|       for (let i = 0; i < 5; i++) {
+    113|         await client.listTools();
+    114|         await vi.waitFor(() => expect(notificationRegistrations(server…
+       |                                                                          ^
+    115|       }
+    116|     },
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 skipped (8)
+   Start at  21:53:24
+   Duration  5.38s (transform 1.86s, setup 0ms, collect 3.19s, tests 1.19s, environment 0ms, prepare 145ms)
+

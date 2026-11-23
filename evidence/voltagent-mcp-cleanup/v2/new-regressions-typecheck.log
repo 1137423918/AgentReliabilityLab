@@ -1,0 +1,2 @@
+packages/mcp-server/src/server-lifecycle.spec.ts(233,9): error TS2322: Type 'Tool<ZodObject<{}, "strip", ZodTypeAny, {}, {}>, undefined>' is not assignable to type 'Tool<ToolSchema, undefined>'.
+  Type 'ZodType<any, ZodTypeDef, any>' is missing the following properties from type 'ZodObject<{}, "strip", ZodTypeAny, {}, {}>': _cached, _getCached, shape, strict, and 14 more.
