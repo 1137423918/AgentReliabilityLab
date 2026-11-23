@@ -1,0 +1,260 @@
+{
+  "normalization": "Operator source/log paths normalized only where marked; original/public SHA separately bound. Frozen protocols, manifests and result reports retain original bytes. Full prompts, raw generated answers, generated IDs, model weights, environment directories, signed transport URLs and server credentials stay private. Original case IDs are SHA256/ordinal because some IDs embed questions. Case metrics derived without new model calls or rerunning graders.",
+  "files": [
+    {
+      "path": "operator/driver.py",
+      "original_sha256": "080789a509ae819abc087bf7de2e36b19b6e461df7dc2f672de7acacc95d1cd9",
+      "public_sha256": "080789a509ae819abc087bf7de2e36b19b6e461df7dc2f672de7acacc95d1cd9",
+      "public_bytes": 14305,
+      "paths_normalized": true
+    },
+    {
+      "path": "operator/exec_child.py",
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_bytes": 443,
+      "paths_normalized": true
+    },
+    {
+      "path": "operator/model-identity-monitor.jsonl",
+      "original_sha256": "9a5119525b500901d5a8a9fa8e64e1c686ab298ffa0e1a05a722d1050b423732",
+      "public_sha256": "9a5119525b500901d5a8a9fa8e64e1c686ab298ffa0e1a05a722d1050b423732",
+      "public_bytes": 5297,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/model-identity.log",
+      "original_sha256": "8b5e8a31dcc5a1309040b716c1cc0510cec8a5e0e16ff3919b3c80199c24adfc",
+      "public_sha256": "8b5e8a31dcc5a1309040b716c1cc0510cec8a5e0e16ff3919b3c80199c24adfc",
+      "public_bytes": 50,
+      "paths_normalized": true
+    },
+    {
+      "path": "operator/neural-clean199-monitor.jsonl",
+      "original_sha256": "3432c64209e02280a061eb99ab1e9a4e2f0ac263fb4510afd8e7d918410a7581",
+      "public_sha256": "3432c64209e02280a061eb99ab1e9a4e2f0ac263fb4510afd8e7d918410a7581",
+      "public_bytes": 639602,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/neural-clean199.log",
+      "original_sha256": "45027e34073af15cc2390e418f8522b80f3b61e96374e84a81f500899621f7cc",
+      "public_sha256": "45027e34073af15cc2390e418f8522b80f3b61e96374e84a81f500899621f7cc",
+      "public_bytes": 1431,
+      "paths_normalized": true
+    },
+    {
+      "path": "operator/protocol.json",
+      "original_sha256": "7a2248414c173b295f4b336f2cfe073fd6b11dc7ef0ebe7f3716ca7c5b93546e",
+      "public_sha256": "7a2248414c173b295f4b336f2cfe073fd6b11dc7ef0ebe7f3716ca7c5b93546e",
+      "public_bytes": 4139,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/run-report.json",
+      "original_sha256": "ce868496d928f2dabfe9204bc71dcd04763b80276fafd3cfd85fcbee99cba2e9",
+      "public_sha256": "ce868496d928f2dabfe9204bc71dcd04763b80276fafd3cfd85fcbee99cba2e9",
+      "public_bytes": 3597,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/run.py",
+      "original_sha256": "df8b640d958a4ab059b52ec42d00c0377fa227ac69cf6db0c29fa7af00fca272",
+      "public_sha256": "16f20e9120e8cb9537b59f5ce76111848e22aba525a3950d10fcc7e2cc25f079",
+      "public_bytes": 12984,
+      "paths_normalized": true
+    },
+    {
+      "path": "operator/tokenizer-admission-monitor.jsonl",
+      "original_sha256": "9e372fb7fadbf73581256da55a678551afeef2880220e73e83627d72a82ab6e9",
+      "public_sha256": "9e372fb7fadbf73581256da55a678551afeef2880220e73e83627d72a82ab6e9",
+      "public_bytes": 2969,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/tokenizer-admission.log",
+      "original_sha256": "b980898e95cba10a055f5f8575bf52ad7c7e533d580591ace8c193469bc1e9ac",
+      "public_sha256": "b980898e95cba10a055f5f8575bf52ad7c7e533d580591ace8c193469bc1e9ac",
+      "public_bytes": 100,
+      "paths_normalized": true
+    },
+    {
+      "path": "results/admission.json",
+      "original_sha256": "3595244f27474ccc706cd394d17fdb3975a8965237f357f431b32c24da2bbce4",
+      "public_sha256": "106467fef7cc22e1e774b5404b1d71fda4279df9869f76e115caf4f4ef19e1e0",
+      "public_bytes": 99580,
+      "derived_metadata": true,
+      "original_IDs_hashed": true
+    },
+    {
+      "path": "results/model-report.json",
+      "original_sha256": "6a230d4f246c02001035b1e834ec17c0c0fcb27160bfe26504065209d9e154ad",
+      "public_sha256": "6a230d4f246c02001035b1e834ec17c0c0fcb27160bfe26504065209d9e154ad",
+      "public_bytes": 3984,
+      "paths_normalized": false
+    },
+    {
+      "path": "bootstrap/run.py",
+      "original_sha256": "53024e12319a09b1a919eeae84205469cbb1627e6921177d63fa86bf84dea9bf",
+      "public_sha256": "64fcb9f7c7708c461550f19b1342470ce772756bfe6e678ab94ce664763c50a6",
+      "public_bytes": 8629,
+      "paths_normalized": true
+    },
+    {
+      "path": "bootstrap/protocol.json",
+      "original_sha256": "5e741310de39d88f1c39355ee6c8c142244ff09ed3656671adb11f54e9f69b92",
+      "public_sha256": "5e741310de39d88f1c39355ee6c8c142244ff09ed3656671adb11f54e9f69b92",
+      "public_bytes": 8338,
+      "paths_normalized": false
+    },
+    {
+      "path": "bootstrap/run-report.json",
+      "original_sha256": "8ed5ce5c47f1fbe8af794b37fe27f55e3c9f345cdf18820e8a5292e081b9eb23",
+      "public_sha256": "8ed5ce5c47f1fbe8af794b37fe27f55e3c9f345cdf18820e8a5292e081b9eb23",
+      "public_bytes": 1438,
+      "paths_normalized": false
+    },
+    {
+      "path": "bootstrap/download-model.log",
+      "original_sha256": "cc566d05bd3d8ca96b6ee307a95c148f4e6dcc164f1a3d7fae8990567b3732c4",
+      "public_sha256": "8579df50d3bda61f3ae42d89da13359d06f27e46ec19bbcc9a43e8426fca06e3",
+      "public_bytes": 4022,
+      "paths_normalized": true
+    },
+    {
+      "path": "runtime/run.py",
+      "original_sha256": "13cc528d72bf11adffbea71af561f3e01525d1f88b8675f2038257083598156a",
+      "public_sha256": "b9102f03fd931ff94a932eeac9b19270897c243d283aae944ac42e489320ad70",
+      "public_bytes": 7275,
+      "paths_normalized": true
+    },
+    {
+      "path": "runtime/protocol.json",
+      "original_sha256": "169aa5ab361e410c4162dcafb4dba7f64c647d5ca24d6eea0b6c88b11457124c",
+      "public_sha256": "169aa5ab361e410c4162dcafb4dba7f64c647d5ca24d6eea0b6c88b11457124c",
+      "public_bytes": 1151,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/run-report.json",
+      "original_sha256": "8e2a25182e85c2a145f06148fa7784ab0a51fe3eb3534118e3e5f60d6a2e59e8",
+      "public_sha256": "8e2a25182e85c2a145f06148fa7784ab0a51fe3eb3534118e3e5f60d6a2e59e8",
+      "public_bytes": 1518,
+      "paths_normalized": false
+    },
+    {
+      "path": "model-ingest/run.py",
+      "original_sha256": "e09cc2f732ee232556b3f23c05f643c1a899faf423b07c5121bab69819615300",
+      "public_sha256": "ca22777053310388820a153f951ae2d200928726c847740880c2ab8423f62f1c",
+      "public_bytes": 5597,
+      "paths_normalized": true
+    },
+    {
+      "path": "model-ingest/protocol.json",
+      "original_sha256": "d91249b185f0df712b8dba47cc1e5125f5fe2f6b449ca6263cf55dc4ccedd017",
+      "public_sha256": "d91249b185f0df712b8dba47cc1e5125f5fe2f6b449ca6263cf55dc4ccedd017",
+      "public_bytes": 1079,
+      "paths_normalized": false
+    },
+    {
+      "path": "model-ingest/run-report.json",
+      "original_sha256": "803f3cf95ab24b9899a237073ab771e367ac12d5282c451a5f93ab156b5d5aa9",
+      "public_sha256": "803f3cf95ab24b9899a237073ab771e367ac12d5282c451a5f93ab156b5d5aa9",
+      "public_bytes": 3965,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/CPU-runtime-identity.log",
+      "original_sha256": "f35ee849946bdea896f3a3d65b11b9086f60e0645ad44528960449db243760b0",
+      "public_sha256": "f35ee849946bdea896f3a3d65b11b9086f60e0645ad44528960449db243760b0",
+      "public_bytes": 1691,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/runtime-integrity.log",
+      "original_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "public_sha256": "9261363b733079a641c2e4cc9bc46ffa1d8336945a87f807b6cf68847dbc9b09",
+      "public_bytes": 30,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/freeze-resolved-lock.log",
+      "original_sha256": "88479069da2a3be7cf84b3ab0306b275487899c554f7a9eb3b749831acc7248b",
+      "public_sha256": "88479069da2a3be7cf84b3ab0306b275487899c554f7a9eb3b749831acc7248b",
+      "public_bytes": 88,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/identity.py",
+      "original_sha256": "ebd84c1ddc59a43a1768bdab3c7570fd2873bb164d41bcdf0aa41158f29a6c85",
+      "public_sha256": "ebd84c1ddc59a43a1768bdab3c7570fd2873bb164d41bcdf0aa41158f29a6c85",
+      "public_bytes": 702,
+      "paths_normalized": true
+    },
+    {
+      "path": "runtime/install-frozen-runtime.log",
+      "original_sha256": "3f233fcca98b906cfc783c618ab0d876c5a96a7cd365d5d12655af82f14184e0",
+      "public_sha256": "ad5f851df9cd477a651939af6331b3e4e608209acaef374fbc58ccedc2abba6e",
+      "public_bytes": 22682,
+      "paths_normalized": true
+    },
+    {
+      "path": "runtime/model-manifest.json",
+      "original_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+      "public_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+      "public_bytes": 3640,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/requirements.lock",
+      "original_sha256": "c1166a250fc5f925c1a9fe08cb401576e231c1948a578c131cd708e8b8f640e5",
+      "public_sha256": "c1166a250fc5f925c1a9fe08cb401576e231c1948a578c131cd708e8b8f640e5",
+      "public_bytes": 13324,
+      "paths_normalized": false
+    },
+    {
+      "path": "runtime/resolved-lock.json",
+      "original_sha256": "95f70d895369cef10207c51309cd6cd46d49308a483c461f2bb8aa2b6e15c0ac",
+      "public_sha256": "95f70d895369cef10207c51309cd6cd46d49308a483c461f2bb8aa2b6e15c0ac",
+      "public_bytes": 17420,
+      "paths_normalized": false
+    },
+    {
+      "path": "operator/export_metadata.py",
+      "original_sha256": "fb80fa22cacb689e1abef814baa60b425969246e0c91ff8a00081cc6dd054a87",
+      "public_sha256": "9b9d80302bf3ccbdabd6d6b9b42d8d94b99725ba99ca052825df5411302fed3e",
+      "public_bytes": 8868,
+      "paths_normalized": true
+    },
+    {
+      "path": "results/summary.json",
+      "original_sha256": null,
+      "public_sha256": "18842848b3670785fe36178e8cbf89ce829d678c8eaab6bfefe9a081d8df333d",
+      "public_bytes": 2158,
+      "derived_metadata": true
+    },
+    {
+      "path": "results/case-metrics.jsonl",
+      "original_sha256": null,
+      "public_sha256": "92735c706f1869720a210452eef58a7488ac7f7f1e5e9caac064dca2529122ca",
+      "public_bytes": 218810,
+      "derived_metadata": true
+    },
+    {
+      "path": "model-ingest/model-ingest-client.json",
+      "original_sha256": "778d9e076294e6b6e252d54a2a7498325cce60bb63ef8646f9885d111fd8d254",
+      "public_sha256": "778d9e076294e6b6e252d54a2a7498325cce60bb63ef8646f9885d111fd8d254",
+      "public_bytes": 164,
+      "paths_normalized": false,
+      "local_transport_receipt": true
+    },
+    {
+      "path": "model-ingest/SSH-control-cleanup.json",
+      "original_sha256": "ee4f108f03c7b75a8c96f525c9cb81918e857223fee3d72c3978e04e420074de",
+      "public_sha256": "ee4f108f03c7b75a8c96f525c9cb81918e857223fee3d72c3978e04e420074de",
+      "public_bytes": 31,
+      "paths_normalized": false,
+      "local_transport_receipt": true
+    }
+  ]
+}

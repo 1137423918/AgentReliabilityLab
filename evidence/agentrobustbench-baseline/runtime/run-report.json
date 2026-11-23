@@ -1,0 +1,51 @@
+{
+  "terminal": true,
+  "profile": "runtime-finish-v2",
+  "protocol_sha256": "169aa5ab361e410c4162dcafb4dba7f64c647d5ca24d6eea0b6c88b11457124c",
+  "operator_sha256": "13cc528d72bf11adffbea71af561f3e01525d1f88b8675f2038257083598156a",
+  "prior_bootstrap_terminal_failure_preserved": true,
+  "resolver_rerun": false,
+  "GPU_work_started": false,
+  "model_loaded": false,
+  "training_run": false,
+  "phases": [
+    {
+      "phase": "freeze-resolved-lock",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 0.666,
+      "peak_sampled_group_tree_RSS_bytes": 0
+    },
+    {
+      "phase": "install-frozen-runtime",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 236.173,
+      "peak_sampled_group_tree_RSS_bytes": 712040448
+    },
+    {
+      "phase": "runtime-integrity",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 1.173,
+      "peak_sampled_group_tree_RSS_bytes": 36208640
+    },
+    {
+      "phase": "CPU-runtime-identity",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 10.501,
+      "peak_sampled_group_tree_RSS_bytes": 615530496
+    }
+  ],
+  "runtime_lock_sha256": "c1166a250fc5f925c1a9fe08cb401576e231c1948a578c131cd708e8b8f640e5",
+  "runtime_ready_CPU_identity": true,
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "prior_frozen_source_files_unchanged": true,
+  "resolver_report_unchanged": true,
+  "core_distribution_pairs_unchanged": true,
+  "wall_seconds": 251.98
+}

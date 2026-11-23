@@ -1,0 +1,27 @@
+{
+  "profile": "model-ingest-CDN-v2",
+  "declared_utc": "2026-11-23T03:37:11.502170+00:00",
+  "operator_sha256": "e09cc2f732ee232556b3f23c05f643c1a899faf423b07c5121bab69819615300",
+  "model_manifest_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+  "source_identity": "Canonical HF revision aa8e72537993ba99e69dfaafa59ed015b17504d1, every LFS SHA256/non-LFS Git blob SHA1 unchanged",
+  "transport": "Local primary-origin requests resolve public CDN redirects; signed URLs only in RAM and SSH stdin, never argv/files/logs. Small canonical files inline through SSH stdin. No local model loading/execution.",
+  "partial_prefix_reuse": [
+    {
+      "path": "model-00002-of-00002.safetensors.part",
+      "bytes": 404750336
+    },
+    {
+      "path": "model-00001-of-00002.safetensors.part",
+      "bytes": 406847488
+    }
+  ],
+  "threads": 2,
+  "CPU_affinity": 4,
+  "nice": 19,
+  "address_space_GiB": 8,
+  "disk_admission_GiB": 16,
+  "artifact_seconds_per_file": 1200,
+  "job_wall_seconds": 1800,
+  "no_neural_or_GPU": true,
+  "homepage_frozen": true
+}

@@ -1,0 +1,140 @@
+{
+  "terminal": true,
+  "protocol_sha256": "7a2248414c173b295f4b336f2cfe073fd6b11dc7ef0ebe7f3716ca7c5b93546e",
+  "operator_sha256": "df8b640d958a4ab059b52ec42d00c0377fa227ac69cf6db0c29fa7af00fca272",
+  "driver_sha256": "080789a509ae819abc087bf7de2e36b19b6e461df7dc2f672de7acacc95d1cd9",
+  "model_started": true,
+  "GPU_work_started": true,
+  "training_run": false,
+  "declared_cases": 199,
+  "phases": [
+    {
+      "phase": "model-identity",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 29.02,
+      "peak_sampled_owned_RSS_bytes": 16101376
+    },
+    {
+      "phase": "tokenizer-admission",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 16.159,
+      "peak_sampled_owned_RSS_bytes": 642596864
+    },
+    {
+      "phase": "neural-clean199",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 1776.996,
+      "peak_sampled_owned_RSS_bytes": 3969826816
+    }
+  ],
+  "token_admission": {
+    "case_count": 199,
+    "max_input_tokens": 4633,
+    "max_context": 32768,
+    "max_new_tokens": 1024
+  },
+  "GPU": {
+    "index": 3,
+    "name": "Tesla P100-PCIE-16GB",
+    "capability": "6.0",
+    "total_MiB": 16384,
+    "used_MiB": 0,
+    "utilization": 0,
+    "UUID_sha256": "2417056f9ba8511a0d3dc552219726ceba0a528fdbe8196c71057b55aae8da9f",
+    "compute_processes": 0
+  },
+  "admission_snapshots": [
+    {
+      "index": 3,
+      "name": "Tesla P100-PCIE-16GB",
+      "capability": "6.0",
+      "total_MiB": 16384,
+      "used_MiB": 0,
+      "utilization": 0,
+      "UUID_sha256": "2417056f9ba8511a0d3dc552219726ceba0a528fdbe8196c71057b55aae8da9f",
+      "compute_processes": 0
+    },
+    {
+      "index": 3,
+      "name": "Tesla P100-PCIE-16GB",
+      "capability": "6.0",
+      "total_MiB": 16384,
+      "used_MiB": 0,
+      "utilization": 0,
+      "UUID_sha256": "2417056f9ba8511a0d3dc552219726ceba0a528fdbe8196c71057b55aae8da9f",
+      "compute_processes": 0
+    }
+  ],
+  "neural_driver_started": true,
+  "model_loaded": true,
+  "all_cases_completed": true,
+  "neural_summary": {
+    "completed_cases": 199,
+    "model_calls": 199,
+    "input_tokens": 193895,
+    "generated_token_ids": 21284,
+    "scores": {
+      "overall": {
+        "n": 199,
+        "correct": 119,
+        "score_sum": 120.66666666666666
+      },
+      "bfcl_v3": {
+        "n": 32,
+        "correct": 26,
+        "score_sum": 26.0
+      },
+      "apibank": {
+        "n": 74,
+        "correct": 43,
+        "score_sum": 43.0
+      },
+      "tooleyes": {
+        "n": 51,
+        "correct": 47,
+        "score_sum": 47.0
+      },
+      "toolalpaca": {
+        "n": 21,
+        "correct": 1,
+        "score_sum": 1.0
+      },
+      "rotbench": {
+        "n": 21,
+        "correct": 2,
+        "score_sum": 3.666666666666667
+      }
+    },
+    "required_key_violation_cases": 3,
+    "truncated_or_soft_time_stopped": 3
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_compute_seen": true,
+  "own_GPU_context_absent": true,
+  "GPU_after": {
+    "index": 3,
+    "name": "Tesla P100-PCIE-16GB",
+    "capability": "6.0",
+    "total_MiB": 16384,
+    "used_MiB": 0,
+    "utilization": 0,
+    "UUID_sha256": "2417056f9ba8511a0d3dc552219726ceba0a528fdbe8196c71057b55aae8da9f",
+    "compute_processes": 0
+  },
+  "local_generation_ledger": {
+    "reserved": 199,
+    "completed": 199,
+    "unknown_still_charged": 0
+  },
+  "neural_generation_attempted": true,
+  "neural_generation_completed": true,
+  "driver_and_wrapper_unchanged": true,
+  "upstream_sources_unchanged": true,
+  "wall_seconds": 1841.883
+}

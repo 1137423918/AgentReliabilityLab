@@ -1,0 +1,6 @@
+{
+  "server_ingest_returncode": 0,
+  "signed_URLs_in_argv_or_files": false,
+  "all_routes_from_official_primary_origin": true,
+  "no_local_model_execution": true
+}

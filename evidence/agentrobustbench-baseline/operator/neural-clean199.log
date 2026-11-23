@@ -1,0 +1,21 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.67s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:02<00:00,  1.15s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:03<00:00,  1.79s/it]
+{"completed": 10, "declared": 199, "model_calls": 10}
+{"completed": 20, "declared": 199, "model_calls": 20}
+{"completed": 30, "declared": 199, "model_calls": 30}
+{"completed": 40, "declared": 199, "model_calls": 40}
+{"completed": 50, "declared": 199, "model_calls": 50}
+{"completed": 60, "declared": 199, "model_calls": 60}
+{"completed": 70, "declared": 199, "model_calls": 70}
+{"completed": 80, "declared": 199, "model_calls": 80}
+{"completed": 90, "declared": 199, "model_calls": 90}
+{"completed": 100, "declared": 199, "model_calls": 100}
+{"completed": 110, "declared": 199, "model_calls": 110}
+{"completed": 120, "declared": 199, "model_calls": 120}
+{"completed": 130, "declared": 199, "model_calls": 130}
+{"completed": 140, "declared": 199, "model_calls": 140}
+{"completed": 150, "declared": 199, "model_calls": 150}
+{"completed": 160, "declared": 199, "model_calls": 160}
+{"completed": 170, "declared": 199, "model_calls": 170}
+{"completed": 180, "declared": 199, "model_calls": 180}
+{"completed": 190, "declared": 199, "model_calls": 190}

@@ -2,7 +2,11 @@
 
 面向软件维护 Agent 的工具契约与可恢复执行：持久化工具进度、隔离代码改动，并生成可审阅的补丁与验证记录。
 
-[中英项目介绍与 PDF](https://1137423918.github.io/project-brief.html) · [正文、证据映射与生成方式](portfolio/README.md)。中英项目描述、原始报告和实际开源贡献按日期核验。2026-11-22快照包含可下载MCP工具及5份开放PR（4份草稿），均未合并。
+[两页中英项目介绍（2026-11-22快照）](portfolio/junzhe-wang-project-brief.pdf) · [正文、证据映射与生成方式](portfolio/README.md)。原始报告和开源贡献按日期核验，最新研究记录见本仓库。个人主页只保留论文与项目简介，后续实验材料不自动发布到主页。
+
+## 3B真实工具调用基线
+
+在单张P100上完成官方clean单轮199/199条，Qwen2.5-3B-Instruct/FP16，一题一次greedy生成，无本项目训练、反馈或重试。官方correct为119/199（59.80%）；3条存在声明必填参数缺失，其中0条仍满足官方匹配规则。官方分数、参数诊断和真实工具执行分别看待，不当完整鲁棒性或算法提升。199预留/199完成/0未知，子进程及GPU上下文均已清理。[分项、条件与复查](docs/tool-use-baseline.md) · [逐题指标及完整证据](evidence/agentrobustbench-baseline/README.md)。
 
 ## 训练输入已排除验证样本复用
 
@@ -12,7 +16,7 @@
 
 ## 工具调用鲁棒性：算法研究与应用开发
 
-后续同时关注算法/模型与Agent应用。已完成固定AgentRobustBench源码的数据和评分器CPU审计：2718静态记录、2527单轮可评；32个gold派生控制显示官方匹配分数需与工具必填参数有效性区分，零神经调用、无训练或准确率提升。计划把扰动数据训练与执行前检查做等预算消融，再迁移到实际项目证据核对助手；训练数据隔离、模型基线和产品自然语言质量尚待验证。[源码、结果与路线](docs/robust-tool-use.md)。
+后续同时关注算法/模型与Agent应用。已完成固定AgentRobustBench源码的数据和评分器CPU审计：2718静态记录、2527单轮可评；32个gold派生控制显示官方匹配分数需与工具必填参数有效性区分，该次审计零神经调用、无训练或准确率提升。计划把扰动数据训练与执行前检查做等预算消融，再迁移到实际项目证据核对助手；clean模型基线已单列于上文，训练数据的语义家族隔离、等预算训练和产品自然语言质量尚待验证。[源码、结果与路线](docs/robust-tool-use.md)。
 
 真实9B GPU接入已安装MCP服务后，33/33层加载成功；首题44.008秒时检测到同卡其他计算进程，按协议中止。5次预留中4次HTTP200头、1次未知；没有落盘完整wire/最终答案，零已完成评分。自有模型/服务已退出、端口关闭，未重试。[原协议、账本与资源记录](evidence/mcp-agent-gpu/README.md)。这不替代旧CPU超时或构成GPU加速成绩。
 
@@ -110,7 +114,7 @@
 - **验证进程运行中恢复通过**：观察到真实上游 pytest 进程后，仅杀 worker PID；监督进程在释放运行锁前终止旧验证。恢复后重新验证，补丁与正常运行一致，各通过 119 条测试。
 - 上述实验使用固定工具计划，验证基础设施行为；没有声称模型自主修复能力。`local-openai` 已取得真实 CPU 模型响应；维护任务结果见下节。
 
-[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [33 条测试日志](evidence/repair-loop/repair-full-tests.log)
+[完整恢复协议与边界](docs/durable-worker.md) · [四场景报告](evidence/recovery/report.json) · [验证中断报告](evidence/verification-supervision/report.json) · [33 条测试日志](evidence/repair-loop/logs/repair-full-tests.log)
 
 ```sh
 uv sync

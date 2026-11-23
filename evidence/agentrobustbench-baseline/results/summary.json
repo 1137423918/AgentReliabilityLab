@@ -1,0 +1,68 @@
+{
+  "derived_from_existing_recorded_results_only": true,
+  "no_new_model_calls_or_rescoring": true,
+  "terminal_all_cases_completed": true,
+  "declared_cases": 199,
+  "scored_cases": 199,
+  "scores": {
+    "overall": {
+      "n": 199,
+      "correct": 119,
+      "score_sum": 120.66666666666666
+    },
+    "bfcl_v3": {
+      "n": 32,
+      "correct": 26,
+      "score_sum": 26.0
+    },
+    "apibank": {
+      "n": 74,
+      "correct": 43,
+      "score_sum": 43.0
+    },
+    "tooleyes": {
+      "n": 51,
+      "correct": 47,
+      "score_sum": 47.0
+    },
+    "toolalpaca": {
+      "n": 21,
+      "correct": 1,
+      "score_sum": 1.0
+    },
+    "rotbench": {
+      "n": 21,
+      "correct": 2,
+      "score_sum": 3.666666666666667
+    }
+  },
+  "local_generation_ledger": {
+    "reserved": 199,
+    "completed": 199,
+    "unknown_still_charged": 0
+  },
+  "input_tokens": 193895,
+  "generated_token_ids": 21284,
+  "cases_without_parsed_tool_calls": 24,
+  "required_key_violation_cases": 3,
+  "official_correct_with_required_key_violation": 0,
+  "truncated_or_soft_time_stopped": 3,
+  "observed_generation_seconds": {
+    "total": 1759.0958,
+    "median": 5.8687,
+    "p95_nearest_rank": 19.4814,
+    "max": 81.196
+  },
+  "raw_private_artifacts_sha256": {
+    "calls.jsonl": "6e63848fbdb92003d14ad0f69d9a8a8094136807bd6e53edd395eeceba073a88",
+    "predictions.jsonl": "3ad21fe0a0c44f0a5097a9dc9cea08a6cb80f1489ac2ff219472cc6c6a076019",
+    "report.json": "6a230d4f246c02001035b1e834ec17c0c0fcb27160bfe26504065209d9e154ad"
+  },
+  "limitations": [
+    "199 clean single-turn tool-call predictions, not all3721 benchmark cases or autonomous repository repair.",
+    "Original deterministic scorer includes omitted-argument/name-only compatibility; scores are not full schema validity, real tool execution or prose truth.",
+    "The extra required-key screen is narrower than complete JSON Schema validation.",
+    "No retry/repair/training and no scripted model replies. FP16/backend differs from released paper settings.",
+    "Token IDs are measured local generation counts, not billing; greedy seeded execution is not a bitwise reproducibility guarantee."
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "terminal": true,
+  "protocol_sha256": "5e741310de39d88f1c39355ee6c8c142244ff09ed3656671adb11f54e9f69b92",
+  "source_archive_sha256": "badd74c21e57c4d0907d18a6d08dcf128c528ef764568f0dee2ced0b9cd7a711",
+  "operator_sha256": "53024e12319a09b1a919eeae84205469cbb1627e6921177d63fa86bf84dea9bf",
+  "filesystem": "ext4",
+  "GPU_work_started": false,
+  "model_loaded": false,
+  "training_run": false,
+  "phases": [
+    {
+      "phase": "isolated-venv",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 6.168,
+      "peak_sampled_group_tree_RSS_bytes": 91492352
+    },
+    {
+      "phase": "pinned-installer",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 3.699,
+      "peak_sampled_group_tree_RSS_bytes": 56373248
+    },
+    {
+      "phase": "resolve-runtime",
+      "returncode": 0,
+      "guard_reason": null,
+      "wall_seconds": 38.043,
+      "peak_sampled_group_tree_RSS_bytes": 833437696
+    },
+    {
+      "phase": "download-model",
+      "returncode": 1,
+      "guard_reason": null,
+      "wall_seconds": 91.738,
+      "peak_sampled_group_tree_RSS_bytes": 833437696
+    }
+  ],
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Bootstrap phase did not finish cleanly"
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "source_files_unchanged": true,
+  "core_distribution_pairs_unchanged": true,
+  "wall_seconds": 102.311
+}
