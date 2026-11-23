@@ -1,0 +1,14 @@
+{
+  "number": 2367,
+  "html_url": "https://github.com/assafelovic/gpt-researcher/pull/2367",
+  "title": "fix(mcp): honor HTTP connection_token authentication",
+  "state": "open",
+  "draft": false,
+  "created_at": "2026-11-23T20:36:05Z",
+  "mergeable": true,
+  "mergeable_state": "blocked",
+  "head": "973514b3737a0befd4b27f54685db485793ffa74",
+  "base": "9d39a2f86d55e264f69dfeff2365f27fad3c1144",
+  "four_files": 4,
+  "creation_response_verified_by_GET": true
+}

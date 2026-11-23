@@ -43,6 +43,8 @@
 
 ## Agent 开源项目缺陷修复
 
+为独立维护的 GPT Researcher 提交 HTTP MCP 令牌连接修复：将不受支持的顶层参数转换为授权头，保护显式授权优先级、请求头大小写兼容和原配置不变；覆盖真实受鉴权服务上的工具发现、调用与401拒绝。原版11项回归全部失败，修复后11项通过，另完成服务器完整离线选择1112项通过，17项跳过、4项排除；范围重叠不相加。[PR #2367](https://github.com/assafelovic/gpt-researcher/pull/2367) 已正式提交，尚未合并。[实际源码与验证边界](../docs/gpt-researcher-mcp-token.md)
+
 在独立小团队维护的 Browser Use 中修复云会话下载未沿用创建密钥的问题，覆盖分页查询、切换模型后的保活会话及停止后的文件补收。使用真实鉴权、请求和落盘代码配合HTTP边界模拟，原版三个入口回归失败，候选通过；pre-commit、锁定工具检查及完整非Chrome选择通过，具体范围与跳过项见[证据](../docs/browseruse-cloud-download-key.md)。[PR #6521](https://github.com/browser-use/browser-use/pull/6521) 已正式提交，尚未合并。 同一PR继续落实评审反馈，补齐超时创建的停止后凭据清理与失败重试；最终服务器非Chrome选择969项通过，原始及补充回归分别保留失败基线，范围不相加。
 
 在小团队维护的 VoltAgent 中修复 MCP 断连通知报错、已结束会话注册累积，以及第二次连接被拒绝时误关活跃传输的问题；通过真实 HTTP/MCP 客户端和可控启动时序复现，上一版在同一组11项生命周期测试中2项失败，修复后11项及完整MCP包26项通过，并完成源码、两份新增测试的严格类型检查及构建。清理保留活跃流、基座重连和正在启动的连接。已正式提交 [PR #1562](https://github.com/VoltAgent/voltagent/pull/1562)，尚未合并。[源码与验证证据](../evidence/voltagent-mcp-connection-ownership/README.md)

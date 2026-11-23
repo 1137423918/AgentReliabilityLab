@@ -1,0 +1,78 @@
+{
+  "observed_utc": "2026-11-23T20:37:45.343802+00:00",
+  "number": 2367,
+  "url": "https://github.com/assafelovic/gpt-researcher/pull/2367",
+  "title": "fix(mcp): honor HTTP connection_token authentication",
+  "state": "OPEN",
+  "draft": false,
+  "head": "973514b3737a0befd4b27f54685db485793ffa74",
+  "base": "9d39a2f86d55e264f69dfeff2365f27fad3c1144",
+  "files": [
+    {
+      "path": "docs/docs/gpt-researcher/retrievers/mcp-configs.mdx",
+      "additions": 6,
+      "deletions": 2
+    },
+    {
+      "path": "gpt_researcher/mcp/README.md",
+      "additions": 7,
+      "deletions": 1
+    },
+    {
+      "path": "gpt_researcher/mcp/client.py",
+      "additions": 9,
+      "deletions": 2
+    },
+    {
+      "path": "tests/test_mcp_client_auth.py",
+      "additions": 128,
+      "deletions": 0
+    }
+  ],
+  "unresolved_threads": 0,
+  "native_actions": [
+    {
+      "id": 45261069836,
+      "name": "LLM Cost Analysis",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "973514b3737a0befd4b27f54685db485793ffa74",
+      "html_url": "https://github.com/assafelovic/gpt-researcher/actions/runs/45261069836"
+    },
+    {
+      "id": 45261070000,
+      "name": "Tests",
+      "status": "completed",
+      "conclusion": "action_required",
+      "head_sha": "973514b3737a0befd4b27f54685db485793ffa74",
+      "html_url": "https://github.com/assafelovic/gpt-researcher/actions/runs/45261070000"
+    }
+  ],
+  "checks": [],
+  "human_approval_claimed": false,
+  "native_workflow_gate_details": [
+    {
+      "id": 45261069836,
+      "name": "LLM Cost Analysis",
+      "head_sha": "973514b3737a0befd4b27f54685db485793ffa74",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "action_required",
+      "html_url": "https://github.com/assafelovic/gpt-researcher/actions/runs/45261069836",
+      "run_attempt": 1,
+      "jobs_total": 0
+    },
+    {
+      "id": 45261070000,
+      "name": "Tests",
+      "head_sha": "973514b3737a0befd4b27f54685db485793ffa74",
+      "event": "pull_request",
+      "status": "completed",
+      "conclusion": "action_required",
+      "html_url": "https://github.com/assafelovic/gpt-researcher/actions/runs/45261070000",
+      "run_attempt": 1,
+      "jobs_total": 0
+    }
+  ],
+  "scope": "Same-head read-only observation, not maintainer approval or completed CI."
+}
