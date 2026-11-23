@@ -12,7 +12,14 @@ from benchmarks.llamaindex_mcp_audit import audit_via_mcp
 
 
 async def run_case(
-    args, scenario, *, catalog_policy="all", question=None, listing_queries=None
+    args,
+    scenario,
+    *,
+    catalog_policy="all",
+    question=None,
+    listing_queries=None,
+    submission_mode="values",
+    additional_reads=None,
 ):
     catalog = json.loads(
         (args.code / "corpus/catalog.json").read_text(encoding="utf-8")
@@ -42,6 +49,14 @@ async def run_case(
         "facts": facts,
         "citations": [{"report_id": "patch_move", "sha256": entry["sha256"]}],
     }
+    if submission_mode == "references":
+        assessment.pop("citations")
+        assessment["facts"] = [
+            {"report_id": f["report_id"], "pointer": f["pointer"]} for f in facts
+        ]
+        if scenario == "forged_fact":
+            # The new schema must reject attempts to override source data.
+            assessment["facts"][1]["value"] = True
     plan = [
         ("list_reports", {}),
         ("read_report", {"report_id": "patch_move", "pointers": pointers}),
@@ -56,6 +71,9 @@ async def run_case(
         plan = [("list_reports", {"query": query}) for query in listing_queries] + plan[
             1:
         ]
+    if additional_reads:
+        assert scenario == "normal"
+        plan = [plan[0], *[("read_report", r) for r in additional_reads], *plan[1:]]
     bodies = []
     errors = []
 
@@ -74,6 +92,16 @@ async def run_case(
                     "read_report",
                     "submit_assessment",
                 ]
+                if submission_mode == "references":
+                    schema = body["tools"][2]["function"]["parameters"]
+                    assert set(schema["properties"]) == {
+                        "claim_supported",
+                        "explanation",
+                        "facts",
+                    }
+                    system = body["messages"][0]["content"]
+                    assert "Do not supply values, hashes or citations" in system
+                    assert "SHA256 citations." not in system
                 assert index < len(plan), "Unexpected model retry/extra formatting call"
                 name, payload = plan[index]
                 message = {
@@ -130,6 +158,8 @@ async def run_case(
         policy_options = (
             {"catalog_policy": catalog_policy} if catalog_policy != "all" else {}
         )
+        if submission_mode != "values":
+            policy_options["submission_mode"] = submission_mode
         result = await audit_via_mcp(
             args.mcp_url,
             args.state / scenario,
@@ -184,6 +214,9 @@ async def run_case(
         "fake_model_posts": len(bodies),
         "mcp_context_closed": True,
         "model_request_sha256": [hashlib.sha256(raw).hexdigest() for raw in bodies],
+        "submission_schema_fields": sorted(
+            json.loads(bodies[0])["tools"][2]["function"]["parameters"]["properties"]
+        ),
     }
 
 

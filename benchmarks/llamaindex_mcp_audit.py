@@ -18,9 +18,11 @@ from urllib.parse import urlsplit
 import httpx2
 from mcp import Client
 from mcp.client.streamable_http import streamable_http_client
+from pydantic import BaseModel, ConfigDict, Field
 
 from agent_lab.async_request_budget import make_async_http_client, open_budget
 from agent_lab.evidence_audit import EvidenceError
+from agent_lab.evidence_submission import bind_read_references
 from agent_lab.report_retrieval import encoded as encode_catalog, rank_reports
 from agent_lab.wire_journal import DurableWireEvents
 from benchmarks.llamaindex_evidence_agent import AuditAssessment, DIRECT_SYSTEM
@@ -28,6 +30,19 @@ from benchmarks.llamaindex_evidence_agent import AuditAssessment, DIRECT_SYSTEM
 
 class MCPToolFailure(EvidenceError):
     """The remote MCP tool rejected a request or returned an invalid result."""
+
+
+class FactReference(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    report_id: str
+    pointer: str
+
+
+class ReferenceAssessment(BaseModel):
+    model_config = ConfigDict(extra="forbid", strict=True)
+    claim_supported: bool
+    explanation: str = Field(min_length=1, max_length=1600)
+    facts: list[FactReference] = Field(min_length=1, max_length=8)
 
 
 def hooks(channel, wire):
@@ -145,6 +160,7 @@ async def audit_via_mcp(
     owner_sha256,
     timeout=600,
     catalog_policy="all",
+    submission_mode="values",
 ):
     from llama_index.core.agent.workflow import FunctionAgent
     from llama_index.core.tools import FunctionTool
@@ -152,6 +168,8 @@ async def audit_via_mcp(
 
     if catalog_policy not in {"all", "bm25"}:
         raise ValueError("Unknown catalog policy")
+    if submission_mode not in {"values", "references"}:
+        raise ValueError("Unknown submission mode")
     parsed = urlsplit(mcp_url)
     if (
         parsed.scheme != "http"
@@ -175,6 +193,7 @@ async def audit_via_mcp(
     trace = []
     events = []
     receipts = []
+    observed_reads = []
     submissions = []
     handle = None
     outcome = {
@@ -248,6 +267,7 @@ async def audit_via_mcp(
                             ) or not isinstance(value.get("report"), dict):
                                 raise MCPToolFailure("Invalid read response")
                             receipts.append(value["receipt"])
+                            observed_reads.append(value)
                             encoded = json.dumps(
                                 value["report"], ensure_ascii=False, sort_keys=True
                             )
@@ -303,6 +323,11 @@ async def audit_via_mcp(
                     async def submit_assessment(**payload) -> str:
                         """Submit the final typed verdict and exact facts for remote receipt verification."""
                         try:
+                            if submission_mode == "references":
+                                draft = ReferenceAssessment.model_validate(
+                                    payload
+                                ).model_dump()
+                                payload = bind_read_references(draft, observed_reads)
                             assessment = AuditAssessment.model_validate(
                                 payload
                             ).model_dump()
@@ -386,13 +411,29 @@ async def audit_via_mcp(
                                 " spend remaining rounds exploring unrelated reports."
                             )
                             outcome["catalog_policy"] = "bm25"
+                        submission_schema = AuditAssessment
+                        if submission_mode == "references":
+                            submission_schema = ReferenceAssessment
+                            system_prompt = system_prompt.replace(
+                                "exact JSON facts and\nSHA256 citations.",
+                                "exact report_id/pointer fact references.",
+                            )
+                            system_prompt += (
+                                " In submit_assessment facts, provide only report_id and"
+                                " pointer. Do not supply values, hashes or citations; the"
+                                " adapter binds them from this audit's actual read responses."
+                                " Select references covering every part of the claim."
+                                " A previously read parent pointer can represent its whole"
+                                " observed object; you need not repeat each child field."
+                            )
+                            outcome["submission_mode"] = "references"
                         agent = FunctionAgent(
                             tools=[
                                 listing_tool,
                                 FunctionTool.from_defaults(async_fn=read_report),
                                 FunctionTool.from_defaults(
                                     async_fn=submit_assessment,
-                                    fn_schema=AuditAssessment,
+                                    fn_schema=submission_schema,
                                     return_direct=True,
                                 ),
                             ],
@@ -476,6 +517,9 @@ async def main():
     p.add_argument("--model", required=True)
     p.add_argument("--owner", required=True)
     p.add_argument("--catalog-policy", choices=["all", "bm25"], default="all")
+    p.add_argument(
+        "--submission-mode", choices=["values", "references"], default="values"
+    )
     args = p.parse_args()
     case = next(
         x
@@ -491,6 +535,7 @@ async def main():
         model=args.model,
         owner_sha256=args.owner,
         catalog_policy=args.catalog_policy,
+        submission_mode=args.submission_mode,
     )
     result["grading"] = grade_case(result, case)
     (args.state_dir / "result.json").write_text(
