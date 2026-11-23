@@ -1,0 +1,13 @@
+{
+  "git_head": "90815ad147fc652aa0cfeca7b1ec214903ae3089",
+  "post_validation_sha256": {
+    "src/google/adk/artifacts/file_artifact_service.py": "9aad80d134d1ebb4034d630cfbad0a546700920a16d5179bec761cc97abdcd7a",
+    "tests/unittests/artifacts/test_artifact_service.py": "e07bf9fbe9e8dbd7399ddb9a267e8cb14bce7da0f9c9fb5d6e2d780398846f37",
+    "tests/unittests/artifacts/test_artifact_util.py": "e8fc3b895fd185a101cf3993cff68a85925d55a26fad36f357fea95d0af9925a",
+    "pyproject.toml": "3f87a1ce104fe2e631586f02d0f1157e3f4ba5ce475a07a545195a02a906d43d"
+  },
+  "all_match_current_git_blobs": true,
+  "environment": "Previously prepared dedicated environments; no dependency installation or new lock resolution in this follow-up.",
+  "scope": "Artifact service and artifact util suites only; not the entire ADK repository or upstream CI.",
+  "counts_overlap_across_python_versions": true
+}

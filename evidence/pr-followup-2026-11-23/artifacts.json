@@ -1,0 +1,28 @@
+{
+  "normalization": "Private server/home/validation paths replaced; raw hashes retained. Explicit allowlist only. No credentials, model data or environments exported.",
+  "files": [
+    {
+      "path": "adk-validation.json",
+      "original_sha256": "9f5dfb0320a45f90b6960396afa41da4e99712498d77ac7fdb61dc5a9a61001a",
+      "public_sha256": "d386cd0c192b514ec0b70b9742a681baa1ecdbe33e30254c68f0e2b287833f65",
+      "bytes": 5115
+    },
+    {
+      "path": "agentlab-adk-session-20261121.log",
+      "original_sha256": "54a97f96a06bb78e271562ea7894dd23361b5c93111d3f693dd0bbb3c972119d",
+      "public_sha256": "54a97f96a06bb78e271562ea7894dd23361b5c93111d3f693dd0bbb3c972119d",
+      "bytes": 2365
+    },
+    {
+      "path": "agentlab-adk-artifact-py313-20261121.log",
+      "original_sha256": "d1e22845173bac2f238f0622be367e9c92e8e0e10ba5ee0ce9c22858d8f96d19",
+      "public_sha256": "d1e22845173bac2f238f0622be367e9c92e8e0e10ba5ee0ce9c22858d8f96d19",
+      "bytes": 2364
+    },
+    {
+      "path": "tested-source-sha256.json",
+      "public_sha256": "c7e6ee69306bcf5e956d476b61b0ed01afa8e2d5425bcc32c4824eb7a47884f8",
+      "bytes": 888
+    }
+  ]
+}
