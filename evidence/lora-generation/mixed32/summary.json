@@ -1,0 +1,12 @@
+{
+  "planned_cases": 199,
+  "scored_cases": 0,
+  "attempts_reserved": 0,
+  "unknown_still_charged": 0,
+  "full199_completed": false,
+  "aggregate_scores": {},
+  "partial_scores_are_not_comparable_to_full199": true,
+  "known_input_tokens": 0,
+  "known_generated_token_ids": 0,
+  "no_new_model_calls_or_rescoring": true
+}

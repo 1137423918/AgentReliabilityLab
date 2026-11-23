@@ -1,0 +1,28 @@
+{
+  "planned_cases": 199,
+  "scored_cases": 83,
+  "attempts_reserved": 85,
+  "unknown_still_charged": 2,
+  "full199_completed": false,
+  "aggregate_scores": {
+    "overall": {
+      "n": 83,
+      "correct": 50,
+      "score_sum": 50.0
+    },
+    "bfcl_v3": {
+      "n": 32,
+      "correct": 27,
+      "score_sum": 27.0
+    },
+    "apibank": {
+      "n": 51,
+      "correct": 23,
+      "score_sum": 23.0
+    }
+  },
+  "partial_scores_are_not_comparable_to_full199": true,
+  "known_input_tokens": 58156,
+  "known_generated_token_ids": 4004,
+  "no_new_model_calls_or_rescoring": true
+}

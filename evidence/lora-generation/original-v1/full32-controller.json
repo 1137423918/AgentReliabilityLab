@@ -1,0 +1,110 @@
+{
+  "terminal": true,
+  "status": "failed",
+  "variant": "full32",
+  "protocol_sha256": "9c8d63f9f47e4873401a5fff23ca5bba71485a2f4f1a028be459bbd14f84c49d",
+  "driver_sha256": "f8c5623f8445c35cf61eafe1de959b9bff9d419102617154d1f2fa2283ea6068",
+  "training_run": false,
+  "declared_generation_calls": 199,
+  "experiment_total_generation_calls": 597,
+  "GPU_work_started": true,
+  "phases": [
+    {
+      "phase": "full32",
+      "returncode": -15,
+      "guard_reason": "foreign_compute_client",
+      "wall_seconds": 306.708,
+      "peak_sampled_owned_RSS_bytes": 3871776768
+    }
+  ],
+  "admission_wait_seconds": 11.57,
+  "GPU": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 4.635662,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 4,
+    "observed_unix": 1795419566.948884,
+    "sample_seconds": 1.424794,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "admission_samples": [
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 4.635662,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 1,
+      "observed_unix": 1795419556.6894526,
+      "sample_seconds": 0.013624,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    },
+    {
+      "index": 4,
+      "name": "NVIDIA GeForce RTX 3090",
+      "capability": "8.6",
+      "driver_version": "575.57.08",
+      "initialization_seconds": 4.635662,
+      "total_MiB": 24576,
+      "used_MiB": 455,
+      "utilization": 0,
+      "sequence": 3,
+      "observed_unix": 1795419563.52361,
+      "sample_seconds": 1.425212,
+      "process_query_scope": "cached_handle_matched_GPU_only",
+      "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+      "compute_processes": 0
+    }
+  ],
+  "neural_driver_started": true,
+  "model_loaded": true,
+  "operator_error": {
+    "type": "RuntimeError",
+    "message": "Generation phase failed: full32"
+  },
+  "model_shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "own_GPU_context_seen": true,
+  "own_GPU_context_absent": true,
+  "GPU_after": {
+    "index": 4,
+    "name": "NVIDIA GeForce RTX 3090",
+    "capability": "8.6",
+    "driver_version": "575.57.08",
+    "initialization_seconds": 4.635662,
+    "total_MiB": 24576,
+    "used_MiB": 455,
+    "utilization": 0,
+    "sequence": 105,
+    "observed_unix": 1795419894.0075054,
+    "sample_seconds": 1.445318,
+    "process_query_scope": "cached_handle_matched_GPU_only",
+    "UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+    "compute_processes": 0
+  },
+  "shutdown": {
+    "forced_cleanup": false,
+    "remaining_owned_processes": []
+  },
+  "local_generation_ledger": {
+    "reserved": 82,
+    "completed": 81,
+    "unknown_still_charged": 1
+  },
+  "source_and_inputs_unchanged": true,
+  "wall_seconds": 369.635
+}

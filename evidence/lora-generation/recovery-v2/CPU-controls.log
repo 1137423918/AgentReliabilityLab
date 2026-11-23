@@ -1,0 +1,17 @@
+test_completed_failure_is_cached_and_never_regenerated (test_generation_progress.ProgressControls.test_completed_failure_is_cached_and_never_regenerated) ... ok
+test_concurrent_processes_cannot_overspend_global_budget (test_generation_progress.ProgressControls.test_concurrent_processes_cannot_overspend_global_budget) ... ok
+test_identity_change_and_missing_or_corrupt_state_fail_closed (test_generation_progress.ProgressControls.test_identity_change_and_missing_or_corrupt_state_fail_closed) ... ok
+test_live_worker_lock_and_release_after_kill (test_generation_progress.ProgressControls.test_live_worker_lock_and_release_after_kill) ... ok
+test_per_case_and_variant_limits_do_not_refund_unknowns (test_generation_progress.ProgressControls.test_per_case_and_variant_limits_do_not_refund_unknowns) ... ok
+test_quality_errors_or_live_supervisor_never_authorize_retry (test_generation_progress.ProgressControls.test_quality_errors_or_live_supervisor_never_authorize_retry) ... ok
+test_real_SIGKILL_keeps_unknown_charged_before_authorized_retry (test_generation_progress.ProgressControls.test_real_SIGKILL_keeps_unknown_charged_before_authorized_retry) ... ok
+test_wrong_request_or_result_and_duplicate_completion_rejected (test_generation_progress.ProgressControls.test_wrong_request_or_result_and_duplicate_completion_rejected) ... ok
+test_actual_dispatch_skips_cached_zero_score_and_commits_pending_once (test_generation_resume.ResumeControls.test_actual_dispatch_skips_cached_zero_score_and_commits_pending_once) ... ok
+test_changed_private_wire_or_definition_is_rejected_before_import (test_generation_resume.ResumeControls.test_changed_private_wire_or_definition_is_rejected_before_import) ... ok
+test_import_reuses_all_scores_and_preserves_unknown_and_fingerprints (test_generation_resume.ResumeControls.test_import_reuses_all_scores_and_preserves_unknown_and_fingerprints) ... ok
+test_model_setting_or_case_change_cannot_reuse_legacy_results (test_generation_resume.ResumeControls.test_model_setting_or_case_change_cannot_reuse_legacy_results) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.038s
+
+OK

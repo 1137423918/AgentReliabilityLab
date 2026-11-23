@@ -1,7 +1,8 @@
 """A traceable local-model baseline using the pinned upstream prompts/scorer.
 
 Preparation tokenizes all clean single-turn cases without loading a model.
-Inference makes exactly one greedy generation per case and never repairs it.
+Inference makes one greedy generation per uncached case and never repairs it.
+Optional progress reuses stored scores and charges explicitly authorized resource retries.
 Full prompts and generated IDs belong in private, admitted local storage.
 """
 from __future__ import annotations
@@ -17,6 +18,11 @@ from pathlib import Path
 import sys
 import time
 from types import SimpleNamespace
+
+try:
+    from .generation_resume import GenerationProgress, request_fingerprint, result_for_case
+except ImportError:
+    from generation_resume import GenerationProgress, request_fingerprint, result_for_case
 
 
 def encoded(value):
@@ -108,7 +114,7 @@ def required_key_screen(sample, prediction):
     return result
 
 
-def run(args):
+def _run(args, progress=None):
     import importlib.metadata
     import torch
     from transformers import AutoModelForCausalLM, AutoTokenizer, set_seed
@@ -118,13 +124,22 @@ def run(args):
     assert admission['driver_sha256']==sha(Path(__file__).read_bytes())
     assert admission['max_context']==args.max_context and admission['max_new_tokens']==args.max_tokens
     assert [x['id'] for x in admission['cases']] == [s['id'] for s in samples]
+    if progress is not None:
+        definition = progress.definition
+        assert definition['model_repository'] == args.model_id and definition['model_revision'] == args.revision
+        assert definition['settings'] == inference_settings(args)
+        assert definition['data_sha256'] == admission['data_sha256']
+        assert len(definition['cases']) == len(admission['cases'])
+        for actual, fixed in zip(admission['cases'], definition['cases']):
+            assert sha(actual['id'].encode()) == fixed['id_sha256'] and actual['sample_sha256'] == fixed['sample_sha256']
+            assert request_fingerprint(actual, definition['settings']) == fixed['request_sha256']
     args.output.mkdir(parents=True, exist_ok=False)
     report = {'status':'starting','completed_cases':0,'declared_cases':199,'model_repository':args.model_id,
               'model_revision':args.revision,'data_sha256':sha(data.read_bytes()),
               'driver_sha256':sha(Path(__file__).read_bytes()),'runner_sha256':admission['runner_sha256'],
               'scorer_sha256':admission['scorer_sha256'],'dtype':'float16','temperature':0,
               'seed':42,'batch_size':1,'max_new_tokens':args.max_tokens,'max_context':args.max_context,
-              'soft_generation_seconds':120,'retries':0,'parameter_feedback':False,'model_calls':0,
+              'soft_generation_seconds':120,'retries':0,'parameter_feedback':False,'model_calls':0,'cached_cases':0,'recovery_enabled':progress is not None,
               'input_tokens':0,'generated_token_ids':0,'training_run':False,'all22_perturbations_evaluated':False}
     started = time.monotonic()
     write(args.output/'report.json', report)
@@ -138,6 +153,20 @@ def run(args):
         trust_remote_code=False, attn_implementation='sdpa').eval()
     assert {str(p.device) for p in model.parameters()}=={'cuda:0'}
     assert {p.dtype for p in model.parameters()}=={torch.float16}
+    report['adapter_used'] = args.adapter is not None
+    if args.adapter is not None:
+        from peft import PeftModel
+        files = ['adapter_config.json', 'adapter_model.safetensors']
+        report['adapter_artifact_sha256'] = {n: sha((args.adapter/n).read_bytes()) for n in files}
+        model = PeftModel.from_pretrained(model, str(args.adapter), is_trainable=False).eval()
+        assert {str(p.device) for p in model.parameters()}=={'cuda:0'}
+        assert all(p.dtype == (torch.float32 if 'lora_' in n else torch.float16)
+                   for n,p in model.named_parameters())
+        assert not any(p.requires_grad for p in model.parameters())
+    if progress is not None:
+        fixed_adapter = progress.definition['models'][args.variant]['adapter_artifact_sha256']
+        assert report['adapter_used'] == bool(fixed_adapter)
+        assert report.get('adapter_artifact_sha256', {}) == fixed_adapter
     report.update(status='running', load_seconds=round(time.monotonic()-started,3),
                   model_parameter_count=sum(p.numel() for p in model.parameters()),
                   GPU_name=torch.cuda.get_device_name(0),GPU_compute_capability=torch.cuda.get_device_capability(0),
@@ -148,15 +177,25 @@ def run(args):
         def __init__(self):
             self.chat=SimpleNamespace(completions=SimpleNamespace(create=self.create))
             self.call=None
+            self.progress_metadata=None
         def create(self, *, messages, max_tokens, temperature, **kwargs):
             assert not kwargs.get('tools') and temperature==0 and max_tokens==args.max_tokens
+            assert report['model_calls'] < 199, 'Fixed generation budget exhausted; no retry'
             began=time.monotonic();inputs=tokenizer.apply_chat_template(messages,tokenize=True,
                 add_generation_prompt=True,return_tensors='pt',return_dict=True)
             inputs.pop('token_type_ids',None);ids=inputs['input_ids'][0].tolist();expected=admission['cases'][report['completed_cases']]
             assert sha(encoded(messages))==expected['messages_sha256'] and sha(encoded(ids))==expected['prompt_token_ids_sha256']
             assert len(ids)+max_tokens<=args.max_context
-            append(args.output/'calls.jsonl',{'event':'reserved','sequence':report['model_calls']+1,
-                'case':expected['id'],'messages':messages,'prompt_token_ids':ids,'started_unix':time.time()})
+            case_index = report['completed_cases']+1
+            budget_sequence = None
+            if progress is not None:
+                budget_sequence = progress.reserve(args.variant, case_index,
+                    request_fingerprint(expected, progress.definition['settings']))
+            reservation = {'event':'reserved','sequence':report['model_calls']+1,
+                'case':expected['id'],'messages':messages,'prompt_token_ids':ids,'started_unix':time.time()}
+            if progress is not None:
+                reservation.update(case_index=case_index, progress_attempt_sequence=budget_sequence)
+            append(args.output/'calls.jsonl', reservation)
             report['model_calls']+=1
             write(case_state,{'status':'generating','case':expected['id'],'started_unix':time.time()})
             inputs=inputs.to('cuda:0');torch.cuda.synchronize();gen_started=time.monotonic()
@@ -172,28 +211,42 @@ def run(args):
                 'generation_seconds':round(gen_seconds,4),'call_wall_seconds':round(time.monotonic()-began,4),
                 'peak_GPU_allocated_bytes':torch.cuda.max_memory_allocated(),
                 'peak_GPU_reserved_bytes':torch.cuda.max_memory_reserved()}
-            append(args.output/'calls.jsonl',{'event':'completed',**self.call})
+            if progress is not None:
+                self.call.update(case_index=case_index, progress_attempt_sequence=budget_sequence)
+            completion = {'event':'completed',**self.call}
+            append(args.output/'calls.jsonl',completion)
+            self.progress_metadata = {'variant':args.variant,'case_index':case_index,
+                'attempt_sequence':budget_sequence,'generated_token_count':len(generated),
+                'wire_reserved_sha256':sha(encoded(reservation)),
+                'wire_completed_sha256':sha(encoded(completion))}
             write(case_state,{'status':'returned','case':expected['id']})
             return SimpleNamespace(choices=[SimpleNamespace(message=SimpleNamespace(content=text,tool_calls=None))])
     client=Client();results=[]
     try:
-        for sample, expected in zip(samples,admission['cases']):
+        for index, (sample, expected) in enumerate(zip(samples,admission['cases']), 1):
             assert sha(encoded(sample))==expected['sample_sha256']
-            prediction=runner.run_single_pass(sample,client,model_name=args.model_id,
-                temperature=0,max_tokens=args.max_tokens,use_fc=False)
-            if prediction['error']:
-                append(args.output/'predictions.jsonl',{'id':sample['id'],'prediction':prediction,'scored':False})
-                raise RuntimeError('Generation failed without retry: '+prediction['error'])
-            score=scorer.score_record({'benchmark':sample['benchmark'],'eval_config':sample['eval_config'],
-                'golden_answers':sample['golden_answers'],'prediction':prediction})
-            row={'id':sample['id'],'benchmark':sample['benchmark'],'category':sample.get('category'),
-                 'sample_sha256':expected['sample_sha256'],'prediction':prediction,'official_score':score,
-                 'required_key_screen':required_key_screen(sample,prediction),
-                 'generation_metadata':{k:v for k,v in client.call.items() if k not in ['raw_output','generated_token_ids']}}
+            def evaluate_one():
+                prediction=runner.run_single_pass(sample,client,model_name=args.model_id,
+                    temperature=0,max_tokens=args.max_tokens,use_fc=False)
+                if prediction['error']:
+                    append(args.output/'predictions.jsonl',{'id':sample['id'],'prediction':prediction,'scored':False})
+                    raise RuntimeError('Generation failed without automatic retry: '+prediction['error'])
+                score=scorer.score_record({'benchmark':sample['benchmark'],'eval_config':sample['eval_config'],
+                    'golden_answers':sample['golden_answers'],'prediction':prediction})
+                row={'id':sample['id'],'benchmark':sample['benchmark'],'category':sample.get('category'),
+                     'sample_sha256':expected['sample_sha256'],'prediction':prediction,'official_score':score,
+                     'required_key_screen':required_key_screen(sample,prediction),
+                     'generation_metadata':{k:v for k,v in client.call.items() if k not in ['raw_output','generated_token_ids']}}
+                if progress is not None: row['progress_metadata'] = client.progress_metadata
+                return row
+            row, cached = result_for_case(progress, args.variant, index, expected, evaluate_one)
             append(args.output/'predictions.jsonl',row);results.append(row)
-            report['completed_cases']=len(results);report['input_tokens']+=client.call['input_tokens'];report['generated_token_ids']+=len(client.call['generated_token_ids'])
+            append(args.output/'case-reuse.jsonl',{'case_index':index,'cached':cached,'row_sha256':sha(encoded(row))})
+            report['completed_cases']=len(results);report['cached_cases']+=int(cached)
+            report['input_tokens']+=row['generation_metadata']['input_tokens']
+            report['generated_token_ids']+=(row['progress_metadata']['generated_token_count'] if progress is not None else len(client.call['generated_token_ids']))
             write(args.output/'report.json',report)
-            if len(results)%10==0:print(json.dumps({'completed':len(results),'declared':199,'model_calls':report['model_calls']}),flush=True)
+            if len(results)%10==0:print(json.dumps({'completed':len(results),'declared':199,'model_calls':report['model_calls'],'cached_cases':report['cached_cases']}),flush=True)
         summary=defaultdict(lambda:{'n':0,'correct':0,'score_sum':0.0})
         for row in results:
             for name in ['overall',row['benchmark']]:
@@ -204,9 +257,20 @@ def run(args):
             limitations=['199 clean single-turn tool-call predictions, not all3721 benchmark cases or autonomous repository repair.',
                 'Original deterministic scorer includes omitted-argument/name-only compatibility; scores are not full schema validity, real tool execution or prose truth.',
                 'The extra required-key screen is narrower than complete JSON Schema validation.',
-                'No retry/repair/training and no scripted model replies. FP16/backend differs from released paper settings.',
+                'Optional checkpoint evaluation preserves the provided saved LoRA weights; this driver never trains them.',
+                ('Cached scores reused without generation/rescoring; explicit resource recovery charges every unknown attempt.' if progress is not None else 'No evaluation-time retry/repair/training or scripted replies. FP16/backend differs from released paper settings.'),
                 'Token IDs are measured local generation counts, not billing; greedy seeded execution is not a bitwise reproducibility guarantee.'])
-        assert report['model_calls']==report['completed_cases']==199
+        assert report['model_calls']+report['cached_cases']==report['completed_cases']==199
+        if progress is not None:
+            state=progress.snapshot();scoped=[x for x in state['attempts'] if x['variant']==args.variant]
+            per_case=defaultdict(int)
+            for attempt in scoped:per_case[attempt['case_index']]+=1
+            report['retries']=sum(max(0,n-1) for n in per_case.values())
+            report['progress_summary']={'owner_sha256':progress.owner,'variant_attempts_reserved':len(scoped),
+                'variant_unknown_still_charged':sum(x['state']=='reserved' for x in scoped),
+                'total_attempts_reserved':len(state['attempts']),
+                'total_unknown_still_charged':sum(x['state']=='reserved' for x in state['attempts'])}
+
         return 0
     except BaseException as error:
         report.update(status='failed',error={'type':type(error).__name__,'message':str(error)},wall_seconds=round(time.monotonic()-started,3))
@@ -215,8 +279,24 @@ def run(args):
         write(args.output/'report.json',report)
 
 
+def inference_settings(args):
+    return {'max_context':args.max_context,'max_new_tokens':args.max_tokens,'temperature':0,
+            'seed':42,'batch_size':1,'dtype':'float16','do_sample':False,'num_beams':1,
+            'use_cache':True,'repetition_penalty':1.0,'soft_generation_seconds':120,
+            'TF32_matmul':False,'attention_implementation':'sdpa'}
+
+
+def run(args):
+    if args.progress_dir is None:
+        return _run(args)
+    definition=json.loads((args.progress_dir/'definition.json').read_text())
+    progress=GenerationProgress(args.progress_dir,definition)
+    with progress.worker(args.variant):
+        return _run(args,progress)
+
+
 def main():
-    p=argparse.ArgumentParser(description=__doc__);p.add_argument('mode',choices=['prepare','run']);p.add_argument('--upstream',type=Path,required=True);p.add_argument('--model',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--max-context',type=int,default=32768);p.add_argument('--max-tokens',type=int,default=1024);p.add_argument('--admission',type=Path);p.add_argument('--model-id',default='Qwen/Qwen2.5-3B-Instruct');p.add_argument('--revision',default='aa8e72537993ba99e69dfaafa59ed015b17504d1');a=p.parse_args()
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('mode',choices=['prepare','run']);p.add_argument('--upstream',type=Path,required=True);p.add_argument('--model',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--max-context',type=int,default=32768);p.add_argument('--max-tokens',type=int,default=1024);p.add_argument('--admission',type=Path);p.add_argument('--adapter',type=Path);p.add_argument('--progress-dir',type=Path);p.add_argument('--variant',choices=['base','full32','mixed32'],default='base');p.add_argument('--model-id',default='Qwen/Qwen2.5-3B-Instruct');p.add_argument('--revision',default='aa8e72537993ba99e69dfaafa59ed015b17504d1');a=p.parse_args()
     try:
         return prepare(a) if a.mode=='prepare' else run(a)
     except BaseException as error:

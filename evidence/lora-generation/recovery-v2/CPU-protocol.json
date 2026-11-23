@@ -1,0 +1,46 @@
+{
+  "setup_source_sha256": "fe5b38e1dc91850e7dd9cbf59fe8c6c0e01584dbf0e7978c03f88e2f215ef01b",
+  "assemble_source_sha256": "09b889f9d30708cf3a81ad6e783bfa0e329c3f4ed12658428a1d0965e23db376",
+  "source_tar_sha256": "24690b6291bf87b6a393f9ba3135e97746d58254bb82b60a0bfac7a7a3d699db",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "legacy_binding_sha256": "a807a60981dbf02e7ed32ca19e137b2f2ecabf00bc1110eba8fa7f759b26839e",
+  "legacy_protocol_sha256": "9c8d63f9f47e4873401a5fff23ca5bba71485a2f4f1a028be459bbd14f84c49d",
+  "legacy_driver_sha256": "f8c5623f8445c35cf61eafe1de959b9bff9d419102617154d1f2fa2283ea6068",
+  "model_repository": "Qwen/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "model_manifest_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+  "checkpoint_manifest_sha256": {
+    "full32": "303f978afb4b264283880595d60df5c661642d432996587101e9f1bed62f886e",
+    "mixed32": "fe0a49a492bc48e49618eaff60c3a3a6efbabba2bd4cd85c3b78b1272b4363cb"
+  },
+  "expected_GPU_UUID_sha256": "ff5506f58ad9cb6346563bd9c704beb39d9b943f9c3511cee4ae262da2610b78",
+  "files": {
+    "benchmarks/agentrobustbench_baseline.py": {
+      "sha256": "382bfcf9c1db5456c6da37f22c50c0d5b49c21d9bf865d5dfa4d2b61638c16ab",
+      "bytes": 19799
+    },
+    "benchmarks/generation_progress.py": {
+      "sha256": "8ae84a2e533a44fd163540de774a7428192f47a8c7e512c6680791000880438b",
+      "bytes": 12174
+    },
+    "benchmarks/generation_resume.py": {
+      "sha256": "3c717e74ae3a59f87a85cb6708a95d853a5f807096db2216d3f5c98c193a1065",
+      "bytes": 9535
+    },
+    "extras/lora-training/test_generation_progress.py": {
+      "sha256": "ff8b24f944388c232740c015a01e9b318be5a543b03e826cf2309e9448b90246",
+      "bytes": 8234
+    },
+    "extras/lora-training/test_generation_resume.py": {
+      "sha256": "260de6a37cb69f2ceab073139643207a562b655755c8eb6154d4bfbeae24e4cf",
+      "bytes": 8112
+    }
+  },
+  "generation_limits": {
+    "total_attempts": 603,
+    "variant_attempts": 201,
+    "case_attempts": 3
+  },
+  "scope": "CPU integration controls,new token admission,immutable legacy281 attempts/280rows/1unknown import with cache reuse,privatecheckpointbackup; no new model generation or scoring",
+  "homepage_updates_authorized": false
+}

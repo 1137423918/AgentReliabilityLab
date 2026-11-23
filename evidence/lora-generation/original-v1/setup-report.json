@@ -1,0 +1,45 @@
+{
+  "terminal": true,
+  "protocol_sha256": "9c8d63f9f47e4873401a5fff23ca5bba71485a2f4f1a028be459bbd14f84c49d",
+  "model_or_GPU_or_training": false,
+  "verified_model_files": 11,
+  "checkpoint_identities": {
+    "full32": {
+      "manifest_sha256": "303f978afb4b264283880595d60df5c661642d432996587101e9f1bed62f886e",
+      "files": {
+        "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+        "adapter/adapter_config.json": "646c1787157238bb79181dca68a17c7e4a39738b51f59b803ac5e2cd02c2e5d3",
+        "adapter/adapter_model.safetensors": "9fb55fefd68c3fb0b50fa93e0897c7d960ae521f4cddee8f4f25729fe3b43642",
+        "optimizer-and-rng.safetensors": "d948e8544af4083b02412a69f8590a34819a0d51963c24a229a362454282507d",
+        "training-state.json": "efdf92f4ec2d553b12cab6b11c522a0c7832ddd2908dd914d93cc64663da287d"
+      },
+      "completed_updates": 32,
+      "supervised_labels": 65536,
+      "adapter_parameter_sha256": "f9b8e94d92b761499ded5cae7b0513703c361855649913a61c9e8cefdd581ac3"
+    },
+    "mixed32": {
+      "manifest_sha256": "fe0a49a492bc48e49618eaff60c3a3a6efbabba2bd4cd85c3b78b1272b4363cb",
+      "files": {
+        "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+        "adapter/adapter_config.json": "f4cf00a2b705bc6c10650ae31cc0b68906f8d4b45e0f544d621fc260362c492e",
+        "adapter/adapter_model.safetensors": "61ff087b700040c66b368600c7e1f5e110fe793e94b60f8ef787adcc50171e9b",
+        "optimizer-and-rng.safetensors": "bd5b263e2987650062148f3dade27b732647058adc5ba457ea16c7fc81206074",
+        "training-state.json": "9f3f5e52b21869fc39f4d685a745049d4c07c07ca505078799ea2d7af69c0f50"
+      },
+      "completed_updates": 32,
+      "supervised_labels": 65536,
+      "adapter_parameter_sha256": "dd7851ce023c22558724a78254c85da6657f23b8e0bf968c7aa43c3f8dec965f"
+    }
+  },
+  "tokenizer_admission_sha256": "bddc15f60a9e4421596b39c51b89624f26adeff2f3e32c24d6ae013e512d99dd",
+  "token_admission": {
+    "case_count": 199,
+    "max_input_tokens": 4633,
+    "max_context": 32768,
+    "max_new_tokens": 1024,
+    "all_within_context": true
+  },
+  "ready": true,
+  "owned_child_reaped": true,
+  "wall_seconds": 38.41
+}

@@ -1,0 +1,10 @@
+{
+  "guard": "foreign_compute_client",
+  "trigger_unix": 1795422900.7026806,
+  "foreign_compute_count": 1,
+  "distinct_from_owned_driver_PID": true,
+  "GPU_used_MiB": 7076,
+  "raw_private_trigger_sha256": "91ab95a9276290037f2282166406330e0dd28f698d39b9afcab2b622e4d95264",
+  "raw_PID_values_not_exported": true,
+  "foreign_process_not_terminated_by_controller": true
+}
