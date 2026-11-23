@@ -1,5 +1,7 @@
 # 训练前先排查验证样本复用
 
+本文保留数据准备阶段的方法与当时状态；最新结果见[实际训练](lora-pilot.md)、[完整生成对照](generation-complete.md)与[监督目标审计](training-alignment.md)。
+
 固定AgentRobustBench官方源码`111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1`，实际读取发布的三个训练Parquet。这里的`test.parquet`是训练期间的79条验证数据，**不是官方3721场景评测集**。本次数据审计未运行神经推理或训练，亦不据此重判论文的模型成绩。
 
 ## 实测发现

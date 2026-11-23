@@ -13,8 +13,9 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 同后端三组 clean 生成对照已完成：**base 118/199、full32 107/199、mixed32 105/199**。本配方未显示微调后的 clean correct 提升；不能宣称扰动鲁棒性或泛化提升。 资源恢复保留全部旧结果，最终599次预留/597条已提交，两个历史未知仍扣额。[完整对照与边界](docs/generation-complete.md)。
 
 - [数据复用审计](docs/training-data.md)与[开发集、真实分词和标签预算](docs/training-study.md)。
+- [监督目标与行为审计](docs/training-alignment.md)：固定推理文本占Full监督标签16.7%；对全部597条已保存结果进行配对诊断，并准备只屏蔽固定正文的损失掩码。尚未用新掩码训练，未宣称效果提升。
 - [实际 LoRA 配方、结果与核验边界](docs/lora-pilot.md)及[完整证据](evidence/lora-pilot/README.md)。
-- [持久生成进度、真实恢复与当前部分结果](docs/generation-recovery.md)：12 项服务器 CPU 控制通过，已评分结果不重新生成或评分。
+- [持久生成进度与恢复阶段记录](docs/generation-recovery.md)：12 项服务器 CPU 控制通过，已评分结果不重新生成或评分；最终结果见上方完整对照。
 - [已保存调用的schema诊断](docs/tool-schema-diagnostics.md)：分别核对原始schema和上游FC投影。基线158/199例符合投影约束，其中41例仍未通过官方匹配；结构有效性不等于任务成功，部分Full对照尚无提升证据。
 - [原 P100 工具调用基线](docs/tool-use-baseline.md)：119/199 官方 correct，属于历史设备条件，不改判为新设备结果。
 - [工具调用研究路线与评分器审计](docs/robust-tool-use.md)。

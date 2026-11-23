@@ -1,5 +1,7 @@
 # 训练输入、开发集与监督 token 预算
 
+本文保留数据准备阶段的方法与当时状态；最新结果见[实际训练](lora-pilot.md)、[完整生成对照](generation-complete.md)与[监督目标审计](training-alignment.md)。
+
 同 ID 配对仍可能留下开发样本关联、序列过长和监督量差异。本次在服务器实际处理上一阶段的 3,905 对 Full/Mixed 输入与 79 条验证数据，使用与[3B基线](tool-use-baseline.md)相同的 Qwen2.5-3B-Instruct `aa8e72537993ba99e69dfaafa59ed015b17504d1` tokenizer，生成可复查的开发划分、私有训练文件和监督位置计划。**本页记录的数据准备阶段未执行模型前向、反向或优化器更新。** 后续实际 Full32 训练及未完成的核验见 [LoRA 试验](lora-pilot.md)，两阶段证据分别保留。
 
 ## 实际输出

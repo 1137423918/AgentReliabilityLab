@@ -1,0 +1,15 @@
+test_later_constant_text_is_not_selected (__main__.AlignmentControls.test_later_constant_text_is_not_selected) ... ok
+test_missing_span_leaves_all_labels_unchanged (__main__.AlignmentControls.test_missing_span_leaves_all_labels_unchanged) ... ok
+test_missing_variant_is_not_silently_ignored (__main__.AlignmentControls.test_missing_variant_is_not_silently_ignored) ... ok
+test_only_exact_leading_reason_is_selected (__main__.AlignmentControls.test_only_exact_leading_reason_is_selected) ... ok
+test_tampered_saved_score_is_rejected_even_with_new_outer_checksum (__main__.AlignmentControls.test_tampered_saved_score_is_rejected_even_with_new_outer_checksum) ... ok
+test_tokens_crossing_span_boundaries_are_retained (__main__.AlignmentControls.test_tokens_crossing_span_boundaries_are_retained) ... ok
+test_unknown_attempt_stays_charged (__main__.AlignmentControls.test_unknown_attempt_stays_charged) ... ok
+test_unterminated_reason_is_not_selected (__main__.AlignmentControls.test_unterminated_reason_is_not_selected) ... ok
+test_variable_reasoning_is_retained (__main__.AlignmentControls.test_variable_reasoning_is_retained) ... ok
+test_wrong_attempt_identity_is_rejected (__main__.AlignmentControls.test_wrong_attempt_identity_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK

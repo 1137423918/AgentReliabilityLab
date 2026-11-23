@@ -1,0 +1,16 @@
+{
+  "protocol_sha256": "1106f9a35601aeb3f006308292e1674c85afbfc328bd0e27ba858e38dc902bf9",
+  "input_data_and_ledger_unchanged": true,
+  "training_or_model_calls": 0,
+  "wall_seconds": 27.662,
+  "private_loss_mask_files": {
+    "mixed_train-masked-tokenized.jsonl": {
+      "sha256": "bfba1fade4c93f716f42295e03df52ea00d09b541a055007aaff623eaa24a366",
+      "bytes": 31083266
+    },
+    "train-masked-tokenized.jsonl": {
+      "sha256": "639241c37f6cb18c9b4c5d020a08dd15ed31a0a26207818ddbb45f302f9559ee",
+      "bytes": 33084021
+    }
+  }
+}

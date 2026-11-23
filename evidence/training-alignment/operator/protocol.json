@@ -1,0 +1,138 @@
+{
+  "declared_utc": "2026-11-23T20:59:23.841801+00:00",
+  "project_base_commit": "042250a43398cdf5da0d2afa77a94927e737c695",
+  "scope": "Exploratory fixed-scaffold supervision and complete597 stored-output marker audit. Prepare a prospective mask ablation, no new training/inference or official rescoring. Known clean scores and prior partial schema audit already observed; no held-out performance claim.",
+  "controller_sha256": "e0ef5ff7d3a93fd1ab34f3ff583521403642ecaee55661b80bd77262701b38be",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "input_bundle_sha256": "2f348e5d9f63c7f0d877d6ad9e5d11764b03e3ae329b33896d860dd218098311",
+  "source_sha256": {
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmarks/audit_toolrl_alignment.py": "e4a240b87588639e77b876800bc859451bb88da67a3889ce95ef049c60275cd4",
+    "upstream/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "upstream/convert_to_toolrl_parquet.py": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1",
+    "extras/lora-training/test_alignment_audit.py": "5d96daaf623ab522e19991169b9a09e48527f5650bd61c0f4353f22eb5a85a6d"
+  },
+  "data_sha256": {
+    "dev_clean-tokenized.jsonl": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "mixed_train-schedule.json": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+    "mixed_train-tokenized.jsonl": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "report.json": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9",
+    "test-tokenized.jsonl": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+    "train-schedule.json": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+    "train-tokenized.jsonl": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd"
+  },
+  "data_rows": {
+    "train": 3700,
+    "mixed_train": 3700,
+    "dev_clean": 197,
+    "test": 79
+  },
+  "converter_sha256": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1",
+  "upstream_commit": "111fd3db40491e0d7d8a5ec432b7ac1c6c64b2f1",
+  "tokenizer_assets": [
+    {
+      "path": "LICENSE",
+      "bytes": 7388,
+      "lfs_sha256": null,
+      "git_blob_sha1": "ed317377ac0abff39f17eec693ce664f4b8152af",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/LICENSE"
+    },
+    {
+      "path": "README.md",
+      "bytes": 4930,
+      "lfs_sha256": null,
+      "git_blob_sha1": "0b87f6362ee8ad33b2223afb47134264380f13fe",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/README.md"
+    },
+    {
+      "path": "config.json",
+      "bytes": 661,
+      "lfs_sha256": null,
+      "git_blob_sha1": "51b83fbd4e2d363b60235b9c8d494046a83c1cbf",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/config.json"
+    },
+    {
+      "path": "generation_config.json",
+      "bytes": 242,
+      "lfs_sha256": null,
+      "git_blob_sha1": "bf077f03dc569cfb8a90b3ec1ad20365a620bad6",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/generation_config.json"
+    },
+    {
+      "path": "merges.txt",
+      "bytes": 1671839,
+      "lfs_sha256": null,
+      "git_blob_sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/merges.txt"
+    },
+    {
+      "path": "model.safetensors.index.json",
+      "bytes": 35581,
+      "lfs_sha256": null,
+      "git_blob_sha1": "38047c6284a25427043f0ab040f623a2a20dd093",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/model.safetensors.index.json"
+    },
+    {
+      "path": "tokenizer.json",
+      "bytes": 7031645,
+      "lfs_sha256": null,
+      "git_blob_sha1": "443909a61d429dff23010e5bddd28ff530edda00",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer.json"
+    },
+    {
+      "path": "tokenizer_config.json",
+      "bytes": 7305,
+      "lfs_sha256": null,
+      "git_blob_sha1": "07bfe0640cb5a0037f9322287fbfc682806cf672",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/tokenizer_config.json"
+    },
+    {
+      "path": "vocab.json",
+      "bytes": 2776833,
+      "lfs_sha256": null,
+      "git_blob_sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "url": "https://huggingface.co/Qwen/Qwen2.5-3B-Instruct/resolve/aa8e72537993ba99e69dfaafa59ed015b17504d1/vocab.json"
+    }
+  ],
+  "model_repository": "Qwen/Qwen2.5-3B-Instruct",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "ledger_sha256": "188a45f27b0fcc0448c2b8366c4eaa0d72327882de59547b0e6d45ad7226a6e0",
+  "progress": {
+    "owner_sha256": "7ae60226d469106e53513224aebfbf0e371b0e21388e9206caf44f24614ea7ef",
+    "attempts": 599,
+    "known_by_variant": {
+      "base": 199,
+      "full32": 199,
+      "mixed32": 199
+    },
+    "correct_by_variant": {
+      "base": 118,
+      "full32": 107,
+      "mixed32": 105
+    },
+    "unknown_still_charged": 2
+  },
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "pyarrow": "22.0.0"
+  },
+  "resource_caps": {
+    "CPU": 2,
+    "nice": 19,
+    "AS_GiB": 16,
+    "owned_RSS_GiB": 4,
+    "memory_admission_GiB": 16,
+    "host_floor_GiB": 8,
+    "job_wall_seconds": 900,
+    "audit_phase_seconds": 600
+  },
+  "output_policy": "Only count/hash/ordinal metadata public; complete targets/token IDs/private masked training files remain on server. No source data, gold, scores, generation protocol, caps or old results changed. No causal or accuracy gain claim.",
+  "mask_policy": "Only tokens wholly within exact published leading-think prose; keep variable reasoning, tags, function names/args, response payloads and EOS. Original32 schedules/order/input IDs unchanged. Model method remains untrained.",
+  "homepage_updated": false
+}

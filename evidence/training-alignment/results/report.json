@@ -1,0 +1,959 @@
+{
+  "scope": "Exploratory fixed-scaffold supervision and complete597 stored-output marker audit. Prepare a prospective mask ablation, no new training/inference or official rescoring. Known clean scores and prior partial schema audit already observed; no held-out performance claim.",
+  "supervision": {
+    "train": {
+      "rows": 3700,
+      "original_supervised_labels": 335822,
+      "exact_constant_reason_rows": 3700,
+      "masked_constant_labels": 56071,
+      "retained_supervised_labels": 279751,
+      "target_shapes": {
+        "response_without_tool_call": 447,
+        "tool_call": 3253
+      },
+      "masked_label_fraction": 0.1669664286437458,
+      "fixed32_schedule": {
+        "updates": 32,
+        "original_labels": 65536,
+        "retained_labels": 54187,
+        "input_token_exposures": 573843,
+        "zero_label_segments": 0,
+        "steps": [
+          {
+            "update": 1,
+            "original_labels": 2048,
+            "retained_labels": 1685,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18448,
+            "segments": 25
+          },
+          {
+            "update": 2,
+            "original_labels": 2048,
+            "retained_labels": 1717,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 20088,
+            "segments": 22
+          },
+          {
+            "update": 3,
+            "original_labels": 2048,
+            "retained_labels": 1724,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17352,
+            "segments": 23
+          },
+          {
+            "update": 4,
+            "original_labels": 2048,
+            "retained_labels": 1767,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 14349,
+            "segments": 19
+          },
+          {
+            "update": 5,
+            "original_labels": 2048,
+            "retained_labels": 1669,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17008,
+            "segments": 26
+          },
+          {
+            "update": 6,
+            "original_labels": 2048,
+            "retained_labels": 1639,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 21537,
+            "segments": 28
+          },
+          {
+            "update": 7,
+            "original_labels": 2048,
+            "retained_labels": 1678,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18461,
+            "segments": 25
+          },
+          {
+            "update": 8,
+            "original_labels": 2048,
+            "retained_labels": 1663,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19991,
+            "segments": 25
+          },
+          {
+            "update": 9,
+            "original_labels": 2048,
+            "retained_labels": 1748,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 15989,
+            "segments": 21
+          },
+          {
+            "update": 10,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19136,
+            "segments": 24
+          },
+          {
+            "update": 11,
+            "original_labels": 2048,
+            "retained_labels": 1680,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19022,
+            "segments": 26
+          },
+          {
+            "update": 12,
+            "original_labels": 2048,
+            "retained_labels": 1697,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16039,
+            "segments": 24
+          },
+          {
+            "update": 13,
+            "original_labels": 2048,
+            "retained_labels": 1767,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 13698,
+            "segments": 19
+          },
+          {
+            "update": 14,
+            "original_labels": 2048,
+            "retained_labels": 1666,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18637,
+            "segments": 27
+          },
+          {
+            "update": 15,
+            "original_labels": 2048,
+            "retained_labels": 1704,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17563,
+            "segments": 23
+          },
+          {
+            "update": 16,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16400,
+            "segments": 24
+          },
+          {
+            "update": 17,
+            "original_labels": 2048,
+            "retained_labels": 1639,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18718,
+            "segments": 27
+          },
+          {
+            "update": 18,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 15301,
+            "segments": 24
+          },
+          {
+            "update": 19,
+            "original_labels": 2048,
+            "retained_labels": 1646,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17982,
+            "segments": 27
+          },
+          {
+            "update": 20,
+            "original_labels": 2048,
+            "retained_labels": 1740,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16399,
+            "segments": 22
+          },
+          {
+            "update": 21,
+            "original_labels": 2048,
+            "retained_labels": 1635,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 21165,
+            "segments": 28
+          },
+          {
+            "update": 22,
+            "original_labels": 2048,
+            "retained_labels": 1737,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17983,
+            "segments": 21
+          },
+          {
+            "update": 23,
+            "original_labels": 2048,
+            "retained_labels": 1676,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 20723,
+            "segments": 26
+          },
+          {
+            "update": 24,
+            "original_labels": 2048,
+            "retained_labels": 1669,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19495,
+            "segments": 26
+          },
+          {
+            "update": 25,
+            "original_labels": 2048,
+            "retained_labels": 1813,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 14144,
+            "segments": 17
+          },
+          {
+            "update": 26,
+            "original_labels": 2048,
+            "retained_labels": 1648,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19814,
+            "segments": 26
+          },
+          {
+            "update": 27,
+            "original_labels": 2048,
+            "retained_labels": 1692,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19170,
+            "segments": 25
+          },
+          {
+            "update": 28,
+            "original_labels": 2048,
+            "retained_labels": 1710,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16023,
+            "segments": 23
+          },
+          {
+            "update": 29,
+            "original_labels": 2048,
+            "retained_labels": 1702,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18965,
+            "segments": 24
+          },
+          {
+            "update": 30,
+            "original_labels": 2048,
+            "retained_labels": 1661,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19816,
+            "segments": 26
+          },
+          {
+            "update": 31,
+            "original_labels": 2048,
+            "retained_labels": 1662,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17817,
+            "segments": 26
+          },
+          {
+            "update": 32,
+            "original_labels": 2048,
+            "retained_labels": 1671,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16610,
+            "segments": 25
+          }
+        ],
+        "input_ids_order_and_segment_boundaries_unchanged": true,
+        "optimizer_or_training_run": false
+      }
+    },
+    "mixed_train": {
+      "rows": 3700,
+      "original_supervised_labels": 336489,
+      "exact_constant_reason_rows": 3700,
+      "masked_constant_labels": 56071,
+      "retained_supervised_labels": 280418,
+      "target_shapes": {
+        "response_without_tool_call": 447,
+        "tool_call": 3253
+      },
+      "masked_label_fraction": 0.16663546208048405,
+      "fixed32_schedule": {
+        "updates": 32,
+        "original_labels": 65536,
+        "retained_labels": 54219,
+        "input_token_exposures": 537483,
+        "zero_label_segments": 0,
+        "steps": [
+          {
+            "update": 1,
+            "original_labels": 2048,
+            "retained_labels": 1685,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17457,
+            "segments": 25
+          },
+          {
+            "update": 2,
+            "original_labels": 2048,
+            "retained_labels": 1717,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18343,
+            "segments": 22
+          },
+          {
+            "update": 3,
+            "original_labels": 2048,
+            "retained_labels": 1724,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16757,
+            "segments": 23
+          },
+          {
+            "update": 4,
+            "original_labels": 2048,
+            "retained_labels": 1767,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 13323,
+            "segments": 19
+          },
+          {
+            "update": 5,
+            "original_labels": 2048,
+            "retained_labels": 1685,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16615,
+            "segments": 26
+          },
+          {
+            "update": 6,
+            "original_labels": 2048,
+            "retained_labels": 1630,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19298,
+            "segments": 27
+          },
+          {
+            "update": 7,
+            "original_labels": 2048,
+            "retained_labels": 1671,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17450,
+            "segments": 25
+          },
+          {
+            "update": 8,
+            "original_labels": 2048,
+            "retained_labels": 1678,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19524,
+            "segments": 25
+          },
+          {
+            "update": 9,
+            "original_labels": 2048,
+            "retained_labels": 1733,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 15238,
+            "segments": 22
+          },
+          {
+            "update": 10,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17665,
+            "segments": 24
+          },
+          {
+            "update": 11,
+            "original_labels": 2048,
+            "retained_labels": 1692,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16552,
+            "segments": 25
+          },
+          {
+            "update": 12,
+            "original_labels": 2048,
+            "retained_labels": 1685,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16531,
+            "segments": 25
+          },
+          {
+            "update": 13,
+            "original_labels": 2048,
+            "retained_labels": 1767,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 13286,
+            "segments": 19
+          },
+          {
+            "update": 14,
+            "original_labels": 2048,
+            "retained_labels": 1676,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17094,
+            "segments": 26
+          },
+          {
+            "update": 15,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16857,
+            "segments": 24
+          },
+          {
+            "update": 16,
+            "original_labels": 2048,
+            "retained_labels": 1695,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 15792,
+            "segments": 24
+          },
+          {
+            "update": 17,
+            "original_labels": 2048,
+            "retained_labels": 1638,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17819,
+            "segments": 27
+          },
+          {
+            "update": 18,
+            "original_labels": 2048,
+            "retained_labels": 1694,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 14275,
+            "segments": 24
+          },
+          {
+            "update": 19,
+            "original_labels": 2048,
+            "retained_labels": 1647,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16071,
+            "segments": 27
+          },
+          {
+            "update": 20,
+            "original_labels": 2048,
+            "retained_labels": 1755,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 14670,
+            "segments": 21
+          },
+          {
+            "update": 21,
+            "original_labels": 2048,
+            "retained_labels": 1630,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 19674,
+            "segments": 28
+          },
+          {
+            "update": 22,
+            "original_labels": 2048,
+            "retained_labels": 1742,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17113,
+            "segments": 21
+          },
+          {
+            "update": 23,
+            "original_labels": 2048,
+            "retained_labels": 1674,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 20093,
+            "segments": 27
+          },
+          {
+            "update": 24,
+            "original_labels": 2048,
+            "retained_labels": 1655,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18717,
+            "segments": 26
+          },
+          {
+            "update": 25,
+            "original_labels": 2048,
+            "retained_labels": 1813,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 13761,
+            "segments": 17
+          },
+          {
+            "update": 26,
+            "original_labels": 2048,
+            "retained_labels": 1664,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18734,
+            "segments": 25
+          },
+          {
+            "update": 27,
+            "original_labels": 2048,
+            "retained_labels": 1676,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18407,
+            "segments": 26
+          },
+          {
+            "update": 28,
+            "original_labels": 2048,
+            "retained_labels": 1726,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 13781,
+            "segments": 22
+          },
+          {
+            "update": 29,
+            "original_labels": 2048,
+            "retained_labels": 1701,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 17306,
+            "segments": 24
+          },
+          {
+            "update": 30,
+            "original_labels": 2048,
+            "retained_labels": 1646,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 18957,
+            "segments": 27
+          },
+          {
+            "update": 31,
+            "original_labels": 2048,
+            "retained_labels": 1662,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 16243,
+            "segments": 26
+          },
+          {
+            "update": 32,
+            "original_labels": 2048,
+            "retained_labels": 1703,
+            "zero_label_segments": 0,
+            "planned_input_token_exposures": 14080,
+            "segments": 23
+          }
+        ],
+        "input_ids_order_and_segment_boundaries_unchanged": true,
+        "optimizer_or_training_run": false
+      }
+    },
+    "dev_clean": {
+      "rows": 197,
+      "original_supervised_labels": 16220,
+      "exact_constant_reason_rows": 197,
+      "masked_constant_labels": 2991,
+      "retained_supervised_labels": 13229,
+      "target_shapes": {
+        "tool_call": 174,
+        "response_without_tool_call": 23
+      },
+      "masked_label_fraction": 0.1844019728729963
+    },
+    "test": {
+      "rows": 79,
+      "original_supervised_labels": 6887,
+      "exact_constant_reason_rows": 79,
+      "masked_constant_labels": 1187,
+      "retained_supervised_labels": 5700,
+      "target_shapes": {
+        "tool_call": 68,
+        "response_without_tool_call": 11
+      },
+      "masked_label_fraction": 0.17235370988819515
+    }
+  },
+  "stored_outcomes": {
+    "base": {
+      "overall": {
+        "n": 199,
+        "correct": 118,
+        "no_parsed_calls": 23,
+        "has_think_marker": 45,
+        "has_tool_call_marker": 61,
+        "has_response_marker": 55,
+        "contains_published_fixed_reasoning": 0,
+        "generation_error_present": 0,
+        "correct_without_parsed_calls": 0
+      },
+      "by_benchmark": {
+        "apibank": {
+          "n": 74,
+          "correct": 42,
+          "no_parsed_calls": 13,
+          "has_think_marker": 45,
+          "has_tool_call_marker": 61,
+          "has_response_marker": 55,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 26,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 2,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 1,
+          "no_parsed_calls": 10,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 47,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        }
+      }
+    },
+    "full32": {
+      "overall": {
+        "n": 199,
+        "correct": 107,
+        "no_parsed_calls": 34,
+        "has_think_marker": 34,
+        "has_tool_call_marker": 22,
+        "has_response_marker": 41,
+        "contains_published_fixed_reasoning": 34,
+        "generation_error_present": 0,
+        "correct_without_parsed_calls": 0
+      },
+      "by_benchmark": {
+        "apibank": {
+          "n": 74,
+          "correct": 32,
+          "no_parsed_calls": 21,
+          "has_think_marker": 34,
+          "has_tool_call_marker": 22,
+          "has_response_marker": 41,
+          "contains_published_fixed_reasoning": 33,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 27,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 1,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 2,
+          "no_parsed_calls": 13,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 45,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 1,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        }
+      }
+    },
+    "mixed32": {
+      "overall": {
+        "n": 199,
+        "correct": 105,
+        "no_parsed_calls": 39,
+        "has_think_marker": 42,
+        "has_tool_call_marker": 27,
+        "has_response_marker": 41,
+        "contains_published_fixed_reasoning": 41,
+        "generation_error_present": 0,
+        "correct_without_parsed_calls": 0
+      },
+      "by_benchmark": {
+        "apibank": {
+          "n": 74,
+          "correct": 30,
+          "no_parsed_calls": 26,
+          "has_think_marker": 42,
+          "has_tool_call_marker": 27,
+          "has_response_marker": 41,
+          "contains_published_fixed_reasoning": 41,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "bfcl_v3": {
+          "n": 32,
+          "correct": 27,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "rotbench": {
+          "n": 21,
+          "correct": 2,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "toolalpaca": {
+          "n": 21,
+          "correct": 2,
+          "no_parsed_calls": 13,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        },
+        "tooleyes": {
+          "n": 51,
+          "correct": 44,
+          "no_parsed_calls": 0,
+          "has_think_marker": 0,
+          "has_tool_call_marker": 0,
+          "has_response_marker": 0,
+          "contains_published_fixed_reasoning": 0,
+          "generation_error_present": 0,
+          "correct_without_parsed_calls": 0
+        }
+      }
+    }
+  },
+  "paired": {
+    "full32-vs-base": {
+      "overall": {
+        "n": 199,
+        "reference_correct_candidate_wrong": 21,
+        "reference_wrong_candidate_correct": 10,
+        "lost_correct_and_now_no_calls": 9,
+        "lost_correct_and_now_response_marker": 11,
+        "lost_correct_and_fixed_reasoning": 7
+      },
+      "bfcl_v3": {
+        "n": 32,
+        "reference_correct_candidate_wrong": 1,
+        "reference_wrong_candidate_correct": 2,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "apibank": {
+        "n": 74,
+        "reference_correct_candidate_wrong": 17,
+        "reference_wrong_candidate_correct": 7,
+        "lost_correct_and_now_no_calls": 9,
+        "lost_correct_and_now_response_marker": 11,
+        "lost_correct_and_fixed_reasoning": 7
+      },
+      "tooleyes": {
+        "n": 51,
+        "reference_correct_candidate_wrong": 2,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "toolalpaca": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 0,
+        "reference_wrong_candidate_correct": 1,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "rotbench": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 1,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      }
+    },
+    "mixed32-vs-base": {
+      "overall": {
+        "n": 199,
+        "reference_correct_candidate_wrong": 25,
+        "reference_wrong_candidate_correct": 12,
+        "lost_correct_and_now_no_calls": 14,
+        "lost_correct_and_now_response_marker": 11,
+        "lost_correct_and_fixed_reasoning": 11
+      },
+      "bfcl_v3": {
+        "n": 32,
+        "reference_correct_candidate_wrong": 1,
+        "reference_wrong_candidate_correct": 2,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "apibank": {
+        "n": 74,
+        "reference_correct_candidate_wrong": 20,
+        "reference_wrong_candidate_correct": 8,
+        "lost_correct_and_now_no_calls": 14,
+        "lost_correct_and_now_response_marker": 11,
+        "lost_correct_and_fixed_reasoning": 11
+      },
+      "tooleyes": {
+        "n": 51,
+        "reference_correct_candidate_wrong": 3,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "toolalpaca": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 0,
+        "reference_wrong_candidate_correct": 1,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "rotbench": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 1,
+        "reference_wrong_candidate_correct": 1,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      }
+    },
+    "mixed32-vs-full32": {
+      "overall": {
+        "n": 199,
+        "reference_correct_candidate_wrong": 7,
+        "reference_wrong_candidate_correct": 5,
+        "lost_correct_and_now_no_calls": 6,
+        "lost_correct_and_now_response_marker": 1,
+        "lost_correct_and_fixed_reasoning": 5
+      },
+      "bfcl_v3": {
+        "n": 32,
+        "reference_correct_candidate_wrong": 0,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "apibank": {
+        "n": 74,
+        "reference_correct_candidate_wrong": 6,
+        "reference_wrong_candidate_correct": 4,
+        "lost_correct_and_now_no_calls": 6,
+        "lost_correct_and_now_response_marker": 1,
+        "lost_correct_and_fixed_reasoning": 5
+      },
+      "tooleyes": {
+        "n": 51,
+        "reference_correct_candidate_wrong": 1,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "toolalpaca": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 0,
+        "reference_wrong_candidate_correct": 0,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      },
+      "rotbench": {
+        "n": 21,
+        "reference_correct_candidate_wrong": 0,
+        "reference_wrong_candidate_correct": 1,
+        "lost_correct_and_now_no_calls": 0,
+        "lost_correct_and_now_response_marker": 0,
+        "lost_correct_and_fixed_reasoning": 0
+      }
+    }
+  },
+  "diagnostic_markers_are_not_semantic_refusal_labels": true,
+  "association_is_not_causation": true,
+  "known_development_outcomes_already_seen": true,
+  "no_model_training_or_inference": true,
+  "no_scorer_or_raw_output_parser_calls": true,
+  "original_unknown_attempts_still_charged": 2,
+  "loss_mask_policy": "Only tokens wholly inside exact published fixed leading-think prose; preserve tags, variable reasoning, tool/response payloads, EOS, inputs and original segment boundaries.",
+  "next_method_is_prepared_not_trained": true
+}
