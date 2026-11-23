@@ -1,0 +1,9 @@
+{"admission_sha256": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9", "selection_order_sha256": "7fcf3700058857722e9bd188b3fa81323c02c96fa55a05ccd739040569726c12", "protocol_sha256": "03a23870e45ebe245ba887a79f4b6b6dc237605e91a31b8cc7a098836039ed4b", "bound_cases": 250, "by_category": {"live_simple": 50, "live_multiple": 50, "parallel": 50, "parallel_multiple": 50, "irrelevance": 50}, "reference_file_rows": {"BFCL_v4_live_multiple.json": 1053, "BFCL_v4_live_simple.json": 258, "BFCL_v4_parallel.json": 200, "BFCL_v4_parallel_multiple.json": 200}, "reference_derived_checker_controls": {"cases": 250, "witness_matches": 246, "guard_rejections": 0, "scorer_errors": 0, "eval_attempts": 0}, "private_bound_gold_sha256": "4a3ba49ad6da882c261f9ff507448b9dad8725c7562eb2968c7cf6d70d49b3da", "no_model_predictions_or_training": true, "no_cases_replaced_or_gold_changed": true, "not_full_official_BFCL_harness": true, "metric_policy": "Guarded BFCL-derived Python AST match. Outer guard rejects BinOp/Lambda or response/AST resource overages with no credit; other decoding/matching functions unchanged. Preserve official irrelevance parse-failure credit and report decode/empty-list counts separately.", "scorer_ready": false}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "[NODE_WORKSPACE]/input/source/benchmarks/bind_bfcl_transfer_gold.py", line 104, in <module>
+    run(parser.parse_args())
+  File "[NODE_WORKSPACE]/input/source/benchmarks/bind_bfcl_transfer_gold.py", line 97, in run
+    assert report['scorer_ready'], 'Reference controls failed; keep all frozen cases, no model inference or replacement'
+AssertionError: Reference controls failed; keep all frozen cases, no model inference or replacement

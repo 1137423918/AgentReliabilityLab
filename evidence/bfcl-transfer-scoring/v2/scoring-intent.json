@@ -1,0 +1,104 @@
+{
+  "declared_utc": "2026-11-23T21:36:51.734098+00:00",
+  "scope": "Safe Python-track BFCL-derived scorer, fixed admitted-ID gold binding and reference-derived checker controls. No model predictions/training/quality retry or changes to admitted input selection.",
+  "BFCL_repository": "ShishirPatil/gorilla",
+  "BFCL_commit": "f7cf7359b7ac615a0b294831c5ba2bc95ee4a000",
+  "upstream_source_metadata": {
+    "bfcl_enums.py": {
+      "path": "berkeley-function-call-leaderboard/bfcl_eval/constants/enums.py",
+      "bytes": 896,
+      "git_blob_sha1": "7400315f045419d4a8a28525f3999c1844f5e9af",
+      "sha256": "2182becfa2a1d071ee1db30db593b4758c6bf866aa12d2d4b8daf09175ea518a"
+    },
+    "bfcl_ast_checker.py": {
+      "path": "berkeley-function-call-leaderboard/bfcl_eval/eval_checker/ast_eval/ast_checker.py",
+      "bytes": 25032,
+      "git_blob_sha1": "160fd75cfc8b2b7ef9f83a244f81da0fe0244e39",
+      "sha256": "2aae7a68461a8f76c0be3894c8901b66b56967a1989d3ab066051e3fb97f1538"
+    },
+    "bfcl_model_utils.py": {
+      "path": "berkeley-function-call-leaderboard/bfcl_eval/model_handler/utils.py",
+      "bytes": 33694,
+      "git_blob_sha1": "7abd9a242f27c72399dbdbb0f2749b0464e1a0b8",
+      "sha256": "f78fd3edce603b333dc9a88ee2c041dc547d51f71aa449ffebc044c4b1e353f3"
+    },
+    "bfcl_eval_runner.py": {
+      "path": "berkeley-function-call-leaderboard/bfcl_eval/eval_checker/eval_runner.py",
+      "bytes": 32756,
+      "git_blob_sha1": "2d5c41aac41cd2f1caedf741fb01dfdfd57b1990",
+      "sha256": "b1033684908819ccb312d4d0e2c563359d69247412f00206013b2292b0e3ce81"
+    },
+    "bfcl_utils.py": {
+      "path": "berkeley-function-call-leaderboard/bfcl_eval/utils.py",
+      "bytes": 36012,
+      "git_blob_sha1": "552a10f36ec10840773f75e50fed01ca19b4bfc6",
+      "sha256": "3703b9bb63f83581c60b8e0b82aac74c360c9ca781e99e7d4eb28b0cce2285dd"
+    }
+  },
+  "admission_publication_commit": "b56f52f8288aa67de9dc48ec4d05768e9eaa18a9",
+  "admission_sha256": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9",
+  "selection_order_sha256": "7fcf3700058857722e9bd188b3fa81323c02c96fa55a05ccd739040569726c12",
+  "private_inputs_sha256": "0c311b636cb710b8ba04b3b5c3c4bbaefc4c20444d331b4752300f8a15b3ea0a",
+  "source_sha256": {
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmarks/bfcl_transfer_scoring.py": "05f05e15484149ce561d1a59694990ecbcb175c25f791bbf8dcd7b57e35cef87",
+    "benchmarks/bind_bfcl_transfer_gold.py": "86fd8669b886eea1b36cf6093183e3c09f55e0853552a951968bba22e07444ec",
+    "extras/lora-training/test_bfcl_scoring.py": "d7feed2a704a78aaa9e8096b2b8cce6d66f6d3871573d14232a9badc8f157c67",
+    "upstream/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "upstream/bfcl_ast_checker.py": "2aae7a68461a8f76c0be3894c8901b66b56967a1989d3ab066051e3fb97f1538",
+    "upstream/bfcl_enums.py": "2182becfa2a1d071ee1db30db593b4758c6bf866aa12d2d4b8daf09175ea518a",
+    "upstream/bfcl_eval_runner.py": "b1033684908819ccb312d4d0e2c563359d69247412f00206013b2292b0e3ce81",
+    "upstream/bfcl_model_utils.py": "f78fd3edce603b333dc9a88ee2c041dc547d51f71aa449ffebc044c4b1e353f3",
+    "upstream/bfcl_utils.py": "3703b9bb63f83581c60b8e0b82aac74c360c9ca781e99e7d4eb28b0cce2285dd"
+  },
+  "gold_files": {
+    "BFCL_v4_live_multiple.json": {
+      "bytes": 199668,
+      "git_blob_sha1": "b2f4c71547d3a534e2e40231db14943bfa81cc74"
+    },
+    "BFCL_v4_live_simple.json": {
+      "bytes": 46972,
+      "git_blob_sha1": "2c4778cee08e5ce7b236861de9a927d3ea7cde1f"
+    },
+    "BFCL_v4_parallel.json": {
+      "bytes": 66005,
+      "git_blob_sha1": "94c4be296d0fee3f7ae8863c4855783da563ca22"
+    },
+    "BFCL_v4_parallel_multiple.json": {
+      "bytes": 74602,
+      "git_blob_sha1": "52b010cb01334c98456cc3ec0886dd85d51ec284"
+    }
+  },
+  "guard": {
+    "max_response_chars": 65536,
+    "max_AST_nodes": 2048,
+    "max_AST_depth": 64,
+    "reject_AST_types": [
+      "BinOp",
+      "Lambda"
+    ],
+    "reject_credit": false,
+    "syntax_errors": "Official decoder failure handling unchanged, separately reported.",
+    "eval_fallback": "Global eval disabled; zero attempted eval required, generated AST never compiled/evaluated."
+  },
+  "score_policy": "Guarded BFCL-derived Python AST match only; exact trusted source function bodies retained, Python model config underscore_to_dot=False. Guard rejection earns no credit, official compatibility value unknown. No replacement/exclusion after gold/witness failure. Preserve irrelevance parse-failure credit but explicitly report decoder failure and explicit-empty-list counts. Scorer/schema exceptions are undefined infrastructure errors, not invented prediction errors.",
+  "reference_controls": "250 private reference-derived witness outputs, including50explicitemptyirrelevance. These are checker controls, not model predictions/tool execution. All must match without any guard/eval/scorer errors before inference preparation.",
+  "method_intent_before_gold": "Proposed independent matched32step actualFull3700 unmasked reference vs exactfixedreason-prose loss-mask. Sameoriginaltrain-schedule/order/inputIDs/774segments/573843inputtokenexposures/seed42/samefreshadmittedphysicalGPU; actualper-step active-label normalization, unmasked65536 vs masked54187 labels. Preserve447directresponse examples. SameQwen2.5-3B revision/FP16/SDPA/LoRAq-v r8alpha16dropout0/AdamWlr2e-4/.9,.999/eps1e-8/decay0/clip1/GradScaler1024; no checkpoint selection. Separate implementation/numericalchecks/GPUprotocol required. No model budget allocated here.",
+  "old_ledger_sha256": "188a45f27b0fcc0448c2b8366c4eaa0d72327882de59547b0e6d45ad7226a6e0",
+  "protected_data_sha256": {
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32"
+  },
+  "old_benchmark_sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "pyarrow": "22.0.0"
+  },
+  "output_policy": "Only source, protocol, count/hash/public-ID binding metadata and control flags exported. Referencevalues/witnessbodies/questioninputs/predictionbodies/weights/environment private. Personal homepage remains frozen.",
+  "parent_scoring_intent_sha256": "f952e4d155713fa9f1c7bae00ab125c81a19bc46c662a267187b3db1bb17a80a",
+  "preflight_revision_utc": "2026-11-23T21:41:21.638584+00:00",
+  "preflight_revision": "v1 12unitcontrols pass,246/250referencewitnesses pass;4nested-dictionary alternate representations require schema-aware witness construction. Only witness helper/binder call/2regression controls changed. Scorer/guard function ASTs,officialfunctions,gold,admittedIDs,method-intent unchanged; no neural/model predictions observed."
+}

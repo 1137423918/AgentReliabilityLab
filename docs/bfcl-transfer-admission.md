@@ -1,5 +1,7 @@
 # 先锁定输入的工具调用迁移评测
 
+本页保留读取答案之前的数据准入过程；[后续参考绑定与评分控制](bfcl-transfer-scoring.md)现已完成。原准入清单及其零答案读取计数仍是当时的不可变快照；尚未运行新的模型评测。
+
 旧 199 条生成结果已经用于分析训练退化，后续属于开发证据。本阶段在读取新参考答案前，固定一个 BFCL 派生的迁移评测子集，为独立的配对消融准备输入。**已完成样本准入，尚未绑定参考答案、运行新训练或进行模型评分。**
 
 使用[官方复现入口](https://gorilla.cs.berkeley.edu/leaderboard.html)指定的 BFCL v4 源码检查点 [`f7cf7359b7ac615a0b294831c5ba2bc95ee4a000`](https://github.com/ShishirPatil/gorilla/tree/f7cf7359b7ac615a0b294831c5ba2bc95ee4a000/berkeley-function-call-leaderboard)。这里只覆盖单轮工具调用的五个类别，不覆盖完整 v4 的多轮、记忆或 Web 搜索能力，也不产生完整 BFCL 分数。

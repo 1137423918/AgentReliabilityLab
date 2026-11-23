@@ -1,0 +1,17 @@
+test_dotted_function_names_are_preserved (__main__.GuardedScoringTests.test_dotted_function_names_are_preserved) ... ok
+test_eval_bearing_expressions_never_gain_credit (__main__.GuardedScoringTests.test_eval_bearing_expressions_never_gain_credit) ... ok
+test_generated_calls_are_never_executed (__main__.GuardedScoringTests.test_generated_calls_are_never_executed) ... ok
+test_irrelevance_keeps_parse_failure_boundary_visible (__main__.GuardedScoringTests.test_irrelevance_keeps_parse_failure_boundary_visible) ... ok
+test_legacy_decoder_wrapping_is_preserved (__main__.GuardedScoringTests.test_legacy_decoder_wrapping_is_preserved) ... ok
+test_literal_correct_and_input_unchanged (__main__.GuardedScoringTests.test_literal_correct_and_input_unchanged) ... ok
+test_multiple_selects_correct_function (__main__.GuardedScoringTests.test_multiple_selects_correct_function) ... ok
+test_parallel_order_is_ignored (__main__.GuardedScoringTests.test_parallel_order_is_ignored) ... ok
+test_reference_witness_is_only_a_checker_control (__main__.GuardedScoringTests.test_reference_witness_is_only_a_checker_control) ... ok
+test_resource_guards_fail_closed (__main__.GuardedScoringTests.test_resource_guards_fail_closed) ... ok
+test_source_and_definition_identity_recorded (__main__.GuardedScoringTests.test_source_and_definition_identity_recorded) ... ok
+test_wrong_name_required_extra_and_type_are_rejected (__main__.GuardedScoringTests.test_wrong_name_required_extra_and_type_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 0.040s
+
+OK
