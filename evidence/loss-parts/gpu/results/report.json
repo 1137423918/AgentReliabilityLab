@@ -1,0 +1,631 @@
+{
+  "protocol_sha256": "746693154ae87bef6a20890cd78f1a73d9db676fedea336c7e46f8552ec2f335",
+  "definition_owner_sha256": "6eb585eee45a9b13a4c0a41bfcc907d7f0f12c5f2fd819817d94f3abc93470cc",
+  "teacher_forward_attempts": 831,
+  "committed_results": 831,
+  "unknown_still_charged": 0,
+  "text_generations": 0,
+  "training_updates": 0,
+  "all_roles_terminal_clean": true,
+  "all_parameters_unchanged": true,
+  "whole_NLL_comparison": {
+    "base": {
+      "dev_clean": {
+        "cases": 197,
+        "max_absolute_per_case_mean_NLL_difference": 5.98638486337677e-07
+      },
+      "test": {
+        "cases": 79,
+        "max_absolute_per_case_mean_NLL_difference": 5.47350356150389e-07
+      }
+    },
+    "reference32": {
+      "dev_clean": {
+        "cases": 197,
+        "max_absolute_per_case_mean_NLL_difference": 2.436088930579672e-07
+      },
+      "test": {
+        "cases": 79,
+        "max_absolute_per_case_mean_NLL_difference": 2.592648957744359e-07
+      }
+    },
+    "masked32": {
+      "dev_clean": {
+        "cases": 197,
+        "max_absolute_per_case_mean_NLL_difference": 3.8298317650564684e-07
+      },
+      "test": {
+        "cases": 79,
+        "max_absolute_per_case_mean_NLL_difference": 3.057815329832181e-07
+      }
+    }
+  },
+  "results": {
+    "base": {
+      "dev_clean": {
+        "cases": 197,
+        "loss_sum": 24157.37395951693,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 6781.346060206377,
+            "token_weighted_NLL": 0.6181719289158046,
+            "tokens": 10970
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 12135.313189394656,
+            "token_weighted_NLL": 4.057276225140306,
+            "tokens": 2991
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 5240.714709915899,
+            "token_weighted_NLL": 2.3199268304187246,
+            "tokens": 2259
+          }
+        },
+        "target_tokens": 16220,
+        "token_weighted_NLL": 1.4893572108210191,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 174,
+            "target_tokens": 13049,
+            "loss_sum": 19713.593813645668,
+            "token_weighted_NLL": 1.5107359808142897,
+            "parts": {
+              "answer_payload": {
+                "tokens": 8351,
+                "loss_sum": 3526.4926708106223,
+                "token_weighted_NLL": 0.42228387867448475
+              },
+              "fixed_reason_prose": {
+                "tokens": 2784,
+                "loss_sum": 11363.544451623475,
+                "token_weighted_NLL": 4.081732920841765
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 1914,
+                "loss_sum": 4823.556691211571,
+                "token_weighted_NLL": 2.5201445617615312
+              }
+            }
+          },
+          "response": {
+            "cases": 23,
+            "target_tokens": 3171,
+            "loss_sum": 4443.780145871263,
+            "token_weighted_NLL": 1.4013813137405433,
+            "parts": {
+              "answer_payload": {
+                "tokens": 2619,
+                "loss_sum": 3254.853389395754,
+                "token_weighted_NLL": 1.2427847993110936
+              },
+              "fixed_reason_prose": {
+                "tokens": 207,
+                "loss_sum": 771.76873777118,
+                "token_weighted_NLL": 3.728351390198937
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 345,
+                "loss_sum": 417.15801870432836,
+                "token_weighted_NLL": 1.2091536774038503
+              }
+            }
+          }
+        }
+      },
+      "test": {
+        "cases": 79,
+        "loss_sum": 9933.03594319306,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 3094.720480913311,
+            "token_weighted_NLL": 0.6464843285801778,
+            "tokens": 4787
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 4670.472960566143,
+            "token_weighted_NLL": 3.9346865716648214,
+            "tokens": 1187
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 2167.8425017136046,
+            "token_weighted_NLL": 2.374416759817749,
+            "tokens": 913
+          }
+        },
+        "target_tokens": 6887,
+        "token_weighted_NLL": 1.4422877803387628,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 68,
+            "target_tokens": 5457,
+            "loss_sum": 7701.2631341308925,
+            "token_weighted_NLL": 1.411263172829557,
+            "parts": {
+              "answer_payload": {
+                "tokens": 3621,
+                "loss_sum": 1512.0119419505536,
+                "token_weighted_NLL": 0.41756750675243126
+              },
+              "fixed_reason_prose": {
+                "tokens": 1088,
+                "loss_sum": 4262.785788454583,
+                "token_weighted_NLL": 3.918001643800168
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 748,
+                "loss_sum": 1926.4654037257558,
+                "token_weighted_NLL": 2.575488507654754
+              }
+            }
+          },
+          "response": {
+            "cases": 11,
+            "target_tokens": 1430,
+            "loss_sum": 2231.7728090621667,
+            "token_weighted_NLL": 1.5606802860574593,
+            "parts": {
+              "answer_payload": {
+                "tokens": 1166,
+                "loss_sum": 1582.7085389627575,
+                "token_weighted_NLL": 1.3573829665203752
+              },
+              "fixed_reason_prose": {
+                "tokens": 99,
+                "loss_sum": 407.68717211156036,
+                "token_weighted_NLL": 4.118052243551115
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 165,
+                "loss_sum": 241.3770979878489,
+                "token_weighted_NLL": 1.46289150295666
+              }
+            }
+          }
+        }
+      }
+    },
+    "reference32": {
+      "dev_clean": {
+        "cases": 197,
+        "loss_sum": 4500.398188617365,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 4223.681011504198,
+            "token_weighted_NLL": 0.38502105847804907,
+            "tokens": 10970
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 221.9625941660796,
+            "token_weighted_NLL": 0.07421016187431616,
+            "tokens": 2991
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 54.75458294708733,
+            "token_weighted_NLL": 0.024238416532575177,
+            "tokens": 2259
+          }
+        },
+        "target_tokens": 16220,
+        "token_weighted_NLL": 0.27745981434139116,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 174,
+            "target_tokens": 13049,
+            "loss_sum": 1376.540739996569,
+            "token_weighted_NLL": 0.10549013257694606,
+            "parts": {
+              "answer_payload": {
+                "tokens": 8351,
+                "loss_sum": 1312.3666258243804,
+                "token_weighted_NLL": 0.15715083532803023
+              },
+              "fixed_reason_prose": {
+                "tokens": 2784,
+                "loss_sum": 19.31533846572335,
+                "token_weighted_NLL": 0.006937980770733962
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 1914,
+                "loss_sum": 44.85877570646528,
+                "token_weighted_NLL": 0.023437186889480294
+              }
+            }
+          },
+          "response": {
+            "cases": 23,
+            "target_tokens": 3171,
+            "loss_sum": 3123.857448620796,
+            "token_weighted_NLL": 0.9851332225231144,
+            "parts": {
+              "answer_payload": {
+                "tokens": 2619,
+                "loss_sum": 2911.3143856798174,
+                "token_weighted_NLL": 1.1116129765864138
+              },
+              "fixed_reason_prose": {
+                "tokens": 207,
+                "loss_sum": 202.64725570035625,
+                "token_weighted_NLL": 0.9789722497601752
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 345,
+                "loss_sum": 9.895807240622048,
+                "token_weighted_NLL": 0.02868349924817985
+              }
+            }
+          }
+        }
+      },
+      "test": {
+        "cases": 79,
+        "loss_sum": 2049.490202279586,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 1916.6390766939073,
+            "token_weighted_NLL": 0.40038418146937693,
+            "tokens": 4787
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 107.86593208742116,
+            "token_weighted_NLL": 0.0908727313289142,
+            "tokens": 1187
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 24.98519349825733,
+            "token_weighted_NLL": 0.027366038880895213,
+            "tokens": 913
+          }
+        },
+        "target_tokens": 6887,
+        "token_weighted_NLL": 0.2975882390416126,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 68,
+            "target_tokens": 5457,
+            "loss_sum": 506.5630274158563,
+            "token_weighted_NLL": 0.09282811570750528,
+            "parts": {
+              "answer_payload": {
+                "tokens": 3621,
+                "loss_sum": 483.1802936088884,
+                "token_weighted_NLL": 0.1334383578041669
+              },
+              "fixed_reason_prose": {
+                "tokens": 1088,
+                "loss_sum": 6.824315963643954,
+                "token_weighted_NLL": 0.006272349231290399
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 748,
+                "loss_sum": 16.558417843323923,
+                "token_weighted_NLL": 0.022136922250433053
+              }
+            }
+          },
+          "response": {
+            "cases": 11,
+            "target_tokens": 1430,
+            "loss_sum": 1542.9271748637295,
+            "token_weighted_NLL": 1.0789700523522585,
+            "parts": {
+              "answer_payload": {
+                "tokens": 1166,
+                "loss_sum": 1433.458783085019,
+                "token_weighted_NLL": 1.2293814606218
+              },
+              "fixed_reason_prose": {
+                "tokens": 99,
+                "loss_sum": 101.0416161237772,
+                "token_weighted_NLL": 1.0206223850886587
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 165,
+                "loss_sum": 8.426775654933408,
+                "token_weighted_NLL": 0.05107136760565702
+              }
+            }
+          }
+        }
+      }
+    },
+    "masked32": {
+      "dev_clean": {
+        "cases": 197,
+        "loss_sum": 11174.716315947868,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 4048.605509124179,
+            "token_weighted_NLL": 0.3690615778599981,
+            "tokens": 10970
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 7062.535254925111,
+            "token_weighted_NLL": 2.3612622049231398,
+            "tokens": 2991
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 63.575551898578055,
+            "token_weighted_NLL": 0.028143227932084132,
+            "tokens": 2259
+          }
+        },
+        "target_tokens": 16220,
+        "token_weighted_NLL": 0.6889467519080067,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 174,
+            "target_tokens": 13049,
+            "loss_sum": 7874.788137852081,
+            "token_weighted_NLL": 0.6034782847614438,
+            "parts": {
+              "answer_payload": {
+                "tokens": 8351,
+                "loss_sum": 1240.0411664607489,
+                "token_weighted_NLL": 0.1484901408766314
+              },
+              "fixed_reason_prose": {
+                "tokens": 2784,
+                "loss_sum": 6585.112338337232,
+                "token_weighted_NLL": 2.365342075552167
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 1914,
+                "loss_sum": 49.63463305409971,
+                "token_weighted_NLL": 0.02593241016410643
+              }
+            }
+          },
+          "response": {
+            "cases": 23,
+            "target_tokens": 3171,
+            "loss_sum": 3299.928178095787,
+            "token_weighted_NLL": 1.040658523524373,
+            "parts": {
+              "answer_payload": {
+                "tokens": 2619,
+                "loss_sum": 2808.56434266343,
+                "token_weighted_NLL": 1.0723804286611036
+              },
+              "fixed_reason_prose": {
+                "tokens": 207,
+                "loss_sum": 477.4229165878787,
+                "token_weighted_NLL": 2.3063909013907185
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 345,
+                "loss_sum": 13.940918844478347,
+                "token_weighted_NLL": 0.04040846041877782
+              }
+            }
+          }
+        }
+      },
+      "test": {
+        "cases": 79,
+        "loss_sum": 4625.6734312408225,
+        "parts": {
+          "answer_payload": {
+            "loss_sum": 1820.998388279828,
+            "token_weighted_NLL": 0.3804049275704675,
+            "tokens": 4787
+          },
+          "fixed_reason_prose": {
+            "loss_sum": 2776.220810039784,
+            "token_weighted_NLL": 2.3388549368490175,
+            "tokens": 1187
+          },
+          "other_reason_or_whitespace": {
+            "loss_sum": 0.0,
+            "token_weighted_NLL": null,
+            "tokens": 0
+          },
+          "structure_or_boundary": {
+            "loss_sum": 28.45423292121052,
+            "token_weighted_NLL": 0.031165643944370776,
+            "tokens": 913
+          }
+        },
+        "target_tokens": 6887,
+        "token_weighted_NLL": 0.671652886778107,
+        "by_target_shape": {
+          "tool_call": {
+            "cases": 68,
+            "target_tokens": 5457,
+            "loss_sum": 2995.295157702228,
+            "token_weighted_NLL": 0.5488904448785464,
+            "parts": {
+              "answer_payload": {
+                "tokens": 3621,
+                "loss_sum": 447.76643730866147,
+                "token_weighted_NLL": 0.12365822626585514
+              },
+              "fixed_reason_prose": {
+                "tokens": 1088,
+                "loss_sum": 2531.1148484389996,
+                "token_weighted_NLL": 2.326392323932904
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 748,
+                "loss_sum": 16.41387195456707,
+                "token_weighted_NLL": 0.021943679083645817
+              }
+            }
+          },
+          "response": {
+            "cases": 11,
+            "target_tokens": 1430,
+            "loss_sum": 1630.3782735385944,
+            "token_weighted_NLL": 1.1401246668102059,
+            "parts": {
+              "answer_payload": {
+                "tokens": 1166,
+                "loss_sum": 1373.2319509711665,
+                "token_weighted_NLL": 1.1777289459443967
+              },
+              "fixed_reason_prose": {
+                "tokens": 99,
+                "loss_sum": 245.1059616007842,
+                "token_weighted_NLL": 2.475817793947315
+              },
+              "other_reason_or_whitespace": {
+                "tokens": 0,
+                "loss_sum": 0.0,
+                "token_weighted_NLL": null
+              },
+              "structure_or_boundary": {
+                "tokens": 165,
+                "loss_sum": 12.040360966643448,
+                "token_weighted_NLL": 0.07297188464632393
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "masked_reference_loss_gap": {
+    "dev_clean": {
+      "whole_mean_NLL_difference_masked_minus_reference": 0.4114869375666155,
+      "parts": {
+        "answer_payload": {
+          "tokens": 10970,
+          "loss_sum_difference_masked_minus_reference": -175.07550238001886,
+          "contribution_to_whole_mean_NLL_difference": -0.010793804092479585,
+          "fraction_of_total_loss_gap": -0.02623121928562357
+        },
+        "fixed_reason_prose": {
+          "tokens": 2991,
+          "loss_sum_difference_masked_minus_reference": 6840.572660759031,
+          "contribution_to_whole_mean_NLL_difference": 0.42173690880141995,
+          "fraction_of_total_loss_gap": 1.0249095908011543
+        },
+        "other_reason_or_whitespace": {
+          "tokens": 0,
+          "loss_sum_difference_masked_minus_reference": 0.0,
+          "contribution_to_whole_mean_NLL_difference": 0.0,
+          "fraction_of_total_loss_gap": 0.0
+        },
+        "structure_or_boundary": {
+          "tokens": 2259,
+          "loss_sum_difference_masked_minus_reference": 8.820968951490727,
+          "contribution_to_whole_mean_NLL_difference": 0.0005438328576751372,
+          "fraction_of_total_loss_gap": 0.0013216284844694405
+        }
+      },
+      "note": "Arithmetic decomposition,not causal attribution;fractions can be negative or exceed1 when parts offset. Known-data single-seed diagnostic only."
+    },
+    "test": {
+      "whole_mean_NLL_difference_masked_minus_reference": 0.37406464773649434,
+      "parts": {
+        "answer_payload": {
+          "tokens": 4787,
+          "loss_sum_difference_masked_minus_reference": -95.64068841407925,
+          "contribution_to_whole_mean_NLL_difference": -0.013887133499938907,
+          "fraction_of_total_loss_gap": -0.037124955763586466
+        },
+        "fixed_reason_prose": {
+          "tokens": 1187,
+          "loss_sum_difference_masked_minus_reference": 2668.3548779523626,
+          "contribution_to_whole_mean_NLL_difference": 0.387448072884037,
+          "fraction_of_total_loss_gap": 1.0357783747502662
+        },
+        "other_reason_or_whitespace": {
+          "tokens": 0,
+          "loss_sum_difference_masked_minus_reference": 0.0,
+          "contribution_to_whole_mean_NLL_difference": 0.0,
+          "fraction_of_total_loss_gap": 0.0
+        },
+        "structure_or_boundary": {
+          "tokens": 913,
+          "loss_sum_difference_masked_minus_reference": 3.4690394229531876,
+          "contribution_to_whole_mean_NLL_difference": 0.0005037083523962811,
+          "fraction_of_total_loss_gap": 0.0013465810133202235
+        }
+      },
+      "note": "Arithmetic decomposition,not causal attribution;fractions can be negative or exceed1 when parts offset. Known-data single-seed diagnostic only."
+    }
+  },
+  "journal_sha256": "e18f64582e8edab80fd3c637d46d9206ba8a4c0844b5837a780ee9381ff7ac8e",
+  "limitations": "Known197dev/79validation targets,not newtaskscore or blinddata. Parts syntactic;actual tool execution/generation untouched. No method-benefit,semantic/pretraining isolation or recentpaper reproduction claim."
+}

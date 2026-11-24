@@ -1,0 +1,144 @@
+{
+  "phase": "gpu_loss_parts",
+  "declared_utc": "2026-11-24T00:11:59.061322+00:00",
+  "scope": "New831teacherforwards to decompose known-data full target NLL. No training,textgeneration,checkpoint selection or rerun/rescoring of199/250. Four syntacticparts are not semantic success labels.",
+  "source_sha256": {
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmarks/audit_toolrl_alignment.py": "e4a240b87588639e77b876800bc859451bb88da67a3889ce95ef049c60275cd4",
+    "benchmarks/bfcl_generation.py": "df0797205fddc0df9c6c2d7506887e096ed74d552d6d1bf61e7100e217d951ca",
+    "benchmarks/causal_loss_parts.py": "8cfddd1c663f723fb327162849d5aeaec3c2a9ea73eaaca8da1421088e8b54ae",
+    "benchmarks/evaluate_loss_parts.py": "bef854e5c4c2379b97553129633500f5c1b9b85924eb9fe22e93d61587981df5",
+    "benchmarks/generation_progress.py": "8ae84a2e533a44fd163540de774a7428192f47a8c7e512c6680791000880438b",
+    "extras/lora-training/test_loss_parts.py": "639f15bbef5c7a77724b555915d5b56702294e646aab7d7cf9af667389281cc8",
+    "historical/base/dev_clean.json": "ad8d38e0e8cdf4f68bc1c113ef5d6d75248e39b091c27c13187b57cf34576a2f",
+    "historical/base/test.json": "88ee5dcfbeb88e3b94fe76a8606770c9bdeffc234f72a8bb8809380ce3e5bc54",
+    "historical/masked32/dev_clean.json": "a0edaaa0e0807a23d9385394ab42b381fba8901aea061ed0fe937173d9a25b2a",
+    "historical/masked32/test.json": "594a51779afd8930760152ecf96f3b50e71b801c2e3ba793de6fc4b3412870fd",
+    "historical/reference32/dev_clean.json": "0bec7ee3ef34eacff17cf1b2512b20808a2fe0a834cf35493ef63cb710763054",
+    "historical/reference32/test.json": "e1fad14036bc3166cf6cdd81446919ee561e176627999b9faefbdf3912b28086",
+    "upstream/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "upstream/convert_to_toolrl_parquet.py": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1"
+  },
+  "data_sha256": {
+    "dev_clean-tokenized.jsonl": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "mixed_train-schedule.json": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+    "mixed_train-tokenized.jsonl": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "report.json": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9",
+    "test-tokenized.jsonl": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+    "train-schedule.json": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+    "train-tokenized.jsonl": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd"
+  },
+  "converter_sha256": "b698393c7b32184f399eb9dca88b78335561d7c5f431adbe08188b70f29d41b1",
+  "models": {
+    "base": {
+      "checkpoint_files_sha256": {},
+      "adapter_parameter_sha256": null
+    },
+    "reference32": {
+      "checkpoint_manifest_sha256": "b8ce4eef1acf14db4b718e3b86bd664bf5c15562e534d8bc6faaf61ec84d3053",
+      "adapter_parameter_sha256": "32d58200e02f4d53035c1b123b0b68df0d0e028272265d2f4666cef3b25d1424",
+      "checkpoint_files_sha256": {
+        "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+        "adapter/adapter_config.json": "646c1787157238bb79181dca68a17c7e4a39738b51f59b803ac5e2cd02c2e5d3",
+        "adapter/adapter_model.safetensors": "01ffa8f69c8eaf0a8f2358cb253897b4cbe014a685d0151d9a6d9d89f4daba85",
+        "optimizer-and-rng.safetensors": "86be60b185dc1d830bd093d48b7144d9e76eade8d00d94d22fce3207b51bcf1e",
+        "training-state.json": "8247f95607f7c84d36af23ca57ab24d06618cb02ed978a4844740a080e3ed535"
+      },
+      "completed_optimizer_updates": 32
+    },
+    "masked32": {
+      "checkpoint_manifest_sha256": "501d552cf79f89ad2205e7ceadfc18f953d0f00781a18724b91b51724ee0c388",
+      "adapter_parameter_sha256": "0a89d8fe7dae49a9ad574bc803eed69b8a0fbc79d102b46e2f48b8073a68e461",
+      "checkpoint_files_sha256": {
+        "adapter/README.md": "03c1bb659dd66cfe5864062829ac8a8fc83a057ee253ffdf6a2d15748e6a8e74",
+        "adapter/adapter_config.json": "646c1787157238bb79181dca68a17c7e4a39738b51f59b803ac5e2cd02c2e5d3",
+        "adapter/adapter_model.safetensors": "3b4f9497ec1fae59ce531fba3c562229e0e425f5c008fb4874083614ff1f20bc",
+        "optimizer-and-rng.safetensors": "b3da3beface0358b1531498abd59017b6235959f36250002b18b091059348cdf",
+        "training-state.json": "78df4d7ef27ec4b183f61b78d8078c97bab77d3d678dc2de013f4baf9287d336"
+      },
+      "completed_optimizer_updates": 32
+    }
+  },
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "model_manifest_sha256": "20a6de567bfe1d93953fbab4be640318fff818765c0fe086c57f50e1d0118b11",
+  "canonical_base_sha256": "54f3076f5b049fe3f607a0ab439e58c2c43d61b8d01a34236e3e2c4247d2c9b5",
+  "old_ledger_sha256": "188a45f27b0fcc0448c2b8366c4eaa0d72327882de59547b0e6d45ad7226a6e0",
+  "closed250_ledger_sha256": "d6c17db618a52c0cd94985783716643164c7296bdd33bf23f41de2f669c4866e",
+  "checkpoint_archive_relative": "models/fixed-reason-matched32-stage74-20261124",
+  "evaluation_settings": {
+    "teacher_forced": true,
+    "base_dtype": "float16",
+    "adapter_dtype": "float32",
+    "attention_implementation": "sdpa",
+    "TF32": false,
+    "use_cache": false,
+    "seed": 42,
+    "batch_size": 1,
+    "max_sequence_tokens": 4096,
+    "loss": "Unchanged full causal targets;unreducedFP32CE with FP64component sums;no masking/truncation for evaluation.",
+    "parts": [
+      "fixed_reason_prose",
+      "answer_payload",
+      "other_reason_or_whitespace",
+      "structure_or_boundary"
+    ]
+  },
+  "prospective_teacher_forwards": {
+    "base": 277,
+    "reference32": 277,
+    "masked32": 277,
+    "total": 831,
+    "retries": 0,
+    "training_updates": 0,
+    "text_generations": 0
+  },
+  "metric_policy": "All supervised tokens accounted;zero-token component NLL null;parts sum to full loss/count;full means match archived S74percase within abs1e-3/rel1e-4. Known data exploratory objective diagnostic,not fresh task accuracy,causal evidence or stable traininggain. No BFCL score/gold reads or closed cohort reruns.",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "pyarrow": "22.0.0"
+  },
+  "input_bundle_sha256": "60d770a2ab79c4a7549f2cc2d3d8e8cf970630dbb29cd355070fa43f8189b59b",
+  "resource_caps": {
+    "CPU": 4,
+    "nice": 19,
+    "owned_RSS_GiB": 24,
+    "host_admission_GiB": 32,
+    "host_floor_GiB": 24,
+    "VRAM_MiB": 22528,
+    "GPU_admission_seconds": 600,
+    "model_load_seconds": 300,
+    "operation_seconds": 300,
+    "model_phase_seconds": 900,
+    "controller_seconds": 1800,
+    "telemetry_stale_seconds": 30,
+    "CUDA_AS_limit": null,
+    "CPU_helper_AS_GiB": 32
+  },
+  "homepage_updates_authorized": false,
+  "controller_sha256": "9569d3d9d867307983012d00ead684b678b7606903d97a7fda105b853eff03dc",
+  "wrapper_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "CPU_protocol_sha256": "6d4adc21f3026d771972246d8451cc73ba441dffcb04068dcef35b2f66d56bcd",
+  "CPU_preflight_model_forwards": 0,
+  "new_teacher_forward_allocation": 831,
+  "new_training_updates": 0,
+  "new_text_generations": 0,
+  "forward_retries": 0,
+  "resume_supported": false,
+  "definition_sha256": "9239da17f8e1028cb5417f4294f238d350af942d7cfe5ceeee52b25813fd46c0",
+  "definition_owner_sha256": "6eb585eee45a9b13a4c0a41bfcc907d7f0f12c5f2fd819817d94f3abc93470cc",
+  "cases_sha256": "7eb6ff5100ff9944f989b47924c5872c507032b97d3f489523ec5054d1ccbff3",
+  "driver_sha256": "bef854e5c4c2379b97553129633500f5c1b9b85924eb9fe22e93d61587981df5",
+  "GPU_index": 6,
+  "expected_GPU_UUID_sha256": "c4dc080b570e62bf89c8e68f0fb27a8af779ce065df81a0d31b70885af5480fb",
+  "expected_driver_version": "575.57.08",
+  "pynvml_sha256": "5b7d66009922a16f382d88241c37a01faa82a1ac3aa28776041cd228f5801f13",
+  "operator_sha256": "802b0288a0fdffa5b24266fee4a5e7d4a94943d2cdfd1e04b997dc6e03ce2880",
+  "watcher_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+  "ownership_source_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c"
+}

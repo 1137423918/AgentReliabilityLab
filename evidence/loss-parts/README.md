@@ -18,3 +18,8 @@ No question text, target tokens, model weights or private vectors are exported.
 This uses known197dev/79validation targets for an objective diagnostic, not a new
 benchmark score or reproduction of a recent paper. Old199/250 scores and all
 closed generation budgets remain unchanged. See [method](../../docs/loss-parts.md).
+
+
+## Completed teacher-forward diagnostic
+
+831/831reserved and committed,0unknown,0updates,0textgenerations. All three model roles terminal/clean,all base+adapter parameter fingerprints unchanged. Standard CE canaries and all archived per-case whole means match. [Report](gpu/results/report.json), [raw counted journal](gpu/results/teacher-forward-journal.json), per-role reports/case parts, and export manifest preserve denominators,loss sums and source hashes. No old199/250 rescoring or quality retry. Original CPU artifacts above describe the initial pre-forward publication.

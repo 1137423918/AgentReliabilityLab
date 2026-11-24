@@ -1,0 +1,11 @@
+{
+  "relative_path": "studies/loss-parts-stage78-20261124",
+  "manifest_sha256": "a1d21d7893abd3b1486e65658e16dd0007e50d722ffa3efe3bbd9ab059004f7b",
+  "journal_sha256": "e18f64582e8edab80fd3c637d46d9206ba8a4c0844b5837a780ee9381ff7ac8e",
+  "files": 52,
+  "bytes": 8689012,
+  "teacher_attempts": 831,
+  "unknown": 0,
+  "source_journal_and_old_closed_ledgers_unchanged": true,
+  "no_training_textgeneration_or_weights_exported": true
+}

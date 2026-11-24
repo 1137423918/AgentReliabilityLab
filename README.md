@@ -87,4 +87,4 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 [依赖升级鉴权兼容性](docs/dependency-upgrade-compatibility.md)：FastMCP原始与候选锁定环境执行相同279项上游鉴权测试，两组全部通过；源码与测试未改，完整CI和发布审批未执行。
 
-[逐部分NLL诊断](docs/loss-parts.md)：276条已有输入的标签分区与9项服务器控制通过；预先固定831次教师前向，尚未执行，不计作新生成或准确率。
+[逐部分NLL诊断](docs/loss-parts.md)：276条已有输入的标签分区与9项服务器控制通过；831次教师前向已完成，整段与逐部分损失、参数冻结及旧账本核验通过；不计作新生成或准确率。

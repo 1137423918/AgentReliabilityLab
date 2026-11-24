@@ -1,0 +1,8 @@
+{
+  "verified_utc": "2026-11-24T00:14:31.157528+00:00",
+  "commit": "b560b19c09ee676799b41fb97d9b4dea124b59a3",
+  "url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/b560b19c09ee676799b41fb97d9b4dea124b59a3/evidence/loss-parts/preregistered/protocol.json",
+  "status": 200,
+  "protocol_sha256": "746693154ae87bef6a20890cd78f1a73d9db676fedea336c7e46f8552ec2f335",
+  "new_teacher_forwards_before_publication": 0
+}
