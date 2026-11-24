@@ -1,0 +1,86 @@
+{
+  "submission_validation": "complete_with_identical_upstream_EOF_failure",
+  "full_precommit_passed": false,
+  "full_precommit_failure_identical_to_baseline": true,
+  "full_precommit_statuses": [
+    [
+      "DeepTutor repository hygiene",
+      "Passed"
+    ],
+    [
+      "trim trailing whitespace",
+      "Passed"
+    ],
+    [
+      "fix end of files",
+      "Failed"
+    ],
+    [
+      "check yaml",
+      "Passed"
+    ],
+    [
+      "check json",
+      "Passed"
+    ],
+    [
+      "check for added large files",
+      "Passed"
+    ],
+    [
+      "check for merge conflicts",
+      "Passed"
+    ],
+    [
+      "check for case conflicts",
+      "Passed"
+    ],
+    [
+      "check toml",
+      "Passed"
+    ],
+    [
+      "ruff (legacy alias)",
+      "Passed"
+    ],
+    [
+      "ruff format",
+      "Passed"
+    ],
+    [
+      "prettier",
+      "Passed"
+    ],
+    [
+      "Detect secrets",
+      "Passed"
+    ],
+    [
+      "bandit",
+      "Passed"
+    ],
+    [
+      "mypy",
+      "Passed"
+    ]
+  ],
+  "preexisting_failure": {
+    "hook": "end-of-file-fixer",
+    "path": "assets/figs/partners/siliconflow.svg",
+    "base_sha256": "74afa99bbd68be3ba691b5c85e3968da7474e086278e0d166482f31c13b5796d",
+    "change": "one final newline; restored exact original bytes in both variants"
+  },
+  "all_hooks_on_three_changed_files_passed": true,
+  "source_base": "14796c70f622dc96b4d28a482c975c452d44f34e",
+  "tested_source_sha256": {
+    "deeptutor/services/mcp/manager.py": "0db657d5ad31b97afbc87cbf4160129093d12912db03cab43dd6bdd37e77207e",
+    "tests/services/mcp/test_tool_pagination.py": "fe58db98bb52699f7fe56c84356f6d48b4f4be9fd05b01c134487fefa480df7d",
+    "tests/api/test_space_mcp.py": "a226bb1e8d4ddee081ee3c3eaa23747fc5d5801256dad57e0ab9ff2f7554d06a"
+  },
+  "validation_report_sha256": "8d87a8f5d12d3c7ca631cf4b4b895ccdb698123e39b87b81bc018d856dc18ead",
+  "hooks_report_sha256": "25a77efd1caadd605db736586e8c5f4010fa7a1973218a5a79a0bd0ae020b9f3",
+  "paired_regression_cases_not_rerun": true,
+  "all_unrelated_source_bytes_unchanged": true,
+  "known_environment_unchanged": true,
+  "prior_critical_inputs_unchanged": true
+}

@@ -1,0 +1,24 @@
+{
+  "repo": "HKUDS/DeepTutor",
+  "fork": "1137423918/DeepTutor",
+  "branch": "fix/mcp-tool-pagination",
+  "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+  "base": "14796c70f622dc96b4d28a482c975c452d44f34e",
+  "candidate_files": {
+    "deeptutor/services/mcp/manager.py": "0db657d5ad31b97afbc87cbf4160129093d12912db03cab43dd6bdd37e77207e",
+    "tests/services/mcp/test_tool_pagination.py": "fe58db98bb52699f7fe56c84356f6d48b4f4be9fd05b01c134487fefa480df7d",
+    "tests/api/test_space_mcp.py": "a226bb1e8d4ddee081ee3c3eaa23747fc5d5801256dad57e0ab9ff2f7554d06a"
+  },
+  "description_sha256": "2c7399e0532d4dfac90288b7c799aed3b088a8bb79ead364f6ba9bf90000c438",
+  "server_validation_complete_with_preexisting_EOF_failure": true,
+  "full_precommit_passed": false,
+  "scoped_all_hooks_passed": true,
+  "stage": "verified_formal_open_PR",
+  "fork_id": 1470987619,
+  "number": 2930,
+  "url": "https://github.com/HKUDS/DeepTutor/pull/2930",
+  "draft": false,
+  "merged": false,
+  "maintainer_can_modify": true,
+  "changed_git_blobs_verified": 3
+}

@@ -1,0 +1,44 @@
+{
+  "observed_utc": "2026-11-24T23:40:28.152628+00:00",
+  "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+  "runs": [
+    {
+      "id": 45511323308,
+      "name": "Repository Hygiene",
+      "status": "completed",
+      "conclusion": "action_required",
+      "event": "pull_request",
+      "head_sha": "be11576d26d0ccdc59130cba1c69857d56756a95",
+      "html_url": "https://github.com/HKUDS/DeepTutor/actions/runs/45511323308",
+      "created_at": "2026-11-24T23:35:55Z",
+      "updated_at": "2026-11-24T23:35:55Z",
+      "jobs_total": 0
+    },
+    {
+      "id": 45511323823,
+      "name": "Tests",
+      "status": "completed",
+      "conclusion": "action_required",
+      "event": "pull_request",
+      "head_sha": "be11576d26d0ccdc59130cba1c69857d56756a95",
+      "html_url": "https://github.com/HKUDS/DeepTutor/actions/runs/45511323823",
+      "created_at": "2026-11-24T23:35:55Z",
+      "updated_at": "2026-11-24T23:35:55Z",
+      "jobs_total": 0
+    },
+    {
+      "id": 45511322942,
+      "name": "Modular installation",
+      "status": "completed",
+      "conclusion": "action_required",
+      "event": "pull_request",
+      "head_sha": "be11576d26d0ccdc59130cba1c69857d56756a95",
+      "html_url": "https://github.com/HKUDS/DeepTutor/actions/runs/45511322942",
+      "created_at": "2026-11-24T23:35:55Z",
+      "updated_at": "2026-11-24T23:35:55Z",
+      "jobs_total": 0
+    }
+  ],
+  "jobs_observed_utc": "2026-11-24T23:41:22.446483+00:00",
+  "upstream_actions_executed": false
+}

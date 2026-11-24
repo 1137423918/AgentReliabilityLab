@@ -313,3 +313,8 @@ python3 -m unittest discover -s tests -v
 ## Stage91 · 完整摘要集合的批量检索与独立评分
 
 0.3.0支持跨文档填批、版本Snapshot及search-batch；新12项控制和旧21回归分别通过。完整SciFact 5,183摘要、10,571片段、300测试查询/339相关对，CPU真实编码961次全部完成/0未知，独立NIST对18,060个指标值复核通过。nDCG@10：BM25/E5/RRF为0.6409/0.6479/0.7040。三种前期失败、原生启动目录冲突及完整成功配置保留，未重复模型评测、未启动GPU。它是摘要相关性，不能当QA准确率；[完整输入与结果](../evidence/research-batch/README.md)。
+
+
+## Stage92 · DeepTutor MCP分页正式贡献
+
+正式提交[DeepTutor #2930](https://github.com/HKUDS/DeepTutor/pull/2930)，固定dev源与真实SDK/HTTP同组10项原版9失败、修复全通过；完整MCP192/API28/注册授权31项通过。本次3文件hooks及实际提交干净工作区检查通过，整仓precommit原版与候选同样失败于上游SVG最后换行，明确保留。九配置终态/owned0、新增模型/嵌入/GPU0，六个失败配置保留；[完整证据](../evidence/deeptutor-mcp-pagination/README.md)。

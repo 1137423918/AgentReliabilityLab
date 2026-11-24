@@ -1,0 +1,67 @@
+FFF.FFFFFF                                                               [100%]
+=================================== FAILURES ===================================
+______________ test_later_page_tools_are_registered_and_callable _______________
+tests/services/mcp/test_tool_pagination.py:158: in test_later_page_tools_are_registered_and_callable
+    assert [tool.name for tool in conn.adapters] == [
+E   AssertionError: assert ['mcp_paged_first'] == ['mcp_paged_f...aged_blocked']
+E     
+E     Right contains 2 more items, first extra item: 'mcp_paged_later'
+E     Use -v to get more diff
+___________________ test_probe_reports_tools_from_every_page ___________________
+tests/services/mcp/test_tool_pagination.py:176: in test_probe_reports_tools_from_every_page
+    assert [tool["name"] for tool in result["tools"]] == ["first", "later", "blocked"]
+E   AssertionError: assert ['first'] == ['first', 'later', 'blocked']
+E     
+E     Right contains 2 more items, first extra item: 'later'
+E     Use -v to get more diff
+_________________ test_tool_filters_also_apply_to_later_pages __________________
+tests/services/mcp/test_tool_pagination.py:191: in test_tool_filters_also_apply_to_later_pages
+    assert [tool.name for tool in conn.adapters] == ["mcp_paged_later"]
+E   AssertionError: assert [] == ['mcp_paged_later']
+E     
+E     Right contains one more item: 'mcp_paged_later'
+E     Use -v to get more diff
+____ test_incomplete_listing_does_not_publish_partial_tools[error-manager] _____
+tests/services/mcp/test_tool_pagination.py:233: in test_incomplete_listing_does_not_publish_partial_tools
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E     
+E     - error
+E     + connected
+_____ test_incomplete_listing_does_not_publish_partial_tools[error-probe] ______
+tests/services/mcp/test_tool_pagination.py:225: in test_incomplete_listing_does_not_publish_partial_tools
+    assert result["ok"] is False
+E   assert True is False
+____ test_incomplete_listing_does_not_publish_partial_tools[cycle-manager] _____
+tests/services/mcp/test_tool_pagination.py:233: in test_incomplete_listing_does_not_publish_partial_tools
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E     
+E     - error
+E     + connected
+_____ test_incomplete_listing_does_not_publish_partial_tools[cycle-probe] ______
+tests/services/mcp/test_tool_pagination.py:225: in test_incomplete_listing_does_not_publish_partial_tools
+    assert result["ok"] is False
+E   assert True is False
+_______ test_slow_later_page_stays_within_the_discovery_timeout[manager] _______
+tests/services/mcp/test_tool_pagination.py:264: in test_slow_later_page_stays_within_the_discovery_timeout
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E     
+E     - error
+E     + connected
+________ test_slow_later_page_stays_within_the_discovery_timeout[probe] ________
+tests/services/mcp/test_tool_pagination.py:256: in test_slow_later_page_stays_within_the_discovery_timeout
+    assert result["ok"] is False
+E   assert True is False
+=========================== short test summary info ============================
+FAILED tests/services/mcp/test_tool_pagination.py::test_later_page_tools_are_registered_and_callable
+FAILED tests/services/mcp/test_tool_pagination.py::test_probe_reports_tools_from_every_page
+FAILED tests/services/mcp/test_tool_pagination.py::test_tool_filters_also_apply_to_later_pages
+FAILED tests/services/mcp/test_tool_pagination.py::test_incomplete_listing_does_not_publish_partial_tools[error-manager]
+FAILED tests/services/mcp/test_tool_pagination.py::test_incomplete_listing_does_not_publish_partial_tools[error-probe]
+FAILED tests/services/mcp/test_tool_pagination.py::test_incomplete_listing_does_not_publish_partial_tools[cycle-manager]
+FAILED tests/services/mcp/test_tool_pagination.py::test_incomplete_listing_does_not_publish_partial_tools[cycle-probe]
+FAILED tests/services/mcp/test_tool_pagination.py::test_slow_later_page_stays_within_the_discovery_timeout[manager]
+FAILED tests/services/mcp/test_tool_pagination.py::test_slow_later_page_stays_within_the_discovery_timeout[probe]
+9 failed, 1 passed in 1.80s

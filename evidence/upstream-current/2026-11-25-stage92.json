@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-11-24T23:37:25.644107+00:00",
+  "all12_formal_open_unmerged": true,
+  "unresolved_review_threads": 0,
+  "new_external_feedback": false,
+  "previous11_heads_unchanged": true,
+  "deep_tutor": {
+    "repo": "HKUDS/DeepTutor",
+    "number": 2930,
+    "state": "OPEN",
+    "draft": false,
+    "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+    "base": "14796c70f622dc96b4d28a482c975c452d44f34e",
+    "branch": "fix/mcp-tool-pagination",
+    "head_repo": "1137423918/DeepTutor",
+    "mergeable": "MERGEABLE",
+    "reviewDecision": null,
+    "unresolved_threads": 0,
+    "total_threads": 0,
+    "threads_more": false,
+    "checks_state": null,
+    "checks": []
+  },
+  "no_issue_comment_reviewrequest_CLA_merge_actions": true
+}

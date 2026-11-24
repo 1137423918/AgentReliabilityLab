@@ -76,8 +76,9 @@ SciFact摘要检索和三篇全文阅读是独立集合；相关性标签不证�
 
 ## 开源贡献：适合单独占简历一栏
 
-北京时间2026-11-25的十条PR只读快照中，现有提交均为正式、开放、尚未合并，未发现新的外部评审意见；不等于上游CI全部通过。新增RAGFlow #22752的提交和状态另见下方专项证据。后续新增贡献继续优先高星、活跃且经过维护团队核查的独立/小团队项目。
+北京时间2026-11-25 07:37的十二条PR只读快照中，现有提交均为正式、开放、尚未合并，未解决评审线程为0，未发现新的外部评审意见；不等于上游CI全部通过。新增DeepTutor #2930与RAGFlow #22752的提交和状态见下方专项证据。后续新增贡献继续优先高星、活跃且经过维护团队核查的独立/小团队项目。
 
+- **DeepTutor MCP工具分页发现**：[PR #2930](https://github.com/HKUDS/DeepTutor/pull/2930)已正式提交、未合并。统一连接管理与probe工具清单，处理空中间页、不透明游标、循环/错误与慢页超时；同组真实SDK/HTTP回归原版9失败1单页控制通过，修复10通过，完整MCP192/API28/注册授权31通过。本次3文件hooks全过；整仓pre-commit有原版相同的上游SVG结尾换行失败，不能写成CI全绿。[实现与证据](../docs/deeptutor-mcp-pagination.md)。
 - **RAGFlow CLI重复请求正文修复**：[PR #22752](https://github.com/infiniflow/ragflow/pull/22752)已正式提交、未合并。真实TCP服务关闭连接时，原版POST/PUT/PATCH各三次迭代仅成功一次，候选全通过；完整CLI范围51个顶层测试与原脚本附带无模型原生单元层通过。初始keep-alive-only原版全部通过，另保留该结果及实际触发条件；不把子例、父测试和完整选择累加。[源码、执行与边界](../docs/ragflow-cli-body-replay.md)。
 - **LightRAG评估依赖维护**：[PR #4647](https://github.com/HKUDS/LightRAG/pull/4647)。保持依赖声明不变，仅更新RAGAS锁定版本；固定库复扫、发布版与精确主线分别21项配对离线测试及全文件pre-commit通过。上游5个CI工作流等待批准，尚未运行。详见[实际案例](../docs/lightrag-dependency-upgrade.md)。
 - **GPT Researcher HTTP MCP鉴权修复**：[PR #2367](https://github.com/assafelovic/gpt-researcher/pull/2367)。修复令牌传递与授权头优先级，真实受鉴权MCP工具发现/调用/401链路验证；同组11项原版失败、候选通过，完整离线选择1112通过，跳过与排除单列。

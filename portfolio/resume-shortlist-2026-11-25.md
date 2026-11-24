@@ -38,6 +38,7 @@ SciFact是独立的摘要相关性检索集合，不等于三篇全文阅读或Q
 
 ## 开源贡献任选一项
 
+- [DeepTutor #2930](https://github.com/HKUDS/DeepTutor/pull/2930)：修复MCP工具发现只读取第一页，覆盖空中间页、过滤、重复游标、后页错误和超时；真实SDK/HTTP同组10项原版9失败、修复全通过，完整MCP192项等相关回归通过。[证据与整仓既有格式失败](../docs/deeptutor-mcp-pagination.md)。
 - [RAGFlow #22752](https://github.com/infiniflow/ragflow/pull/22752)：修复CLI benchmark在服务端关闭连接后复用已读正文的问题；真实HTTP对照原版三个方法子例失败、候选通过，完整CLI范围51个顶层测试通过。[触发条件与证据](../docs/ragflow-cli-body-replay.md)。
 - [GPT Researcher #2367](https://github.com/assafelovic/gpt-researcher/pull/2367)：修复HTTP MCP令牌传递和授权头优先级；同组11项回归原版失败、修复通过，另有真实受鉴权MCP调用验证。
 - [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562)：修复MCP连接生命周期，保护活跃及启动中的传输；同组11项控制原版2项失败、候选全部通过。

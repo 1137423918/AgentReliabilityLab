@@ -1,0 +1,12 @@
+{
+  "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+  "tree": "79fa782d9a419c71c2d7fd9d44c7b179bd4a681b",
+  "files_sha256": {
+    "deeptutor/services/mcp/manager.py": "0db657d5ad31b97afbc87cbf4160129093d12912db03cab43dd6bdd37e77207e",
+    "tests/services/mcp/test_tool_pagination.py": "fe58db98bb52699f7fe56c84356f6d48b4f4be9fd05b01c134487fefa480df7d",
+    "tests/api/test_space_mcp.py": "a226bb1e8d4ddee081ee3c3eaa23747fc5d5801256dad57e0ab9ff2f7554d06a"
+  },
+  "tested_bytes_unchanged": true,
+  "clean_workspace_hygiene_passed": true,
+  "prior_critical_inputs_unchanged": true
+}

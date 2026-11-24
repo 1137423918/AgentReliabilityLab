@@ -1,0 +1,47 @@
+[INFO] Initializing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Initializing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Initializing environment for local:prettier@3.9.6.
+[INFO] Initializing environment for https://github.com/Yelp/detect-secrets.
+[INFO] Initializing environment for https://github.com/PyCQA/bandit.
+[INFO] Initializing environment for https://github.com/PyCQA/bandit:bandit[toml].
+[INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy.
+[INFO] Initializing environment for https://github.com/pre-commit/mirrors-mypy:types-PyYAML,types-requests,types-croniter,types-python-dateutil.
+[INFO] Installing environment for https://github.com/pre-commit/pre-commit-hooks.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/astral-sh/ruff-pre-commit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for local.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/Yelp/detect-secrets.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/PyCQA/bandit.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+[INFO] Installing environment for https://github.com/pre-commit/mirrors-mypy.
+[INFO] Once installed this environment will be reused.
+[INFO] This may take a few minutes...
+DeepTutor repository hygiene.............................................Passed
+trim trailing whitespace.................................................Passed
+fix end of files.........................................................Failed
+- hook id: end-of-file-fixer
+- exit code: 1
+- files were modified by this hook
+
+Fixing assets/figs/partners/siliconflow.svg
+
+check yaml...............................................................Passed
+check json...............................................................Passed
+check for added large files..............................................Passed
+check for merge conflicts................................................Passed
+check for case conflicts.................................................Passed
+check toml...............................................................Passed
+ruff (legacy alias)......................................................Passed
+ruff format..............................................................Passed
+prettier.................................................................Passed
+Detect secrets...........................................................Passed
+bandit...................................................................Passed
+mypy.....................................................................Passed

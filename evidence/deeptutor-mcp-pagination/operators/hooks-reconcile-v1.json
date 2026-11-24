@@ -1,0 +1,31 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "536c1a3bbb7401ff560c0363820380dbfcec764b3f72ac87ccdd704e8eca4e27",
+  "phases": [
+    {
+      "name": "source-baseline-precommit-all",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 118.534,
+      "peak_owned_RSS_bytes": 804667392
+    },
+    {
+      "name": "source-candidate-precommit-scoped",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.103,
+      "peak_owned_RSS_bytes": 125038592
+    },
+    {
+      "name": "environment-after",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.557,
+      "peak_owned_RSS_bytes": 30736384
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 135.392,
+  "original_private_report_sha256": "d9c8587fbac40e5a69c75d95c5a3494e9157cedeb10db2f1556be1ec4636198e"
+}

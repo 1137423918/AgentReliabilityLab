@@ -1,0 +1,35 @@
+{
+  "relative_path": "studies/deeptutor-mcp-stage92-20261125",
+  "manifest_sha256": "53f82042ca635e9e4e8d58d3349dfe4ea09f4aa25cddff8cba511e99691cc08e",
+  "files": 178,
+  "bytes": 11193536,
+  "all_nine_profiles_terminal_owned_zero": true,
+  "six_failed_profiles_retained": true,
+  "archive_v1_operator_error_retained": "macOS case-insensitive path hid lowercase PR template path; no model/tests; exact matching partial files reused without overwrite",
+  "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+  "source_sha256": {
+    "deeptutor/services/mcp/manager.py": "0db657d5ad31b97afbc87cbf4160129093d12912db03cab43dd6bdd37e77207e",
+    "tests/services/mcp/test_tool_pagination.py": "fe58db98bb52699f7fe56c84356f6d48b4f4be9fd05b01c134487fefa480df7d",
+    "tests/api/test_space_mcp.py": "a226bb1e8d4ddee081ee3c3eaa23747fc5d5801256dad57e0ab9ff2f7554d06a"
+  },
+  "new_cases": 10,
+  "baseline": {
+    "failed": 9,
+    "passed": 1
+  },
+  "candidate": {
+    "passed": 10
+  },
+  "full_MCP_passed": 192,
+  "API_passed": 28,
+  "registry_passed": 31,
+  "full_precommit_passed": false,
+  "identical_upstream_EOF_failure_proved": true,
+  "all_hooks_on_three_changed_files_passed": true,
+  "actual_commit_clean_workspace_passed": true,
+  "prior_closed_ledgers_and_archives_unchanged": true,
+  "model_generation_calls": 0,
+  "embedding_forwards": 0,
+  "GPU_used": false,
+  "wall_seconds": 10.433
+}

@@ -1,0 +1,44 @@
+{
+  "sources": [
+    {
+      "name": "pre-commit-hooks",
+      "tag": "v6.0.0",
+      "repo": "https://github.com/pre-commit/pre-commit-hooks",
+      "tag_object": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c",
+      "commit": "3e8a8703264a2f4a69428a0aa4dcb512790b2c8c"
+    },
+    {
+      "name": "ruff-pre-commit",
+      "tag": "v0.16.0",
+      "repo": "https://github.com/astral-sh/ruff-pre-commit",
+      "tag_object": "cb8c523fd4835aba42af70f4cad5568db4df0b6c",
+      "commit": "cb8c523fd4835aba42af70f4cad5568db4df0b6c"
+    },
+    {
+      "name": "detect-secrets",
+      "tag": "v1.5.0",
+      "repo": "https://github.com/Yelp/detect-secrets",
+      "tag_object": "68e8b45440415753fff70a312ece8da92ba85b4a",
+      "commit": "01886c8a910c64595c47f186ca1ffc0b77fa5458"
+    },
+    {
+      "name": "bandit",
+      "tag": "1.8.0",
+      "repo": "https://github.com/PyCQA/bandit",
+      "tag_object": "8fd258abbac759d62863779f946d6a88e8eabb0f",
+      "commit": "8fd258abbac759d62863779f946d6a88e8eabb0f"
+    },
+    {
+      "name": "mirrors-mypy",
+      "tag": "v1.13.0",
+      "repo": "https://github.com/pre-commit/mirrors-mypy",
+      "tag_object": "f56614daa94d5cd733d3b7004c5df9caad267b4a",
+      "commit": "f56614daa94d5cd733d3b7004c5df9caad267b4a"
+    }
+  ],
+  "bundle_sha256": "b300230fd948bdad6b3212065cc91f11ff3aa6847f7c38f7ba51c6f3ef252dcc",
+  "configured_hooks_unmodified": true,
+  "local_source_only_operations": true,
+  "all_install_build_test_execution_on_server": true,
+  "source_cache_transport": "Full Git history for selected tags, staged on desktop then transferred to server; private file:// URL rewrites preserve configured pinned versions; no skipped hooks or upstream config changes."
+}

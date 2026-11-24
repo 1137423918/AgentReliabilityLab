@@ -1,0 +1,31 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "e538650906d9521cbb5c0135849bb290180f34f80ab6ed06ced6c05094ae7d47",
+  "phases": [
+    {
+      "name": "git-import-tested-commit",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-checkout-tested-commit",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.538,
+      "peak_owned_RSS_bytes": 5046272
+    },
+    {
+      "name": "source-workspace-hygiene",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 5767168
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 11.894,
+  "original_private_report_sha256": "19fa99f126d6332e70c564d9c12fa19fed05c27610dc88bd9d5c1c2c10192273"
+}

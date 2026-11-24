@@ -1,0 +1,20 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-precommit-all"
+  },
+  "protocol_sha256": "3c89fe40991d39bcc522a82903bae622b100be9a5dd8775d526b916bb1c615d5",
+  "phases": [
+    {
+      "name": "source-precommit-all",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 156.329,
+      "peak_owned_RSS_bytes": 795000832
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 166.897,
+  "original_private_report_sha256": "25a77efd1caadd605db736586e8c5f4010fa7a1973218a5a79a0bd0ae020b9f3"
+}

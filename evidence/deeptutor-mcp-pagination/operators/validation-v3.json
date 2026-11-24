@@ -1,0 +1,174 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-precommit-all"
+  },
+  "protocol_sha256": "41de4e3a431052e0dca50decc506ef87b45867356b47365b00ed4887c2cebd50",
+  "phases": [
+    {
+      "name": "git-worktree-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.073,
+      "peak_owned_RSS_bytes": 53223424
+    },
+    {
+      "name": "test-inputs-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.542,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "git-worktree-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.072,
+      "peak_owned_RSS_bytes": 52506624
+    },
+    {
+      "name": "test-inputs-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.538,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "candidate-fix",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.543,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "source-candidate-scoped-format",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-candidate-scoped-ruff",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "git-index-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "git-index-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-identity-baseline",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.041,
+      "peak_owned_RSS_bytes": 40370176
+    },
+    {
+      "name": "source-baseline-new-regression",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 3.108,
+      "peak_owned_RSS_bytes": 92758016
+    },
+    {
+      "name": "source-identity-candidate",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-candidate-new-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 9.559,
+      "peak_owned_RSS_bytes": 94126080
+    },
+    {
+      "name": "source-candidate-MCP",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 11.603,
+      "peak_owned_RSS_bytes": 97337344
+    },
+    {
+      "name": "source-candidate-API",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.631,
+      "peak_owned_RSS_bytes": 114511872
+    },
+    {
+      "name": "source-candidate-registry",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.077,
+      "peak_owned_RSS_bytes": 78598144
+    },
+    {
+      "name": "source-full-ruff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.283,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-full-ruff-format",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.388,
+      "peak_owned_RSS_bytes": 42422272
+    },
+    {
+      "name": "source-architecture",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.144,
+      "peak_owned_RSS_bytes": 25210880
+    },
+    {
+      "name": "source-module-requirements",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.528,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-repo-hygiene",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.554,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-import-boundaries",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.039,
+      "peak_owned_RSS_bytes": 41811968
+    },
+    {
+      "name": "source-precommit-all",
+      "exit_code": 3,
+      "guard": null,
+      "wall_seconds": 222.312,
+      "peak_owned_RSS_bytes": 49741824
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 281.135,
+  "original_private_report_sha256": "8d87a8f5d12d3c7ca631cf4b4b895ccdb698123e39b87b81bc018d856dc18ead"
+}

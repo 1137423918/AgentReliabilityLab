@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites name="pytest tests"><testsuite name="pytest" errors="0" failures="9" skipped="0" tests="10" time="1.807" timestamp="2026-11-25T07:18:41.762376+08:00" hostname="gpu5.cluster.lan"><testcase classname="tests.services.mcp.test_tool_pagination" name="test_later_page_tools_are_registered_and_callable" time="1.027"><failure message="AssertionError: assert ['mcp_paged_first'] == ['mcp_paged_f...aged_blocked']&#10;  &#10;  Right contains 2 more items, first extra item: 'mcp_paged_later'&#10;  Use -v to get more diff">tests/services/mcp/test_tool_pagination.py:158: in test_later_page_tools_are_registered_and_callable
+    assert [tool.name for tool in conn.adapters] == [
+E   AssertionError: assert ['mcp_paged_first'] == ['mcp_paged_f...aged_blocked']
+E
+E     Right contains 2 more items, first extra item: 'mcp_paged_later'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_probe_reports_tools_from_every_page" time="0.033"><failure message="AssertionError: assert ['first'] == ['first', 'later', 'blocked']&#10;  &#10;  Right contains 2 more items, first extra item: 'later'&#10;  Use -v to get more diff">tests/services/mcp/test_tool_pagination.py:176: in test_probe_reports_tools_from_every_page
+    assert [tool["name"] for tool in result["tools"]] == ["first", "later", "blocked"]
+E   AssertionError: assert ['first'] == ['first', 'later', 'blocked']
+E
+E     Right contains 2 more items, first extra item: 'later'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_tool_filters_also_apply_to_later_pages" time="0.033"><failure message="AssertionError: assert [] == ['mcp_paged_later']&#10;  &#10;  Right contains one more item: 'mcp_paged_later'&#10;  Use -v to get more diff">tests/services/mcp/test_tool_pagination.py:191: in test_tool_filters_also_apply_to_later_pages
+    assert [tool.name for tool in conn.adapters] == ["mcp_paged_later"]
+E   AssertionError: assert [] == ['mcp_paged_later']
+E
+E     Right contains one more item: 'mcp_paged_later'
+E     Use -v to get more diff</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_single_page_servers_need_no_extra_request" time="0.044" /><testcase classname="tests.services.mcp.test_tool_pagination" name="test_incomplete_listing_does_not_publish_partial_tools[error-manager]" time="0.031"><failure message="AssertionError: assert 'connected' == 'error'&#10;  &#10;  - error&#10;  + connected">tests/services/mcp/test_tool_pagination.py:233: in test_incomplete_listing_does_not_publish_partial_tools
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E
+E     - error
+E     + connected</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_incomplete_listing_does_not_publish_partial_tools[error-probe]" time="0.031"><failure message="assert True is False">tests/services/mcp/test_tool_pagination.py:225: in test_incomplete_listing_does_not_publish_partial_tools
+    assert result["ok"] is False
+E   assert True is False</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_incomplete_listing_does_not_publish_partial_tools[cycle-manager]" time="0.031"><failure message="AssertionError: assert 'connected' == 'error'&#10;  &#10;  - error&#10;  + connected">tests/services/mcp/test_tool_pagination.py:233: in test_incomplete_listing_does_not_publish_partial_tools
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E
+E     - error
+E     + connected</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_incomplete_listing_does_not_publish_partial_tools[cycle-probe]" time="0.021"><failure message="assert True is False">tests/services/mcp/test_tool_pagination.py:225: in test_incomplete_listing_does_not_publish_partial_tools
+    assert result["ok"] is False
+E   assert True is False</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_slow_later_page_stays_within_the_discovery_timeout[manager]" time="0.030"><failure message="AssertionError: assert 'connected' == 'error'&#10;  &#10;  - error&#10;  + connected">tests/services/mcp/test_tool_pagination.py:264: in test_slow_later_page_stays_within_the_discovery_timeout
+    assert conn.status == "error"
+E   AssertionError: assert 'connected' == 'error'
+E
+E     - error
+E     + connected</failure></testcase><testcase classname="tests.services.mcp.test_tool_pagination" name="test_slow_later_page_stays_within_the_discovery_timeout[probe]" time="0.025"><failure message="assert True is False">tests/services/mcp/test_tool_pagination.py:256: in test_slow_later_page_stays_within_the_discovery_timeout
+    assert result["ok"] is False
+E   assert True is False</failure></testcase></testsuite></testsuites>

@@ -1,0 +1,6 @@
+{
+  "public_projection": "Paths normalized; trailing display whitespace in expected-failure JUnit text removed. Test status/assertions/counts unchanged. Original exact XML retained in private archive.",
+  "original_private_JUnit_sha256": "7c763e9dcdaf5388ad44cca0dc03f9fc8e545b87b2cb8dfae0c87bf4e3936fd3",
+  "public_before_display_trim_sha256": "7c763e9dcdaf5388ad44cca0dc03f9fc8e545b87b2cb8dfae0c87bf4e3936fd3",
+  "public_after_sha256": "82655a236dcfa1a4fccb2eeea7a5e028e5ac488a829938e779be28f4e21193ad"
+}
