@@ -1,0 +1,23 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "a81774f3d2944b93ca0fa4d0cf6cafa5430c52ae69f9c143f70d90158b61ff7e",
+  "phases": [
+    {
+      "name": "source-offline-report",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.616,
+      "peak_owned_RSS_bytes": 95924224
+    },
+    {
+      "name": "render-first-and-cited-pages",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.032,
+      "peak_owned_RSS_bytes": 59244544
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 14.784
+}

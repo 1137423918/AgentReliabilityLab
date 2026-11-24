@@ -1,0 +1,107 @@
+{
+  "ready": true,
+  "scope": "One new full-paper intake/incremental CPU index; no new QA score or RECEIPT benchmark reproduction.",
+  "caps": {
+    "reserved_forwards": 100,
+    "text_inputs": 400,
+    "query_inputs": 0
+  },
+  "generation_requests": 0,
+  "GPU_used": false,
+  "fetch": {
+    "declared_url": "https://arxiv.org/pdf/2611.01930v1",
+    "final_url": "https://arxiv.org/pdf/2611.01930v1",
+    "status": 200,
+    "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf",
+    "bytes": 867890
+  },
+  "prepare": {
+    "manifest": "<isolated-root>/application/bundle/collection.json",
+    "pdfs": 3,
+    "page_sources": 52,
+    "pages_without_text": 0,
+    "model_calls": 0,
+    "source_urls_claim_verified": false
+  },
+  "papers": [
+    {
+      "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "url": "https://arxiv.org/pdf/2410.05779v3",
+      "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+      "bytes": 1123301,
+      "physical_pages": 16
+    },
+    {
+      "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation",
+      "url": "https://arxiv.org/pdf/2501.06713v3",
+      "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+      "bytes": 10023506,
+      "physical_pages": 16
+    },
+    {
+      "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations",
+      "url": "https://arxiv.org/pdf/2611.01930v1",
+      "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf",
+      "bytes": 867890,
+      "physical_pages": 20
+    }
+  ],
+  "added_page_sources": 20,
+  "unchanged_page_sources": 32,
+  "planned_added_nodes": 92,
+  "max_added_passage_tokens": 258,
+  "ingest": {
+    "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+    "added": [
+      "pdf_55cc187b8172cb56d391_p1",
+      "pdf_55cc187b8172cb56d391_p10",
+      "pdf_55cc187b8172cb56d391_p11",
+      "pdf_55cc187b8172cb56d391_p12",
+      "pdf_55cc187b8172cb56d391_p13",
+      "pdf_55cc187b8172cb56d391_p14",
+      "pdf_55cc187b8172cb56d391_p15",
+      "pdf_55cc187b8172cb56d391_p16",
+      "pdf_55cc187b8172cb56d391_p17",
+      "pdf_55cc187b8172cb56d391_p18",
+      "pdf_55cc187b8172cb56d391_p19",
+      "pdf_55cc187b8172cb56d391_p2",
+      "pdf_55cc187b8172cb56d391_p20",
+      "pdf_55cc187b8172cb56d391_p3",
+      "pdf_55cc187b8172cb56d391_p4",
+      "pdf_55cc187b8172cb56d391_p5",
+      "pdf_55cc187b8172cb56d391_p6",
+      "pdf_55cc187b8172cb56d391_p7",
+      "pdf_55cc187b8172cb56d391_p8",
+      "pdf_55cc187b8172cb56d391_p9"
+    ],
+    "updated": [],
+    "removed": [],
+    "unchanged": 32,
+    "nodes": 240,
+    "published": true
+  },
+  "noop": {
+    "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+    "unchanged": 52,
+    "added": [],
+    "updated": [],
+    "removed": [],
+    "published": false
+  },
+  "current_generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+  "total_page_sources": 52,
+  "total_nodes": 240,
+  "old_generation_and_sources_unchanged": true,
+  "unchanged_old_source_vectors_reused": true,
+  "noop_zero_embeddings": true,
+  "counts": {
+    "reserved_forwards": 31,
+    "completed_forwards": 31,
+    "text_inputs": 92,
+    "query_inputs": 0
+  },
+  "unknown_forwards": 0,
+  "ledger_sha256": "c76dd22e14bdb5638ab952e1aea180df2592be99a6a9cb51b365f615511ad34f",
+  "budget_status": "CLOSED",
+  "wall_seconds": 36.26
+}

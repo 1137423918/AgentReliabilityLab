@@ -1,0 +1,28 @@
+{
+  "scope": "New November2026 paper wholePDF intake into COPIED prior full-paper index; reuse unchanged32page vectors, encode NEWnodes only. Fresh CPUembedding cap100forward/400text/0query, no warmup/retry/GPU/generation/newinstall. Allpriorarchives/budgets remainimmutable. Not fullRECEIPTbenchmarkorQAmodelscore.",
+  "source_sha256": {
+    "benchmarks/research_frontier_ingest.py": "093bc3cd35089003d1eb5eeda807d2ce6e8b3b083f69286f7730bb09ab1a4959",
+    "examples/research-frontier/intake.json": "b9b1322e9421083cb17e612e3c80d15327edf10590864655c06a740d6b978bd3",
+    "examples/research-frontier/case.json": "29e5707fb9b7f0f76b925bdd6c4186f8f0ecc0b61cfc3c418211d4163a65cd46",
+    "artifacts/agentlab_research-0.2.0-py3-none-any.whl": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370"
+  },
+  "input_bundle_sha256": "75b91cd73aa3baee3ce2a426c8c061776f353555046efab787599a6786cdb699",
+  "controller_sha256": "1ffd56d2c59a7b13a324cd92a6aeab0dbd17183f7b0f1471ba35b98b0b596472",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "research_wheel_sha256": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370",
+  "embedding_model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+  "old_archive_manifests": {
+    "lightrag-maintainer-stage84-20261124": "c8ee3e8a1774ac7aac7fc159be10c6f514caed22199a78f66a669d2ee6a3313b",
+    "paper-library-stage85-20261124": "3f790f567288c998b937d37a1254dcb4ae5bb5d0037d0832d6bbe1e8779bca1a",
+    "research-assistant-stage86-20261124": "310f0d47bfad1d87146e14ad8d443252025c13445dbe1cf451bfe42dc46dd820",
+    "research-report-stage87-20261125": "8eecdfb30236d569d7fe8ae2f29034f1dc93f9c2784a106d72cf7054bafbfb61"
+  },
+  "new_cpu_embedding_caps": {
+    "reserved_forwards": 100,
+    "text_inputs": 400,
+    "query_inputs": 0
+  },
+  "GPU_used": false
+}

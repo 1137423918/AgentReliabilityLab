@@ -1,0 +1,32 @@
+{
+  "scope": "One fixed new-paper CPU reading workflow. Same tested application/model/template. One attempt, six generation calls maximum; no quality retries or answer labels in model input. Citation mechanics separate from semantic source review. No GPU, install, warmup, or upstream mutation.",
+  "source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/research_assistant.py": "166052821b8e2958e9c109922e32db97df871e669a64e5539fccec00ab3378c9",
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/research_report.py": "5dde5b8529c716798c74f4903812f127f29c40617907540bae0af8aa75f91b21",
+    "benchmarks/research_frontier_trial.py": "f6c32d6052e6d2fe0a234e2d11133a6a9ec7fb645173383e7380e8996d93cc25",
+    "examples/research-frontier/case.json": "29e5707fb9b7f0f76b925bdd6c4186f8f0ecc0b61cfc3c418211d4163a65cd46"
+  },
+  "input_bundle_sha256": "758d227878e56e0fe57ff280a6150fa35100680bbd10b1e806a2e2d06c1b3857",
+  "controller_sha256": "1ccb15c7ea317d5a73400bcdea8a36e4a336a08edb3b42009090d03d003260e6",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "research_wheel_sha256": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370",
+  "embedding_model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+  "old_archive_manifests": {
+    "lightrag-maintainer-stage84-20261124": "c8ee3e8a1774ac7aac7fc159be10c6f514caed22199a78f66a669d2ee6a3313b",
+    "paper-library-stage85-20261124": "3f790f567288c998b937d37a1254dcb4ae5bb5d0037d0832d6bbe1e8779bca1a",
+    "research-assistant-stage86-20261124": "310f0d47bfad1d87146e14ad8d443252025c13445dbe1cf451bfe42dc46dd820",
+    "research-report-stage87-20261125": "8eecdfb30236d569d7fe8ae2f29034f1dc93f9c2784a106d72cf7054bafbfb61"
+  },
+  "GPU_used": false,
+  "source_generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+  "generation_requests_total": 6,
+  "max_output_tokens_per_request": 256,
+  "CPU_query_embedding_cap": 8,
+  "CPU_text_embedding_cap": 0
+}

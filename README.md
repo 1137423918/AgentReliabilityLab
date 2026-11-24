@@ -30,6 +30,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 新增[阅读报告导出](docs/research-reading-report.md)：模型和MCP服务关闭后，批量整理已有回答、PDF页引用和未完成原因，生成[可阅读的记录](examples/research-reports/reading-report.md)。已用三个真实关闭运行验证，四条历史页引用回读、重复导出字节一致，新增生成/嵌入/GPU均为0；原模型两项提交通过、一项失败的结果保持不变。
 
+新增[前沿论文实际接入](docs/frontier-reading.md)：接入2026年11月RECEIPT全文，资料库扩展到三篇52页、240片段；旧148个向量复用，仅新增92个片段编码。一次新的CPU模型阅读用了4次调用，引用核对通过，但机制解释不完整；[原回答及复核](evidence/frontier-reading/README.md)单列，未重跑优化分数，全程GPU为0。
+
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 
 新增[LightRAG实际维护案例](docs/lightrag-dependency-upgrade.md)：LangGraph/SQLite工作台已接入第三个项目，完成RAGAS评估依赖升级、固定库复扫及发布版/主线各自配对的21项离线测试；[正式PR #4647](https://github.com/HKUDS/LightRAG/pull/4647)开放待审，上游CI等待批准。新流程模型调用和GPU使用均为零。

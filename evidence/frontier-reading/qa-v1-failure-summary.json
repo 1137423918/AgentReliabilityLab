@@ -1,0 +1,6 @@
+{
+  "cause": "Offline controller input packet omitted the unchanged agent_lab.request_budget module; import stopped before report generation. Added missing file only, same report/model sources, no model or embedding rerun.",
+  "owned_after": 0,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0
+}

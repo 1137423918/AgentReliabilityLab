@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "scope": "One new operator-authored paper-reading workflow, frozen before indexing/model execution. Not held-out QA or reproduction of RECEIPT's benchmark or performance claims.",
+  "id": "receipt_return_assumption",
+  "question": "请根据库中的 RECEIPT 论文，用不超过两句话解释 return assumption 是什么，以及为什么进程退出码为0不足以证明命令完成了请求的动作；附实际读过的论文页引用。",
+  "max_model_requests": 6,
+  "max_output_tokens_per_request": 256
+}

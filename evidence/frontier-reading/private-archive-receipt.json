@@ -1,0 +1,10 @@
+{
+  "relative_path": "studies/frontier-reading-stage88-20261125",
+  "manifest_sha256": "630c271bbb38c0c0d90d2bec016b065e040048aa74d3aa59156c7e60c6e5a2a8",
+  "files": 252,
+  "bytes": 54824348,
+  "all_four_profiles_terminal_owned_zero": true,
+  "all_old_closed_inputs_unchanged": true,
+  "weights_and_environments_not_duplicated": true,
+  "GPU_used": false
+}

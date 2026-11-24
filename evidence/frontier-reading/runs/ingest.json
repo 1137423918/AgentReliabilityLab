@@ -1,0 +1,16 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "60f016afc18cb6c14162f430ea2198e129f738dc7da346402aaf7d1932762636",
+  "phases": [
+    {
+      "name": "source-new-paper-cpu-index",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 43.527,
+      "peak_owned_RSS_bytes": 1001123840
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 57.53
+}

@@ -1,0 +1,16 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "5c3934986750f1b6906cae01baf017dcced729cd1a701f413533e5705f408cb8",
+  "phases": [
+    {
+      "name": "source-new-paper-cpu-agent",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 293.214,
+      "peak_owned_RSS_bytes": 5972262912
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 327.427
+}

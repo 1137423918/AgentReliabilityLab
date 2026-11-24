@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-offline-report"
+  },
+  "protocol_sha256": "37da6c516d5f15e7d10afbeb3c3b183d6d05496dcbe55ba76c13cff0fd257ef3",
+  "phases": [
+    {
+      "name": "source-offline-report",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 0.524,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 10.682
+}

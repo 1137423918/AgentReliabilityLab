@@ -1,0 +1,85 @@
+{
+  "ready": true,
+  "scope": "One new operator-authored paper-reading workflow, frozen before indexing/model execution. Not held-out QA or reproduction of RECEIPT's benchmark or performance claims.",
+  "GPU_used": false,
+  "model": "Qwen3-4B-Instruct-2507, existing fixed Q4_K_M",
+  "model_warmup_disabled": true,
+  "model_prompt_cache_enabled": true,
+  "whole_request_deadline_seconds": 180,
+  "terminal_format_policy": "one response-schema constrained final arguments request with tool_choice none within unchanged6-turn budget; exact JSON object passed through same citation validator, raw response preserved; searches/reads remain model-selected",
+  "max_generation_requests": 6,
+  "max_generation_requests_per_case": 6,
+  "max_output_tokens_per_request": 256,
+  "embedding_caps": {
+    "reserved_forwards": 8,
+    "text_inputs": 0,
+    "query_inputs": 8
+  },
+  "cases": [
+    {
+      "id": "receipt_return_assumption",
+      "returncode": 0,
+      "wall_seconds": 263.976,
+      "embedding_delta": {
+        "reserved_forwards": 2,
+        "completed_forwards": 2,
+        "text_inputs": 0,
+        "query_inputs": 2
+      },
+      "status": "submitted",
+      "model_requests": {
+        "journal_id": "4485f44becd548259f2a5467cce19e42",
+        "limits": {
+          "max_request_bytes": 32768,
+          "max_requests": 6,
+          "max_total_request_bytes": 196608
+        },
+        "owner_sha256": "fbab9bca63183b0fcf99f123cef2893eb78fd1f992eb4fc15281db6196996ba1",
+        "reserved_request_body_bytes": 26138,
+        "reserved_requests": 4,
+        "unobserved_reservations": 0
+      },
+      "model_turns": 4,
+      "finalization_requests": 1,
+      "final_transport": "schema_arguments_content",
+      "complete_responses": 4,
+      "requests_without_complete_response": 0,
+      "mechanical_contract_passed": true,
+      "semantic_review": "not yet reviewed"
+    }
+  ],
+  "remaining_cases": "all declared cases executed",
+  "native_ready": true,
+  "source_generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+  "new_paper_sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf",
+  "source_papers": 3,
+  "source_page_count": 52,
+  "source_node_count": 240,
+  "active_case": null,
+  "completed_run_new_process_replay_zero_generation_and_embedding": true,
+  "generation_HTTP_reservations": 4,
+  "complete_model_responses": 4,
+  "reservations_without_saved_response": 0,
+  "saved_usage": {
+    "prompt_tokens": 6512,
+    "completion_tokens": 219
+  },
+  "saved_native_token_counts": {
+    "evaluated_prompt_tokens": 2213,
+    "cached_prefix_tokens": 4299,
+    "predicted_tokens": 219
+  },
+  "embedding_counts": {
+    "reserved_forwards": 2,
+    "completed_forwards": 2,
+    "text_inputs": 0,
+    "query_inputs": 2
+  },
+  "embedding_unknown": 0,
+  "embedding_ledger_sha256": "2b0c112144224b63baf050e3b8d8a96e1262407b89f25c918a3832757fcdd262",
+  "budgets_status": "CLOSED",
+  "native_server_closed": true,
+  "MCP_closed": true,
+  "ephemeral_key_removed": true,
+  "wall_seconds": 286.075
+}

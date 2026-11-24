@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "scope": "Recorded answers and read-only source checks; no model/tool execution or new evaluation.",
+  "semantic_entailment_checked": false,
+  "runs": [
+    {
+      "run_id": "fbab9bca63183b0fcf99f123cef2893eb78fd1f992eb4fc15281db6196996ba1",
+      "question": "请根据库中的 RECEIPT 论文，用不超过两句话解释 return assumption 是什么，以及为什么进程退出码为0不足以证明命令完成了请求的动作；附实际读过的论文页引用。",
+      "export_status": "ready",
+      "recorded_status": "submitted",
+      "model": "agentlab-research-qwen3-4b-cpu",
+      "source_generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+      "answer": "return assumption认为返回状态0即表示任务完成，但实际中进程可能未执行请求动作。退出码为0无法证明任务完成，因系统可能在无人监控下运行，且部分工具调用未执行实际操作。",
+      "model_submission_status": "supported",
+      "references": [
+        {
+          "citation_id": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:499127f1abb2a2f099fc87b9c6852bcd11ac63cac1ea3a604847e3b42a626608",
+          "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+          "is_current_generation": true,
+          "source_id": "pdf_55cc187b8172cb56d391_p3",
+          "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 3",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2611.01930v1#page=3",
+          "source_sha256": "d270feb4ac1b043c2605e022103fef76c19f1d38a3dd0986a9b843dadfa0f6f0",
+          "line_start": 26,
+          "line_end": 39,
+          "char_start": 2676,
+          "char_end": 3779,
+          "pdf": {
+            "bytes": 867890,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 20,
+            "page_label": "3",
+            "page_number": 3,
+            "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf"
+          },
+          "ref": "r1"
+        },
+        {
+          "citation_id": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:2178f55021898b911e916658a45946c680a3da000852ee4b5bb18d3873d8622a",
+          "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+          "is_current_generation": true,
+          "source_id": "pdf_55cc187b8172cb56d391_p5",
+          "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 5",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2611.01930v1#page=5",
+          "source_sha256": "18bcb4dc529b181d6bea8f5fa920143d9926651757e56f32f73b1d173fdba6fe",
+          "line_start": 29,
+          "line_end": 41,
+          "char_start": 1622,
+          "char_end": 2731,
+          "pdf": {
+            "bytes": 867890,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 20,
+            "page_label": "5",
+            "page_number": 5,
+            "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf"
+          },
+          "ref": "r3"
+        }
+      ],
+      "diagnostics": [],
+      "requests": {
+        "reserved": 4,
+        "saved_complete": 4,
+        "without_saved_complete_response": 0,
+        "limit": 6
+      },
+      "semantic_entailment_checked": false
+    }
+  ],
+  "summary": {
+    "runs": 1,
+    "recorded_submissions": 1,
+    "recorded_uncompleted": 0,
+    "export_errors": 0
+  }
+}

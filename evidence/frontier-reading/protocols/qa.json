@@ -1,0 +1,16 @@
+{
+  "scope": "Offline new-paper report and private first/cited PDF page rendering. Stopped trusted inputs only; zero inference, embedding, GPU, installs. Same pretested report source, no source correctness regrade.",
+  "source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/research_report.py": "5dde5b8529c716798c74f4903812f127f29c40617907540bae0af8aa75f91b21",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "qa_frontier.py": "19594a47282c83c7a676a7b8460e25a49c56fd8a1a844b6001ba74ad0fb941ab",
+    "render_frontier.py": "5fef7e389ff3242a3e356a48f2993915afa1123954d917a8d9d14d9da9537f07"
+  },
+  "input_bundle_sha256": "1be48ec53e9c2cfb9538c3623e7c9cd3bf4bbc9e2a8bae2a69be7745a08c7965",
+  "controller_sha256": "c31790118878dad703bbff5e3ad4cabfafe3dbf869d43977342ef5e82a0ae309",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "GPU_used": false
+}

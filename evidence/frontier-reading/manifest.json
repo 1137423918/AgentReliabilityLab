@@ -1,0 +1,65 @@
+{
+  "files": {
+    "PR-snapshot.json": {
+      "sha256": "f7a60e2ebc1dbdc8fa739ca92ae09ae0f85cd9400e2e156b33e4125993dc48a6",
+      "bytes": 2257
+    },
+    "README.md": {
+      "sha256": "a899853e27f10a02a6e215f69302efc6b45a459647ef835419f474b2f54c020c",
+      "bytes": 3795
+    },
+    "ingest.json": {
+      "sha256": "af0bc4f608b3b7f557a212a7bc50ca3bf564cc172771b4d8d88bcfa46fe013a5",
+      "bytes": 3494
+    },
+    "offline-report.json": {
+      "sha256": "6585dc233e3c4de6a4f9fa12dc6b58637c0556adfd61b332f5986e22a8bb8895",
+      "bytes": 486
+    },
+    "private-archive-receipt.json": {
+      "sha256": "f427527a79cd1b1d40b0d213d1c773cc8d379348a42ac4a9c1f446a493912f62",
+      "bytes": 357
+    },
+    "protocols/ingest.json": {
+      "sha256": "a7e06646e20d52fca950f432b76c7c270ce53530dc39a6af69fb048888d3cf9b",
+      "bytes": 2071
+    },
+    "protocols/qa.json": {
+      "sha256": "a81774f3d2944b93ca0fa4d0cf6cafa5430c52ae69f9c143f70d90158b61ff7e",
+      "bytes": 1214
+    },
+    "protocols/qa_v1.json": {
+      "sha256": "37da6c516d5f15e7d10afbeb3c3b183d6d05496dcbe55ba76c13cff0fd257ef3",
+      "bytes": 1111
+    },
+    "protocols/trial.json": {
+      "sha256": "d5bbaefc7626bf582d7bb7a61a694db301ee2aaf1b38ef054da433ecdb4570d9",
+      "bytes": 2542
+    },
+    "qa-v1-failure-summary.json": {
+      "sha256": "4b6ac557e07896659678881e82e0fad1df83832d89ad2c34d015d3d04b547795",
+      "bytes": 309
+    },
+    "runs/ingest.json": {
+      "sha256": "853f70834435b74626dfb8d068e89513a070807a3db153fdd6b906e157133068",
+      "bytes": 363
+    },
+    "runs/qa.json": {
+      "sha256": "6f2f24156b7c9de1acf5743fe00aa304e977ee5bdaaf8cd505e0178057f334c3",
+      "bytes": 526
+    },
+    "runs/qa_v1.json": {
+      "sha256": "0a328110ff7425c8d53848b6ff1e8b49c44764622eb623514673efc0a669cb11",
+      "bytes": 425
+    },
+    "runs/trial.json": {
+      "sha256": "c029fbf770948ced5ac0265d82c0f2476ab425eacf6a956d34d6b72d4d421d1e",
+      "bytes": 366
+    },
+    "trial.json": {
+      "sha256": "720bc68c6b60156d793b0398a29fcab7a1f087b315610b4844276bb3550c86a8",
+      "bytes": 3049
+    }
+  },
+  "scope": "Curated source/CPU run metadata and manual assistant source review; original paper text, images, wire, databases and credentials excluded."
+}
