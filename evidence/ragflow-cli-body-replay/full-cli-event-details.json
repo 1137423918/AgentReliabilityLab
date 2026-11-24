@@ -1,0 +1,26 @@
+{
+  "passed_top_level_tests": 51,
+  "passed_events_including_subtests": 209,
+  "skipped_test_cases": [],
+  "package_skip_events": [
+    {
+      "Time": "2026-11-25T04:10:16.973547292+08:00",
+      "Action": "skip",
+      "Package": "ragflow/internal/cli/filesystem/skill_hub/security",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-25T04:10:16.973564394+08:00",
+      "Action": "skip",
+      "Package": "ragflow/internal/cli/filesystem/skill_hub/source",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-25T04:10:16.973582629+08:00",
+      "Action": "skip",
+      "Package": "ragflow/internal/cli/utils",
+      "Elapsed": 0
+    }
+  ],
+  "counts_not_independent_cases": true
+}

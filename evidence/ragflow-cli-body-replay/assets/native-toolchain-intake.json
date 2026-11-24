@@ -1,0 +1,89 @@
+{
+  "packages": [
+    {
+      "package": "clang",
+      "file": "clang-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/clang-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 154570,
+      "sha256": "5ab815f68133862e4f5d7e5003bc4982ae6e5f246a604ce9cdc5ba1b1a80a73f"
+    },
+    {
+      "package": "clang-libs",
+      "file": "clang-libs-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/clang-libs-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 30100107,
+      "sha256": "f77ad75f5b9b02cbf170269f3014c033ef42bc5221f7043f32db1ada92227c05"
+    },
+    {
+      "package": "clang-resource-filesystem",
+      "file": "clang-resource-filesystem-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/clang-resource-filesystem-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 14971,
+      "sha256": "c09df5e5ed78e13fa26ff522c95cd65dff52b49bcfde3e9f9550d5ba4868c205"
+    },
+    {
+      "package": "llvm",
+      "file": "llvm-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/llvm-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 23403782,
+      "sha256": "11603a26363922221c43e73e8e659bd3369b4ef1b186db5ba8f7e4fcf2777729"
+    },
+    {
+      "package": "llvm-libs",
+      "file": "llvm-libs-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/llvm-libs-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 31495314,
+      "sha256": "b6a6a425c928efc3fc1112c2e1f83d1de207b1cfa6eabe6778cac915cd88b491"
+    },
+    {
+      "package": "lld",
+      "file": "lld-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/lld-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 35361,
+      "sha256": "8d18242c27da7f989a7d0d8f04fef8f5e64dd51554ced02f350a7f2fa710f0a8"
+    },
+    {
+      "package": "lld-libs",
+      "file": "lld-libs-20.1.8-3.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/lld-libs-20.1.8-3.el9.x86_64.rpm",
+      "bytes": 1936494,
+      "sha256": "9890d57f37b221b28523d7cdb9bc540b4a5a0989ddbaea5fd4c79be49ef41f04"
+    },
+    {
+      "package": "gcc-toolset-14-gcc",
+      "file": "gcc-toolset-14-gcc-14.2.1-12.el9_7.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/gcc-toolset-14-gcc-14.2.1-12.el9_7.x86_64.rpm",
+      "bytes": 49222146,
+      "sha256": "e489ce1c51ff78dd5c30c86672d6eb590b9c7995484757896ff4d6ece65d6daf"
+    },
+    {
+      "package": "gcc-toolset-14-gcc-c++",
+      "file": "gcc-toolset-14-gcc-c++-14.2.1-12.el9_7.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/gcc-toolset-14-gcc-c%2B%2B-14.2.1-12.el9_7.x86_64.rpm",
+      "bytes": 15451541,
+      "sha256": "86957812f56e5b2d0b8b54a8430e54328505695eb95a9aeed29aeb7f819df733"
+    },
+    {
+      "package": "gcc-toolset-14-libstdc++-devel",
+      "file": "gcc-toolset-14-libstdc++-devel-14.2.1-12.el9_7.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/gcc-toolset-14-libstdc%2B%2B-devel-14.2.1-12.el9_7.x86_64.rpm",
+      "bytes": 3618174,
+      "sha256": "7073aa94ab9f25ff4a735bf0ef4cc910781b38c3732573081e80b748ffb80c39"
+    },
+    {
+      "package": "gcc-toolset-14-runtime",
+      "file": "gcc-toolset-14-runtime-14.0-2.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/gcc-toolset-14-runtime-14.0-2.el9.x86_64.rpm",
+      "bytes": 26393,
+      "sha256": "24e99486603c186809ce6f8ff4286acb29bb3d92743e8fffc8d38a0e78baf255"
+    },
+    {
+      "package": "pcre2-devel",
+      "file": "pcre2-devel-10.40-6.el9.x86_64.rpm",
+      "url": "https://repo.almalinux.org/vault/9.7/AppStream/x86_64/os/Packages/pcre2-devel-10.40-6.el9.x86_64.rpm",
+      "bytes": 482501,
+      "sha256": "d697fd50bece4b1a1914beacc7f4f308cc5075337d00c9d3b92ddf926344b347"
+    }
+  ],
+  "source": "OfficialAlmaLinux9.7vault; serverRPMsignaturechecksrequired; extractprivately/noRPMscripts/systeminstall"
+}

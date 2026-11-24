@@ -1,0 +1,13 @@
+{
+  "relative_path": "studies/ragflow-cli-stage90-20261125",
+  "manifest_sha256": "5b879dcc7ff06d78043a1d254ecd699656bc2e343e09fd227f928a2bbbae6bac",
+  "files": 82,
+  "bytes": 1462094,
+  "all_five_profiles_terminal_owned_zero": true,
+  "initial_persistent_connection_only_baseline_passed_and_retained": true,
+  "old_closed_inputs_unchanged": true,
+  "old_inputs_and_new_toolchains_not_duplicated": true,
+  "model_generation_calls": 0,
+  "embedding_forwards": 0,
+  "GPU_used": false
+}

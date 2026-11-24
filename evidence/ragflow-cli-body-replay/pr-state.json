@@ -1,0 +1,17 @@
+{
+  "repo": "infiniflow/ragflow",
+  "number": 22752,
+  "url": "https://github.com/infiniflow/ragflow/pull/22752",
+  "head": "e26909ee6cc0946fe2dfbbfc8bbabf6311bc1b5a",
+  "base": "8c68034679bf3f5aa6ad5d14ce3899b8915db1ea",
+  "state": "OPEN",
+  "draft": false,
+  "merged": false,
+  "mergeable": "MERGEABLE",
+  "native_runs": [],
+  "unresolved_threads": 0,
+  "review_count": 0,
+  "comment_count": 0,
+  "CI_all_green_not_claimed": true,
+  "recorded_utc": "2026-11-24T20:17:21.163559+00:00"
+}

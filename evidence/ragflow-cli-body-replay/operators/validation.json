@@ -1,0 +1,51 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "0d913e73050254701d07da4ede2155450e99fd51d99a4c088f2b10a79d169881",
+  "phases": [
+    {
+      "name": "source-fresh-connection-close-inputs",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.67,
+      "peak_owned_RSS_bytes": 22384640
+    },
+    {
+      "name": "new-test-format-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.568,
+      "peak_owned_RSS_bytes": 0
+    },
+    {
+      "name": "baseline-real-http-regression",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 67.703,
+      "peak_owned_RSS_bytes": 2181758976
+    },
+    {
+      "name": "candidate-real-http-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 74.928,
+      "peak_owned_RSS_bytes": 2195042304
+    },
+    {
+      "name": "candidate-full-cli",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 10.794,
+      "peak_owned_RSS_bytes": 1816326144
+    },
+    {
+      "name": "candidate-format-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.56,
+      "peak_owned_RSS_bytes": 0
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 168.504
+}

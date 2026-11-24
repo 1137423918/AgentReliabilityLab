@@ -1,0 +1,17 @@
+diff --git a/internal/cli/http_client.go b/internal/cli/http_client.go
+index deac8fa..65187c5 100644
+--- a/internal/cli/http_client.go
++++ b/internal/cli/http_client.go
+@@ -170,6 +170,12 @@ func (c *HTTPClient) Request(commandCount int, method, path string, authKind str
+ 	failCount := 0
+ 	var respHeader http.Header
+ 	for i := 0; i < commandCount; i++ {
++		if i > 0 && req.GetBody != nil {
++			req.Body, err = req.GetBody()
++			if err != nil {
++				return nil, err
++			}
++		}
+ 		respBody, respHeader, statusCode, err = c.HttpDo(req)
+ 		if err == nil {
+ 			var result struct {

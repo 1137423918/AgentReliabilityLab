@@ -1,0 +1,122 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "bf61f2e619aceb19ca0e18240dee66d59dd3cee8f6ee5fbc081471641d128cdc",
+      "bytes": 3772
+    },
+    "assets/extra-assets.json": {
+      "sha256": "dfd6b33e728eeca9cbf4a963fb18952749995c51c88915277c6bc9501f19278e",
+      "bytes": 369
+    },
+    "assets/native-source-downloaded.json": {
+      "sha256": "720ea8b99e2fcd1eb42ff9b1a142a203af4fba82dd08e29429e6e648d00529c5",
+      "bytes": 2032
+    },
+    "assets/native-toolchain-intake.json": {
+      "sha256": "c8941c654694f8ec84d57646a4b2b8f83c1d3877cacf4a85fef21cea23438858",
+      "bytes": 4141
+    },
+    "collection-receipt.json": {
+      "sha256": "25acb15eb60d02f745077d61b6acce45fd7428d406fd772a49a1d0a50b5bcb40",
+      "bytes": 207
+    },
+    "environment.json": {
+      "sha256": "e10b140a6583ff9aef264e5fdf1ec41f90ed0bbc35e545f7b7d4b0edb00e6aa7",
+      "bytes": 4786
+    },
+    "existing-pr-followup.json": {
+      "sha256": "3cd2adbd868f565a0621e3dc3d374ba920fbaf86dfe514ab889b0c27be72dce3",
+      "bytes": 2532
+    },
+    "fix.patch": {
+      "sha256": "be597c30cd43b1aa6bba9862e02bdc6fcdc447ad1f958a7d5fca1a0fe2b2bce5",
+      "bytes": 577
+    },
+    "full-cli-event-details.json": {
+      "sha256": "6bf0af1b017ad3ddcf91c41be7cfecc6c98c818b0adbfb1eb322fe4a4b02d75f",
+      "bytes": 691
+    },
+    "initial-keepalive-baseline.json": {
+      "sha256": "76cd35654fe527dd942924286699dc8765d1782d30b0aa13273ade52f81deb5f",
+      "bytes": 400
+    },
+    "logs/baseline-real-http-regression.log": {
+      "sha256": "f7e2c61a02085825edb3d84f00116f88b65bc923b334f6994bb5d176fd13fe86",
+      "bytes": 11360
+    },
+    "logs/candidate-format-check.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "logs/candidate-full-cli.log": {
+      "sha256": "1eebec192af28f7812ec497f1ec3e8b02ddf5e502fbbd93144dc4d80a0726283",
+      "bytes": 231250
+    },
+    "logs/candidate-real-http-regression.log": {
+      "sha256": "d5675afc3b1f98dbb94ba0498ac2e7975f3ef326d7a24d1811c2e497e41d7534",
+      "bytes": 10601
+    },
+    "logs/initial-keepalive-baseline.log": {
+      "sha256": "bd041161492dded7d3f9791268452efc9faa12501d432623ca4bbae9b7d156ff",
+      "bytes": 13990
+    },
+    "network-preparation-failure.json": {
+      "sha256": "2df3f3f01ddc8ccfc6b9115e35a3d68b0b0518a045da961ac4e9f7782cd9e845",
+      "bytes": 412
+    },
+    "operators/keepalive_only.json": {
+      "sha256": "8ee55aed580cd47d2f476c60a11979a3ce46b43f3e7abd12acf4cbbc4f7f9e2a",
+      "bytes": 471
+    },
+    "operators/native.json": {
+      "sha256": "7e4f1ddbdc0260e610aedc6c481edc0f2fdcffd2ab44a971a4743f084f9845f5",
+      "bytes": 1457
+    },
+    "operators/network_failed.json": {
+      "sha256": "d7b76e02705118f68fdf389cee0177acc7a2fa868fd2a1a515c9a91361da13dd",
+      "bytes": 448
+    },
+    "operators/sdk.json": {
+      "sha256": "7d4a83f75ec6d3e41bc90f98b904a62ed09cfe330726a335e73dbbdbff48c0a2",
+      "bytes": 672
+    },
+    "operators/validation.json": {
+      "sha256": "667b0a6b8c59c4a1ce2ca148a085d1137d3290de5ae004b4659f0433bd1de103",
+      "bytes": 1195
+    },
+    "patch-inputs.json": {
+      "sha256": "8b9ba0793c79ebb7657d4b94111867d891ba6b82e460ce9791dbd5c66d66584a",
+      "bytes": 845
+    },
+    "pr-state.json": {
+      "sha256": "7b76aff2e7e1a329b90c4022c6be19897dff8c4f301b787bf92716666ba7c05d",
+      "bytes": 488
+    },
+    "private-archive-receipt.json": {
+      "sha256": "fc18f5f6457dfde0fe310b8b4702ba746b1331ce70933d12f0ad90958d2ffbcf",
+      "bytes": 484
+    },
+    "protocols/native.json": {
+      "sha256": "e2c068e03e9191788954fe6f318cd60e51540d1b4bcf133f267f80aa3100fc47",
+      "bytes": 3768
+    },
+    "protocols/sdk.json": {
+      "sha256": "4b287ba5934d4404cd821aad539c9a411759530df6c391ddf4cb444b247afb2b",
+      "bytes": 1326
+    },
+    "protocols/validation.json": {
+      "sha256": "0d913e73050254701d07da4ede2155450e99fd51d99a4c088f2b10a79d169881",
+      "bytes": 1557
+    },
+    "test.patch": {
+      "sha256": "689ca3f768870466095799321df806606c34eade5a12c077262e90f6790bb74e",
+      "bytes": 5125
+    },
+    "validation.json": {
+      "sha256": "bdbd811030bbc94c243b1d982cbf1adc739515e503bc4e8a7ba4b6e6009e0f4c",
+      "bytes": 3532
+    }
+  },
+  "scope": "Scoped RAGFlow CLI server-closed connection regression, retained initial passing baseline and network failure, formal unmerged PR and existing10PR snapshots. No model quality claims or binaries.",
+  "GPU_used": false
+}

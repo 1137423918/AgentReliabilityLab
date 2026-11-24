@@ -1,0 +1,12 @@
+{
+  "exit_code": 0,
+  "failed_test_events": [],
+  "passed_test_events": [
+    "TestRequestWithIterationsCountsJSONApplicationErrors",
+    "TestRequestWithIterationsPreservesBodylessPOST",
+    "TestRequestWithIterationsReplaysJSONBody",
+    "TestRequestWithIterationsReplaysJSONBody/PATCH",
+    "TestRequestWithIterationsReplaysJSONBody/POST",
+    "TestRequestWithIterationsReplaysJSONBody/PUT"
+  ]
+}

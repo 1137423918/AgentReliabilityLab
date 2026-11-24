@@ -1,0 +1,30 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "4b287ba5934d4404cd821aad539c9a411759530df6c391ddf4cb444b247afb2b",
+  "phases": [
+    {
+      "name": "source-sdk-and-test-inputs",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 72.041,
+      "peak_owned_RSS_bytes": 98779136
+    },
+    {
+      "name": "go-version",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "gofmt-source-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.535,
+      "peak_owned_RSS_bytes": 7208960
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 83.697
+}

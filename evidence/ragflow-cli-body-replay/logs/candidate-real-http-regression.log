@@ -1,0 +1,65 @@
+[0;32m=== RAGFlow Go Server Build Script ===[0m
+
+[1;33m>>> Checking go dependencies[0m
+✓ Required tools are available
+
+[1;33m>>> Checking ONNX Runtime version consistency[0m
+[0;32m✓ ONNX Runtime native version consistent: 1.29.0[0m
+
+[1;33m>>> Running Go tests[0m
+check if the cl100k_base BPE table exists at <isolated-validation-root>/sources/candidate/deps/cl100k_base.tiktoken
+  cl100k_base.tiktoken → <isolated-validation-root>/sources/candidate/deps/cl100k_base.tiktoken (already present)
+
+[1;33m>>> Checking office_oxide native library[0m
+✓ office_oxide v0.1.17 native library found at <isolated-native-root>/native-libs/office_oxide/v0.1.17
+  pdfium (static) → <isolated-native-root>/native-libs/pdfium-static/v7809
+  pdf_oxide (static) → <isolated-native-root>/native-libs/pdf_oxide/v0.3.78
+  (no local onnxruntime-v1.29.0-linux-x86_64.zip; skipping sha256 check — CI seed assumed authoritative)
+✓ onnxruntime v1.29.0 static lib verified under <isolated-native-root>/native-libs/onnxruntime/static_lib
+  onnxruntime (static) → <isolated-native-root>/native-libs/onnxruntime/static_lib
+CGO_CFLAGS:   -I<isolated-native-root>/native-libs/office_oxide/v0.1.17/include/office_oxide_c
+CGO_LDFLAGS:  <isolated-native-root>/native-libs/office_oxide/v0.1.17/lib/liboffice_oxide.a "<isolated-validation-root>/sources/candidate/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libpdfium.a"             "<isolated-validation-root>/sources/candidate/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libc++.a"             "<isolated-validation-root>/sources/candidate/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libc++abi.a"             -fuse-ld=lld -Wl,--allow-multiple-definition <isolated-native-root>/native-libs/pdf_oxide/v0.3.78/lib/linux_amd64/libpdf_oxide.a -Wl,--undefined=OrtGetApiBase -Wl,--dynamic-list=<isolated-validation-root>/sources/candidate/.cache/ort_dynamic_list.txt  <isolated-native-root>/native-libs/onnxruntime/static_lib/v1.29.0-d5e6a117d7444fe3/libonnxruntime.a -lstdc++ -lm -lpthread -ldl -lrt -lgcc_s -lutil -lc
+{"Time":"2026-11-25T04:10:01.156278556+08:00","Action":"start","Package":"ragflow/internal/cli"}
+{"Time":"2026-11-25T04:10:01.199139061+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody"}
+{"Time":"2026-11-25T04:10:01.199293829+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.200130294+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive"}
+{"Time":"2026-11-25T04:10:01.200142982+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/POST/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.205221972+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/POST/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.205236694+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.205250936+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close"}
+{"Time":"2026-11-25T04:10:01.205255149+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/POST/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.205271368+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/POST/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.205276849+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.205283069+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive"}
+{"Time":"2026-11-25T04:10:01.205286717+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.205292153+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.20529635+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.205302017+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close"}
+{"Time":"2026-11-25T04:10:01.205305786+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PUT/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209319724+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PUT/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209334915+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.209339983+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive"}
+{"Time":"2026-11-25T04:10:01.209343697+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209349095+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209353497+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.209357358+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close"}
+{"Time":"2026-11-25T04:10:01.209360938+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209365724+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209369576+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.209379623+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209386234+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Elapsed":0.01}
+{"Time":"2026-11-25T04:10:01.20939152+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors"}
+{"Time":"2026-11-25T04:10:01.209395+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Output":"=== RUN   TestRequestWithIterationsCountsJSONApplicationErrors\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209401472+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Output":"--- PASS: TestRequestWithIterationsCountsJSONApplicationErrors (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209405955+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.209409551+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST"}
+{"Time":"2026-11-25T04:10:01.209412954+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Output":"=== RUN   TestRequestWithIterationsPreservesBodylessPOST\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209788339+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Output":"--- PASS: TestRequestWithIterationsPreservesBodylessPOST (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.209799504+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Elapsed":0}
+{"Time":"2026-11-25T04:10:01.209803806+08:00","Action":"output","Package":"ragflow/internal/cli","Output":"PASS\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:10:01.212924358+08:00","Action":"output","Package":"ragflow/internal/cli","Output":"ok  \tragflow/internal/cli\t0.056s\n"}
+{"Time":"2026-11-25T04:10:01.212943842+08:00","Action":"pass","Package":"ragflow/internal/cli","Elapsed":0.057}
+
+[1;33m>>> Running native unit tests[0m
+ok  	ragflow/internal/deepdoc/native	0.008s
+ok  	ragflow/internal/deepdoc/native/croptest	0.008s

@@ -1,0 +1,65 @@
+{
+  "baseline_actual": {
+    "exit_code": 1,
+    "failed_test_events": [
+      "TestRequestWithIterationsReplaysJSONBody",
+      "TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close",
+      "TestRequestWithIterationsReplaysJSONBody/POST/connection-close",
+      "TestRequestWithIterationsReplaysJSONBody/PUT/connection-close"
+    ],
+    "passed_test_events": [
+      "TestRequestWithIterationsCountsJSONApplicationErrors",
+      "TestRequestWithIterationsPreservesBodylessPOST",
+      "TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive",
+      "TestRequestWithIterationsReplaysJSONBody/POST/keep-alive",
+      "TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive"
+    ]
+  },
+  "candidate_regression_passed_test_events": [
+    "TestRequestWithIterationsCountsJSONApplicationErrors",
+    "TestRequestWithIterationsPreservesBodylessPOST",
+    "TestRequestWithIterationsReplaysJSONBody",
+    "TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close",
+    "TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive",
+    "TestRequestWithIterationsReplaysJSONBody/POST/connection-close",
+    "TestRequestWithIterationsReplaysJSONBody/POST/keep-alive",
+    "TestRequestWithIterationsReplaysJSONBody/PUT/connection-close",
+    "TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive"
+  ],
+  "full_cli_summary": {
+    "top_level_tests_passed": 51,
+    "all_pass_test_events": 209,
+    "skipped_test_events": [
+      null,
+      null,
+      null
+    ],
+    "packages_passed": [
+      "ragflow/internal/cli",
+      "ragflow/internal/cli/filesystem"
+    ]
+  },
+  "source_unchanged": {
+    "<isolated-validation-root>/sources/baseline/internal/cli/http_client.go": "8b6223d648236e204d91c77740da694a7f9fbba11f3e5c98de94fc5ca2f6fdaa",
+    "<isolated-validation-root>/sources/candidate/internal/cli/http_client.go": "70ec807dee63f7c9720ac38d9b6c16ff5426f2e18e25c51bf89c34e5c8f98891",
+    "<isolated-validation-root>/sources/baseline/internal/cli/http_client_test.go": "d8e432880469c6ec8f4dea0280916086a4e05990ca2d593cf144af424d2673a3",
+    "<isolated-validation-root>/sources/candidate/internal/cli/http_client_test.go": "d8e432880469c6ec8f4dea0280916086a4e05990ca2d593cf144af424d2673a3",
+    "<isolated-validation-root>/sources/baseline/go.mod": "8eccf5add75e476b34dafc64d9e6ca4f835cebf51359a8ac742fc489b640c9f2",
+    "<isolated-validation-root>/sources/baseline/go.sum": "e74b1810d0b48a27a2a0285a71ea00378b530aabb1da7c70aa600b28f4b85649",
+    "<isolated-validation-root>/sources/candidate/go.mod": "8eccf5add75e476b34dafc64d9e6ca4f835cebf51359a8ac742fc489b640c9f2",
+    "<isolated-validation-root>/sources/candidate/go.sum": "e74b1810d0b48a27a2a0285a71ea00378b530aabb1da7c70aa600b28f4b85649",
+    "<isolated-native-root>/pcre2/lib/libpcre2-8.a": "21f0448d6acf398d207902816985353adcf77673be4baef0c6b12ca977807456"
+  },
+  "actual_original_build_wrapper_used": true,
+  "native_unit_tier_included_on_passing_wrappers": true,
+  "no_model_integration_tier": true,
+  "no_raw_go_test_or_build": true,
+  "initial_keepalive_only_hypothesis_not_reproduced": true,
+  "source_base": "8c68034679bf3f5aa6ad5d14ce3899b8915db1ea",
+  "source_input_sha256": {
+    "stage_validation_sources.py": "0a991bfba65e7d1fc00695524de368001f4c97a818d359e3c2c856b35caaf556",
+    "test.patch": "689ca3f768870466095799321df806606c34eade5a12c077262e90f6790bb74e",
+    "fix.patch": "be597c30cd43b1aa6bba9862e02bdc6fcdc447ad1f958a7d5fca1a0fe2b2bce5",
+    "patch-inputs.json": "8b9ba0793c79ebb7657d4b94111867d891ba6b82e460ce9791dbd5c66d66584a"
+  }
+}

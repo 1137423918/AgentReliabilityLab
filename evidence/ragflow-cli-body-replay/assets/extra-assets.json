@@ -1,0 +1,5 @@
+{
+  "build-assets/cl100k_base.tiktoken": "223921b76ee99bde995b7ff738513eef100fb51d18c93597a113bcffe865b2a7",
+  "build-assets/cmake-4.4.5-py3-none-manylinux2014_x86_64.manylinux_2_17_x86_64.whl": "85625a9b6d5e88ff99c7eb79123d85570844e77ac076366cf75c609cc0b1b579",
+  "build-assets/simde-0.8.2.tar.gz": "72b2c14a487560b7eb203795f2c2fead5c7499662e639944cca2a9bb19f09029"
+}

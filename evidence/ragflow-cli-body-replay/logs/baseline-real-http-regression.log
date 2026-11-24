@@ -1,0 +1,64 @@
+[0;32m=== RAGFlow Go Server Build Script ===[0m
+
+[1;33m>>> Checking go dependencies[0m
+✓ Required tools are available
+
+[1;33m>>> Checking ONNX Runtime version consistency[0m
+[0;32m✓ ONNX Runtime native version consistent: 1.29.0[0m
+
+[1;33m>>> Running Go tests[0m
+check if the cl100k_base BPE table exists at <isolated-validation-root>/sources/baseline/deps/cl100k_base.tiktoken
+  cl100k_base.tiktoken → <isolated-validation-root>/sources/baseline/deps/cl100k_base.tiktoken (already present)
+
+[1;33m>>> Checking office_oxide native library[0m
+✓ office_oxide v0.1.17 native library found at <isolated-native-root>/native-libs/office_oxide/v0.1.17
+  pdfium (static) → <isolated-native-root>/native-libs/pdfium-static/v7809
+  pdf_oxide (static) → <isolated-native-root>/native-libs/pdf_oxide/v0.3.78
+  (no local onnxruntime-v1.29.0-linux-x86_64.zip; skipping sha256 check — CI seed assumed authoritative)
+✓ onnxruntime v1.29.0 static lib verified under <isolated-native-root>/native-libs/onnxruntime/static_lib
+  onnxruntime (static) → <isolated-native-root>/native-libs/onnxruntime/static_lib
+CGO_CFLAGS:   -I<isolated-native-root>/native-libs/office_oxide/v0.1.17/include/office_oxide_c
+CGO_LDFLAGS:  <isolated-native-root>/native-libs/office_oxide/v0.1.17/lib/liboffice_oxide.a "<isolated-validation-root>/sources/baseline/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libpdfium.a"             "<isolated-validation-root>/sources/baseline/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libc++.a"             "<isolated-validation-root>/sources/baseline/.cache/pdfium/archives/3fd520ef5d1a9bddc47abf4962698b318a9bd0801c79e606a1567a043ac1b4ab/libc++abi.a"             -fuse-ld=lld -Wl,--allow-multiple-definition <isolated-native-root>/native-libs/pdf_oxide/v0.3.78/lib/linux_amd64/libpdf_oxide.a -Wl,--undefined=OrtGetApiBase -Wl,--dynamic-list=<isolated-validation-root>/sources/baseline/.cache/ort_dynamic_list.txt  <isolated-native-root>/native-libs/onnxruntime/static_lib/v1.29.0-d5e6a117d7444fe3/libonnxruntime.a -lstdc++ -lm -lpthread -ldl -lrt -lgcc_s -lutil -lc
+{"Time":"2026-11-25T04:08:52.798834223+08:00","Action":"start","Package":"ragflow/internal/cli"}
+{"Time":"2026-11-25T04:08:52.833934259+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody"}
+{"Time":"2026-11-25T04:08:52.834018027+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.834054457+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive"}
+{"Time":"2026-11-25T04:08:52.834071812+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/POST/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.835828953+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/POST/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.83584499+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.835854707+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close"}
+{"Time":"2026-11-25T04:08:52.835858497+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/POST/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.836704877+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Output":"    http_client_test.go:136: successes = 1, failures = 2; want 3 successes and 0 failures\n","OutputType":"error"}
+{"Time":"2026-11-25T04:08:52.836764271+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Output":"--- FAIL: TestRequestWithIterationsReplaysJSONBody/POST/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.836774816+08:00","Action":"fail","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/POST/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.836798018+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive"}
+{"Time":"2026-11-25T04:08:52.836802413+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.837945991+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.837957123+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.837964327+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close"}
+{"Time":"2026-11-25T04:08:52.837967882+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PUT/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.838889365+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Output":"    http_client_test.go:136: successes = 1, failures = 2; want 3 successes and 0 failures\n","OutputType":"error"}
+{"Time":"2026-11-25T04:08:52.838948827+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Output":"--- FAIL: TestRequestWithIterationsReplaysJSONBody/PUT/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.838958966+08:00","Action":"fail","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PUT/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.838965082+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive"}
+{"Time":"2026-11-25T04:08:52.838968987+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.840112401+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Output":"--- PASS: TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.840123055+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/keep-alive","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.840129361+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close"}
+{"Time":"2026-11-25T04:08:52.840132893+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Output":"=== RUN   TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.841011871+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Output":"    http_client_test.go:136: successes = 1, failures = 2; want 3 successes and 0 failures\n","OutputType":"error"}
+{"Time":"2026-11-25T04:08:52.84109145+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Output":"--- FAIL: TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.841104314+08:00","Action":"fail","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody/PATCH/connection-close","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.84111331+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Output":"--- FAIL: TestRequestWithIterationsReplaysJSONBody (0.01s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.841118293+08:00","Action":"fail","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsReplaysJSONBody","Elapsed":0.01}
+{"Time":"2026-11-25T04:08:52.841124916+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors"}
+{"Time":"2026-11-25T04:08:52.841128434+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Output":"=== RUN   TestRequestWithIterationsCountsJSONApplicationErrors\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.842929525+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Output":"--- PASS: TestRequestWithIterationsCountsJSONApplicationErrors (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.842941149+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsCountsJSONApplicationErrors","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.842947523+08:00","Action":"run","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST"}
+{"Time":"2026-11-25T04:08:52.842951179+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Output":"=== RUN   TestRequestWithIterationsPreservesBodylessPOST\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.843588951+08:00","Action":"output","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Output":"--- PASS: TestRequestWithIterationsPreservesBodylessPOST (0.00s)\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.843605351+08:00","Action":"pass","Package":"ragflow/internal/cli","Test":"TestRequestWithIterationsPreservesBodylessPOST","Elapsed":0}
+{"Time":"2026-11-25T04:08:52.843632331+08:00","Action":"output","Package":"ragflow/internal/cli","Output":"FAIL\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.846423436+08:00","Action":"output","Package":"ragflow/internal/cli","Output":"FAIL\tragflow/internal/cli\t0.047s\n","OutputType":"frame"}
+{"Time":"2026-11-25T04:08:52.84644056+08:00","Action":"fail","Package":"ragflow/internal/cli","Elapsed":0.048}

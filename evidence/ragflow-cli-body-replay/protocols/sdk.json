@@ -1,0 +1,16 @@
+{
+  "scope": "Isolated Go1.27.4 SDK verified officialSHA, exact upstream8c source and identical regression tests in baseline/candidate; candidate only6linefix. Sourceformat/versions only, actual project tests require originalbuild.sh+nativeenv later. NoGPU/models/inference/systeminstall,CPU2/nice19/host32GiB/floor16/treeRSS8GiB/AS16GiB/phase180/job900.",
+  "source_sha256": {
+    "stage_go_source.py": "c683970b3ddcc7f04ec84e72f55000aa22bbd643364f665386824d9832bea62a",
+    "upstream-source.tar.gz": "ac50e48a5fa2d728f4687739ecf323443fe96fa75f9c9e1af96538acbc256e1d",
+    "test.patch": "12152b78a0c639a890994a81a6bec2b7a23c1a403ce105d93f1aaf41c0345fbf",
+    "fix.patch": "be597c30cd43b1aa6bba9862e02bdc6fcdc447ad1f958a7d5fca1a0fe2b2bce5",
+    "go-toolchain-intake.json": "0feaabf45bd09632c38347d8e3b34a2bc89d236b1b3cd9edc70fb6303c84d8e6",
+    "patch-inputs.json": "d213428c1d7b1e2b84f797de99e227a0be1ca3b509929fa9312739bcbc3f5c55"
+  },
+  "input_bundle_sha256": "ff38d86a00275cb1f696f6e643859b2892cd7fce42bfcd6a1118b0ee05e84016",
+  "controller_sha256": "419f6df8e4e9b8092f6fa987f3878834533f99f5056efb905876000ddaf557d1",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "GPU_used": false
+}

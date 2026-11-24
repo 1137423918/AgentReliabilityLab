@@ -1,0 +1,65 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "e2c068e03e9191788954fe6f318cd60e51540d1b4bcf133f267f80aa3100fc47",
+  "phases": [
+    {
+      "name": "private-toolchain-native-assets",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 12.82,
+      "peak_owned_RSS_bytes": 93958144
+    },
+    {
+      "name": "clang-version",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.557,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "ld.lld-version",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.576,
+      "peak_owned_RSS_bytes": 11534336
+    },
+    {
+      "name": "cmake-version",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.561,
+      "peak_owned_RSS_bytes": 0
+    },
+    {
+      "name": "pcre-configure",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.786,
+      "peak_owned_RSS_bytes": 36392960
+    },
+    {
+      "name": "pcre-build",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 14.084,
+      "peak_owned_RSS_bytes": 264720384
+    },
+    {
+      "name": "pcre-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.555,
+      "peak_owned_RSS_bytes": 0
+    },
+    {
+      "name": "tokenizer-original-build-wrapper",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 41.451,
+      "peak_owned_RSS_bytes": 363732992
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 88.811
+}

@@ -1,0 +1,14 @@
+{
+  "scope": "Retain networkfailurev1 and initial all-passing keep-alive-only baselinev2. Fresh source/test input adds ordinary HTTP Connection:close alongside keep-alive, same6linefix; unchanged base8c/Go/native cache. No broad claim that every repeat fails. Original upstream proxy default used. Original RAGFlow bash build.sh --test regression baseline+same3newtests vs candidate6linefix; actual TCP httptest POST/PUT/PATCH+mixedapplicationerrors+bodylessPOST; original wrapper model-free native unit tier; candidate full internal/cli/... package. No rawgo test/build, no models/GPU, no NN. Reuse exact completedSDK/native setup and isolatedtaskcache. CPU2nice19/host32GiB/floor16/RSS8GiB/AS16GiB/job2400/phase900 max, GoGOMEMLIMIT2GiB,p2,GOMAXPROCS2,immutableinputcheck.",
+  "source_sha256": {
+    "stage_validation_sources.py": "0a991bfba65e7d1fc00695524de368001f4c97a818d359e3c2c856b35caaf556",
+    "test.patch": "689ca3f768870466095799321df806606c34eade5a12c077262e90f6790bb74e",
+    "fix.patch": "be597c30cd43b1aa6bba9862e02bdc6fcdc447ad1f958a7d5fca1a0fe2b2bce5",
+    "patch-inputs.json": "8b9ba0793c79ebb7657d4b94111867d891ba6b82e460ce9791dbd5c66d66584a"
+  },
+  "input_bundle_sha256": "1af95bd67008e08d4c1cadc20eab37d62d4abded665815126f4a1f9856e7263d",
+  "controller_sha256": "baaa52ee6d7e3699d565d0d824238a65a33c333a65b01189773205d13789e14b",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "GPU_used": false
+}

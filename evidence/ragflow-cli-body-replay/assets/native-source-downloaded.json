@@ -1,0 +1,51 @@
+{
+  "assets": [
+    {
+      "repo": "infiniflow/ragflow-build",
+      "tag": "onnxruntime-v1.29.0-patch2",
+      "filename": "onnxruntime-v1.29.0-linux-x86_64.zip",
+      "url": "https://github.com/infiniflow/ragflow-build/releases/download/onnxruntime-v1.29.0-patch2/onnxruntime-v1.29.0-linux-x86_64.zip",
+      "sha256": "1d41cc9c2a174200e90fd622e8b0f95e6531426bc9c23cfb5a4b92001c274da1",
+      "bytes": 11118144,
+      "release_id": 414504631,
+      "asset_id": 646522543
+    },
+    {
+      "repo": "kognitos/pdfium-static",
+      "tag": "chromium/7809",
+      "filename": "pdfium-linux-x64-static.tgz",
+      "url": "https://github.com/kognitos/pdfium-static/releases/download/chromium/7809/pdfium-linux-x64-static.tgz",
+      "sha256": "13908bb2d40a6e017c4c5a6a7baecc6efd7b1c30392c8a79e80072d2b48b18eb",
+      "bytes": 15943873,
+      "release_id": 312943649,
+      "asset_id": 403779900
+    },
+    {
+      "repo": "yfedoseev/pdf_oxide",
+      "tag": "v0.3.78",
+      "filename": "pdf_oxide-go-ffi-linux-amd64.tar.gz",
+      "url": "https://github.com/yfedoseev/pdf_oxide/releases/download/v0.3.78/pdf_oxide-go-ffi-linux-amd64.tar.gz",
+      "sha256": "7c5e8ffc5c2e38ba16d51e5c626ad8bea21e0e920f7f662b31bb9cd1a7a47a73",
+      "bytes": 23636401,
+      "release_id": 384914766,
+      "asset_id": 550953468
+    },
+    {
+      "repo": "yfedoseev/office_oxide",
+      "tag": "v0.1.17",
+      "filename": "native-linux-x86_64.tar.gz",
+      "url": "https://github.com/yfedoseev/office_oxide/releases/download/v0.1.17/native-linux-x86_64.tar.gz",
+      "sha256": "ab5da674565a61fc0d97405feab692897518fcd00569f6a2bf609adf79d30eab",
+      "bytes": 21441198,
+      "release_id": 441257810,
+      "asset_id": 734199572
+    },
+    {
+      "filename": "pcre2-10.40.tar.gz",
+      "url": "https://github.com/PCRE2Project/pcre2/releases/download/pcre2-10.40/pcre2-10.40.tar.gz",
+      "bytes": 2359622,
+      "sha256": "ded42661cab30ada2e72ebff9e725e745b4b16ce831993635136f2ef86177724"
+    }
+  ],
+  "pcre2_release_digest_unavailable": true
+}

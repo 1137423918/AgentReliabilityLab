@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "baseline-real-http-regression"
+  },
+  "protocol_sha256": "dac3f41eab5c7c4ab87e33801fc97fffd728640a552774a03755613ef9c2eca5",
+  "phases": [
+    {
+      "name": "baseline-real-http-regression",
+      "exit_code": 143,
+      "guard": null,
+      "wall_seconds": 216.556,
+      "peak_owned_RSS_bytes": 478879744
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 226.686
+}

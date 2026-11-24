@@ -1,0 +1,9 @@
+{
+  "reason": "Explicit network diagnosis: official Go proxy unreachable from server (8s probe Errno101), original-wrapper default goproxy.cn reachable200 in0.23s. End own pending dependency fetch before retry with prescribed default; no Go tests reached or defect result claimed.",
+  "own_go_children": [
+    3333405
+  ],
+  "signal": "SIGTERM",
+  "GPU_used": false,
+  "original_profile_not_overwritten": true
+}

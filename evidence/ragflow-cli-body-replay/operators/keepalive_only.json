@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "baseline did not reproduce the frozen expected defect"
+  },
+  "protocol_sha256": "2de16b04d09969b159b16e513be341b7869518880b50ae4522c4c017698a1b2b",
+  "phases": [
+    {
+      "name": "baseline-real-http-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 173.726,
+      "peak_owned_RSS_bytes": 1773555712
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 183.825
+}

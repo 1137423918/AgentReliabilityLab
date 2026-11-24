@@ -69,6 +69,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 | 上游 PR | 修复对象 |
 | --- | --- |
+| [RAGFlow #22752](https://github.com/infiniflow/ragflow/pull/22752) | 服务端关闭连接后重放CLI benchmark的JSON正文，保留迭代成功/失败与最终响应 |
 | [LightRAG #4647](https://github.com/HKUDS/LightRAG/pull/4647) | 更新评估extra的RAGAS锁定版本，固定库复扫及发布版/主线配对兼容验证 |
 | [GPT Researcher #2367](https://github.com/assafelovic/gpt-researcher/pull/2367) | 将HTTP MCP令牌转换为授权头，修复工具发现返回空列表的问题 |
 | [Browser Use #6521](https://github.com/browser-use/browser-use/pull/6521) | 让云浏览器的分页下载查询和停止后补收沿用创建该会话的密钥 |
@@ -89,6 +90,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 新增[VoltAgent MCP 连接归属修复证据](evidence/voltagent-mcp-connection-ownership/README.md)：按审查补上会话清理和连接归属保护；拒绝第二次连接时保留已连接或正在启动的传输。上一版在同一组11项生命周期测试中2项失败，修复后11项及完整MCP包26项通过，源码与两份新增测试的严格类型检查、构建通过。保留[前一轮清理记录](evidence/voltagent-mcp-cleanup/README.md)；#1562为正式待审，服务器检查不等于上游CI通过。
 
 [Agent Lightning 实际复现与修复](docs/lightning-terminal-reuse.md)：原版四个状态回归失败，候选相关53项通过；类型检查单独完成，未宣称全仓库或训练栈验证。
+
+新增[RAGFlow CLI请求体重放](docs/ragflow-cli-body-replay.md)：原版仅在`Connection: close`场景下POST/PUT/PATCH三个子例失败；修复后对照及完整CLI范围51个顶层测试通过，原构建脚本附带的原生单元层通过。初始keep-alive复现通过结果保留，避免扩大缺陷范围。已正式提交#22752，未合并；本轮仅服务器CPU，无模型或GPU调用。
 
 ## 复查材料
 

@@ -36,8 +36,9 @@
 
 ## 开源贡献任选一项
 
+- [RAGFlow #22752](https://github.com/infiniflow/ragflow/pull/22752)：修复CLI benchmark在服务端关闭连接后复用已读正文的问题；真实HTTP对照原版三个方法子例失败、候选通过，完整CLI范围51个顶层测试通过。[触发条件与证据](../docs/ragflow-cli-body-replay.md)。
 - [GPT Researcher #2367](https://github.com/assafelovic/gpt-researcher/pull/2367)：修复HTTP MCP令牌传递和授权头优先级；同组11项回归原版失败、修复通过，另有真实受鉴权MCP调用验证。
 - [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562)：修复MCP连接生命周期，保护活跃及启动中的传输；同组11项控制原版2项失败、候选全部通过。
 - [LightRAG #4647](https://github.com/HKUDS/LightRAG/pull/4647)：仅更新RAGAS锁定版本，固定库复扫，发布版和主线各完成21项离线配对测试。
 
-上述PR在北京时间2026-11-25只读核查时均为正式、开放、未合并；简历写“提交修复PR”，合并后再更新。完整经历、其他候选和各项边界见[现有项目总结](project-summary-2026-11-24.md)。
+上述PR截至各自北京时间2026-11-25的核查记录均为正式、开放、未合并；简历写“提交修复PR”，合并后再更新。完整经历、其他候选和各项边界见[现有项目总结](project-summary-2026-11-24.md)。

@@ -1,0 +1,14 @@
+{
+  "repo": "infiniflow/ragflow",
+  "base": "8c68034679bf3f5aa6ad5d14ce3899b8915db1ea",
+  "source_archive_sha256": "ac50e48a5fa2d728f4687739ecf323443fe96fa75f9c9e1af96538acbc256e1d",
+  "source_archive_bytes": 19849004,
+  "test_patch_sha256": "689ca3f768870466095799321df806606c34eade5a12c077262e90f6790bb74e",
+  "fix_patch_sha256": "be597c30cd43b1aa6bba9862e02bdc6fcdc447ad1f958a7d5fca1a0fe2b2bce5",
+  "candidate_files": {
+    "internal/cli/http_client.go": "70ec807dee63f7c9720ac38d9b6c16ff5426f2e18e25c51bf89c34e5c8f98891",
+    "internal/cli/http_client_test.go": "d8e432880469c6ec8f4dea0280916086a4e05990ca2d593cf144af424d2673a3"
+  },
+  "actual_tests_not_yet_run": true,
+  "new_condition": "Real httptest HTTP server sends Connection: close; initial persistent-connection controls passed on unchanged baseline and are retained separately."
+}
