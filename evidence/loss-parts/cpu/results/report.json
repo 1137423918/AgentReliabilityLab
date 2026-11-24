@@ -1,0 +1,53 @@
+{
+  "protocol_sha256": "6d4adc21f3026d771972246d8451cc73ba441dffcb04068dcef35b2f66d56bcd",
+  "splits": {
+    "dev_clean": {
+      "cases": 197,
+      "part_tokens": {
+        "fixed_reason_prose": 2991,
+        "answer_payload": 10970,
+        "other_reason_or_whitespace": 0,
+        "structure_or_boundary": 2259
+      },
+      "target_shapes": {
+        "tool_call": 174,
+        "response": 23
+      },
+      "target_tokens": 16220,
+      "private_file_sha256": "22af4bff587a4c02192f1edfe1d563d88eafabe469c7e8c7d5c766746d5304ab"
+    },
+    "test": {
+      "cases": 79,
+      "part_tokens": {
+        "fixed_reason_prose": 1187,
+        "answer_payload": 4787,
+        "other_reason_or_whitespace": 0,
+        "structure_or_boundary": 913
+      },
+      "target_shapes": {
+        "tool_call": 68,
+        "response": 11
+      },
+      "target_tokens": 6887,
+      "private_file_sha256": "3ac9e8d65580ac0f2f73c27328249258147503d5a3cbe42a0aba100045a16176"
+    }
+  },
+  "parts": [
+    "fixed_reason_prose",
+    "answer_payload",
+    "other_reason_or_whitespace",
+    "structure_or_boundary"
+  ],
+  "original_context_labels_and_order_unchanged": true,
+  "fixed_part_exactly_matches_original_mask_policy": true,
+  "definition_sha256": "9239da17f8e1028cb5417f4294f238d350af942d7cfe5ceeee52b25813fd46c0",
+  "definition_owner_sha256": "6eb585eee45a9b13a4c0a41bfcc907d7f0f12c5f2fd819817d94f3abc93470cc",
+  "cases_sha256": "7eb6ff5100ff9944f989b47924c5872c507032b97d3f489523ec5054d1ccbff3",
+  "prospective_teacher_forward_limits": {
+    "total_attempts": 831,
+    "variant_attempts": 277,
+    "case_attempts": 1
+  },
+  "training_generation_and_model_forwards": 0,
+  "known_data_teacher_forced_diagnostic_not_new_task_score": true
+}

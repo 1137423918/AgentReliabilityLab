@@ -86,3 +86,5 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 测试组有重叠，不能把历史数字累计成新的总成绩。完整提示、答案、token 向量、权重、服务器连接资料和凭据保留私有；公开材料提供来源、哈希、运行条件与结果边界。
 
 [依赖升级鉴权兼容性](docs/dependency-upgrade-compatibility.md)：FastMCP原始与候选锁定环境执行相同279项上游鉴权测试，两组全部通过；源码与测试未改，完整CI和发布审批未执行。
+
+[逐部分NLL诊断](docs/loss-parts.md)：276条已有输入的标签分区与9项服务器控制通过；预先固定831次教师前向，尚未执行，不计作新生成或准确率。

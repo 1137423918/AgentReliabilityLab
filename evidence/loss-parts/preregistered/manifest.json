@@ -1,0 +1,35 @@
+{
+  "files": {
+    "protocol.json": {
+      "original_sha256": "746693154ae87bef6a20890cd78f1a73d9db676fedea336c7e46f8552ec2f335",
+      "public_sha256": "746693154ae87bef6a20890cd78f1a73d9db676fedea336c7e46f8552ec2f335",
+      "bytes": 8541
+    },
+    "loss_controller.py.txt": {
+      "original_sha256": "802b0288a0fdffa5b24266fee4a5e7d4a94943d2cdfd1e04b997dc6e03ce2880",
+      "public_sha256": "339b30c9cb87ffbad3b87bed4fdc846804a089fbcd811260f6a21b81796fd468",
+      "bytes": 15610
+    },
+    "nvml_watch.py.txt": {
+      "original_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+      "public_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+      "bytes": 2049
+    },
+    "exec_gpu_child.py.txt": {
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "bytes": 443
+    },
+    "gpu_ownership.py.txt": {
+      "original_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+      "public_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+      "bytes": 695
+    },
+    "cpu_admission.py.txt": {
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "public_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "bytes": 2870
+    }
+  },
+  "teacher_model_forwards_before_publication": 0
+}

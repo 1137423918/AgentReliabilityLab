@@ -1,0 +1,78 @@
+{
+  "files": {
+    "operator/protocol.json": {
+      "bytes": 7247,
+      "sha256": "6d4adc21f3026d771972246d8451cc73ba441dffcb04068dcef35b2f66d56bcd",
+      "original_sha256": "6d4adc21f3026d771972246d8451cc73ba441dffcb04068dcef35b2f66d56bcd"
+    },
+    "operator/run_cpu.py": {
+      "bytes": 7347,
+      "sha256": "977d5879218749792cee843e31f205c06e940612da0ba233013140ef53404737",
+      "original_sha256": "9569d3d9d867307983012d00ead684b678b7606903d97a7fda105b853eff03dc"
+    },
+    "operator/exec_child.py": {
+      "bytes": 443,
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8"
+    },
+    "operator/cpu_admission.py": {
+      "bytes": 2870,
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+    },
+    "operator/run-report.json": {
+      "bytes": 57058,
+      "sha256": "eea2d1c4ab780806b6b580195cc714243a57caced80a369ff24b9c688e33fd8d",
+      "original_sha256": "eea2d1c4ab780806b6b580195cc714243a57caced80a369ff24b9c688e33fd8d"
+    },
+    "operator/runtime-identity.log": {
+      "bytes": 113,
+      "sha256": "cfb72445fb25508b2f1af739bd0907464ae41af86d94fe9417257552957efd27",
+      "original_sha256": "cfb72445fb25508b2f1af739bd0907464ae41af86d94fe9417257552957efd27"
+    },
+    "operator/CPU-controls.log": {
+      "bytes": 1461,
+      "sha256": "21e1e93a426982f4ff08d81489632054c655d3995f00f4448fdb4f187c8df023",
+      "original_sha256": "21e1e93a426982f4ff08d81489632054c655d3995f00f4448fdb4f187c8df023"
+    },
+    "operator/prepare-parts.log": {
+      "bytes": 1454,
+      "sha256": "58029f4bb3a2e3100d795c92277c15a44da66d7652b177e27f62681e330bf11a",
+      "original_sha256": "58029f4bb3a2e3100d795c92277c15a44da66d7652b177e27f62681e330bf11a"
+    },
+    "results/report.json": {
+      "bytes": 1726,
+      "sha256": "1ea69befe06648bba60bb714e1b88ce4d75b280d70344761c5c1a41ee7c2b872",
+      "original_sha256": "1ea69befe06648bba60bb714e1b88ce4d75b280d70344761c5c1a41ee7c2b872"
+    },
+    "results/part-metadata.jsonl": {
+      "bytes": 199246,
+      "sha256": "5f7976ebaab3982a8678266944e9022fa34d3231574d7bf87ce51301ba7986ce",
+      "original_sha256": "5f7976ebaab3982a8678266944e9022fa34d3231574d7bf87ce51301ba7986ce"
+    },
+    "results/experiment/definition.json": {
+      "bytes": 73455,
+      "sha256": "9239da17f8e1028cb5417f4294f238d350af942d7cfe5ceeee52b25813fd46c0",
+      "original_sha256": "9239da17f8e1028cb5417f4294f238d350af942d7cfe5ceeee52b25813fd46c0"
+    },
+    "tested-source/benchmarks/causal_loss_parts.py": {
+      "bytes": 10823,
+      "sha256": "8cfddd1c663f723fb327162849d5aeaec3c2a9ea73eaaca8da1421088e8b54ae",
+      "original_sha256": "8cfddd1c663f723fb327162849d5aeaec3c2a9ea73eaaca8da1421088e8b54ae"
+    },
+    "tested-source/benchmarks/evaluate_loss_parts.py": {
+      "bytes": 11127,
+      "sha256": "bef854e5c4c2379b97553129633500f5c1b9b85924eb9fe22e93d61587981df5",
+      "original_sha256": "bef854e5c4c2379b97553129633500f5c1b9b85924eb9fe22e93d61587981df5"
+    },
+    "tested-source/extras/lora-training/test_loss_parts.py": {
+      "bytes": 5940,
+      "sha256": "639f15bbef5c7a77724b555915d5b56702294e646aab7d7cf9af667389281cc8",
+      "original_sha256": "639f15bbef5c7a77724b555915d5b56702294e646aab7d7cf9af667389281cc8"
+    }
+  },
+  "CPU_controls": 9,
+  "prepared_cases": 276,
+  "new_model_forwards": 0,
+  "private_vectors_not_exported": true
+}
