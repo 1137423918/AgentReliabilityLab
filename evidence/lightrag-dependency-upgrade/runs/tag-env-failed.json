@@ -1,0 +1,32 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "baseline-frozen-sync"
+  },
+  "phases": [
+    {
+      "name": "baseline-clone",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.09,
+      "peak_owned_RSS_bytes": 35540992
+    },
+    {
+      "name": "baseline-checkout",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.056,
+      "peak_owned_RSS_bytes": 19767296
+    },
+    {
+      "name": "baseline-frozen-sync",
+      "exit_code": -15,
+      "guard": "phase/resource/job cap",
+      "wall_seconds": 600.285,
+      "peak_owned_RSS_bytes": 49741824
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 618.679
+}

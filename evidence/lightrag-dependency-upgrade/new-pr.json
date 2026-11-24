@@ -1,0 +1,20 @@
+{
+  "observed_utc": "2026-11-24T14:36:05.671577+00:00",
+  "repository": "HKUDS/LightRAG",
+  "number": 4647,
+  "url": "https://github.com/HKUDS/LightRAG/pull/4647",
+  "state": "open",
+  "draft": false,
+  "merged": false,
+  "base": "cf82ba9f1e516c5c9ba95a6c5adfb60489e0ce59",
+  "tested_base": "cf82ba9f1e516c5c9ba95a6c5adfb60489e0ce59",
+  "head": "3c4e90508d7e9f3404b76bb54b96350354bc1341",
+  "branch": "1137423918/deps/ragas-0.4.4",
+  "candidate_lock_sha256": "34945294b90eb0b8fae1c66cc7f17aa3b253f7570b791481062a3fdbb22c51cc",
+  "only_changed_file": "uv.lock",
+  "only_changed_package": "ragas",
+  "server_paired_test_IDs": 21,
+  "precommit_all_files_passed": true,
+  "server_model_or_GPU_calls": 0,
+  "no_issue_comment_review_request_CLA_or_merge": true
+}

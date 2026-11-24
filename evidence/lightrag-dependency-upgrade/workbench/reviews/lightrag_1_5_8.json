@@ -1,0 +1,110 @@
+{
+  "compatibility": {
+    "artifact_sha256": {
+      "baseline_junit": "4b9759020f01191064dff8360200dc213ddf2fa7d6bfeace95303546ab5a185c",
+      "candidate_junit": "449551eb8969c2e515511b340f790f1def8859021358ce51b70ce8257e14a3fe",
+      "source_file_manifests": "8eaef03b714d71e9031c847d6ba1226e2da17f53c27f90661828ebe17c0eec69"
+    },
+    "baseline": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 21
+    },
+    "candidate": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 21
+    },
+    "deployment_approved": false,
+    "same_test_identities": true,
+    "scope": "Upstream tests/evaluation -m offline,Python3.11;realRAGAS0.4.3/0.4.4imports;upstreamtests mockjudge outputs,noLMqualityclaim. NotfullCI(Python3.12native).",
+    "source_changes": [
+      "uv.lock"
+    ],
+    "source_files": 1591,
+    "status": "passed_recorded_scope",
+    "tests_executed_by_workbench": false
+  },
+  "deployment_approved": false,
+  "gate": {
+    "facts": [
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/execution/candidate_prepared",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/resolution/exit_code",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": false,
+        "pointer": "/resolution/original_requirements_changed",
+        "required": false
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/before_registry_complete",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/after_registry_complete",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/target/version_changed",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/target/remaining_advisory_match_count",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/delta/new_package_advisory_match_count",
+        "required": 0
+      }
+    ],
+    "ready_for_scoped_tests": true,
+    "status": "ready_for_scoped_tests"
+  },
+  "model_calls": 0,
+  "next_action": "Review residual advisories and broader CI before a release decision.",
+  "project": {
+    "commit": "7169588d0a27f86d30e5de48c60301a899e61b93",
+    "id": "lightrag-1.5.8",
+    "repository": "HKUDS/LightRAG",
+    "tag": "v1.5.8"
+  },
+  "remaining_affected_registry_resolutions": 17,
+  "report_id": "lightrag_1_5_8",
+  "source": {
+    "report_id": "lightrag_1_5_8",
+    "sha256": "9df0511eb10480f3f76fe45375584f6ac610b6275dfef16374473fdffdfdda65",
+    "source_url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/8834ce4d1bc9be9a81201478d36b5289044a117e/evidence/lightrag-dependency-upgrade/corpus/lightrag_1_5_8.json"
+  },
+  "status": "scoped_tests_passed",
+  "target": {
+    "after_versions": [
+      "ragas@0.4.4"
+    ],
+    "before_versions": [
+      "ragas@0.4.3"
+    ],
+    "name": "ragas"
+  }
+}

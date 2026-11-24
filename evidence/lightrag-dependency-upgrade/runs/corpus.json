@@ -1,0 +1,23 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "legacy-default-count-reject",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 0.586,
+      "peak_owned_RSS_bytes": 4325376
+    },
+    {
+      "name": "explicit-one-project-catalog",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.594,
+      "peak_owned_RSS_bytes": 3604480
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 11.356,
+  "inputs_and_sources_unchanged": true
+}

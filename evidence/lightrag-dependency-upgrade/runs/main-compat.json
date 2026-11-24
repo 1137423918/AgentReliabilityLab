@@ -1,0 +1,154 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "clone-cached-Git-objects",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.062,
+      "peak_owned_RSS_bytes": 35827712
+    },
+    {
+      "name": "fetch-exact-main-HTTP1",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.091,
+      "peak_owned_RSS_bytes": 23789568
+    },
+    {
+      "name": "checkout-exact-main",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.071,
+      "peak_owned_RSS_bytes": 5046272
+    },
+    {
+      "name": "verify-current-main",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.545,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-clone",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.046,
+      "peak_owned_RSS_bytes": 40173568
+    },
+    {
+      "name": "baseline-checkout",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.536,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-frozen-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.139,
+      "peak_owned_RSS_bytes": 116350976
+    },
+    {
+      "name": "baseline-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.249,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "baseline-evaluation-tests",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 16.655,
+      "peak_owned_RSS_bytes": 377253888
+    },
+    {
+      "name": "candidate-clone",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.071,
+      "peak_owned_RSS_bytes": 44752896
+    },
+    {
+      "name": "candidate-checkout",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.546,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "candidate-frozen-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.089,
+      "peak_owned_RSS_bytes": 95997952
+    },
+    {
+      "name": "candidate-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.525,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "candidate-evaluation-tests",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 14.119,
+      "peak_owned_RSS_bytes": 378339328
+    },
+    {
+      "name": "candidate-diff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.538,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "candidate-pre-commit-all-files",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 27.937,
+      "peak_owned_RSS_bytes": 261627904
+    },
+    {
+      "name": "candidate-exact-lock-diff",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.521,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 93.187,
+  "baseline": {
+    "tests": 21,
+    "statuses": {
+      "passed": 21,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "real_ragas_version": "0.4.3",
+    "runtime_proof_sha256": "3da0e27aaa7f1f1f1df728b4c9f7b573b70d8041073476d5d2bb66cf934947ee",
+    "blocked_network_attempts": 0
+  },
+  "candidate": {
+    "tests": 21,
+    "statuses": {
+      "passed": 21,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "real_ragas_version": "0.4.4",
+    "runtime_proof_sha256": "9ff90b5d557e7a91bb238ce6e2f42e4829ee2748c4b002cf71ec14c3e4a54df6",
+    "blocked_network_attempts": 0
+  },
+  "same_test_IDs": true,
+  "all_scoped_tests_passed": true,
+  "inputs_and_sources_unchanged": true
+}

@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "source_commit": "8834ce4d1bc9be9a81201478d36b5289044a117e",
+  "source_base": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/8834ce4d1bc9be9a81201478d36b5289044a117e/evidence/lightrag-dependency-upgrade/corpus/",
+  "reports": [
+    {
+      "id": "lightrag_1_5_8",
+      "path": "lightrag_1_5_8.json",
+      "sha256": "9df0511eb10480f3f76fe45375584f6ac610b6275dfef16374473fdffdfdda65",
+      "description": "Prepared dependency upgrade observations for HKUDS/LightRAG v1.5.8; isolated resolver, fixed-database scans and target facts. No deployment approval.",
+      "fields": [
+        "/execution",
+        "/resolution",
+        "/coverage",
+        "/target",
+        "/delta",
+        "/provenance"
+      ]
+    }
+  ]
+}

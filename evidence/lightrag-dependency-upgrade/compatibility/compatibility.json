@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "reports": {
+    "lightrag_1_5_8": {
+      "repository": "HKUDS/LightRAG",
+      "commit": "7169588d0a27f86d30e5de48c60301a899e61b93",
+      "scope": "Upstream tests/evaluation -m offline,Python3.11;realRAGAS0.4.3/0.4.4imports;upstreamtests mockjudge outputs,noLMqualityclaim. NotfullCI(Python3.12native).",
+      "baseline_junit": {
+        "path": "baseline-tests.xml",
+        "sha256": "4b9759020f01191064dff8360200dc213ddf2fa7d6bfeace95303546ab5a185c"
+      },
+      "candidate_junit": {
+        "path": "candidate-tests.xml",
+        "sha256": "449551eb8969c2e515511b340f790f1def8859021358ce51b70ce8257e14a3fe"
+      },
+      "source_file_manifests": {
+        "path": "source-file-manifests.json",
+        "sha256": "8eaef03b714d71e9031c847d6ba1226e2da17f53c27f90661828ebe17c0eec69"
+      }
+    }
+  }
+}

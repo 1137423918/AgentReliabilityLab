@@ -1,0 +1,71 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "clone-pinned-release",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 6.69,
+      "peak_owned_RSS_bytes": 28270592
+    },
+    {
+      "name": "verify-pinned-commit",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.546,
+      "peak_owned_RSS_bytes": 7929856
+    },
+    {
+      "name": "new-real-maintainer-input",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 58.915,
+      "peak_owned_RSS_bytes": 212639744
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 77.099,
+  "actual_OSV_invocations": 2,
+  "new_database": {
+    "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+    "sha256": "2f3f1b7b46ae3a3bd5c1505f913771f1836682aabaecf5d9dd4a7bb6ce771597",
+    "bytes": 38307382,
+    "headers": {
+      "Content-Length": "38307382",
+      "ETag": "\"d83227271eea644a30a07f755da18f7c\"",
+      "Last-Modified": "Tue, 24 Nov 2026 11:18:39 GMT",
+      "x-goog-generation": "1795519119043316"
+    },
+    "download_seconds": 4.382,
+    "frozen_before_first_scan": true
+  },
+  "baseline_summary": {
+    "scanned_registry_resolutions": 236,
+    "expected_registry_resolutions": 236,
+    "affected_resolutions": 18,
+    "registry_coverage_complete": true
+  },
+  "review": {
+    "selected_target": "ragas@0.4.3",
+    "review": {
+      "target_before": [
+        "ragas@0.4.3"
+      ],
+      "target_after": [
+        "ragas@0.4.4"
+      ],
+      "target_version_changed": true,
+      "target_affected_after": [],
+      "new_advisory_ids": [],
+      "new_advisory_matches": [],
+      "remaining_affected_resolutions": 17,
+      "ready_for_integration_tests": true,
+      "release_approved": false,
+      "compatibility_tests_run": false,
+      "all_dependency_findings_cleared": false
+    },
+    "reason": "Prepared candidate is eligible for compatibility tests; release approval is not granted."
+  },
+  "inputs_and_sources_unchanged": true
+}

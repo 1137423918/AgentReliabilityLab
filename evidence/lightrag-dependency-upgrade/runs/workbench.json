@@ -1,0 +1,47 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "legacy-default-count-reject-current-source",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 0.563,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "current-source-one-project-catalog",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.616,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "real-LangGraph-upgrade-review",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 13.668,
+      "peak_owned_RSS_bytes": 72089600
+    },
+    {
+      "name": "completed-review-replay",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.105,
+      "peak_owned_RSS_bytes": 61276160
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 27.396,
+  "review": {
+    "status": "scoped_tests_passed",
+    "remaining_registry_matches": 17,
+    "paired_upstream_test_IDs": 21,
+    "source_url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/8834ce4d1bc9be9a81201478d36b5289044a117e/evidence/lightrag-dependency-upgrade/corpus/lightrag_1_5_8.json",
+    "compatibility_tests_executed_by_workbench": false,
+    "deployment_approved": false
+  },
+  "inputs_and_sources_unchanged": true,
+  "replay_reused": 1,
+  "output_files_same_after_replay": 3
+}

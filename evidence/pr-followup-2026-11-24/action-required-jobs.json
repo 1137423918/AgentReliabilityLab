@@ -1,0 +1,58 @@
+[
+  {
+    "repo": "OpenHands/software-agent-sdk",
+    "number": 7032,
+    "run_id": 45172819267,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "OpenHands/software-agent-sdk",
+    "number": 7050,
+    "run_id": 45172849219,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "google/adk-python",
+    "number": 8278,
+    "run_id": 44995162168,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "microsoft/semantic-kernel",
+    "number": 14845,
+    "run_id": 44820222978,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "microsoft/semantic-kernel",
+    "number": 14853,
+    "run_id": 44929935089,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "microsoft/agent-lightning",
+    "number": 707,
+    "run_id": 45148421596,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "assafelovic/gpt-researcher",
+    "number": 2367,
+    "run_id": 45261069836,
+    "total_jobs": 0,
+    "jobs": []
+  },
+  {
+    "repo": "VoltAgent/voltagent",
+    "number": 1562,
+    "run_id": 45197915128,
+    "total_jobs": 0,
+    "jobs": []
+  }
+]

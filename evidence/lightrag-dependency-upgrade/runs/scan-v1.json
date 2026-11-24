@@ -1,0 +1,31 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "clone-pinned-release"
+  },
+  "phases": [
+    {
+      "name": "clone-pinned-release",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 0.65,
+      "peak_owned_RSS_bytes": 5767168
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 17.314,
+  "new_database": {
+    "url": "https://osv-vulnerabilities.storage.googleapis.com/PyPI/all.zip",
+    "sha256": "2f3f1b7b46ae3a3bd5c1505f913771f1836682aabaecf5d9dd4a7bb6ce771597",
+    "bytes": 38307382,
+    "headers": {
+      "Content-Length": "38307382",
+      "ETag": "\"d83227271eea644a30a07f755da18f7c\"",
+      "Last-Modified": "Tue, 24 Nov 2026 11:18:39 GMT",
+      "x-goog-generation": "1795519119043316"
+    },
+    "download_seconds": 4.382,
+    "frozen_before_first_scan": true
+  }
+}

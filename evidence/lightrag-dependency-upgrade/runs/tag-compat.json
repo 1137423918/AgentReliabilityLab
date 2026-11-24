@@ -1,0 +1,105 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "baseline-existing-source-diff-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.554,
+      "peak_owned_RSS_bytes": 7929856
+    },
+    {
+      "name": "baseline-existing-source-commit",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.518,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "baseline-frozen-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 216.783,
+      "peak_owned_RSS_bytes": 97579008
+    },
+    {
+      "name": "baseline-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.533,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "baseline-evaluation-tests",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 18.055,
+      "peak_owned_RSS_bytes": 378712064
+    },
+    {
+      "name": "candidate-clone",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.053,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "candidate-checkout",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "candidate-frozen-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.069,
+      "peak_owned_RSS_bytes": 95391744
+    },
+    {
+      "name": "candidate-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.538,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "candidate-evaluation-tests",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 12.582,
+      "peak_owned_RSS_bytes": 378720256
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 265.331,
+  "baseline": {
+    "tests": 21,
+    "statuses": {
+      "passed": 21,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "real_ragas_version": "0.4.3",
+    "runtime_proof_sha256": "3ccea5d745e4d96d2b261ef28252429dcd79e0ec1e03d1ab57e2ec70350dc603",
+    "blocked_network_attempts": 0
+  },
+  "candidate": {
+    "tests": 21,
+    "statuses": {
+      "passed": 21,
+      "failure": 0,
+      "error": 0,
+      "skipped": 0
+    },
+    "real_ragas_version": "0.4.4",
+    "runtime_proof_sha256": "cce7fe0de079b89df97915e7d02a4939fd1168574d21a19883ac30f9c45dc3ec",
+    "blocked_network_attempts": 0
+  },
+  "same_test_IDs": true,
+  "all_scoped_tests_passed": true,
+  "inputs_and_sources_unchanged": true
+}

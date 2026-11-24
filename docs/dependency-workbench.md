@@ -33,14 +33,18 @@ python -m agent_lab.review_workbench \
 
 本轮工作台读取与MCP服务相同的`EvidenceCatalog`后端，没有发起新的MCP网络会话。既有MCP／LlamaIndex FunctionAgent及真实模型结果见[依赖升级Agent](dependency-upgrade.md)；这里新增的是可恢复的确定性证据工作流，不是新的模型自主维护成绩。
 
-## 两个实际输入
+## 三个实际输入
 
 | 历史项目快照 | 工作台结论 | 依据 |
 | --- | --- | --- |
 | Browser Use 1.0.8 | `blocked` | Pillow精确声明未改变，目标版本未升级；保留2个受影响registry resolutions |
 | FastMCP 2.12.4 | `scoped_tests_passed` | Authlib1.6.1→1.9.10的扫描/解析条件满足；对应源码与锁文件的同一批279项鉴权测试原始/候选均通过，仍有16个受影响registry resolutions |
 
-工作台核对原始／候选JUnit的实际测试ID、失败/错误/跳过状态，验证源码清单只有uv.lock变化，并把两个锁文件哈希与扫描报告绑定。旧279项测试结果来自[之前实际运行的兼容性实验](dependency-upgrade-compatibility.md)，本轮没有重新执行这些上游测试或漏洞扫描。样例反映固定历史版本，不是项目当前部署情况或发布审批。
+| LightRAG 1.5.8 | `scoped_tests_passed` | 可选evaluation的RAGAS0.4.3→0.4.4；新冻结库扫描，发布版同一组21项测试均通过，仍有17个受影响registry resolutions |
+
+第三个案例另对实际PR基线主线重新配对验证21项，并通过全文件pre-commit；[新案例与正式PR](lightrag-dependency-upgrade.md)记录范围。新案例用11月24日数据库，旧两例保留原11月23日快照，不跨库比较总数。目录构造器显式 `--expected-count 1` 支持单项输入，原默认2保留；工作台读取目录原已支持1–32份。
+
+工作台核对原始／候选JUnit的实际测试ID、失败/错误/跳过状态，验证源码清单只有uv.lock变化，并把两个锁文件哈希与扫描报告绑定。旧279项测试结果来自[之前实际运行的兼容性实验](dependency-upgrade-compatibility.md)，工作台没有重跑这些历史上游测试或历史扫描；新增LightRAG扫描与测试单列记录。样例反映固定历史版本，不是项目当前部署情况或发布审批。
 
 ## 本轮验证
 

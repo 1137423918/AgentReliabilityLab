@@ -1,0 +1,173 @@
+{
+  "files": {
+    "summary.json": {
+      "sha256": "1dece9aaf76cfd930bd4d9023553420f4f637f2c2d3d787f5e4f3c6bc686df6e",
+      "bytes": 1273
+    },
+    "private-archive-receipt.json": {
+      "sha256": "91582df66dbf6eda77120cccff2961a1787862347fb2ade59f28f372e7473cd3",
+      "bytes": 364
+    },
+    "new-pr.json": {
+      "sha256": "69a6e4357fa33f918dde40fd30911c73dc7ff80395ed7bb2a75e2139604b47a6",
+      "bytes": 757
+    },
+    "README.md": {
+      "sha256": "7c75e7d543614e76977a33fe539de40d000473e51e64d9e54f96e351e8ffe1e9",
+      "bytes": 1685
+    },
+    "ragas-wheel-source-provenance.json": {
+      "sha256": "1363ea025a02b6d5669e642607f18bc6c2482c73806947aaa8766e52667c9d1e",
+      "bytes": 57950
+    },
+    "submitted-lock-diff.json": {
+      "sha256": "f68348963921d5c129a96070652ae9843b8a14bb9d9fe3c95501e25da4dc2b36",
+      "bytes": 2483
+    },
+    "proposed-pr.md": {
+      "sha256": "65430387bbab521f8c1d3d7235d963e8c6f13f27178f67c1d3775d7945299569",
+      "bytes": 1426
+    },
+    "tested-local-source-sha256.json": {
+      "sha256": "6bf887f421793209e951b748f4185c06edf6e305cc9c55a944fa193b50cff3ef",
+      "bytes": 218
+    },
+    "candidate-lock-review.json": {
+      "sha256": "f64218e6c89503b9ddb3f00db0c733d65fa414e93582695087e784f0c925a676",
+      "bytes": 381
+    },
+    "new-pr-action-jobs.json": {
+      "sha256": "9b17bca882aa86c7494471f5eaf270d719ef8d652b208ed4c2d44d579606d1dc",
+      "bytes": 1427
+    },
+    "input-provenance.json": {
+      "sha256": "239066c076ca982f21996da7eee720c3a94ae527a12e35e4d25be895cd678249",
+      "bytes": 1572
+    },
+    "compatibility/baseline-tests.xml": {
+      "sha256": "4b9759020f01191064dff8360200dc213ddf2fa7d6bfeace95303546ab5a185c",
+      "bytes": 3583
+    },
+    "compatibility/baseline-runtime-proof.json": {
+      "sha256": "6bb2bf79f74ea4713c23a6cb9eb3cb473eb1b7330feb594bd1df16923fe7b5da",
+      "bytes": 3384
+    },
+    "compatibility/compatibility.json": {
+      "sha256": "de9d4b11eea04f8438c7ad476fca03b212efa41d1529e5a5205e1ab9caad1651",
+      "bytes": 830
+    },
+    "compatibility/candidate-runtime-proof.json": {
+      "sha256": "4f0486cbd2c11ceec32f7f07ac65a3072e82bd2917bee09236dae97c97ad1a5b",
+      "bytes": 3385
+    },
+    "compatibility/source-file-manifests.json": {
+      "sha256": "8eaef03b714d71e9031c847d6ba1226e2da17f53c27f90661828ebe17c0eec69",
+      "bytes": 378066
+    },
+    "compatibility/candidate-tests.xml": {
+      "sha256": "449551eb8969c2e515511b340f790f1def8859021358ce51b70ce8257e14a3fe",
+      "bytes": 3583
+    },
+    "main-validation/baseline-tests.xml": {
+      "sha256": "719078c0a73d1a2e4555eaa14b6335b565dc6296c59f921300a38a2a30442e34",
+      "bytes": 3583
+    },
+    "main-validation/pre-commit-all-files.log": {
+      "sha256": "cbf13a0922c9d3ed8d2e4b4e77997980d168812d88cd70c7dd801daf265d7b76",
+      "bytes": 993
+    },
+    "main-validation/baseline-runtime-proof.json": {
+      "sha256": "51b0243d6c4c8a52b9c00c7bcf6552459d2e720612821e703ebedeecbaf7d5f8",
+      "bytes": 3286
+    },
+    "main-validation/candidate-runtime-proof.json": {
+      "sha256": "280d63f12434feebc11e0532c4f12ef26d58c76c79c59b590c41ebbaf5127870",
+      "bytes": 3287
+    },
+    "main-validation/source-file-manifests.json": {
+      "sha256": "2f3dbcc7013fe415e0799c5a98093bb3c634df5afbdd2a313220f400e5d77d06",
+      "bytes": 378578
+    },
+    "main-validation/candidate-tests.xml": {
+      "sha256": "78ebb3cac4691ee4c5977a62e4d9c3e60a8b62b60d29067808838b3b9d553e20",
+      "bytes": 3583
+    },
+    "candidate/LICENSE": {
+      "sha256": "0c16924564059e493c86854574660a47ed1dcc2a476ba7b5f949d3f2f73a1984",
+      "bytes": 1070
+    },
+    "candidate/uv.lock": {
+      "sha256": "34945294b90eb0b8fae1c66cc7f17aa3b253f7570b791481062a3fdbb22c51cc",
+      "bytes": 1122942
+    },
+    "candidate/pyproject.toml": {
+      "sha256": "dfaf088d1c1e7da5164977bdc334bf9ecd26522bfd34d9dbe4bcf6e5d01148d0",
+      "bytes": 11478
+    },
+    "corpus/catalog.json": {
+      "sha256": "fee7cda0ba69718238ced240ac090e86c0584319f1fb911195940888666ad598",
+      "bytes": 761
+    },
+    "corpus/lightrag_1_5_8.json": {
+      "sha256": "9df0511eb10480f3f76fe45375584f6ac610b6275dfef16374473fdffdfdda65",
+      "bytes": 3335
+    },
+    "scans/baseline-projection.json": {
+      "sha256": "1362bac27029ce281fe8f4c5907e32e45e4214807d1684fec7d57225e14156d4",
+      "bytes": 1225781
+    },
+    "scans/candidate-projection.json": {
+      "sha256": "ce78e4615d174871a9fe665684ada4c6f9a922b2d543f79ffc3e75f2d8f61620",
+      "bytes": 1220191
+    },
+    "workbench/summary.json": {
+      "sha256": "37dc8fef6079cd92fe0e1fecedfe9b873244a5641c527c34b3e7e1b2d14b905f",
+      "bytes": 376
+    },
+    "workbench/summary.md": {
+      "sha256": "0b5a91bca542c4b4a2c3edd03535c8077daf80debec6f0cb911d9b2717470bd6",
+      "bytes": 176
+    },
+    "workbench/reviews/lightrag_1_5_8.json": {
+      "sha256": "de3a1b3fd0c718b0ce3a84fb3503b3f0527cb524a055c43522fb1419fcb98607",
+      "bytes": 3114
+    },
+    "workbench/reviews/lightrag_1_5_8.md": {
+      "sha256": "e6118397981e5689814e2bbc52554c50295603271abede94c79dc00f8f7a7d5d",
+      "bytes": 1781
+    },
+    "runs/tag-env-failed.json": {
+      "sha256": "a2eaf75c7ceb9efb88a0ba1df2d5dc08d3215fbf2faacf1eba8d0112cebbee50",
+      "bytes": 674
+    },
+    "runs/corpus.json": {
+      "sha256": "706921772049ad32b39b76a1af6308dc75671dcf0ed5abc9e07f939f51720b59",
+      "bytes": 481
+    },
+    "runs/scan-v2.json": {
+      "sha256": "2b06e04ab2acab4e5a8d16530d8e4447c522419549fced65c8923b13b36fdf1e",
+      "bytes": 1981
+    },
+    "runs/main-source-failed.json": {
+      "sha256": "39412f81c0843297aeb7b35da9e336652ea555d1b4e2ac0f8c4ff65cc6573776",
+      "bytes": 334
+    },
+    "runs/main-compat.json": {
+      "sha256": "0a8a9388502958971463bb76b5147f122422f1a8d881d17eafea3024b56da945",
+      "bytes": 3594
+    },
+    "runs/workbench.json": {
+      "sha256": "eab4d577217d8cf4f68a3cec7f0b66623265a1aa4f83afaf8debb2d22214605d",
+      "bytes": 1310
+    },
+    "runs/scan-v1.json": {
+      "sha256": "219c56fe8af3cc48aeb523bbf62cbde2c8bdc6e9a1de422f238cf8d8d73edb42",
+      "bytes": 825
+    },
+    "runs/tag-compat.json": {
+      "sha256": "51ba35dcfc8fe9c525eb73df3179529e0b29b71e6af3ffbcdc5ce397ffb5dac9",
+      "bytes": 2478
+    }
+  },
+  "privacy": "Allowlisted artifacts only; no credentials, private capability handles, gold or full advisory narrative."
+}

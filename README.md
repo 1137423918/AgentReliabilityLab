@@ -30,6 +30,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 
+新增[LightRAG实际维护案例](docs/lightrag-dependency-upgrade.md)：LangGraph/SQLite工作台已接入第三个项目，完成RAGAS评估依赖升级、固定库复扫及发布版/主线各自配对的21项离线测试；[正式PR #4647](https://github.com/HKUDS/LightRAG/pull/4647)开放待审，上游CI等待批准。新流程模型调用和GPU使用均为零。
+
 **MCP 报告证据服务**：读取固定来源 JSON，返回带来源哈希的回执，核对提交事实的值、类型和读取谱系。每次审计有独立句柄、TTL 和共享操作额度；事实核对不保证自由文本结论正确。
 
 提供[独立启动包](artifacts/agentlab-evidence-0.1.0-starter.zip)和[wheel](artifacts/agentlab_evidence-0.1.0-py3-none-any.whl)，无需模型权重。已有 Python3.11 / uv 的服务器可从源码启动本机服务：
@@ -61,6 +63,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 | 上游 PR | 修复对象 |
 | --- | --- |
+| [LightRAG #4647](https://github.com/HKUDS/LightRAG/pull/4647) | 更新评估extra的RAGAS锁定版本，固定库复扫及发布版/主线配对兼容验证 |
 | [GPT Researcher #2367](https://github.com/assafelovic/gpt-researcher/pull/2367) | 将HTTP MCP令牌转换为授权头，修复工具发现返回空列表的问题 |
 | [Browser Use #6521](https://github.com/browser-use/browser-use/pull/6521) | 让云浏览器的分页下载查询和停止后补收沿用创建该会话的密钥 |
 | [VoltAgent #1562](https://github.com/VoltAgent/voltagent/pull/1562) | 清理已结束的 MCP 会话注册，并保护已有连接与正在启动的传输 |

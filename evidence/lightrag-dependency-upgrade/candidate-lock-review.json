@@ -1,0 +1,10 @@
+{
+  "same_package_count": 237,
+  "only_changed_package_block": [
+    "ragas"
+  ],
+  "baseline_lock_sha256": "e7c8782db14c35ffc270fb6802fa21972d520fc5b79edcf81fd1eb1159a59e0d",
+  "candidate_lock_sha256": "34945294b90eb0b8fae1c66cc7f17aa3b253f7570b791481062a3fdbb22c51cc",
+  "declarations_unchanged_verified_upstream_main_vs_release": true,
+  "no_local_tests_or_model_calls": true
+}

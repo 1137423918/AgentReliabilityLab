@@ -1,0 +1,48 @@
+{
+  "observed_utc": "2026-11-24T14:39:39.392414+00:00",
+  "PR": "https://github.com/HKUDS/LightRAG/pull/4647",
+  "head": "3c4e90508d7e9f3404b76bb54b96350354bc1341",
+  "runs": [
+    {
+      "run_id": 45415892119,
+      "workflow": "Backend Offline Unit Tests",
+      "conclusion": "action_required",
+      "url": "https://github.com/HKUDS/LightRAG/actions/runs/45415892119",
+      "total_jobs": 0,
+      "jobs": []
+    },
+    {
+      "run_id": 45415891943,
+      "workflow": "Setup Wizard Tests",
+      "conclusion": "action_required",
+      "url": "https://github.com/HKUDS/LightRAG/actions/runs/45415891943",
+      "total_jobs": 0,
+      "jobs": []
+    },
+    {
+      "run_id": 45415892113,
+      "workflow": "Linting and Formatting",
+      "conclusion": "action_required",
+      "url": "https://github.com/HKUDS/LightRAG/actions/runs/45415892113",
+      "total_jobs": 0,
+      "jobs": []
+    },
+    {
+      "run_id": 45415891852,
+      "workflow": "Windows Storage Tests",
+      "conclusion": "action_required",
+      "url": "https://github.com/HKUDS/LightRAG/actions/runs/45415891852",
+      "total_jobs": 0,
+      "jobs": []
+    },
+    {
+      "run_id": 45415891804,
+      "workflow": "Evaluation Tests",
+      "conclusion": "action_required",
+      "url": "https://github.com/HKUDS/LightRAG/actions/runs/45415891804",
+      "total_jobs": 0,
+      "jobs": []
+    }
+  ],
+  "all_native_action_required_and_zero_jobs": true
+}

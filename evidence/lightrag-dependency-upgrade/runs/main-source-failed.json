@@ -1,0 +1,18 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "clone-current-main"
+  },
+  "phases": [
+    {
+      "name": "clone-current-main",
+      "exit_code": 128,
+      "guard": null,
+      "wall_seconds": 90.97,
+      "peak_owned_RSS_bytes": 22347776
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 102.679
+}

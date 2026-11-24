@@ -1,0 +1,18 @@
+{
+  "base": "cf82ba9f1e516c5c9ba95a6c5adfb60489e0ce59",
+  "head": "3c4e90508d7e9f3404b76bb54b96350354bc1341",
+  "files": [
+    {
+      "sha": "ffc3c1c1cab9390a0840ccc88d1608b9caba7e71",
+      "filename": "uv.lock",
+      "status": "modified",
+      "additions": 5,
+      "deletions": 3,
+      "changes": 8,
+      "blob_url": "https://github.com/1137423918/LightRAG/blob/3c4e90508d7e9f3404b76bb54b96350354bc1341/uv.lock",
+      "raw_url": "https://github.com/1137423918/LightRAG/raw/3c4e90508d7e9f3404b76bb54b96350354bc1341/uv.lock",
+      "contents_url": "https://api.github.com/repos/1137423918/LightRAG/contents/uv.lock?ref=3c4e90508d7e9f3404b76bb54b96350354bc1341",
+      "patch": "@@ -4544,7 +4544,7 @@ wheels = [\n \n [[package]]\n name = \"ragas\"\n-version = \"0.4.3\"\n+version = \"0.4.4\"\n source = { registry = \"https://pypi.org/simple\" }\n dependencies = [\n     { name = \"appdirs\" },\n@@ -4561,15 +4561,17 @@ dependencies = [\n     { name = \"openai\" },\n     { name = \"pillow\" },\n     { name = \"pydantic\" },\n+    { name = \"requests\" },\n     { name = \"rich\" },\n     { name = \"scikit-network\" },\n+    { name = \"tenacity\" },\n     { name = \"tiktoken\" },\n     { name = \"tqdm\" },\n     { name = \"typer\" },\n ]\n-sdist = { url = \"https://files.pythonhosted.org/packages/d2/bc/3234517692ac0ffae1ec2ec940992e4057844c49ee6c51c07ce385bb98f1/ragas-0.4.3.tar.gz\", hash = \"sha256:1eb1f61dbc8613ad014fdb8d630cbe9a1caec1ea01664a106993cb756128c001\", size = 44029626, upload-time = \"2026-01-13T17:48:01.043Z\" }\n+sdist = { url = \"https://files.pythonhosted.org/packages/ec/26/493ce45d18df20077604e34ed1f347ca738e55ba38daa5095c625deb9c26/ragas-0.4.4.tar.gz\", hash = \"sha256:0f74ce029dcabd39139a95d362bfc8265b3cf59347af6ba3914ba6ac195be256\", size = 44061697, upload-time = \"2026-11-14T03:08:45.536Z\" }\n wheels = [\n-    { url = \"https://files.pythonhosted.org/packages/4d/e0/1fecd22c93d3ed66453cbbdefd05528331af4d33b2b76a370d751231912c/ragas-0.4.3-py3-none-any.whl\", hash = \"sha256:ef1d75f674c294e9a6e7d8e9ad261b6bf4697dad1c9cbd1a756ba7a6b4849a38\", size = 466452, upload-time = \"2026-01-13T17:47:59.2Z\" },\n+    { url = \"https://files.pythonhosted.org/packages/64/2c/e6951bb5e7066739e5545fc195939bb580ff73825a3524b32bb1a35d9fb9/ragas-0.4.4-py3-none-any.whl\", hash = \"sha256:75c5edbcb377f85d4db89406f96a1716d4d586078f027ec495b0f529b620c6a9\", size = 470516, upload-time = \"2026-11-14T03:08:42.979Z\" },\n ]\n \n [[package]]"
+    }
+  ]
+}

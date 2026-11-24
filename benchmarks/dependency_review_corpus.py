@@ -159,7 +159,13 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--snapshot", required=True)
     parser.add_argument("--source-base", required=True)
+    parser.add_argument(
+        "--expected-count", type=int, default=2,
+        help="Predeclared snapshot count (default: 2)",
+    )
     args = parser.parse_args()
+    if not 1 <= args.expected_count <= 32:
+        parser.error("Expected count must be between 1 and 32")
     args.output.mkdir(mode=0o700)
     catalog, cases = [], []
     for path in sorted(args.reviews.glob("*-review.json")):
@@ -190,8 +196,8 @@ def main():
             }
         )
         cases.append(case)
-    if len(catalog) != 2:
-        raise ValueError("Expected exactly the two predeclared project snapshots")
+    if len(catalog) != args.expected_count:
+        raise ValueError("Prepared reports differ from the predeclared snapshot count")
     (args.output / "catalog.json").write_text(
         json.dumps(
             {

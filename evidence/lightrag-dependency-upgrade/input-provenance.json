@@ -1,0 +1,37 @@
+{
+  "repository": "HKUDS/LightRAG",
+  "tag": "v1.5.8",
+  "commit": "7169588d0a27f86d30e5de48c60301a899e61b93",
+  "stars_observed": 40844,
+  "owner_name": "Data Intelligence Lab@HKU",
+  "team_size_not_asserted": true,
+  "selected_before_scanner_outcomes": true,
+  "files": {
+    "AGENTS.md": {
+      "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/AGENTS.md",
+      "sha256": "5ae5b4dc7e4438e311792bce97ccd23d9a6741e0b2b943b56dfd4354a6a4ea97",
+      "bytes": 44203
+    },
+    "LICENSE": {
+      "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/LICENSE",
+      "sha256": "0c16924564059e493c86854574660a47ed1dcc2a476ba7b5f949d3f2f73a1984",
+      "bytes": 1070
+    },
+    "pyproject.toml": {
+      "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/pyproject.toml",
+      "sha256": "dfaf088d1c1e7da5164977bdc334bf9ecd26522bfd34d9dbe4bcf6e5d01148d0",
+      "bytes": 11478
+    },
+    "uv.lock": {
+      "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/uv.lock",
+      "sha256": "e7c8782db14c35ffc270fb6802fa21972d520fc5b79edcf81fd1eb1159a59e0d",
+      "bytes": 1122886
+    },
+    "README.md": {
+      "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/README.md",
+      "sha256": "3aef2bb31f97fe81035f4815543a83561bdef0bfd3c409c3822beacb4dcc6c8a",
+      "bytes": 60364
+    }
+  },
+  "nanobot_latest_release_no_committed_uv_lock": true
+}

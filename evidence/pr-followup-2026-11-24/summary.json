@@ -1,0 +1,597 @@
+{
+  "observed_utc": "2026-11-24T13:34:07.412968+00:00",
+  "pull_requests": [
+    {
+      "repo": "OpenHands/software-agent-sdk",
+      "number": 7032,
+      "state": "OPEN",
+      "draft": false,
+      "head": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
+      "base": "722e5d403cf75d4e032b79296cfaf178f8678a93",
+      "branch": "1137423918/fix/preserve-failed-undo",
+      "head_repo": "1137423918/software-agent-sdk",
+      "mergeable": "UNKNOWN",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "FAILURE",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137125163901,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44995374665/job/137125163901"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137644918857,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45160655867/job/137644918857"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137646609244,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161141852/job/137646609244"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137648599831,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161741237/job/137648599831"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137686403738,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45172819950/job/137686403738"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136276514789,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44732767094/job/136276514789"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136496007523,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44796125433/job/136496007523"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136496021931,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44796130497/job/136496021931"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136276465880,
+          "name": "check-pr-artifacts",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44732767032/job/136276465880"
+        }
+      ]
+    },
+    {
+      "repo": "OpenHands/software-agent-sdk",
+      "number": 7050,
+      "state": "OPEN",
+      "draft": false,
+      "head": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69",
+      "base": "885242b563b1d2695d6c7b3d4bfe642f1c8838a3",
+      "branch": "1137423918/fix/apply-patch-same-path",
+      "head_repo": "1137423918/software-agent-sdk",
+      "mergeable": "UNKNOWN",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "FAILURE",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137637927413,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45158621483/job/137637927413"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137644999386,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45160679984/job/137644999386"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137646897150,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161230912/job/137646897150"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137648710768,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161773799/job/137648710768"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137686505544,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45172849721/job/137686505544"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136813908830,
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419059/job/136813908830"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136813909014,
+          "name": "check-pr-artifacts",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419129/job/136813909014"
+        }
+      ]
+    },
+    {
+      "repo": "google/adk-python",
+      "number": 8278,
+      "state": "OPEN",
+      "draft": false,
+      "head": "90815ad147fc652aa0cfeca7b1ec214903ae3089",
+      "base": "2b90353cd2f1ee0a8a52262a7843333b6f7d2c8d",
+      "branch": "1137423918/fix/concurrent-artifact-delete",
+      "head_repo": "1137423918/adk-python",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137125866297,
+          "name": "agent-triage-pull-request",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995610823/job/137125866297"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124498634,
+          "name": "check-changes",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124498634"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124533194,
+          "name": "zizmor-config",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533194"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124533607,
+          "name": "zizmor-scan",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533607"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124533195,
+          "name": "zizmor-upload",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533195"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124533729,
+          "name": "zizmor-output",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533729"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137124495744,
+          "name": "cla/google",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://cla.developers.google.com/about"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137650665900,
+          "name": "header-check",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/googleapis/repo-automation-bots"
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/semantic-kernel",
+      "number": 14845,
+      "state": "OPEN",
+      "draft": false,
+      "head": "891744aad21d1778c842426f49d0c84da46a9a2d",
+      "base": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+      "branch": "fix/cancellation-callback-deadlock",
+      "head_repo": "1137423918/semantic-kernel",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136578892728,
+          "name": "add_label",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/microsoft/semantic-kernel/actions/runs/44820223005/job/136578892728"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137647004446,
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service"
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/semantic-kernel",
+      "number": 14853,
+      "state": "OPEN",
+      "draft": false,
+      "head": "9eadf24486464a146f3168035769cc071a8182bf",
+      "base": "aa46eddff989c13fba70c15e0ae8715b75f3fe8d",
+      "branch": "1137423918/fix/cancelled-send-handler-error",
+      "head_repo": "1137423918/semantic-kernel",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 136924123544,
+          "name": "add_label",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/microsoft/semantic-kernel/actions/runs/44929935031/job/136924123544"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137647098199,
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service"
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/agent-lightning",
+      "number": 707,
+      "state": "OPEN",
+      "draft": false,
+      "head": "5d3342c07d849d4ce9c836e14d62d1ae8d91d9c9",
+      "base": "2070bad5113e52f1aa2e5bdba822d4b24b197c05",
+      "branch": "fix/terminal-rollout-id-reuse",
+      "head_repo": "1137423918/agent-lightning",
+      "mergeable": "UNKNOWN",
+      "reviewDecision": null,
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137647371657,
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service"
+        }
+      ]
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "number": 2367,
+      "state": "OPEN",
+      "draft": false,
+      "head": "973514b3737a0befd4b27f54685db485793ffa74",
+      "base": "9d39a2f86d55e264f69dfeff2365f27fad3c1144",
+      "branch": "fix/mcp-http-connection-token",
+      "head_repo": "1137423918/gpt-researcher",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": "REVIEW_REQUIRED",
+      "unresolved_threads": 0,
+      "total_threads": 0,
+      "threads_more": false,
+      "checks_state": null,
+      "checks": []
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "number": 6521,
+      "state": "OPEN",
+      "draft": false,
+      "head": "a4473544a95100b2b750cdf28e0b7f121be9c46e",
+      "base": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+      "branch": "1137423918/fix/cloud-download-model-key",
+      "head_repo": "1137423918/browser-use",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": null,
+      "unresolved_threads": 0,
+      "total_threads": 1,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399988,
+          "name": "smoke (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137913399988"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399648,
+          "name": "syntax-errors",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399648"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399387,
+          "name": "pip-build",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913399387"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400377,
+          "name": "unit (ubuntu-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400377"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400423,
+          "name": "smoke (linux/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137913400423"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400588,
+          "name": "unit (macos-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400588"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400644,
+          "name": "unit (windows-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400644"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913401213,
+          "name": "unit (ubuntu-latest, py3.12)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913401213"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400544,
+          "name": "unit (ubuntu-latest, py3.13)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400544"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913400474,
+          "name": "unit (ubuntu-latest, py3.14)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400474"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137914485750,
+          "name": "build_publish_image",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137914485750"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399285,
+          "name": "code-style",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399285"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913533927,
+          "name": "pip-install-on-ubuntu-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533927"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399869,
+          "name": "chrome (ubuntu)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913399869"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913533865,
+          "name": "pip-install-on-ubuntu-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533865"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913533924,
+          "name": "pip-install-on-macos-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533924"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913534027,
+          "name": "pip-install-on-macos-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534027"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913534016,
+          "name": "pip-install-on-windows-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534016"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913534049,
+          "name": "pip-install-on-windows-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534049"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913399726,
+          "name": "type-checker",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399726"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913370014,
+          "name": "Mintlify Preview (fork)",
+          "status": "COMPLETED",
+          "conclusion": "NEUTRAL",
+          "detailsUrl": "https://github.com/browser-use/browser-use/pull/6521"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913367990,
+          "name": "GitGuardian Security Checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://dashboard.gitguardian.com"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137913449821,
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://www.cubic.dev/pr/browser-use/browser-use/pull/6521"
+        }
+      ]
+    },
+    {
+      "repo": "VoltAgent/voltagent",
+      "number": 1562,
+      "state": "OPEN",
+      "draft": false,
+      "head": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+      "base": "e9fc599f6059afcd88b34f2bfc50d0d1d6a0877c",
+      "branch": "fix/mcp-disconnected-notifications",
+      "head_repo": "1137423918/voltagent",
+      "mergeable": "MERGEABLE",
+      "reviewDecision": null,
+      "unresolved_threads": 0,
+      "total_threads": 2,
+      "threads_more": false,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "StatusContext",
+          "context": "CodeRabbit",
+          "state": "SUCCESS",
+          "targetUrl": null,
+          "description": "Review completed"
+        },
+        {
+          "__typename": "CheckRun",
+          "databaseId": 137773295291,
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "detailsUrl": "https://www.cubic.dev/pr/VoltAgent/voltagent/pull/1562"
+        }
+      ]
+    }
+  ]
+}

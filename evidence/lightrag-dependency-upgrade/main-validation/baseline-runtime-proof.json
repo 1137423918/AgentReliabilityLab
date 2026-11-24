@@ -1,0 +1,41 @@
+{
+  "raw_sha256": "3da0e27aaa7f1f1f1df728b4c9f7b573b70d8041073476d5d2bb66cf934947ee",
+  "proof": {
+    "ragas_version": "0.4.3",
+    "ragas_file": "<isolated-root>/baseline/.venv/lib/python3.11/site-packages/ragas/__init__.py",
+    "RAGAS_AVAILABLE": true,
+    "ragas_module_not_stub": true,
+    "collected_nodeids": [
+      "tests/evaluation/test_eval_rag_quality.py::test_all_nan_metrics_is_a_failed_case_not_a_zero_score",
+      "tests/evaluation/test_eval_rag_quality.py::test_benchmark_stats_all_failed_still_has_the_success_path_keys",
+      "tests/evaluation/test_eval_rag_quality.py::test_benchmark_stats_do_not_average_failed_cases_into_the_ragas_score",
+      "tests/evaluation/test_eval_rag_quality.py::test_evaluator_reports_underlying_import_error",
+      "tests/evaluation/test_eval_rag_quality.py::test_load_test_dataset_reads_utf8_with_ascii_default",
+      "tests/evaluation/test_eval_rag_quality.py::test_partially_nan_metrics_are_averaged_over_the_scored_ones",
+      "tests/evaluation/test_eval_rag_quality.py::test_ragas_stack_imports_when_installed",
+      "tests/evaluation/test_eval_rag_quality.py::test_run_completes_when_every_case_is_all_nan",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_a_lone_cjk_character_is_kept",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_ascii_words_keep_their_stopword_and_length_rules",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_chinese_question_ranks_the_matching_document_first",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_cjk_runs_become_overlapping_bigrams",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_expected_document_ranks_first",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_full_width_ascii_matches_its_ascii_form",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_half_width_katakana_matches_full_width",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_ideographs_outside_the_bmp_are_kept",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_iteration_mark_stays_in_its_word",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_katakana_middle_dot_splits_runs",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_recall_at_ignores_duplicate_expected_documents",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_sample_oracle_has_full_recall_at_two",
+      "tests/evaluation/test_evaluation_offline_retrieval_check.py::OfflineRetrievalCheckTests::test_zero_score_documents_do_not_count_as_hits"
+    ],
+    "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+    "versions": {
+      "ragas": "0.4.3",
+      "datasets": "5.1.0",
+      "langchain-community": "0.4.1",
+      "langchain-openai": "1.2.1",
+      "pytest": "9.2.0",
+      "numpy": "2.4.6"
+    }
+  }
+}
