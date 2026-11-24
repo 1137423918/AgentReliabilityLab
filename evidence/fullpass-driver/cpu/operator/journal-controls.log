@@ -1,0 +1,13 @@
+test_changed_identity_or_budget_rejected (__main__.JournalControls.test_changed_identity_or_budget_rejected) ... ok
+test_clean_segment_survives_process_state_reopen_and_finishes_without_refund (__main__.JournalControls.test_clean_segment_survives_process_state_reopen_and_finishes_without_refund) ... ok
+test_exclusive_run_lock_rejects_concurrent_driver (__main__.JournalControls.test_exclusive_run_lock_rejects_concurrent_driver) ... ok
+test_failed_segment_even_with_committed_checkpoint_cannot_resume (__main__.JournalControls.test_failed_segment_even_with_committed_checkpoint_cannot_resume) ... ok
+test_forward_limit_no_extra_kernel_dispatch_and_double_completion_rejected (__main__.JournalControls.test_forward_limit_no_extra_kernel_dispatch_and_double_completion_rejected) ... ok
+test_partial_update_without_durable_checkpoint_cannot_close_clean (__main__.JournalControls.test_partial_update_without_durable_checkpoint_cannot_close_clean) ... ok
+test_running_segment_and_unknown_dispatch_cannot_resume (__main__.JournalControls.test_running_segment_and_unknown_dispatch_cannot_resume) ... ok
+test_tampered_hash_or_partial_tail_rejected (__main__.JournalControls.test_tampered_hash_or_partial_tail_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.033s
+
+OK

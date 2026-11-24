@@ -1,0 +1,39 @@
+{
+  "files": {
+    "protocol.json": {
+      "original_sha256": "1a77495d5bcb5a55692b70e87d084bd3d14c2a9212cbf7b14a1f8331d3421045",
+      "public_sha256": "1a77495d5bcb5a55692b70e87d084bd3d14c2a9212cbf7b14a1f8331d3421045"
+    },
+    "continuation_controller.py": {
+      "original_sha256": "35d7314b9e9c565133103176615da7cbdbf17052c8877c019fb74986033ea200",
+      "public_sha256": "0d6bfc302121a70a7b1840be1dc14f4551ae5044b28e57b82008858fb6b65095"
+    },
+    "exec_gpu_child.py": {
+      "original_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523",
+      "public_sha256": "08d32a95356bcea30007b0837401e2dfaca0f01fccd95b4c2206110f1917d523"
+    },
+    "nvml_watch.py": {
+      "original_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a",
+      "public_sha256": "538edd267bf67a34c7b40c7bcca3b564d122ef1c837d8593980ef7a565f7122a"
+    },
+    "gpu_ownership.py": {
+      "original_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c",
+      "public_sha256": "02b8e5c0bf13d30a44f31f101eb0c18af01373acd1365b7cf4a7ebe8082ab54c"
+    },
+    "cpu_admission.py": {
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "public_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+    }
+  },
+  "allocation": {
+    "logical_forwards": 84,
+    "training_forwards": 78,
+    "canary_forwards": 6,
+    "backward_dispatches": 78,
+    "optimizer_dispatches": 4,
+    "text_generations": 0,
+    "quality_or_resource_retries": 0
+  },
+  "GPU_calls_executed_at_preregistration": 0,
+  "control_not_fullstudy": true
+}

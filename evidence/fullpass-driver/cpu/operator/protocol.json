@@ -1,0 +1,20 @@
+{
+  "declared_utc": "2026-11-24T01:23:17.364763+00:00",
+  "scope": "CPU-only8persistent training journal controls and productiondriver AST; no model forward/update/GPU. Does not substitute for actual3Bcontinuation control.",
+  "source_sha256": {
+    "benchmarks/fixed_reason_objective.py": "21a3e0fc2eaecc6e9e11c19489d0b79c2c59a5791a11fc89004c56011005efea",
+    "benchmarks/fullpass_schedule.py": "c9be0df7f422d1e38e1eacf7bf4f6e09b9a83ccdfc2e0a3631b30087feb1fee8",
+    "benchmarks/training_checkpoint.py": "760d04870592893340b8a686bc2a3238321887fb459909b145f21866790048a8",
+    "benchmarks/training_journal.py": "18301d1fbab1d655f0e9052a84a107b608b0ce222db008971369314c4de0b637",
+    "benchmarks/train_fullpass_segment.py": "c1119e807f1c911f0a311f7e58b3afbe512cb691784e42fe6f9c1d1ee574873c",
+    "extras/lora-training/test_training_journal.py": "617ef2e3a520e5ff2933398065714ac16eadaa198d99f718db97a131dae3960f",
+    "evidence/fullpass-preparation/cpu/schedules/seed-42-schedule.json": "5adbd0b1b27e065479a68ea8b267e61bfacdf90c419283667d9cdb1933f528f1",
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "input_bundle_sha256": "72f760d72989df06d8f20d4d006c6db3cf8ba5a93411933ce06a937979dbb4f9",
+  "controller_sha256": "26c2c18d85ed2e4ce690973b602c9511446ca949068c847133a77042410fa5c1",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "new_model_forwards": 0,
+  "new_optimizer_updates": 0
+}

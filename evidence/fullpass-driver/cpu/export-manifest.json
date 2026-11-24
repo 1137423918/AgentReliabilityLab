@@ -1,0 +1,57 @@
+{
+  "files": {
+    "operator/protocol.json": {
+      "bytes": 1580,
+      "sha256": "4de58a8b31ba52c118f7e47a05550f0e465d578445731d4dbeedf82a7512ae37",
+      "original_sha256": "4de58a8b31ba52c118f7e47a05550f0e465d578445731d4dbeedf82a7512ae37"
+    },
+    "operator/run-report.json": {
+      "bytes": 56820,
+      "sha256": "504749b8037a9a0c3d80f8c9049ed0e6bff7b09ca872b7262b82884cc6b73385",
+      "original_sha256": "504749b8037a9a0c3d80f8c9049ed0e6bff7b09ca872b7262b82884cc6b73385"
+    },
+    "operator/run_cpu.py": {
+      "bytes": 6453,
+      "sha256": "15af6bf0babdc70e5cb9000364a56570c28adbcc1a5b98bd09e39eba3fa85079",
+      "original_sha256": "26c2c18d85ed2e4ce690973b602c9511446ca949068c847133a77042410fa5c1"
+    },
+    "operator/cpu_admission.py": {
+      "bytes": 2870,
+      "sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+      "original_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+    },
+    "operator/exec_child.py": {
+      "bytes": 443,
+      "sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+      "original_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8"
+    },
+    "operator/journal-controls.log": {
+      "bytes": 1318,
+      "sha256": "5d7d7483f1703d3a546af1fd8730657ac94c68f7b5c3ed8f6857e3a8095c6100",
+      "original_sha256": "5d7d7483f1703d3a546af1fd8730657ac94c68f7b5c3ed8f6857e3a8095c6100"
+    },
+    "operator/driver-AST.log": {
+      "bytes": 45,
+      "sha256": "b44cada5a7dc75abf96aa9a8659075efa13ca8b91b61084991b8818305dfca1d",
+      "original_sha256": "b44cada5a7dc75abf96aa9a8659075efa13ca8b91b61084991b8818305dfca1d"
+    },
+    "tested-source/benchmarks/training_journal.py": {
+      "bytes": 7963,
+      "sha256": "18301d1fbab1d655f0e9052a84a107b608b0ce222db008971369314c4de0b637",
+      "original_sha256": "18301d1fbab1d655f0e9052a84a107b608b0ce222db008971369314c4de0b637"
+    },
+    "tested-source/benchmarks/train_fullpass_segment.py": {
+      "bytes": 15019,
+      "sha256": "c1119e807f1c911f0a311f7e58b3afbe512cb691784e42fe6f9c1d1ee574873c",
+      "original_sha256": "c1119e807f1c911f0a311f7e58b3afbe512cb691784e42fe6f9c1d1ee574873c"
+    },
+    "tested-source/extras/lora-training/test_training_journal.py": {
+      "bytes": 4921,
+      "sha256": "617ef2e3a520e5ff2933398065714ac16eadaa198d99f718db97a131dae3960f",
+      "original_sha256": "617ef2e3a520e5ff2933398065714ac16eadaa198d99f718db97a131dae3960f"
+    }
+  },
+  "journal_controls": 8,
+  "neural_calls": 0,
+  "optimizer_updates": 0
+}
