@@ -1,0 +1,32 @@
+{
+  "protocol_sha256": "6fa4c2ec8663bdb0ad976ef3cf48a5257bca30c0e362dff277fddd40c0d20e34",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "resume-fixed-asset-transfer",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 89.129,
+      "peak_owned_RSS_bytes": 27824128
+    },
+    {
+      "name": "native-no-inference-help",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.164,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "copied-generation-validation",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.163,
+      "peak_owned_RSS_bytes": 15138816
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 103.202,
+  "lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "new_neural_forwards": 0
+}

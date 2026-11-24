@@ -1,0 +1,75 @@
+{
+  "ready": true,
+  "model": "Qwen3-4B-Instruct-2507, existing fixed Q4_K_M",
+  "model_warmup_disabled": true,
+  "model_prompt_cache_enabled": true,
+  "whole_request_deadline_seconds": 180,
+  "terminal_format_policy": "one response-schema constrained final arguments request with tool_choice none within unchanged6-turn budget; exact JSON object passed through same citation validator, raw response preserved; searches/reads remain model-selected",
+  "max_generation_requests": 18,
+  "max_generation_requests_per_case": 6,
+  "max_output_tokens_per_request": 256,
+  "cases": [
+    {
+      "id": "lightrag_retrieval",
+      "status": "submitted",
+      "model_turns": 6,
+      "HTTP_requests": 6,
+      "mechanical_contract_passed": true,
+      "distinct_cited_PDFs": 1,
+      "finalization_requests": 1,
+      "final_transport": "schema_arguments_content",
+      "wall_seconds": 241.489
+    },
+    {
+      "id": "compare_indexing",
+      "status": "submitted",
+      "model_turns": 6,
+      "HTTP_requests": 6,
+      "mechanical_contract_passed": true,
+      "distinct_cited_PDFs": 2,
+      "finalization_requests": 1,
+      "final_transport": "schema_arguments_content",
+      "wall_seconds": 201.224
+    },
+    {
+      "id": "missing_paper",
+      "status": "turn_limit",
+      "model_turns": 6,
+      "HTTP_requests": 6,
+      "mechanical_contract_passed": false,
+      "distinct_cited_PDFs": 0,
+      "finalization_requests": 1,
+      "final_transport": "schema_arguments_content",
+      "wall_seconds": 175.25
+    }
+  ],
+  "remaining_cases": "all declared cases executed",
+  "active_case": null,
+  "generation_HTTP_reservations": 18,
+  "complete_model_responses": 18,
+  "reservations_without_saved_response": 0,
+  "saved_usage": {
+    "prompt_tokens": 25278,
+    "completion_tokens": 484
+  },
+  "saved_native_token_counts": {
+    "evaluated_prompt_tokens": 5215,
+    "cached_prefix_tokens": 20063,
+    "predicted_tokens": 484
+  },
+  "embedding_counts": {
+    "reserved_forwards": 4,
+    "completed_forwards": 4,
+    "text_inputs": 0,
+    "query_inputs": 4
+  },
+  "embedding_unknown": 0,
+  "embedding_ledger_sha256": "3f2e683670bdbb064e491932251808c3384225d4ac9c3fa876914cb6a32270d5",
+  "budgets_status": "CLOSED",
+  "native_server_closed": true,
+  "MCP_closed": true,
+  "ephemeral_key_removed": true,
+  "wall_seconds": 641.319,
+  "completed_run_new_process_replay_zero_generation_and_embedding": true,
+  "scope": "Known-collection engineering workflow; reference contracts not semantic entailment; no general Agent/QA accuracy estimate."
+}

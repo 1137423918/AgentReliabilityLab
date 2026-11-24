@@ -1,0 +1,20 @@
+{
+  "protocol_sha256": "4b627c3ff558d0804faf3dd39643e93017890ca85bc12a5020de88da0a8badb2",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "render-cited-pages",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.032,
+      "peak_owned_RSS_bytes": 60076032
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 11.484,
+  "rendered_pages": 4,
+  "renderer": "PyMuPDF1.26.6",
+  "private_visual_export_sha256": "9ed2874e38a0aa4a47e86fcc52c2ac35865a7f2f44b0a26f0b28af0cf7f697e1",
+  "new_neural_forwards": 0
+}

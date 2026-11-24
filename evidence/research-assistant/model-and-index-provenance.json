@@ -1,0 +1,13 @@
+{
+  "model": "Qwen/Qwen3-4B-Instruct-2507",
+  "source_revision": "cdbee75f17c01a7cc42f958dc650907174af0554",
+  "precision": "GGUF Q4_K_M derived from FP16 conversion of fixed BF16 source; no importance matrix",
+  "backend_commit": "4783b1145c7073bb809f4c282ff4853cbfe42954",
+  "backend_release": "b12576",
+  "model_sha256": "9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06",
+  "server_sha256": "89ff842d29d30f8ee1af38c501b4d68bf4802994ef322fa706867f7a83dfb746",
+  "paper_generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+  "paper_page_sources": 32,
+  "paper_nodes": 148,
+  "new_model_downloads": 0
+}

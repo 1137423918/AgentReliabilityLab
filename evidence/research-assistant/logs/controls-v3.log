@@ -1,0 +1,16 @@
+test_actual_graph_requires_search_read_and_expands_citation (__main__.AssistantControls.test_actual_graph_requires_search_read_and_expands_citation) ... Executing <Task pending name='Task-2' coro=<AssistantControls.test_actual_graph_requires_search_read_and_expands_citation() running at <isolated-source>/tests/test_research_assistant.py:49> wait_for=<Future pending cb=[Task.task_wakeup()] created at <python-runtime>/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <python-runtime>/lib/python3.11/asyncio/base_events.py:180] created at <python-runtime>/lib/python3.11/asyncio/runners.py:100> took 0.784 seconds
+ok
+test_committed_tool_boundary_resumes_in_new_connection_without_repeating_tool (__main__.AssistantControls.test_committed_tool_boundary_resumes_in_new_connection_without_repeating_tool) ... ok
+test_free_text_does_not_become_verified_answer (__main__.AssistantControls.test_free_text_does_not_become_verified_answer) ... ok
+test_generation_change_stops_before_more_model_calls (__main__.AssistantControls.test_generation_change_stops_before_more_model_calls) ... ok
+test_insufficient_requires_collection_inspection (__main__.AssistantControls.test_insufficient_requires_collection_inspection) ... ok
+test_last_budgeted_turn_requests_final_format_with_same_read_contract (__main__.AssistantControls.test_last_budgeted_turn_requests_final_format_with_same_read_contract) ... ok
+test_read_draft_requires_one_explicit_final_format_step (__main__.AssistantControls.test_read_draft_requires_one_explicit_final_format_step) ... ok
+test_response_saved_before_checkpoint_is_reused_without_new_transport (__main__.AssistantControls.test_response_saved_before_checkpoint_is_reused_without_new_transport) ... ok
+test_unread_and_unknown_refs_get_tool_feedback_not_acceptance (__main__.AssistantControls.test_unread_and_unknown_refs_get_tool_feedback_not_acceptance) ... ok
+test_whole_request_deadline_cancels_wait_and_never_saves_partial_reply (__main__.AssistantControls.test_whole_request_deadline_cancels_wait_and_never_saves_partial_reply) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 1.547s
+
+OK

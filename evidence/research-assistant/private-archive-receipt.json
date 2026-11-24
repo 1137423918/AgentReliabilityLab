@@ -1,0 +1,13 @@
+{
+  "relative_path": "studies/research-assistant-stage86-20261124",
+  "manifest_sha256": "310f0d47bfad1d87146e14ad8d443252025c13445dbe1cf451bfe42dc46dd820",
+  "files": 351,
+  "bytes": 7079952,
+  "all_fourteen_profiles_terminal_owned_zero": true,
+  "protected_old_ledgers_and_stage84_85_archives_unchanged": true,
+  "v1_unknown_request_still_charged": true,
+  "v1_v2_v3_v4_journals_unchanged": true,
+  "weights_binaries_env_cache_old_index_not_duplicated": true,
+  "GPU_used": false,
+  "deferred_GPU_not_launched": true
+}

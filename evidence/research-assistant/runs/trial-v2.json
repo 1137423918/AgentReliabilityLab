@@ -1,0 +1,20 @@
+{
+  "protocol_sha256": "297ce44e81ca9a81abe05c07f496b2f01646a41a40f83a3e7cdd6c5ba8b4a87f",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "source-real-cpu-research-assistant",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 656.499,
+      "peak_owned_RSS_bytes": 6422872064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 681.594,
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "mechanical_contract_cases_passed": 0,
+  "cases_executed": 3,
+  "closed_v1_ledgers_unchanged": true
+}

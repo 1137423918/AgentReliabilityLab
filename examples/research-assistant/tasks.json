@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "scope": "Three operator-authored known-collection workflow cases, not held-out QA or general Agent accuracy.",
+  "max_model_requests_per_case": 6,
+  "max_output_tokens_per_request": 256,
+  "cases": [
+    {
+      "id": "lightrag_retrieval",
+      "question": "请根据库中的 LightRAG 论文，用一句话解释低层和高层检索分别查找什么，附实际读过的论文页引用。",
+      "expected_submission": "supported",
+      "required_distinct_PDFs": 1
+    },
+    {
+      "id": "compare_indexing",
+      "question": "根据库中 LightRAG 和 MiniRAG 两篇论文，简要比较它们索引里实体、关系与文本片段的组织方式，分别提供读过的来源引用。",
+      "expected_submission": "supported",
+      "required_distinct_PDFs": 2
+    },
+    {
+      "id": "missing_paper",
+      "question": "请依据当前论文库，给出 LS-DETR 在 UATD 数据集上的消融实验精确结果；如果缺少对应全文，请明确说明无法据此回答，不要使用模型记忆补数值。",
+      "expected_submission": "insufficient_evidence",
+      "required_distinct_PDFs": 0
+    }
+  ]
+}

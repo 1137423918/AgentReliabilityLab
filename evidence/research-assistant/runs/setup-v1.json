@@ -1,0 +1,55 @@
+{
+  "protocol_sha256": "56f062d181afc73bf17f03a861de7b483432b42fe71c6b7b83220ceacf0c24ff",
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "stage-fixed-native-and-paper-assets"
+  },
+  "phases": [
+    {
+      "name": "resolve-assistant-runtime",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 29.521,
+      "peak_owned_RSS_bytes": 101605376
+    },
+    {
+      "name": "fresh-assistant-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.285,
+      "peak_owned_RSS_bytes": 36765696
+    },
+    {
+      "name": "install-tested-research-wheel",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.644,
+      "peak_owned_RSS_bytes": 40775680
+    },
+    {
+      "name": "dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.561,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "runtime-api-preflight",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.857,
+      "peak_owned_RSS_bytes": 266756096
+    },
+    {
+      "name": "stage-fixed-native-and-paper-assets",
+      "exit_code": -15,
+      "guard": "phase/resource/job cap",
+      "wall_seconds": 300.445,
+      "peak_owned_RSS_bytes": 12976128
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 357.343,
+  "lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5"
+}

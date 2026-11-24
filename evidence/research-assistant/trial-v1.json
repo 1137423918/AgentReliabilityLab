@@ -1,0 +1,35 @@
+{
+  "ready": false,
+  "error": {
+    "type": "TimeoutExpired",
+    "message": "Command '['<isolated-root>/source/extras/research-assistant/.venv/bin/python', '-m', 'agent_lab.research_assistant', '--question', '请根据库中的 LightRAG 论文，用一句话解释低层和高层检索分别查找什么，附实际读过的论文页引用。', '--run-dir', '<isolated-root>/experiment/cases/lightrag_retrieval', '--mcp-url', 'http://127.0.0.1:<ephemeral-port>/mcp', '--model-url', 'http://127.0.0.1:<ephemeral-port>/v1', '--model', 'agentlab-research-qwen3-4b-cpu', '--model-fingerprint', '9f1c9b5bd32d1c37502b525a677b3245a1b91fb7b71c7464f4264647998e7a06', '--max-turns', '6', '--max-output-tokens', '256', '--request-seconds', '180']' timed out after 449.9999767290428 seconds"
+  },
+  "model": "Qwen3-4B-Instruct-2507, existing fixed Q4_K_M",
+  "model_warmup_disabled": true,
+  "max_generation_requests": 18,
+  "max_generation_requests_per_case": 6,
+  "max_output_tokens_per_request": 256,
+  "cases": [],
+  "remaining_cases": "not yet run",
+  "generation_HTTP_reservations": 5,
+  "complete_model_responses": 4,
+  "reservations_without_saved_response": 1,
+  "saved_usage": {
+    "prompt_tokens": 4462,
+    "completion_tokens": 87
+  },
+  "embedding_counts": {
+    "reserved_forwards": 1,
+    "completed_forwards": 1,
+    "text_inputs": 0,
+    "query_inputs": 1
+  },
+  "embedding_unknown": 0,
+  "embedding_ledger_sha256": "e7a1ce02f92cca0f6e1feb77d00fa1a1d6a91cdb6aba531b4a1ccc7c4d2bbcc9",
+  "budgets_status": "CLOSED",
+  "native_server_closed": true,
+  "MCP_closed": true,
+  "ephemeral_key_removed": true,
+  "wall_seconds": 498.559,
+  "scope": "Known-collection engineering workflow; reference contracts not semantic entailment; no general Agent/QA accuracy estimate."
+}

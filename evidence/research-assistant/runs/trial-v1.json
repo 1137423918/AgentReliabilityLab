@@ -1,0 +1,20 @@
+{
+  "protocol_sha256": "62f042920bb66af5eccccaa73962c23a4e86e0dff1cfcf0a778ad0e6d4732f83",
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-real-cpu-research-assistant"
+  },
+  "phases": [
+    {
+      "name": "source-real-cpu-research-assistant",
+      "exit_code": 2,
+      "guard": null,
+      "wall_seconds": 507.205,
+      "peak_owned_RSS_bytes": 5943480320
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 534.78,
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5"
+}

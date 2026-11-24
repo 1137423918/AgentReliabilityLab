@@ -26,7 +26,7 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 ## Agent 应用
 
-**研究资料检索服务**：[使用与验证](docs/research-library.md)。LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.2.0-starter.zip)。新增[完整论文按页检索](docs/paper-library.md)，实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用。当前是检索与引用层，未生成答案；旧固定诊断未显示混合检索的覆盖收益。
+**研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.2.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
 
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 
@@ -86,7 +86,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 ## 复查材料
 
-[现有项目总结与简历选题（2026-11-24）](portfolio/project-summary-2026-11-24.md) · [历史详细表述](portfolio/resume-projects-2026-11-23.md) · [逐阶段记录与保留的失败](docs/project-history.md) · [两页中英介绍（2026-11-22历史快照）](portfolio/junzhe-wang-project-brief.pdf) · [快照正文与证据映射](portfolio/README.md)。
+[简历项目精选（2026-11-25）](portfolio/resume-shortlist-2026-11-25.md) · [现有项目总结与证据](portfolio/project-summary-2026-11-24.md) · [历史详细表述](portfolio/resume-projects-2026-11-23.md) · [逐阶段记录与保留的失败](docs/project-history.md) · [两页中英介绍（2026-11-22历史快照）](portfolio/junzhe-wang-project-brief.pdf) · [快照正文与证据映射](portfolio/README.md)。
 
 测试组有重叠，不能把历史数字累计成新的总成绩。完整提示、答案、token 向量、权重、服务器连接资料和凭据保留私有；公开材料提供来源、哈希、运行条件与结果边界。
 

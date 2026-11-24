@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "212148dbfbea4d1947ce580719b66d3fb26bc02522e69128f233ae698422f0cd",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "source-assistant-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.97,
+      "peak_owned_RSS_bytes": 76414976
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 16.089,
+  "source_controls_passed": 7,
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "new_neural_forwards": 0
+}

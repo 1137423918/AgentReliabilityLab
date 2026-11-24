@@ -1,0 +1,1 @@
+{"versions": {"langgraph": "1.2.24", "langgraph-checkpoint-sqlite": "3.1.3", "agentlab-research": "0.2.0", "llama-index-core": "0.14.26", "torch": "2.6.0+cpu", "mcp": "2.3.0", "httpx2": "2.16.2"}, "CUDA_initialized": false}

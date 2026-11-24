@@ -1,0 +1,137 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "0b6f79f93595b14b9ad20d2b0c177a84aed367233bc27140bdfed752d2d7e681",
+      "bytes": 6256
+    },
+    "logs/controls-v1.log": {
+      "sha256": "70b5902556a2c10cc48e00020b7aecc1b412e875ed9d4f8141c21c0dd2076ce0",
+      "bytes": 1676
+    },
+    "logs/controls-v2.log": {
+      "sha256": "5c5ff28485bdb3438b323d35b782a9dd43d54516d4668c07ebbde821f8b042c0",
+      "bytes": 1854
+    },
+    "logs/controls-v3.log": {
+      "sha256": "874b4d5d494de728cbb70235459a581d6d6589b0fd7981b4cfbd8324eee331bc",
+      "bytes": 2179
+    },
+    "logs/controls-v4.log": {
+      "sha256": "8b8843d88f5f6411f0cfd5ebb3fd1dfa8760c719d569ab62319d0b7a3b9e7c0e",
+      "bytes": 2913
+    },
+    "logs/controls-v5.log": {
+      "sha256": "311beb814155cf0f5d27039a8a358a19c793e48af804eb6fa673acad22c8b550",
+      "bytes": 3073
+    },
+    "model-and-index-provenance.json": {
+      "sha256": "93ac49e1e1468396e048b9f57f157f065c7ae8caed34907844b614f4e4e06e81",
+      "bytes": 648
+    },
+    "private-archive-receipt.json": {
+      "sha256": "fd72f1746987e607ce6c5f9709b2807039b065b2e0c873746c7f63166534c6c9",
+      "bytes": 521
+    },
+    "protocols/controls-v5.json": {
+      "sha256": "67648ef0b03a34ed573bd1e8e09c349b5eda1ada066288f72ebbea9e9e886b78",
+      "bytes": 1262
+    },
+    "protocols/trial-v5.json": {
+      "sha256": "eed13dd6069634930f1600a6a2cba5b3aeb8d6a278f43b5960e765d91cb1aee5",
+      "bytes": 2909
+    },
+    "runs/assets-v2.json": {
+      "sha256": "926671dfa26e16ebb2aa2984715ba174a50ab434b7d55ae300fa8452495aca49",
+      "bytes": 812
+    },
+    "runs/controls-v1.json": {
+      "sha256": "7fcbeb06706b1216cec22ad640da75cb941d149dcd6775b8db397d142cce622f",
+      "bytes": 511
+    },
+    "runs/controls-v2.json": {
+      "sha256": "e3afb8be461e2367fba70159442838ee4ffb436a156f7880ecab640afd9ba5f3",
+      "bytes": 512
+    },
+    "runs/controls-v3.json": {
+      "sha256": "858677edfa0066bddf53bddc8a9f06c18e554a72dfd521bc9f2a9c0dca25cb8c",
+      "bytes": 513
+    },
+    "runs/controls-v4.json": {
+      "sha256": "414c7228099e570422933468f37587a97e38557e4f1882602f00b508ab45f927",
+      "bytes": 512
+    },
+    "runs/controls-v5.json": {
+      "sha256": "d6eae2fcd5cc808fcf3a67e56141c2f6161eb6d54999cde6c383fac4c5a22956",
+      "bytes": 513
+    },
+    "runs/render-v2.json": {
+      "sha256": "2fe2273cb7f3b08b1195ae513699b31988114449346f342e9a4ed1a21a1608ee",
+      "bytes": 366
+    },
+    "runs/render-v3.json": {
+      "sha256": "b13d85529afaba9ee4b970b0ea8d400766d40a6d8f97eabefb7f1d5d40879519",
+      "bytes": 537
+    },
+    "runs/setup-v1.json": {
+      "sha256": "464181d99ac5b0063d0c128861d2184872073f13cb6a342c70b10fa5f9b5ee34",
+      "bytes": 1387
+    },
+    "runs/trial-v1.json": {
+      "sha256": "4dfd8691691f9e02adbe6d42fa0a6b2591156343088b7316d93da700c10ce171",
+      "bytes": 549
+    },
+    "runs/trial-v2.json": {
+      "sha256": "2ceb37fd1b09a1efe327066d189ce803bcc5f03f44d0fb80c9dfd2df167103ab",
+      "bytes": 570
+    },
+    "runs/trial-v3.json": {
+      "sha256": "80f448ddbe5751d6dc90865f3d1bb5573e405e6ff95a23b5cbe5604ff072aaa7",
+      "bytes": 570
+    },
+    "runs/trial-v4.json": {
+      "sha256": "21bed6d3b1030779bc271f199de009005a9db5af86b14d9c5f5d199196d7fcf3",
+      "bytes": 570
+    },
+    "runs/trial-v5.json": {
+      "sha256": "1a52b5e7e412c29fe2e3702f60dc9eed2dc26e130fd6cf2469573abf5ff91208",
+      "bytes": 570
+    },
+    "runtime-api-preflight.json": {
+      "sha256": "7025fb17ea0d81de4a4ba9fe1fe23d7c66748b6c981787fccb301bfee5eb1065",
+      "bytes": 224
+    },
+    "source-review.json": {
+      "sha256": "5b219101906eccd0d1b6754d7c05125fd7832774fc4cb6793f8e01db2109c7b0",
+      "bytes": 7093
+    },
+    "tested-source-sha256.json": {
+      "sha256": "9905cf077eb0bd3898f6c369cf568801deb65ef6de77a16ddd11fd4fdeaee594",
+      "bytes": 611
+    },
+    "trial-v1.json": {
+      "sha256": "aa0cbccb1adf52ce59edc7470aeb08339145e45a653565244d2f76643fee19a0",
+      "bytes": 1773
+    },
+    "trial-v2.json": {
+      "sha256": "153034e9d295b6ef3c22db18692a6ec63e78f04200aae830828233a59150c79b",
+      "bytes": 2228
+    },
+    "trial-v3.json": {
+      "sha256": "a3723aa89bb7ef27431e2cd90969fe4d651ccfdd16212ccb72c09f4090c239ff",
+      "bytes": 2364
+    },
+    "trial-v4.json": {
+      "sha256": "71b919ea91c04e9c1f56088376fde360a969805901d57902abe3429dcafcc48e",
+      "bytes": 2495
+    },
+    "trial-v5.json": {
+      "sha256": "770b8b1991dd4ee19c69b91211ba1a6b5202499f42941cd50c2cb3cb3ebf1035",
+      "bytes": 2545
+    }
+  },
+  "scope": "Curated metadata, reviewed brief model-answer samples, normalized engineering logs and current protocols; no paper images/text, raw model wire, SQLite, weights or keys.",
+  "GPU_used": false,
+  "model_workflow_contracts_passed": 2,
+  "declared_workflow_cases": 3,
+  "not_general_QA_accuracy": true
+}

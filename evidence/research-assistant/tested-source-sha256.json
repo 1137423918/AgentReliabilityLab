@@ -1,0 +1,8 @@
+{
+  "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+  "agent_lab/research_assistant.py": "166052821b8e2958e9c109922e32db97df871e669a64e5539fccec00ab3378c9",
+  "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+  "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+  "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+  "tests/test_research_assistant.py": "d15738970410dd5a60a7e7bc2c4291b014ebe8fc0606b53cf5ca2bd37cb03493"
+}

@@ -1,0 +1,11 @@
+{
+  "protocol_sha256": "4e3ba7bab0a4ec339f5ca2e18bea9bce343f5af8679641f388d1da9fd4639cf8",
+  "terminal": true,
+  "error": {
+    "type": "FileNotFoundError",
+    "message": "[Errno 2] No such file or directory: '<server-study-root>/outputs/paper-library-stage85-render-20261124-v2/run-report.json'"
+  },
+  "phases": [],
+  "owned_after": 0,
+  "wall_seconds": 10.171
+}
