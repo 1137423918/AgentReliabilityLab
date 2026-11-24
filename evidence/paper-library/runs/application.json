@@ -1,0 +1,138 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "Poppler required for page visual QA"
+  },
+  "phases": [
+    {
+      "name": "resolve-pdf-runtime",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 10.831,
+      "peak_owned_RSS_bytes": 102486016
+    },
+    {
+      "name": "fresh-cpu-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.134,
+      "peak_owned_RSS_bytes": 50020352
+    },
+    {
+      "name": "isolated-runtime",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.008,
+      "peak_owned_RSS_bytes": 243662848
+    },
+    {
+      "name": "build-tool-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.631,
+      "peak_owned_RSS_bytes": 27394048
+    },
+    {
+      "name": "standalone-wheel-build",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.189,
+      "peak_owned_RSS_bytes": 62717952
+    },
+    {
+      "name": "wheel-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.197,
+      "peak_owned_RSS_bytes": 9371648
+    },
+    {
+      "name": "installed-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.672,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "installed-cli-help",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.132,
+      "peak_owned_RSS_bytes": 9371648
+    },
+    {
+      "name": "source-lifecycle",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.369,
+      "peak_owned_RSS_bytes": 210640896
+    },
+    {
+      "name": "source-intake",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.582,
+      "peak_owned_RSS_bytes": 5767168
+    },
+    {
+      "name": "source-pdf",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.727,
+      "peak_owned_RSS_bytes": 237150208
+    },
+    {
+      "name": "installed-full-paper-application",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 59.543,
+      "peak_owned_RSS_bytes": 1080217600
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 120.861,
+  "lock_sha256": "f0b3272eaad2ff9e18f579bc9b7231e1a2c9580d57d4dbb60e8f0e33d0f88701",
+  "wheel_sha256": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370",
+  "application": {
+    "ready": true,
+    "PDFs": [
+      {
+        "url": "https://arxiv.org/pdf/2410.05779v3",
+        "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+        "bytes": 1123301,
+        "pages": 16,
+        "pages_without_text": 0
+      },
+      {
+        "url": "https://arxiv.org/pdf/2501.06713v3",
+        "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+        "bytes": 10023506,
+        "pages": 16,
+        "pages_without_text": 0
+      }
+    ],
+    "planned_nodes": 148,
+    "counts": {
+      "reserved_forwards": 58,
+      "completed_forwards": 58,
+      "text_inputs": 148,
+      "query_inputs": 3
+    },
+    "unknown_forwards": 0,
+    "CPU_ledger_sha256": "6f4a81d8fa24ee154b7b44e768b118777ef160af66ff47da864cfd4eaac797ee",
+    "budget_status": "CLOSED",
+    "MCP": {
+      "real_loopback_TCP": true,
+      "tool_names": [
+        "list_sources",
+        "read_citation",
+        "search_sources"
+      ],
+      "listed_page_sources": 32,
+      "search_and_read_page_metadata_exact": true
+    },
+    "old_citation_exact_after_paper_removal": true,
+    "noop_and_removal_zero_embeddings": true
+  }
+}

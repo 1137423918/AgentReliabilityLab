@@ -1,0 +1,2 @@
+agentlab-research {prepare,prepare-pdf,check-model,ingest,search,read,serve} [options]
+Use COMMAND --help for options. Local UTF-8/PDF page sources; CPU E5; exact version citations.

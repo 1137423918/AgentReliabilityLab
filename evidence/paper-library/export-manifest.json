@@ -1,0 +1,93 @@
+{
+  "files": {
+    "query-result-projection.json": {
+      "sha256": "36b84ac6ed840d75522126ce52294c7fc9e0fec2eee5c3d17a2655fc8d7e3c7e",
+      "bytes": 9455
+    },
+    "private-archive-receipt.json": {
+      "sha256": "2d9779896fcfa8c888d4ba32d2577dc4ad839198aa0dd290b232fc5b60335763",
+      "bytes": 428
+    },
+    "build-receipt.json": {
+      "sha256": "d73552b9193ae20420a7e1ad3f953ce559540c8e4dd5c653787a0c6e937f8f05",
+      "bytes": 1295
+    },
+    "tested-source-sha256.json": {
+      "sha256": "57d7d3661bac4bbd70931a6140889131e6b1f6af18ff0d9501b6606affff32f9",
+      "bytes": 1768
+    },
+    "historical-citation-projection.json": {
+      "sha256": "3b577d5b7c7ef0602348901fff9d0fd2dfe370957652c4b98417f80fc76865a8",
+      "bytes": 1175
+    },
+    "README.md": {
+      "sha256": "0dfd146057240c5b53bd4523aa8487b6a5a482b02d569f17836263e52d6a9b3e",
+      "bytes": 2286
+    },
+    "rendering.json": {
+      "sha256": "73f6b72d575efb447b9d6e80b6649579e136c429cc3231bd92b786c92b466b30",
+      "bytes": 1312
+    },
+    "input-provenance.json": {
+      "sha256": "a54ab4619c5c70d803280f0e4a27cf9518490665a9f0235b00a81f2663f40343",
+      "bytes": 1355
+    },
+    "application.json": {
+      "sha256": "585f335cdf67387de63059f8227f36a9dd5364d30a45bb8b923613277de61292",
+      "bytes": 4285
+    },
+    "pypdf-provenance.json": {
+      "sha256": "4dfd255ca5ef96df19477a068bff2def58925153b89202b2f1ba23a0c5cad038",
+      "bytes": 1055
+    },
+    "render-package-provenance.json": {
+      "sha256": "bac8834123a8eb56192aa5d77eb49f181ab148e273617ef22a5f94be09cdc3cb",
+      "bytes": 645
+    },
+    "visual-qa.json": {
+      "sha256": "e6f3ec4a50157a22a335cb3039cb488fc624cbf68c62c2b5cf0914d8437fe33f",
+      "bytes": 1337
+    },
+    "logs/source-intake.log": {
+      "sha256": "9369aa905f91c3fc79e077996c1098091221a52c95a2f1c45d49e3d2f3c84809",
+      "bytes": 964
+    },
+    "logs/source-pdf.log": {
+      "sha256": "5c56d991ebec3ff04c1d947b7a3d39e73b6d770f62b01ea7a2385b597f4c992f",
+      "bytes": 890
+    },
+    "logs/installed-dependency-check.log": {
+      "sha256": "be7bb6f4dd83ca7530893ef6d159c0e76bdd9bc4ab04ec36d2dad176b43385c1",
+      "bytes": 138
+    },
+    "logs/installed-cli-help.log": {
+      "sha256": "e769a8dbb92f0cab58f079b1a4c882f10d4dc8f46e708c7f45a6ec18c712b4d1",
+      "bytes": 182
+    },
+    "logs/source-lifecycle.log": {
+      "sha256": "10570a95061202920ff5823680ee1ad6dc5fe46f2c5bfdd2d556f67dee100575",
+      "bytes": 1663
+    },
+    "runs/renderer.json": {
+      "sha256": "76dd307da947c96c32033645fbc618e89657c392aba7dbc2eb1e86dc7a74419c",
+      "bytes": 991
+    },
+    "runs/application.json": {
+      "sha256": "2614d35d8f9407cbfea10854a0d2146658fda8d4bb539774941066899bb6ab80",
+      "bytes": 3470
+    }
+  },
+  "artifacts": {
+    "agentlab_research-0.2.0-py3-none-any.whl": {
+      "sha256": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370",
+      "bytes": 18188
+    },
+    "agentlab-research-0.2.0-starter.zip": {
+      "sha256": "389e5e31c7a8b6126d896fbe8b49b66c77abc805d4a93e51360ce755afd48cc0",
+      "bytes": 47230
+    }
+  },
+  "runtime_lock_sha256": "f0b3272eaad2ff9e18f579bc9b7231e1a2c9580d57d4dbb60e8f0e33d0f88701",
+  "all_eight_canonical_module_data_files_match_tested_wheel": true,
+  "full_PDF_text_images_vectors_private_ledger_excluded": true
+}

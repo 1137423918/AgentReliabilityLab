@@ -1,0 +1,27 @@
+{
+  "name": "pypdf",
+  "version": "7.1.1",
+  "requires_python": ">=3.10",
+  "files": [
+    {
+      "filename": "pypdf-7.1.1-py3-none-any.whl",
+      "digests": {
+        "blake2b_256": "5bef11ed995bd10a1632f7fea3da38ae8d42bc3ccc5b9969fe04d8620c844408",
+        "md5": "8f7628030eed44ae03fe9b6b754398d1",
+        "sha256": "04c5680d4b4cfa04ab505b09393fc949860c34a4dad6565284d11a2f5c3ce8b1"
+      },
+      "url": "https://files.pythonhosted.org/packages/5b/ef/11ed995bd10a1632f7fea3da38ae8d42bc3ccc5b9969fe04d8620c844408/pypdf-7.1.1-py3-none-any.whl",
+      "size": 421026
+    },
+    {
+      "filename": "pypdf-7.1.1.tar.gz",
+      "digests": {
+        "blake2b_256": "965ff41984a8150ec37c6ee50fa6fa1868d065337b65ba510a155848b2ce0b62",
+        "md5": "e3be250fd37216d763c93e597f8386ea",
+        "sha256": "2eff4e2fc5fb22a6d6711e6f1166cdc9ab5765d90cd0d77dfea3f4aa91a27b1d"
+      },
+      "url": "https://files.pythonhosted.org/packages/96/5f/f41984a8150ec37c6ee50fa6fa1868d065337b65ba510a155848b2ce0b62/pypdf-7.1.1.tar.gz",
+      "size": 7221452
+    }
+  ]
+}

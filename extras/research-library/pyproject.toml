@@ -1,10 +1,10 @@
 [project]
 name = "agentlab-research-runtime"
-version = "0.1.0"
+version = "0.2.0"
 requires-python = "==3.11.*"
 dependencies = [
   "llama-index-core==0.14.26", "torch==2.6.0", "transformers==4.57.6",
-  "numpy==2.2.6", "mcp==2.3.0", "httpx2==2.16.2"
+  "numpy==2.2.6", "mcp==2.3.0", "httpx2==2.16.2", "pypdf==7.1.1"
 ]
 
 [tool.uv]

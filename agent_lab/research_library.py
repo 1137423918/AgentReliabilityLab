@@ -40,7 +40,7 @@ def checked_id(value):
 def load_sources(manifest):
     manifest = Path(manifest); spec = json.loads(manifest.read_text()); rows = {}
     if spec.get('version') != 1 or not 1 <= len(spec['sources']) <= 256: raise ValueError('Expected1–256explicit sources')
-    total = 0
+    total = 0; pdfs = {}
     for item in spec['sources']:
         key = checked_id(item['id'])
         if key in rows: raise ValueError('Repeated source ID')
@@ -53,7 +53,28 @@ def load_sources(manifest):
         text = raw.decode('utf-8'); total += len(raw)
         if not text.strip() or total > 16*1024**2: raise ValueError('Empty source or collection too large')
         metadata = {k: item[k] for k in ['id', 'title', 'url', 'kind', 'sha256']}
-        rows[key] = {'metadata': metadata, 'raw': raw, 'text': text, 'fingerprint': digest(metadata)}
+        pdf_raw = None
+        if 'pdf' in item:
+            pdf = item['pdf']; pdf_sha = pdf['sha256']
+            if not re.fullmatch('[a-f0-9]{64}', pdf_sha) or pdf['path'] != 'originals/'+pdf_sha+'.pdf':
+                raise ValueError('Invalid original PDF path or hash')
+            if type(pdf['page_number']) is not int or type(pdf['page_count']) is not int or not 1 <= pdf['page_number'] <= pdf['page_count'] <= 256:
+                raise ValueError('Invalid PDF page number')
+            if item['kind'] != 'pdf_page_text' or url.fragment != 'page='+str(pdf['page_number']):
+                raise ValueError('PDF source kind/URL disagrees with page')
+            if not isinstance(pdf['page_label'], str) or pdf['extractor'].get('name') != 'pypdf' or pdf['extractor'].get('mode') != 'plain':
+                raise ValueError('Invalid PDF extraction provenance')
+            if pdf_sha not in pdfs:
+                original = manifest.parent/pdf['path']
+                if original.is_symlink(): raise ValueError('Original PDF cannot be a symlink')
+                with original.open('rb') as stream: pdfs[pdf_sha] = stream.read(32*1024**2+1)
+                if len(pdfs[pdf_sha]) > 32*1024**2 or sum(map(len, pdfs.values())) > 64*1024**2:
+                    raise ValueError('Original PDF byte limit exceeded')
+                if hashlib.sha256(pdfs[pdf_sha]).hexdigest() != pdf_sha: raise ValueError('Original PDF bytes differ')
+            pdf_raw = pdfs[pdf_sha]
+            if len(pdf_raw) != pdf['bytes']: raise ValueError('Original PDF size differs')
+            metadata['pdf'] = {k: v for k, v in pdf.items() if k != 'path'}
+        rows[key] = {'metadata': metadata, 'raw': raw, 'text': text, 'fingerprint': digest(metadata), 'pdf_raw': pdf_raw}
     return rows
 
 
@@ -119,7 +140,12 @@ def ingest(manifest, store, embedder, *, _before_publish=None):
             if set(active) != set(sources): raise ValueError('Active index documents disagree with collection')
             index.storage_context.persist(persist_dir=str(staging/'index'))
             (staging/'sources').mkdir()
-            for key, item in sources.items(): (staging/'sources'/(key+'.txt')).write_bytes(item['raw'])
+            for key, item in sources.items():
+                (staging/'sources'/(key+'.txt')).write_bytes(item['raw'])
+                if item['pdf_raw'] is not None:
+                    (staging/'originals').mkdir(exist_ok=True)
+                    original = staging/'originals'/(item['metadata']['pdf']['sha256']+'.pdf')
+                    if not original.exists(): original.write_bytes(item['pdf_raw'])
             nodes = {}
             for key, reference in active.items():
                 for node in index.docstore.get_nodes(reference.node_ids):
@@ -158,10 +184,16 @@ def citation(store, citation_id):
     if hashlib.sha256(excerpt.encode()).hexdigest() != row['text_sha256']: raise ValueError('Citation text fingerprint changed')
     start = text[:row['start']].count('\n')+1; end = text[:max(row['start'], row['end']-1)].count('\n')+1
     current = json.loads((Path(store)/'CURRENT.json').read_text())['generation']
-    return {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
             'source_id': source_id, 'title': source['title'], 'source_kind': source['kind'], 'source_url': source['url'],
             'source_sha256': source['sha256'], 'line_start': start, 'line_end': end,
             'char_start': row['start'], 'char_end': row['end'], 'excerpt': excerpt}
+    if 'pdf' in source:
+        original = root/'originals'/(source['pdf']['sha256']+'.pdf')
+        if sha(original) != source['pdf']['sha256']: raise ValueError('Archived PDF differs from citation')
+        result['pdf'] = dict(source['pdf'])
+        result['note'] = 'Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.'
+    return result
 
 
 def terms(text):

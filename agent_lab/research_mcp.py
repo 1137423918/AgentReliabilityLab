@@ -11,7 +11,7 @@ from .research_library import search, citation, open_generation
 
 
 def create_app(store, embedder):
-    server = MCPServer('AgentLab Research Library', version='0.1.0')
+    server = MCPServer('AgentLab Research Library', version='0.2.0')
     lock = threading.Lock()
     def serialized(function, *args, **kwargs):
         with lock:

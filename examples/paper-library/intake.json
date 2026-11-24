@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "pdfs": [
+    {
+      "path": "lightrag.pdf",
+      "url": "https://arxiv.org/pdf/2410.05779v3",
+      "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation"
+    },
+    {
+      "path": "minirag.pdf",
+      "url": "https://arxiv.org/pdf/2501.06713v3",
+      "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation"
+    }
+  ]
+}

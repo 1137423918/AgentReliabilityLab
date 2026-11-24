@@ -1,0 +1,141 @@
+{
+  "ready": true,
+  "scope": "Two whole versioned PDF papers; known-topic workflow checks, not retrieval accuracy/QA/answer-generation.",
+  "caps": {
+    "reserved_forwards": 400,
+    "text_inputs": 1400,
+    "query_inputs": 8
+  },
+  "GPU_used": false,
+  "generation_calls": 0,
+  "queries_declared_before_index": [
+    "LightRAG dual level retrieval local global entity relations",
+    "MiniRAG heterogeneous graph indexing lightweight topology enhanced retrieval"
+  ],
+  "versions": {
+    "agentlab-research": "0.2.0",
+    "llama-index-core": "0.14.26",
+    "pypdf": "7.1.1",
+    "torch": "2.6.0+cpu",
+    "transformers": "4.57.6",
+    "mcp": "2.3.0"
+  },
+  "page_sources": 32,
+  "PDFs": [
+    {
+      "url": "https://arxiv.org/pdf/2410.05779v3",
+      "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+      "bytes": 1123301,
+      "pages": 16,
+      "pages_without_text": 0
+    },
+    {
+      "url": "https://arxiv.org/pdf/2501.06713v3",
+      "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+      "bytes": 10023506,
+      "pages": 16,
+      "pages_without_text": 0
+    }
+  ],
+  "planned_nodes": 148,
+  "max_passage_tokens": 258,
+  "ingest": {
+    "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+    "added": [
+      "pdf_090aff59683c18c50be3_p1",
+      "pdf_090aff59683c18c50be3_p10",
+      "pdf_090aff59683c18c50be3_p11",
+      "pdf_090aff59683c18c50be3_p12",
+      "pdf_090aff59683c18c50be3_p13",
+      "pdf_090aff59683c18c50be3_p14",
+      "pdf_090aff59683c18c50be3_p15",
+      "pdf_090aff59683c18c50be3_p16",
+      "pdf_090aff59683c18c50be3_p2",
+      "pdf_090aff59683c18c50be3_p3",
+      "pdf_090aff59683c18c50be3_p4",
+      "pdf_090aff59683c18c50be3_p5",
+      "pdf_090aff59683c18c50be3_p6",
+      "pdf_090aff59683c18c50be3_p7",
+      "pdf_090aff59683c18c50be3_p8",
+      "pdf_090aff59683c18c50be3_p9",
+      "pdf_d8dd4844fd70ef9c64aa_p1",
+      "pdf_d8dd4844fd70ef9c64aa_p10",
+      "pdf_d8dd4844fd70ef9c64aa_p11",
+      "pdf_d8dd4844fd70ef9c64aa_p12",
+      "pdf_d8dd4844fd70ef9c64aa_p13",
+      "pdf_d8dd4844fd70ef9c64aa_p14",
+      "pdf_d8dd4844fd70ef9c64aa_p15",
+      "pdf_d8dd4844fd70ef9c64aa_p16",
+      "pdf_d8dd4844fd70ef9c64aa_p2",
+      "pdf_d8dd4844fd70ef9c64aa_p3",
+      "pdf_d8dd4844fd70ef9c64aa_p4",
+      "pdf_d8dd4844fd70ef9c64aa_p5",
+      "pdf_d8dd4844fd70ef9c64aa_p6",
+      "pdf_d8dd4844fd70ef9c64aa_p7",
+      "pdf_d8dd4844fd70ef9c64aa_p8",
+      "pdf_d8dd4844fd70ef9c64aa_p9"
+    ],
+    "updated": [],
+    "removed": [],
+    "unchanged": 0,
+    "nodes": 148,
+    "published": true
+  },
+  "noop": {
+    "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+    "unchanged": 32,
+    "added": [],
+    "updated": [],
+    "removed": [],
+    "published": false
+  },
+  "MCP": {
+    "real_loopback_TCP": true,
+    "tool_names": [
+      "list_sources",
+      "read_citation",
+      "search_sources"
+    ],
+    "listed_page_sources": 32,
+    "search_and_read_page_metadata_exact": true
+  },
+  "remove_paper": {
+    "generation": "f6ea1630cff2656e28fb6ba9b0677a247c76e6cd1eab754129dd2226421c89ec",
+    "added": [],
+    "updated": [],
+    "removed": [
+      "pdf_d8dd4844fd70ef9c64aa_p1",
+      "pdf_d8dd4844fd70ef9c64aa_p10",
+      "pdf_d8dd4844fd70ef9c64aa_p11",
+      "pdf_d8dd4844fd70ef9c64aa_p12",
+      "pdf_d8dd4844fd70ef9c64aa_p13",
+      "pdf_d8dd4844fd70ef9c64aa_p14",
+      "pdf_d8dd4844fd70ef9c64aa_p15",
+      "pdf_d8dd4844fd70ef9c64aa_p16",
+      "pdf_d8dd4844fd70ef9c64aa_p2",
+      "pdf_d8dd4844fd70ef9c64aa_p3",
+      "pdf_d8dd4844fd70ef9c64aa_p4",
+      "pdf_d8dd4844fd70ef9c64aa_p5",
+      "pdf_d8dd4844fd70ef9c64aa_p6",
+      "pdf_d8dd4844fd70ef9c64aa_p7",
+      "pdf_d8dd4844fd70ef9c64aa_p8",
+      "pdf_d8dd4844fd70ef9c64aa_p9"
+    ],
+    "unchanged": 16,
+    "nodes": 77,
+    "published": true
+  },
+  "old_citation_exact_after_paper_removal": true,
+  "noop_and_removal_zero_embeddings": true,
+  "CUDA_initialized": false,
+  "counts": {
+    "reserved_forwards": 58,
+    "completed_forwards": 58,
+    "text_inputs": 148,
+    "query_inputs": 3
+  },
+  "unknown_forwards": 0,
+  "CPU_ledger_sha256": "6f4a81d8fa24ee154b7b44e768b118777ef160af66ff47da864cfd4eaac797ee",
+  "budget_status": "CLOSED",
+  "wall_seconds": 53.189
+}

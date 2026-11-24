@@ -1,0 +1,13 @@
+{
+  "relative_path": "studies/paper-library-stage85-20261124",
+  "manifest_sha256": "3f790f567288c998b937d37a1254dcb4ae5bb5d0037d0832d6bbe1e8779bca1a",
+  "files": 175,
+  "bytes": 48457494,
+  "all_profiles_terminal_owned_zero": true,
+  "old_closed_ledgers_and_stage84_archive_unchanged": true,
+  "new_CPU_forwards": 58,
+  "unknown_forwards": 0,
+  "generation_calls": 0,
+  "GPU_used": false,
+  "deferred_GPU_not_launched": true
+}

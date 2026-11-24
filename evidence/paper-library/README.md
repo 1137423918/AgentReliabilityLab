@@ -1,0 +1,11 @@
+# Whole-paper CPU retrieval workflow · 0.2.0
+
+[Use and results](../../docs/paper-library.md) · [copy-ready CV summary](../../portfolio/project-summary-2026-11-24.md)
+
+Two official versioned PDF inputs, 16 physical pages each, become32page sources and148LlamaIndex nodes. Actual installed E5/MCP flow passed;58known CPU forwards/148text+3query inputs,0unknown,0generation/GPU. The test ledger is closed; previous103+6CPU journals and other closed model ledgers were checked unchanged. This new journal is test instrumentation, not a built-in persistent service quota.
+
+`application.json` contains actual workflow facts. `query-result-projection.json` and `historical-citation-projection.json` omit copyrighted excerpt text, retaining IDs/versions/page provenance/hash/character ranges. Full PDFs, page text, PNGs, vectors, private ledger and immutable index generations remain in a verified private server archive. Input source URLs and artifact hashes are in `input-provenance.json`; the application itself reads local files and does not authenticate URLs.
+
+`runs/application.json` deliberately retains the original overall failure: after all21source controls and the actual application passed, Poppler was missing. `runs/renderer.json` records the separate renderer-only setup/4page rendering/starter packaging pass. No model computation was repeated;58forward journal hash stayed unchanged. `visual-qa.json` records inspection of these4pages, including exact retrieved spans on physical pages4and8. This is a spot-check, not full layout or table reconstruction validation. PyMuPDF is only a separate QA dependency; pypdf7.1.1 is in the shipped runtime.
+
+21source controls comprise16existing+5PDF tests, not a sum with historical16. The two known-topic queries are workflow diagnostics, not blind retrieval/QA accuracy or generated answers. Prior24rankings were not rerun or tuned. The build receipt describes the build phase before installation; successful later installation/application is evidenced separately. Linuxx64/Python3.11/torch2.6.0+cpu runtime lock and0.2.0wheel/starter were built on the server. Eight canonical module/data hashes match the installed wheel and current source. No private connection credentials/capability handles/gold/full paper content are published.

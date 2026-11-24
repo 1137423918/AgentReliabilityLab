@@ -1,0 +1,19 @@
+{
+  "packages/research-library/build.py": "fea5643c8b2643b080ebe3758ed501032788f91318aa24de3e7211c669ef72ed",
+  "packages/research-library/pyproject.toml": "e5361562ad1d6e2941eaca4e50c0bd0f3de0dd1adac1d29926d88b11d28d11c5",
+  "packages/research-library/__init__.py": "9511ef67ba1b0fc40ed0ce4ba89fd741f57bc52d2dcede7af7a1fc214f541679",
+  "packages/research-library/__main__.py": "245c4621cca8d41b125032e8a87ec8ec5e0a89c86d7eceeb26aa393632d65910",
+  "extras/research-library/pyproject.toml": "014d8406a458d158237e08a7ed157193a910e7c25648e31a8c521a66fc9a71b0",
+  "agent_lab/research_intake.py": "ad0afe59457c7787cb946a2757adc2e7dc1f4939947b2f51be15ce6856eb10a3",
+  "agent_lab/research_library.py": "4c425c0e59a44aefd29a02e0ea2a243bd7e206222a5b1e737bdcaf1bf3f4f2c7",
+  "agent_lab/research_mcp.py": "d9123047ff8ebb3e09e044fdf1540caaae7d81807b1fe89e6caa9f11162d59cf",
+  "agent_lab/research_cli.py": "8e6a6b677e5ed9b463b4bc63133bdcba47af518e5e9142913c9a4fa4b3fd38f5",
+  "agent_lab/research_pdf.py": "7b1fbca4dd9b8d237abf7e317768d03e0e9bdf1a0efe378061adea842c45e938",
+  "agent_lab/research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+  "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+  "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+  "tests/test_research_library.py": "7164194afb4027ce32ad7d639a7093dc0ac0144a9fc32df54a5515c57e5ea9f7",
+  "tests/test_research_intake.py": "b0c625e2a5a3db0c66e2af200d0d9ff6894dd0d2428565b8a3987a5c3faa5758",
+  "tests/test_research_pdf.py": "f4b11eca607ef42f3f17836e83e5cd15d1fc79c03bd81c3c957e2ab36dfcd37e",
+  "benchmarks/research_pdf_flow.py": "4c97236d7197834cb09768d680a58200e9d03d11fc91691e53fd72d2fcf2b784"
+}

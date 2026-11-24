@@ -22,14 +22,14 @@ flowchart LR
 
 ## 使用
 
-现提供[独立CPU启动包](../artifacts/agentlab-research-0.1.0-starter.zip)和[wheel](../artifacts/agentlab_research-0.1.0-py3-none-any.whl)。已在服务器从冻结锁文件安装全新Linux x86_64 / Python3.11环境，使用torch2.6.0+cpu，不含CUDA运行时；不依赖旧模型环境的包路径或完整维护运行器。LlamaIndex0.14.26、Transformers4.57.6、numpy2.2.6和MCP2.3.0保持声明版本，完整传递依赖见`extras/research-library/uv.lock`；根项目的`uv.lock`仍属于维护运行器。首轮检索诊断使用的旧组合环境作为历史证据保留，没有把新CPU安装当作相同数值环境。
+现提供[独立CPU启动包](../artifacts/agentlab-research-0.2.0-starter.zip)和[wheel](../artifacts/agentlab_research-0.2.0-py3-none-any.whl)。已在服务器从冻结锁文件安装全新Linux x86_64 / Python3.11环境，使用torch2.6.0+cpu，不含CUDA运行时；不依赖旧模型环境的包路径或完整维护运行器。LlamaIndex0.14.26、Transformers4.57.6、numpy2.2.6和MCP2.3.0保持声明版本，完整传递依赖见`extras/research-library/uv.lock`；根项目的`uv.lock`仍属于维护运行器。首轮检索诊断使用的旧组合环境作为历史证据保留，没有把新CPU安装当作相同数值环境。
 
 独立安装后可直接导入自己的可信UTF-8资料目录：
 
 ```sh
 uv sync --project extras/research-library --frozen --no-install-project --no-default-groups
 uv pip install --python extras/research-library/.venv/bin/python --no-deps \
-  artifacts/agentlab_research-0.1.0-py3-none-any.whl
+  artifacts/agentlab_research-0.2.0-py3-none-any.whl
 uv pip check --python extras/research-library/.venv/bin/python
 extras/research-library/.venv/bin/agentlab-research check-model --directory /path/to/e5
 extras/research-library/.venv/bin/agentlab-research prepare \
@@ -37,7 +37,7 @@ extras/research-library/.venv/bin/agentlab-research prepare \
   --base-url 'https://github.com/OWNER/REPO/blob/COMMIT/docs/'
 ```
 
-`prepare`处理`.md/.txt/.rst/.bib`，保留原始换行、生成稳定路径ID与哈希，最多256份资料；不解析PDF，也不验证调用者声明的来源链接。输出目录必须新建且位于输入目录之外。之后用`agentlab-research ingest/search/read/serve`；[完整参数与启动说明](../packages/research-library/README.md)。模型权重另外取得，包只提供固定资产哈希；`check-model`仅校验文件并补建缺失清单，不进行推理。使用[PyTorch官方CPU索引](https://pytorch.org/get-started/previous-versions/)与[uv显式索引绑定](https://docs.astral.sh/uv/concepts/indexes/)避免默认拉取CUDA依赖。
+`prepare`处理`.md/.txt/.rst/.bib`，保留原始换行、生成稳定路径ID与哈希，最多256份资料；PDF另用新增的 `prepare-pdf`，见[完整论文工作流](paper-library.md)。两个命令都不验证调用者声明的来源链接。文本导入的输出目录必须新建且位于输入目录之外。之后用`agentlab-research ingest/search/read/serve`；[完整参数与启动说明](../packages/research-library/README.md)。模型权重另外取得，包只提供固定资产哈希；`check-model`仅校验文件并补建缺失清单，不进行推理。使用[PyTorch官方CPU索引](https://pytorch.org/get-started/previous-versions/)与[uv显式索引绑定](https://docs.astral.sh/uv/concepts/indexes/)避免默认拉取CUDA依赖。
 
 原源码模块入口继续兼容。从仓库根目录，在相应依赖环境中执行：
 
@@ -63,7 +63,7 @@ MCP绑定`127.0.0.1:18863`，接口为`/mcp`，提供`list_sources`、`search_so
 
 ## 实际资料与验证
 
-初始集合包含20份来源、163个节点；更新后仍为20份来源、160个节点。来源是固定版本的项目文档、LS-DETR仓库README及BibTeX，**未取得或索引完整论文**。更新过程只对README和新增工作台文档的24个片段编码，其余向量复用；重复导入零编码，删除来源零查询编码，旧引用准确回读。
+初始集合包含20份来源、163个节点；更新后仍为20份来源、160个节点。来源是固定版本的项目文档、LS-DETR仓库README及BibTeX；这一历史集合未索引全文论文。新增两篇32页PDF的独立验证见[完整论文流程](paper-library.md)，不把新集合与旧诊断混算。更新过程只对README和新增工作台文档的24个片段编码，其余向量复用；重复导入零编码，删除来源零查询编码，旧引用准确回读。
 
 服务器上10项实际LlamaIndex生命周期测试通过，使用非神经固定测试嵌入；真实E5编码与实际MCP/TCP联调另行执行。首轮MCP因裸`dict`返回声明没有生成结构化输出而失败，102次已完成CPU前向及原索引完整保留；补充明确的`dict[str, Any]`返回类型后，复用同一索引，仅增加1次查询前向完成联调。验证覆盖工具枚举、结构化结果、来源过滤、精确引用、历史引用、无效引用和已删除来源。
 
@@ -82,3 +82,7 @@ MCP绑定`127.0.0.1:18863`，接口为`/mcp`，提供`list_sources`、`search_so
 全新CPU环境完成冻结同步、构建、wheel安装与依赖检查；离开源码目录、移除PYTHONPATH后确认仅从独立agentlab_research命名空间导入。复验原10项索引生命周期并新增6项目录导入测试，不能与历史10项累计成26项。安装包使用两份真实维护文档完成导入、索引、重复导入零编码、带出处检索、控制台引用回读与实际MCP/TCP联调；原24条排名实验没有重跑。
 
 本轮新增CPU前向6次、原文片段输入12个、查询输入2个，全部已完成、无未知；生成调用与GPU任务为0。模型命令通过已安装CLI的同一main callable执行，观察器只记录/限额，不替换真实E5；原生控制台入口另实测prepare、check-model、read和help。调用账本属于验证工具，服务本身没有新增持久配额。首次同步参数冲突及修复后的安装结果均保留，见[安装与验证证据](../evidence/research-package/README.md)。
+
+## 0.2.0完整论文流程
+
+已在同一检索引擎上接入数字文本PDF，独立验证LightRAG/MiniRAG共32页、148个片段、原PDF与页码/标签、删除整篇后历史引用及实际MCP。新21项源码控制（16既有＋5新增）与58次CPU嵌入前向分别记录，旧排名诊断和旧账本不变。[使用、结果与解析范围](paper-library.md)。旧0.1.0启动包与两份维护文档实验仍保留为历史证据。

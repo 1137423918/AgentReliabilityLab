@@ -1,0 +1,33 @@
+{
+  "scope": "Official versioned arXiv PDF artifact transfer only; no desktop parsing/test/inference. Full text retained privately.",
+  "sources": [
+    {
+      "path": "lightrag.pdf",
+      "url": "https://arxiv.org/pdf/2410.05779v3",
+      "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+      "bytes": 1123301,
+      "resolved_url": "https://arxiv.org/pdf/2410.05779v3",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Content-Length": "1123301",
+        "ETag": "\"sha256:4228c425fb41c5b4b72659396bb8ba85d0f30fb5a9ee7e155a337308288b0e09\"",
+        "Last-Modified": "Tue, 29 Apr 2025 02:02:39 GMT"
+      }
+    },
+    {
+      "path": "minirag.pdf",
+      "url": "https://arxiv.org/pdf/2501.06713v3",
+      "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation",
+      "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+      "bytes": 10023506,
+      "resolved_url": "https://arxiv.org/pdf/2501.06713v3",
+      "headers": {
+        "Content-Type": "application/pdf",
+        "Content-Length": "10023506",
+        "ETag": "\"sha256:30c8f01c1d09fe7ce05c5fffb113cdc315f7633956af60e9b8dac87732140fd3\"",
+        "Last-Modified": "Tue, 28 Jan 2025 01:49:37 GMT"
+      }
+    }
+  ]
+}

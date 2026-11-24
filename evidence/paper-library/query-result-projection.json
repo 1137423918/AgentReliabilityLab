@@ -1,0 +1,201 @@
+{
+  "scope": "Known-topic workflow results; excerpt text omitted, no retrieval/QA score.",
+  "results": [
+    {
+      "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+      "mode": "hybrid",
+      "results": [
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:0c35564080691252173e8b3af6841dd504ee6081b0f023ad1e94d6381125907e",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p4",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 4",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=4",
+          "source_sha256": "a686b53326db027dddaa15b6b809952947c1bbb96fb9893a317d957fcdd5029e",
+          "line_start": 41,
+          "line_end": 51,
+          "char_start": 3774,
+          "char_end": 4656,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "4",
+            "page_number": 4,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.032266458495966696,
+          "excerpt_sha256": "4282d43b737cefc7c2dda28db9d3383b53099060d35653725e8e8648f343a641",
+          "excerpt_characters": 882
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:7b94dc192cb444b6ac325747669b9a6ddf3fad5e138c6579500b2d00586f51a9",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p5",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 5",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=5",
+          "source_sha256": "d1f678607d745139ae540caaf8b406a72b797302a484069da59baeee58d82cb5",
+          "line_start": 1,
+          "line_end": 11,
+          "char_start": 0,
+          "char_end": 983,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "5",
+            "page_number": 5,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.03149801587301587,
+          "excerpt_sha256": "c483a879235b28aa169aff5bd2a9bca13569ce9a1df8da602fd4673733d61741",
+          "excerpt_characters": 983
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:d6a1f5f63ad2894dc770f6a69603c3ceb755edb435cdd3200da51e523ff43169",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p2",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 2",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=2",
+          "source_sha256": "0254c01744b12327c081c75a0e980c965242d23eeb7f5489bcf127a3d8583ab0",
+          "line_start": 12,
+          "line_end": 23,
+          "char_start": 1064,
+          "char_end": 2173,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "2",
+            "page_number": 2,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.030679156908665108,
+          "excerpt_sha256": "b6c03b818f964fe6b98ca0957bfd46efdb3c1d8d9b368eea2605bceba40f044f",
+          "excerpt_characters": 1109
+        }
+      ],
+      "generated_answer": false,
+      "note": "Candidate source passages,not an answer or calibrated relevance probability."
+    },
+    {
+      "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+      "mode": "hybrid",
+      "results": [
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:7f5592148157c62643b537bf4295c4132fd4673530e903b9188056769100446f",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_090aff59683c18c50be3_p8",
+          "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 8",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2501.06713v3#page=8",
+          "source_sha256": "dbb03b09c4e42d68ea22013cd490d8436bad1fd8df20ccb1057b6e098ffafa02",
+          "line_start": 29,
+          "line_end": 41,
+          "char_start": 2205,
+          "char_end": 3334,
+          "pdf": {
+            "bytes": 10023506,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "8",
+            "page_number": 8,
+            "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.03278688524590164,
+          "excerpt_sha256": "7f48a61f52c71d2814f8b7930503fd2958c374b705f46e0e72fb75bc850d207f",
+          "excerpt_characters": 1129
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:7d0cbc1ca34119cf1b2ad2cf4697e5451a588387ac08f44c5cf0da5d0ff3a0c9",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_090aff59683c18c50be3_p1",
+          "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 1",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2501.06713v3#page=1",
+          "source_sha256": "716b42dc7ac1fff4d8b23acb90922e6cc0189af1033dc14799e09360b3797f9d",
+          "line_start": 15,
+          "line_end": 30,
+          "char_start": 850,
+          "char_end": 2006,
+          "pdf": {
+            "bytes": 10023506,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "1",
+            "page_number": 1,
+            "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.031754032258064516,
+          "excerpt_sha256": "a39edd27f3de014c9f7fd60efc77384fd394a213ff755fa9354c5b1dad472c0e",
+          "excerpt_characters": 1156
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:fa31f839d46a79b31e7eabb241bc7c1623fc62babce41d121d1fdf06397fb9de",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": true,
+          "source_id": "pdf_090aff59683c18c50be3_p2",
+          "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 2",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2501.06713v3#page=2",
+          "source_sha256": "68d2109b5dcfeebfbbf5725eae61c02015f9e2c6dcb19b4a27402cf82c88425a",
+          "line_start": 44,
+          "line_end": 56,
+          "char_start": 1615,
+          "char_end": 2805,
+          "pdf": {
+            "bytes": 10023506,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "2",
+            "page_number": 2,
+            "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561"
+          },
+          "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+          "ranking_score": 0.03128054740957967,
+          "excerpt_sha256": "334760df9f488d1fd6b3b9f9c06441a0b1db8b9b69e7129702e055cd9901b700",
+          "excerpt_characters": 1190
+        }
+      ],
+      "generated_answer": false,
+      "note": "Candidate source passages,not an answer or calibrated relevance probability."
+    }
+  ]
+}

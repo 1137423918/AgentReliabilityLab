@@ -1,0 +1,15 @@
+test_actual_framework_index_and_exact_CRLF_unicode_citation (__main__.LibraryControls.test_actual_framework_index_and_exact_CRLF_unicode_citation) ... ok
+test_changed_source_url_republishes_metadata_without_losing_other_docs (__main__.LibraryControls.test_changed_source_url_republishes_metadata_without_losing_other_docs) ... ok
+test_changed_source_without_manifest_hash_update_is_rejected (__main__.LibraryControls.test_changed_source_without_manifest_hash_update_is_rejected) ... ok
+test_corrupt_stored_source_or_index_detected (__main__.LibraryControls.test_corrupt_stored_source_or_index_detected) ... ok
+test_embedded_model_identity_cannot_silently_change (__main__.LibraryControls.test_embedded_model_identity_cannot_silently_change) ... ok
+test_failure_before_publication_preserves_previous_complete_generation (__main__.LibraryControls.test_failure_before_publication_preserves_previous_complete_generation) ... ok
+test_identical_ingestion_embeds_nothing_and_keeps_current_generation (__main__.LibraryControls.test_identical_ingestion_embeds_nothing_and_keeps_current_generation) ... ok
+test_incremental_update_add_remove_and_old_citation_version (__main__.LibraryControls.test_incremental_update_add_remove_and_old_citation_version) ... ok
+test_invalid_citation_and_unknown_nodes_do_not_escape_store (__main__.LibraryControls.test_invalid_citation_and_unknown_nodes_do_not_escape_store) ... ok
+test_lexical_retrieval_and_source_filter_do_not_call_embedding (__main__.LibraryControls.test_lexical_retrieval_and_source_filter_do_not_call_embedding) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.251s
+
+OK

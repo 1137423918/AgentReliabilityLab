@@ -1,0 +1,32 @@
+{
+  "pages_inspected": 4,
+  "source_title_version_first_pages_checked": true,
+  "two_top_retrieved_spans_correspond_to_rendered_physical_pages": true,
+  "checked_pages": [
+    {
+      "file": "minirag-p1.png",
+      "PDF_sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+      "page_number": 1,
+      "png_sha256": "2ccaf9f0e0312feab8f0f1f4cf6dc2f049f9253978b821b51cf370f6498bb67c"
+    },
+    {
+      "file": "lightrag-p1.png",
+      "PDF_sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+      "page_number": 1,
+      "png_sha256": "ef1761072f7d1533713f729e946f1f4d2c7e2ade1245b34928d2ca20c15ffb86"
+    },
+    {
+      "file": "lightrag-p4.png",
+      "PDF_sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a",
+      "page_number": 4,
+      "png_sha256": "07077e946dbb29820b41326fd89878bcfcc236aaa7fa839452be072178af9ac9"
+    },
+    {
+      "file": "minirag-p8.png",
+      "PDF_sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561",
+      "page_number": 8,
+      "png_sha256": "ab49cbaceefb9f582bcd263bdf3de74e3d9f8a152f23266f9effdd785f053f8f"
+    }
+  ],
+  "scope": "Visual spot-check of two first pages and two retrieved source pages; not full-document OCR/layout/table/formula validation. Images/excerpts private, not redistributed."
+}

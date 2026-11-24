@@ -1,0 +1,41 @@
+{
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "render-venv",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.141,
+      "peak_owned_RSS_bytes": 25952256
+    },
+    {
+      "name": "render-package-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 28.451,
+      "peak_owned_RSS_bytes": 56328192
+    },
+    {
+      "name": "render-paper-pages",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.813,
+      "peak_owned_RSS_bytes": 140238848
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 45.037,
+  "rendered_pages": 4,
+  "artifact_sha256": {
+    "agentlab-research-0.2.0-starter.zip": {
+      "sha256": "389e5e31c7a8b6126d896fbe8b49b66c77abc805d4a93e51360ce755afd48cc0",
+      "bytes": 47230
+    },
+    "agentlab_research-0.2.0-py3-none-any.whl": {
+      "sha256": "13323298f8700ab4e63c230c73c0b915392cefd54a55020dc5a19c755a141370",
+      "bytes": 18188
+    }
+  },
+  "closed58CPUledger_unchanged": true
+}

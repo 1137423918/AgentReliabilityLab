@@ -1,0 +1,29 @@
+{
+  "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:ab90967dea8c9cf5b841e508b102fa72daa05787b4bb3a77bcb43266c93a7f48",
+  "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+  "is_current_generation": false,
+  "source_id": "pdf_d8dd4844fd70ef9c64aa_p1",
+  "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 1",
+  "source_kind": "pdf_page_text",
+  "source_url": "https://arxiv.org/pdf/2410.05779v3#page=1",
+  "source_sha256": "682f7bfa9078909abc02492f221961ced1bc524f25e43586ebfa337d6130951e",
+  "line_start": 1,
+  "line_end": 16,
+  "char_start": 0,
+  "char_end": 971,
+  "pdf": {
+    "bytes": 1123301,
+    "extractor": {
+      "mode": "plain",
+      "name": "pypdf",
+      "version": "7.1.1"
+    },
+    "page_count": 16,
+    "page_label": "1",
+    "page_number": 1,
+    "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+  },
+  "note": "Offsets refer to extracted page text; PDF page is1-based, label is separate. No layout/OCR guarantee.",
+  "excerpt_sha256": "bf11baa455d4bc49856b5df2773e3043f63122ecdd6b7e808554cfd30c319ad5",
+  "excerpt_characters": 971
+}

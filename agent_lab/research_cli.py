@@ -5,9 +5,12 @@ import sys
 def main(argv=None, *, embedding_observer=None):
     args = list(sys.argv[1:] if argv is None else argv)
     if not args or args[0] in ['-h', '--help']:
-        print('agentlab-research {prepare,check-model,ingest,search,read,serve} [options]\n'
-              'Use COMMAND --help for options. Local UTF-8 sources; CPU E5; exact version citations.')
+        print('agentlab-research {prepare,prepare-pdf,check-model,ingest,search,read,serve} [options]\n'
+              'Use COMMAND --help for options. Local UTF-8/PDF page sources; CPU E5; exact version citations.')
         return
+    if args[0] == 'prepare-pdf':
+        from .research_pdf import main as command
+        return command(args[1:])
     if args[0] in ['prepare', 'check-model']:
         from .research_intake import main as command
         return command(args)
