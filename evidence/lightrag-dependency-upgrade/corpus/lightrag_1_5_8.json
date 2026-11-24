@@ -1,0 +1,109 @@
+{
+  "project": {
+    "id": "lightrag-1.5.8",
+    "repository": "HKUDS/LightRAG",
+    "tag": "v1.5.8",
+    "commit": "7169588d0a27f86d30e5de48c60301a899e61b93"
+  },
+  "scope": "All locked registry resolutions, including optional, development and conditional packages; not an installed-environment inventory.",
+  "baseline_statistics": {
+    "scanned_registry_resolutions": 236,
+    "expected_registry_resolutions": 236,
+    "affected_resolutions": 18
+  },
+  "coverage": {
+    "before_registry_complete": true,
+    "after_registry_complete": true,
+    "local_or_other_source_entries": [
+      {
+        "name": "lightrag-hku",
+        "version": null,
+        "source": {
+          "editable": "."
+        }
+      }
+    ],
+    "nonregistry_scanner_records": [
+      {
+        "name": "lightrag-hku",
+        "version": null,
+        "sources": [
+          {
+            "editable": "."
+          }
+        ],
+        "scanner_advisory_ids": [],
+        "source_bytes_audited": false
+      }
+    ]
+  },
+  "execution": {
+    "candidate_prepared": true,
+    "project_environment_installed": false,
+    "resolver_metadata_backend_may_run": true,
+    "compatibility_tests_run": false
+  },
+  "resolution": {
+    "exit_code": 0,
+    "timed_out": false,
+    "original_requirements_changed": false
+  },
+  "target": {
+    "name": "ragas",
+    "declared_requirements": [
+      {
+        "group": "extra:evaluation",
+        "requirement": "ragas>=0.3.7"
+      }
+    ],
+    "before_versions": [
+      "ragas@0.4.3"
+    ],
+    "after_versions": [
+      "ragas@0.4.4"
+    ],
+    "version_changed": true,
+    "advisory_ids_before": [
+      "GHSA-95ww-475f-pr4f",
+      "PYSEC-2026-3046"
+    ],
+    "remaining_advisory_match_count": 0
+  },
+  "delta": {
+    "new_package_advisory_match_count": 0,
+    "new_package_advisory_matches": [],
+    "remaining_affected_registry_resolutions": 17
+  },
+  "provenance": {
+    "original_files": {
+      "uv.lock": {
+        "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/uv.lock",
+        "sha256": "e7c8782db14c35ffc270fb6802fa21972d520fc5b79edcf81fd1eb1159a59e0d",
+        "bytes": 1122886
+      },
+      "pyproject.toml": {
+        "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/pyproject.toml",
+        "sha256": "dfaf088d1c1e7da5164977bdc334bf9ecd26522bfd34d9dbe4bcf6e5d01148d0",
+        "bytes": 11478
+      },
+      "LICENSE": {
+        "url": "https://raw.githubusercontent.com/HKUDS/LightRAG/7169588d0a27f86d30e5de48c60301a899e61b93/LICENSE",
+        "sha256": "0c16924564059e493c86854574660a47ed1dcc2a476ba7b5f949d3f2f73a1984",
+        "bytes": 1070
+      }
+    },
+    "database": {
+      "sha256": "2f3f1b7b46ae3a3bd5c1505f913771f1836682aabaecf5d9dd4a7bb6ce771597",
+      "offline": true,
+      "updated_during_scan": false
+    },
+    "baseline_scan_sha256": "09be63ab420119ee4ce5309fd949aab5b5bc06ee4f22ac9b4d99bb15c2baf0d8",
+    "candidate_scan_sha256": "62b2de05726820f0d1c6889afcc264e7ae114e840885e30624187f89e77d36b8",
+    "candidate_lock_sha256": "34945294b90eb0b8fae1c66cc7f17aa3b253f7570b791481062a3fdbb22c51cc",
+    "original_inputs_unchanged": true,
+    "candidate_source": {
+      "method": "independent-local-Git-clone",
+      "commit": "7169588d0a27f86d30e5de48c60301a899e61b93"
+    }
+  }
+}
