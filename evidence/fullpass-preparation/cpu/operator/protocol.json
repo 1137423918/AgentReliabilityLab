@@ -1,0 +1,117 @@
+{
+  "declared_utc": "2026-11-24T00:52:26.340174+00:00",
+  "scope": "CPU-only complete3700 original paired full-pass schedules for seeds42/43/44 and unused250question admission; no model weights trained or prediction outcomes generated.",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "reference_label_soft_target": 2048,
+  "data_sha256": {
+    "dev_clean-tokenized.jsonl": "ca907e9d3815e860355f9409c5a6214782d85e2220ae5e875f9562fec21b0fee",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "mixed_train-schedule.json": "a164890f238aaaa6036d0d29becc6047956718b63dec8aa565564cc146faa2d2",
+    "mixed_train-tokenized.jsonl": "ce4fbbee6a7894536019d1905eabc7edd41be9fc0dc91c2e5164d1c4eb108c11",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "report.json": "27baef2936ca6922611241c22f95d7666cd81ef41a3c0406f962af457c0df6d9",
+    "test-tokenized.jsonl": "97cc237c498f6215035aee35f61e754eb539e15eb7d8dc486378123f1c933f79",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32",
+    "train-schedule.json": "a15d77b6ce3285fdba4605f9465d11a9296cb6c241a6825493d717e1b9bd7749",
+    "train-tokenized.jsonl": "96da3d61dc26c5ddd89e70b69c20fd83804a1bd9eadfa5117d7659c15dfcb683",
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd"
+  },
+  "masked_data_sha256": "639241c37f6cb18c9b4c5d020a08dd15ed31a0a26207818ddbb45f302f9559ee",
+  "source_sha256": {
+    "benchmarks/prepare_bfcl_transfer.py": "1fa46415fc03d616dc9cb7d43da2c10711bec207cb5dfc98f4ee6fd2064e5cab",
+    "benchmarks/fullpass_schedule.py": "c9be0df7f422d1e38e1eacf7bf4f6e09b9a83ccdfc2e0a3631b30087feb1fee8",
+    "benchmarks/admit_fresh_bfcl.py": "61f4fcbce862080764a96799ff49ac04f88eb9aa82cb64301b1307881c246779",
+    "extras/lora-training/test_fullpass_preparation.py": "b2fe0d5b74241c76bf3c741d26d1ae1d39d010aa23f9edb55c56488831ecc7aa",
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "upstream/default_prompts.py": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205"
+  },
+  "input_file_sha256": {
+    "benchmarks/prepare_bfcl_transfer.py": "1fa46415fc03d616dc9cb7d43da2c10711bec207cb5dfc98f4ee6fd2064e5cab",
+    "benchmarks/fullpass_schedule.py": "c9be0df7f422d1e38e1eacf7bf4f6e09b9a83ccdfc2e0a3631b30087feb1fee8",
+    "benchmarks/admit_fresh_bfcl.py": "61f4fcbce862080764a96799ff49ac04f88eb9aa82cb64301b1307881c246779",
+    "extras/lora-training/test_fullpass_preparation.py": "b2fe0d5b74241c76bf3c741d26d1ae1d39d010aa23f9edb55c56488831ecc7aa",
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "upstream/LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "upstream/default_prompts.py": "4cc033be99ae2b10bbde30e7751ddcac5468cb45841b6dc7b3a97b92adf38205",
+    "parent/admission.json": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9",
+    "parent/candidate-metadata.jsonl": "4b696685030d52175b64529388d9f8b9888f70bde697ae2a811fae9a3d99b22b",
+    "input/questions/BFCL_v4_live_simple.json": "1af2ac87dca47556db7b7e37e51e28b459a38b594e3c7b3c792b4903598ca0c4",
+    "input/questions/BFCL_v4_live_multiple.json": "fd8ccfad4d911420d0e3341dbe2fff77d1d341da934248b9bb2bda24ab3a10c8",
+    "input/questions/BFCL_v4_parallel.json": "19f51a82eff42e5d62541aa500115a056eb78f437c2ba1f10415fd7c8e5dda84",
+    "input/questions/BFCL_v4_parallel_multiple.json": "8863ea8433239f55c5f016154cf0830853c89f693c6ea270396a2fa121960579",
+    "input/questions/BFCL_v4_irrelevance.json": "2b6ed4c2e992cdcf5f1678a701851f944bef7550ee026ed1ddb89efed5be01a6"
+  },
+  "input_bundle_sha256": "776bc5c4a5c3c61d0a020a45dfea37602e5ec3c85a25d0c741e3d58721d95c32",
+  "protected_data_sha256": {
+    "train.parquet": "e4898201169c0a74c56ac708142317c8321503e31c31dce18644bb44f46fc4dd",
+    "mixed_train.parquet": "0e03898c730c015f2c05f72802785a6cc8a6fc15dfc98662933156d36fb67895",
+    "dev_clean.parquet": "fd54357c9ea8306210e04ac8cd9b686366bcc6a443afc4e483172bed51e39542",
+    "test.parquet": "efdce9222f3b65b98004a7517da45c2a5a1b795f74510707b7e208c2a0dbde32"
+  },
+  "parent_admission_sha256": "d96f2f3d19f057e3a37c896d0d09fdd242add1a62e4b66c23e77afeeb9bf2bf9",
+  "parent_candidates_sha256": "4b696685030d52175b64529388d9f8b9888f70bde697ae2a811fae9a3d99b22b",
+  "old_benchmark_sha256": "adebd94f65ce291371078a27cbda75deab015e236dc3f0b96904ef8de34d9cd7",
+  "question_files": {
+    "BFCL_v4_live_simple.json": {
+      "bytes": 260140,
+      "git_blob_sha1": "e8f4b8d33c07753affc77bfc4a646f94109de5af"
+    },
+    "BFCL_v4_live_multiple.json": {
+      "bytes": 3891277,
+      "git_blob_sha1": "b7c108f2edc86563fd3e1363e5f6fd961452d142"
+    },
+    "BFCL_v4_parallel.json": {
+      "bytes": 171896,
+      "git_blob_sha1": "04040475c8c77facf4f3e75e7079607c25c557d2"
+    },
+    "BFCL_v4_parallel_multiple.json": {
+      "bytes": 347080,
+      "git_blob_sha1": "832039d6758e2569d65342b3fc9524924a03832a"
+    },
+    "BFCL_v4_irrelevance.json": {
+      "bytes": 159940,
+      "git_blob_sha1": "0077629949f2d52734cef2f110b0d040d8c47554"
+    }
+  },
+  "quotas": {
+    "live_simple": 50,
+    "live_multiple": 50,
+    "parallel": 50,
+    "parallel_multiple": 50,
+    "irrelevance": 50
+  },
+  "selection_seed": "agentlab-fullpass-multiseed-transfer-v1",
+  "max_prompt_tokens": 8192,
+  "old_ledger_sha256": "188a45f27b0fcc0448c2b8366c4eaa0d72327882de59547b0e6d45ad7226a6e0",
+  "closed250_ledger_sha256": "d6c17db618a52c0cd94985783716643164c7296bdd33bf23f41de2f669c4866e",
+  "closed_loss_parts_ledger_sha256": "e18f64582e8edab80fd3c637d46d9206ba8a4c0844b5837a780ee9381ff7ac8e",
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "pyarrow": "22.0.0"
+  },
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "resource_caps": {
+    "CPU": 2,
+    "nice": 19,
+    "AS_GiB": 16,
+    "RSS_GiB": 4,
+    "host_admission_GiB": 16,
+    "host_floor_GiB": 8,
+    "job_seconds": 900,
+    "prepare_seconds": 600
+  },
+  "model_forwards_and_optimizer_updates": 0,
+  "selection_policy": "Exclude every prior250ID/component, retain parent eligibility graph quarantining original train/mixed/dev/validation/old199; same graph valid only under all unchanged protected/question hashes. Fixed50each before outcomes; no replacement on quota failure.",
+  "training_policy": "Whole examples in deterministic per-seed order;164updates per arm; each3700rows exactly once; no context/label truncation. Actual per-update reference/masked label denominators. Same paired inputs/initial seed/order; unequal labels by intentional fixed-prose mask. Fresh study starts base, not32step checkpoint resume.",
+  "limitations": "Old question-answer assets existed during previous250 study. This phase opens questionfiles only; new prediction cohort unused, not absolute gold/pretraining blindness or full BFCL.",
+  "homepage_updates_authorized": false,
+  "controller_sha256": "a84f27936172eb9c8ec5a3fd1427434b79d82c3c222b4a2746f1587be34aaa33",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1"
+}

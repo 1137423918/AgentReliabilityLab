@@ -1,0 +1,12 @@
+test_corruption_and_wrong_manifest_are_rejected (__main__.CheckpointControls.test_corruption_and_wrong_manifest_are_rejected) ... ok
+test_existing_checkpoint_is_never_overwritten_and_no_partial_snapshot_visible (__main__.CheckpointControls.test_existing_checkpoint_is_never_overwritten_and_no_partial_snapshot_visible) ... ok
+test_failed_state_write_keeps_previous_commit_and_removes_uncommitted_directory (__main__.CheckpointControls.test_failed_state_write_keeps_previous_commit_and_removes_uncommitted_directory) ... ok
+test_parameter_order_mismatch_is_rejected_before_mutation (__main__.CheckpointControls.test_parameter_order_mismatch_is_rejected_before_mutation) ... ok
+test_planned_resume_matches_uninterrupted_weights_optimizer_scaler_and_rng_bitwise (__main__.CheckpointControls.test_planned_resume_matches_uninterrupted_weights_optimizer_scaler_and_rng_bitwise) ... ok
+test_wrong_study_seed_role_or_schedule_is_rejected_before_mutation (__main__.CheckpointControls.test_wrong_study_seed_role_or_schedule_is_rejected_before_mutation) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 14.263s
+
+OK
+{"tiny_CPU_forward_calls": 18, "tiny_CPU_optimizer_updates": 18, "pretrained_model_forwards": 0, "CUDA_initialized": false}

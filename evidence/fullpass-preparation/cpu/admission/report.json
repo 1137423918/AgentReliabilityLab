@@ -1,0 +1,23 @@
+{
+  "admission_sha256": "b8ab421dec80164ab82259475e2d460214b6ef56b2cc6e9fab2e24fcb8be89c3",
+  "private_input_sha256": "534118f2888811285be0b769e10dbc34981fc22938e32a408131d9312e5c97b7",
+  "cases": 250,
+  "by_category": {
+    "live_simple": 50,
+    "live_multiple": 50,
+    "parallel": 50,
+    "parallel_multiple": 50,
+    "irrelevance": 50
+  },
+  "remaining_eligible_by_category": {
+    "live_simple": 205,
+    "live_multiple": 1001,
+    "parallel": 150,
+    "parallel_multiple": 150,
+    "irrelevance": 189
+  },
+  "unique_selected_components": 250,
+  "max_prompt_tokens": 2899,
+  "gold_reads_new_model_forwards_or_training": 0,
+  "frozen_before_new_study_weights_or_prediction_outcomes": true
+}

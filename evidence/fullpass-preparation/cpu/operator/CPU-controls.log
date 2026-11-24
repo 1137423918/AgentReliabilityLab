@@ -1,0 +1,15 @@
+test_old_ID_excluded_even_if_component_metadata_disagrees (__main__.FreshAdmissionControls.test_old_ID_excluded_even_if_component_metadata_disagrees) ... ok
+test_previous_component_excludes_other_ID_and_does_not_mutate_parent (__main__.FreshAdmissionControls.test_previous_component_excludes_other_ID_and_does_not_mutate_parent) ... ok
+test_protected_and_duplicate_components_never_fill_quota (__main__.FreshAdmissionControls.test_protected_and_duplicate_components_never_fill_quota) ... ok
+test_seeded_selection_is_stable_without_changing_quota (__main__.FreshAdmissionControls.test_seeded_selection_is_stable_without_changing_quota) ... ok
+test_selection_cannot_accept_score_fields (__main__.FreshAdmissionControls.test_selection_cannot_accept_score_fields) ... ok
+test_changed_input_and_empty_mask_row_rejected_without_dropping (__main__.FullpassControls.test_changed_input_and_empty_mask_row_rejected_without_dropping) ... ok
+test_missing_repeated_or_changed_schedule_label_range_rejected (__main__.FullpassControls.test_missing_repeated_or_changed_schedule_label_range_rejected) ... ok
+test_oversized_example_never_truncated_or_cut_into_empty_mask_fragment (__main__.FullpassControls.test_oversized_example_never_truncated_or_cut_into_empty_mask_fragment) ... ok
+test_seed_repeatability_pair_identity_and_different_orders (__main__.FullpassControls.test_seed_repeatability_pair_identity_and_different_orders) ... ok
+test_whole_examples_exact_once_with_partial_actual_denominators (__main__.FullpassControls.test_whole_examples_exact_once_with_partial_actual_denominators) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.011s
+
+OK

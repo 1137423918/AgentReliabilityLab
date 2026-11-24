@@ -1,0 +1,94 @@
+{
+  "declared_utc": "2026-11-24T01:00:01.301134+00:00",
+  "status": "Prospective analysis and checkpoint policy frozen before any new3Bstudyweights/newcohortpredictions; no training/generation allocation or launch authorized by this file alone.",
+  "model_revision": "aa8e72537993ba99e69dfaafa59ed015b17504d1",
+  "training_seeds": [
+    42,
+    43,
+    44
+  ],
+  "arms": [
+    "reference",
+    "masked"
+  ],
+  "initialization": "Fresh Qwen2.5-3B-Instruct + seed-matched q/vLoRA r8alpha16dropout0; reset seed immediately before adapter initialization; initial adapter hashes must match within seed. Do not resume old32step weights.",
+  "recipe": {
+    "AdamW_learning_rate": 0.0002,
+    "betas": [
+      0.9,
+      0.999
+    ],
+    "eps": 1e-08,
+    "weight_decay": 0.0,
+    "gradient_clip_norm": 1.0,
+    "base_dtype": "float16",
+    "adapter_dtype": "float32",
+    "initial_loss_scale": 1024.0,
+    "attention": "sdpa",
+    "TF32": false
+  },
+  "schedules": {
+    "42": {
+      "schedule_sha256": "5adbd0b1b27e065479a68ea8b267e61bfacdf90c419283667d9cdb1933f528f1",
+      "order_sha256": "adab3390d32493f4853eb00f35e5995d23fff548dbf5d01b0dda16fb01510590",
+      "updates": 164,
+      "sequence_forwards": 3700,
+      "input_token_exposures": 2791090,
+      "training_active_labels": {
+        "reference": 335822,
+        "masked": 279751
+      }
+    },
+    "43": {
+      "schedule_sha256": "bc8d3c03328c4e0d7c02eef164d6b1fcaed613a2ec3f3ff3032e64a3074e4cd0",
+      "order_sha256": "2903776a4a391074f1c24ef88e39e5a2bac6ad188ae6e09f15f8d5ef50a41506",
+      "updates": 164,
+      "sequence_forwards": 3700,
+      "input_token_exposures": 2791090,
+      "training_active_labels": {
+        "reference": 335822,
+        "masked": 279751
+      }
+    },
+    "44": {
+      "schedule_sha256": "4bc7c5dee025ad5cddcbfe0de2f0b3a5b9e9502da57e467ee3e2b782929b2165",
+      "order_sha256": "8d0ab5a3621ea61459653fef4bce4689cd121f48cb0523a2b790a5628f6a50dd",
+      "updates": 164,
+      "sequence_forwards": 3700,
+      "input_token_exposures": 2791090,
+      "training_active_labels": {
+        "reference": 335822,
+        "masked": 279751
+      }
+    }
+  },
+  "loss_policy": "Each whole example once; sum active causal CE divided by ACTUAL active labels for that optimizer update and arm. Reference-label2048 is soft grouping only. No context truncation, dropped rows, zero-mask fragments, equal-label or equal-FLOPs claim.",
+  "checkpoint_selection": "Final completed full-pass checkpoint only, every seed/arm retained including failures; no dev/val/generation score selection or quality retries. Known197/79/199/old250 remain development/diagnostic evidence.",
+  "continuation_policy": "Implement planned bounded segments that end after a durable optimizer-update checkpoint. Only clean committed boundaries may continue with verified weights, optimizer, scaler, full seeded RNG, source/schedule/role/seed identity and non-refunded persistent compute counts. Interrupted or unknown update states fail the arm; no implicit resource/crash/quality retry or restored allowance. Dedicated GPU continuation equivalence control required before study launch.",
+  "admission_sha256": "b8ab421dec80164ab82259475e2d460214b6ef56b2cc6e9fab2e24fcb8be89c3",
+  "selection_order_sha256": "282114ce8d000f852477eb5d2968738b479038601cdeb81a77cc727032d3ed7b",
+  "unused_questions": 250,
+  "positive_questions": 200,
+  "irrelevance_questions": 50,
+  "evaluation": {
+    "roles": [
+      "base",
+      "reference-seed42",
+      "masked-seed42",
+      "reference-seed43",
+      "masked-seed43",
+      "reference-seed44",
+      "masked-seed44"
+    ],
+    "greedy": true,
+    "max_new_tokens": 1536,
+    "requests_per_role": 250,
+    "primary_comparison": "Arithmetic mean of three seed-wise paired masked-minus-reference positive AST-accuracy differences on the same200positivequestions. Report all three signed differences and range/SD; do not pool600correlatedpairs as independent tasks.",
+    "secondary": "Per-category positive AST scores; base comparison descriptive; 50irrelevance outcomes separately with explicit empty[]/decodefailure/guardrejection/officialexception flags. Balanced250 score descriptive, never primary.",
+    "uncertainty": "For each seed, exact two-sided McNemar on200pairs; Holm adjustment across3seed tests. Report discordant counts. No posthoc seed/category/checkpoint selection. Three seeds and same text-distribution cohort do not establish broad stability or production tool success.",
+    "scorer": "Reuse immutable guarded officialAST comparison at BFCL f7cf7359b7ac615a0b294831c5ba2bc95ee4a000; no expression execution. Freeze new binding and controls before inference. No score-driven repairs or re-decoding."
+  },
+  "limitations": "Question-only admission read no answer files this phase, but answer assets already existed in earlier study. Unused prediction cohort, not absolute gold/pretraining/semantic blindness or full BFCL.",
+  "pretrained_model_calls_allocated_this_phase": 0,
+  "homepage_frozen": true
+}

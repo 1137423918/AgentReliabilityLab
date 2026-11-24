@@ -1,0 +1,16 @@
+{
+  "scope": "CPU tiny stochastic numerical checkpoint controls, not 3B training or GPU resume validation. Planned boundary snapshots do not authorize resource-failure retries.",
+  "source_sha256": {
+    "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "benchmarks/training_checkpoint.py": "760d04870592893340b8a686bc2a3238321887fb459909b145f21866790048a8",
+    "extras/lora-training/test_training_checkpoint.py": "cfd1fc73c7ca85345611c423dc3079ae7c919360e8be660e84c1438c883db8e3"
+  },
+  "input_bundle_sha256": "c45b8d8425abad6d7be1d24cf9f05186090a4b02555458beba4f54e60eb9c882",
+  "controller_sha256": "7ae5ce10ec9e63288f33dc413fada93eaa596247ed167527379d328df4fab2d2",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "pretrained_model_forwards": 0,
+  "expected_tiny_CPU_forward_calls": 18,
+  "expected_tiny_CPU_optimizer_updates": 18,
+  "revision": "v2 adds a fault-injected state-write interruption control; v1 completed16tinyCPUforwards/16updates remains preserved, no pretrained calls in either."
+}
