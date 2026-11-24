@@ -1,0 +1,31 @@
+{
+  "terminal": true,
+  "ready": null,
+  "error": {
+    "type": "AssertionError",
+    "message": "fresh-cpu-sync"
+  },
+  "phases": [
+    {
+      "name": "cpu-dependency-lock",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 67.294,
+      "peak_owned_RSS_bytes": 109105152
+    },
+    {
+      "name": "fresh-cpu-sync",
+      "exit_code": 2,
+      "guard": null,
+      "wall_seconds": 0.542,
+      "peak_owned_RSS_bytes": 1441792
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 79.319,
+  "lock_sha256": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+  "wheel_sha256": null,
+  "CPU_embedding_counts": null,
+  "inputs_and_sources_unchanged": null,
+  "GPU_used": false
+}

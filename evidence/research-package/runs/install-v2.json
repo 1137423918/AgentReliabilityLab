@@ -1,0 +1,77 @@
+{
+  "terminal": true,
+  "ready": true,
+  "error": null,
+  "phases": [
+    {
+      "name": "fresh-cpu-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 359.182,
+      "peak_owned_RSS_bytes": 64167936
+    },
+    {
+      "name": "isolated-runtime",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 8.452,
+      "peak_owned_RSS_bytes": 275955712
+    },
+    {
+      "name": "build-tool-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 9.328,
+      "peak_owned_RSS_bytes": 59297792
+    },
+    {
+      "name": "standalone-wheel-build",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.61,
+      "peak_owned_RSS_bytes": 61997056
+    },
+    {
+      "name": "wheel-install",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.05,
+      "peak_owned_RSS_bytes": 42430464
+    },
+    {
+      "name": "installed-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.051,
+      "peak_owned_RSS_bytes": 32374784
+    },
+    {
+      "name": "installed-cli-help",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.533,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "source-lifecycle-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.16,
+      "peak_owned_RSS_bytes": 104607744
+    },
+    {
+      "name": "source-intake-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.528,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 396.648,
+  "lock_sha256": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+  "wheel_sha256": "5b63cfcf761079efc87032ae7078d718da2eb58f8c4a50c33d37b273116cca13",
+  "CPU_embedding_counts": null,
+  "inputs_and_sources_unchanged": true,
+  "GPU_used": false
+}

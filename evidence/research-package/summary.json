@@ -1,0 +1,53 @@
+{
+  "installed_application_ready": true,
+  "scope": "IndependentCPUwheel;twoactualmaintainerdocs,notQAbenchmark/answer-generation. Rawconsoleprepare/check/read/help;modelcommandsinvokeinstalledsameCLIcallablewithobserver,noNNsubstitution.",
+  "supported_runtime": "Linuxx86_64/Python3.11",
+  "CPU_torch": "2.6.0+cpu",
+  "no_old_PYTHONPATH_or_source_import": true,
+  "source_tests": {
+    "existing_lifecycle": 10,
+    "new_intake": 6,
+    "scope_total": 16,
+    "not26_with_historical10": true
+  },
+  "documents": 2,
+  "nodes": 12,
+  "noop_embedding_calls": {
+    "reserved_forwards": 0,
+    "completed_forwards": 0,
+    "text_inputs": 0,
+    "query_inputs": 0
+  },
+  "counts": {
+    "reserved_forwards": 6,
+    "completed_forwards": 6,
+    "text_inputs": 12,
+    "query_inputs": 2
+  },
+  "MCP": {
+    "actual_TCP": true,
+    "three_structured_tools": true,
+    "two_real_documents": true,
+    "source_filter": true,
+    "exact_citation": true,
+    "invalid_citation_error": true
+  },
+  "generation_calls": 0,
+  "GPU_used": false,
+  "all_jobs_terminal_owned_zero": true,
+  "first_argument_failure_preserved": true,
+  "frozen_previous24_retrieval_not_rerun": true,
+  "CPU_ledger_sha256": "5576022db7025723430e951ac3a8b2cec5212f17f48d457556ed7c717834794e",
+  "wheel_sha256": "5b63cfcf761079efc87032ae7078d718da2eb58f8c4a50c33d37b273116cca13",
+  "lock_sha256": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+  "artifacts": {
+    "agentlab-research-0.1.0-starter.zip": {
+      "sha256": "a46a6d6f27cd700161f6456f3c45e653a103c3df720a9b1b1cdee05ef4ed8581",
+      "bytes": 47992
+    },
+    "agentlab_research-0.1.0-py3-none-any.whl": {
+      "sha256": "5b63cfcf761079efc87032ae7078d718da2eb58f8c4a50c33d37b273116cca13",
+      "bytes": 15156
+    }
+  }
+}

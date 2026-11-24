@@ -1,0 +1,19 @@
+{
+  "python": "3.11.4 (main, Jul  5 2023, 14:15:25) [GCC 11.2.0]",
+  "torch": "2.6.0+cpu",
+  "CUDA_initialized": false,
+  "versions": {
+    "transformers": "4.57.6",
+    "numpy": "2.2.6",
+    "llama-index-core": "0.14.26",
+    "mcp": "2.3.0",
+    "httpx2": "2.16.2"
+  },
+  "all_module_paths_inside_dedicated_venv": true,
+  "old_environment_site_paths_excluded": true,
+  "source_lock_sha256": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+  "build_tools_added_after_sync": {
+    "setuptools": "80.9.0",
+    "wheel": "0.45.1"
+  }
+}

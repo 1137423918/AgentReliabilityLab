@@ -44,13 +44,13 @@ def create_app(store, embedder):
         max_request_body_size=8192, host='127.0.0.1')
 
 
-def main():
+def main(argv=None, *, embedding_observer=None):
     p = argparse.ArgumentParser(description=__doc__); p.add_argument('--store', type=Path, required=True)
     p.add_argument('--model-dir', type=Path, required=True); p.add_argument('--port', type=int, default=18863)
-    a = p.parse_args()
+    a = p.parse_args(argv)
     if not 1024 <= a.port <= 65535: p.error('Use an unprivileged local port')
     from .research_embeddings import LocalE5Embedding
-    model = LocalE5Embedding(a.model_dir)
+    model = LocalE5Embedding(a.model_dir, observer=embedding_observer)
     uvicorn.run(create_app(a.store, model), host='127.0.0.1', port=a.port, workers=1,
                 log_level='warning', access_log=False)
 

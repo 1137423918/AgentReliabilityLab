@@ -1,0 +1,26 @@
+{
+  "terminal": true,
+  "ready": true,
+  "error": null,
+  "phases": [
+    {
+      "name": "installed-real-application",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 56.295,
+      "peak_owned_RSS_bytes": 955932672
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 66.872,
+  "lock_sha256": null,
+  "wheel_sha256": null,
+  "CPU_embedding_counts": {
+    "reserved_forwards": 6,
+    "completed_forwards": 6,
+    "text_inputs": 12,
+    "query_inputs": 2
+  },
+  "inputs_and_sources_unchanged": true,
+  "GPU_used": false
+}

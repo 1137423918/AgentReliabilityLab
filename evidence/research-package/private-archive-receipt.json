@@ -1,0 +1,14 @@
+{
+  "relative_path": "studies/research-package-stage83-20261124",
+  "manifest_sha256": "5d711cbdb550b0e80f47640552570ffb18330aef08689fffdd5195ee30183a45",
+  "files": 96,
+  "bytes": 779660,
+  "all_jobs_terminal_owned_zero": true,
+  "old599_750_831_84_and103CPU_ledgers_unchanged": true,
+  "new_CPU_forwards": 6,
+  "unknown_forwards": 0,
+  "generation_calls": 0,
+  "GPU_used": false,
+  "deferred_GPU_tasks_not_launched": true,
+  "weights_and_installed_venv_not_duplicated": true
+}

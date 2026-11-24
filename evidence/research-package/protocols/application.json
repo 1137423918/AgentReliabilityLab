@@ -1,0 +1,29 @@
+{
+  "scope": "InstalledwheelactualCLIcallable/E5CPU+rawconsoleprepare/check/read+actualMCP/TCP2realdocs;notretrievalgain. Freshnew32forward/128text/8querybudget,unknowncharged/noautomaticretry.",
+  "private_protocol_sha256": "ebda40a5bc05b773af2f57a924ba6814f3d527669f0a7c96168f433a07e892de",
+  "source_sha256": {
+    "benchmarks/research_installed_entry.py": "c183f6a5b9cc10438680028237aa6e63221abdf4223f3f620bd2eafea64d3271",
+    "benchmarks/research_package_controls.py": "c771b9a66f1f78414726342ee2bc1c2c43adbced8ed17c93af8488d790b0a48b",
+    "docs/dependency-workbench.md": "815529a96f97b21b1651f7e60247f52eb793be13d76804712e48da4875b31841",
+    "docs/dependency-upgrade-compatibility.md": "2458f7f7ecedecbaf498079bd5fb61c1f957eb690106397b655aa67989769c8f",
+    "packages/research-library/README.md": "6fa644c770978d54dca400500e20824a9c0705d48a253ba107c439225c774143",
+    "extras/research-library/uv.lock": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+    "extras/research-library/pyproject.toml": "fb04598e63999688c2eebaec0f3742d874c3117d44b5d62ea25abe6116d0f255",
+    "agent_lab/research_intake.py": "ad0afe59457c7787cb946a2757adc2e7dc1f4939947b2f51be15ce6856eb10a3",
+    "agent_lab/research_library.py": "34ebffd3362fe3dc7ba2817d313ba8cefe34578da4e587c0f41c55110d78faef",
+    "agent_lab/research_mcp.py": "d5af562982af029e7d2608463101a9902db4acd32516db8a0c9fe7352c73a091",
+    "agent_lab/research_cli.py": "904ff0cbe7c2057bee278e6a815f18742ac4ced287acb7ac5b403407ab077e8f",
+    "agent_lab/research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+    "agent_lab/research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963"
+  },
+  "CPU_caps": {
+    "forwards": 32,
+    "text_inputs": 128,
+    "query_inputs": 8
+  },
+  "controller_sha256": "0fb11d6b99525f1a92885ffe73b8f45559ac1d438fa50e39c54a2f01e04cb9d3",
+  "wheel_sha256": "5b63cfcf761079efc87032ae7078d718da2eb58f8c4a50c33d37b273116cca13",
+  "lock_sha256": "f457f04d9fb63a1c9e27c56d834452f47d8c3d54eb2ad007ab4f7a6fd1d7927d",
+  "scope_note": "Selectedfields,notoriginalprivateprotocolbytes."
+}

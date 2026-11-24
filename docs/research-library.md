@@ -22,9 +22,24 @@ flowchart LR
 
 ## 使用
 
-需要Python3.11及已配置的LlamaIndex、PyTorch、Transformers环境。实际验证复用了服务器两个既有环境的依赖路径，版本为llama-index-core0.14.26、torch2.6.0+cu124、transformers4.57.6、numpy2.2.6、mcp2.3.0；全部张量在CPU，CUDA未初始化。本轮没有验证全新独立环境安装，根项目的`uv.lock`也不包含这些可选模型依赖。
+现提供[独立CPU启动包](../artifacts/agentlab-research-0.1.0-starter.zip)和[wheel](../artifacts/agentlab_research-0.1.0-py3-none-any.whl)。已在服务器从冻结锁文件安装全新Linux x86_64 / Python3.11环境，使用torch2.6.0+cpu，不含CUDA运行时；不依赖旧模型环境的包路径或完整维护运行器。LlamaIndex0.14.26、Transformers4.57.6、numpy2.2.6和MCP2.3.0保持声明版本，完整传递依赖见`extras/research-library/uv.lock`；根项目的`uv.lock`仍属于维护运行器。首轮检索诊断使用的旧组合环境作为历史证据保留，没有把新CPU安装当作相同数值环境。
 
-从仓库根目录，在该依赖环境中执行：
+独立安装后可直接导入自己的可信UTF-8资料目录：
+
+```sh
+uv sync --project extras/research-library --frozen --no-install-project --no-default-groups
+uv pip install --python extras/research-library/.venv/bin/python --no-deps \
+  artifacts/agentlab_research-0.1.0-py3-none-any.whl
+uv pip check --python extras/research-library/.venv/bin/python
+extras/research-library/.venv/bin/agentlab-research check-model --directory /path/to/e5
+extras/research-library/.venv/bin/agentlab-research prepare \
+  --directory /path/to/docs --output /tmp/my-research-input \
+  --base-url 'https://github.com/OWNER/REPO/blob/COMMIT/docs/'
+```
+
+`prepare`处理`.md/.txt/.rst/.bib`，保留原始换行、生成稳定路径ID与哈希，最多256份资料；不解析PDF，也不验证调用者声明的来源链接。输出目录必须新建且位于输入目录之外。之后用`agentlab-research ingest/search/read/serve`；[完整参数与启动说明](../packages/research-library/README.md)。模型权重另外取得，包只提供固定资产哈希；`check-model`仅校验文件并补建缺失清单，不进行推理。使用[PyTorch官方CPU索引](https://pytorch.org/get-started/previous-versions/)与[uv显式索引绑定](https://docs.astral.sh/uv/concepts/indexes/)避免默认拉取CUDA依赖。
+
+原源码模块入口继续兼容。从仓库根目录，在相应依赖环境中执行：
 
 ```sh
 python -m agent_lab.research_library ingest \
@@ -61,3 +76,9 @@ MCP绑定`127.0.0.1:18863`，接口为`/mcp`，提供`list_sources`、`search_so
 问题和指定来源在排名前冻结；三种方式使用同一B版本、候选窗口24、每份来源只保留首个片段、最终返回3份来源。问题与标注未进入索引。它们是操作者编写的已知来源导航诊断，部分其他文档也可能相关；不是盲测QA，也不能用来宣称混合检索、答案质量或实际Agent任务有提升。
 
 本轮共103次已完成CPU嵌入前向：187个原文片段输入、49个查询输入、零未知；没有生成模型调用或GPU任务。两核CPU/nice19，主实验阶段峰值约1.26GB归属RSS；全部受管作业已结束、无归属子进程残留。原始失败、冻结输入、测试日志和来源哈希见[验证证据](../evidence/research-library/README.md)。
+
+## 独立包的实际验证
+
+全新CPU环境完成冻结同步、构建、wheel安装与依赖检查；离开源码目录、移除PYTHONPATH后确认仅从独立agentlab_research命名空间导入。复验原10项索引生命周期并新增6项目录导入测试，不能与历史10项累计成26项。安装包使用两份真实维护文档完成导入、索引、重复导入零编码、带出处检索、控制台引用回读与实际MCP/TCP联调；原24条排名实验没有重跑。
+
+本轮新增CPU前向6次、原文片段输入12个、查询输入2个，全部已完成、无未知；生成调用与GPU任务为0。模型命令通过已安装CLI的同一main callable执行，观察器只记录/限额，不替换真实E5；原生控制台入口另实测prepare、check-model、read和help。调用账本属于验证工具，服务本身没有新增持久配额。首次同步参数冲突及修复后的安装结果均保留，见[安装与验证证据](../evidence/research-package/README.md)。

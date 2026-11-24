@@ -1,0 +1,89 @@
+{
+  "files": {
+    "artifacts/agentlab-research-0.1.0-starter.zip": {
+      "sha256": "a46a6d6f27cd700161f6456f3c45e653a103c3df720a9b1b1cdee05ef4ed8581",
+      "bytes": 47992
+    },
+    "artifacts/agentlab_research-0.1.0-py3-none-any.whl": {
+      "sha256": "5b63cfcf761079efc87032ae7078d718da2eb58f8c4a50c33d37b273116cca13",
+      "bytes": 15156
+    },
+    "build-receipt.json": {
+      "sha256": "1754c5d8c44fefb2aab25082bdcc6685e993f890358e50f96e13a8c64446c8d5",
+      "bytes": 1184
+    },
+    "runs/install-v1.json": {
+      "sha256": "81b59cf95f878fa6380749f6d3baf5c66a15dcd2bc98d72dd3fc50b7f586140c",
+      "bytes": 704
+    },
+    "protocols/install-v1.json": {
+      "sha256": "ffc7bd10486fc2d1b77d0a1a7b5abaa4416185748382a319e916a6d29c17420d",
+      "bytes": 2333
+    },
+    "runs/install-v2.json": {
+      "sha256": "bd01fc32b719ca1d980e6a35374ebb7f99f32093825c07463f4bfff947a67fa7",
+      "bytes": 1837
+    },
+    "protocols/install-v2.json": {
+      "sha256": "03d8b53da845c655b7f4cbdc9926e41fc6a23a88d479032ddbed72963db51ffa",
+      "bytes": 2440
+    },
+    "runs/application.json": {
+      "sha256": "d3feaf3fba76f2efd048306d4453d70ccf1ec738392601ffe6271b883297b176",
+      "bytes": 534
+    },
+    "protocols/application.json": {
+      "sha256": "e042b0929d884d794c8866c46d349a208f1aa7bb226aec4017e2b0a98c50f9c3",
+      "bytes": 2243
+    },
+    "logs/source-lifecycle-controls.log": {
+      "sha256": "d4cdd9ad0e531044eab7e9f45878b9eabb6b7f62046730f299c78bedb9c28448",
+      "bytes": 1663
+    },
+    "logs/source-intake-controls.log": {
+      "sha256": "522f02c1ebfcd81f07756b0dfeff9af17b45b70d2345102aff7f36da46fe7e25",
+      "bytes": 964
+    },
+    "logs/installed-dependency-check.log": {
+      "sha256": "5a00c750c0b1c88a565d58314bd3de2fd756295c5a4101ecc910843259851029",
+      "bytes": 140
+    },
+    "logs/installed-cli-help.log": {
+      "sha256": "b407e9f0b0423d0fbd814e524279e34b02c1926e05f4cf5af1e0452e33a39346",
+      "bytes": 161
+    },
+    "logs/first-sync-argument-failure.log": {
+      "sha256": "265d0d396ce8c67d8343eefcc1c04ca2da41481f5f42ff1f05ed54b90336090b",
+      "bytes": 231
+    },
+    "runtime.json": {
+      "sha256": "fd026b0e3cbb4bdee060f7fd7ab450e5179a4a3d4db9e1fdff2551986ea33bf4",
+      "bytes": 552
+    },
+    "application.json": {
+      "sha256": "790f1d72395e74a71ab432215cbdbc6e103ebcea67a84aa9c86c790376aa9e07",
+      "bytes": 1721
+    },
+    "query-example.json": {
+      "sha256": "5fd6437b8b8606e5a44a7fb8b3cef1e48ecea2324ad4a0ff4e927f1e037c8086",
+      "bytes": 2067
+    },
+    "source-provenance.json": {
+      "sha256": "65b61434ab417a9752cea5a28d2ba4033c56d0e2939744b4a040a4b6840170f2",
+      "bytes": 890
+    },
+    "private-archive-receipt.json": {
+      "sha256": "666c4773dc388e9b99a1d94ca2c9e020b71e54e9f5e164a8184fa7b8b9018361",
+      "bytes": 479
+    },
+    "canonical-source-sha256.json": {
+      "sha256": "3e22882dfa0e431b073c0adf8b21a687902391d6874be321963428931a5ee80e",
+      "bytes": 1483
+    },
+    "summary.json": {
+      "sha256": "1451acbfc0597e0cad5d25e743348f91a82db68cbaebbee43c830a68de5323a7",
+      "bytes": 1767
+    }
+  },
+  "no_model_weights_private_ledger_or_vectors_exported": true
+}

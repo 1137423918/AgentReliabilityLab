@@ -1,0 +1,28 @@
+{
+  "scope": "FreshLinuxx86_64/Python3.11CPUtorchruntime,isolatedwheelbuild/install,16sourcecontrols;0NN/0GPU. Lock/syncfromofficialPyPIandexplicitPyTorchCPUindex.",
+  "private_protocol_sha256": "50199f698eb11f308955a9d8c6a32ab6808c924e8619898fb62d368847e0a423",
+  "source_sha256": {
+    "packages/research-library/build.py": "f8868ccf8f2c43b05f9f22b9e4f4faa2432ab14d6f0ae2a165fe6b8dd2843831",
+    "packages/research-library/pyproject.toml": "a1b66187118037f4385eb5a1ce68026a1155460d068c2366d2065d41dd853d10",
+    "packages/research-library/__init__.py": "fd96401e409e7a29f95d1ae7079a56c8ee3ed90f3a4fa9328012555945ebd5db",
+    "packages/research-library/__main__.py": "245c4621cca8d41b125032e8a87ec8ec5e0a89c86d7eceeb26aa393632d65910",
+    "extras/research-library/pyproject.toml": "fb04598e63999688c2eebaec0f3742d874c3117d44b5d62ea25abe6116d0f255",
+    "agent_lab/research_intake.py": "ad0afe59457c7787cb946a2757adc2e7dc1f4939947b2f51be15ce6856eb10a3",
+    "agent_lab/research_library.py": "34ebffd3362fe3dc7ba2817d313ba8cefe34578da4e587c0f41c55110d78faef",
+    "agent_lab/research_mcp.py": "d5af562982af029e7d2608463101a9902db4acd32516db8a0c9fe7352c73a091",
+    "agent_lab/research_cli.py": "904ff0cbe7c2057bee278e6a815f18742ac4ced287acb7ac5b403407ab077e8f",
+    "agent_lab/research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+    "agent_lab/research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61",
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "tests/test_research_library.py": "7164194afb4027ce32ad7d639a7093dc0ac0144a9fc32df54a5515c57e5ea9f7",
+    "tests/test_research_intake.py": "b0c625e2a5a3db0c66e2af200d0d9ff6894dd0d2428565b8a3987a5c3faa5758",
+    "docs/dependency-workbench.md": "815529a96f97b21b1651f7e60247f52eb793be13d76804712e48da4875b31841",
+    "docs/dependency-upgrade-compatibility.md": "2458f7f7ecedecbaf498079bd5fb61c1f957eb690106397b655aa67989769c8f"
+  },
+  "CPU_caps": {},
+  "controller_sha256": "353dceae7c29961c61208cabfe59799b96dfae39b6bbea3a20d2a1849c9d46b5",
+  "wheel_sha256": null,
+  "lock_sha256": null,
+  "scope_note": "Selectedfields,notoriginalprivateprotocolbytes."
+}

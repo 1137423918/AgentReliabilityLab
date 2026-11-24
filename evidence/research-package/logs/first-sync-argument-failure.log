@@ -1,0 +1,5 @@
+error: the argument '--frozen' cannot be used with '--no-sources'
+
+Usage: uv sync --project <PROJECT> --python <PYTHON> --frozen --no-install-project --no-default-groups --cache-dir <CACHE_DIR>
+
+For more information, try '--help'.

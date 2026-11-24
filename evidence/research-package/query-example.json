@@ -1,0 +1,30 @@
+{
+  "generation": "5f066f8132b3cace5779f2019f5100ea4521f5991c217ea414342b24f7db6b80",
+  "mode": "hybrid",
+  "results": [
+    {
+      "citation_id": "5f066f8132b3cace5779f2019f5100ea4521f5991c217ea414342b24f7db6b80:0d531ed5e343d1dd441b87e58aa40f58511abb60b5c6ef6f72dd2f7a03430e04",
+      "generation": "5f066f8132b3cace5779f2019f5100ea4521f5991c217ea414342b24f7db6b80",
+      "is_current_generation": true,
+      "source_id": "src_d18eab7b274909c9b494",
+      "title": "dependency-upgrade-compatibility.md",
+      "source_kind": "local_document_snapshot",
+      "source_url": "https://github.com/1137423918/AgentReliabilityLab/blob/d05cdbb557e7226f0090290397bb44ec89e6db03/docs/dependency-upgrade-compatibility.md",
+      "source_sha256": "2458f7f7ecedecbaf498079bd5fb61c1f957eb690106397b655aa67989769c8f",
+      "line_start": 1,
+      "line_end": 14,
+      "char_start": 0,
+      "char_end": 405,
+      "excerpt": "# FastMCP 升级候选的配对鉴权兼容性验证\n\n此前[依赖审查应用](dependency-upgrade.md)只完成锁文件解析和固定漏洞库复扫。本次继续检验历史 FastMCP 2.12.4 候选：在两个独立项目环境中，使用原始锁文件和已保存的候选锁文件，执行同一份上游鉴权相关测试。\n\n| 实际环境 | Authlib | joserfc | 相同测试清单 |\n| --- | --- | --- | --- |\n| 原始锁文件 | 1.6.1 | 未安装 | 279 通过，0 失败／错误／跳过 |\n| 候选锁文件 | 1.9.10 | 1.8.0 | 279 通过，0 失败／错误／跳过 |\n\n这证明该候选在本次鉴权测试范围内兼容；两组使用同一批279项测试，不能相加成558个独立场景。实际环境同时增加了joserfc，结果不能归因于仅改变Authlib。\n\n## 固定输入与执行\n\n源码固定为",
+      "ranking_score": 0.03252247488101534
+    }
+  ],
+  "generated_answer": false,
+  "note": "Candidate source passages,not an answer or calibrated relevance probability.",
+  "CPU_embedding_calls": {
+    "reserved_forwards": 1,
+    "completed_forwards": 1,
+    "text_inputs": 0,
+    "query_inputs": 1
+  }
+}

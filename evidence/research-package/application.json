@@ -1,0 +1,65 @@
+{
+  "ready": true,
+  "GPU_used": false,
+  "generation_model_calls": 0,
+  "scope": "installedCLIcallableusesactualmodelwithobserver;rawconsoleprepare/check/read/help;actualMCP/TCP",
+  "source_checkout_importable": false,
+  "ingest": {
+    "generation": "5f066f8132b3cace5779f2019f5100ea4521f5991c217ea414342b24f7db6b80",
+    "added": [
+      "src_3f8b5dc7249b1c523a40",
+      "src_d18eab7b274909c9b494"
+    ],
+    "updated": [],
+    "removed": [],
+    "unchanged": 0,
+    "nodes": 12,
+    "published": true,
+    "CPU_embedding_calls": {
+      "reserved_forwards": 4,
+      "completed_forwards": 4,
+      "text_inputs": 12,
+      "query_inputs": 0
+    }
+  },
+  "no_op": {
+    "generation": "5f066f8132b3cace5779f2019f5100ea4521f5991c217ea414342b24f7db6b80",
+    "unchanged": 2,
+    "added": [],
+    "updated": [],
+    "removed": [],
+    "published": false,
+    "CPU_embedding_calls": {
+      "reserved_forwards": 0,
+      "completed_forwards": 0,
+      "text_inputs": 0,
+      "query_inputs": 0
+    }
+  },
+  "model_check": {
+    "model": "intfloat/multilingual-e5-small",
+    "revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "files": 6,
+    "manifest_created": false,
+    "model_calls": 0
+  },
+  "exact_cli_citation": true,
+  "MCP": {
+    "actual_TCP": true,
+    "three_structured_tools": true,
+    "two_real_documents": true,
+    "source_filter": true,
+    "exact_citation": true,
+    "invalid_citation_error": true
+  },
+  "CPU_only_build": true,
+  "CUDA_initialized": false,
+  "counts": {
+    "reserved_forwards": 6,
+    "completed_forwards": 6,
+    "text_inputs": 12,
+    "query_inputs": 2
+  },
+  "ledger_sha256": "5576022db7025723430e951ac3a8b2cec5212f17f48d457556ed7c717834794e",
+  "wall_seconds": 53.709
+}

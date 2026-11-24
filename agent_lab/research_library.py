@@ -209,18 +209,18 @@ def search(store, query, embedder, *, top_k=5, mode='hybrid', source_id=None):
             'note': 'Candidate source passages,not an answer or calibrated relevance probability.'}
 
 
-def main():
+def main(argv=None, *, embedding_observer=None):
     parser = argparse.ArgumentParser(description=__doc__); sub = parser.add_subparsers(dest='command', required=True)
     ingest_parser = sub.add_parser('ingest'); ingest_parser.add_argument('--manifest', type=Path, required=True)
     query_parser = sub.add_parser('search'); query_parser.add_argument('--query', required=True); query_parser.add_argument('--mode', choices=['semantic', 'lexical', 'hybrid'], default='hybrid'); query_parser.add_argument('--source'); query_parser.add_argument('--top-k', type=int, default=5)
     read_parser = sub.add_parser('read'); read_parser.add_argument('--citation-id', required=True)
     for item in [ingest_parser, query_parser, read_parser]: item.add_argument('--store', type=Path, required=True)
     for item in [ingest_parser, query_parser]: item.add_argument('--model-dir', type=Path, required=True)
-    args = parser.parse_args()
+    args = parser.parse_args(argv)
     if args.command == 'read': result = citation(args.store, args.citation_id)
     else:
         from .research_embeddings import LocalE5Embedding
-        model = LocalE5Embedding(args.model_dir)
+        model = LocalE5Embedding(args.model_dir, observer=embedding_observer)
         result = ingest(args.manifest, args.store, model) if args.command == 'ingest' else search(args.store, args.query, model, top_k=args.top_k, mode=args.mode, source_id=args.source)
         result['CPU_embedding_calls'] = model.counts
     print(json.dumps(result, ensure_ascii=False, indent=2))

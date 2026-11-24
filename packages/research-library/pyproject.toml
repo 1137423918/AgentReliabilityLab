@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentlab-research"
+version = "0.1.0"
+description = "Local CPU research retrieval, incremental LlamaIndex and versioned MCP citations"
+requires-python = ">=3.11"
+dependencies = ["llama-index-core==0.14.26", "torch==2.6.0", "transformers==4.57.6", "numpy==2.2.6", "mcp==2.3.0", "httpx2==2.16.2"]
+
+[project.scripts]
+agentlab-research = "agentlab_research.research_cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+agentlab_research = ["research_model_assets.json"]

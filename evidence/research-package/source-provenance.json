@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "src_d18eab7b274909c9b494",
+      "path": "sources/src_d18eab7b274909c9b494.txt",
+      "title": "dependency-upgrade-compatibility.md",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/d05cdbb557e7226f0090290397bb44ec89e6db03/docs/dependency-upgrade-compatibility.md",
+      "kind": "local_document_snapshot",
+      "sha256": "2458f7f7ecedecbaf498079bd5fb61c1f957eb690106397b655aa67989769c8f"
+    },
+    {
+      "id": "src_3f8b5dc7249b1c523a40",
+      "path": "sources/src_3f8b5dc7249b1c523a40.txt",
+      "title": "dependency-workbench.md",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/d05cdbb557e7226f0090290397bb44ec89e6db03/docs/dependency-workbench.md",
+      "kind": "local_document_snapshot",
+      "sha256": "815529a96f97b21b1651f7e60247f52eb793be13d76804712e48da4875b31841"
+    }
+  ]
+}
