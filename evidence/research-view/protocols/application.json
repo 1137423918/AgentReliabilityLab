@@ -1,0 +1,25 @@
+{
+  "scope": "New standalone reading view:5presentation controls + same9report workflow regression, then4real stopped model runs with6PDFrefs and separate missing/markup fixture. No model/index replay, no new QA scores or generation, no GPU/install. Old9 regression results reported separately, never add old16/21tests.",
+  "source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/research_report.py": "e7fe852df8f84a622c3bfe1cdd0424424967b102dce08ab55beadbe88d391f2e",
+    "agent_lab/research_assistant.py": "166052821b8e2958e9c109922e32db97df871e669a64e5539fccec00ab3378c9",
+    "agent_lab/request_budget.py": "7c82ab4e9c60112db4acc12cca5725997028834c9582dd20eccdab761bfa1707",
+    "agent_lab/async_request_budget.py": "9b8b55ce24ff16b4490eba93d24f400b9e649fb4f69eef8b6b076d93fcdde26e",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/research_library.py": "4c425c0e59a44aefd29a02e0ea2a243bd7e206222a5b1e737bdcaf1bf3f4f2c7",
+    "tests/test_research_report.py": "b4a3ba0b871a8c5f582e54c162b92c7c50179c1e2d0397594ea0be348aeefe43",
+    "tests/test_research_assistant.py": "d15738970410dd5a60a7e7bc2c4291b014ebe8fc0606b53cf5ca2bd37cb03493",
+    "tests/test_research_library.py": "7164194afb4027ce32ad7d639a7093dc0ac0144a9fc32df54a5515c57e5ea9f7",
+    "agent_lab/research_view.py": "eded9ab916cf8e47845e08574aa57991d543ddb82b7019d10e38a93636d18140",
+    "tests/test_research_view.py": "fc1ec0235a0fbced7b2a3623ad07c80316d3236e7ec97cddd31d42e33d409f6e",
+    "benchmarks/research_view_flow.py": "1ef5dea79dea7ae3356374bbc6fbcf910f6111f406e3b9e2e23c4c59e56ee0b4"
+  },
+  "input_bundle_sha256": "6f8ffeccb169c498f4ec0e337ec866ab88546262d096c39cd91b6a4fc44f5dfe",
+  "controller_sha256": "a27cc628bd8224f7dc584c42bbcf0cb688ed20eaa7b5aba01d2c0b8a81a6bb8d",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "frontier_archive_manifest_sha256": "630c271bbb38c0c0d90d2bec016b065e040048aa74d3aa59156c7e60c6e5a2a8",
+  "GPU_used": false
+}

@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; style-src &#x27;sha256-v37cDJqLkwojjPfNgQJtafj+CnHJGyj2HAnM9wh4rQg=&#x27;; script-src &#x27;sha256-oYpLc6wV+8L3Kqc3f30fp32qcxao+llwA2S1DRZ43Zw=&#x27;; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer"><title>论文阅读记录 · Agent Lab</title>
+<style>
+:root{color-scheme:light;--ink:#203b3b;--muted:#5a6c6b;--line:#dbe3df;--paper:#fff;--accent:#155e57}
+*{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Noto Sans CJK SC",sans-serif}
+main,header,footer{max-width:1080px;margin:auto;padding:28px}header{padding-top:50px;padding-bottom:14px}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:750;letter-spacing:.15em;margin:0 0 12px}h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:-.03em;margin:0 0 14px}
+.lead{max-width:760px;color:var(--muted);margin:0}.overview{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 14px}.metric{padding:10px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px}.metric strong{font-size:21px;margin-right:7px}
+.notice{border-left:3px solid #c6a76a;padding:9px 15px;background:#faf5e9;color:#67532e;font-size:14px}.toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:12px;padding:20px 0}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:650}.search{flex:1;min-width:220px}
+input,select,button{font:inherit;color:var(--ink);border:1px solid #bdcbc5;border-radius:8px;background:#fff;padding:10px 12px;min-height:44px}input{width:100%}button{cursor:pointer;font-size:14px;font-weight:650}button:hover{background:#edf3ef}input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #7aaba2;outline-offset:3px}
+.result-count{font-size:14px;color:var(--muted);margin:0 0 14px}.cards{display:grid;gap:20px}.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}.card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.number{font-size:12px;font-weight:750;color:var(--muted);letter-spacing:.08em}.badge{font-size:12px;font-weight:700;border-radius:20px;padding:3px 10px;white-space:nowrap;background:#e4f1eb;color:#215b47}.unfinished .badge{background:#fff0db;color:#825719}.error .badge{background:#f9e7e5;color:#93433b}
+h2{font-size:20px;line-height:1.55;margin:14px 0 16px;overflow-wrap:anywhere}.answer{white-space:pre-wrap;margin:0 0 18px;overflow-wrap:anywhere}.answer-label{font-size:12px;color:var(--muted);margin-bottom:7px}.diagnostics{padding-left:22px;color:#825719;font-size:14px}.refs{border-top:1px solid var(--line);padding-top:16px}.refs h3{font-size:13px;margin:0 0 10px;color:var(--muted)}.refs ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}.refs li{padding:12px 14px;background:#f6f8f5;border-radius:9px;overflow-wrap:anywhere}.ref-label{font-weight:750;font-size:12px;margin-right:8px}a{color:#155e57;text-underline-offset:3px}.location{color:var(--muted);font-size:13px;margin-top:4px}details{font-size:13px;margin-top:16px;color:var(--muted)}summary{cursor:pointer}dl{display:grid;grid-template-columns:90px 1fr;gap:8px 12px;margin-bottom:0}dt{font-weight:650}dd{margin:0;min-width:0;overflow-wrap:anywhere}code{font-family:ui-monospace,monospace;font-size:12px;overflow-wrap:anywhere}
+#empty{border:1px dashed #bdcbc5;border-radius:12px;padding:35px;text-align:center;color:var(--muted)}[hidden]{display:none!important}.enhanced-only{display:none}html.enhanced .enhanced-only{display:flex}footer{font-size:12px;color:var(--muted);padding-top:8px;padding-bottom:40px}
+@media(max-width:600px){main,header,footer{padding-left:18px;padding-right:18px}header{padding-top:30px}.toolbar{align-items:stretch}.field{flex:1;min-width:140px}.search{flex-basis:100%}.card{padding:18px}.metric{padding:8px 12px}.overview{gap:7px}h2{font-size:18px}dl{grid-template-columns:74px 1fr}}
+@media print{body{background:#fff;font-size:11pt}main,header,footer{max-width:none;padding:10px 0}header{padding-top:0}.toolbar,.download-note{display:none!important}.card{break-inside:avoid;border-radius:0;margin-bottom:12px}.overview{margin:12px 0}.metric{padding:3px 8px}.refs li{background:#fff;padding:4px 0}details{display:block}details>*{display:block}summary{display:none}h1{font-size:24pt}}
+</style></head><body>
+<header><p class="eyebrow">AGENT LAB / READING NOTES</p><h1>让阅读结果，回到来源。</h1>
+<p class="lead">集中查看已有回答、实际读取的论文页和未完成原因。这是一份可离线打开的阅读记录。</p>
+<div class="overview" aria-label="记录概览"><div class="metric"><strong>4</strong>项记录</div><div class="metric"><strong>3</strong>项已提交</div><div class="metric"><strong>1</strong>项未完成</div><div class="metric"><strong>0</strong>项导出异常</div></div>
+<p class="notice">“已提交”表示原运行接受了回答；引用来源已核对，陈述正确性仍需复核。此页面不会重新生成或补写答案。</p></header>
+<main><div class="toolbar enhanced-only" aria-label="筛选阅读记录">
+<label class="field search" for="query">搜索问题、回答或来源<input id="query" type="search" placeholder="例如：检索、RECEIPT、资料不足" autocomplete="off"></label>
+<label class="field" for="status">运行状态<select id="status"><option value="all">全部记录</option><option value="submitted">已提交</option><option value="unfinished">未完成</option><option value="error">导出异常</option></select></label>
+<button type="button" id="reset">清除筛选</button><button type="button" id="print">打印当前结果</button><button type="button" id="download">下载全部JSON</button></div>
+<noscript><p>当前未启用JavaScript，所有记录仍完整显示；搜索、筛选和下载按钮不可用。</p></noscript>
+<p id="result-count" class="result-count" role="status" aria-live="polite">显示 4 / 4 项</p>
+<div class="cards"><article class="card submitted" data-status="submitted" aria-labelledby="question-1">
+<div class="card-top"><span class="number">READING 01</span><span class="badge">已提交</span></div>
+<div class="searchable">
+<h2 id="question-1">请根据库中的 LightRAG 论文，用一句话解释低层和高层检索分别查找什么，附实际读过的论文页引用。</h2>
+<div class="answer-label">已保存的模型回答 · 未自动验证陈述正确性</div>
+<p class="answer">低层检索查找具体实体及其属性，高层检索查找主题和整体概念。</p>
+<section class="refs" aria-label="论文与原文引用"><h3>实际读取的来源</h3><ul>
+<li><span class="ref-label">r1</span><a href="https://arxiv.org/pdf/2410.05779v3#page=8" target="_blank" rel="noopener noreferrer">LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 8</a><div class="location">PDF物理第8页 · 页标签8 · 归档资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:205045cc135bcefc18937f33d31ea5660d649fdda678afffff6321617c212ab7</code></dd><dt>原文SHA256</dt><dd><code>1cfde239f8838ad602ef835e426ae09e195d6c9cb00ff438d49f1b8c9a726abd</code></dd><dt>PDF SHA256</dt><dd><code>bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a</code></dd></dl></details></li>
+<li><span class="ref-label">r2</span><a href="https://arxiv.org/pdf/2410.05779v3#page=4" target="_blank" rel="noopener noreferrer">LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 4</a><div class="location">PDF物理第4页 · 页标签4 · 归档资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:59bae011827381605a73ccc8f4aabcd63ec9c3b4952b1779b18725186fbfb997</code></dd><dt>原文SHA256</dt><dd><code>a686b53326db027dddaa15b6b809952947c1bbb96fb9893a317d957fcdd5029e</code></dd><dt>PDF SHA256</dt><dd><code>bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a</code></dd></dl></details></li>
+</ul></section>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>submitted</code></dd>
+<dt>生成请求</dt><dd>6 / 6；完整回复6；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca</code></dd>
+<dt>模型</dt><dd>agentlab-research-qwen3-4b-cpu</dd></dl></details>
+</article>
+<article class="card submitted" data-status="submitted" aria-labelledby="question-2">
+<div class="card-top"><span class="number">READING 02</span><span class="badge">已提交</span></div>
+<div class="searchable">
+<h2 id="question-2">根据库中 LightRAG 和 MiniRAG 两篇论文，简要比较它们索引里实体、关系与文本片段的组织方式，分别提供读过的来源引用。</h2>
+<div class="answer-label">已保存的模型回答 · 未自动验证陈述正确性</div>
+<p class="answer">LightRAG使用实体名称和关系短语作为索引键，MiniRAG则整合文本片段与命名实体于统一结构中，实现简单高效索引。</p>
+<section class="refs" aria-label="论文与原文引用"><h3>实际读取的来源</h3><ul>
+<li><span class="ref-label">r1</span><a href="https://arxiv.org/pdf/2410.05779v3#page=3" target="_blank" rel="noopener noreferrer">LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 3</a><div class="location">PDF物理第3页 · 页标签3 · 归档资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:82348e2b655680593f8963c3a13a5f6a9214bd0d97822ef858fc39a58b16ea13</code></dd><dt>原文SHA256</dt><dd><code>9aad5c4fe113effaabf3d42e0dbef30c64157ba09a02ae0451727175ec7e77c2</code></dd><dt>PDF SHA256</dt><dd><code>bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a</code></dd></dl></details></li>
+<li><span class="ref-label">r3</span><a href="https://arxiv.org/pdf/2501.06713v3#page=1" target="_blank" rel="noopener noreferrer">MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 1</a><div class="location">PDF物理第1页 · 页标签1 · 归档资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:4a85c73326f7363902bc9ac332a84cb312f5f3b70a2b0ece669891731520abb8</code></dd><dt>原文SHA256</dt><dd><code>716b42dc7ac1fff4d8b23acb90922e6cc0189af1033dc14799e09360b3797f9d</code></dd><dt>PDF SHA256</dt><dd><code>6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561</code></dd></dl></details></li>
+</ul></section>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>submitted</code></dd>
+<dt>生成请求</dt><dd>6 / 6；完整回复6；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca</code></dd>
+<dt>模型</dt><dd>agentlab-research-qwen3-4b-cpu</dd></dl></details>
+</article>
+<article class="card unfinished" data-status="unfinished" aria-labelledby="question-3">
+<div class="card-top"><span class="number">READING 03</span><span class="badge">未完成</span></div>
+<div class="searchable">
+<h2 id="question-3">请依据当前论文库，给出 LS-DETR 在 UATD 数据集上的消融实验精确结果；如果缺少对应全文，请明确说明无法据此回答，不要使用模型记忆补数值。</h2>
+<p class="answer">未形成已接受的最终回答。原运行状态及原因保留如下。</p>
+<ul class="diagnostics">
+<li>最后一次提交的回答为空。</li>
+<li>声明证据不足时仍附带了引用，未满足提交要求。</li>
+<li>应用拒收了最后一次提交。</li>
+</ul>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>turn_limit</code></dd>
+<dt>生成请求</dt><dd>6 / 6；完整回复6；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca</code></dd>
+<dt>模型</dt><dd>agentlab-research-qwen3-4b-cpu</dd></dl></details>
+</article>
+<article class="card submitted" data-status="submitted" aria-labelledby="question-4">
+<div class="card-top"><span class="number">READING 04</span><span class="badge">已提交</span></div>
+<div class="searchable">
+<h2 id="question-4">请根据库中的 RECEIPT 论文，用不超过两句话解释 return assumption 是什么，以及为什么进程退出码为0不足以证明命令完成了请求的动作；附实际读过的论文页引用。</h2>
+<div class="answer-label">已保存的模型回答 · 未自动验证陈述正确性</div>
+<p class="answer">return assumption认为返回状态0即表示任务完成，但实际中进程可能未执行请求动作。退出码为0无法证明任务完成，因系统可能在无人监控下运行，且部分工具调用未执行实际操作。</p>
+<section class="refs" aria-label="论文与原文引用"><h3>实际读取的来源</h3><ul>
+<li><span class="ref-label">r1</span><a href="https://arxiv.org/pdf/2611.01930v1#page=3" target="_blank" rel="noopener noreferrer">RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 3</a><div class="location">PDF物理第3页 · 页标签3 · 当前资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:499127f1abb2a2f099fc87b9c6852bcd11ac63cac1ea3a604847e3b42a626608</code></dd><dt>原文SHA256</dt><dd><code>d270feb4ac1b043c2605e022103fef76c19f1d38a3dd0986a9b843dadfa0f6f0</code></dd><dt>PDF SHA256</dt><dd><code>b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf</code></dd></dl></details></li>
+<li><span class="ref-label">r3</span><a href="https://arxiv.org/pdf/2611.01930v1#page=5" target="_blank" rel="noopener noreferrer">RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 5</a><div class="location">PDF物理第5页 · 页标签5 · 当前资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:2178f55021898b911e916658a45946c680a3da000852ee4b5bb18d3873d8622a</code></dd><dt>原文SHA256</dt><dd><code>18bcb4dc529b181d6bea8f5fa920143d9926651757e56f32f73b1d173fdba6fe</code></dd><dt>PDF SHA256</dt><dd><code>b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf</code></dd></dl></details></li>
+</ul></section>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>submitted</code></dd>
+<dt>生成请求</dt><dd>4 / 6；完整回复4；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae</code></dd>
+<dt>模型</dt><dd>agentlab-research-qwen3-4b-cpu</dd></dl></details>
+</article></div><p id="empty" hidden>没有匹配的记录。可修改关键词或清除筛选。</p></main>
+<footer><p>单文件阅读页 · 无外部字体、脚本或自动联网请求。点击论文链接时才打开在线来源。</p>
+<p class="download-note">筛选仅改变显示与打印内容；HTML本身和“下载全部JSON”始终包含全部记录，分享前请检查问题与回答。</p></footer>
+<pre id="report-data" hidden>{
+  &quot;version&quot;: 1,
+  &quot;scope&quot;: &quot;Recorded answers and read-only source checks; no model/tool execution or new evaluation.&quot;,
+  &quot;semantic_entailment_checked&quot;: false,
+  &quot;runs&quot;: [
+    {
+      &quot;run_id&quot;: &quot;1981320c992889907bb3874cca882a6da6a82325f1637acd192c43d032c4f9bb&quot;,
+      &quot;question&quot;: &quot;请根据库中的 LightRAG 论文，用一句话解释低层和高层检索分别查找什么，附实际读过的论文页引用。&quot;,
+      &quot;export_status&quot;: &quot;ready&quot;,
+      &quot;recorded_status&quot;: &quot;submitted&quot;,
+      &quot;model&quot;: &quot;agentlab-research-qwen3-4b-cpu&quot;,
+      &quot;source_generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+      &quot;answer&quot;: &quot;低层检索查找具体实体及其属性，高层检索查找主题和整体概念。&quot;,
+      &quot;model_submission_status&quot;: &quot;supported&quot;,
+      &quot;references&quot;: [
+        {
+          &quot;citation_id&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:205045cc135bcefc18937f33d31ea5660d649fdda678afffff6321617c212ab7&quot;,
+          &quot;generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+          &quot;is_current_generation&quot;: false,
+          &quot;source_id&quot;: &quot;pdf_d8dd4844fd70ef9c64aa_p8&quot;,
+          &quot;title&quot;: &quot;LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 8&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2410.05779v3#page=8&quot;,
+          &quot;source_sha256&quot;: &quot;1cfde239f8838ad602ef835e426ae09e195d6c9cb00ff438d49f1b8c9a726abd&quot;,
+          &quot;line_start&quot;: 19,
+          &quot;line_end&quot;: 30,
+          &quot;char_start&quot;: 1114,
+          &quot;char_end&quot;: 2076,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 1123301,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 16,
+            &quot;page_label&quot;: &quot;8&quot;,
+            &quot;page_number&quot;: 8,
+            &quot;sha256&quot;: &quot;bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a&quot;
+          },
+          &quot;ref&quot;: &quot;r1&quot;
+        },
+        {
+          &quot;citation_id&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:59bae011827381605a73ccc8f4aabcd63ec9c3b4952b1779b18725186fbfb997&quot;,
+          &quot;generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+          &quot;is_current_generation&quot;: false,
+          &quot;source_id&quot;: &quot;pdf_d8dd4844fd70ef9c64aa_p4&quot;,
+          &quot;title&quot;: &quot;LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 4&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2410.05779v3#page=4&quot;,
+          &quot;source_sha256&quot;: &quot;a686b53326db027dddaa15b6b809952947c1bbb96fb9893a317d957fcdd5029e&quot;,
+          &quot;line_start&quot;: 30,
+          &quot;line_end&quot;: 43,
+          &quot;char_start&quot;: 2800,
+          &quot;char_end&quot;: 3949,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 1123301,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 16,
+            &quot;page_label&quot;: &quot;4&quot;,
+            &quot;page_number&quot;: 4,
+            &quot;sha256&quot;: &quot;bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a&quot;
+          },
+          &quot;ref&quot;: &quot;r2&quot;
+        }
+      ],
+      &quot;diagnostics&quot;: [],
+      &quot;requests&quot;: {
+        &quot;reserved&quot;: 6,
+        &quot;saved_complete&quot;: 6,
+        &quot;without_saved_complete_response&quot;: 0,
+        &quot;limit&quot;: 6
+      },
+      &quot;semantic_entailment_checked&quot;: false
+    },
+    {
+      &quot;run_id&quot;: &quot;93a7583857e6fe3f3f092165ebb36535661db07478053496ddcff7cc32cbded1&quot;,
+      &quot;question&quot;: &quot;根据库中 LightRAG 和 MiniRAG 两篇论文，简要比较它们索引里实体、关系与文本片段的组织方式，分别提供读过的来源引用。&quot;,
+      &quot;export_status&quot;: &quot;ready&quot;,
+      &quot;recorded_status&quot;: &quot;submitted&quot;,
+      &quot;model&quot;: &quot;agentlab-research-qwen3-4b-cpu&quot;,
+      &quot;source_generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+      &quot;answer&quot;: &quot;LightRAG使用实体名称和关系短语作为索引键，MiniRAG则整合文本片段与命名实体于统一结构中，实现简单高效索引。&quot;,
+      &quot;model_submission_status&quot;: &quot;supported&quot;,
+      &quot;references&quot;: [
+        {
+          &quot;citation_id&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:82348e2b655680593f8963c3a13a5f6a9214bd0d97822ef858fc39a58b16ea13&quot;,
+          &quot;generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+          &quot;is_current_generation&quot;: false,
+          &quot;source_id&quot;: &quot;pdf_d8dd4844fd70ef9c64aa_p3&quot;,
+          &quot;title&quot;: &quot;LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 3&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2410.05779v3#page=3&quot;,
+          &quot;source_sha256&quot;: &quot;9aad5c4fe113effaabf3d42e0dbef30c64157ba09a02ae0451727175ec7e77c2&quot;,
+          &quot;line_start&quot;: 100,
+          &quot;line_end&quot;: 108,
+          &quot;char_start&quot;: 4622,
+          &quot;char_end&quot;: 5312,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 1123301,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 16,
+            &quot;page_label&quot;: &quot;3&quot;,
+            &quot;page_number&quot;: 3,
+            &quot;sha256&quot;: &quot;bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a&quot;
+          },
+          &quot;ref&quot;: &quot;r1&quot;
+        },
+        {
+          &quot;citation_id&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:4a85c73326f7363902bc9ac332a84cb312f5f3b70a2b0ece669891731520abb8&quot;,
+          &quot;generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+          &quot;is_current_generation&quot;: false,
+          &quot;source_id&quot;: &quot;pdf_090aff59683c18c50be3_p1&quot;,
+          &quot;title&quot;: &quot;MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 1&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2501.06713v3#page=1&quot;,
+          &quot;source_sha256&quot;: &quot;716b42dc7ac1fff4d8b23acb90922e6cc0189af1033dc14799e09360b3797f9d&quot;,
+          &quot;line_start&quot;: 1,
+          &quot;line_end&quot;: 16,
+          &quot;char_start&quot;: 0,
+          &quot;char_end&quot;: 981,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 10023506,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 16,
+            &quot;page_label&quot;: &quot;1&quot;,
+            &quot;page_number&quot;: 1,
+            &quot;sha256&quot;: &quot;6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561&quot;
+          },
+          &quot;ref&quot;: &quot;r3&quot;
+        }
+      ],
+      &quot;diagnostics&quot;: [],
+      &quot;requests&quot;: {
+        &quot;reserved&quot;: 6,
+        &quot;saved_complete&quot;: 6,
+        &quot;without_saved_complete_response&quot;: 0,
+        &quot;limit&quot;: 6
+      },
+      &quot;semantic_entailment_checked&quot;: false
+    },
+    {
+      &quot;run_id&quot;: &quot;932e22e30f5800b348439148c10b202566d550e7e46b34d7b1e2be194606ac29&quot;,
+      &quot;question&quot;: &quot;请依据当前论文库，给出 LS-DETR 在 UATD 数据集上的消融实验精确结果；如果缺少对应全文，请明确说明无法据此回答，不要使用模型记忆补数值。&quot;,
+      &quot;export_status&quot;: &quot;ready&quot;,
+      &quot;recorded_status&quot;: &quot;turn_limit&quot;,
+      &quot;model&quot;: &quot;agentlab-research-qwen3-4b-cpu&quot;,
+      &quot;source_generation&quot;: &quot;80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca&quot;,
+      &quot;answer&quot;: null,
+      &quot;model_submission_status&quot;: null,
+      &quot;references&quot;: [],
+      &quot;diagnostics&quot;: [
+        &quot;empty_answer&quot;,
+        &quot;insufficient_evidence_with_citations&quot;,
+        &quot;submission_rejected&quot;
+      ],
+      &quot;requests&quot;: {
+        &quot;reserved&quot;: 6,
+        &quot;saved_complete&quot;: 6,
+        &quot;without_saved_complete_response&quot;: 0,
+        &quot;limit&quot;: 6
+      },
+      &quot;semantic_entailment_checked&quot;: false
+    },
+    {
+      &quot;run_id&quot;: &quot;fbab9bca63183b0fcf99f123cef2893eb78fd1f992eb4fc15281db6196996ba1&quot;,
+      &quot;question&quot;: &quot;请根据库中的 RECEIPT 论文，用不超过两句话解释 return assumption 是什么，以及为什么进程退出码为0不足以证明命令完成了请求的动作；附实际读过的论文页引用。&quot;,
+      &quot;export_status&quot;: &quot;ready&quot;,
+      &quot;recorded_status&quot;: &quot;submitted&quot;,
+      &quot;model&quot;: &quot;agentlab-research-qwen3-4b-cpu&quot;,
+      &quot;source_generation&quot;: &quot;47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae&quot;,
+      &quot;answer&quot;: &quot;return assumption认为返回状态0即表示任务完成，但实际中进程可能未执行请求动作。退出码为0无法证明任务完成，因系统可能在无人监控下运行，且部分工具调用未执行实际操作。&quot;,
+      &quot;model_submission_status&quot;: &quot;supported&quot;,
+      &quot;references&quot;: [
+        {
+          &quot;citation_id&quot;: &quot;47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:499127f1abb2a2f099fc87b9c6852bcd11ac63cac1ea3a604847e3b42a626608&quot;,
+          &quot;generation&quot;: &quot;47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae&quot;,
+          &quot;is_current_generation&quot;: true,
+          &quot;source_id&quot;: &quot;pdf_55cc187b8172cb56d391_p3&quot;,
+          &quot;title&quot;: &quot;RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 3&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2611.01930v1#page=3&quot;,
+          &quot;source_sha256&quot;: &quot;d270feb4ac1b043c2605e022103fef76c19f1d38a3dd0986a9b843dadfa0f6f0&quot;,
+          &quot;line_start&quot;: 26,
+          &quot;line_end&quot;: 39,
+          &quot;char_start&quot;: 2676,
+          &quot;char_end&quot;: 3779,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 867890,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 20,
+            &quot;page_label&quot;: &quot;3&quot;,
+            &quot;page_number&quot;: 3,
+            &quot;sha256&quot;: &quot;b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf&quot;
+          },
+          &quot;ref&quot;: &quot;r1&quot;
+        },
+        {
+          &quot;citation_id&quot;: &quot;47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:2178f55021898b911e916658a45946c680a3da000852ee4b5bb18d3873d8622a&quot;,
+          &quot;generation&quot;: &quot;47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae&quot;,
+          &quot;is_current_generation&quot;: true,
+          &quot;source_id&quot;: &quot;pdf_55cc187b8172cb56d391_p5&quot;,
+          &quot;title&quot;: &quot;RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 5&quot;,
+          &quot;source_kind&quot;: &quot;pdf_page_text&quot;,
+          &quot;source_url&quot;: &quot;https://arxiv.org/pdf/2611.01930v1#page=5&quot;,
+          &quot;source_sha256&quot;: &quot;18bcb4dc529b181d6bea8f5fa920143d9926651757e56f32f73b1d173fdba6fe&quot;,
+          &quot;line_start&quot;: 29,
+          &quot;line_end&quot;: 41,
+          &quot;char_start&quot;: 1622,
+          &quot;char_end&quot;: 2731,
+          &quot;pdf&quot;: {
+            &quot;bytes&quot;: 867890,
+            &quot;extractor&quot;: {
+              &quot;mode&quot;: &quot;plain&quot;,
+              &quot;name&quot;: &quot;pypdf&quot;,
+              &quot;version&quot;: &quot;7.1.1&quot;
+            },
+            &quot;page_count&quot;: 20,
+            &quot;page_label&quot;: &quot;5&quot;,
+            &quot;page_number&quot;: 5,
+            &quot;sha256&quot;: &quot;b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf&quot;
+          },
+          &quot;ref&quot;: &quot;r3&quot;
+        }
+      ],
+      &quot;diagnostics&quot;: [],
+      &quot;requests&quot;: {
+        &quot;reserved&quot;: 4,
+        &quot;saved_complete&quot;: 4,
+        &quot;without_saved_complete_response&quot;: 0,
+        &quot;limit&quot;: 6
+      },
+      &quot;semantic_entailment_checked&quot;: false
+    }
+  ],
+  &quot;summary&quot;: {
+    &quot;runs&quot;: 4,
+    &quot;recorded_submissions&quot;: 3,
+    &quot;recorded_uncompleted&quot;: 1,
+    &quot;export_errors&quot;: 0
+  }
+}
+</pre><script>
+"use strict";
+const cards = Array.from(document.querySelectorAll(".card"));
+const query = document.getElementById("query");
+const status = document.getElementById("status");
+const count = document.getElementById("result-count");
+function filter() {
+  const needle = query.value.normalize("NFKC").trim().toLocaleLowerCase();
+  let visible = 0;
+  for (const card of cards) {
+    const text = card.querySelector(".searchable").textContent.normalize("NFKC").toLocaleLowerCase();
+    card.hidden = !(status.value === "all" || card.dataset.status === status.value) || !text.includes(needle);
+    if (!card.hidden) visible += 1;
+  }
+  count.textContent = `显示 ${visible} / ${cards.length} 项`;
+  document.getElementById("empty").hidden = visible !== 0;
+}
+query.addEventListener("input", filter);
+status.addEventListener("change", filter);
+document.getElementById("reset").addEventListener("click", () => { query.value = ""; status.value = "all"; filter(); query.focus(); });
+document.getElementById("print").addEventListener("click", () => window.print());
+document.getElementById("download").addEventListener("click", () => {
+  const data = document.getElementById("report-data").textContent;
+  const url = URL.createObjectURL(new Blob([data], {type: "application/json;charset=utf-8"}));
+  const link = document.createElement("a"); link.href = url; link.download = "reading-report.json";
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+filter();
+document.documentElement.classList.add("enhanced");
+</script></body></html>

@@ -1,0 +1,33 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": ""
+  },
+  "protocol_sha256": "fbfe7716caf62bbd6052a57cee6ec4303dafc872b1242a3cf97b0a60eae5c689",
+  "phases": [
+    {
+      "name": "browser-private-library-font-staging",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.526,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "browser-install-headless-shell",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 13.684,
+      "peak_owned_RSS_bytes": 337498112
+    },
+    {
+      "name": "browser-native-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.53,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 25.385
+}

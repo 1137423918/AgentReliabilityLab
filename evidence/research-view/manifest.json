@@ -1,0 +1,81 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "e53a8b1448f81b0d4b9cde31146b9aed4ffad3325f7495a434a91a4270bb89ef",
+      "bytes": 4391
+    },
+    "application.json": {
+      "sha256": "73b2034384996d55933798eed4ba16a65a3da4b96c9f3314f403627dcd014b81",
+      "bytes": 1292
+    },
+    "browser.json": {
+      "sha256": "f4bc02136b1f7f05d1461be6b0bba9fbc9a8d4457ea78534e898ef2b9215d29e",
+      "bytes": 1194
+    },
+    "environment-failures.json": {
+      "sha256": "07a1fd46be996641fb632065a11257c8890592897ef7b0898a717e5bb8a43c5b",
+      "bytes": 786
+    },
+    "environment.json": {
+      "sha256": "0c85037a79f8ddcb9b7236736d76ee6b69f837dd03cbaaf5ba46025733b40cfa",
+      "bytes": 21495
+    },
+    "operators/application.json": {
+      "sha256": "998aa55b813aec86e6dc026be7525ffb00974579ccfd1a5b59013c26a58bd470",
+      "bytes": 781
+    },
+    "operators/assets.json": {
+      "sha256": "12ea94191cc2177ccfc6a147383090353d10eb647e39cc1e91a8532b66980e7b",
+      "bytes": 545
+    },
+    "operators/assets_v1.json": {
+      "sha256": "b1e5407d3d11b9f65be671a75e02c883c7ccf5034d61317a52720408ed0f5773",
+      "bytes": 480
+    },
+    "operators/assets_v2.json": {
+      "sha256": "c2514f73eb9a210a4218a8119efcb1448aff24f7bb01294990228ac801031b2a",
+      "bytes": 764
+    },
+    "operators/browser.json": {
+      "sha256": "aceb9e48ad87fda7558369741979b94008e06b33424278ac65a0de0b15dc8e2d",
+      "bytes": 372
+    },
+    "operators/setup.json": {
+      "sha256": "92ffd7980e70e747e48e8ea84d26e500e397f6bb45ebf404e08ac22e725ebded",
+      "bytes": 777
+    },
+    "private-archive-receipt.json": {
+      "sha256": "48d4508a2f9ddb32ae8f6a24037a00eac8e6c553051fc52ad78685f43580513c",
+      "bytes": 436
+    },
+    "protocols/application.json": {
+      "sha256": "22c2b62a9bc5d9afbbf022a03dbc02c174df6b7e12eb96aa4707e1640f0e0239",
+      "bytes": 2287
+    },
+    "protocols/browser.json": {
+      "sha256": "ca2008da81824a8832e9b8f6f6d49e9f5eb6720cd62dc7b49f5943d5d2e4b3dc",
+      "bytes": 861
+    },
+    "screenshots/desktop.png": {
+      "sha256": "f4a0f6577112f956905b9bd2c8de09ed40985a292e37f5e80eddf984c5c11163",
+      "bytes": 389467
+    },
+    "screenshots/mobile.png": {
+      "sha256": "0508ff42813a3577bfab0f1a0080f9326c37e08c8cd868d784b57f2bf43ca4c6",
+      "bytes": 169859
+    },
+    "source-new-view-controls.log": {
+      "sha256": "f97aab182f896b5d90468650baabb329f7d053a3635520a348bd4b27aec0cdde",
+      "bytes": 890
+    },
+    "source-report-workflow-regression.log": {
+      "sha256": "0bf3080192b30a9706c7f3108f68d7fffafc44566cf626aea420ccc60d2a62c1",
+      "bytes": 1995
+    },
+    "visual-review.json": {
+      "sha256": "e691b3f6ed4da6b0f8281f3999647d520b03297e3164de79d5a36df4d96cc2be",
+      "bytes": 413
+    }
+  },
+  "scope": "Actual standalone reading-view metadata/tests and own UI screenshots; original model status and answer unchanged. Sourcepaper pages/text, model wire, SQLite, fonts, native binaries and credentials excluded."
+}

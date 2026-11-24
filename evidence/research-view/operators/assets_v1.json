@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "browser-private-library-font-staging"
+  },
+  "protocol_sha256": "5a897b16adb2fdd920cf8352631efd4126b4749171c0e8a265fa2df20540e1d7",
+  "phases": [
+    {
+      "name": "browser-private-library-font-staging",
+      "exit_code": -15,
+      "guard": "phase/resource/job cap",
+      "wall_seconds": 150.61,
+      "peak_owned_RSS_bytes": 19464192
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 162.709
+}

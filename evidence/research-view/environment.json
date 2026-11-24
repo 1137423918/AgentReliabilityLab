@@ -1,0 +1,517 @@
+{
+  "browser": {
+    "name": "chromium-headless-shell",
+    "revision": "1255",
+    "installByDefault": true,
+    "browserVersion": "159.0.8154.6",
+    "title": "Chrome Headless Shell"
+  },
+  "browser_manifest_sha256": "38368519e09a8a988fdfdcc5b352d269bee040d4536c1cbd0ede48ffa8dde4a4",
+  "headless_binary_sha256": "24eb0a14de64ab0c9c2e283a5512ca817db64af8fd853cdb4d818f19a8e23b9b",
+  "headless_binary_bytes": 216255824,
+  "runtime_lock_sha256": "55b033b315d686b4b0fa83ecd7e462e6f823b28b266353fca7f162729cc70ab4",
+  "asset_receipt": {
+    "packages": [
+      {
+        "package": "atk",
+        "file": "atk-2.36.0-5.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/atk-2.36.0-5.el9.x86_64.rpm",
+        "sha256": "4e7b9df9baa2d33b006d32f433a1257dd364650e1ceb4db8132e718abb358f6b",
+        "bytes": 276119,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "at-spi2-atk",
+        "file": "at-spi2-atk-2.38.0-4.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/at-spi2-atk-2.38.0-4.el9.x86_64.rpm",
+        "sha256": "3920a45f97127e08960e46cac53a899b58ff69fb4e5a31349260c5b740704fa1",
+        "bytes": 87764,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 2
+      },
+      {
+        "package": "at-spi2-core",
+        "file": "at-spi2-core-2.40.3-1.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/at-spi2-core-2.40.3-1.el9.x86_64.rpm",
+        "sha256": "ff6aab167ad408c84043dbcf64db47ac1caef1acb3097407025920861076b41f",
+        "bytes": 180484,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libX11",
+        "file": "libX11-1.8.12-1.el9_9.1.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libX11-1.8.12-1.el9_9.1.x86_64.rpm",
+        "sha256": "205acf2366c2d1db092ad9992792bf6382edeb3ddcf5cf9ceeebbb2073cc3ed2",
+        "bytes": 662915,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXcomposite",
+        "file": "libXcomposite-0.4.5-7.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXcomposite-0.4.5-7.el9.x86_64.rpm",
+        "sha256": "181e59604c444227d40beeec1bc8228f35b377bb885c6650dc7a165396a071a0",
+        "bytes": 23636,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXdamage",
+        "file": "libXdamage-1.1.5-7.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXdamage-1.1.5-7.el9.x86_64.rpm",
+        "sha256": "843b1345a1ca1d549b4ae3cfbd9fe23213e24412158b3e9aeb22f17b20c23a1d",
+        "bytes": 22301,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXext",
+        "file": "libXext-1.3.4-8.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXext-1.3.4-8.el9.x86_64.rpm",
+        "sha256": "5a75461ea9ddfb5b824c5ad676c29b5827fcc07c6cd9ba8df7013c0580a0d6bf",
+        "bytes": 39598,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXfixes",
+        "file": "libXfixes-5.0.3-16.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXfixes-5.0.3-16.el9.x86_64.rpm",
+        "sha256": "6ab367d4063debd624ad001bf3b9bdf1a3afc2e5540077b1f4837f8ba83d5ab2",
+        "bytes": 19174,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXrandr",
+        "file": "libXrandr-1.5.2-8.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXrandr-1.5.2-8.el9.x86_64.rpm",
+        "sha256": "cda78338233611dcc467493288d7a6cf53843648eb8a6f33c7136a12cfb44bd7",
+        "bytes": 28018,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "mesa-libgbm",
+        "file": "mesa-libgbm-26.1.1-1.el9.alma.1.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/mesa-libgbm-26.1.1-1.el9.alma.1.x86_64.rpm",
+        "sha256": "0809be69bda20ee7452cec82705ae123dd8c3059a852fff3d43879a85278e561",
+        "bytes": 17174,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libxcb",
+        "file": "libxcb-1.13.1-9.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libxcb-1.13.1-9.el9.x86_64.rpm",
+        "sha256": "840ea71fb8beb52093e9f6d23dd0bc7de86f9d6da8c48888d766b0915cf1e1bc",
+        "bytes": 230151,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 25
+      },
+      {
+        "package": "libxkbcommon",
+        "file": "libxkbcommon-1.0.3-4.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libxkbcommon-1.0.3-4.el9.x86_64.rpm",
+        "sha256": "b17bc08343f296522ae0d4bf6f362ed1f539292ff3a57bfc8db71ab281071850",
+        "bytes": 135546,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 2
+      },
+      {
+        "package": "alsa-lib",
+        "file": "alsa-lib-1.2.16.1-1.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/alsa-lib-1.2.16.1-1.el9.x86_64.rpm",
+        "sha256": "11fe9a7d71538e40ae50eab0236b8082d3ab3492ff4e9f9306f7df9198af09cb",
+        "bytes": 541913,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 2
+      },
+      {
+        "package": "libXau",
+        "file": "libXau-1.0.9-8.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXau-1.0.9-8.el9.x86_64.rpm",
+        "sha256": "ad207494161e9404e2a44b1907d605de54842d1b6897c82c475df3ed0ee9701b",
+        "bytes": 31001,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXi",
+        "file": "libXi-1.7.10-8.el9_9.3.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXi-1.7.10-8.el9_9.3.x86_64.rpm",
+        "sha256": "a3a8f8f868e9e9bed52f123945a90f72ccdbe81482793fc212ee02b068730cbf",
+        "bytes": 39502,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXtst",
+        "file": "libXtst-1.2.3-16.el9_9.1.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXtst-1.2.3-16.el9_9.1.x86_64.rpm",
+        "sha256": "373ca2d6136ed8a2c78b2847283ce48eb99a0f564fcd0bf8d7979f207ff0f2c9",
+        "bytes": 20050,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXrender",
+        "file": "libXrender-0.9.10-17.el9_9.1.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXrender-0.9.10-17.el9_9.1.x86_64.rpm",
+        "sha256": "c2cb785b538f40b9283f419d7a49350dfd753681fae8acf661feac3f79d1f6f8",
+        "bytes": 26899,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libdrm",
+        "file": "libdrm-2.4.128-1.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/libdrm-2.4.128-1.el9.x86_64.rpm",
+        "sha256": "f40379d5ef5d971abf3474f8402cb8330da53f04dd88c1f68716cb3d364b6feb",
+        "bytes": 163267,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 5
+      },
+      {
+        "package": "libxshmfence",
+        "file": "libxshmfence-1.3-10.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libxshmfence-1.3-10.el9.x86_64.rpm",
+        "sha256": "c13f4ee9d273bdac9977f1dd6ae9a31303a3ee0aa96996a17db997ff7162f74b",
+        "bytes": 11825,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libwayland-client",
+        "file": "libwayland-client-1.21.0-1.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libwayland-client-1.21.0-1.el9.x86_64.rpm",
+        "sha256": "8c08d9da5462a30a506a8d6714eddab540300edcec63017cd41920fb40ded06a",
+        "bytes": 33177,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libwayland-server",
+        "file": "libwayland-server-1.21.0-1.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libwayland-server-1.21.0-1.el9.x86_64.rpm",
+        "sha256": "2872acf69e938d121f2414857dae9775c46f692a6f005454df113094ce681b8a",
+        "bytes": 41706,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libXdmcp",
+        "file": "libXdmcp-1.1.3-8.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/AppStream/x86_64/os/Packages/libXdmcp-1.1.3-8.el9.x86_64.rpm",
+        "sha256": "657076fb6fe510534c6c8950a40608d70929f9b7bf05fe6a26ff5fd3ff24d256",
+        "bytes": 35347,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      },
+      {
+        "package": "libpciaccess",
+        "file": "libpciaccess-0.16-7.el9.x86_64.rpm",
+        "url": "https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/libpciaccess-0.16-7.el9.x86_64.rpm",
+        "sha256": "ab0a10b22bdb7152fa8826d937fede1527f744fd5bcfbdff20daee9787367329",
+        "bytes": 26472,
+        "signature_verified_by_host_RPM_keyring": true,
+        "ELF_libraries": 1
+      }
+    ],
+    "libraries": {
+      "libatk-1.0.so.0.23609.1": {
+        "sha256": "0b94fedd2584a1eb73b21848bc8d5c6bf9eee807566c1bc4a4a6b0b7bf783daf",
+        "bytes": 165224,
+        "soname": "libatk-1.0.so.0"
+      },
+      "libatk-bridge.so": {
+        "sha256": "3e0e4334116515148f91d18c3e6ea0a49e9df9e605631d800e15fe19a94f672b",
+        "bytes": 15632,
+        "soname": "libatk-bridge.so"
+      },
+      "libatk-bridge-2.0.so.0.0.0": {
+        "sha256": "6e4a97a76378795cd305fa09d4da9429a0c890f21f9180fd22a5226ed12708a8",
+        "bytes": 232408,
+        "soname": "libatk-bridge-2.0.so.0"
+      },
+      "libatspi.so.0.0.1": {
+        "sha256": "d117ff2edf21731a913160136a6a1d35287156010711f867cda9837fba0404bc",
+        "bytes": 248272,
+        "soname": "libatspi.so.0"
+      },
+      "libX11.so.6.4.0": {
+        "sha256": "20f255281f7e786b4aef9ea40fff42a144d522e83daf19ba7b69220de3070769",
+        "bytes": 1359040,
+        "soname": "libX11.so.6"
+      },
+      "libXcomposite.so.1.0.0": {
+        "sha256": "52b1b400215f0f252cb77d862158f4e37797a0e798f0643225ebfdde53f2de8e",
+        "bytes": 15840,
+        "soname": "libXcomposite.so.1"
+      },
+      "libXdamage.so.1.1.0": {
+        "sha256": "75f170f203834cab8041f01ab8fb28d7e26626351afe58d7aa5348a99b2f7dd7",
+        "bytes": 15928,
+        "soname": "libXdamage.so.1"
+      },
+      "libXext.so.6.4.0": {
+        "sha256": "f16e3b2362eb2c7a913557cc50774d027183829e9188560af629f7e83c8ae95b",
+        "bytes": 84432,
+        "soname": "libXext.so.6"
+      },
+      "libXfixes.so.3.1.0": {
+        "sha256": "06b1fe54876c7d1944d201fafaa49837ec4e8cd33491df77fd067fb7131ab7d0",
+        "bytes": 32504,
+        "soname": "libXfixes.so.3"
+      },
+      "libXrandr.so.2.2.0": {
+        "sha256": "0fd6109172816ffe9c8eab8a68e1c985f10df6445d3247c80a9680302f2d6db6",
+        "bytes": 49560,
+        "soname": "libXrandr.so.2"
+      },
+      "libgbm.so.1.0.0": {
+        "sha256": "d7203aa64ad4fb19149c85d230f39879a7780dbe0558ca85ad762a0763427c09",
+        "bytes": 23864,
+        "soname": "libgbm.so.1"
+      },
+      "libxcb-composite.so.0.0.0": {
+        "sha256": "36ca4163318381e812af9ca3b20d7115ee4b34785137f40b76ca739375b8ec3b",
+        "bytes": 15896,
+        "soname": "libxcb-composite.so.0"
+      },
+      "libxcb-damage.so.0.0.0": {
+        "sha256": "3bf62bd9ad1f0d2b4b8dad847daec98bc7f8f31164ef07f689a4aaa383ed6cc0",
+        "bytes": 15968,
+        "soname": "libxcb-damage.so.0"
+      },
+      "libxcb-dpms.so.0.0.0": {
+        "sha256": "6a0f725b05ac39eb5d176bb4ad05fe4acb4bd5ae1bb1d2f7bd92649b0f6a7bc4",
+        "bytes": 15960,
+        "soname": "libxcb-dpms.so.0"
+      },
+      "libxcb-dri2.so.0.0.0": {
+        "sha256": "41689d65f84bd10102848e037cce41b92e936e763b7c64d51b7632c08caec136",
+        "bytes": 24168,
+        "soname": "libxcb-dri2.so.0"
+      },
+      "libxcb-dri3.so.0.0.0": {
+        "sha256": "317776b431caf39104bb952b57b9317f95db2dbf674b5c21bbc2a7208c0294be",
+        "bytes": 24136,
+        "soname": "libxcb-dri3.so.0"
+      },
+      "libxcb-glx.so.0.0.0": {
+        "sha256": "d4a2f01890a7c1fd96875edaca8588308c41455f69278cfcb94f81a5aa531f92",
+        "bytes": 114648,
+        "soname": "libxcb-glx.so.0"
+      },
+      "libxcb-present.so.0.0.0": {
+        "sha256": "f9424e6c3ceba21eaaa76f4edc42220832a810966bdf7113a67ac58b1aaef1e1",
+        "bytes": 15928,
+        "soname": "libxcb-present.so.0"
+      },
+      "libxcb-randr.so.0.1.0": {
+        "sha256": "5a79b8c2143c9624362e07e43eb72f3ed7e579c938dbf6be6f437290d687f035",
+        "bytes": 73336,
+        "soname": "libxcb-randr.so.0"
+      },
+      "libxcb-record.so.0.0.0": {
+        "sha256": "bd1fb8ef7eddce39d436786ad0c301b651f7282271717dc06c753f54709772d7",
+        "bytes": 24104,
+        "soname": "libxcb-record.so.0"
+      },
+      "libxcb-render.so.0.0.0": {
+        "sha256": "7676d3ddba5e31b61426235100c4e8f5fd53e66beffd7e12018e7a115f28d7d8",
+        "bytes": 61016,
+        "soname": "libxcb-render.so.0"
+      },
+      "libxcb-res.so.0.0.0": {
+        "sha256": "021fa8058b35f4fa84711635231efa9190209c0d3e3b3826b65aaa48baff5c61",
+        "bytes": 20056,
+        "soname": "libxcb-res.so.0"
+      },
+      "libxcb-screensaver.so.0.0.0": {
+        "sha256": "cb04d36e45593edfda8ef00f79a0dffcd7006286c6b7b6de2a5b1c8a9c3f1148",
+        "bytes": 20016,
+        "soname": "libxcb-screensaver.so.0"
+      },
+      "libxcb-shape.so.0.0.0": {
+        "sha256": "0e6ce51f23d042dd97e3af6a234a6bc7e5042f6e913bb507ce15597ebbced5ba",
+        "bytes": 15984,
+        "soname": "libxcb-shape.so.0"
+      },
+      "libxcb-shm.so.0.0.0": {
+        "sha256": "5be6f556df7c6ef1a531048fe358264d7b4c274752d91b65add9e241e643ae8f",
+        "bytes": 15992,
+        "soname": "libxcb-shm.so.0"
+      },
+      "libxcb-sync.so.1.0.0": {
+        "sha256": "443633139a7c24d958694d91c42ca49b3fb04444762e917707dca0d939efbce7",
+        "bytes": 36496,
+        "soname": "libxcb-sync.so.1"
+      },
+      "libxcb-xf86dri.so.0.0.0": {
+        "sha256": "75d10a12423bbfd72e4ef84fdfc1184fe02f88a56b987775ec516b50c4def430",
+        "bytes": 20016,
+        "soname": "libxcb-xf86dri.so.0"
+      },
+      "libxcb-xfixes.so.0.0.0": {
+        "sha256": "d74d818146709d60023248f284b7bb4d7a998ee8ccf2b2f3e5b3493d902cef93",
+        "bytes": 36400,
+        "soname": "libxcb-xfixes.so.0"
+      },
+      "libxcb-xinerama.so.0.0.0": {
+        "sha256": "b878e40bd2bece13c3bfb27a886da90114f740bd81e58f6a7717e7e82a4d6c37",
+        "bytes": 15896,
+        "soname": "libxcb-xinerama.so.0"
+      },
+      "libxcb-xinput.so.0.1.0": {
+        "sha256": "68f15799bfc7cc54b0f1e0044c4b698d14b79d02fa18b54f7ba12c302ec442fa",
+        "bytes": 151104,
+        "soname": "libxcb-xinput.so.0"
+      },
+      "libxcb-xkb.so.1.0.0": {
+        "sha256": "aa15cc0029bc839de0a63c9651ff9abdf3c5241247574488060f8b03a4dafc54",
+        "bytes": 118608,
+        "soname": "libxcb-xkb.so.1"
+      },
+      "libxcb-xselinux.so.0.0.0": {
+        "sha256": "9b2338805a8d22538c1ce9cb4892a04dac194584017f3c399699102211b2a269",
+        "bytes": 40496,
+        "soname": "libxcb-xselinux.so.0"
+      },
+      "libxcb-xtest.so.0.0.0": {
+        "sha256": "399346c2b1a019326d1f1d2e84508f13b39d5deab76aba132600d80e8ad0f763",
+        "bytes": 15928,
+        "soname": "libxcb-xtest.so.0"
+      },
+      "libxcb-xv.so.0.0.0": {
+        "sha256": "be02f0acd40ab23cfd7fbbe957f52c220f6740c910bc82a5a9b251549d7bede9",
+        "bytes": 36592,
+        "soname": "libxcb-xv.so.0"
+      },
+      "libxcb-xvmc.so.0.0.0": {
+        "sha256": "b37192fe037faf3db5fb4e2a29a6aeec62ca1c6ed6003487d68bf82724ecaf6c",
+        "bytes": 20016,
+        "soname": "libxcb-xvmc.so.0"
+      },
+      "libxcb.so.1.1.0": {
+        "sha256": "2a42d220cef2aa68246e3a5b786c1525c7e34d7ada99258cc4226a1b61fdf252",
+        "bytes": 174280,
+        "soname": "libxcb.so.1"
+      },
+      "libxkbcommon.so.0.0.0": {
+        "sha256": "28342f8c9906b13082b17dc2b15df099db27410ef91fb1429bd0c765b4cab5b1",
+        "bytes": 281464,
+        "soname": "libxkbcommon.so.0"
+      },
+      "libxkbregistry.so.0.0.0": {
+        "sha256": "3a0278edb6e5bf015576b8f5e7a6565fcbcfdd967c5f6d4422ff6f8e88ce1263",
+        "bytes": 33128,
+        "soname": "libxkbregistry.so.0"
+      },
+      "libasound.so.2.0.0": {
+        "sha256": "39625980ab1380575ef6ce4b36dfbd18faaf7308c88c51bf9898802045138f41",
+        "bytes": 1215760,
+        "soname": "libasound.so.2"
+      },
+      "libatopology.so.2.0.0": {
+        "sha256": "8d3232abdff6ae7ea79cbd52beb110847fddcc8f6a4f7ad49a23f36dac2b2d9b",
+        "bytes": 124880,
+        "soname": "libatopology.so.2"
+      },
+      "libXau.so.6.0.0": {
+        "sha256": "1c1a5928802d71e65ec7d5b3ccda2840810209f2c4ef98d9e9615acbc7012b80",
+        "bytes": 20136,
+        "soname": "libXau.so.6"
+      },
+      "libXi.so.6.1.0": {
+        "sha256": "2daf3ad44270af84955523993a774d0e21374a7fe24eeb601fb48932e7321a42",
+        "bytes": 73848,
+        "soname": "libXi.so.6"
+      },
+      "libXtst.so.6.1.0": {
+        "sha256": "7306739efbd4dbb04c14ebb2a569fb8ac2d49aaba8725adc9840da98d70807a3",
+        "bytes": 32176,
+        "soname": "libXtst.so.6"
+      },
+      "libXrender.so.1.3.0": {
+        "sha256": "14431b1b1882de15f8895bae85f487d3441a99f4d7e984489deaa53d3af29986",
+        "bytes": 48616,
+        "soname": "libXrender.so.1"
+      },
+      "libdrm.so.2.128.0": {
+        "sha256": "7f79d5727de42b72d06e5ff27d1d2168c323dc1e674d2bd754bd362820b2a5bd",
+        "bytes": 94976,
+        "soname": "libdrm.so.2"
+      },
+      "libdrm_amdgpu.so.1.128.0": {
+        "sha256": "4348d734b95fb3451c91cb84e32e54f2b8955c5b30bfcbce27a3e89db47f967f",
+        "bytes": 48336,
+        "soname": "libdrm_amdgpu.so.1"
+      },
+      "libdrm_intel.so.1.128.0": {
+        "sha256": "df45ba5c24ba156f7017c66dbe3fc1520162a36c959eeb9682b3003b5ef5ac2f",
+        "bytes": 153480,
+        "soname": "libdrm_intel.so.1"
+      },
+      "libdrm_nouveau.so.2.128.0": {
+        "sha256": "c7cddeb5970a8c6e757f7280e76563aa932aa42d3ca72abef23f6286c30bc428",
+        "bytes": 40352,
+        "soname": "libdrm_nouveau.so.2"
+      },
+      "libdrm_radeon.so.1.128.0": {
+        "sha256": "105c0047c7e98435d8227f857336a70bcdbbfa0ceee60a19f0bd11a59be68d01",
+        "bytes": 56848,
+        "soname": "libdrm_radeon.so.1"
+      },
+      "libxshmfence.so.1.0.0": {
+        "sha256": "94ad57507f248dde2b06116ab31b8214c7391652e67e635e66e28bab40dadfbd",
+        "bytes": 15888,
+        "soname": "libxshmfence.so.1"
+      },
+      "libwayland-client.so.0.21.0": {
+        "sha256": "4617d905c330c7571e7d8ad23577cf6e838004229f2ce0ef75e439671daa94c2",
+        "bytes": 69944,
+        "soname": "libwayland-client.so.0"
+      },
+      "libwayland-server.so.0.21.0": {
+        "sha256": "cb89adffc0272e53b647af66a08ea00fe622ac5155e8f28714f59de509ae45bd",
+        "bytes": 86816,
+        "soname": "libwayland-server.so.0"
+      },
+      "libXdmcp.so.6.0.0": {
+        "sha256": "dffcddf49b8b214fb77f0467e4e8746036fdb3cec87467f01647a652e269c5ef",
+        "bytes": 28496,
+        "soname": "libXdmcp.so.6"
+      },
+      "libpciaccess.so.0.11.1": {
+        "sha256": "1ece6ae222d6717a82466b730ddb9e809a51d7e700d04bae7f8c12e2ef181e3f",
+        "bytes": 44520,
+        "soname": "libpciaccess.so.0"
+      }
+    },
+    "base_libatomic": {
+      "url": "https://repo.almalinux.org/almalinux/9/BaseOS/x86_64/os/Packages/libatomic-11.5.0-17.el9_9.alma.1.x86_64.rpm",
+      "sha256": "47f4622046f6b4c3f3de7eca349b0e413fda97363f73823bbc95d8a6b4b878ea",
+      "bytes": 19966,
+      "pretransferred_primary_asset_verified": true,
+      "signature_verified_by_host_RPM_keyring": true,
+      "library_sha256": "0eb996cb3174be6c95c0cbb94217ee7cde708cc0f666d2c1e6419709a4b9d020"
+    },
+    "font": {
+      "url": "https://raw.githubusercontent.com/notofonts/noto-cjk/165c01b46ea533872e002e0785ff17e44f6d97d8/Sans/OTF/SimplifiedChinese/NotoSansCJKsc-Regular.otf",
+      "sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+      "bytes": 16437364,
+      "pretransferred_primary_asset_verified": true,
+      "commit": "165c01b46ea533872e002e0785ff17e44f6d97d8"
+    },
+    "font_reused_read_only": true,
+    "browser_reused_read_only": true,
+    "no_system_install": true,
+    "no_app_font_embedding": true
+  },
+  "no_system_dependencies_installed": true,
+  "no_model_or_embedding_forwards": true
+}

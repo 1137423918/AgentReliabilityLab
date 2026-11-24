@@ -240,10 +240,13 @@ def markdown(report):
 
 
 def write_report(report, output):
+    from .research_view import reading_html
+
     output = Path(output)
     artifacts = {
         'reading-report.json': (json.dumps(report, ensure_ascii=False, indent=2) + '\n').encode(),
         'reading-report.md': markdown(report).encode(),
+        'reading-report.html': reading_html(report).encode(),
     }
     if any(len(data) > 1024**2 for data in artifacts.values()):
         raise ReportError('Report exceeds output limit')

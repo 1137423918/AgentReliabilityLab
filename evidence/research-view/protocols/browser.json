@@ -1,0 +1,11 @@
+{
+  "scope": "Actual headless Chromium interaction on four closed real-run report and separate markup/missing-artifact fixture. Search/filter/download exact JSON, current/historical links, print and mobile/noJS. File navigation only; network route blocked and recorded, CPU2/nice19/RSS4GiB/noGPU. No source/model changes or inference.",
+  "source_sha256": {
+    "benchmarks/research_view_browser.py": "cb2fdafd0e41ffe838cb159a1638960ec9097780d226728c5da6c0e037763f4a"
+  },
+  "input_bundle_sha256": "db83b570ec2bd1ddb85e21655645e94c47f62c7a44b16fe2149516189f7366bf",
+  "controller_sha256": "97fbfdfa514dd746726ae5b2f827b834f0f8e3440aaa1ab0ad468a611a595563",
+  "wrapper_sha256": "9d7e401497343f3f99034a897cdf50d88c59d1ef669494a601a2e9cc326f6ff0",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "GPU_used": false
+}

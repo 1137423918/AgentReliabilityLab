@@ -1,0 +1,37 @@
+{
+  "ready": true,
+  "browser_version": "159.0.8154.6",
+  "checks": [
+    "four_real_records_visible",
+    "unfinished_filter_preserves_original_failure",
+    "combined_filters_empty_state_and_reset",
+    "unicode_normalized_question_search",
+    "new_paper_actual_page_links",
+    "download_keeps_all_records_and_exact_original_json",
+    "print_layout_keeps_current_filter",
+    "source_and_answer_text_search",
+    "markup_fixture_remains_inert_text",
+    "artifact_error_filter_distinct_from_unfinished",
+    "390px_mobile_controls_and_content_without_horizontal_overflow",
+    "all_records_readable_without_javascript"
+  ],
+  "checks_passed": 12,
+  "page_errors": [],
+  "automatic_network_requests": 0,
+  "offline_file_navigation": true,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "GPU_disabled": true,
+  "real_closed_runs": 4,
+  "extra_record_only_in_control_fixture": true,
+  "screenshots": {
+    "desktop.png": {
+      "sha256": "f4a0f6577112f956905b9bd2c8de09ed40985a292e37f5e80eddf984c5c11163",
+      "bytes": 389467
+    },
+    "mobile.png": {
+      "sha256": "0508ff42813a3577bfab0f1a0080f9326c37e08c8cd868d784b57f2bf43ca4c6",
+      "bytes": 169859
+    }
+  }
+}

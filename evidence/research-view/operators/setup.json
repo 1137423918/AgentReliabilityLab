@@ -1,0 +1,33 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "browser-install-headless-shell"
+  },
+  "protocol_sha256": "0ef1b1baaa6c46aabd797c9029173a46050571e59d4eadf6772dbb8aa5a7d6e2",
+  "phases": [
+    {
+      "name": "browser-environment-lock",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 6.687,
+      "peak_owned_RSS_bytes": 48037888
+    },
+    {
+      "name": "browser-environment-sync",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.647,
+      "peak_owned_RSS_bytes": 57798656
+    },
+    {
+      "name": "browser-install-headless-shell",
+      "exit_code": 127,
+      "guard": null,
+      "wall_seconds": 0.517,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 21.071
+}

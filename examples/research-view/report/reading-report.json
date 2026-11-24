@@ -1,0 +1,258 @@
+{
+  "version": 1,
+  "scope": "Recorded answers and read-only source checks; no model/tool execution or new evaluation.",
+  "semantic_entailment_checked": false,
+  "runs": [
+    {
+      "run_id": "1981320c992889907bb3874cca882a6da6a82325f1637acd192c43d032c4f9bb",
+      "question": "请根据库中的 LightRAG 论文，用一句话解释低层和高层检索分别查找什么，附实际读过的论文页引用。",
+      "export_status": "ready",
+      "recorded_status": "submitted",
+      "model": "agentlab-research-qwen3-4b-cpu",
+      "source_generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+      "answer": "低层检索查找具体实体及其属性，高层检索查找主题和整体概念。",
+      "model_submission_status": "supported",
+      "references": [
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:205045cc135bcefc18937f33d31ea5660d649fdda678afffff6321617c212ab7",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": false,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p8",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 8",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=8",
+          "source_sha256": "1cfde239f8838ad602ef835e426ae09e195d6c9cb00ff438d49f1b8c9a726abd",
+          "line_start": 19,
+          "line_end": 30,
+          "char_start": 1114,
+          "char_end": 2076,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "8",
+            "page_number": 8,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "ref": "r1"
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:59bae011827381605a73ccc8f4aabcd63ec9c3b4952b1779b18725186fbfb997",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": false,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p4",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 4",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=4",
+          "source_sha256": "a686b53326db027dddaa15b6b809952947c1bbb96fb9893a317d957fcdd5029e",
+          "line_start": 30,
+          "line_end": 43,
+          "char_start": 2800,
+          "char_end": 3949,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "4",
+            "page_number": 4,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "ref": "r2"
+        }
+      ],
+      "diagnostics": [],
+      "requests": {
+        "reserved": 6,
+        "saved_complete": 6,
+        "without_saved_complete_response": 0,
+        "limit": 6
+      },
+      "semantic_entailment_checked": false
+    },
+    {
+      "run_id": "93a7583857e6fe3f3f092165ebb36535661db07478053496ddcff7cc32cbded1",
+      "question": "根据库中 LightRAG 和 MiniRAG 两篇论文，简要比较它们索引里实体、关系与文本片段的组织方式，分别提供读过的来源引用。",
+      "export_status": "ready",
+      "recorded_status": "submitted",
+      "model": "agentlab-research-qwen3-4b-cpu",
+      "source_generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+      "answer": "LightRAG使用实体名称和关系短语作为索引键，MiniRAG则整合文本片段与命名实体于统一结构中，实现简单高效索引。",
+      "model_submission_status": "supported",
+      "references": [
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:82348e2b655680593f8963c3a13a5f6a9214bd0d97822ef858fc39a58b16ea13",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": false,
+          "source_id": "pdf_d8dd4844fd70ef9c64aa_p3",
+          "title": "LightRAG: Simple and Fast Retrieval-Augmented Generation — PDF page 3",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2410.05779v3#page=3",
+          "source_sha256": "9aad5c4fe113effaabf3d42e0dbef30c64157ba09a02ae0451727175ec7e77c2",
+          "line_start": 100,
+          "line_end": 108,
+          "char_start": 4622,
+          "char_end": 5312,
+          "pdf": {
+            "bytes": 1123301,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "3",
+            "page_number": 3,
+            "sha256": "bd72eebf611df1366b251c16ce4eac7aac699e519783c586feb2c5c43899347a"
+          },
+          "ref": "r1"
+        },
+        {
+          "citation_id": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca:4a85c73326f7363902bc9ac332a84cb312f5f3b70a2b0ece669891731520abb8",
+          "generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+          "is_current_generation": false,
+          "source_id": "pdf_090aff59683c18c50be3_p1",
+          "title": "MiniRAG: Towards Extremely Simple Retrieval-Augmented Generation — PDF page 1",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2501.06713v3#page=1",
+          "source_sha256": "716b42dc7ac1fff4d8b23acb90922e6cc0189af1033dc14799e09360b3797f9d",
+          "line_start": 1,
+          "line_end": 16,
+          "char_start": 0,
+          "char_end": 981,
+          "pdf": {
+            "bytes": 10023506,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 16,
+            "page_label": "1",
+            "page_number": 1,
+            "sha256": "6a7e36747f1bf7345045c40287e5f584ee73fdcc3a30bcaff66990a8c5d1f561"
+          },
+          "ref": "r3"
+        }
+      ],
+      "diagnostics": [],
+      "requests": {
+        "reserved": 6,
+        "saved_complete": 6,
+        "without_saved_complete_response": 0,
+        "limit": 6
+      },
+      "semantic_entailment_checked": false
+    },
+    {
+      "run_id": "932e22e30f5800b348439148c10b202566d550e7e46b34d7b1e2be194606ac29",
+      "question": "请依据当前论文库，给出 LS-DETR 在 UATD 数据集上的消融实验精确结果；如果缺少对应全文，请明确说明无法据此回答，不要使用模型记忆补数值。",
+      "export_status": "ready",
+      "recorded_status": "turn_limit",
+      "model": "agentlab-research-qwen3-4b-cpu",
+      "source_generation": "80bdd57f5e68d682a5b04c7e799c55f6b8979e75445a2ce744e39c88acce88ca",
+      "answer": null,
+      "model_submission_status": null,
+      "references": [],
+      "diagnostics": [
+        "empty_answer",
+        "insufficient_evidence_with_citations",
+        "submission_rejected"
+      ],
+      "requests": {
+        "reserved": 6,
+        "saved_complete": 6,
+        "without_saved_complete_response": 0,
+        "limit": 6
+      },
+      "semantic_entailment_checked": false
+    },
+    {
+      "run_id": "fbab9bca63183b0fcf99f123cef2893eb78fd1f992eb4fc15281db6196996ba1",
+      "question": "请根据库中的 RECEIPT 论文，用不超过两句话解释 return assumption 是什么，以及为什么进程退出码为0不足以证明命令完成了请求的动作；附实际读过的论文页引用。",
+      "export_status": "ready",
+      "recorded_status": "submitted",
+      "model": "agentlab-research-qwen3-4b-cpu",
+      "source_generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+      "answer": "return assumption认为返回状态0即表示任务完成，但实际中进程可能未执行请求动作。退出码为0无法证明任务完成，因系统可能在无人监控下运行，且部分工具调用未执行实际操作。",
+      "model_submission_status": "supported",
+      "references": [
+        {
+          "citation_id": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:499127f1abb2a2f099fc87b9c6852bcd11ac63cac1ea3a604847e3b42a626608",
+          "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+          "is_current_generation": true,
+          "source_id": "pdf_55cc187b8172cb56d391_p3",
+          "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 3",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2611.01930v1#page=3",
+          "source_sha256": "d270feb4ac1b043c2605e022103fef76c19f1d38a3dd0986a9b843dadfa0f6f0",
+          "line_start": 26,
+          "line_end": 39,
+          "char_start": 2676,
+          "char_end": 3779,
+          "pdf": {
+            "bytes": 867890,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 20,
+            "page_label": "3",
+            "page_number": 3,
+            "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf"
+          },
+          "ref": "r1"
+        },
+        {
+          "citation_id": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae:2178f55021898b911e916658a45946c680a3da000852ee4b5bb18d3873d8622a",
+          "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+          "is_current_generation": true,
+          "source_id": "pdf_55cc187b8172cb56d391_p5",
+          "title": "RECEIPT: Measuring and Repairing the Return Assumption of LLM Agents in Web Service Operations — PDF page 5",
+          "source_kind": "pdf_page_text",
+          "source_url": "https://arxiv.org/pdf/2611.01930v1#page=5",
+          "source_sha256": "18bcb4dc529b181d6bea8f5fa920143d9926651757e56f32f73b1d173fdba6fe",
+          "line_start": 29,
+          "line_end": 41,
+          "char_start": 1622,
+          "char_end": 2731,
+          "pdf": {
+            "bytes": 867890,
+            "extractor": {
+              "mode": "plain",
+              "name": "pypdf",
+              "version": "7.1.1"
+            },
+            "page_count": 20,
+            "page_label": "5",
+            "page_number": 5,
+            "sha256": "b9253570f1b451549402934240b406c145d4ede87612e8a1d8349fe4abb6d3cf"
+          },
+          "ref": "r3"
+        }
+      ],
+      "diagnostics": [],
+      "requests": {
+        "reserved": 4,
+        "saved_complete": 4,
+        "without_saved_complete_response": 0,
+        "limit": 6
+      },
+      "semantic_entailment_checked": false
+    }
+  ],
+  "summary": {
+    "runs": 4,
+    "recorded_submissions": 3,
+    "recorded_uncompleted": 1,
+    "export_errors": 0
+  }
+}

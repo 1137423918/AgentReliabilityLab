@@ -1,0 +1,9 @@
+{
+  "setup_v1": "Bundled Node loader lacked libatomic.so.1; stopped before browser download.",
+  "assets_v1": "Primary font download exceeded 150sec phase cap; process terminated and owned0. Same immutable primary font then pretransferred, hash checked on server.",
+  "assets_v2": "Browser downloaded successfully; ldd revealed13 missing host libraries. Preserved profile, reused downloaded browser/font/env read-only; staged signed RPM libraries privately.",
+  "app_source_and_original_model_answers_not_changed": true,
+  "no_system_packages_installed": true,
+  "no_model_or_embedding_retries": true,
+  "AlmaLinux_not_officially_supported_by_Playwright": "Actual headless-shell Ubuntu24.04 fallback verified in this private library environment only; not a supported-platform claim."
+}

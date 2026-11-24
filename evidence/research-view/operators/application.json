@@ -1,0 +1,32 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "22c2b62a9bc5d9afbbf022a03dbc02c174df6b7e12eb96aa4707e1640f0e0239",
+  "phases": [
+    {
+      "name": "source-new-view-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.528,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "source-report-workflow-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 6.708,
+      "peak_owned_RSS_bytes": 140050432
+    },
+    {
+      "name": "source-four-real-reading-runs",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.111,
+      "peak_owned_RSS_bytes": 59674624
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 32.359,
+  "new_view_controls_passed": 5,
+  "report_workflows_regression_passed": 9
+}

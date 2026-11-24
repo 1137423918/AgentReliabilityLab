@@ -1,0 +1,16 @@
+{
+  "files": {
+    "reading-report.json": {
+      "sha256": "13b91277dc4d9e6e488e31cf92bc7032d90921d22fb4139702d36c3cc948e98d",
+      "bytes": 11296
+    },
+    "reading-report.md": {
+      "sha256": "75686a760e2459d3bc628b902784c39495fb5fb1177168193fcf20a6a635f77d",
+      "bytes": 4157
+    },
+    "reading-report.html": {
+      "sha256": "61492c99b63d946a6dc20efed5076786591f90f5e0bf162acf192f144fe201ae",
+      "bytes": 32422
+    }
+  }
+}

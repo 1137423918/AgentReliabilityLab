@@ -1,0 +1,23 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "63b948ec6867d8cd7f2fde38d207deba64f93e2a5fcde1914c3b627ac60df983",
+  "phases": [
+    {
+      "name": "browser-private-native-library-staging",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.601,
+      "peak_owned_RSS_bytes": 36503552
+    },
+    {
+      "name": "browser-native-dependency-check",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.529,
+      "peak_owned_RSS_bytes": 6488064
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 15.846
+}

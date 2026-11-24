@@ -1,0 +1,10 @@
+test_inline_code_is_hash_bound_and_has_no_external_asset_endpoints (__main__.ReadingView.test_inline_code_is_hash_bound_and_has_no_external_asset_endpoints) ... ok
+test_manifest_binds_the_complete_standalone_view_and_exact_json (__main__.ReadingView.test_manifest_binds_the_complete_standalone_view_and_exact_json) ... ok
+test_markup_in_question_answer_and_title_is_text_and_payload_roundtrips (__main__.ReadingView.test_markup_in_question_answer_and_title_is_text_and_payload_roundtrips) ... ok
+test_preserves_three_record_states_and_archived_page_identity (__main__.ReadingView.test_preserves_three_record_states_and_archived_page_identity) ... ok
+test_unusable_source_url_rejects_before_creating_output (__main__.ReadingView.test_unusable_source_url_rejects_before_creating_output) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.011s
+
+OK

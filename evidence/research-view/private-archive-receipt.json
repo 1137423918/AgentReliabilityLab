@@ -1,0 +1,12 @@
+{
+  "relative_path": "studies/research-view-stage89-20261125",
+  "manifest_sha256": "883857597ab8bf4990f02946719d6ea24b044ebcd2ebd9bfc2a85933899d2c38",
+  "files": 182,
+  "bytes": 26970079,
+  "all_six_profiles_terminal_owned_zero": true,
+  "all_old_closed_inputs_unchanged": true,
+  "old_inputs_browser_binaries_and_environments_not_duplicated": true,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "GPU_used": false
+}

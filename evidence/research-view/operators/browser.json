@@ -1,0 +1,16 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "ca2008da81824a8832e9b8f6f6d49e9f5eb6720cd62dc7b49f5943d5d2e4b3dc",
+  "phases": [
+    {
+      "name": "browser-offline-reading-interactions",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.153,
+      "peak_owned_RSS_bytes": 656556032
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 16.032
+}
