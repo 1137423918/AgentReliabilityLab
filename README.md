@@ -26,13 +26,15 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 ## Agent 应用
 
-**研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.2.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
+**研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.3.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
 
 新增[阅读报告导出](docs/research-reading-report.md)：模型和MCP服务关闭后，批量整理已有回答、PDF页引用和未完成原因，生成[可阅读的记录](examples/research-reports/reading-report.md)。已用三个真实关闭运行验证，四条历史页引用回读、重复导出字节一致，新增生成/嵌入/GPU均为0；原模型两项提交通过、一项失败的结果保持不变。
 
 新增[前沿论文实际接入](docs/frontier-reading.md)：接入2026年11月RECEIPT全文，资料库扩展到三篇52页、240片段；旧148个向量复用，仅新增92个片段编码。一次新的CPU模型阅读用了4次调用，引用核对通过，但机制解释不完整；[原回答及复核](evidence/frontier-reading/README.md)单列，未重跑优化分数，全程GPU为0。
 
 新增[离线阅读页](examples/research-view/README.md)：单个HTML集中查看已有回答、页引用和失败原因，可搜索、筛选、打印及下载JSON。已用四个真实关闭运行和实际浏览器验证，保留原回答与状态；日常打开不需要模型或服务，新增推理和GPU使用均为0。[桌面/手机截图与验证范围](evidence/research-view/README.md)。
+
+新增[批量资料检索](docs/research-batch.md)：跨文档填充编码批次，复用捕获版本的索引/词法统计，同题语义与混合排序共享查询向量；在完整SciFact 5,183摘要、300题上，BM25/E5/RRF的nDCG@10分别为0.6409/0.6479/0.7040。961次CPU前向全部完成、0未知，独立NIST评分复核通过；这是摘要相关性评测，不是论文问答准确率或公开BEIR榜单成绩。
 
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 

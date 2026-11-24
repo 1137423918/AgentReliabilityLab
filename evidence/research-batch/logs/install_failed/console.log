@@ -1,0 +1,2 @@
+{"name": "new-namespace-install", "exit_code": 1, "guard": null, "wall_seconds": 2.078, "peak_owned_RSS_bytes": 73695232}
+{"terminal": true, "ready": null, "error": {"type": "AssertionError", "message": "new-namespace-install"}, "owned_after": 0, "wall_seconds": 12.412, "metrics": null}

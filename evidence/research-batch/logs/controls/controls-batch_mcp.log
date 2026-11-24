@@ -1,0 +1,20 @@
+test_mcp_remains_bounded_and_reads_old_citation_after_new_publication (test_research_batch_mcp.MCPBatchCompatibility.test_mcp_remains_bounded_and_reads_old_citation_after_new_publication) ... StreamableHTTP session manager started
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+Executing <Task pending name='Task-4' coro=<MCPBatchCompatibility.test_mcp_remains_bounded_and_reads_old_citation_after_new_publication() running at <controls-root>/inputs/source/tests/test_research_batch_mcp.py:43> cb=[_run_until_complete_cb() at <server-user>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <server-user>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.115 seconds
+Loading all indices.
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+Tool 'search_sources' failed: 'Error executing tool search_sources: MCP results are limited to1–8sources'
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+Loading all indices.
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+HTTP Request: POST http://127.0.0.1:54225/mcp "HTTP/1.1 200 OK"
+StreamableHTTP session manager shutting down
+Executing <Task finished name='Task-13' coro=<MCPBatchCompatibility.asyncTearDown() done, defined at <controls-root>/inputs/source/tests/test_research_batch_mcp.py:33> result=None created at <server-user>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.143 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 1 test in 0.936s
+
+OK

@@ -1,0 +1,116 @@
+test_batch_prevalidates_ids_and_never_overwrites_complete_output (test_research_snapshot.SnapshotControls.test_batch_prevalidates_ids_and_never_overwrites_complete_output) ... ERROR
+test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged (test_research_snapshot.SnapshotControls.test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged) ... ERROR
+test_captured_snapshot_keeps_old_sources_after_new_generation_publication (test_research_snapshot.SnapshotControls.test_captured_snapshot_keeps_old_sources_after_new_generation_publication) ... ERROR
+test_collection_above_previous_256_limit_uses_actual_framework (test_research_snapshot.SnapshotControls.test_collection_above_previous_256_limit_uses_actual_framework) ... ERROR
+test_failed_batch_retains_partial_records_without_publishing_final (test_research_snapshot.SnapshotControls.test_failed_batch_retains_partial_records_without_publishing_final) ... ERROR
+test_multi_mode_reuses_one_query_embedding_and_matches_single_requests (test_research_snapshot.SnapshotControls.test_multi_mode_reuses_one_query_embedding_and_matches_single_requests) ... ERROR
+
+======================================================================
+ERROR: test_batch_prevalidates_ids_and_never_overwrites_complete_output (test_research_snapshot.SnapshotControls.test_batch_prevalidates_ids_and_never_overwrites_complete_output)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 78, in test_batch_prevalidates_ids_and_never_overwrites_complete_output
+    result=search_batch(self.store,queries,output,self.model); self.assertEqual(result['queries'],2)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 342, in search_batch
+    'modes': snapshot.search_modes(row['query'], modes=modes, top_k=top_k)}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+======================================================================
+ERROR: test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged (test_research_snapshot.SnapshotControls.test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 40, in test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged
+    old=ResearchSnapshot(self.store,self.model).search('checkpoint',mode='lexical')['results'][0]
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 302, in search
+    return self.search_modes(query, modes=(mode,), top_k=top_k, source_id=source_id)[mode]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+======================================================================
+ERROR: test_captured_snapshot_keeps_old_sources_after_new_generation_publication (test_research_snapshot.SnapshotControls.test_captured_snapshot_keeps_old_sources_after_new_generation_publication)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 57, in test_captured_snapshot_keeps_old_sources_after_new_generation_publication
+    first=old.search('sonar',mode='lexical')['results'][0]
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 302, in search
+    return self.search_modes(query, modes=(mode,), top_k=top_k, source_id=source_id)[mode]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+======================================================================
+ERROR: test_collection_above_previous_256_limit_uses_actual_framework (test_research_snapshot.SnapshotControls.test_collection_above_previous_256_limit_uses_actual_framework)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 71, in test_collection_above_previous_256_limit_uses_actual_framework
+    self.assertEqual(len(ResearchSnapshot(self.store,self.model).search('scientific',mode='lexical',top_k=10)['results']),10)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 302, in search
+    return self.search_modes(query, modes=(mode,), top_k=top_k, source_id=source_id)[mode]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+======================================================================
+ERROR: test_failed_batch_retains_partial_records_without_publishing_final (test_research_snapshot.SnapshotControls.test_failed_batch_retains_partial_records_without_publishing_final)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 98, in test_failed_batch_retains_partial_records_without_publishing_final
+    with self.assertRaisesRegex(RuntimeError,'fixture query failure'):search_batch(self.store,queries,output,model)
+                                                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 342, in search_batch
+    'modes': snapshot.search_modes(row['query'], modes=modes, top_k=top_k)}
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+======================================================================
+ERROR: test_multi_mode_reuses_one_query_embedding_and_matches_single_requests (test_research_snapshot.SnapshotControls.test_multi_mode_reuses_one_query_embedding_and_matches_single_requests)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<intake-root>/inputs/source/tests/test_research_snapshot.py", line 47, in test_multi_mode_reuses_one_query_embedding_and_matches_single_requests
+    grouped=snapshot.search_modes('sonar evidence',top_k=10)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 294, in search_modes
+    result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<intake-root>/inputs/source/agent_lab/research_library.py", line 202, in _citation_payload
+    result = {'citation_id': citation_id, 'generation': generation, 'is_current_generation': generation == current,
+                             ^^^^^^^^^^^
+NameError: name 'citation_id' is not defined
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.708s
+
+FAILED (errors=6)

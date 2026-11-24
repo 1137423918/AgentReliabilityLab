@@ -1,0 +1,688 @@
+{
+  "observed_utc": "2026-11-24T21:57:59.455306+00:00",
+  "pull_requests": [
+    {
+      "repo": "OpenHands/software-agent-sdk",
+      "number": 7032,
+      "head": "79f85dc34152a7234878bcc658ffdb6e4c31d6f4",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "FAILURE",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44995374665/job/137125163901",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45160655867/job/137644918857",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161141852/job/137646609244",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161741237/job/137648599831",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45172819950/job/137686403738",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44732767094/job/136276514789",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44796125433/job/136496007523",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44796130497/job/136496021931",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "check-pr-artifacts",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44732767032/job/136276465880",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "OpenHands/software-agent-sdk",
+      "number": 7050,
+      "head": "74012ad7ef6e68d174f61bc1f4dc2fb106e33e69",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "FAILURE",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45158621483/job/137637927413",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45160679984/job/137644999386",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161230912/job/137646897150",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45161773799/job/137648710768",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "FAILURE",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/45172849721/job/137686505544",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Validate PR description",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419059/job/136813908830",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "check-pr-artifacts",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/OpenHands/software-agent-sdk/actions/runs/44893419129/job/136813909014",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "google/adk-python",
+      "number": 8278,
+      "head": "90815ad147fc652aa0cfeca7b1ec214903ae3089",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "agent-triage-pull-request",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995610823/job/137125866297",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "check-changes",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124498634",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "zizmor-config",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533194",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "zizmor-scan",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533607",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "zizmor-upload",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533195",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "zizmor-output",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/google/adk-python/actions/runs/44995159870/job/137124533729",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "cla/google",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://cla.developers.google.com/about",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "header-check",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/googleapis/repo-automation-bots",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/semantic-kernel",
+      "number": 14845,
+      "head": "891744aad21d1778c842426f49d0c84da46a9a2d",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "add_label",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/microsoft/semantic-kernel/actions/runs/44820223005/job/136578892728",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/semantic-kernel",
+      "number": 14853,
+      "head": "9eadf24486464a146f3168035769cc071a8182bf",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "add_label",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/microsoft/semantic-kernel/actions/runs/44929935031/job/136924123544",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "microsoft/agent-lightning",
+      "number": 707,
+      "head": "5d3342c07d849d4ce9c836e14d62d1ae8d91d9c9",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "license/cla",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/apps/microsoft-github-policy-service",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "number": 2367,
+      "head": "973514b3737a0befd4b27f54685db485793ffa74",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": null,
+      "checks": []
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "number": 6521,
+      "head": "a4473544a95100b2b750cdf28e0b7f121be9c46e",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "smoke (linux/amd64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137913399988",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "syntax-errors",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399648",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-build",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913399387",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (ubuntu-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400377",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "smoke (linux/arm64)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137913400423",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (macos-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400588",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (windows-latest, py3.11)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400644",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (ubuntu-latest, py3.12)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913401213",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (ubuntu-latest, py3.13)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400544",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "unit (ubuntu-latest, py3.14)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913400474",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "build_publish_image",
+          "status": "COMPLETED",
+          "conclusion": "SKIPPED",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609801/job/137914485750",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "code-style",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399285",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-ubuntu-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533927",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "chrome (ubuntu)",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609682/job/137913399869",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-ubuntu-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533865",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-macos-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913533924",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-macos-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534027",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-windows-latest-py-3.11",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534016",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "pip-install-on-windows-latest-py-3.13",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609634/job/137913534049",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "type-checker",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/actions/runs/45237609666/job/137913399726",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "Mintlify Preview (fork)",
+          "status": "COMPLETED",
+          "conclusion": "NEUTRAL",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://github.com/browser-use/browser-use/pull/6521",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "GitGuardian Security Checks",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://dashboard.gitguardian.com",
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://www.cubic.dev/pr/browser-use/browser-use/pull/6521",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "VoltAgent/voltagent",
+      "number": 1562,
+      "head": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "StatusContext",
+          "name": null,
+          "status": null,
+          "conclusion": null,
+          "context": "CodeRabbit",
+          "state": "SUCCESS",
+          "detailsUrl": null,
+          "targetUrl": null
+        },
+        {
+          "__typename": "CheckRun",
+          "name": "cubic \u00b7 AI code reviewer",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://www.cubic.dev/pr/VoltAgent/voltagent/pull/1562",
+          "targetUrl": null
+        }
+      ]
+    },
+    {
+      "repo": "HKUDS/LightRAG",
+      "number": 4647,
+      "head": "3c4e90508d7e9f3404b76bb54b96350354bc1341",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": null,
+      "checks": []
+    },
+    {
+      "repo": "infiniflow/ragflow",
+      "number": 22752,
+      "head": "e26909ee6cc0946fe2dfbbfc8bbabf6311bc1b5a",
+      "state": "OPEN",
+      "draft": false,
+      "unresolved_threads": 0,
+      "checks_state": "SUCCESS",
+      "checks": [
+        {
+          "__typename": "CheckRun",
+          "name": "CodeRabbit",
+          "status": "COMPLETED",
+          "conclusion": "SUCCESS",
+          "context": null,
+          "state": null,
+          "detailsUrl": "https://app.coderabbit.ai/change-stack/infiniflow/ragflow/pull/22752",
+          "targetUrl": null
+        }
+      ]
+    }
+  ],
+  "all11_formal_open_unmerged": true,
+  "unresolved_review_threads": 0,
+  "all_previous10_heads_unchanged": true,
+  "new_external_human_feedback": false,
+  "new_RAGFlow_bot_summary_no_actionable_comments": {
+    "author": "coderabbitai",
+    "createdAt": "2026-11-24T20:14:52Z",
+    "url": "https://github.com/infiniflow/ragflow/pull/22752#issuecomment-7143247268",
+    "not_human_approval_or_Actions_CI": true
+  },
+  "no_external_messages_or_PR_mutations": true,
+  "checks_unchanged_from_previous10_PR_audit": true,
+  "new_RAGFlow_actual_Actions_CheckRuns_found_in_head_rollup": false,
+  "external_reviewer_capability_query_parameters_not_redistributed": true
+}

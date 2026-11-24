@@ -38,7 +38,7 @@ def main():
             [sys.executable, "-c", "import sys; from setuptools.build_meta import build_wheel; build_wheel(sys.argv[1])", str(output)],
             cwd=staging, env=env, check=True,
         )
-    wheels = list(output.glob("agentlab_research-0.2.0-*.whl"))
+    wheels = list(output.glob("agentlab_research-0.3.0-*.whl"))
     if len(wheels) != 1:
         raise RuntimeError("Expected one research wheel")
     wheel = wheels[0]
@@ -49,8 +49,8 @@ def main():
             if archive.read("agentlab_research/" + name) != raw:
                 raise RuntimeError("Wheel source differs: " + name)
             sources[name] = hashlib.sha256(raw).hexdigest()
-        metadata = BytesParser().parsebytes(archive.read("agentlab_research-0.2.0.dist-info/METADATA"))
-        entry_points = archive.read("agentlab_research-0.2.0.dist-info/entry_points.txt").decode()
+        metadata = BytesParser().parsebytes(archive.read("agentlab_research-0.3.0.dist-info/METADATA"))
+        entry_points = archive.read("agentlab_research-0.3.0.dist-info/entry_points.txt").decode()
     receipt = {
         "wheel": wheel.name, "bytes": wheel.stat().st_size,
         "sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),

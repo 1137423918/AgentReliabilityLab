@@ -1,0 +1,24 @@
+Using CPython 3.11.4 interpreter at: <frozen-dependency-root>/source/extras/research-assistant/.venv/bin/python
+Creating virtual environment at: installed/env
+Activate with: source installed/env/bin/activate
+Using Python 3.11.4 environment at: installed/env
+Resolved 1 package in 411ms
+Prepared 1 package in 362ms
+Installed 1 package in 2ms
+ + agentlab-research==0.3.0 (from file://<controls-root>/wheel/agentlab_research-0.3.0-py3-none-any.whl)
+Using Python 3.11.4 environment at: installed/env
+Checked 1 package in 17ms
+Found 7 incompatibilities
+The package `agentlab-research` requires `llama-index-core==0.14.26`, but it's not installed
+The package `agentlab-research` requires `torch==2.6.0`, but it's not installed
+The package `agentlab-research` requires `transformers==4.57.6`, but it's not installed
+The package `agentlab-research` requires `numpy==2.2.6`, but it's not installed
+The package `agentlab-research` requires `mcp==2.3.0`, but it's not installed
+The package `agentlab-research` requires `httpx2==2.16.2`, but it's not installed
+The package `agentlab-research` requires `pypdf==7.1.1`, but it's not installed
+Traceback (most recent call last):
+  File "<install_failed-root>/inputs/setup_installed.py", line 16, in <module>
+    subprocess.run([str(UV),'pip','check','--python',str(python)],check=True,timeout=30)
+  File "<server-user>/anaconda3/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['<server-study-root>/tools/uv-x86_64-unknown-linux-gnu/uv', 'pip', 'check', '--python', '<install_failed-root>/installed/env/bin/python']' returned non-zero exit status 1.

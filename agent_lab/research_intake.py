@@ -6,6 +6,7 @@ from pathlib import Path
 import shutil
 import tempfile
 from urllib.parse import quote, urlsplit
+from .research_library import MAX_SOURCES
 
 
 def prepare(directory, output, base_url):
@@ -32,7 +33,7 @@ def prepare(directory, output, base_url):
                      'url': base_url.rstrip('/')+'/'+quote(rel.as_posix(), safe='/'),
                      'kind': 'local_document_snapshot', 'sha256': hashlib.sha256(raw).hexdigest()})
         payloads[source_id] = raw
-        if len(rows) > 256: raise ValueError('At most256documents are supported')
+        if len(rows) > MAX_SOURCES: raise ValueError('At most8192documents are supported')
     if not rows: raise ValueError('No supported nonempty documents found')
     output.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix='.research-intake-', dir=output.parent))

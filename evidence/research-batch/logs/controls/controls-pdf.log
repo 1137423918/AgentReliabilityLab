@@ -1,0 +1,10 @@
+test_blank_and_encrypted_documents_do_not_publish_partial_bundle (test_research_pdf.PDFControls.test_blank_and_encrypted_documents_do_not_publish_partial_bundle) ... ok
+test_metadata_page_does_not_silently_disagree_with_link (test_research_pdf.PDFControls.test_metadata_page_does_not_silently_disagree_with_link) ... ok
+test_original_tampering_before_ingest_and_after_publication_detected (test_research_pdf.PDFControls.test_original_tampering_before_ingest_and_after_publication_detected) ... ok
+test_pdf_replacement_keeps_page_ids_and_historical_original (test_research_pdf.PDFControls.test_pdf_replacement_keeps_page_ids_and_historical_original) ... ok
+test_physical_page_and_label_and_original_bytes_survive_deleted_intake (test_research_pdf.PDFControls.test_physical_page_and_label_and_original_bytes_survive_deleted_intake) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.142s
+
+OK

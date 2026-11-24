@@ -19,6 +19,8 @@ import tempfile
 from urllib.parse import urlsplit
 from .storage import admit_state_directory
 
+MAX_SOURCES = 8192
+
 
 def packed(x): return json.dumps(x, ensure_ascii=False, sort_keys=True, separators=(',', ':'), allow_nan=False).encode()
 def digest(x): return hashlib.sha256(packed(x)).hexdigest()
@@ -39,7 +41,7 @@ def checked_id(value):
 
 def load_sources(manifest):
     manifest = Path(manifest); spec = json.loads(manifest.read_text()); rows = {}
-    if spec.get('version') != 1 or not 1 <= len(spec['sources']) <= 256: raise ValueError('Expected1–256explicit sources')
+    if spec.get('version') != 1 or not 1 <= len(spec['sources']) <= MAX_SOURCES: raise ValueError('Expected1–8192explicit sources')
     total = 0; pdfs = {}
     for item in spec['sources']:
         key = checked_id(item['id'])
@@ -131,11 +133,23 @@ def ingest(manifest, store, embedder, *, _before_publish=None):
         try:
             index = open_index(prior_root, embedder) if prior_root else VectorStoreIndex([], embed_model=embedder, transformations=[parser_for(embedder)])
             for key in removed+updated: index.delete_ref_doc(key, delete_from_docstore=True)
+            documents = []
             for key in changed:
                 item = sources[key]; metadata = item['metadata']
                 doc = Document(id_=key, text=item['text'], metadata=metadata,
                                excluded_embed_metadata_keys=list(metadata), excluded_llm_metadata_keys=list(metadata))
-                index.insert(doc)
+                documents.append(doc)
+            if documents:
+                # Split multiple documents together so the embedding adapter can
+                # fill batches across document boundaries. Preserve source links
+                # and document hashes through LlamaIndex's public interfaces.
+                parsed = parser_for(embedder).get_nodes_from_documents(documents)
+                for node in parsed:
+                    start, end = node.start_char_idx, node.end_char_idx
+                    if start is None or end is None or sources[node.ref_doc_id]['text'][start:end] != node.text:
+                        raise ValueError('Chunk offsets do not match original source')
+                index.insert_nodes(parsed)
+                for doc in documents: index.docstore.set_document_hash(doc.id_, doc.hash)
             active = dict(index.ref_doc_info)
             if set(active) != set(sources): raise ValueError('Active index documents disagree with collection')
             index.storage_context.persist(persist_dir=str(staging/'index'))
@@ -178,9 +192,16 @@ def citation(store, citation_id):
     if len(parts) != 2 or not all(re.fullmatch('[a-f0-9]{64}', x) for x in parts): raise ValueError('Invalid citation ID')
     generation, node_id = parts; root, meta = open_generation(store, generation)
     nodes = json.loads((root/'nodes.json').read_text())
+    return _citation_payload(store, root, meta, nodes, node_id)
+
+
+def _citation_payload(store, root, meta, nodes, node_id, text=None):
+    generation = root.name
+    citation_id = generation+':'+node_id
     if node_id not in nodes: raise ValueError('Citation is not in that generation')
     row = nodes[node_id]; source_id = row['source_id']; source = meta['identity']['sources'][source_id]
-    text = (root/'sources'/(source_id+'.txt')).read_bytes().decode('utf-8'); excerpt = text[row['start']:row['end']]
+    if text is None: text = (root/'sources'/(source_id+'.txt')).read_bytes().decode('utf-8')
+    excerpt = text[row['start']:row['end']]
     if hashlib.sha256(excerpt.encode()).hexdigest() != row['text_sha256']: raise ValueError('Citation text fingerprint changed')
     start = text[:row['start']].count('\n')+1; end = text[:max(row['start'], row['end']-1)].count('\n')+1
     current = json.loads((Path(store)/'CURRENT.json').read_text())['generation']
@@ -202,58 +223,156 @@ def terms(text):
     return words
 
 
+class LexicalIndex:
+    """BM25 statistics for a fixed node set, reusable across queries."""
+    def __init__(self, nodes):
+        self.size = len(nodes); self.lengths = {}; self.postings = {}
+        for node in nodes:
+            counts = Counter(terms(node.text)); self.lengths[node.node_id] = sum(counts.values())
+            for term, frequency in counts.items():
+                self.postings.setdefault(term, []).append((node.node_id, frequency))
+        self.average = sum(self.lengths.values())/max(1, self.size)
+
+    def rank(self, query):
+        scores = {}
+        for term in sorted(set(terms(query))):
+            postings = self.postings.get(term, ())
+            idf = math.log(1+(self.size-len(postings)+.5)/(len(postings)+.5))
+            for key, frequency in postings:
+                scores[key] = scores.get(key, 0)+idf*frequency*2.2/(frequency+1.2*(.25+.75*self.lengths[key]/max(self.average, 1)))
+        return sorted(scores, key=lambda key: (-scores[key], key))
+
+
 def lexical(nodes, query):
-    query_terms = set(terms(query)); counts = {n.node_id: Counter(terms(n.text)) for n in nodes}
-    lengths = {k: sum(c.values()) for k, c in counts.items()}; avg = sum(lengths.values())/max(1, len(nodes)); scores = {}
-    for term in query_terms:
-        df = sum(term in c for c in counts.values()); idf = math.log(1+(len(nodes)-df+.5)/(df+.5))
-        for key, counter in counts.items():
-            frequency = counter[term]
-            if frequency: scores[key] = scores.get(key, 0)+idf*frequency*2.2/(frequency+1.2*(.25+.75*lengths[key]/max(avg, 1)))
-    return sorted(scores, key=lambda key: (-scores[key], key))
+    return LexicalIndex(nodes).rank(query)
+
+
+class ResearchSnapshot:
+    """Verified, captured generation for repeated retrieval on a trusted store.
+
+    Open again to observe a new generation or revalidate disk contents. Published
+    generations are immutable in normal use; this is not a filesystem watcher.
+    Source text is captured at open, while PDF reads retain their hash check.
+    """
+    def __init__(self, store, embedder, generation=None):
+        self.store = Path(store); self.root, self.meta = open_generation(store, generation)
+        self.generation = self.root.name; self.embedder = embedder
+        if self.meta['identity']['embedding'] != embedder.fingerprint:
+            raise ValueError('Query embedding differs from stored model')
+        self.index = open_index(self.root, embedder)
+        self.lookup = json.loads((self.root/'nodes.json').read_text())
+        self.nodes = self.index.docstore.get_nodes(list(self.lookup))
+        self.sparse = LexicalIndex(self.nodes); self.texts = {}
+        for key, source in self.meta['identity']['sources'].items():
+            raw = (self.root/'sources'/(key+'.txt')).read_bytes()
+            if hashlib.sha256(raw).hexdigest() != source['sha256']:
+                raise ValueError('Archived source differs from its identity')
+            self.texts[key] = raw.decode('utf-8')
+
+    def search_modes(self, query, *, modes=('lexical', 'semantic', 'hybrid'), top_k=5, source_id=None):
+        if not isinstance(query, str) or not query.strip() or len(query)>2000:
+            raise ValueError('Use a nonempty query up to2000characters')
+        if (not modes or len(set(modes)) != len(modes) or
+                any(mode not in ['semantic', 'lexical', 'hybrid'] for mode in modes) or not 1 <= top_k <= 32):
+            raise ValueError('Invalid retrieval options')
+        if source_id and source_id not in self.meta['identity']['sources']:
+            return {mode: {'generation': self.generation, 'results': [], 'status': 'source_not_in_active_collection'} for mode in modes}
+        nodes = [n for n in self.nodes if source_id is None or n.metadata['id'] == source_id]
+        sparse = []
+        if any(mode != 'semantic' for mode in modes):
+            sparse = (LexicalIndex(nodes) if source_id else self.sparse).rank(query)[:max(24, 4*top_k)]
+        dense = []
+        if any(mode != 'lexical' for mode in modes):
+            from llama_index.core.vector_stores import MetadataFilters, MetadataFilter
+            options = {'filters': MetadataFilters(filters=[MetadataFilter(key='id', value=source_id)])} if source_id else {}
+            dense = [r.node.node_id for r in self.index.as_retriever(similarity_top_k=min(max(24, 4*top_k), len(nodes)), **options).retrieve(query)]
+        output = {}
+        for mode in modes:
+            rankings = [dense] if mode == 'semantic' else [sparse] if mode == 'lexical' else [dense, sparse]
+            scores = {}
+            for ranking in rankings:
+                for rank, node_id in enumerate(ranking): scores[node_id] = scores.get(node_id, 0)+1/(60+rank+1)
+            results = []; seen = set()
+            for node_id in sorted(scores, key=lambda key: (-scores[key], key)):
+                key = self.lookup[node_id]['source_id']
+                if key in seen: continue
+                seen.add(key)
+                result = _citation_payload(self.store, self.root, self.meta, self.lookup, node_id, self.texts[key])
+                result['ranking_score'] = scores[node_id]; results.append(result)
+                if len(results) == top_k: break
+            output[mode] = {'generation': self.generation, 'mode': mode, 'results': results, 'generated_answer': False,
+                            'note': 'Candidate source passages,not an answer or calibrated relevance probability.'}
+        return output
+
+    def search(self, query, *, top_k=5, mode='hybrid', source_id=None):
+        return self.search_modes(query, modes=(mode,), top_k=top_k, source_id=source_id)[mode]
 
 
 def search(store, query, embedder, *, top_k=5, mode='hybrid', source_id=None):
-    if not isinstance(query, str) or not query.strip() or len(query)>2000: raise ValueError('Use a nonempty query up to2000characters')
-    if not 1 <= top_k <= 8 or mode not in ['semantic', 'lexical', 'hybrid']: raise ValueError('Invalid retrieval options')
-    root, meta = open_generation(store); generation = root.name
-    if meta['identity']['embedding'] != embedder.fingerprint: raise ValueError('Query embedding differs from stored model')
-    if source_id and source_id not in meta['identity']['sources']: return {'generation': generation, 'results': [], 'status': 'source_not_in_active_collection'}
-    index = open_index(root, embedder); lookup = json.loads((root/'nodes.json').read_text())
-    nodes = index.docstore.get_nodes(list(lookup)); nodes = [n for n in nodes if source_id is None or n.metadata['id'] == source_id]
-    sparse = lexical(nodes, query) if mode != 'semantic' else []
-    dense = []
-    if mode != 'lexical':
-        from llama_index.core.vector_stores import MetadataFilters, MetadataFilter
-        options = {'filters': MetadataFilters(filters=[MetadataFilter(key='id', value=source_id)])} if source_id else {}
-        dense = [r.node.node_id for r in index.as_retriever(similarity_top_k=min(24, len(nodes)), **options).retrieve(query)]
-    rankings = [dense] if mode == 'semantic' else [sparse[:24]] if mode == 'lexical' else [dense, sparse[:24]]
-    scores = {}
-    for ranking in rankings:
-        for rank, node_id in enumerate(ranking): scores[node_id] = scores.get(node_id, 0)+1/(60+rank+1)
-    ordered = sorted(scores, key=lambda key: (-scores[key], key)); results = []; seen = set()
-    for node_id in ordered:
-        key = lookup[node_id]['source_id']
-        if key in seen: continue
-        seen.add(key); result = citation(store, generation+':'+node_id); result['ranking_score'] = scores[node_id]; results.append(result)
-        if len(results) == top_k: break
-    return {'generation': generation, 'mode': mode, 'results': results, 'generated_answer': False,
-            'note': 'Candidate source passages,not an answer or calibrated relevance probability.'}
+    if not isinstance(query, str) or not query.strip() or len(query)>2000:
+        raise ValueError('Use a nonempty query up to2000characters')
+    if not 1 <= top_k <= 32 or mode not in ['semantic', 'lexical', 'hybrid']:
+        raise ValueError('Invalid retrieval options')
+    return ResearchSnapshot(store, embedder).search(query, top_k=top_k, mode=mode, source_id=source_id)
+
+
+def search_batch(store, requests, output, embedder, *, top_k=10, modes=('lexical', 'semantic', 'hybrid')):
+    """Capture one generation and atomically deliver a bounded JSONL query batch.
+
+    A failed batch retains its .partial file for inspection. It is not resumable;
+    existing final or partial outputs are never overwritten. Query IDs are
+    caller-provided and do not need to expose query text in the result file.
+    """
+    requests = Path(requests); output = Path(output); partial = output.with_name(output.name+'.partial')
+    if requests.is_symlink(): raise ValueError('Query input cannot be a symlink')
+    with requests.open('rb') as stream: raw = stream.read(1024**2+1)
+    if len(raw)>1024**2: raise ValueError('Query input exceeds1MiB')
+    rows = [json.loads(line) for line in raw.decode('utf-8').splitlines() if line.strip()]
+    if not 1 <= len(rows) <= 512: raise ValueError('Expected1–512queries')
+    seen = set()
+    for row in rows:
+        if not isinstance(row, dict) or set(row) != {'id', 'query'}: raise ValueError('Query rows require only id and query')
+        key = checked_id(row['id']); query = row['query']
+        if key in seen: raise ValueError('Repeated query ID')
+        seen.add(key)
+        if not isinstance(query, str) or not query.strip() or len(query)>2000:
+            raise ValueError('Use a nonempty query up to2000characters')
+    if not modes or len(set(modes)) != len(modes) or any(m not in ['lexical', 'semantic', 'hybrid'] for m in modes) or not 1 <= top_k <= 32:
+        raise ValueError('Invalid retrieval options')
+    if any(p.exists() or p.is_symlink() for p in [output, partial]): raise FileExistsError('Use a new batch output path')
+    snapshot = ResearchSnapshot(store, embedder); output.parent.mkdir(parents=True, exist_ok=True)
+    with partial.open('xb') as stream:
+        for row in rows:
+            result = {'id': row['id'], 'query_sha256': hashlib.sha256(row['query'].encode()).hexdigest(),
+                      'generation': snapshot.generation,
+                      'modes': snapshot.search_modes(row['query'], modes=modes, top_k=top_k)}
+            stream.write(packed(result)+b'\n'); stream.flush(); os.fsync(stream.fileno())
+    os.replace(partial, output)
+    fd = os.open(output.parent, os.O_RDONLY | os.O_DIRECTORY)
+    try: os.fsync(fd)
+    finally: os.close(fd)
+    return {'generation': snapshot.generation, 'queries': len(rows), 'modes': list(modes), 'top_k': top_k,
+            'candidate_nodes_per_ranker': max(24, 4*top_k), 'output_sha256': sha(output),
+            'query_input_sha256': hashlib.sha256(raw).hexdigest(), 'generated_answers': False}
 
 
 def main(argv=None, *, embedding_observer=None):
     parser = argparse.ArgumentParser(description=__doc__); sub = parser.add_subparsers(dest='command', required=True)
     ingest_parser = sub.add_parser('ingest'); ingest_parser.add_argument('--manifest', type=Path, required=True)
     query_parser = sub.add_parser('search'); query_parser.add_argument('--query', required=True); query_parser.add_argument('--mode', choices=['semantic', 'lexical', 'hybrid'], default='hybrid'); query_parser.add_argument('--source'); query_parser.add_argument('--top-k', type=int, default=5)
+    batch_parser = sub.add_parser('search-batch'); batch_parser.add_argument('--queries', type=Path, required=True); batch_parser.add_argument('--output', type=Path, required=True); batch_parser.add_argument('--modes', nargs='+', choices=['lexical', 'semantic', 'hybrid'], default=['lexical', 'semantic', 'hybrid']); batch_parser.add_argument('--top-k', type=int, default=10)
     read_parser = sub.add_parser('read'); read_parser.add_argument('--citation-id', required=True)
-    for item in [ingest_parser, query_parser, read_parser]: item.add_argument('--store', type=Path, required=True)
-    for item in [ingest_parser, query_parser]: item.add_argument('--model-dir', type=Path, required=True)
+    for item in [ingest_parser, query_parser, batch_parser, read_parser]: item.add_argument('--store', type=Path, required=True)
+    for item in [ingest_parser, query_parser, batch_parser]:
+        item.add_argument('--model-dir', type=Path, required=True); item.add_argument('--embed-batch-size', type=int, choices=[1, 2, 4, 8, 16], default=4)
     args = parser.parse_args(argv)
     if args.command == 'read': result = citation(args.store, args.citation_id)
     else:
         from .research_embeddings import LocalE5Embedding
-        model = LocalE5Embedding(args.model_dir, observer=embedding_observer)
-        result = ingest(args.manifest, args.store, model) if args.command == 'ingest' else search(args.store, args.query, model, top_k=args.top_k, mode=args.mode, source_id=args.source)
+        model = LocalE5Embedding(args.model_dir, observer=embedding_observer, batch_size=args.embed_batch_size)
+        if args.command == 'ingest': result = ingest(args.manifest, args.store, model)
+        elif args.command == 'search-batch': result = search_batch(args.store, args.queries, args.output, model, top_k=args.top_k, modes=args.modes)
+        else: result = search(args.store, args.query, model, top_k=args.top_k, mode=args.mode, source_id=args.source)
         result['CPU_embedding_calls'] = model.counts
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

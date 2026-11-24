@@ -1,0 +1,45 @@
+test_mcp_remains_bounded_and_reads_old_citation_after_new_publication (test_research_batch_mcp.MCPBatchCompatibility.test_mcp_remains_bounded_and_reads_old_citation_after_new_publication) ... Executing <Task pending name='Task-1' coro=<MCPBatchCompatibility.asyncSetUp() running at <controls_old_api-root>/inputs/source/tests/test_research_batch_mcp.py:28> wait_for=<Future pending cb=[Task.task_wakeup()] created at <server-user>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <server-user>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <server-user>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.104 seconds
+StreamableHTTP session manager started
+ERROR
+StreamableHTTP session manager shutting down
+Executing <Task finished name='Task-5' coro=<MCPBatchCompatibility.asyncTearDown() done, defined at <controls_old_api-root>/inputs/source/tests/test_research_batch_mcp.py:32> result=None created at <server-user>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.173 seconds
+
+======================================================================
+ERROR: test_mcp_remains_bounded_and_reads_old_citation_after_new_publication (test_research_batch_mcp.MCPBatchCompatibility.test_mcp_remains_bounded_and_reads_old_citation_after_new_publication)
+----------------------------------------------------------------------
+  + Exception Group Traceback (most recent call last):
+  |   File "<server-user>/anaconda3/lib/python3.11/unittest/async_case.py", line 90, in _callTestMethod
+  |     if self._callMaybeAsync(method) is not None:
+  |        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<server-user>/anaconda3/lib/python3.11/unittest/async_case.py", line 112, in _callMaybeAsync
+  |     return self._asyncioRunner.run(
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<server-user>/anaconda3/lib/python3.11/asyncio/runners.py", line 118, in run
+  |     return self._loop.run_until_complete(task)
+  |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  |   File "<server-user>/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+  |     return future.result()
+  |            ^^^^^^^^^^^^^^^
+  |   File "<controls_old_api-root>/inputs/source/tests/test_research_batch_mcp.py", line 39, in test_mcp_remains_bounded_and_reads_old_citation_after_new_publication
+  |     async with streamable_http_client(f'http://127.0.0.1:{self.port}/mcp') as (read,write,_):
+  |   File "<server-user>/anaconda3/lib/python3.11/contextlib.py", line 222, in __aexit__
+  |     await self.gen.athrow(typ, value, traceback)
+  |   File "<frozen-dependency-root>/source/extras/research-assistant/.venv/lib/python3.11/site-packages/mcp/client/streamable_http.py", line 766, in streamable_http_client
+  |     async with (
+  |   File "<frozen-dependency-root>/source/extras/research-assistant/.venv/lib/python3.11/site-packages/anyio/_backends/_asyncio.py", line 871, in __aexit__
+  |     raise BaseExceptionGroup(
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "<frozen-dependency-root>/source/extras/research-assistant/.venv/lib/python3.11/site-packages/mcp/client/streamable_http.py", line 788, in streamable_http_client
+    |     yield read_stream, write_stream
+    |   File "<controls_old_api-root>/inputs/source/tests/test_research_batch_mcp.py", line 39, in test_mcp_remains_bounded_and_reads_old_citation_after_new_publication
+    |     async with streamable_http_client(f'http://127.0.0.1:{self.port}/mcp') as (read,write,_):
+    |                                                                               ^^^^^^^^^^^^^^
+    | ValueError: not enough values to unpack (expected 3, got 2)
+    +------------------------------------
+
+----------------------------------------------------------------------
+Ran 1 test in 0.555s
+
+FAILED (errors=1)

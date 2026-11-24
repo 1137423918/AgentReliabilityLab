@@ -1,0 +1,11 @@
+test_empty_invalid_UTF8_oversized_and_nonHTTPS_rejected (test_research_intake.IntakeControls.test_empty_invalid_UTF8_oversized_and_nonHTTPS_rejected) ... ok
+test_hidden_and_unsupported_files_are_not_ingested (test_research_intake.IntakeControls.test_hidden_and_unsupported_files_are_not_ingested) ... ok
+test_ids_stable_for_content_updates_and_nested_paths_distinct (test_research_intake.IntakeControls.test_ids_stable_for_content_updates_and_nested_paths_distinct) ... ok
+test_output_inside_source_or_existing_is_rejected (test_research_intake.IntakeControls.test_output_inside_source_or_existing_is_rejected) ... ok
+test_snapshot_preserves_CRLF_unicode_and_hash_and_is_loadable (test_research_intake.IntakeControls.test_snapshot_preserves_CRLF_unicode_and_hash_and_is_loadable) ... ok
+test_symlink_sources_rejected_without_partial_output (test_research_intake.IntakeControls.test_symlink_sources_rejected_without_partial_output) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.013s
+
+OK

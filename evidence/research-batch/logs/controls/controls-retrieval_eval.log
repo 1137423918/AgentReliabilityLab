@@ -1,0 +1,9 @@
+test_all_queries_are_required_and_missing_results_still_score_zero (test_research_retrieval_eval.RetrievalMetricControls.test_all_queries_are_required_and_missing_results_still_score_zero) ... ok
+test_multiple_relevant_documents_missing_slots_and_rank_cutoffs (test_research_retrieval_eval.RetrievalMetricControls.test_multiple_relevant_documents_missing_slots_and_rank_cutoffs) ... ok
+test_query_id_cannot_be_scored_with_a_different_question (test_research_retrieval_eval.RetrievalMetricControls.test_query_id_cannot_be_scored_with_a_different_question) ... ok
+test_trec_export_preserves_the_supplied_rank_order_without_score_ties (test_research_retrieval_eval.RetrievalMetricControls.test_trec_export_preserves_the_supplied_rank_order_without_score_ties) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.002s
+
+OK

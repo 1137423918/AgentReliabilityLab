@@ -1,0 +1,93 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "db2b8a41444780315998df0ae5d35fd76aed3990241f1bf6f30cbd61322a57c6",
+  "phases": [
+    {
+      "name": "baseline-provenance-guard",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 3.615,
+      "peak_owned_RSS_bytes": 105508864
+    },
+    {
+      "name": "controls-snapshot",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.125,
+      "peak_owned_RSS_bytes": 111493120
+    },
+    {
+      "name": "controls-retrieval_eval",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.517,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "controls-batch_mcp",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 5.668,
+      "peak_owned_RSS_bytes": 149504000
+    },
+    {
+      "name": "controls-library",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.607,
+      "peak_owned_RSS_bytes": 104529920
+    },
+    {
+      "name": "controls-intake",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.518,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "controls-pdf",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.617,
+      "peak_owned_RSS_bytes": 117325824
+    },
+    {
+      "name": "trec-reference-build",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.136,
+      "peak_owned_RSS_bytes": 32387072
+    },
+    {
+      "name": "trec-reference-quicktest",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.532,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "trec-reference-help",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.532,
+      "peak_owned_RSS_bytes": 7208960
+    },
+    {
+      "name": "metrics-reference-fixture",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.517,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "build-wheel",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.547,
+      "peak_owned_RSS_bytes": 64159744
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 40.081
+}

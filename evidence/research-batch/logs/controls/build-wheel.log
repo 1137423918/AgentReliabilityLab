@@ -1,0 +1,65 @@
+running bdist_wheel
+running build
+running build_py
+creating build/lib/agentlab_research
+copying src/agentlab_research/research_cli.py -> build/lib/agentlab_research
+copying src/agentlab_research/__main__.py -> build/lib/agentlab_research
+copying src/agentlab_research/research_embeddings.py -> build/lib/agentlab_research
+copying src/agentlab_research/research_intake.py -> build/lib/agentlab_research
+copying src/agentlab_research/research_library.py -> build/lib/agentlab_research
+copying src/agentlab_research/research_mcp.py -> build/lib/agentlab_research
+copying src/agentlab_research/storage.py -> build/lib/agentlab_research
+copying src/agentlab_research/research_pdf.py -> build/lib/agentlab_research
+copying src/agentlab_research/__init__.py -> build/lib/agentlab_research
+running egg_info
+creating src/agentlab_research.egg-info
+writing src/agentlab_research.egg-info/PKG-INFO
+writing dependency_links to src/agentlab_research.egg-info/dependency_links.txt
+writing entry points to src/agentlab_research.egg-info/entry_points.txt
+writing requirements to src/agentlab_research.egg-info/requires.txt
+writing top-level names to src/agentlab_research.egg-info/top_level.txt
+writing manifest file 'src/agentlab_research.egg-info/SOURCES.txt'
+reading manifest file 'src/agentlab_research.egg-info/SOURCES.txt'
+writing manifest file 'src/agentlab_research.egg-info/SOURCES.txt'
+copying src/agentlab_research/research_model_assets.json -> build/lib/agentlab_research
+warning: build_py: byte-compiling is disabled, skipping.
+
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/agentlab_research
+copying build/lib/agentlab_research/research_cli.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/__main__.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_embeddings.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_intake.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_library.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_mcp.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/storage.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_pdf.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/research_model_assets.json -> build/bdist.linux-x86_64/wheel/./agentlab_research
+copying build/lib/agentlab_research/__init__.py -> build/bdist.linux-x86_64/wheel/./agentlab_research
+warning: install_lib: byte-compiling is disabled, skipping.
+
+running install_egg_info
+Copying src/agentlab_research.egg-info to build/bdist.linux-x86_64/wheel/./agentlab_research-0.3.0-py3.11.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/agentlab_research-0.3.0.dist-info/WHEEL
+creating '<controls-root>/wheel/.tmp-97l92ari/agentlab_research-0.3.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'agentlab_research/__init__.py'
+adding 'agentlab_research/__main__.py'
+adding 'agentlab_research/research_cli.py'
+adding 'agentlab_research/research_embeddings.py'
+adding 'agentlab_research/research_intake.py'
+adding 'agentlab_research/research_library.py'
+adding 'agentlab_research/research_mcp.py'
+adding 'agentlab_research/research_model_assets.json'
+adding 'agentlab_research/research_pdf.py'
+adding 'agentlab_research/storage.py'
+adding 'agentlab_research-0.3.0.dist-info/METADATA'
+adding 'agentlab_research-0.3.0.dist-info/WHEEL'
+adding 'agentlab_research-0.3.0.dist-info/entry_points.txt'
+adding 'agentlab_research-0.3.0.dist-info/top_level.txt'
+adding 'agentlab_research-0.3.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+{"wheel": "agentlab_research-0.3.0-py3-none-any.whl", "bytes": 19942, "sha256": "e715dfceb1bd410e335d37069e425ee2410b674d27992fb07f7706807c6fd27c", "source_sha256": {"storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963", "research_library.py": "df467b331ff7f75e824ca5b3cb76c57a53824ba5cc84d02c146adc9e2b21037f", "research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4", "research_mcp.py": "b052043e169e6d9af459ea85273550eeb6e557aab887922095f4aed95b92751d", "research_intake.py": "ffca7e650d7d3f9c73d363171b3187e48ecb499492dc2f73d92fd84633b8292f", "research_pdf.py": "7b1fbca4dd9b8d237abf7e317768d03e0e9bdf1a0efe378061adea842c45e938", "research_cli.py": "2bd270f7e202aafbbcff1f6594124704e0eb8fa349adfea59665aeb07837e811", "research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61"}, "all_canonical_module_bytes_identical": true, "requires_dist": ["llama-index-core==0.14.26", "torch==2.6.0", "transformers==4.57.6", "numpy==2.2.6", "mcp==2.3.0", "httpx2==2.16.2", "pypdf==7.1.1"], "entry_points": "[console_scripts]\nagentlab-research = agentlab_research.research_cli:main\n", "installed_or_executed": false}

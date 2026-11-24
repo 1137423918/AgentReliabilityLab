@@ -1,0 +1,33 @@
+{
+  "scope": "Post-hoc descriptive comparison of already frozen per-query retrieval metrics; no model calls, ranking changes, tuning, regrading or independence/significance claim.",
+  "queries": 300,
+  "pairs": {
+    "lexical->semantic": {
+      "higher_ndcg10": 74,
+      "lower_ndcg10": 65,
+      "equal_ndcg10": 161,
+      "recovered_hit10": 25,
+      "lost_hit10": 22,
+      "both_hit10": 215,
+      "both_miss10": 38
+    },
+    "semantic->hybrid": {
+      "higher_ndcg10": 80,
+      "lower_ndcg10": 35,
+      "equal_ndcg10": 185,
+      "recovered_hit10": 21,
+      "lost_hit10": 6,
+      "both_hit10": 234,
+      "both_miss10": 39
+    },
+    "lexical->hybrid": {
+      "higher_ndcg10": 78,
+      "lower_ndcg10": 24,
+      "equal_ndcg10": 198,
+      "recovered_hit10": 23,
+      "lost_hit10": 5,
+      "both_hit10": 232,
+      "both_miss10": 40
+    }
+  }
+}

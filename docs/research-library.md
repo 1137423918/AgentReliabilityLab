@@ -22,14 +22,14 @@ flowchart LR
 
 ## 使用
 
-现提供[独立CPU启动包](../artifacts/agentlab-research-0.2.0-starter.zip)和[wheel](../artifacts/agentlab_research-0.2.0-py3-none-any.whl)。已在服务器从冻结锁文件安装全新Linux x86_64 / Python3.11环境，使用torch2.6.0+cpu，不含CUDA运行时；不依赖旧模型环境的包路径或完整维护运行器。LlamaIndex0.14.26、Transformers4.57.6、numpy2.2.6和MCP2.3.0保持声明版本，完整传递依赖见`extras/research-library/uv.lock`；根项目的`uv.lock`仍属于维护运行器。首轮检索诊断使用的旧组合环境作为历史证据保留，没有把新CPU安装当作相同数值环境。
+现提供[0.3.0独立CPU启动包](../artifacts/agentlab-research-0.3.0-starter.zip)和[wheel](../artifacts/agentlab_research-0.3.0-py3-none-any.whl)。此前已在服务器从冻结锁文件安装全新Linux x86_64 / Python3.11环境，使用torch2.6.0+cpu，不含CUDA运行时，也不依赖维护运行器。0.3.0使用相同冻结依赖，新应用命名空间验证复用既有第三方模块，不是再次清洁安装；[实际安装范围](research-batch.md)另列。LlamaIndex0.14.26、Transformers4.57.6、numpy2.2.6和MCP2.3.0保持声明版本，完整传递依赖见`extras/research-library/uv.lock`；根项目的`uv.lock`仍属于维护运行器。首轮检索诊断使用的旧组合环境作为历史证据保留，没有把新CPU安装当作相同数值环境。
 
 独立安装后可直接导入自己的可信UTF-8资料目录：
 
 ```sh
 uv sync --project extras/research-library --frozen --no-install-project --no-default-groups
 uv pip install --python extras/research-library/.venv/bin/python --no-deps \
-  artifacts/agentlab_research-0.2.0-py3-none-any.whl
+  artifacts/agentlab_research-0.3.0-py3-none-any.whl
 uv pip check --python extras/research-library/.venv/bin/python
 extras/research-library/.venv/bin/agentlab-research check-model --directory /path/to/e5
 extras/research-library/.venv/bin/agentlab-research prepare \
@@ -37,7 +37,7 @@ extras/research-library/.venv/bin/agentlab-research prepare \
   --base-url 'https://github.com/OWNER/REPO/blob/COMMIT/docs/'
 ```
 
-`prepare`处理`.md/.txt/.rst/.bib`，保留原始换行、生成稳定路径ID与哈希，最多256份资料；PDF另用新增的 `prepare-pdf`，见[完整论文工作流](paper-library.md)。两个命令都不验证调用者声明的来源链接。文本导入的输出目录必须新建且位于输入目录之外。之后用`agentlab-research ingest/search/read/serve`；[完整参数与启动说明](../packages/research-library/README.md)。模型权重另外取得，包只提供固定资产哈希；`check-model`仅校验文件并补建缺失清单，不进行推理。使用[PyTorch官方CPU索引](https://pytorch.org/get-started/previous-versions/)与[uv显式索引绑定](https://docs.astral.sh/uv/concepts/indexes/)避免默认拉取CUDA依赖。
+`prepare`处理`.md/.txt/.rst/.bib`，保留原始换行、生成稳定路径ID与哈希，0.3.0最多8,192份资料，每份512KiB、总16MiB；PDF另用 `prepare-pdf`，见[完整论文工作流](paper-library.md)，仍有独立的32篇/256页限制。两个命令都不验证调用者声明的来源链接。文本导入的输出目录必须新建且位于输入目录之外。之后用`agentlab-research ingest/search/search-batch/read/serve`；[完整参数与启动说明](../packages/research-library/README.md)。模型权重另外取得，包只提供固定资产哈希；`check-model`仅校验文件并补建缺失清单，不进行推理。使用[PyTorch官方CPU索引](https://pytorch.org/get-started/previous-versions/)与[uv显式索引绑定](https://docs.astral.sh/uv/concepts/indexes/)避免默认拉取CUDA依赖。
 
 原源码模块入口继续兼容。从仓库根目录，在相应依赖环境中执行：
 

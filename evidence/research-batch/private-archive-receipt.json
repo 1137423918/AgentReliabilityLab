@@ -1,0 +1,19 @@
+{
+  "relative_path": "studies/retrieval-evaluation-stage91-20261125",
+  "manifest_sha256": "3c24366f686b80e7f9f4dbf67e9e45251efae46e534e871ee9f268818f654ca0",
+  "files": 10554,
+  "bytes": 179893284,
+  "all_five_profiles_terminal_owned_zero": true,
+  "three_failed_profiles_retained": true,
+  "old_closed_inputs_and_prepared_data_unchanged": true,
+  "counts": {
+    "completed_forwards": 961,
+    "query_inputs": 300,
+    "reserved_forwards": 961,
+    "text_inputs": 10571
+  },
+  "unknown_forwards": 0,
+  "budget_status": "CLOSED",
+  "generation_model_calls": 0,
+  "GPU_used": false
+}

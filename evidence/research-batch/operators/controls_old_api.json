@@ -1,0 +1,33 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "controls-batch_mcp"
+  },
+  "protocol_sha256": "8acc6153b7be395ee21a4bb6e08656b5e96d5c635e126cce395826b02b263f79",
+  "phases": [
+    {
+      "name": "controls-snapshot",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 4.119,
+      "peak_owned_RSS_bytes": 111513600
+    },
+    {
+      "name": "controls-retrieval_eval",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.517,
+      "peak_owned_RSS_bytes": 6488064
+    },
+    {
+      "name": "controls-batch_mcp",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 5.143,
+      "peak_owned_RSS_bytes": 145072128
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 20.71
+}

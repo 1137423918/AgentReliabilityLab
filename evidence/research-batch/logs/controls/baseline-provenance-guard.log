@@ -1,0 +1,14 @@
+test_invalid_parser_offsets_fail_before_embedding (test_research_snapshot.SnapshotControls.test_invalid_parser_offsets_fail_before_embedding) ... FAIL
+
+======================================================================
+FAIL: test_invalid_parser_offsets_fail_before_embedding (test_research_snapshot.SnapshotControls.test_invalid_parser_offsets_fail_before_embedding)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<controls-root>/inputs/source/tests/test_research_snapshot.py", line 47, in test_invalid_parser_offsets_fail_before_embedding
+    self.assertEqual(self.model.calls,0)
+AssertionError: 2 != 0
+
+----------------------------------------------------------------------
+Ran 1 test in 0.072s
+
+FAILED (failures=1)

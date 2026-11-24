@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "new-namespace-install"
+  },
+  "protocol_sha256": "e1e1eb96869a017e7d44628248806973fe0667709f9f7f56d2a855cfda62eadb",
+  "phases": [
+    {
+      "name": "new-namespace-install",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 2.078,
+      "peak_owned_RSS_bytes": 73695232
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 12.412
+}

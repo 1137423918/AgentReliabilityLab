@@ -1,0 +1,11 @@
+test_batch_prevalidates_ids_and_never_overwrites_complete_output (test_research_snapshot.SnapshotControls.test_batch_prevalidates_ids_and_never_overwrites_complete_output) ... ok
+test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged (test_research_snapshot.SnapshotControls.test_bulk_ingestion_fills_batches_across_documents_and_reuses_unchanged) ... ok
+test_captured_snapshot_keeps_old_sources_after_new_generation_publication (test_research_snapshot.SnapshotControls.test_captured_snapshot_keeps_old_sources_after_new_generation_publication) ... ok
+test_collection_above_previous_256_limit_uses_actual_framework (test_research_snapshot.SnapshotControls.test_collection_above_previous_256_limit_uses_actual_framework) ... ok
+test_failed_batch_retains_partial_records_without_publishing_final (test_research_snapshot.SnapshotControls.test_failed_batch_retains_partial_records_without_publishing_final) ... ok
+test_multi_mode_reuses_one_query_embedding_and_matches_single_requests (test_research_snapshot.SnapshotControls.test_multi_mode_reuses_one_query_embedding_and_matches_single_requests) ... ok
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.761s
+
+OK

@@ -1,0 +1,18 @@
+{
+  "caps": {
+    "query_inputs": 300,
+    "reserved_forwards": 961,
+    "text_inputs": 10571
+  },
+  "counts": {
+    "completed_forwards": 961,
+    "query_inputs": 300,
+    "reserved_forwards": 961,
+    "text_inputs": 10571
+  },
+  "pending": null,
+  "stage": "installed-batch",
+  "state": "CLOSED",
+  "unknown_forwards": 0,
+  "unused_reservations_retired": 0
+}

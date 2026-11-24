@@ -11,7 +11,7 @@ from .research_library import search, citation, open_generation
 
 
 def create_app(store, embedder):
-    server = MCPServer('AgentLab Research Library', version='0.2.0')
+    server = MCPServer('AgentLab Research Library', version='0.3.0')
     lock = threading.Lock()
     def serialized(function, *args, **kwargs):
         with lock:
@@ -33,6 +33,7 @@ def create_app(store, embedder):
     @server.tool()
     async def search_sources(query: str, top_k: int = 5, source_id: str | None = None) -> dict[str, Any]:
         """Retrieve candidate passages with citations; no generated answer or confidence promise."""
+        if not 1 <= top_k <= 8: raise ToolError('MCP results are limited to1–8sources')
         return await call(search, store, query, embedder, top_k=top_k, source_id=source_id)
 
     @server.tool()

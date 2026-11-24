@@ -1,0 +1,43 @@
+{
+  "ready": true,
+  "dataset": "Official BeIR/scifact and BeIR/scifact-qrels fixed HF revisions",
+  "corpus_documents": 5183,
+  "test_queries": 300,
+  "test_qrel_pairs": 339,
+  "all_query_rows_in_official_file": 1109,
+  "title_plus_abstract_in_full": true,
+  "node_count": 10571,
+  "chunk_tokens": 256,
+  "chunk_overlap": 32,
+  "embedding_batch_size_planned": 16,
+  "planned_text_forward_upper_bound": 661,
+  "planned_query_forward_upper_bound": 300,
+  "maximum_passage_tokens": 258,
+  "maximum_query_tokens": 69,
+  "cited_document_qrels_match_author_dev_all_300": true,
+  "queries_with_evidence_annotations": 188,
+  "queries_without_evidence_annotations": 112,
+  "label_semantics": "BEIR relevant documents match author cited_doc_ids. Some claims have no author evidence annotations; retrieval relevance does not prove support, refutation or answer truth.",
+  "top_k_planned": [
+    1,
+    3,
+    5,
+    10
+  ],
+  "candidate_node_window_planned": 40,
+  "BM25_k1": 1.2,
+  "BM25_b": 0.75,
+  "RRF_constant": 60,
+  "methods": [
+    "lexical",
+    "semantic",
+    "hybrid"
+  ],
+  "no_test_tuning": true,
+  "model_generation_calls": 0,
+  "neural_forwards": 0,
+  "GPU_used": false,
+  "model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+  "planned_nodes_sha256": "aa95ae479f623750fbe1f544ce1f4decab94eea44cf8a6bd1ab22542b9c5e4b4",
+  "planned_queries_sha256": "383b001cc621b9d29bc5081e31df3c93bcdfce6b325c1f727fbe3a6fd3299736"
+}

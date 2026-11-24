@@ -1,0 +1,16 @@
+{
+  "GPU_used": false,
+  "candidate_nodes": 40,
+  "caps": {
+    "query_inputs": 300,
+    "reserved_forwards": 961,
+    "text_inputs": 10571
+  },
+  "embedding_batch_size": 16,
+  "model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+  "planned_nodes_sha256": "aa95ae479f623750fbe1f544ce1f4decab94eea44cf8a6bd1ab22542b9c5e4b4",
+  "planned_queries_sha256": "383b001cc621b9d29bc5081e31df3c93bcdfce6b325c1f727fbe3a6fd3299736",
+  "scope": "One fixed official SciFact full5183corpus/300testqueries, shared queryvectors for lexical/E5/RRF rankings; no generatedanswers, no tuning/retries/warmup.",
+  "top_k": 10,
+  "wheel_sha256": "e715dfceb1bd410e335d37069e425ee2410b674d27992fb07f7706807c6fd27c"
+}

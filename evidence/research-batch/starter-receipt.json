@@ -1,0 +1,22 @@
+{
+  "wheel": "agentlab_research-0.3.0-py3-none-any.whl",
+  "wheel_sha256": "e715dfceb1bd410e335d37069e425ee2410b674d27992fb07f7706807c6fd27c",
+  "starter": "agentlab-research-0.3.0-starter.zip",
+  "starter_sha256": "4752e0cdb5f7a059e924621675dddb20dadf9f08741a5446017b90a615e3659b",
+  "starter_bytes": 49313,
+  "static_contents_verified": true,
+  "canonical_module_sha256": {
+    "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "research_library.py": "df467b331ff7f75e824ca5b3cb76c57a53824ba5cc84d02c146adc9e2b21037f",
+    "research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+    "research_mcp.py": "b052043e169e6d9af459ea85273550eeb6e557aab887922095f4aed95b92751d",
+    "research_intake.py": "ffca7e650d7d3f9c73d363171b3187e48ecb499492dc2f73d92fd84633b8292f",
+    "research_pdf.py": "7b1fbca4dd9b8d237abf7e317768d03e0e9bdf1a0efe378061adea842c45e938",
+    "research_cli.py": "2bd270f7e202aafbbcff1f6594124704e0eb8fa349adfea59665aeb07837e811",
+    "research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61"
+  },
+  "runtime_lock_unchanged": true,
+  "dependency_reinstallation_performed": false,
+  "starter_library_lock_sha256": "f0b3272eaad2ff9e18f579bc9b7231e1a2c9580d57d4dbb60e8f0e33d0f88701",
+  "benchmark_assistant_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5"
+}

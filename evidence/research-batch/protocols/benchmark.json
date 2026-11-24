@@ -1,0 +1,14 @@
+{
+  "scope": "One fixed full officialSciFact5183doc/300query dataset, production installed0.3 CLI callable, E5FP32CPU2/nice19 no generation/GPU. Fresh reserve-before-forward caps961forwards/10571text/300query, no extra/warmup/retry, unusedretired andunknowncharged. Fullindex same256/32 chunking; BM25 k1=1.2 b=.75, shared E5densevectors andRRF60/nodewindow40, no tuning basedonquality. Parentadmission32GiB/floor16/treeRSS8/AS16/job6000/modelphase5400, stopfile+ownedPIDsupervision; freshnamespaceinstalledagainstunchangedexistingfrozendeps, notclean dependencyreinstall. Goldonlyofflinescorer afterrankingsfrozen, NISTindependentreference, oldledgersunchanged.",
+  "source_sha256": {
+    "setup_installed.py": "d21f3b36819996e5619dbedea7fad672c5f55f9d7e0b17ed103b7333031163fd",
+    "run_model.py": "63a337dc6c5bee2e3e07ce16d73b4d4fbd70830731cdf66f8ba3ab24eb025d8b",
+    "research_retrieval_eval.py": "2097f4c42cf06b4f5ae05c87e1d69a433318072dfd05251b1b4b0d66bc5a897f",
+    "frozen-plan.json": "bbec04926476142aa1616081f86f564c33c9c96c6ebe7f3469f23ac0450861b9"
+  },
+  "input_bundle_sha256": "e30cc8137dc54ec50aab053c53860efa0398d437bc710acff55b27da21243049",
+  "controller_sha256": "32bd8d7fea046bc4276728b525320e299e7c4fce5662079f3e24e64c81c09559",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "GPU_used": false
+}

@@ -1,0 +1,26 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "new-batch-snapshot-controls"
+  },
+  "protocol_sha256": "f36a0d4a94e86f9b717e67d049755d35ddebb8921ffbf15a36f5333e7545b0da",
+  "phases": [
+    {
+      "name": "intake-tokenizer-preflight",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 166.529,
+      "peak_owned_RSS_bytes": 960995328
+    },
+    {
+      "name": "new-batch-snapshot-controls",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 4.265,
+      "peak_owned_RSS_bytes": 106475520
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 184.576
+}
