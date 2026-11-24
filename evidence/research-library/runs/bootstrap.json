@@ -1,0 +1,29 @@
+{
+  "terminal": true,
+  "ready": null,
+  "error": {
+    "type": "AssertionError",
+    "message": "stage-pinned-embedding-model"
+  },
+  "phases": [
+    {
+      "name": "combined-runtime-identity",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 12.38,
+      "peak_owned_RSS_bytes": 505622528
+    },
+    {
+      "name": "stage-pinned-embedding-model",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 30.923,
+      "peak_owned_RSS_bytes": 18743296
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 53.461,
+  "inputs_and_sources_unchanged": null,
+  "closed_v1_preserved": null,
+  "GPU_used": false
+}

@@ -1,0 +1,165 @@
+{
+  "version": 1,
+  "sources": [
+    {
+      "id": "lab_readme",
+      "path": "sources/lab_readme.txt",
+      "title": "Agent Reliability Lab",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/f3164fdde343ff2617506c63c35a54f6116e6dae/README.md",
+      "kind": "project_document",
+      "sha256": "58eec73e945360348d13a5cbf37884e4dafebfd9be79c283a2ad02676645b27b"
+    },
+    {
+      "id": "durable_worker",
+      "path": "sources/durable_worker.txt",
+      "title": "可恢复的维护任务运行器",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/durable-worker.md",
+      "kind": "project_document",
+      "sha256": "afe795bfdac8011fdff2600ab6942659cca92ad3d7f5e286ad7c20747cabb05d"
+    },
+    {
+      "id": "dependency_upgrade",
+      "path": "sources/dependency_upgrade.txt",
+      "title": "真实依赖升级候选的证据审查",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/dependency-upgrade.md",
+      "kind": "project_document",
+      "sha256": "08efe024e14f8155356d9b51df31940f26fd0966fb56f962068789ed61c972f3"
+    },
+    {
+      "id": "dependency_upgrade_compatibility",
+      "path": "sources/dependency_upgrade_compatibility.txt",
+      "title": "FastMCP 升级候选的配对鉴权兼容性验证",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/dependency-upgrade-compatibility.md",
+      "kind": "project_document",
+      "sha256": "2458f7f7ecedecbaf498079bd5fb61c1f957eb690106397b655aa67989769c8f"
+    },
+    {
+      "id": "mcp_evidence",
+      "path": "sources/mcp_evidence.txt",
+      "title": "本机 MCP 报告证据服务",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/mcp-evidence.md",
+      "kind": "project_document",
+      "sha256": "7290e46a8facf34a4c78bb020b413ae7aad99723fda320f595689c9529c17d77"
+    },
+    {
+      "id": "reference_submission",
+      "path": "sources/reference_submission.txt",
+      "title": "从实际 MCP 读取结果绑定事实引用",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/reference-submission.md",
+      "kind": "project_document",
+      "sha256": "5c283887f3ad13e9951da90cb069dfa3f3b278bb892a7cc3c84f6971a2fb25c9"
+    },
+    {
+      "id": "report_retrieval",
+      "path": "sources/report_retrieval.txt",
+      "title": "报告目录的词法检索",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/report-retrieval.md",
+      "kind": "project_document",
+      "sha256": "c43650c088db4df467c6c7f8ca53e6d43bfca265fdf7e43271ebe5190d5fc575"
+    },
+    {
+      "id": "mcp_wire_journal",
+      "path": "sources/mcp_wire_journal.txt",
+      "title": "中断后保留 MCP Agent 的通信证据",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/mcp-wire-journal.md",
+      "kind": "project_document",
+      "sha256": "44dd24f66811530f801495cf1dfa7b38cbe5248c32e452584a5023ab14349a05"
+    },
+    {
+      "id": "model_request_budget",
+      "path": "sources/model_request_budget.txt",
+      "title": "重启后仍然生效的模型请求预算",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/model-request-budget.md",
+      "kind": "project_document",
+      "sha256": "e4718946cb330d176030975dc5e9a1893f445863dc2911de613c7b1cf9c6213c"
+    },
+    {
+      "id": "protected_grading",
+      "path": "sources/protected_grading.txt",
+      "title": "固定原版验收与导出前语法检查",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/protected-grading.md",
+      "kind": "project_document",
+      "sha256": "dea4458beb8365c8ab6347520a7af4b75d31e84a146ef1ce13e88f6c8e73ede9"
+    },
+    {
+      "id": "fixed_reason_ablation",
+      "path": "sources/fixed_reason_ablation.txt",
+      "title": "固定正文损失屏蔽的配对试验",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/fixed-reason-ablation.md",
+      "kind": "project_document",
+      "sha256": "bef233fe2f8a1586db737378f725a75b83ee9042c9da44af9df9658581bfe44d"
+    },
+    {
+      "id": "bfcl_transfer_generation",
+      "path": "sources/bfcl_transfer_generation.txt",
+      "title": "固定250题生成与离线评分对照",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/bfcl-transfer-generation.md",
+      "kind": "project_document",
+      "sha256": "e346831a8633b40e8289554505b9f00663db31abbedf3dfd533c0731e644e06c"
+    },
+    {
+      "id": "loss_parts",
+      "path": "sources/loss_parts.txt",
+      "title": "已有验证目标的逐部分 NLL 诊断",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/loss-parts.md",
+      "kind": "project_document",
+      "sha256": "56b66caa40deb22324def713acbafdd3014f5dd9c9a17ebd759bd76f7df44051"
+    },
+    {
+      "id": "training_alignment",
+      "path": "sources/training_alignment.txt",
+      "title": "固定推理文本的监督审计",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/training-alignment.md",
+      "kind": "project_document",
+      "sha256": "ed8316448e3b411fdb5d5f2e3121f9ad20e2ad5578bfb7c080e6b167875fe976"
+    },
+    {
+      "id": "gpt_researcher_mcp_token",
+      "path": "sources/gpt_researcher_mcp_token.txt",
+      "title": "GPT Researcher 的 HTTP MCP 令牌连接修复",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/gpt-researcher-mcp-token.md",
+      "kind": "project_document",
+      "sha256": "681fe10508bf755795a937bdfefed6ce598208e710903f08cb8c9da61c38b1a4"
+    },
+    {
+      "id": "browseruse_cloud_download_key",
+      "path": "sources/browseruse_cloud_download_key.txt",
+      "title": "Browser Use 云会话下载授权修复",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/browseruse-cloud-download-key.md",
+      "kind": "project_document",
+      "sha256": "cf21aaaafb0dc423e17bc3efeb78146fddd5c226827517412c5f1c18a7d3548d"
+    },
+    {
+      "id": "lightning_terminal_reuse",
+      "path": "sources/lightning_terminal_reuse.txt",
+      "title": "Agent Lightning：复用 rollout ID 后的完成分页修复",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/lightning-terminal-reuse.md",
+      "kind": "project_document",
+      "sha256": "c9ac2d76a4d61ee27ae9dfef8d6c08093c5ee93d75de683fe7515ca0a71ecd63"
+    },
+    {
+      "id": "tool_use_baseline",
+      "path": "sources/tool_use_baseline.txt",
+      "title": "3B 工具调用基线",
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/0d984c1225dd047a3bfdc585fb1f76309a2ee6fe/docs/tool-use-baseline.md",
+      "kind": "project_document",
+      "sha256": "6d7db1a996790dc5cbb647861b019b6908a7e8b3f4aa0089ba767e26afc41dc5"
+    },
+    {
+      "id": "ls_detr_readme",
+      "path": "sources/ls_detr_readme.txt",
+      "title": "LS-DETR repository overview",
+      "url": "https://github.com/1137423918/LS-DETR/blob/41198d79f8b12a0cc1a3be2c983895d6ee9bddf1/README.md",
+      "kind": "paper_repository_readme_not_full_paper",
+      "sha256": "23404cd1cf1cc1d9aba3317358b2f8d895dd60bccf6b6821fa7a993f71df06cc"
+    },
+    {
+      "id": "ls_detr_bibliography",
+      "path": "sources/ls_detr_bibliography.txt",
+      "title": "LS-DETR bibliographic record",
+      "url": "https://github.com/1137423918/1137423918.github.io/blob/3f53a6cc353d15a11631bdba8ba574717bd89c11/citation.bib",
+      "kind": "bibliography_not_full_paper",
+      "sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff"
+    }
+  ]
+}

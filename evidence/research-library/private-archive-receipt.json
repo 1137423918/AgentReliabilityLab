@@ -1,0 +1,14 @@
+{
+  "relative_path": "studies/research-library-stage82-20261124",
+  "manifest_sha256": "d75f4c72bd3cd4c50b4f5b544bcd26f40afd30b235fe2040b1669a861903ddae",
+  "files": 137,
+  "bytes": 493339308,
+  "all_jobs_terminal_owned_zero": true,
+  "old599_750_831_and84_journals_unchanged": true,
+  "v1_102_known_forwards_and_failure_unchanged": true,
+  "mcp_added_CPU_forward": 1,
+  "new_total_CPU_forwards": 103,
+  "generation_calls": 0,
+  "GPU_used": false,
+  "deferred_GPU_jobs_not_launched": true
+}

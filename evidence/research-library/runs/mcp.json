@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "ready": true,
+  "error": null,
+  "phases": [
+    {
+      "name": "mcp-structured-response",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 24.558,
+      "peak_owned_RSS_bytes": 1120350208
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 36.802,
+  "inputs_and_sources_unchanged": true,
+  "closed_v1_preserved": true,
+  "GPU_used": false
+}

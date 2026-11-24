@@ -1,0 +1,22 @@
+{
+  "terminal": true,
+  "ready": null,
+  "error": {
+    "type": "AssertionError",
+    "message": "semantic-retrieval-and-mcp"
+  },
+  "phases": [
+    {
+      "name": "semantic-retrieval-and-mcp",
+      "exit_code": 2,
+      "guard": null,
+      "wall_seconds": 90.426,
+      "peak_owned_RSS_bytes": 1264234496
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 105.646,
+  "inputs_and_sources_unchanged": null,
+  "closed_v1_preserved": null,
+  "GPU_used": false
+}

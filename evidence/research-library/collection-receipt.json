@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "b6eb7920eaaf37015951c958be6c437370a27e3f6ad548182e8f654ba14eed4e",
+  "archive_bytes": 31569,
+  "payload_hashes_verified": 25,
+  "current_source_files_match_tested_server_bytes": [
+    "tests/test_research_library.py",
+    "benchmarks/research_mcp_controls.py",
+    "benchmarks/research_library.py",
+    "agent_lab/research_library.py",
+    "agent_lab/research_mcp.py",
+    "agent_lab/__init__.py",
+    "agent_lab/research_embeddings.py",
+    "agent_lab/storage.py"
+  ],
+  "no_local_tests_or_model_calls": true
+}

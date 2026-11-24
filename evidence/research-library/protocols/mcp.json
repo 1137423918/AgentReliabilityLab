@@ -1,0 +1,21 @@
+{
+  "scope": "Fixbare-dictMCPoutputschema;realTCP+1newCPUquery;reuseunchangedv1store. No documentembedding/noquerysetrerun. V1failure102knownforwardspreserved/closed/noreset.",
+  "original_protocol_sha256": "e3cd5f1f98a1bc07ca816bcd38715c7c937fad9f6d695431915ca8a35c31b4a7",
+  "tested_source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/research_library.py": "59a4376c3e3b6b78ceba10512618b035f164851cde3f5e49ee8a0e20f3ee72b1",
+    "agent_lab/research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+    "agent_lab/research_mcp.py": "1dc2b8e7a56e77eae6135e80cacd2564a7c815bbc0ea1588eb5c0499af2f2a87",
+    "mcp_followup.py": "42642a5b41e027400b6a7f16ce92e198a84454888128323839e9a45bb1e3cf57"
+  },
+  "CPU_caps": {
+    "forwards": 4,
+    "query_inputs": 4,
+    "text_inputs": 0
+  },
+  "controller_sha256": "6ba25f4df4eef6d0acfea71bfb6fe2e98654b6ec27a78086ee6fa0b7d3f5ebfd",
+  "model_revision": null,
+  "input_bundle_sha256": "9d2324bea3bedf067e91e377ed92d25422d579d0295c302fb5615b909857e098",
+  "scope_note": "Selectedfieldsfromprivateprotocol;notbyte-identicaloriginal."
+}

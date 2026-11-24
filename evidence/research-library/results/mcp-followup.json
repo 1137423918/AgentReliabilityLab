@@ -1,0 +1,37 @@
+{
+  "ready": true,
+  "GPU_used": false,
+  "generation_model_calls": 0,
+  "caps": {
+    "forwards": 4,
+    "query_inputs": 4,
+    "text_inputs": 0
+  },
+  "MCP": {
+    "transport": "actual TCP streamable HTTP loopback",
+    "tools": [
+      "list_sources",
+      "read_citation",
+      "search_sources"
+    ],
+    "declared_output_schemas": 3,
+    "five_successful_tool_calls": true,
+    "invalid_citation_tool_error": true,
+    "active_sources": 20,
+    "source_filter": true,
+    "exact_citation": true,
+    "old_citation_exact": true,
+    "deleted_source_zero_embedding": true,
+    "generated_answer": false
+  },
+  "unchanged_existing_store": true,
+  "CUDA_initialized": false,
+  "CPU_embedding_counts": {
+    "reserved_forwards": 1,
+    "completed_forwards": 1,
+    "text_inputs": 0,
+    "query_inputs": 1
+  },
+  "wall_seconds": 16.943,
+  "ledger_sha256": "13f93538dc957383e80a1f4967312ea68e1f717ccf070ce5401affedc9a2540f"
+}

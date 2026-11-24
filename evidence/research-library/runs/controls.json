@@ -1,0 +1,19 @@
+{
+  "terminal": true,
+  "ready": true,
+  "error": null,
+  "phases": [
+    {
+      "name": "library-lifecycle-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.647,
+      "peak_owned_RSS_bytes": 104529920
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 13.859,
+  "inputs_and_sources_unchanged": true,
+  "closed_v1_preserved": null,
+  "GPU_used": false
+}

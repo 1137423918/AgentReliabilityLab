@@ -1,0 +1,17 @@
+{
+  "scope": "10actualLlamaIndexlifecycle/citationcontrols withnon-neuralfixtureembeddings;notsemanticbenchmark,0NN/GPU.",
+  "original_protocol_sha256": "50f5d317fd09e48268e1a4d40545899a7ce1abe3ad3aab8082a02ce0b22fac33",
+  "tested_source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "agent_lab/research_library.py": "59a4376c3e3b6b78ceba10512618b035f164851cde3f5e49ee8a0e20f3ee72b1",
+    "agent_lab/research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+    "agent_lab/research_mcp.py": "6cf1cf890121e871cea4d96a3b2dd24dceadb6301beb5fe8d48123799a6e164b",
+    "tests/test_research_library.py": "7164194afb4027ce32ad7d639a7093dc0ac0144a9fc32df54a5515c57e5ea9f7"
+  },
+  "CPU_caps": {},
+  "controller_sha256": "179b3caffb4e0bc2a7a4c1d81f74ea0c2b73983ce29a4853cb598a07bab3e908",
+  "model_revision": null,
+  "input_bundle_sha256": "58badf2039368fa277e09993d53686acabbfd6f4027b9c1f0f2fa4f4d3369f55",
+  "scope_note": "Selectedfieldsfromprivateprotocol;notbyte-identicaloriginal."
+}

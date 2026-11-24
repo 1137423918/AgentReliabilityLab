@@ -1,0 +1,173 @@
+{
+  "ready": false,
+  "GPU_used": false,
+  "generation_model_calls": 0,
+  "caps": {
+    "reserved_forwards": 768,
+    "text_inputs": 2048,
+    "query_inputs": 96
+  },
+  "scope": "24frozenoperator-authoredknown-source diagnostics,notheldoutQAoransweraccuracy",
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.57.6",
+    "numpy": "2.2.6",
+    "llama-index-core": "0.14.26",
+    "mcp": "2.3.0"
+  },
+  "model": {
+    "model": "intfloat/multilingual-e5-small@614241f622f53c4eeff9890bdc4f31cfecc418b3",
+    "model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+    "pooling": "attention-mask mean;L2 normalization",
+    "dimensions": 384,
+    "device": "cpu",
+    "max_tokens": 512
+  },
+  "plan": {
+    "a": {
+      "sources": 20,
+      "nodes": 163,
+      "max_passage_tokens": 258,
+      "by_source": {
+        "lab_readme": 17,
+        "durable_worker": 14,
+        "dependency_upgrade": 7,
+        "dependency_upgrade_compatibility": 5,
+        "mcp_evidence": 13,
+        "reference_submission": 7,
+        "report_retrieval": 8,
+        "mcp_wire_journal": 8,
+        "model_request_budget": 8,
+        "protected_grading": 7,
+        "fixed_reason_ablation": 7,
+        "bfcl_transfer_generation": 11,
+        "loss_parts": 12,
+        "training_alignment": 6,
+        "gpt_researcher_mcp_token": 3,
+        "browseruse_cloud_download_key": 4,
+        "lightning_terminal_reuse": 7,
+        "tool_use_baseline": 10,
+        "ls_detr_readme": 8,
+        "ls_detr_bibliography": 1
+      }
+    },
+    "b": {
+      "sources": 20,
+      "nodes": 160,
+      "max_passage_tokens": 258,
+      "by_source": {
+        "lab_readme": 17,
+        "durable_worker": 14,
+        "dependency_upgrade": 7,
+        "dependency_upgrade_compatibility": 5,
+        "mcp_evidence": 13,
+        "reference_submission": 7,
+        "report_retrieval": 8,
+        "mcp_wire_journal": 8,
+        "model_request_budget": 8,
+        "protected_grading": 7,
+        "fixed_reason_ablation": 7,
+        "bfcl_transfer_generation": 11,
+        "loss_parts": 12,
+        "training_alignment": 6,
+        "gpt_researcher_mcp_token": 3,
+        "browseruse_cloud_download_key": 4,
+        "lightning_terminal_reuse": 7,
+        "ls_detr_readme": 8,
+        "ls_detr_bibliography": 1,
+        "dependency_workbench": 7
+      }
+    }
+  },
+  "initial": {
+    "generation": "7e65075f50fdef7d59c06211a16c8ee22a9b68921648757f1c07204a8d75d110",
+    "added": [
+      "bfcl_transfer_generation",
+      "browseruse_cloud_download_key",
+      "dependency_upgrade",
+      "dependency_upgrade_compatibility",
+      "durable_worker",
+      "fixed_reason_ablation",
+      "gpt_researcher_mcp_token",
+      "lab_readme",
+      "lightning_terminal_reuse",
+      "loss_parts",
+      "ls_detr_bibliography",
+      "ls_detr_readme",
+      "mcp_evidence",
+      "mcp_wire_journal",
+      "model_request_budget",
+      "protected_grading",
+      "reference_submission",
+      "report_retrieval",
+      "tool_use_baseline",
+      "training_alignment"
+    ],
+    "updated": [],
+    "removed": [],
+    "unchanged": 0,
+    "nodes": 163,
+    "published": true
+  },
+  "no_op": {
+    "generation": "7e65075f50fdef7d59c06211a16c8ee22a9b68921648757f1c07204a8d75d110",
+    "unchanged": 20,
+    "added": [],
+    "updated": [],
+    "removed": [],
+    "published": false
+  },
+  "no_op_zero_embedding": true,
+  "update": {
+    "generation": "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1",
+    "added": [
+      "dependency_workbench"
+    ],
+    "updated": [
+      "lab_readme"
+    ],
+    "removed": [
+      "tool_use_baseline"
+    ],
+    "unchanged": 18,
+    "nodes": 160,
+    "published": true
+  },
+  "update_embedding_delta": {
+    "reserved_forwards": 7,
+    "completed_forwards": 7,
+    "text_inputs": 24,
+    "query_inputs": 0
+  },
+  "old_citation_exact": true,
+  "deleted_source_zero_embedding": true,
+  "retrieval": {
+    "lexical": {
+      "n": 24,
+      "hits_at_3": 21,
+      "MRR_at_3": 0.6458333333333334
+    },
+    "semantic": {
+      "n": 24,
+      "hits_at_3": 20,
+      "MRR_at_3": 0.7777777777777778
+    },
+    "hybrid": {
+      "n": 24,
+      "hits_at_3": 20,
+      "MRR_at_3": 0.7569444444444443
+    }
+  },
+  "error": {
+    "type": "ExceptionGroup",
+    "message": "unhandled errors in a TaskGroup (1 sub-exception)"
+  },
+  "CPU_embedding_counts": {
+    "reserved_forwards": 102,
+    "completed_forwards": 102,
+    "text_inputs": 187,
+    "query_inputs": 48
+  },
+  "wall_seconds": 84.723,
+  "embedding_ledger_sha256": "0df322a37e138860fb8d5c416708cace610c4059252d86702b789dc7664b53bb"
+}

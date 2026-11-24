@@ -1,0 +1,173 @@
+{
+  "scope": "24operator-authored known-source functional retrieval diagnostics;not heldoutQAaccuracy/modelbenefit. FrozenbeforeE5rankings. SameBchunks,Latin+CJKbigramBM25,denseE5,RRFrank60;candidatewindow24,firstnodepersource,top3docrecall/MRR. Noquestion/goldindexed.",
+  "cases": [
+    {
+      "id": "r01",
+      "query": "前视声纳轻量化目标检测方法由哪些结构组成？",
+      "relevant_sources": [
+        "ls_detr_readme"
+      ]
+    },
+    {
+      "id": "r02",
+      "query": "LS-DETR论文的DOI和作者信息在哪里？",
+      "relevant_sources": [
+        "ls_detr_bibliography"
+      ]
+    },
+    {
+      "id": "r03",
+      "query": "维护任务在补丁落地后中断如何恢复？",
+      "relevant_sources": [
+        "durable_worker"
+      ]
+    },
+    {
+      "id": "r04",
+      "query": "为什么Pillow候选未实际升级？",
+      "relevant_sources": [
+        "dependency_upgrade"
+      ]
+    },
+    {
+      "id": "r05",
+      "query": "Authlib升级后做了哪些鉴权兼容性验证？",
+      "relevant_sources": [
+        "dependency_upgrade_compatibility"
+      ]
+    },
+    {
+      "id": "r06",
+      "query": "MCP证据读取如何核对来源和事实值？",
+      "relevant_sources": [
+        "mcp_evidence"
+      ]
+    },
+    {
+      "id": "r07",
+      "query": "模型怎样选择字段引用而不手写审计数值？",
+      "relevant_sources": [
+        "reference_submission"
+      ]
+    },
+    {
+      "id": "r08",
+      "query": "报告目录检索是否比关键词基线更好？",
+      "relevant_sources": [
+        "report_retrieval"
+      ]
+    },
+    {
+      "id": "r09",
+      "query": "MCP通信中断后完整回复如何保留？",
+      "relevant_sources": [
+        "mcp_wire_journal"
+      ]
+    },
+    {
+      "id": "r10",
+      "query": "未知模型请求在跨进程恢复时是否退还额度？",
+      "relevant_sources": [
+        "model_request_budget"
+      ]
+    },
+    {
+      "id": "r11",
+      "query": "维护Agent怎样保护原始验收测试不被候选补丁改写？",
+      "relevant_sources": [
+        "protected_grading"
+      ]
+    },
+    {
+      "id": "r12",
+      "query": "固定推理正文屏蔽配对训练如何匹配每步标签分母？",
+      "relevant_sources": [
+        "fixed_reason_ablation"
+      ]
+    },
+    {
+      "id": "r13",
+      "query": "新250题生成是否证明了稳定准确率收益？",
+      "relevant_sources": [
+        "bfcl_transfer_generation"
+      ]
+    },
+    {
+      "id": "r14",
+      "query": "整段NLL与回答载荷NLL为何可以给出不同趋势？",
+      "relevant_sources": [
+        "loss_parts"
+      ]
+    },
+    {
+      "id": "r15",
+      "query": "训练目标里的模板正文占多少监督标签？",
+      "relevant_sources": [
+        "training_alignment"
+      ]
+    },
+    {
+      "id": "r16",
+      "query": "GPT Researcher的HTTP MCP token怎样变成授权头？",
+      "relevant_sources": [
+        "gpt_researcher_mcp_token"
+      ]
+    },
+    {
+      "id": "r17",
+      "query": "浏览器停止后下载文件应沿用哪个会话密钥？",
+      "relevant_sources": [
+        "browseruse_cloud_download_key"
+      ]
+    },
+    {
+      "id": "r18",
+      "query": "Agent Lightning删除并复用rollout ID会怎样影响分页游标？",
+      "relevant_sources": [
+        "lightning_terminal_reuse"
+      ]
+    },
+    {
+      "id": "r19",
+      "query": "如何批量生成依赖审查报告并从SQLite状态继续？",
+      "relevant_sources": [
+        "dependency_workbench"
+      ]
+    },
+    {
+      "id": "r20",
+      "query": "What are LGABlock and the lightweight hybrid encoder?",
+      "relevant_sources": [
+        "ls_detr_readme"
+      ]
+    },
+    {
+      "id": "r21",
+      "query": "Were the same authentication test identities run before and after the Authlib upgrade?",
+      "relevant_sources": [
+        "dependency_upgrade_compatibility"
+      ]
+    },
+    {
+      "id": "r22",
+      "query": "Does a scripted recovery plan prove autonomous model repository repair?",
+      "relevant_sources": [
+        "durable_worker"
+      ]
+    },
+    {
+      "id": "r23",
+      "query": "How are explicit Authorization headers protected from a top-level MCP token?",
+      "relevant_sources": [
+        "gpt_researcher_mcp_token"
+      ]
+    },
+    {
+      "id": "r24",
+      "query": "Why can fixed prose account for more than100percent of the whole loss gap?",
+      "relevant_sources": [
+        "loss_parts"
+      ]
+    }
+  ]
+}

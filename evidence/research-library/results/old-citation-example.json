@@ -1,0 +1,15 @@
+{
+  "citation_id": "7e65075f50fdef7d59c06211a16c8ee22a9b68921648757f1c07204a8d75d110:7e617fcdb4150423af85a8234e477c590c9318291eb81f651565cbd518a5a82e",
+  "generation": "7e65075f50fdef7d59c06211a16c8ee22a9b68921648757f1c07204a8d75d110",
+  "is_current_generation": false,
+  "source_id": "lab_readme",
+  "title": "Agent Reliability Lab",
+  "source_kind": "project_document",
+  "source_url": "https://github.com/1137423918/AgentReliabilityLab/blob/f3164fdde343ff2617506c63c35a54f6116e6dae/README.md",
+  "source_sha256": "58eec73e945360348d13a5cbf37884e4dafebfd9be79c283a2ad02676645b27b",
+  "line_start": 1,
+  "line_end": 13,
+  "char_start": 0,
+  "char_end": 424,
+  "excerpt": "# Agent Reliability Lab\n\n研究工具调用的模型效果，并构建可复查、可恢复的 Agent 执行与证据核对工具。项目同时包含真实 3B 模型实验、可安装的 MCP 服务，以及面向真实开源仓库的维护运行器。\n\n个人主页只保留论文与项目简介；本仓库的后续材料不会自动发布到主页。\n\n## 模型研究\n\n使用固定 Qwen2.5-3B-Instruct 与 AgentRobustBench 源码，先审计训练/验证样本复用，再构建同 ID 配对数据、文本关联分组和有效监督标签预算。Full/Mixed 各实际执行 32 次 LoRA 更新、65,536 个监督标签；输入暴露与计算量并不相同。\n\nFull 原训练的最终核验中断，保存检查点的独立回放通过，原失败保留；Mixed 完整核验通过。两组参考答案条件下的验证 NLL 为 0.297599 / 0.297934，不能据此声称工具调用准确率或鲁棒性提升。\n\n同后端三组 clean"
+}

@@ -1,0 +1,13 @@
+{
+  "scope": "CPU2core bootstrap:pinned488MBembeddingassets only,no neuralforward/generation/GPU. ExistingTorch/LlamaIndexsites reused underexplicitPYTHONPATH without modifying either environment.",
+  "original_protocol_sha256": "1b56a01f914b088b8310743b17be10367e88b888992ac8e026a31bb001623683",
+  "tested_source_sha256": {
+    "stage_model.py": "729e353a58bc8a89a35b7d82d2fe796f8f6bd0db77cda4c8770ddf39c25fcde2",
+    "embedding-source.json": "e470025c1a176458d609160429033acc57799b8e6670a8984ac1f93efaea7390"
+  },
+  "CPU_caps": {},
+  "controller_sha256": "6c584f593d441b39e8e6a66654ba8d8f76ee1c6a5bfd9c5df5553d0b92482183",
+  "model_revision": null,
+  "input_bundle_sha256": null,
+  "scope_note": "Selectedfieldsfromprivateprotocol;notbyte-identicaloriginal."
+}

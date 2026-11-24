@@ -1,0 +1,1226 @@
+[
+  {
+    "id": "r01",
+    "query": "前视声纳轻量化目标检测方法由哪些结构组成？",
+    "relevant_sources": [
+      "ls_detr_readme"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "loss_parts",
+          "bfcl_transfer_generation",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:590563bf4e22586d6380fe24cd7262a30cf8e576d057b6a41c5e58fcdafb1280",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8e744c4c342d93e2897ab779d35d665bfcca628b88ae2e6e70c1dc3bbc2d3982",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:aba3d23cbaf60be5eb2394e890a0dbbbb32f579ccfe67670db3c148e8ac4382a"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "fixed_reason_ablation",
+          "loss_parts",
+          "reference_submission"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ac0e95c06be5650f85e8a8984d2680d7e02b55a7b871f59933d8997ce4139b50",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b8401de5c2b7f11e672dda5294b254c766d0d6cfee188ad6f3230eae86877065",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:85ac010c76918b8f33c208214b9b6476557ee8cb1b12cb6cbd4f5671d8128fed"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "loss_parts",
+          "bfcl_transfer_generation",
+          "training_alignment"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b8401de5c2b7f11e672dda5294b254c766d0d6cfee188ad6f3230eae86877065",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8e744c4c342d93e2897ab779d35d665bfcca628b88ae2e6e70c1dc3bbc2d3982",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b45205f84312a40df6afa4df6046f54c7a1014487086b25b831ae0ff856032c3"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r02",
+    "query": "LS-DETR论文的DOI和作者信息在哪里？",
+    "relevant_sources": [
+      "ls_detr_bibliography"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "ls_detr_readme",
+          "ls_detr_bibliography",
+          "report_retrieval"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:81ae88fd5c8650cf0bfedabb28e0ccc35a5c85369942bcf544703565b6308b87",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8d663291b8885acfc8f051f4b3c765036344bb00ef3f573e4e936b62d7bdca9a",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ebf89f74277f7c932610667b556c8191f822581106aa3e097a1f1512070c4142"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "dependency_upgrade",
+          "reference_submission",
+          "loss_parts"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:fe721f5851b0083322ec131d2552394bf1298d6e5f49455f4f15c69f27ffe805",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:85ac010c76918b8f33c208214b9b6476557ee8cb1b12cb6cbd4f5671d8128fed",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:df22bf9f827f88de37ab497e4ed96fd16f71b963c76b26e0af9efe6cb0d17f98"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "report_retrieval",
+          "dependency_upgrade",
+          "mcp_wire_journal"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ebf89f74277f7c932610667b556c8191f822581106aa3e097a1f1512070c4142",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:fe721f5851b0083322ec131d2552394bf1298d6e5f49455f4f15c69f27ffe805",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4b02c4d78e8f05fe9e1f9d5256b281024da7880823d1afc4b2a3031c92c22634"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r03",
+    "query": "维护任务在补丁落地后中断如何恢复？",
+    "relevant_sources": [
+      "durable_worker"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "durable_worker",
+          "model_request_budget",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:871f090121c6141e3fafa97865b9c29ea425c3becd7ef01ed81609591a19bc4e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f23e434e4cb632daab71795d502314b3c09cc08b95ae883d0c147012808f5395",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "durable_worker",
+          "protected_grading",
+          "lightning_terminal_reuse"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:7603d528487fb006d8cca5929506eae57cbd7ca94537b7769631a3de57ced330",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:cc5a41862c106a22044240e7dd15f70cce916cce49e0ea9dc1324bdee55e2be7",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d8f2ae1501ca87f20233aef6f5597d41da58d82c25ef16a8e95c05acdb39a849"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "durable_worker",
+          "protected_grading",
+          "model_request_budget"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:7603d528487fb006d8cca5929506eae57cbd7ca94537b7769631a3de57ced330",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:cc5a41862c106a22044240e7dd15f70cce916cce49e0ea9dc1324bdee55e2be7",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:fb5c2318d49ae80163fd2b3771f6a77b9fe38a8f7df23fbe785d8e6a6067b593"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r04",
+    "query": "为什么Pillow候选未实际升级？",
+    "relevant_sources": [
+      "dependency_upgrade"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "dependency_workbench",
+          "dependency_upgrade",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "dependency_upgrade",
+          "dependency_workbench",
+          "mcp_evidence"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c576a7f6dec32775305752fd7991418c79e8764563a1022473031c972cbd3645"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "dependency_upgrade",
+          "dependency_workbench",
+          "protected_grading"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:47cab51aceba1793e532517aca1f2b46cded11175c4994ad42813d6be6eea39b"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r05",
+    "query": "Authlib升级后做了哪些鉴权兼容性验证？",
+    "relevant_sources": [
+      "dependency_upgrade_compatibility"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "dependency_upgrade_compatibility",
+          "lab_readme",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f4f87ce12d18365477af48844207b6b876dd3055fb235f6a947caf68e3400a72",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "dependency_upgrade_compatibility",
+          "dependency_workbench",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f3bc38c7545cf0ea8f18662e03b469b9f9cd1f37ae60f9c851b0e7c93ad499ac"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "dependency_upgrade_compatibility",
+          "dependency_workbench",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:13550dfb4c93805af33fe37e86662e6f39a735eec7dffa67ecd2345ab40de040"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r06",
+    "query": "MCP证据读取如何核对来源和事实值？",
+    "relevant_sources": [
+      "mcp_evidence"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "reference_submission",
+          "lab_readme",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:343e94a04a1851822f88efaa25d7dbd52a11a3fff4dc86e2e3f538fc26275754",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:13550dfb4c93805af33fe37e86662e6f39a735eec7dffa67ecd2345ab40de040",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5df63902f3511db85dc4ce961f148c097c1c937459026c79fd007f7b99471970"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "reference_submission",
+          "dependency_upgrade",
+          "mcp_evidence"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:343e94a04a1851822f88efaa25d7dbd52a11a3fff4dc86e2e3f538fc26275754",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5df63902f3511db85dc4ce961f148c097c1c937459026c79fd007f7b99471970",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:3888e67ca104e2d1400bada98e4ffe391035fb227d9d9e2f92d1cdcc89a6b589"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "reference_submission",
+          "dependency_upgrade",
+          "lab_readme"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:343e94a04a1851822f88efaa25d7dbd52a11a3fff4dc86e2e3f538fc26275754",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5df63902f3511db85dc4ce961f148c097c1c937459026c79fd007f7b99471970",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:13550dfb4c93805af33fe37e86662e6f39a735eec7dffa67ecd2345ab40de040"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r07",
+    "query": "模型怎样选择字段引用而不手写审计数值？",
+    "relevant_sources": [
+      "reference_submission"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "dependency_upgrade",
+          "reference_submission",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5df63902f3511db85dc4ce961f148c097c1c937459026c79fd007f7b99471970",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:85ac010c76918b8f33c208214b9b6476557ee8cb1b12cb6cbd4f5671d8128fed",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "reference_submission",
+          "loss_parts",
+          "training_alignment"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:85ac010c76918b8f33c208214b9b6476557ee8cb1b12cb6cbd4f5671d8128fed",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:95ea7092d36374dbef9e1114e5b5144d5fd71383acfe98626cc744724386c8f0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:addeb70b6a94bebf1770de8572cc58086fa8faa202000a089d30ed4a2935e897"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "reference_submission",
+          "dependency_upgrade",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:85ac010c76918b8f33c208214b9b6476557ee8cb1b12cb6cbd4f5671d8128fed",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5df63902f3511db85dc4ce961f148c097c1c937459026c79fd007f7b99471970",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r08",
+    "query": "报告目录检索是否比关键词基线更好？",
+    "relevant_sources": [
+      "report_retrieval"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "lab_readme",
+          "report_retrieval",
+          "dependency_workbench"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0107e817191955d5ca96478dbc71065cabdbdc8d5b27a491e459b10b250400d0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:299f48f95efa460a58e59794c958396cbd9a48245846b9a30f4f1b91da86d62b",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8afcf2dc4336dfbaadc7c82ae7bbff3dbe741e83f2c71d6eb093790a76898608"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "report_retrieval",
+          "lab_readme",
+          "loss_parts"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ebf89f74277f7c932610667b556c8191f822581106aa3e097a1f1512070c4142",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0cc556f5a066e0d37777e730ddd367bab064e662a3ebc843b82f9a859b478044",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b8401de5c2b7f11e672dda5294b254c766d0d6cfee188ad6f3230eae86877065"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "report_retrieval",
+          "lab_readme",
+          "dependency_workbench"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ebf89f74277f7c932610667b556c8191f822581106aa3e097a1f1512070c4142",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0107e817191955d5ca96478dbc71065cabdbdc8d5b27a491e459b10b250400d0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:5ebdda5e8b2380da22df3681fe1bdb3181143bca5aeef164bb7933f028f14e43"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r09",
+    "query": "MCP通信中断后完整回复如何保留？",
+    "relevant_sources": [
+      "mcp_wire_journal"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "mcp_wire_journal",
+          "lab_readme",
+          "reference_submission"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:be1768796529543310c33c048cc864fa114c9405f5bbd89bba97ce23173bb535",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0107e817191955d5ca96478dbc71065cabdbdc8d5b27a491e459b10b250400d0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:120f02f85cbb571164535acfd93de175443fa3d9c97f779ba4bf3480ada23df8"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "mcp_wire_journal",
+          "lab_readme",
+          "reference_submission"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:be1768796529543310c33c048cc864fa114c9405f5bbd89bba97ce23173bb535",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0107e817191955d5ca96478dbc71065cabdbdc8d5b27a491e459b10b250400d0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:120f02f85cbb571164535acfd93de175443fa3d9c97f779ba4bf3480ada23df8"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "mcp_wire_journal",
+          "lab_readme",
+          "reference_submission"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:be1768796529543310c33c048cc864fa114c9405f5bbd89bba97ce23173bb535",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0107e817191955d5ca96478dbc71065cabdbdc8d5b27a491e459b10b250400d0",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:120f02f85cbb571164535acfd93de175443fa3d9c97f779ba4bf3480ada23df8"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r10",
+    "query": "未知模型请求在跨进程恢复时是否退还额度？",
+    "relevant_sources": [
+      "model_request_budget"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "mcp_wire_journal",
+          "dependency_workbench",
+          "lab_readme"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:be1768796529543310c33c048cc864fa114c9405f5bbd89bba97ce23173bb535",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e3734f192cd86714bcbdefb4e1a0faef28088a483e49888ed01ac1c03e9236d8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "model_request_budget",
+          "durable_worker",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:fb5c2318d49ae80163fd2b3771f6a77b9fe38a8f7df23fbe785d8e6a6067b593",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:a32fe1adbb5ff6eca2bfdd0fb682b200b48ced89859aefe1b24a004c02fa324a",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "model_request_budget",
+          "lab_readme",
+          "mcp_wire_journal"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:315d6144a0befe26a043e51998d2f40c3172d47310fdc04f080f60468c07c59e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:113981217a94d764b53c748caf0e988a2db0e21816c5e4dd5cc0651d5e5f0865",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:be1768796529543310c33c048cc864fa114c9405f5bbd89bba97ce23173bb535"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r11",
+    "query": "维护Agent怎样保护原始验收测试不被候选补丁改写？",
+    "relevant_sources": [
+      "protected_grading"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "protected_grading",
+          "durable_worker",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:47cab51aceba1793e532517aca1f2b46cded11175c4994ad42813d6be6eea39b",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:aad5f5c8a432b99cd24bcc63f40fc8cd46b7a7ded1789bf0a9b7cc0d79255c6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "protected_grading",
+          "durable_worker",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:47cab51aceba1793e532517aca1f2b46cded11175c4994ad42813d6be6eea39b",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:aad5f5c8a432b99cd24bcc63f40fc8cd46b7a7ded1789bf0a9b7cc0d79255c6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "protected_grading",
+          "durable_worker",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:47cab51aceba1793e532517aca1f2b46cded11175c4994ad42813d6be6eea39b",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:aad5f5c8a432b99cd24bcc63f40fc8cd46b7a7ded1789bf0a9b7cc0d79255c6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r12",
+    "query": "固定推理正文屏蔽配对训练如何匹配每步标签分母？",
+    "relevant_sources": [
+      "fixed_reason_ablation"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "loss_parts",
+          "fixed_reason_ablation",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:590563bf4e22586d6380fe24cd7262a30cf8e576d057b6a41c5e58fcdafb1280",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ecf499c81007175eec39bd919b5eedd5a042042d6928d824e4636a11da766065",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d19ac39ca6fa719512393bb1b3cebe2c3293f21b53e3915af07fdac65edfa2dd"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "fixed_reason_ablation",
+          "training_alignment",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ac0e95c06be5650f85e8a8984d2680d7e02b55a7b871f59933d8997ce4139b50",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:99e0a8d8ba35ad603689571dfefe5ccf265ee9335bbd84da58bea0b77d511be6",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0cc556f5a066e0d37777e730ddd367bab064e662a3ebc843b82f9a859b478044"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "fixed_reason_ablation",
+          "lab_readme",
+          "loss_parts"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ecf499c81007175eec39bd919b5eedd5a042042d6928d824e4636a11da766065",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0cc556f5a066e0d37777e730ddd367bab064e662a3ebc843b82f9a859b478044",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:590563bf4e22586d6380fe24cd7262a30cf8e576d057b6a41c5e58fcdafb1280"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r13",
+    "query": "新250题生成是否证明了稳定准确率收益？",
+    "relevant_sources": [
+      "bfcl_transfer_generation"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "lab_readme",
+          "bfcl_transfer_generation",
+          "fixed_reason_ablation"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c2a8ce7c0106513c3b23eec2aaaa8b90757859c3fd25d430e491b2d42d572c21",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b50f869bc5115bbf5b78997ec41b8761ed1cfff0ae644445f09a103585503b9b",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ecf499c81007175eec39bd919b5eedd5a042042d6928d824e4636a11da766065"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "lab_readme",
+          "fixed_reason_ablation",
+          "bfcl_transfer_generation"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c2a8ce7c0106513c3b23eec2aaaa8b90757859c3fd25d430e491b2d42d572c21",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2a707bf3b3229ff3c3f0d22cd682558718284852e8e2ecfa27657bbc10b4b250",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2fc8086258c484c21a6402a1c7668b3f3eba3106b884b8f67a5e5542c67a133e"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "lab_readme",
+          "bfcl_transfer_generation",
+          "fixed_reason_ablation"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c2a8ce7c0106513c3b23eec2aaaa8b90757859c3fd25d430e491b2d42d572c21",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2fc8086258c484c21a6402a1c7668b3f3eba3106b884b8f67a5e5542c67a133e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:3de86bd5727ebc6294d4328e228683f00ac90916b6d0850f007f26da23e11b43"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r14",
+    "query": "整段NLL与回答载荷NLL为何可以给出不同趋势？",
+    "relevant_sources": [
+      "loss_parts"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "loss_parts",
+          "fixed_reason_ablation",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:52ef14d05de446d98bb6964792219cc7f4bc507439fbb681201e7df295fffb23",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2a707bf3b3229ff3c3f0d22cd682558718284852e8e2ecfa27657bbc10b4b250",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed7aa7124c4de35de521331ea2d3ef1eedd34c35a21e6479a875ac6589fecfe4"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "loss_parts",
+          "fixed_reason_ablation",
+          "training_alignment"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:52ef14d05de446d98bb6964792219cc7f4bc507439fbb681201e7df295fffb23",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2a707bf3b3229ff3c3f0d22cd682558718284852e8e2ecfa27657bbc10b4b250",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:addeb70b6a94bebf1770de8572cc58086fa8faa202000a089d30ed4a2935e897"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "loss_parts",
+          "fixed_reason_ablation",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:52ef14d05de446d98bb6964792219cc7f4bc507439fbb681201e7df295fffb23",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2a707bf3b3229ff3c3f0d22cd682558718284852e8e2ecfa27657bbc10b4b250",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d19ac39ca6fa719512393bb1b3cebe2c3293f21b53e3915af07fdac65edfa2dd"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r15",
+    "query": "训练目标里的模板正文占多少监督标签？",
+    "relevant_sources": [
+      "training_alignment"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "training_alignment",
+          "loss_parts",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e5ba4782258120e7cbbfcbe73f9d6d4b19060093fa067bc071bdbe820e6c6574",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:590563bf4e22586d6380fe24cd7262a30cf8e576d057b6a41c5e58fcdafb1280",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0bd06dde1e09c84dcab1977a214552a2b48dd2ddcf779d72e178f59aa3ff532d"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "training_alignment",
+          "fixed_reason_ablation",
+          "report_retrieval"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b45205f84312a40df6afa4df6046f54c7a1014487086b25b831ae0ff856032c3",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ac0e95c06be5650f85e8a8984d2680d7e02b55a7b871f59933d8997ce4139b50",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:79decce86466b3d752ccbd51de11c41a9ea535c7912a4bd3807787df65d6b4ff"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "training_alignment",
+          "fixed_reason_ablation",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:b45205f84312a40df6afa4df6046f54c7a1014487086b25b831ae0ff856032c3",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ac0e95c06be5650f85e8a8984d2680d7e02b55a7b871f59933d8997ce4139b50",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0cc556f5a066e0d37777e730ddd367bab064e662a3ebc843b82f9a859b478044"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r16",
+    "query": "GPT Researcher的HTTP MCP token怎样变成授权头？",
+    "relevant_sources": [
+      "gpt_researcher_mcp_token"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "gpt_researcher_mcp_token",
+          "lab_readme",
+          "report_retrieval"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d70d7c68a907fc9f988c11ac9da72ef787a736df62c6d1ba4edc38067a4a1f34",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:a7434daba134bb0270ff8b8e95cc93fea345f00d2b6b00302f8dd4f6070219d2",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:647a485bc178cbfd53f2d77d332cdccbd7668b36d05a7fd0a6d3ea9d2c7b7364"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "gpt_researcher_mcp_token",
+          "report_retrieval",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d70d7c68a907fc9f988c11ac9da72ef787a736df62c6d1ba4edc38067a4a1f34",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:647a485bc178cbfd53f2d77d332cdccbd7668b36d05a7fd0a6d3ea9d2c7b7364",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:a7434daba134bb0270ff8b8e95cc93fea345f00d2b6b00302f8dd4f6070219d2"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "gpt_researcher_mcp_token",
+          "lab_readme",
+          "report_retrieval"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d70d7c68a907fc9f988c11ac9da72ef787a736df62c6d1ba4edc38067a4a1f34",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:a7434daba134bb0270ff8b8e95cc93fea345f00d2b6b00302f8dd4f6070219d2",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:647a485bc178cbfd53f2d77d332cdccbd7668b36d05a7fd0a6d3ea9d2c7b7364"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r17",
+    "query": "浏览器停止后下载文件应沿用哪个会话密钥？",
+    "relevant_sources": [
+      "browseruse_cloud_download_key"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "browseruse_cloud_download_key",
+          "lab_readme",
+          "mcp_evidence"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:7a8fe3ff2b8812a7a1cf515f18d77a236b8e35fdffddb72ae3edfd98dbaafc6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:842106bfe14ba2920fe52e1971842b48268015e567c2f709677148d33b711653",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ff066bbe0cf6c6fb8bd44be997e64f8f93893673db1b2e2c1c69c5a4afc4362e"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "browseruse_cloud_download_key",
+          "lab_readme",
+          "mcp_wire_journal"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:7a8fe3ff2b8812a7a1cf515f18d77a236b8e35fdffddb72ae3edfd98dbaafc6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:842106bfe14ba2920fe52e1971842b48268015e567c2f709677148d33b711653",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:9754aa0fd8e5f77d72c6886e2210f09ad4d403846b57ed45c28f7950790da43c"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "browseruse_cloud_download_key",
+          "lab_readme",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:7a8fe3ff2b8812a7a1cf515f18d77a236b8e35fdffddb72ae3edfd98dbaafc6c",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:842106bfe14ba2920fe52e1971842b48268015e567c2f709677148d33b711653",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e2142ec298feec6fb8673a8226349f5072f535e97a9f100a9341e85cb887b0e3"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r18",
+    "query": "Agent Lightning删除并复用rollout ID会怎样影响分页游标？",
+    "relevant_sources": [
+      "lightning_terminal_reuse"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "lightning_terminal_reuse",
+          "lab_readme",
+          "durable_worker"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:67c1b60b2b4c840290b6de27c85e13318a1f17dce3f4b67128ece0d4ed7b5076",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:36c974785153b5d1d6035e75414fbbb5bb0bdfc0be3386a860608b483493d67e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:aad5f5c8a432b99cd24bcc63f40fc8cd46b7a7ded1789bf0a9b7cc0d79255c6c"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "lightning_terminal_reuse",
+          "lab_readme",
+          "mcp_wire_journal"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:67c1b60b2b4c840290b6de27c85e13318a1f17dce3f4b67128ece0d4ed7b5076",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:36c974785153b5d1d6035e75414fbbb5bb0bdfc0be3386a860608b483493d67e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4b02c4d78e8f05fe9e1f9d5256b281024da7880823d1afc4b2a3031c92c22634"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "lightning_terminal_reuse",
+          "lab_readme",
+          "mcp_wire_journal"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:67c1b60b2b4c840290b6de27c85e13318a1f17dce3f4b67128ece0d4ed7b5076",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:36c974785153b5d1d6035e75414fbbb5bb0bdfc0be3386a860608b483493d67e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4b02c4d78e8f05fe9e1f9d5256b281024da7880823d1afc4b2a3031c92c22634"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r19",
+    "query": "如何批量生成依赖审查报告并从SQLite状态继续？",
+    "relevant_sources": [
+      "dependency_workbench"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "dependency_workbench",
+          "lab_readme",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8afcf2dc4336dfbaadc7c82ae7bbff3dbe741e83f2c71d6eb093790a76898608",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f4f87ce12d18365477af48844207b6b876dd3055fb235f6a947caf68e3400a72",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "dependency_workbench",
+          "dependency_upgrade",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8afcf2dc4336dfbaadc7c82ae7bbff3dbe741e83f2c71d6eb093790a76898608",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f4f87ce12d18365477af48844207b6b876dd3055fb235f6a947caf68e3400a72"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "dependency_workbench",
+          "lab_readme",
+          "dependency_upgrade"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8afcf2dc4336dfbaadc7c82ae7bbff3dbe741e83f2c71d6eb093790a76898608",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f4f87ce12d18365477af48844207b6b876dd3055fb235f6a947caf68e3400a72",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:2009e43d43060d53ab03be2689e55a831dac4e499011cebc87e0f17dd98d79e1"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r20",
+    "query": "What are LGABlock and the lightweight hybrid encoder?",
+    "relevant_sources": [
+      "ls_detr_readme"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "ls_detr_bibliography"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c6f11b690a1d03e1d722cb29732edb8edc653a919c34299aea32fe8cbb7f8a61",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:3ddbaf2d7d6590af612349ba1912d549e749298b185e3a5d71b2e60a81112dd2",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8d663291b8885acfc8f051f4b3c765036344bb00ef3f573e4e936b62d7bdca9a"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "ls_detr_readme",
+          "ls_detr_bibliography",
+          "durable_worker"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c6f11b690a1d03e1d722cb29732edb8edc653a919c34299aea32fe8cbb7f8a61",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8d663291b8885acfc8f051f4b3c765036344bb00ef3f573e4e936b62d7bdca9a",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "ls_detr_bibliography"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c6f11b690a1d03e1d722cb29732edb8edc653a919c34299aea32fe8cbb7f8a61",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:8d663291b8885acfc8f051f4b3c765036344bb00ef3f573e4e936b62d7bdca9a"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r21",
+    "query": "Were the same authentication test identities run before and after the Authlib upgrade?",
+    "relevant_sources": [
+      "dependency_upgrade_compatibility"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:35976d61a952ea40b69c78762b7e99d59ccdb590eb695f9d184b489f4a7744ae",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ed094391ce27827f2a7edf46fa1585222523d8fafefca5226a206c2768e75012"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "dependency_workbench"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e2d3b1d50e20ca84744bba73cb3da276e88d059c2391456d38bd12f05a4aa660",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4c480a07ef18de54b6fe05e9b33d3342e8dd90adaeb29f6212f5cc6376bd055e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:87ce4d2317f1f8efab3036210ee05e5478a886663175633bd4aed1ca07d65a8e"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "dependency_upgrade_compatibility"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4c480a07ef18de54b6fe05e9b33d3342e8dd90adaeb29f6212f5cc6376bd055e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e2d3b1d50e20ca84744bba73cb3da276e88d059c2391456d38bd12f05a4aa660",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:44b27c92a69dd90d9eec0c78207476dede79df8711c058bb5597f205a615e367"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r22",
+    "query": "Does a scripted recovery plan prove autonomous model repository repair?",
+    "relevant_sources": [
+      "durable_worker"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.5,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:81ae88fd5c8650cf0bfedabb28e0ccc35a5c85369942bcf544703565b6308b87",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:3ddbaf2d7d6590af612349ba1912d549e749298b185e3a5d71b2e60a81112dd2",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c2a8ce7c0106513c3b23eec2aaaa8b90757859c3fd25d430e491b2d42d572c21"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "lab_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:4c480a07ef18de54b6fe05e9b33d3342e8dd90adaeb29f6212f5cc6376bd055e",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d338794a120bc07c90bcd7cd5e12232ae45cd2740d89baa0a010a4b9cce0e699",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0bd06dde1e09c84dcab1977a214552a2b48dd2ddcf779d72e178f59aa3ff532d"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "model_request_budget"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:3ddbaf2d7d6590af612349ba1912d549e749298b185e3a5d71b2e60a81112dd2",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e2d3b1d50e20ca84744bba73cb3da276e88d059c2391456d38bd12f05a4aa660",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:315d6144a0befe26a043e51998d2f40c3172d47310fdc04f080f60468c07c59e"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r23",
+    "query": "How are explicit Authorization headers protected from a top-level MCP token?",
+    "relevant_sources": [
+      "gpt_researcher_mcp_token"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "gpt_researcher_mcp_token"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e2d3b1d50e20ca84744bba73cb3da276e88d059c2391456d38bd12f05a4aa660",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f33933eba341d177d4b3862907f62843f032d0415cc9700f424095b094ff7707",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d70d7c68a907fc9f988c11ac9da72ef787a736df62c6d1ba4edc38067a4a1f34"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "mcp_evidence"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f33933eba341d177d4b3862907f62843f032d0415cc9700f424095b094ff7707",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:81ae88fd5c8650cf0bfedabb28e0ccc35a5c85369942bcf544703565b6308b87",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:28638e6fdbafac62e55389169afa0345961e22e6b2ddf15ed7caf2df106fba47"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "mcp_evidence"
+        ],
+        "hit_at_3": false,
+        "reciprocal_rank_at_3": 0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:f33933eba341d177d4b3862907f62843f032d0415cc9700f424095b094ff7707",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:ba1cc4bebfa3f285fef7bf66898fc08bfe9a121271963d7da20b85ec3d067786",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:e3313f727a865758e140540da1778fb5c0fc68fba8f181a1c9c0f5031fe0129d"
+        ]
+      }
+    }
+  },
+  {
+    "id": "r24",
+    "query": "Why can fixed prose account for more than100percent of the whole loss gap?",
+    "relevant_sources": [
+      "loss_parts"
+    ],
+    "modes": {
+      "lexical": {
+        "source_ids": [
+          "ls_detr_readme",
+          "durable_worker",
+          "loss_parts"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d338794a120bc07c90bcd7cd5e12232ae45cd2740d89baa0a010a4b9cce0e699",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:302f008ceb924e3e771622d8e23792edae9114639b3b04a252d7c3f06481367c"
+        ]
+      },
+      "semantic": {
+        "source_ids": [
+          "loss_parts",
+          "durable_worker",
+          "ls_detr_readme"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 1.0,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:0866b3f133f9a4c57d257bd60be54a601f5ca572ea64f937ded8b4cd9e1f86eb",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:c6f11b690a1d03e1d722cb29732edb8edc653a919c34299aea32fe8cbb7f8a61"
+        ]
+      },
+      "hybrid": {
+        "source_ids": [
+          "durable_worker",
+          "ls_detr_readme",
+          "loss_parts"
+        ],
+        "hit_at_3": true,
+        "reciprocal_rank_at_3": 0.3333333333333333,
+        "citation_ids": [
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:afda822b9652015175b2942b2d99d199fe414507e5c85dceaa8ec89cddc687b8",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:d338794a120bc07c90bcd7cd5e12232ae45cd2740d89baa0a010a4b9cce0e699",
+          "cbffec2edcffb3ee0f7cea796d652a419ad91742b42d5121729b0ddb5c05d8d1:df22bf9f827f88de37ab497e4ed96fd16f71b963c76b26e0af9efe6cb0d17f98"
+        ]
+      }
+    }
+  }
+]
