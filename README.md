@@ -81,10 +81,12 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 ## 复查材料
 
-[简历可用表述与证据（2026-11-23）](portfolio/resume-projects-2026-11-23.md) · [逐阶段记录与保留的失败](docs/project-history.md) · [两页中英介绍（2026-11-22历史快照）](portfolio/junzhe-wang-project-brief.pdf) · [快照正文与证据映射](portfolio/README.md)。
+[现有项目总结与简历选题（2026-11-24）](portfolio/project-summary-2026-11-24.md) · [历史详细表述](portfolio/resume-projects-2026-11-23.md) · [逐阶段记录与保留的失败](docs/project-history.md) · [两页中英介绍（2026-11-22历史快照）](portfolio/junzhe-wang-project-brief.pdf) · [快照正文与证据映射](portfolio/README.md)。
 
 测试组有重叠，不能把历史数字累计成新的总成绩。完整提示、答案、token 向量、权重、服务器连接资料和凭据保留私有；公开材料提供来源、哈希、运行条件与结果边界。
 
 [依赖升级鉴权兼容性](docs/dependency-upgrade-compatibility.md)：FastMCP原始与候选锁定环境执行相同279项上游鉴权测试，两组全部通过；源码与测试未改，完整CI和发布审批未执行。
 
 [逐部分NLL诊断](docs/loss-parts.md)：276条已有输入的标签分区与9项服务器控制通过；831次教师前向已完成，整段与逐部分损失、参数冻结及旧账本核验通过；不计作新生成或准确率。
+
+[LangGraph依赖审查工作台](docs/dependency-workbench.md)：批量汇总固定扫描与兼容证据、SQLite断点恢复和Markdown/JSON交付。两个实际项目快照已在服务器CPU跑通，12项测试与一次跨进程SIGKILL恢复通过；本轮模型调用/GPU使用均为0，历史279项上游测试结果仅做证据接入。

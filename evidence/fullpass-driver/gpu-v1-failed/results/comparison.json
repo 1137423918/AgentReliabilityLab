@@ -1,0 +1,11 @@
+{
+  "status": "failed",
+  "fullstudy_training_completed": false,
+  "text_generations": 0,
+  "control_CLOSED": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "Update losses/gradient norms/scales/parameter hashes differ"
+  },
+  "no_retries_or_tolerance_relaxation": true
+}

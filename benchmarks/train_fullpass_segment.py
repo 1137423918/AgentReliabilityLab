@@ -37,6 +37,9 @@ def train(args):
     from peft import LoraConfig, get_peft_model
     spec = json.loads(args.spec.read_text())
     assert spec['phase'] in ['gpu_checkpoint_continuation_control', 'gpu_fullpass_training']
+    assert spec['numerics'] == {'deterministic_algorithms': True, 'warn_only': False,
+        'CUBLAS_WORKSPACE_CONFIG': ':4096:8', 'SDPA_backend': 'FLASH_ATTENTION', 'TF32': False}
+    assert os.environ.get('CUBLAS_WORKSPACE_CONFIG') == ':4096:8', 'Set before starting the CUDA process'
     for name, expected in spec['source_sha256'].items(): assert sha(args.source/name) == expected, name
     assert sha(Path(__file__)) == spec['source_sha256']['benchmarks/train_fullpass_segment.py']
     assert torch.__version__ == '2.6.0+cu124' and transformers.__version__ == '4.57.6' and peft.__version__ == '0.18.0'
@@ -80,6 +83,16 @@ def train(args):
             assert previous['status'] == 'completed' and previous['checkpoint'] == state['checkpoint']
         journal.event('segment_begin', {'index': args.segment}); segment = role['segments'][args.segment]
         torch.set_num_threads(4); torch.backends.cuda.matmul.allow_tf32 = False; torch.backends.cudnn.allow_tf32 = False
+        torch.use_deterministic_algorithms(True, warn_only=False)
+        torch.backends.cudnn.benchmark = False; torch.backends.cudnn.deterministic = True
+        # Pin the backend as well as its deterministic backward. PyTorch2.6's
+        # global flag alone does not make every fused attention backend equal.
+        torch.backends.cuda.enable_flash_sdp(True); torch.backends.cuda.enable_math_sdp(False)
+        torch.backends.cuda.enable_mem_efficient_sdp(False); torch.backends.cuda.enable_cudnn_sdp(False)
+        assert torch.are_deterministic_algorithms_enabled() and not torch.is_deterministic_algorithms_warn_only_enabled()
+        assert torch.backends.cuda.flash_sdp_enabled() and not any([torch.backends.cuda.math_sdp_enabled(),
+            torch.backends.cuda.mem_efficient_sdp_enabled(), torch.backends.cuda.cudnn_sdp_enabled()])
+        report['numerics'] = spec['numerics']; save()
         assert torch.cuda.is_available() and torch.cuda.device_count() == 1 and torch.cuda.get_device_capability(0) == (8, 6)
         operation('model_load'); set_seed(seed)
         model = AutoModelForCausalLM.from_pretrained(str(args.model), torch_dtype=torch.float16, device_map={'': 'cuda:0'},

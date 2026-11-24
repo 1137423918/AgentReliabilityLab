@@ -1,0 +1,22 @@
+{
+  "overall_status": "FAILED_bitwise_continuation_control",
+  "control_CLOSED": true,
+  "all_workers_terminal_clean_GPU_context_absent": true,
+  "logical_forward_reserved": 84,
+  "logical_forward_completed": 84,
+  "backward_reserved": 78,
+  "backward_completed": 78,
+  "optimizer_reserved": 4,
+  "optimizer_completed": 4,
+  "unknown_still_charged": 0,
+  "text_generations": 0,
+  "retries": 0,
+  "journal_sha256": {
+    "outputs/fullpass-driver-stage80-gpu-20261124-v1/experiment/continuous/journal/events.jsonl": "664c992768b6c8df3d050f17ca987866df8b9001f1ad8075739eb84f2b85a083",
+    "outputs/fullpass-driver-stage80-gpu-20261124-v1/experiment/split/journal/events.jsonl": "5f360f437a776acfe470646c233c63f129a9e01e7a7a4d26ca93c699f8f5cc8f"
+  },
+  "first_difference_before_restore": true,
+  "same_initial_parameters_and_first_update_loss": true,
+  "first_update_gradient_norm_difference": 2.205371856689453e-05,
+  "interpretation": "Different gradients/weights before any restoration;consistentwithdefaultnondeterministicGPUbackward,not evidence thatrestorecausedfirstdifference. No metric/tolerance relaxation. Fullstudy remains unallocated."
+}

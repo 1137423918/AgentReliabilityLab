@@ -1,0 +1,22 @@
+{
+  "version": 1,
+  "reports": {
+    "fastmcp_2_12_4": {
+      "repository": "PrefectHQ/fastmcp",
+      "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+      "scope": "Historical FastMCP2.12.4 upstream auth/client-auth/HTTP-auth selection; same279cases, not full repository CI or production approval.",
+      "baseline_junit": {
+        "path": "../../evidence/fastmcp-authlib-compatibility/results/baseline-tests.xml",
+        "sha256": "98e173484e769490a0b0f16dff9ae780361a1b39c606c14ec49f507b606dfc80"
+      },
+      "candidate_junit": {
+        "path": "../../evidence/fastmcp-authlib-compatibility/results/candidate-tests.xml",
+        "sha256": "1d9d266a5dc578460de3cdde8c45ec5940d7ef6df6372479614440025098d376"
+      },
+      "source_file_manifests": {
+        "path": "../../evidence/fastmcp-authlib-compatibility/results/source-file-manifests.json",
+        "sha256": "6bbc2828f44e63b6e8572b2cc8037ff62dd4bec27e5bed886bbac85e61d39baa"
+      }
+    }
+  }
+}

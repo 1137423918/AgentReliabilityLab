@@ -1,0 +1,135 @@
+{
+  "updates": [
+    {
+      "update": 1,
+      "differences": {
+        "gradient_norm": {
+          "continuous": 1.5679255723953247,
+          "split": 1.5679476261138916,
+          "delta": 2.205371856689453e-05
+        },
+        "adapter_sha256": {
+          "continuous": "8c69929d2b81b2b2e6c70654429604fa9ccf0cb7f61ac6754845c9f7c4e2d794",
+          "split": "d189017fbf288292e5d3281a7db5c7d9bbeb686cde8af2d06284a0c33175169a",
+          "delta": null
+        }
+      }
+    },
+    {
+      "update": 2,
+      "differences": {
+        "loss_sum": {
+          "continuous": 2784.61954498291,
+          "split": 2785.3774948120117,
+          "delta": 0.7579498291015625
+        },
+        "mean_NLL": {
+          "continuous": 1.3484840411539516,
+          "split": 1.3488510870760346,
+          "delta": 0.00036704592208303133
+        },
+        "gradient_norm": {
+          "continuous": 1.4698199033737183,
+          "split": 1.4692872762680054,
+          "delta": -0.0005326271057128906
+        },
+        "adapter_sha256": {
+          "continuous": "9ca9410a3dbb5ec9c9272b04668f8e288c82499b990ce24b0a0ff42b77578304",
+          "split": "50373ab443967b0268668873a5d783e837c66c69333ea03b62ca09475e0e5978",
+          "delta": null
+        }
+      }
+    }
+  ],
+  "initial_hashes": {
+    "baseline": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df",
+    "split-prefix": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df",
+    "split-resume": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df"
+  },
+  "canaries": {
+    "baseline": {
+      "standard_loss_sum": 99.85661315917969,
+      "sparse_loss_sum": 99.85660552978516,
+      "labels": 61,
+      "RNG_unchanged": true
+    },
+    "split-prefix": {
+      "standard_loss_sum": 99.85661315917969,
+      "sparse_loss_sum": 99.85660552978516,
+      "labels": 61,
+      "RNG_unchanged": true
+    },
+    "split-resume": {
+      "standard_loss_sum": 90.60433197021484,
+      "sparse_loss_sum": 90.60430908203125,
+      "labels": 61,
+      "RNG_unchanged": true
+    }
+  },
+  "counters": {
+    "baseline": {
+      "completed_optimizer_updates": 2,
+      "training_labels": 4105,
+      "training_sequences": 39,
+      "training_input_token_exposures": 29431
+    },
+    "split-prefix": {
+      "completed_optimizer_updates": 1,
+      "training_labels": 2040,
+      "training_sequences": 19,
+      "training_input_token_exposures": 14365
+    },
+    "split-resume": {
+      "completed_optimizer_updates": 2,
+      "training_input_token_exposures": 29431,
+      "training_labels": 4105,
+      "training_sequences": 39
+    }
+  },
+  "journal_actual": {
+    "baseline": {
+      "forward_reserved": 41,
+      "forward_completed": 41,
+      "backward_reserved": 39,
+      "backward_completed": 39,
+      "optimizer_reserved": 2,
+      "optimizer_completed": 2,
+      "status": "clean",
+      "next_segment": 1
+    },
+    "split-prefix": {
+      "forward_reserved": 21,
+      "forward_completed": 21,
+      "backward_reserved": 19,
+      "backward_completed": 19,
+      "optimizer_reserved": 1,
+      "optimizer_completed": 1,
+      "status": "clean",
+      "next_segment": 1
+    },
+    "split-resume": {
+      "forward_reserved": 43,
+      "forward_completed": 43,
+      "backward_reserved": 39,
+      "backward_completed": 39,
+      "optimizer_reserved": 2,
+      "optimizer_completed": 2,
+      "status": "clean",
+      "next_segment": 2
+    }
+  },
+  "checkpoint_hashes": {
+    "continuous": {
+      "state.json": "43176e10f1c73e1221388cbd4916242855b944e64315b251cc8b53bc15a481e4",
+      "state.safetensors": "046fe4513e138fd7d8ad1c23355642e049adc05203068b00c1bd5bc100848598",
+      "parameters.safetensors": "11674552bff3fdeb4c3128460c3c0360fc8c62e2003467bf5786dbe8315d6a3c",
+      "manifest.json": "28b0b975c1f349d42a99fdc268bca6f6fe959e7a55633f99c9019703691c0bbd"
+    },
+    "split": {
+      "manifest.json": "4c1e87d7bfcbb729cd2e4cd2ed14653e2a2200cb384ef1c15bb03a26b6ff0e43",
+      "state.safetensors": "51a8ba3bf5592469d8ab6481cd48d65879760ee32c18462de2deeeca023b221f",
+      "parameters.safetensors": "4e3e5b7bfbe42ff40f2369206944f3323b9a072cbcb0de0238ca3d630281df02",
+      "state.json": "204562bedc58ec3c37d0a8d5dd13fb963944d99f97a771452aacf488c127f103"
+    }
+  }
+}

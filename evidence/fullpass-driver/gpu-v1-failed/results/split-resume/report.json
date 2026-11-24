@@ -1,0 +1,137 @@
+{
+  "status": "completed",
+  "model_loaded": true,
+  "role": "split",
+  "segment": 1,
+  "spec_sha256": "1a77495d5bcb5a55692b70e87d084bd3d14c2a9212cbf7b14a1f8331d3421045",
+  "identity": {
+    "spec_sha256": "1a77495d5bcb5a55692b70e87d084bd3d14c2a9212cbf7b14a1f8331d3421045",
+    "source_sha256": {
+      "benchmarks/fixed_reason_objective.py": "21a3e0fc2eaecc6e9e11c19489d0b79c2c59a5791a11fc89004c56011005efea",
+      "benchmarks/fullpass_schedule.py": "c9be0df7f422d1e38e1eacf7bf4f6e09b9a83ccdfc2e0a3631b30087feb1fee8",
+      "benchmarks/training_checkpoint.py": "760d04870592893340b8a686bc2a3238321887fb459909b145f21866790048a8",
+      "benchmarks/training_journal.py": "18301d1fbab1d655f0e9052a84a107b608b0ce222db008971369314c4de0b637",
+      "benchmarks/train_fullpass_segment.py": "c1119e807f1c911f0a311f7e58b3afbe512cb691784e42fe6f9c1d1ee574873c",
+      "extras/lora-training/test_training_journal.py": "617ef2e3a520e5ff2933398065714ac16eadaa198d99f718db97a131dae3960f",
+      "evidence/fullpass-preparation/cpu/schedules/seed-42-schedule.json": "5adbd0b1b27e065479a68ea8b267e61bfacdf90c419283667d9cdb1933f528f1",
+      "benchmarks/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "seed": 42,
+    "profile": "reference",
+    "trajectory": "split",
+    "schedule_sha256": "5adbd0b1b27e065479a68ea8b267e61bfacdf90c419283667d9cdb1933f528f1"
+  },
+  "definition_owner_sha256": "156c712e31f36aa688c9a05594375346c86db503206fe84fe7881ea49ac9896e",
+  "initial_adapter_sha256": "89a7395af6d4225e07ce8dea461041c38cc94eb4239385f90d1e508f9f6e70df",
+  "initial_frozen_parameters_sha256": "41694e8eb9d3bbf55a86fc898de7a19265c93b8720a47f4d84794fd7d040b888",
+  "trainable_parameter_count": 1843200,
+  "load_seconds": 121.646,
+  "restored_start": {
+    "completed_optimizer_updates": 1,
+    "training_input_token_exposures": 14365,
+    "training_labels": 2040,
+    "training_sequences": 19
+  },
+  "standard_sparse_canary": {
+    "standard_loss_sum": 90.60433197021484,
+    "sparse_loss_sum": 90.60430908203125,
+    "labels": 61,
+    "RNG_unchanged": true
+  },
+  "counters": {
+    "completed_optimizer_updates": 2,
+    "training_input_token_exposures": 29431,
+    "training_labels": 4105,
+    "training_sequences": 39
+  },
+  "checkpoint": {
+    "directory": "step-002",
+    "manifest_sha256": "4c1e87d7bfcbb729cd2e4cd2ed14653e2a2200cb384ef1c15bb03a26b6ff0e43",
+    "completed_optimizer_updates": 2
+  },
+  "updates": [
+    {
+      "update": 2,
+      "loss_sum": 2785.3774948120117,
+      "active_labels": 2065,
+      "mean_NLL": 1.3488510870760346,
+      "gradient_norm": 1.4692872762680054,
+      "loss_scale": 1024.0,
+      "adapter_sha256": "50373ab443967b0268668873a5d783e837c66c69333ea03b62ca09475e0e5978"
+    }
+  ],
+  "final_adapter_sha256": "50373ab443967b0268668873a5d783e837c66c69333ea03b62ca09475e0e5978",
+  "frozen_parameters_unchanged": true,
+  "inputs_and_sources_unchanged": true,
+  "logical_forward_accounting": "Explicit model.forward calls; autograd checkpoint recomputation is not an extra logical call, no equal-FLOPs claim.",
+  "wall_seconds": 164.163,
+  "journal": {
+    "status": "clean",
+    "next_segment": 2,
+    "updates": 2,
+    "checkpoint": {
+      "directory": "step-002",
+      "manifest_sha256": "4c1e87d7bfcbb729cd2e4cd2ed14653e2a2200cb384ef1c15bb03a26b6ff0e43",
+      "completed_optimizer_updates": 2
+    },
+    "forward_reserved": 43,
+    "forward_completed": 43,
+    "backward_reserved": 39,
+    "backward_completed": 39,
+    "optimizer_reserved": 2,
+    "optimizer_completed": 2,
+    "pending": null,
+    "active_update": null,
+    "last_forward": {
+      "kind": "forward",
+      "phase": "training",
+      "update": 2,
+      "position": 19,
+      "id_sha256": "2d7c08447617ca693ea55214816ef19be4787339b69574e55e56a42765edb8d8",
+      "sequence": 43
+    },
+    "backward_forwards": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43
+    ],
+    "segment_start_forwards": 21
+  },
+  "journal_sha256": "5f360f437a776acfe470646c233c63f129a9e01e7a7a4d26ca93c699f8f5cc8f"
+}

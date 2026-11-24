@@ -1,0 +1,17 @@
+test_changed_inputs_cannot_resume_same_job (__main__.WorkbenchControls.test_changed_inputs_cannot_resume_same_job) ... ok
+test_changed_test_source_manifest_cannot_be_accepted_as_lock_only_change (__main__.WorkbenchControls.test_changed_test_source_manifest_cannot_be_accepted_as_lock_only_change) ... ok
+test_checkpointed_read_resumes_without_rereading_report (__main__.WorkbenchControls.test_checkpointed_read_resumes_without_rereading_report) ... ok
+test_completed_replay_uses_framework_state_and_preserves_review_bytes (__main__.WorkbenchControls.test_completed_replay_uses_framework_state_and_preserves_review_bytes) ... ok
+test_corrupt_compatibility_artifact_rejected_before_graph (__main__.WorkbenchControls.test_corrupt_compatibility_artifact_rejected_before_graph) ... ok
+test_different_test_identity_even_with_new_valid_hash_rejected (__main__.WorkbenchControls.test_different_test_identity_even_with_new_valid_hash_rejected) ... ok
+test_human_edited_output_is_preserved_and_conflict_reported (__main__.WorkbenchControls.test_human_edited_output_is_preserved_and_conflict_reported) ... ok
+test_missing_compatibility_remains_explicitly_unverified (__main__.WorkbenchControls.test_missing_compatibility_remains_explicitly_unverified) ... ok
+test_real_two_projects_produce_correct_distinct_maintenance_actions (__main__.WorkbenchControls.test_real_two_projects_produce_correct_distinct_maintenance_actions) ... ok
+test_skipped_test_is_not_promoted_to_compatibility_pass (__main__.WorkbenchControls.test_skipped_test_is_not_promoted_to_compatibility_pass) ... ok
+test_unbound_previous_sqlite_state_is_not_overwritten (__main__.WorkbenchControls.test_unbound_previous_sqlite_state_is_not_overwritten) ... ok
+test_wrong_project_commit_compatibility_rejected (__main__.WorkbenchControls.test_wrong_project_commit_compatibility_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 12.773s
+
+OK

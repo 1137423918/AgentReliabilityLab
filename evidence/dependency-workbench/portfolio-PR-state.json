@@ -1,0 +1,39 @@
+{
+  "observed_utc": "2026-11-24T12:02:35.107193+00:00",
+  "pull_requests": [
+    {
+      "repo": "assafelovic/gpt-researcher",
+      "number": 2367,
+      "url": "https://github.com/assafelovic/gpt-researcher/pull/2367",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "merged_at": null,
+      "head_sha": "973514b3737a0befd4b27f54685db485793ffa74",
+      "updated_at": "2026-11-23T20:36:05Z"
+    },
+    {
+      "repo": "browser-use/browser-use",
+      "number": 6521,
+      "url": "https://github.com/browser-use/browser-use/pull/6521",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "merged_at": null,
+      "head_sha": "a4473544a95100b2b750cdf28e0b7f121be9c46e",
+      "updated_at": "2026-11-24T01:09:01Z"
+    },
+    {
+      "repo": "VoltAgent/voltagent",
+      "number": 1562,
+      "url": "https://github.com/VoltAgent/voltagent/pull/1562",
+      "state": "open",
+      "draft": false,
+      "merged": false,
+      "merged_at": null,
+      "head_sha": "44cbec5791030c9aef2e47bd30df0b240e145b33",
+      "updated_at": "2026-11-23T14:52:25Z"
+    }
+  ],
+  "read_only": true
+}

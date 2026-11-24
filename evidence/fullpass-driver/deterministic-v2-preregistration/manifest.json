@@ -1,0 +1,29 @@
+{
+  "files": {
+    "protocol.json": {
+      "original_sha256": "f6450e7169cd7883845c08d71e7fa3239026290e484033409bbb2a00d7809907",
+      "public_sha256": "f6450e7169cd7883845c08d71e7fa3239026290e484033409bbb2a00d7809907"
+    },
+    "continuation_controller.py": {
+      "original_sha256": "084c7bc07ba575e66df5f71ec246c09b72264c2f40da8183c3ea955788eb56e9",
+      "public_sha256": "e75997f78d54d7a9609af906d3728208e4429c6ce4f44543b7a533de09c10bce"
+    }
+  },
+  "NN_driver_sha256": "a33eadc32d9d6f20be2304e6c96252ce3b0cbd17ef2c8c93d877c2d2b1eaf22e",
+  "additional_v2_allocation": {
+    "logical_forwards": 84,
+    "training_forwards": 78,
+    "canary_forwards": 6,
+    "backward_dispatches": 78,
+    "optimizer_dispatches": 4,
+    "text_generations": 0,
+    "quality_or_resource_retries": 0
+  },
+  "v1_closed_actual": {
+    "logical_forwards": 84,
+    "optimizer_updates": 4,
+    "unknown": 0,
+    "strict_comparison": "FAILED"
+  },
+  "v2_executed_at_preregistration": 0
+}

@@ -1,0 +1,44 @@
+{
+  "declared_utc": "2026-11-24T11:58:54.705741+00:00",
+  "scope": "Userresume CPU-only framework application:LangGraph dependencyreview workbench over2realhistoricalreports+paired279testartifacts;12controls/replay. Source-only deferredGPUconfigpreflight;no modelcalls,nograd/GPUtraining. Timer remainsPAUSED.",
+  "source_sha256": {
+    "agent_lab/__init__.py": "4be4c42b51d998d544a0e00876385222167cbe3d97c13ebab1a395cdb9890307",
+    "agent_lab/review_workbench.py": "a38158c2e946436dbf3382111a872b0bba6feff0cae827cee4d261339d15f26c",
+    "agent_lab/evidence_audit.py": "a18fa1adfe22d54e7233f9b4accea93ddb458c72ff3c7a85c264c7a6e4b8a99b",
+    "agent_lab/storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+    "tests/test_review_workbench.py": "e4ce2377d2a2d72ad2220b55b1a5084f399445179197a9dedb7e9af73279f680",
+    "examples/dependency-workbench/compatibility.json": "f2ca34ea5b99cd2ed012da2f381b7b16dfd958fd26c2b144017b78346eafcf97",
+    "pyproject.toml": "89fc93e5fab02bf18ea0b435a1fac7d1e02f62421082d793a460d65f41605690",
+    "uv.lock": "2f0340497d9d9f0dd47529d356a456c30b6c10b439755ee80bdf895c519de993",
+    "evidence/dependency-upgrade/corpus/browser_use_1_0_8.json": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4",
+    "evidence/dependency-upgrade/corpus/catalog.json": "9581d97e5e6ead9e1ad2f4e5d273b57bb803d8122ddc4e6bd7abf34165d88f08",
+    "evidence/dependency-upgrade/corpus/fastmcp_2_12_4.json": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a",
+    "evidence/fastmcp-authlib-compatibility/results/baseline-tests.xml": "98e173484e769490a0b0f16dff9ae780361a1b39c606c14ec49f507b606dfc80",
+    "evidence/fastmcp-authlib-compatibility/results/summary.json": "811c99cef57184f7646757d8bea54c99cd439b2133c1bdd0556230f0a93449e2",
+    "evidence/fastmcp-authlib-compatibility/results/report.json": "62f33f562a9728e03482a7a682e7091ea635a01d1017198de2eef9beee71be93",
+    "evidence/fastmcp-authlib-compatibility/results/source-file-manifests.json": "6bbc2828f44e63b6e8572b2cc8037ff62dd4bec27e5bed886bbac85e61d39baa",
+    "evidence/fastmcp-authlib-compatibility/results/candidate-tests.xml": "1d9d266a5dc578460de3cdde8c45ec5940d7ef6df6372479614440025098d376",
+    "deferred/train_fullpass_segment.py": "a33eadc32d9d6f20be2304e6c96252ce3b0cbd17ef2c8c93d877c2d2b1eaf22e"
+  },
+  "input_bundle_sha256": "c2ee266a9bd6511b1e8107d4caa90cec6dae89f32b110dd2d43ed08cfac77991",
+  "controller_sha256": "776eaca98251d2e07ce657f1c8e8d8a69107539f6ffba91fbed5493020aa8509",
+  "wrapper_sha256": "c33bcb984da758bd61435895e5598de707bfb31de8c43a8f136177eae4dc76e8",
+  "cpu_admission_sha256": "62350c3401c5336ff873d429da29fb4397f114c016bb96a003d5a2b673029fe1",
+  "versions": {
+    "langgraph": "1.2.24",
+    "langgraph-checkpoint-sqlite": "3.1.3",
+    "deepagents": "0.7.41"
+  },
+  "new_model_calls": 0,
+  "new_GPU_jobs": 0,
+  "resource_caps": {
+    "CPU": 2,
+    "nice": 19,
+    "RSS_GiB": 4,
+    "AS_GiB": 16,
+    "host_admission_GiB": 16,
+    "host_floor_GiB": 8,
+    "job_seconds": 900,
+    "max_phase_seconds": 180
+  }
+}

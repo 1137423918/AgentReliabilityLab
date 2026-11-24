@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "scope": "SIGKILL after bothcollectnodes committed;newPythonprocess resumes without rereading reports. Not activeSQLitewrite/powerloss/hostileprocess test.",
+  "actual_child_exit_code": -9,
+  "same_review_and_batch_markdown_bytes": {
+    "summary.md": "fb19e24130aafd3045cb3c0095b22f2085dbe6a5825c4d911ec2f76818221300",
+    "reviews/browser_use_1_0_8.json": "a58164aa9efc667c86004f932ba9f71a3c06fdb7dd65d5300a3ffb236579c534",
+    "reviews/browser_use_1_0_8.md": "27e206510cdc28d0d1e9685e6c60c45627b28a80086da986d5112bc8e46efae9",
+    "reviews/fastmcp_2_12_4.json": "b20d66a7b5fdb4f1f97f119200c0aa375bd6c964fa9811df81322fa501de17e2",
+    "reviews/fastmcp_2_12_4.md": "6fc92ecb919c3a840903a4197e460043557dc9c097d75a024ab07954618d6f84"
+  },
+  "new_process_read_reexecution_rejected": true,
+  "reports": 2,
+  "model_calls": 0,
+  "GPU_used": false,
+  "only_owned_child_signaled": true
+}

@@ -1,0 +1,86 @@
+{
+  "compatibility": {
+    "status": "not_recorded",
+    "tests_executed_by_workbench": false
+  },
+  "deployment_approved": false,
+  "gate": {
+    "facts": [
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/execution/candidate_prepared",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/resolution/exit_code",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": false,
+        "pointer": "/resolution/original_requirements_changed",
+        "required": false
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/before_registry_complete",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/after_registry_complete",
+        "required": true
+      },
+      {
+        "matched": false,
+        "observed": false,
+        "pointer": "/target/version_changed",
+        "required": true
+      },
+      {
+        "matched": false,
+        "observed": 62,
+        "pointer": "/target/remaining_advisory_match_count",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/delta/new_package_advisory_match_count",
+        "required": 0
+      }
+    ],
+    "ready_for_scoped_tests": false,
+    "status": "blocked"
+  },
+  "model_calls": 0,
+  "next_action": "Resolve the failed upgrade conditions before integration testing.",
+  "project": {
+    "commit": "753d629d76eb2b670f4cf467f3355bbe750f6845",
+    "id": "browser-use-1.0.8",
+    "repository": "browser-use/browser-use",
+    "tag": "1.0.8"
+  },
+  "remaining_affected_registry_resolutions": 2,
+  "report_id": "browser_use_1_0_8",
+  "source": {
+    "report_id": "browser_use_1_0_8",
+    "sha256": "b307542f7839db871e6f5d7e4e1c09e72889a4219ecc8752621328fff920d9e4",
+    "source_url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/2323416f27bccfe22b8d419562af11128059f75b/evidence/dependency-upgrade/corpus/browser_use_1_0_8.json"
+  },
+  "status": "blocked",
+  "target": {
+    "after_versions": [
+      "pillow@12.3.0"
+    ],
+    "before_versions": [
+      "pillow@12.3.0"
+    ],
+    "name": "pillow"
+  }
+}

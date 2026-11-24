@@ -1,0 +1,110 @@
+{
+  "compatibility": {
+    "artifact_sha256": {
+      "baseline_junit": "98e173484e769490a0b0f16dff9ae780361a1b39c606c14ec49f507b606dfc80",
+      "candidate_junit": "1d9d266a5dc578460de3cdde8c45ec5940d7ef6df6372479614440025098d376",
+      "source_file_manifests": "6bbc2828f44e63b6e8572b2cc8037ff62dd4bec27e5bed886bbac85e61d39baa"
+    },
+    "baseline": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 279
+    },
+    "candidate": {
+      "errors": 0,
+      "failures": 0,
+      "skipped": 0,
+      "tests": 279
+    },
+    "deployment_approved": false,
+    "same_test_identities": true,
+    "scope": "Historical FastMCP2.12.4 upstream auth/client-auth/HTTP-auth selection; same279cases, not full repository CI or production approval.",
+    "source_changes": [
+      "uv.lock"
+    ],
+    "source_files": 614,
+    "status": "passed_recorded_scope",
+    "tests_executed_by_workbench": false
+  },
+  "deployment_approved": false,
+  "gate": {
+    "facts": [
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/execution/candidate_prepared",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/resolution/exit_code",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": false,
+        "pointer": "/resolution/original_requirements_changed",
+        "required": false
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/before_registry_complete",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/coverage/after_registry_complete",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": true,
+        "pointer": "/target/version_changed",
+        "required": true
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/target/remaining_advisory_match_count",
+        "required": 0
+      },
+      {
+        "matched": true,
+        "observed": 0,
+        "pointer": "/delta/new_package_advisory_match_count",
+        "required": 0
+      }
+    ],
+    "ready_for_scoped_tests": true,
+    "status": "ready_for_scoped_tests"
+  },
+  "model_calls": 0,
+  "next_action": "Review residual advisories and broader CI before a release decision.",
+  "project": {
+    "commit": "b96e6ebbb269a241801554383671ba9f2876901e",
+    "id": "fastmcp-2.12.4",
+    "repository": "PrefectHQ/fastmcp",
+    "tag": "v2.12.4"
+  },
+  "remaining_affected_registry_resolutions": 16,
+  "report_id": "fastmcp_2_12_4",
+  "source": {
+    "report_id": "fastmcp_2_12_4",
+    "sha256": "f9c57052b1bbf0370183c132b45eefe682fb19b528c724b4223fe4c53f4b0b5a",
+    "source_url": "https://raw.githubusercontent.com/1137423918/AgentReliabilityLab/2323416f27bccfe22b8d419562af11128059f75b/evidence/dependency-upgrade/corpus/fastmcp_2_12_4.json"
+  },
+  "status": "scoped_tests_passed",
+  "target": {
+    "after_versions": [
+      "authlib@1.9.10"
+    ],
+    "before_versions": [
+      "authlib@1.6.1"
+    ],
+    "name": "authlib"
+  }
+}

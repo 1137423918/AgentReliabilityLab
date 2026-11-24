@@ -19,3 +19,5 @@
 下一步是实现与验证生产分段驱动及独立额度：只在已持久化更新后的正常分段边界续跑，匹配源文件/种子/分支/调度和全状态；中断或未知更新不隐式重放、不返还扣额。先做实际GPU续跑一致性控制，再从原始基座启动六个完整训练分支，最后执行新队列评估。训练结果、稳定性和简历收益目前均未取得，不提前记为已完成项目成绩。
 
 [全部证据与预声明政策](../evidence/fullpass-preparation/README.md) · [完整调度](../benchmarks/fullpass_schedule.py) · [新题准入](../benchmarks/admit_fresh_bfcl.py) · [检查点组件](../benchmarks/training_checkpoint.py)。个人主页保持冻结。
+
+根据2026-11-24更新的工作安排，暂缓高GPU资源训练，优先完成CPU框架应用与简历材料。上述完整训练计划仍为待办，不是当前执行队列；GPU续跑首次严格比较失败和待验证配置见[实际记录](../evidence/fullpass-driver/README.md)。

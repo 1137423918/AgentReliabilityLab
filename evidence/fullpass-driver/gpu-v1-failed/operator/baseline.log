@@ -1,0 +1,4 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [00:01<00:01,  1.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  7.36s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:12<00:00,  6.46s/it]
+{"update": 1, "loss_sum": 2537.710823059082, "active_labels": 2040, "mean_NLL": 1.2439758936564127, "gradient_norm": 1.5679255723953247, "loss_scale": 1024.0, "adapter_sha256": "8c69929d2b81b2b2e6c70654429604fa9ccf0cb7f61ac6754845c9f7c4e2d794"}
+{"update": 2, "loss_sum": 2784.61954498291, "active_labels": 2065, "mean_NLL": 1.3484840411539516, "gradient_norm": 1.4698199033737183, "loss_scale": 1024.0, "adapter_sha256": "9ca9410a3dbb5ec9c9272b04668f8e288c82499b990ce24b0a0ff42b77578304"}
