@@ -50,6 +50,16 @@ Use an actual file SHA256 for the model you serve; this is the operator's declar
 
 Repeat the exact command to resume a committed node or reuse a completed result. The run identity binds the question, endpoints, declared model fingerprint, active library generation, source code, framework and limits. Changes require a new run directory. Store mutable SQLite and request journals on an admitted local filesystem. Do not move live state onto NFS, delete a journal to reset its limit, or reuse a closed experiment budget.
 
+After the writer has stopped and closed SQLite connections, export a reading report without starting either service:
+
+```sh
+extras/research-assistant/.venv/bin/python -m agent_lab.research_report \
+  --run-dir /tmp/research-question-001 \
+  --store /path/to/paper-store --output /path/to/new-reading-report
+```
+
+Repeat `--run-dir` to combine up to16 runs. The new output directory contains Markdown, JSON reference metadata and a completion manifest. Uncompleted model tasks stay uncompleted with recorded diagnostics; the command returns2 for export errors, rather than for an original uncompleted model task. Archived source versions must remain available. [Report usage and validation](../../docs/research-reading-report.md) explain the stopped-input contract and the actual historical-page example.
+
 Model requests are reserved durably before HTTP transmission, with no transport retry, redirect or environment proxy. Failed/unknown attempts stay charged. An asyncio deadline covers the whole request in addition to HTTP idle timeouts. Complete responses are cached before node checkpointing so the same request body can reuse its saved reply after restart. A tool query interrupted before its node commits can be repeated on resume; this is not exactly-once tool execution. The separate retrieval service's embedding budget is not controlled by the assistant's generation-request journal; operators must also bound that resource.
 
 `submitted` means final arguments passed the structural/reference contract. Search/read choices are model-selected; at most one final-format request uses the exact `submit_answer` argument schema through `response_format=json_schema` with `tool_choice=none`, within the same turn budget, after an unsubmitted draft or on the last available turn. The model still supplies all content and citation refs. The application constrains termination format; this is not fully unforced terminal tool selection. Unstructured text is never accepted or automatically assigned citations. `supported` is the model's own status; `semantic_entailment_checked` remains false. `insufficient_evidence` reports a lack of usable material after a coverage/evidence check. Truncation, source changes, invalid finalization and turn exhaustion remain explicit outcomes. Review generated answers against the cited pages.

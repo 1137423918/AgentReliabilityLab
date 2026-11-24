@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "5ab672bfc09b4ad7abc039cf2975b77ad28ad7741416a5ef5ccf0677ac0e2d83",
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-report-workflows"
+  },
+  "phases": [
+    {
+      "name": "source-report-workflows",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 5.873,
+      "peak_owned_RSS_bytes": 227262464
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 16.148
+}

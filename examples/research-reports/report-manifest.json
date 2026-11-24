@@ -1,0 +1,12 @@
+{
+  "files": {
+    "reading-report.json": {
+      "sha256": "f317ba1c7cd2c975f25df9ec393f8f85126ebcabd4917f67ac55512a249ed1ba",
+      "bytes": 7774
+    },
+    "reading-report.md": {
+      "sha256": "11e1680cb04eed4d77fd946853d72da592d96467b839a442c6c8d65933a02474",
+      "bytes": 2916
+    }
+  }
+}

@@ -31,6 +31,8 @@ extras/research-assistant/.venv/bin/python -m agent_lab.research_assistant \
 
 输出包含模型生成的文字、读取过的引用ID、原始论文哈希和物理页码，以及持久请求额度摘要。使用相同命令恢复已提交节点或读取完成结果；模型声明、问题、资料版本、端点或代码变化要求新建run-dir。SQLite与活动请求账本放在本机支持的文件系统中。
 
+运行停止后，可关闭模型和MCP服务，使用[阅读报告导出](research-reading-report.md)批量整理已有回答、页引用和未完成原因，生成[这样的阅读记录](../examples/research-reports/reading-report.md)。导出不恢复图或调用模型，也不会补写未完成的答案。
+
 ## 模型与证据之间的接口
 
 `list_papers`按原PDF合并页来源，避免把32个页条目都塞给模型；`find_passages`从真实MCP检索返回最多两个候选及短引用别名。`read_passage`按该别名调用MCP回读精确片段，并核对来源版本和内容。短别名只在本次任务内有效，最终导出时展开为完整来源信息。

@@ -1,0 +1,12 @@
+{
+  "relative_path": "studies/research-report-stage87-20261125",
+  "manifest_sha256": "8eecdfb30236d569d7fe8ae2f29034f1dc93f9c2784a106d72cf7054bafbfb61",
+  "files": 54,
+  "bytes": 652767,
+  "all_three_operator_profiles_terminal_owned_zero": true,
+  "all_protected_archives_and_budgets_unchanged": true,
+  "old_model_runs_and_source_store_not_duplicated": true,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "GPU_used": false
+}

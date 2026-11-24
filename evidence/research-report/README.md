@@ -1,0 +1,15 @@
+# Offline research reading report
+
+This is a new application workflow over previously closed model artifacts, not another model trial or quality regrading. It exports a readable Markdown report and JSON source metadata from stopped research-assistant runs, using a read-only LangGraph SQLite checkpoint and the installed research0.2.0 library's citation reader.
+
+The [actual example](../../examples/research-reports/reading-report.md) contains three existing public diagnostic questions and their unchanged recorded outcomes: two submitted answers and one uncompleted task. It adds no model reply or inferred citation. The absence case remains failed; the report explains its empty answer, nonempty citations and rejection instead of relabeling it as successful abstention.
+
+- [Application result](application.json): four original PDF references read back from a retained historical generation, original statuses preserved, two exports identical, original case/store hashes unchanged. Export phase2.067s on a server with two sampled CPU cores; no new generation HTTP request, embedding forward, network-connect attempt or GPU use. No Torch/Transformers module was loaded by the export entry.
+- [Nine workflow tests](controls-v2.log): actual LangGraph/AsyncSqliteSaver and LlamaIndex with scripted replies and non-neural fixture vectors. Tests cover batch output, failure explanations, historical citations, input consistency, stopped SQLite, repeatable output and text escaping. These are application tests, not model quality cases. Earlier assistant16/PDF21 groups were not rerun or added to this count.
+- [Original failed test profile](runs/controls-v1.json) and [summary](controls-v1-failure-summary.json): fixture setup omitted the request directory, so all9tests errored before graph execution. The fixture was corrected; exporter validation was not relaxed. Raw failure logs remain in the private frozen archive.
+- [Tested source hashes](tested-source-sha256.json) and [application protocol](application-protocol.json) bind the published source and runtime lock. Local runtime paths in the public test log are normalized; raw logs remain private.
+- [Frozen archive receipt](private-archive-receipt.json): three attempted profiles are terminal with zero owned processes. The archive stores54payloads/652767bytes, including failure evidence, sources and both generated reports. Old model/index inputs and environments were referenced without duplication; [protected archive references](protected-archive-references.json) identify the unchanged prior snapshots.
+
+The model answers' original [source review and limits](../research-assistant/source-review.json) still apply. Core summaries have source support, the comparison is incomplete and qualitative efficiency wording is not a measured result. Export/read lineage is not semantic entailment, held-out QA accuracy, independent human evaluation or a production service guarantee.
+
+[Use the exporter](../../docs/research-reading-report.md) · [Research assistant](../../docs/research-assistant.md).

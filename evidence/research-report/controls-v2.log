@@ -1,0 +1,17 @@
+test_actual_checkpoint_to_reading_report_without_input_changes_or_network (__main__.ReportWorkflows.test_actual_checkpoint_to_reading_report_without_input_changes_or_network) ... Executing <Task pending name='Task-2' coro=<ReportWorkflows.test_actual_checkpoint_to_reading_report_without_input_changes_or_network() running at <isolated-root>/source/tests/test_research_report.py:89> wait_for=<Future pending cb=[Task.task_wakeup()] created at <python-runtime>/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <python-runtime>/lib/python3.11/asyncio/base_events.py:180] created at <python-runtime>/lib/python3.11/asyncio/runners.py:100> took 0.733 seconds
+ok
+test_batch_keeps_good_failed_and_unavailable_runs_distinct (__main__.ReportWorkflows.test_batch_keeps_good_failed_and_unavailable_runs_distinct) ... ok
+test_changed_archived_source_is_not_exported_as_verified (__main__.ReportWorkflows.test_changed_archived_source_is_not_exported_as_verified) ... ok
+test_failed_submission_exports_diagnostics_and_never_an_answer (__main__.ReportWorkflows.test_failed_submission_exports_diagnostics_and_never_an_answer) ... ok
+test_live_sidecar_and_owner_mismatch_refused (__main__.ReportWorkflows.test_live_sidecar_and_owner_mismatch_refused) ... Executing <Task finished name='Task-238' coro=<ReportWorkflows.asyncSetUp() done, defined at <isolated-root>/source/tests/test_research_report.py:25> result=None created at <python-runtime>/lib/python3.11/asyncio/runners.py:100> took 0.117 seconds
+ok
+test_old_source_generation_remains_explicit_after_new_publication (__main__.ReportWorkflows.test_old_source_generation_remains_explicit_after_new_publication) ... ok
+test_question_html_and_markdown_are_displayed_as_text (__main__.ReportWorkflows.test_question_html_and_markdown_are_displayed_as_text) ... ok
+test_report_outputs_are_repeatable_and_do_not_overwrite (__main__.ReportWorkflows.test_report_outputs_are_repeatable_and_do_not_overwrite) ... ok
+test_result_or_response_tampering_is_not_exported_as_an_answer (__main__.ReportWorkflows.test_result_or_response_tampering_is_not_exported_as_an_answer) ... Executing <Task finished name='Task-463' coro=<ReportWorkflows.asyncSetUp() done, defined at <isolated-root>/source/tests/test_research_report.py:25> result=None created at <python-runtime>/lib/python3.11/asyncio/runners.py:100> took 0.196 seconds
+ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 2.643s
+
+OK

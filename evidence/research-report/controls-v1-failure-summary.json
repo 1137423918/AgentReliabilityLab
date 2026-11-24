@@ -1,0 +1,8 @@
+{
+  "tests_attempted": 9,
+  "test_errors": 9,
+  "cause": "Fixture setup omitted creating the requests directory before RequestBudget construction; stopped before graph execution.",
+  "exporter_rule_not_relaxed": true,
+  "raw_failure_log_in_private_archive": true,
+  "new_neural_forwards": 0
+}

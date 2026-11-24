@@ -1,0 +1,38 @@
+{
+  "ready": true,
+  "scope": "New offline report application using unchanged closed model artifacts; no model replay or regrading.",
+  "recorded_model_statuses_preserved": [
+    "submitted",
+    "submitted",
+    "turn_limit"
+  ],
+  "application_summary": {
+    "runs": 3,
+    "recorded_submissions": 2,
+    "recorded_uncompleted": 1,
+    "export_errors": 0
+  },
+  "exact_PDF_references_read_back": 4,
+  "references_from_retained_historical_generation": true,
+  "new_generation_HTTP_requests": 0,
+  "new_embedding_forwards": 0,
+  "blocked_network_connect_attempts": 0,
+  "model_modules_not_loaded": true,
+  "original_case_and_source_store_hashes_unchanged": true,
+  "repeat_export_bytes_identical": true,
+  "GPU_used": false,
+  "report_files": {
+    "report-manifest.json": {
+      "sha256": "e7a668a4872d0c7bf5b60c7ce86cf9fbc364fe6fcd46d052b3f087d367638546",
+      "bytes": 298
+    },
+    "reading-report.json": {
+      "sha256": "f317ba1c7cd2c975f25df9ec393f8f85126ebcabd4917f67ac55512a249ed1ba",
+      "bytes": 7774
+    },
+    "reading-report.md": {
+      "sha256": "11e1680cb04eed4d77fd946853d72da592d96467b839a442c6c8d65933a02474",
+      "bytes": 2916
+    }
+  }
+}

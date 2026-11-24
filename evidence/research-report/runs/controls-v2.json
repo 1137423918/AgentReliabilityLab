@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "583135dbce976ff3031b0847d38bd2d260eaa549d78d7328537d20e7ca68a7c6",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "source-report-workflows",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.304,
+      "peak_owned_RSS_bytes": 277446656
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 17.784,
+  "source_workflows_passed": 9,
+  "new_neural_forwards": 0,
+  "source_and_runtime_unchanged": true
+}

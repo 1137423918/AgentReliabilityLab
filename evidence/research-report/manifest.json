@@ -1,0 +1,52 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "13f12390f19bfd10af6ea6d5994cb699d89b2b6838d4b601deb89a5e046f23f8",
+      "bytes": 3054
+    },
+    "application-protocol.json": {
+      "sha256": "c213ec7d19b0ec3ca0d811edea3d5a4a38b410047d0dfb35fc58e724a2286d37",
+      "bytes": 1573
+    },
+    "application.json": {
+      "sha256": "15cdba7f797bd28f805beaa25c978e543bb31b54187f3db97112f7d55309a51d",
+      "bytes": 1169
+    },
+    "controls-v1-failure-summary.json": {
+      "sha256": "90fa695d0930e809c22ec9de2a1a3a47e9910aba8650db26aaae7ca08488f2bb",
+      "bytes": 293
+    },
+    "controls-v2.log": {
+      "sha256": "45d4e0c6e3bff3669605cd512b1ff2c16a37772326765fceae770a8fd065399d",
+      "bytes": 2476
+    },
+    "private-archive-receipt.json": {
+      "sha256": "c277cfddeed785c967824104aed44fac3a5f7e7d9d624b7cc35be2a57cb0cca5",
+      "bytes": 446
+    },
+    "protected-archive-references.json": {
+      "sha256": "c5ef0f7ebb3085eb8684b106f45d0b877056da97d283914609ea37b8e214c583",
+      "bytes": 467
+    },
+    "runs/application-v1.json": {
+      "sha256": "dcedcc905ab42d86d8b8ee0e064505a2458a3cb970598758d1224940938a1977",
+      "bytes": 486
+    },
+    "runs/controls-v1.json": {
+      "sha256": "9b81845ffd5ab597e11b5f2f10a5ada5c01e848c8e5e74658f45ba87ec0fb40b",
+      "bytes": 431
+    },
+    "runs/controls-v2.json": {
+      "sha256": "55d636fc01daefe13b74d99ab08240bc3c3167c0ed056fdb63e96c7bd96d520c",
+      "bytes": 459
+    },
+    "tested-source-sha256.json": {
+      "sha256": "3228eb6c405aaef76960c650acb93679bc13e3ed6fb5a82da8a6a5d40c4b0637",
+      "bytes": 1023
+    }
+  },
+  "scope": "Offline report application metadata and normalized engineering logs. Original model outcomes unchanged; no generation, embeddings, raw paper text, model wire, SQLite, weights or private paths.",
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "GPU_used": false
+}

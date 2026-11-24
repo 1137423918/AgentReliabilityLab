@@ -1,0 +1,19 @@
+{
+  "protocol_sha256": "45f6f4a5ec5a46a09f24a8b04adf32660a861aac77d1e8e51989612f6a54f959",
+  "terminal": true,
+  "ready": true,
+  "phases": [
+    {
+      "name": "source-real-reading-report",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.067,
+      "peak_owned_RSS_bytes": 59801600
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 43.148,
+  "new_neural_forwards": 0,
+  "all_old_closed_budgets_and_archives_unchanged": true,
+  "source_and_runtime_unchanged": true
+}

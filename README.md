@@ -28,6 +28,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 **研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.2.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
 
+新增[阅读报告导出](docs/research-reading-report.md)：模型和MCP服务关闭后，批量整理已有回答、PDF页引用和未完成原因，生成[可阅读的记录](examples/research-reports/reading-report.md)。已用三个真实关闭运行验证，四条历史页引用回读、重复导出字节一致，新增生成/嵌入/GPU均为0；原模型两项提交通过、一项失败的结果保持不变。
+
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 
 新增[LightRAG实际维护案例](docs/lightrag-dependency-upgrade.md)：LangGraph/SQLite工作台已接入第三个项目，完成RAGAS评估依赖升级、固定库复扫及发布版/主线各自配对的21项离线测试；[正式PR #4647](https://github.com/HKUDS/LightRAG/pull/4647)开放待审，上游CI等待批准。新流程模型调用和GPU使用均为零。
