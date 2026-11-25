@@ -4,6 +4,14 @@
 
 个人主页只保留论文与项目简介；本仓库的后续材料不会自动发布到主页。
 
+| 使用目的 | 入口 | 运行条件 |
+| --- | --- | --- |
+| 查看已完成的阅读与来源核查演示 | [离线核查页](examples/research-review/source-review.html) / [使用说明](docs/research-source-review.md) | 下载HTML后在浏览器打开；无需模型或服务器，公开演示使用自有合成文本 |
+| 导入自己的资料并检索 | [0.3.0独立检索包](packages/research-library/README.md) | Linux CPU环境、本地E5权重；PDF是数字文本提取，非OCR |
+| 用本地模型阅读论文 | [阅读助手运行步骤](extras/research-assistant/README.md) | 独立模型与MCP服务；该助手的已验证安装仍用0.2.0检索wheel |
+| 审查固定依赖升级证据 | [LangGraph工作台](docs/dependency-workbench.md) | CPU确定性流程；已有模型接入结果单列 |
+| 选择简历项目 | [三项精选](portfolio/resume-shortlist-2026-11-25.md) / [两类岗位附件](portfolio/role-briefs/README.md) | 按实际承担和掌握内容使用；附件含既有结果及边界 |
+
 ## 模型研究
 
 使用固定 Qwen2.5-3B-Instruct 与 AgentRobustBench 源码，先审计训练/验证样本复用，再构建同 ID 配对数据、文本关联分组和有效监督标签预算。Full/Mixed 各实际执行 32 次 LoRA 更新、65,536 个监督标签；输入暴露与计算量并不相同。
@@ -35,6 +43,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 新增[离线阅读页](examples/research-view/README.md)：单个HTML集中查看已有回答、页引用和失败原因，可搜索、筛选、打印及下载JSON。已用四个真实关闭运行和实际浏览器验证，保留原回答与状态；日常打开不需要模型或服务，新增推理和GPU使用均为0。[桌面/手机截图与验证范围](evidence/research-view/README.md)。
 
 新增[批量资料检索](docs/research-batch.md)：跨文档填充编码批次，复用捕获版本的索引/词法统计，同题语义与混合排序共享查询向量；在完整SciFact 5,183摘要、300题上，BM25/E5/RRF的nDCG@10分别为0.6409/0.6479/0.7040。961次CPU前向全部完成、0未知，独立NIST评分复核通过；这是摘要相关性评测，不是论文问答准确率或公开BEIR榜单成绩。
+
+新增[离线原文对照与备注交付](docs/research-source-review.md)：将已有回答和历史引用原文并排显示，备注绑定回答及来源指纹，支持下载后重新导入，拒收错版本记录。真实运行的六条PDF引用已回读，10项后端控制和14项浏览器检查通过；公开页面只展示自有合成文本，不公开真实论文片段，也不冒充人工复核或新模型成绩。
 
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 
@@ -71,6 +81,7 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 | 上游 PR | 修复对象 |
 | --- | --- |
+| [DeepTutor #2930](https://github.com/HKUDS/DeepTutor/pull/2930) | 统一MCP连接与probe的分页发现，处理空中间页、过滤、游标循环、后页错误和超时 |
 | [RAGFlow #22752](https://github.com/infiniflow/ragflow/pull/22752) | 服务端关闭连接后重放CLI benchmark的JSON正文，保留迭代成功/失败与最终响应 |
 | [LightRAG #4647](https://github.com/HKUDS/LightRAG/pull/4647) | 更新评估extra的RAGAS锁定版本，固定库复扫及发布版/主线配对兼容验证 |
 | [GPT Researcher #2367](https://github.com/assafelovic/gpt-researcher/pull/2367) | 将HTTP MCP令牌转换为授权头，修复工具发现返回空列表的问题 |
@@ -95,6 +106,8 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 新增[RAGFlow CLI请求体重放](docs/ragflow-cli-body-replay.md)：原版仅在`Connection: close`场景下POST/PUT/PATCH三个子例失败；修复后对照及完整CLI范围51个顶层测试通过，原构建脚本附带的原生单元层通过。初始keep-alive复现通过结果保留，避免扩大缺陷范围。已正式提交#22752，未合并；本轮仅服务器CPU，无模型或GPU调用。
 
+新增[DeepTutor MCP工具分页发现修复](docs/deeptutor-mcp-pagination.md)：真实SDK/HTTP同组10项原版9项失败、修复全部通过；完整MCP192项及其他相关范围分别记录。#2930已正式提交、尚未合并，提交时上游Actions要求批准运行；整仓pre-commit保留原版同样存在的SVG文件尾格式失败，不宣称全部上游CI通过。
+
 ## 复查材料
 
 [简历项目精选（2026-11-25）](portfolio/resume-shortlist-2026-11-25.md) · [现有项目总结与证据](portfolio/project-summary-2026-11-24.md) · [历史详细表述](portfolio/resume-projects-2026-11-23.md) · [逐阶段记录与保留的失败](docs/project-history.md) · [两页中英介绍（2026-11-22历史快照）](portfolio/junzhe-wang-project-brief.pdf) · [快照正文与证据映射](portfolio/README.md)。
@@ -105,4 +118,4 @@ extras/mcp-evidence/.venv/bin/python -m benchmarks.mcp_evidence_server \
 
 [逐部分NLL诊断](docs/loss-parts.md)：276条已有输入的标签分区与9项服务器控制通过；831次教师前向已完成，整段与逐部分损失、参数冻结及旧账本核验通过；不计作新生成或准确率。
 
-[LangGraph依赖审查工作台](docs/dependency-workbench.md)：批量汇总固定扫描与兼容证据、SQLite断点恢复和Markdown/JSON交付。两个实际项目快照已在服务器CPU跑通，12项测试与一次跨进程SIGKILL恢复通过；本轮模型调用/GPU使用均为0，历史279项上游测试结果仅做证据接入。
+[LangGraph依赖审查工作台](docs/dependency-workbench.md)：批量汇总固定扫描与兼容证据、SQLite断点恢复和Markdown/JSON交付。首批Browser Use/FastMCP快照完成12项测试与一次跨进程SIGKILL恢复，后续接入第三个LightRAG快照，按各自证据范围报告；工作台为CPU确定性流程，历史279项上游测试结果仅做证据接入。
