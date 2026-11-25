@@ -1,0 +1,10 @@
+{
+  "relative_path": "studies/batch-recovery-stage96-20261125",
+  "manifest_sha256": "4c11788868093f4701c45192b0744040c309355de55706460ba006bbb26ba647",
+  "files": 83,
+  "bytes": 829347,
+  "both_profiles_terminal_owned_zero": true,
+  "old_closed_inputs_unchanged": true,
+  "model_weights_or_environments_duplicated": false,
+  "GPU_used": false
+}

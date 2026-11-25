@@ -316,14 +316,8 @@ def search(store, query, embedder, *, top_k=5, mode='hybrid', source_id=None):
     return ResearchSnapshot(store, embedder).search(query, top_k=top_k, mode=mode, source_id=source_id)
 
 
-def search_batch(store, requests, output, embedder, *, top_k=10, modes=('lexical', 'semantic', 'hybrid')):
-    """Capture one generation and atomically deliver a bounded JSONL query batch.
-
-    A failed batch retains its .partial file for inspection. It is not resumable;
-    existing final or partial outputs are never overwritten. Query IDs are
-    caller-provided and do not need to expose query text in the result file.
-    """
-    requests = Path(requests); output = Path(output); partial = output.with_name(output.name+'.partial')
+def load_batch_requests(requests, *, top_k=10, modes=('lexical', 'semantic', 'hybrid')):
+    requests = Path(requests)
     if requests.is_symlink(): raise ValueError('Query input cannot be a symlink')
     with requests.open('rb') as stream: raw = stream.read(1024**2+1)
     if len(raw)>1024**2: raise ValueError('Query input exceeds1MiB')
@@ -339,6 +333,18 @@ def search_batch(store, requests, output, embedder, *, top_k=10, modes=('lexical
             raise ValueError('Use a nonempty query up to2000characters')
     if not modes or len(set(modes)) != len(modes) or any(m not in ['lexical', 'semantic', 'hybrid'] for m in modes) or not 1 <= top_k <= 32:
         raise ValueError('Invalid retrieval options')
+    return raw, rows
+
+
+def search_batch(store, requests, output, embedder, *, top_k=10, modes=('lexical', 'semantic', 'hybrid')):
+    """Capture one generation and atomically deliver a bounded JSONL query batch.
+
+    A failed batch retains its .partial file for inspection. It is not resumable;
+    existing final or partial outputs are never overwritten. Query IDs are
+    caller-provided and do not need to expose query text in the result file.
+    """
+    raw, rows = load_batch_requests(requests, top_k=top_k, modes=modes)
+    output = Path(output); partial = output.with_name(output.name+'.partial')
     if any(p.exists() or p.is_symlink() for p in [output, partial]): raise FileExistsError('Use a new batch output path')
     snapshot = ResearchSnapshot(store, embedder); output.parent.mkdir(parents=True, exist_ok=True)
     with partial.open('xb') as stream:
@@ -361,17 +367,26 @@ def main(argv=None, *, embedding_observer=None):
     ingest_parser = sub.add_parser('ingest'); ingest_parser.add_argument('--manifest', type=Path, required=True)
     query_parser = sub.add_parser('search'); query_parser.add_argument('--query', required=True); query_parser.add_argument('--mode', choices=['semantic', 'lexical', 'hybrid'], default='hybrid'); query_parser.add_argument('--source'); query_parser.add_argument('--top-k', type=int, default=5)
     batch_parser = sub.add_parser('search-batch'); batch_parser.add_argument('--queries', type=Path, required=True); batch_parser.add_argument('--output', type=Path, required=True); batch_parser.add_argument('--modes', nargs='+', choices=['lexical', 'semantic', 'hybrid'], default=['lexical', 'semantic', 'hybrid']); batch_parser.add_argument('--top-k', type=int, default=10)
+    batch_parser.add_argument('--state-dir', type=Path); batch_parser.add_argument('--resume', action='store_true'); batch_parser.add_argument('--query-attempt-limit', type=int)
     read_parser = sub.add_parser('read'); read_parser.add_argument('--citation-id', required=True)
     for item in [ingest_parser, query_parser, batch_parser, read_parser]: item.add_argument('--store', type=Path, required=True)
     for item in [ingest_parser, query_parser, batch_parser]:
         item.add_argument('--model-dir', type=Path, required=True); item.add_argument('--embed-batch-size', type=int, choices=[1, 2, 4, 8, 16], default=4)
     args = parser.parse_args(argv)
+    if args.command == 'search-batch' and not args.state_dir and (args.resume or args.query_attempt_limit is not None):
+        parser.error('--resume and --query-attempt-limit require --state-dir')
     if args.command == 'read': result = citation(args.store, args.citation_id)
     else:
         from .research_embeddings import LocalE5Embedding
         model = LocalE5Embedding(args.model_dir, observer=embedding_observer, batch_size=args.embed_batch_size)
         if args.command == 'ingest': result = ingest(args.manifest, args.store, model)
-        elif args.command == 'search-batch': result = search_batch(args.store, args.queries, args.output, model, top_k=args.top_k, modes=args.modes)
+        elif args.command == 'search-batch':
+            if args.state_dir:
+                from .research_jobs import run_batch_job
+                result = run_batch_job(args.store, args.queries, args.output, model, state_dir=args.state_dir,
+                                       resume=args.resume, attempt_limit=args.query_attempt_limit,
+                                       top_k=args.top_k, modes=args.modes)
+            else: result = search_batch(args.store, args.queries, args.output, model, top_k=args.top_k, modes=args.modes)
         else: result = search(args.store, args.query, model, top_k=args.top_k, mode=args.mode, source_id=args.source)
         result['CPU_embedding_calls'] = model.counts
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,0 +1,3 @@
+{"id": "incremental_index", "query": "How is incremental document insertion handled in retrieval indexes?"}
+{"id": "graph_passage", "query": "Which components combine passage and graph information during retrieval?"}
+{"id": "return_material", "query": "What assumptions support returning summaries instead of original passages?"}

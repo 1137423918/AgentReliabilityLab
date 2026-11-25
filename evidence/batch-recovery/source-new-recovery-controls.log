@@ -1,0 +1,15 @@
+test_changed_saved_result_is_rejected_without_more_queries (test_research_jobs.JobControls.test_changed_saved_result_is_rejected_without_more_queries) ... ok
+test_failed_query_charged_but_reserved_extra_capacity_can_finish (test_research_jobs.JobControls.test_failed_query_charged_but_reserved_extra_capacity_can_finish) ... ok
+test_legacy_partial_and_symlink_controls_are_not_adopted (test_research_jobs.JobControls.test_legacy_partial_and_symlink_controls_are_not_adopted) ... ok
+test_matching_published_file_recovers_after_post_link_commit_failure (test_research_jobs.JobControls.test_matching_published_file_recovers_after_post_link_commit_failure) ... ok
+test_publication_failure_recovers_without_retrieval_and_never_clobbers (test_research_jobs.JobControls.test_publication_failure_recovers_without_retrieval_and_never_clobbers) ... ok
+test_resume_requires_opt_in_and_exact_identity_before_queries (test_research_jobs.JobControls.test_resume_requires_opt_in_and_exact_identity_before_queries) ... ok
+test_resume_skips_durable_rows_and_completed_job_is_zero_query_replay (test_research_jobs.JobControls.test_resume_skips_durable_rows_and_completed_job_is_zero_query_replay) ... ok
+test_resume_uses_captured_generation_after_active_collection_changes (test_research_jobs.JobControls.test_resume_uses_captured_generation_after_active_collection_changes) ... ok
+test_sigkill_releases_writer_lock_and_new_process_resumes (test_research_jobs.JobControls.test_sigkill_releases_writer_lock_and_new_process_resumes) ... ok
+test_unknown_attempt_stays_charged_and_fixed_budget_cannot_be_increased (test_research_jobs.JobControls.test_unknown_attempt_stays_charged_and_fixed_budget_cannot_be_increased) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 4.359s
+
+OK

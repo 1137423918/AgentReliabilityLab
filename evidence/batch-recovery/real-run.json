@@ -1,0 +1,34 @@
+{
+  "ready": true,
+  "GPU_used": false,
+  "generation_calls": 0,
+  "counts": {
+    "completed": 3
+  },
+  "query_forwards": 3,
+  "text_forwards": 0,
+  "unknown_forwards": 0,
+  "repeated_inputs": 0,
+  "first_process_SIGKILL_after_durable_query": 1,
+  "resume_new_forwards": 2,
+  "completed_replay_new_forwards": 0,
+  "batch_sha256": "62d77b6975e22eeab40e7c2566c0fd1fc1f2ff493a8bdc5a8dfc5adc342d2c1d",
+  "output_rows": 3,
+  "source_checkout_importable": false,
+  "installed_CLI_callable": true,
+  "native_console_status": true,
+  "references": {
+    "rows": 3,
+    "reference_reads": 27,
+    "unique_references": 19,
+    "all_source_excerpts_exact": true,
+    "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae"
+  },
+  "no_quality_score": true,
+  "budget_status": "CLOSED",
+  "budget_states": {
+    "completed": 3
+  },
+  "unused_reservations_retired": 0,
+  "wall_seconds": 37.225
+}

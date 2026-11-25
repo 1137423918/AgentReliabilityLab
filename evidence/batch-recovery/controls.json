@@ -1,0 +1,75 @@
+{
+  "terminal": true,
+  "protocol_sha256": "bc9513374dc888d3aafea0b21ddc7fdae5d76a411d996a6640f24936d04be28d",
+  "phases": [
+    {
+      "name": "source-new-recovery-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 7.38,
+      "peak_owned_RSS_bytes": 212664320
+    },
+    {
+      "name": "source-existing-default-batch-regression",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 2.108,
+      "peak_owned_RSS_bytes": 105250816
+    },
+    {
+      "name": "source-build-wheel",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 1.565,
+      "peak_owned_RSS_bytes": 63438848
+    }
+  ],
+  "ready": true,
+  "owned_after": 0,
+  "wall_seconds": 23.59,
+  "new_recovery_controls": 10,
+  "necessary_legacy_batch_regressions": 2,
+  "old_environment_and_closed_budgets_unchanged": true,
+  "wheel": {
+    "wheel": "agentlab_research-0.4.0-py3-none-any.whl",
+    "bytes": 23828,
+    "sha256": "89847af5955362482d4e5d765c2ec9f588e252d8fa9a0aa89db84c5982a04586",
+    "source_sha256": {
+      "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+      "research_library.py": "7fd13cefa4142d868d819671f4ea2b85478ce7fd1bc1f51118f076c3e31ab671",
+      "research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+      "research_mcp.py": "b052043e169e6d9af459ea85273550eeb6e557aab887922095f4aed95b92751d",
+      "research_intake.py": "ffca7e650d7d3f9c73d363171b3187e48ecb499492dc2f73d92fd84633b8292f",
+      "research_pdf.py": "7b1fbca4dd9b8d237abf7e317768d03e0e9bdf1a0efe378061adea842c45e938",
+      "research_cli.py": "36d68ebdca9979224dade8164dc5f2a1eaece1f939b5271dd38fb31add7b288b",
+      "research_jobs.py": "953b3031daf513498f38b8a821767c91ddec685840ba60deb420d2a41e24984a",
+      "research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61"
+    },
+    "all_canonical_module_bytes_identical": true,
+    "requires_dist": [
+      "llama-index-core==0.14.26",
+      "torch==2.6.0",
+      "transformers==4.57.6",
+      "numpy==2.2.6",
+      "mcp==2.3.0",
+      "httpx2==2.16.2",
+      "pypdf==7.1.1"
+    ],
+    "entry_points": "[console_scripts]\nagentlab-research = agentlab_research.research_cli:main\n",
+    "installed_or_executed": false
+  },
+  "model_calls": 0,
+  "embedding_forwards": 0,
+  "GPU_used": false,
+  "CPU_scope": {
+    "selected_cpus": [
+      27,
+      28
+    ],
+    "nice": 19,
+    "tree_RSS_cap_GiB": 4,
+    "AS_cap_GiB": 16,
+    "admission_GiB": 32,
+    "floor_GiB": 16
+  }
+}

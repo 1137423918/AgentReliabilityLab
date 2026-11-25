@@ -1,0 +1,7 @@
+test_batch_prevalidates_ids_and_never_overwrites_complete_output (test_research_snapshot.SnapshotControls.test_batch_prevalidates_ids_and_never_overwrites_complete_output) ... ok
+test_failed_batch_retains_partial_records_without_publishing_final (test_research_snapshot.SnapshotControls.test_failed_batch_retains_partial_records_without_publishing_final) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.089s
+
+OK

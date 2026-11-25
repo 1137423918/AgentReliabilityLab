@@ -1,0 +1,63 @@
+{
+  "wheel": {
+    "wheel": "agentlab_research-0.4.0-py3-none-any.whl",
+    "bytes": 23828,
+    "sha256": "89847af5955362482d4e5d765c2ec9f588e252d8fa9a0aa89db84c5982a04586",
+    "source_sha256": {
+      "storage.py": "cacf1836b6a768714d385303cf514965eb6fa525bd6187c1fe275d4b38445963",
+      "research_library.py": "7fd13cefa4142d868d819671f4ea2b85478ce7fd1bc1f51118f076c3e31ab671",
+      "research_embeddings.py": "c72972c54269fedd3fdd30eff4639c506af530d65d2395a314b9b6afedd57bb4",
+      "research_mcp.py": "b052043e169e6d9af459ea85273550eeb6e557aab887922095f4aed95b92751d",
+      "research_intake.py": "ffca7e650d7d3f9c73d363171b3187e48ecb499492dc2f73d92fd84633b8292f",
+      "research_pdf.py": "7b1fbca4dd9b8d237abf7e317768d03e0e9bdf1a0efe378061adea842c45e938",
+      "research_cli.py": "36d68ebdca9979224dade8164dc5f2a1eaece1f939b5271dd38fb31add7b288b",
+      "research_jobs.py": "953b3031daf513498f38b8a821767c91ddec685840ba60deb420d2a41e24984a",
+      "research_model_assets.json": "b635ecd31e0eb0db868648824b887a7a50ea9150f6377342ed8178af06c32f61"
+    },
+    "all_canonical_module_bytes_identical": true,
+    "requires_dist": [
+      "llama-index-core==0.14.26",
+      "torch==2.6.0",
+      "transformers==4.57.6",
+      "numpy==2.2.6",
+      "mcp==2.3.0",
+      "httpx2==2.16.2",
+      "pypdf==7.1.1"
+    ],
+    "entry_points": "[console_scripts]\nagentlab-research = agentlab_research.research_cli:main\n",
+    "installed_or_executed": false
+  },
+  "runtime_lock_sha256": "d0b51ee5bf4e59ca3785a10588846b3d1dda80d82ffcaa4c96d20ad38f55dba5",
+  "model_manifest_sha256": "f65e226dabffc83dfa6107df5886737c8313572ae62bbdcc3f42e5b43825c487",
+  "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+  "queries": [
+    {
+      "id": "incremental_index",
+      "query": "How is incremental document insertion handled in retrieval indexes?"
+    },
+    {
+      "id": "graph_passage",
+      "query": "Which components combine passage and graph information during retrieval?"
+    },
+    {
+      "id": "return_material",
+      "query": "What assumptions support returning summaries instead of original passages?"
+    }
+  ],
+  "query_input_sha256": "8fbf78af732614911111caabd20bb6e0838b3c2b28e3e2476db9c34066a7c5db",
+  "caps": {
+    "query_forwards": 3,
+    "text_forwards": 0,
+    "generation_requests": 0,
+    "query_attempts": 3
+  },
+  "one_SIGKILL_after_first_durable_query": true,
+  "no_warmup_or_quality_retries": true,
+  "unknown_attempts_charged": true,
+  "all_unused_retired_on_close": true,
+  "GPU_used": false,
+  "source_private_plan_sha256": "25b7c8f455354504f67fca58d1daaa30ad27396b9421d2059f08f2d1aedfeeed",
+  "private_paths_omitted": true,
+  "model_provenance": "../research-library/model-assets.json",
+  "source_collection_provenance": "../frontier-reading/ingest.json"
+}

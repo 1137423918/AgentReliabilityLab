@@ -23,7 +23,7 @@ def main():
     output.mkdir(parents=True, exist_ok=True)
     if list(output.glob("*.whl")):
         raise RuntimeError("Use a new output directory; do not overwrite a wheel")
-    modules = ["storage.py", "research_library.py", "research_embeddings.py", "research_mcp.py", "research_intake.py", "research_pdf.py", "research_cli.py", "research_model_assets.json"]
+    modules = ["storage.py", "research_library.py", "research_embeddings.py", "research_mcp.py", "research_intake.py", "research_pdf.py", "research_cli.py", "research_jobs.py", "research_model_assets.json"]
     with tempfile.TemporaryDirectory(prefix="agentlab-research-build-") as directory:
         staging = Path(directory)
         source = staging / "src/agentlab_research"
@@ -38,7 +38,7 @@ def main():
             [sys.executable, "-c", "import sys; from setuptools.build_meta import build_wheel; build_wheel(sys.argv[1])", str(output)],
             cwd=staging, env=env, check=True,
         )
-    wheels = list(output.glob("agentlab_research-0.3.0-*.whl"))
+    wheels = list(output.glob("agentlab_research-0.4.0-*.whl"))
     if len(wheels) != 1:
         raise RuntimeError("Expected one research wheel")
     wheel = wheels[0]
@@ -49,8 +49,8 @@ def main():
             if archive.read("agentlab_research/" + name) != raw:
                 raise RuntimeError("Wheel source differs: " + name)
             sources[name] = hashlib.sha256(raw).hexdigest()
-        metadata = BytesParser().parsebytes(archive.read("agentlab_research-0.3.0.dist-info/METADATA"))
-        entry_points = archive.read("agentlab_research-0.3.0.dist-info/entry_points.txt").decode()
+        metadata = BytesParser().parsebytes(archive.read("agentlab_research-0.4.0.dist-info/METADATA"))
+        entry_points = archive.read("agentlab_research-0.4.0.dist-info/entry_points.txt").decode()
     receipt = {
         "wheel": wheel.name, "bytes": wheel.stat().st_size,
         "sha256": hashlib.sha256(wheel.read_bytes()).hexdigest(),

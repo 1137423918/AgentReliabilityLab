@@ -7,7 +7,7 @@
 | 使用目的 | 入口 | 运行条件 |
 | --- | --- | --- |
 | 查看已完成的阅读与来源核查演示 | [离线核查页](examples/research-review/source-review.html) / [使用说明](docs/research-source-review.md) | 下载HTML后在浏览器打开；无需模型或服务器，公开演示使用自有合成文本 |
-| 导入自己的资料并检索 | [0.3.0独立检索包](packages/research-library/README.md) | Linux CPU环境、本地E5权重；PDF是数字文本提取，非OCR |
+| 导入自己的资料并检索 | [0.4.0独立检索包](packages/research-library/README.md) | Linux CPU环境、本地E5权重；PDF是数字文本提取，非OCR |
 | 用本地模型阅读论文 | [阅读助手运行步骤](extras/research-assistant/README.md) | 独立模型与MCP服务；该助手的已验证安装仍用0.2.0检索wheel |
 | 审查固定依赖升级证据 | [LangGraph工作台](docs/dependency-workbench.md) | CPU确定性流程；已有模型接入结果单列 |
 | 选择简历项目 | [三项精选](portfolio/resume-shortlist-2026-11-25.md) / [两类岗位附件](portfolio/role-briefs/README.md) | 按实际承担和掌握内容使用；附件含既有结果及边界 |
@@ -34,7 +34,7 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 
 ## Agent 应用
 
-**研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.3.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
+**研究资料检索与阅读助手**：[检索服务](docs/research-library.md)基于LlamaIndex与CPU多语E5，支持资料目录导入、文档增量索引、原文/历史版本引用和三个MCP工具，提供已验证的[独立CPU启动包](artifacts/agentlab-research-0.4.0-starter.zip)。[全文按页检索](docs/paper-library.md)实际接入LightRAG/MiniRAG共32页，保留原PDF哈希、物理页码及历史引用；[新增阅读助手](docs/research-assistant.md)通过LangGraph/SQLite连接本地4B模型与真实MCP检索、原文读取及回答提交，使用持久请求额度和回复缓存支持恢复。引用读取契约不等于陈述正确，真实模型结果单列；旧固定检索诊断未显示混合排序的覆盖收益。
 
 新增[阅读报告导出](docs/research-reading-report.md)：模型和MCP服务关闭后，批量整理已有回答、PDF页引用和未完成原因，生成[可阅读的记录](examples/research-reports/reading-report.md)。已用三个真实关闭运行验证，四条历史页引用回读、重复导出字节一致，新增生成/嵌入/GPU均为0；原模型两项提交通过、一项失败的结果保持不变。
 
@@ -45,6 +45,8 @@ Full 原训练的最终核验中断，保存检查点的独立回放通过，原
 新增[批量资料检索](docs/research-batch.md)：跨文档填充编码批次，复用捕获版本的索引/词法统计，同题语义与混合排序共享查询向量；在完整SciFact 5,183摘要、300题上，BM25/E5/RRF的nDCG@10分别为0.6409/0.6479/0.7040。961次CPU前向全部完成、0未知，独立NIST评分复核通过；这是摘要相关性评测，不是论文问答准确率或公开BEIR榜单成绩。
 
 新增[离线原文对照与备注交付](docs/research-source-review.md)：将已有回答和历史引用原文并排显示，备注绑定回答及来源指纹，支持下载后重新导入，拒收错版本记录。真实运行的六条PDF引用已回读，10项后端控制和14项浏览器检查通过；公开页面只展示自有合成文本，不公开真实论文片段，也不冒充人工复核或新模型成绩。
+
+新增[可恢复批量检索任务](docs/research-batch-recovery.md)：逐题保存LlamaIndex检索结果，恢复沿用原资料版本并跳过已完成题目；失败/未知尝试继续扣固定额度，提供无需模型的状态命令。0.4.0独立包的真实CPU三题验证在第一题提交后强杀，新进程只计算余下两题，完成后重放零前向；原SciFact及生成结果不变。[执行证据](evidence/batch-recovery/README.md)。
 
 **真实依赖升级审查 Agent**：[使用与结果](docs/dependency-upgrade.md)。固定 Browser Use / FastMCP 发布源码，执行离线漏洞扫描、保持声明的真实解析和候选复扫，再通过 MCP 核对八项事实。两个项目分别得到“原精确版本未升级”和“Authlib 升级候选可进入兼容性测试”的结果。9项单元与4场真实MCP脚本控制通过；真实9B完成两题、通过一题，失败原因和6次请求账本保留。
 

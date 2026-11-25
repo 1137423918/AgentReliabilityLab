@@ -1,0 +1,14 @@
+{
+  "job_id": "8090fef9ef6b3934236e51de2a48683647761ae88908181a1c2e75f45f1a19ab",
+  "generation": "47ac657d3dc7d3476ad3c9ef71fe399e61f86e47347a6d155cf44385bc7769ae",
+  "status": "published",
+  "queries": 3,
+  "completed_queries": 3,
+  "attempt_limit": 3,
+  "attempts": {
+    "completed": 3
+  },
+  "attempts_remaining": 0,
+  "output_sha256": "62d77b6975e22eeab40e7c2566c0fd1fc1f2ff493a8bdc5a8dfc5adc342d2c1d",
+  "generated_answers": false
+}

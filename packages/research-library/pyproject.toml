@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "agentlab-research"
-version = "0.3.0"
+version = "0.4.0"
 description = "Local CPU research retrieval, incremental LlamaIndex and versioned MCP citations"
 requires-python = ">=3.11"
 dependencies = ["llama-index-core==0.14.26", "torch==2.6.0", "transformers==4.57.6", "numpy==2.2.6", "mcp==2.3.0", "httpx2==2.16.2", "pypdf==7.1.1"]

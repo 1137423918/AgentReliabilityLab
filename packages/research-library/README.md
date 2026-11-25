@@ -9,7 +9,7 @@ From the repository root, or a starter archive with the same relative layout:
 ```sh
 uv sync --project extras/research-library --frozen --no-install-project --no-default-groups
 uv pip install --python extras/research-library/.venv/bin/python --no-deps \
-  artifacts/agentlab_research-0.3.0-py3-none-any.whl
+  artifacts/agentlab_research-0.4.0-py3-none-any.whl
 uv pip check --python extras/research-library/.venv/bin/python
 extras/research-library/.venv/bin/agentlab-research --help
 ```
@@ -75,6 +75,31 @@ copied distribution metadata. Its 90 shared third-party dependency versions
 match the retrieval lock; the lockfiles themselves differ. This is not another
 clean dependency reinstall. Source controls and actual
 model evidence are scoped separately in [the batch guide](../../docs/research-batch.md).
+
+## Recoverable batch jobs in 0.4.0
+
+Use the same `search-batch` command with `--state-dir /tmp/new-batch-job` to
+commit each query result to local SQLite. Resume with the identical command
+plus `--resume`; completed queries are reused and the original index generation
+is reopened even if the active collection has changed. Inputs, output path,
+model, selected runtime versions, source code and retrieval options are bound
+to the job. Changed identities require a new job directory.
+
+`--query-attempt-limit` is fixed at creation, defaults to the query count and
+is capped at1024. Reservations are durable before retrieval; failed and unknown
+attempts stay charged. Reserve any desired interruption margin up front.
+`batch-status --state-dir /tmp/new-batch-job` reads progress without loading
+a model. Legacy `.partial` files are not resumable jobs, and default batches
+retain their original one-shot behavior. See [commands and recovery limits](../../docs/research-batch-recovery.md).
+
+The0.4.0 wheel adds the canonical `research_jobs.py` module; all9 module/data
+files matched the server-built wheel. Ten new actual-LlamaIndex fixture
+controls and two related default-batch regressions passed. A separate installed
+CPU run used three new E5 query forwards on the retained paper index: one
+committed result before SIGKILL, two remaining forwards after restart, zero on
+completed replay. Its namespace reuses the prior frozen dependencies through
+a read-only module view and copied distribution metadata; this was not another
+clean reinstall or a rerun of the0.3.0 retrieval benchmark. [Evidence](../../evidence/batch-recovery/README.md).
 
 ## Full PDF papers with page citations
 

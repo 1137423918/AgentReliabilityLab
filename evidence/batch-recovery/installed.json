@@ -1,0 +1,35 @@
+{
+  "ready": true,
+  "namespace": {
+    "site": "<isolated-root>/installed/env/lib/python3.11/site-packages",
+    "python_prefix": "<isolated-root>/installed/env",
+    "project_version": "0.4.0",
+    "source_checkout_importable": false,
+    "versions": {
+      "torch": "2.6.0+cpu",
+      "transformers": "4.57.6",
+      "llama-index-core": "0.14.26",
+      "numpy": "2.2.6",
+      "mcp": "2.3.0",
+      "httpx2": "2.16.2",
+      "pypdf": "7.1.1"
+    }
+  },
+  "wheel_sha256": "89847af5955362482d4e5d765c2ec9f588e252d8fa9a0aa89db84c5982a04586",
+  "canonical_modules_verified": 9,
+  "dependency_view_links": 232,
+  "excluded_old_project_and_bootstrap_files": [
+    "distutils-precedence.pth",
+    "agentlab_research-0.2.0.dist-info",
+    "__pycache__",
+    "agentlab_research"
+  ],
+  "no_install_into_prior_environment": true,
+  "dependency_reinstallation_performed": false,
+  "dependency_view": "Copied distribution metadata plus module symlinks to the existing frozen dependency runtime; no original files changed. This is not a clean dependency reinstall.",
+  "prior_dependency_metadata_unchanged": true,
+  "no_model_forwards": true,
+  "GPU_used": false,
+  "python": "<isolated-root>/installed/env/bin/python",
+  "entry": "<isolated-root>/installed/env/bin/agentlab-research"
+}
