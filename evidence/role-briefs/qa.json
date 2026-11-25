@@ -1,0 +1,127 @@
+{
+  "date": "2026-11-25",
+  "source_evidence_commit": "c045ca766c379a1a81447b67d75e619ad88517d3",
+  "ready": true,
+  "PDFs": [
+    {
+      "pages": 1,
+      "A4": true,
+      "source_phrases_preserved": 30,
+      "links_verified": 9,
+      "expected_unique_links": 9,
+      "extracted_text_sha256": "4d5ff054f679195585237ff487f64b4d3a5ceaa19587934ee05f477d38258c9f",
+      "filename": "algorithm-project-experience-2026-11-25.pdf",
+      "sha256": "463d7d1eabbb8d4029f04f93e1a3452079e7f6025ec3721abc8a890924d81cad",
+      "bytes": 503942,
+      "role": "algorithm",
+      "html_sha256": "70b5e8b20e1c58a241a19acfb8010ed2fb171ff601f62a062dc719b2a4d1620e",
+      "font_resources": 123,
+      "embedded_glyph_programs": 539,
+      "embedded_glyph_bytes": 567727,
+      "all_used_fonts_have_ToUnicode": true
+    },
+    {
+      "pages": 1,
+      "A4": true,
+      "source_phrases_preserved": 30,
+      "links_verified": 9,
+      "expected_unique_links": 9,
+      "extracted_text_sha256": "10f0984ec040bc98245b25a841e0beca99034134892f4bb797ce89b676620bf5",
+      "filename": "agent-app-project-experience-2026-11-25.pdf",
+      "sha256": "0db67fb1097005483d59c4ed4f0d81f936f4a2979f0856d39e311d21610e6d01",
+      "bytes": 517145,
+      "role": "agent-app",
+      "html_sha256": "bf6163c306dcee5ae629c789bbc271a1160268795754fe8ca1332fa4e6db2128",
+      "font_resources": 127,
+      "embedded_glyph_programs": 557,
+      "embedded_glyph_bytes": 580633,
+      "all_used_fonts_have_ToUnicode": true
+    }
+  ],
+  "two_independent_text_engines": "pypdf7.1.1 and PyMuPDF1.26.6",
+  "required_source_phrases_per_document": 30,
+  "Poppler": "21.01.0 / 150 dpi",
+  "PyMuPDF": "1.26.6 / 150 dpi",
+  "visual_review": [
+    {
+      "engine": "poppler",
+      "image": "algorithm-project-experience-2026-11-25.png",
+      "sha256": "92c47b74f2c0f683abda8258779f388d293840fe0499ea37606b35a791056c30",
+      "visually_reviewed": true,
+      "findings": "Readable Chinese and Latin text; headings, complete body, links, footer and A4 margins checked; no clipping, overlap or missing glyphs observed."
+    },
+    {
+      "engine": "poppler",
+      "image": "agent-app-project-experience-2026-11-25.png",
+      "sha256": "5a1f5cea7f458d06ed95b39a0a806c2f60c60747189ba330e71648603aa8b903",
+      "visually_reviewed": true,
+      "findings": "Readable Chinese and Latin text; headings, complete body, links, footer and A4 margins checked; no clipping, overlap or missing glyphs observed."
+    },
+    {
+      "engine": "pymupdf",
+      "image": "algorithm-project-experience-2026-11-25.png",
+      "sha256": "3ae4e69f7657519e2190a5e8321d7ad34f1efc1c5240133e764fea0d65508f7f",
+      "visually_reviewed": true,
+      "findings": "Readable Chinese and Latin text; headings, complete body, links, footer and A4 margins checked; no clipping, overlap or missing glyphs observed."
+    },
+    {
+      "engine": "pymupdf",
+      "image": "agent-app-project-experience-2026-11-25.png",
+      "sha256": "4c86043395832c5abfedf836b94c658f1d83b8f236c084658dc031c8225aeab5",
+      "visually_reviewed": true,
+      "findings": "Readable Chinese and Latin text; headings, complete body, links, footer and A4 margins checked; no clipping, overlap or missing glyphs observed."
+    }
+  ],
+  "font": {
+    "ready": true,
+    "source_font_sha256": "2c76254f6fc379fddfce0a7e84fb5385bb135d3e399294f6eeb6680d0365b74b",
+    "derived_font_sha256": "be7954a150832885d239098e00d32aaa5a62c59cd30091c6a686c8188ea57a86",
+    "fonttools": "4.61.1",
+    "retain_gids": true,
+    "renamed_private_face": "Agent Lab Resume CJK",
+    "Unicode_characters": 417,
+    "needed_characters_covered": 416,
+    "remaining_glyph_Unicode_aliases": [],
+    "original_font_unchanged": true,
+    "font_file_publicly_distributed": false
+  },
+  "server_execution": true,
+  "final_profile_seconds": 19.845,
+  "owned_processes_after": 0,
+  "same_editable_HTML_and_PDF_content": true,
+  "model_calls": 0,
+  "embedding_forwards": 0,
+  "GPU_used": false,
+  "homepage_updated": false,
+  "prior_attempts": [
+    {
+      "profile": "intake-v1",
+      "status": "READY / dependency probe; runtime initially incomplete"
+    },
+    {
+      "profile": "completion-v1",
+      "status": "FAILED / additional native dependency discovered; preserved"
+    },
+    {
+      "profile": "completion-v2",
+      "status": "READY / private renderer closure complete"
+    },
+    {
+      "profile": "fonttools-v1",
+      "status": "READY / new dedicated environment"
+    },
+    {
+      "profile": "documents-v1",
+      "status": "FAILED / ambiguous original CJK Unicode aliases; preserved"
+    },
+    {
+      "profile": "documents-v2",
+      "status": "FAILED / verifier assumed FontFile instead of embedded Type3 glyph programs; preserved"
+    },
+    {
+      "profile": "documents-v3",
+      "status": "READY / reused exact completed HTML, derived font and browser output; full text/URI/font and two renderers passed"
+    }
+  ],
+  "bootstrap_path_collision": "First v2 launcher stopped before controller execution because output path still named v1; corrected launcher only. Existing v1 remained unchanged."
+}

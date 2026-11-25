@@ -1,0 +1,18 @@
+{
+  "content_sha256": "1da30dc1b5ee64babbdd3b81be059b3909b386e5529f03cdbc4b649d7563b3b5",
+  "evidence_map_sha256": "ce7b2ad8ebc15b2dadaad8834978d6d98787a19eb36e9670bf1e3254264991a9",
+  "files": {
+    "algorithm-project-experience-2026-11-25.html": {
+      "sha256": "70b5e8b20e1c58a241a19acfb8010ed2fb171ff601f62a062dc719b2a4d1620e",
+      "bytes": 6900,
+      "role": "algorithm"
+    },
+    "agent-app-project-experience-2026-11-25.html": {
+      "sha256": "bf6163c306dcee5ae629c789bbc271a1160268795754fe8ca1332fa4e6db2128",
+      "bytes": 7109,
+      "role": "agent-app"
+    }
+  },
+  "source_evidence_commit": "c045ca766c379a1a81447b67d75e619ad88517d3",
+  "document_only_no_experiments": true
+}

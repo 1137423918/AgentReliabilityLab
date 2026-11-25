@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "source_evidence_commit": "c045ca766c379a1a81447b67d75e619ad88517d3",
+  "files": {
+    "portfolio/citation.bib": {
+      "sha256": "61237fc1fe936261c340860e844636e76a4563ceeed0818e6d89b359c1c945ff",
+      "bytes": 372,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/portfolio/citation.bib"
+    },
+    "docs/training-alignment.md": {
+      "sha256": "ed8316448e3b411fdb5d5f2e3121f9ad20e2ad5578bfb7c080e6b167875fe976",
+      "bytes": 4188,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/training-alignment.md"
+    },
+    "docs/training-data.md": {
+      "sha256": "4b2ad97fb3df1147cd5c8eecbb09304137980420f13bcfa7d53811223896fb3f",
+      "bytes": 5222,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/training-data.md"
+    },
+    "docs/fixed-reason-ablation.md": {
+      "sha256": "bef233fe2f8a1586db737378f725a75b83ee9042c9da44af9df9658581bfe44d",
+      "bytes": 4999,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/fixed-reason-ablation.md"
+    },
+    "docs/bfcl-transfer-generation.md": {
+      "sha256": "e346831a8633b40e8289554505b9f00663db31abbedf3dfd533c0731e644e06c",
+      "bytes": 6648,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/bfcl-transfer-generation.md"
+    },
+    "evidence/bfcl-transfer-generation/scoring/results/report.json": {
+      "sha256": "7f02cc847a760d6bb450e700cc4aba3ee8b2fb4207787cb47a11a6654a5e491e",
+      "bytes": 13149,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/bfcl-transfer-generation/scoring/results/report.json"
+    },
+    "docs/loss-parts.md": {
+      "sha256": "56b66caa40deb22324def713acbafdd3014f5dd9c9a17ebd759bd76f7df44051",
+      "bytes": 6891,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/loss-parts.md"
+    },
+    "docs/research-batch.md": {
+      "sha256": "0d70ccb42f3363e7fb78ed7a02bef86579bf0c1ef2ebf8a8538f24b4c710ef17",
+      "bytes": 4886,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-batch.md"
+    },
+    "evidence/research-batch/metrics.json": {
+      "sha256": "f4ae90c8b8d896ca4ed26ca7b329d561138a1fd626b3bd66d63b5982c8bfb0b8",
+      "bytes": 481182,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-batch/metrics.json"
+    },
+    "evidence/research-batch/intake-result.json": {
+      "sha256": "59daae81d207ada0379933775fb15259042f4fd5b637f5a974cccc8865e9b694",
+      "bytes": 1463,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-batch/intake-result.json"
+    },
+    "evidence/research-batch/README.md": {
+      "sha256": "c25cab5eb2f59ed6303b462f406b6a9f2e2dba3d0eeac9e53a65fa5d8dbed8d0",
+      "bytes": 7190,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-batch/README.md"
+    },
+    "evidence/research-batch/trec-verification.json": {
+      "sha256": "a01fb91f45d2118df2d9b2cd74ce90f3f6c3b56feb3d6af71f8a0df838c687b1",
+      "bytes": 2262,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-batch/trec-verification.json"
+    },
+    "docs/frontier-reading.md": {
+      "sha256": "0aea7b35142c8a509a16775b2738c607b56f14ade8ec1c2167115ef48096155d",
+      "bytes": 3341,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/frontier-reading.md"
+    },
+    "evidence/research-review/private-archive-receipt.json": {
+      "sha256": "dafadc0b0f1d8a31bc584bc35f189618392a48f180dd564011254c8ab264cb90",
+      "bytes": 743,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-review/private-archive-receipt.json"
+    },
+    "docs/research-source-review.md": {
+      "sha256": "c3ca0bf3b4b5e08924a86be4ee559482428bd8753b5b0914f2ca3fbb619d0382",
+      "bytes": 4769,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-source-review.md"
+    },
+    "docs/research-assistant.md": {
+      "sha256": "b40b7d250e0b38ee443639f8df69c724e820b8bc077203fd1c326b3726fb6da3",
+      "bytes": 8289,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-assistant.md"
+    },
+    "docs/dependency-upgrade.md": {
+      "sha256": "08efe024e14f8155356d9b51df31940f26fd0966fb56f962068789ed61c972f3",
+      "bytes": 5094,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/dependency-upgrade.md"
+    },
+    "docs/dependency-workbench.md": {
+      "sha256": "9523989f5cdaa676ca443eaa9ec387382d5ef6888c5d41e5176606503a5b3bfe",
+      "bytes": 5031,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/dependency-workbench.md"
+    },
+    "evidence/dependency-workbench/README.md": {
+      "sha256": "a90674c31e969801769ca5bff7be5f757d6bf8142aa2266f46ce6c0f1225209c",
+      "bytes": 2615,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/dependency-workbench/README.md"
+    },
+    "docs/lightrag-dependency-upgrade.md": {
+      "sha256": "ef8d1eb9dec95d50a142ea3abb63c3967cee64bf9b4ddd917ec8d5a090f9935e",
+      "bytes": 5164,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/lightrag-dependency-upgrade.md"
+    },
+    "docs/deeptutor-mcp-pagination.md": {
+      "sha256": "0f80396030016a4084f960d97869602fdebe725db798403bfeb2d25236b8449f",
+      "bytes": 1682,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/deeptutor-mcp-pagination.md"
+    },
+    "evidence/deeptutor-mcp-pagination/validation.json": {
+      "sha256": "a422aad0f5963b3cd1bdef59be88339b699cb786553a67f670c39c9d9b0c0e8a",
+      "bytes": 56674,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/deeptutor-mcp-pagination/validation.json"
+    },
+    "evidence/deeptutor-mcp-pagination/pr-submission.json": {
+      "sha256": "4f5621f703f514387e38e7438329bf7bc0e17df06c6acff60d7794e396ce9bf6",
+      "bytes": 1041,
+      "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/deeptutor-mcp-pagination/pr-submission.json"
+    }
+  },
+  "claims": {
+    "paper": {
+      "sources": [
+        "portfolio/citation.bib"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "mask-audit": {
+      "sources": [
+        "docs/training-alignment.md",
+        "docs/training-data.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "paired-training": {
+      "sources": [
+        "docs/fixed-reason-ablation.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "generation750": {
+      "sources": [
+        "docs/bfcl-transfer-generation.md",
+        "evidence/bfcl-transfer-generation/scoring/results/report.json"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "teacher831": {
+      "sources": [
+        "docs/loss-parts.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "retrieval-batch": {
+      "sources": [
+        "docs/research-batch.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "scifact": {
+      "sources": [
+        "evidence/research-batch/metrics.json",
+        "evidence/research-batch/intake-result.json",
+        "evidence/research-batch/README.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "nist-reference": {
+      "sources": [
+        "evidence/research-batch/trec-verification.json"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "three-papers": {
+      "sources": [
+        "docs/frontier-reading.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "source-review": {
+      "sources": [
+        "evidence/research-review/private-archive-receipt.json",
+        "docs/research-source-review.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "assistant-workflow": {
+      "sources": [
+        "docs/research-assistant.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "dependency-scans": {
+      "sources": [
+        "docs/dependency-upgrade.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "dependency-workbench": {
+      "sources": [
+        "docs/dependency-workbench.md",
+        "evidence/dependency-workbench/README.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "lightrag-pr": {
+      "sources": [
+        "docs/lightrag-dependency-upgrade.md"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    },
+    "deeptutor-pr": {
+      "sources": [
+        "docs/deeptutor-mcp-pagination.md",
+        "evidence/deeptutor-mcp-pagination/validation.json",
+        "evidence/deeptutor-mcp-pagination/pr-submission.json"
+      ],
+      "verification": "Source-bound editorial claim; numerical facts checked against frozen published reports, not a new model result."
+    }
+  },
+  "PR_snapshot": {
+    "observed_utc": "2026-11-25T00:12:57.134769+00:00",
+    "repo": "HKUDS/DeepTutor",
+    "number": 2930,
+    "state": "OPEN",
+    "draft": false,
+    "head": "be11576d26d0ccdc59130cba1c69857d56756a95",
+    "mergedAt": null
+  },
+  "numerical_checks": {
+    "queries": 300,
+    "qrels": 339,
+    "ndcg10_BM25_E5_RRF": [
+      0.6409,
+      0.6479,
+      0.704
+    ],
+    "NIST_values": 18060
+  },
+  "no_new_experiments_or_model_quality_claims": true
+}

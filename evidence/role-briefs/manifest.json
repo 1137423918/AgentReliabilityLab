@@ -1,0 +1,69 @@
+{
+  "files": {
+    "output/pdf/algorithm-project-experience-2026-11-25.pdf": {
+      "sha256": "463d7d1eabbb8d4029f04f93e1a3452079e7f6025ec3721abc8a890924d81cad",
+      "bytes": 503942
+    },
+    "output/pdf/agent-app-project-experience-2026-11-25.pdf": {
+      "sha256": "0db67fb1097005483d59c4ed4f0d81f936f4a2979f0856d39e311d21610e6d01",
+      "bytes": 517145
+    },
+    "portfolio/role-briefs/evidence.json": {
+      "sha256": "ce7b2ad8ebc15b2dadaad8834978d6d98787a19eb36e9670bf1e3254264991a9",
+      "bytes": 11493
+    },
+    "portfolio/role-briefs/content.json": {
+      "sha256": "1da30dc1b5ee64babbdd3b81be059b3909b386e5529f03cdbc4b649d7563b3b5",
+      "bytes": 10355
+    },
+    "portfolio/role-briefs/build_role_briefs.py": {
+      "sha256": "c9c91529d1242838d7cd8aa7c97f7f2b807e6a158afa1a9fabe164a0e805693b",
+      "bytes": 7639
+    },
+    "portfolio/role-briefs/render_role_briefs.py": {
+      "sha256": "ad1b10c525c7785f194f2a0d34976ef982832b0c4d09df455d779aadd40ddafa",
+      "bytes": 2677
+    },
+    "portfolio/role-briefs/verify_role_briefs.py": {
+      "sha256": "b435bea19bf81cc6f703fa690fdd9cb3df43fc0d5b492e7dd3b60a34e274735a",
+      "bytes": 4531
+    },
+    "portfolio/role-briefs/inspect_role_briefs.py": {
+      "sha256": "f451c260e00ab94a3f2fc0e204a51e0751942014ad7dc7dc99dd0f5136777de9",
+      "bytes": 1964
+    },
+    "portfolio/role-briefs/agent-app-project-experience-2026-11-25.html": {
+      "sha256": "bf6163c306dcee5ae629c789bbc271a1160268795754fe8ca1332fa4e6db2128",
+      "bytes": 7109
+    },
+    "portfolio/role-briefs/README.md": {
+      "sha256": "4d7ef1cd9649a2e1dfa91c9ceb8b1f74a6e85f0c41f25e011c4094909138ad30",
+      "bytes": 3148
+    },
+    "portfolio/role-briefs/brief_contract.py": {
+      "sha256": "9282bac1ad53ff4339d23849d04ab008e2497c20a2380614b5722131703eae76",
+      "bytes": 1090
+    },
+    "portfolio/role-briefs/prepare_font.py": {
+      "sha256": "5d7efc5e9233145060259779e8e729ff93129bc817773844aa0231aacecb4fcc",
+      "bytes": 3493
+    },
+    "portfolio/role-briefs/algorithm-project-experience-2026-11-25.html": {
+      "sha256": "70b5e8b20e1c58a241a19acfb8010ed2fb171ff601f62a062dc719b2a4d1620e",
+      "bytes": 6900
+    },
+    "evidence/role-briefs/qa.json": {
+      "sha256": "ef36ec75e02ee34e2a7bd1cde05b44403f1147e7b0722f8b4c1dbddfc3324a88",
+      "bytes": 5102
+    },
+    "evidence/role-briefs/html-build.json": {
+      "sha256": "8a00ac7edd8e59777e86595b1d95419820e4d28543d385d13ba7cf9896426a48",
+      "bytes": 697
+    },
+    "evidence/role-briefs/README.md": {
+      "sha256": "e4f9f23e8ac229dc544eace65078969ed223f3f867530daf20e5fac2585704cf",
+      "bytes": 1182
+    }
+  },
+  "date": "2026-11-25"
+}

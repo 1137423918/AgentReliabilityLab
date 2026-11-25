@@ -1,0 +1,228 @@
+{
+  "version": 1,
+  "name": "Junzhe Wang",
+  "date": "2026-11-25",
+  "source_evidence_commit": "c045ca766c379a1a81447b67d75e619ad88517d3",
+  "pr_snapshot": "2026-11-25 08:12 (UTC+8)",
+  "github": "https://github.com/1137423918",
+  "project_url": "https://github.com/1137423918/AgentReliabilityLab",
+  "paper": {
+    "label": "第一作者论文",
+    "title": "LS-DETR: Lightweight Transformer for Object Detection in Forward-Looking Sonar Images",
+    "detail": "IEEE Geoscience and Remote Sensing Letters, vol. 22, 2025 | 前视声纳图像轻量化目标检测",
+    "url": "https://doi.org/10.1109/LGRS.2025.3575615",
+    "doi": "10.1109/LGRS.2025.3575615",
+    "claims": [
+      "paper"
+    ]
+  },
+  "footer": "同一 Agent Reliability Lab 的不同模块。Codex 辅助实现与验证；按实际承担与掌握内容使用。",
+  "roles": [
+    {
+      "id": "algorithm",
+      "filename": "algorithm-project-experience-2026-11-25",
+      "heading": "算法与模型研发",
+      "summary": "项目经历参考 | 监督目标设计、受控实验、检索评测与错误分析",
+      "projects": [
+        {
+          "id": "tool-training",
+          "title": "工具调用模型的监督目标与误差分析",
+          "stack": "PyTorch / Transformers / PEFT / Qwen2.5-3B / LoRA",
+          "bullets": [
+            {
+              "text": "审计工具调用数据复用与监督标签分布，构建固定模板正文的损失掩码，保留完整上下文与正常回复样本。",
+              "claims": [
+                "mask-audit"
+              ]
+            },
+            {
+              "text": "实现同初始化、同输入顺序和同设备的 LoRA 配对训练，两组各完成32次更新；按实际有效标签归一化，核验基座冻结和检查点重载。",
+              "claims": [
+                "paired-training"
+              ]
+            },
+            {
+              "text": "建立固定生成与逐 token 损失评测：750份输出与831次教师强制前向，拆分模板、回答载荷和结构损失，保留失败与未知尝试。",
+              "claims": [
+                "generation750",
+                "teacher831"
+              ]
+            }
+          ],
+          "result": {
+            "text": "200条正例：Reference 150/200、Masked 153/200，配对 p=0.5078；单种子、小预算结果，未证明稳定收益。",
+            "claims": [
+              "generation750"
+            ]
+          },
+          "links": [
+            {
+              "label": "训练与实现",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/fixed-reason-ablation.md"
+            },
+            {
+              "label": "生成评分与边界",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/bfcl-transfer-generation.md"
+            }
+          ]
+        },
+        {
+          "id": "research-retrieval",
+          "title": "可恢复、带版本引用的本地研究助手",
+          "stack": "LlamaIndex / LangGraph / SQLite / MCP / multilingual-e5-small",
+          "bullets": [
+            {
+              "text": "实现 BM25、E5 语义及 RRF 融合检索，构建跨文档批处理与版本快照；同题语义/融合排序共享查询向量。",
+              "claims": [
+                "retrieval-batch"
+              ]
+            },
+            {
+              "text": "完整 SciFact 5,183篇摘要/300题/339相关对固定评测：BM25/E5/RRF 的 nDCG@10 为0.6409/0.6479/0.7040；NIST 核对18,060个指标值。",
+              "claims": [
+                "scifact",
+                "nist-reference"
+              ]
+            },
+            {
+              "text": "接入三篇论文52页/240片段，新增92片段复用原148向量；引用绑定 PDF 页、哈希与历史版本，支持恢复和离线核查。",
+              "claims": [
+                "three-papers",
+                "source-review"
+              ]
+            }
+          ],
+          "result": {
+            "text": "摘要相关性评测与全文阅读分开；不将检索分数当作问答正确率或公开 BEIR 榜单成绩。",
+            "claims": [
+              "scifact"
+            ]
+          },
+          "links": [
+            {
+              "label": "完整检索证据",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/evidence/research-batch/README.md"
+            },
+            {
+              "label": "研究助手",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-assistant.md"
+            }
+          ]
+        }
+      ],
+      "contribution": {
+        "title": "DeepTutor - MCP 工具分页发现修复",
+        "text": "统一 MCP 连接/probe 分页，覆盖空页、过滤、游标循环、后页错误与超时；真实 SDK/HTTP 同组10项：原版9失败，修复全部通过。",
+        "status": "正式提交 PR #2930，尚未合并；相关服务器验证不代替完整上游 CI。",
+        "claims": [
+          "deeptutor-pr"
+        ],
+        "url": "https://github.com/HKUDS/DeepTutor/pull/2930",
+        "evidence_url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/deeptutor-mcp-pagination.md"
+      }
+    },
+    {
+      "id": "agent-app",
+      "filename": "agent-app-project-experience-2026-11-25",
+      "heading": "Agent 应用开发",
+      "summary": "项目经历参考 | 可恢复工作流、工具集成、来源引用与可审查交付",
+      "projects": [
+        {
+          "id": "research-assistant",
+          "title": "带论文出处与恢复能力的本地研究助手",
+          "stack": "LangGraph / AsyncSqliteSaver / LlamaIndex / MCP / 本地 Qwen3-4B",
+          "bullets": [
+            {
+              "text": "围绕论文阅读串联模型检索、原文回读与回答提交，使用 SQLite 检查点、持久请求额度与回复缓存保存进度；未知尝试继续计入额度。",
+              "claims": [
+                "assistant-workflow"
+              ]
+            },
+            {
+              "text": "管理三篇全文52页、240片段的版本引用库，新增论文复用旧148向量、仅编码92片段；回答可回读当时 PDF 页面与原文范围。",
+              "claims": [
+                "three-papers"
+              ]
+            },
+            {
+              "text": "交付离线阅读报告与原文对照核查页，支持绑定回答/来源指纹的备注下载、重新导入与错版本拒收；新10项后端、14项浏览器检查通过。",
+              "claims": [
+                "source-review"
+              ]
+            }
+          ],
+          "result": {
+            "text": "真实 CPU 模型三题中两项有效提交，缺失资料题未完成；2/3是提交契约结果，不是 QA 准确率。另有完整 SciFact 检索评测。",
+            "claims": [
+              "assistant-workflow",
+              "scifact"
+            ]
+          },
+          "links": [
+            {
+              "label": "助手实现与实际结果",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-assistant.md"
+            },
+            {
+              "label": "离线核查交付",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/research-source-review.md"
+            }
+          ]
+        },
+        {
+          "id": "dependency-review",
+          "title": "面向开源维护的依赖升级审查 Agent",
+          "stack": "LangGraph / MCP / LlamaIndex FunctionAgent / SQLite / OSV-Scanner / uv",
+          "bullets": [
+            {
+              "text": "固定真实仓库源码、依赖锁和漏洞库，串联扫描、候选解析与复扫；按八项事实条件输出带字段引用和来源哈希的升级审查报告。",
+              "claims": [
+                "dependency-scans"
+              ]
+            },
+            {
+              "text": "基于 LangGraph/SQLite 实现批量处理与断点恢复，绑定 JUnit 测试 ID、源码清单及锁文件身份，避免候选版本与兼容证据错配。",
+              "claims": [
+                "dependency-workbench"
+              ]
+            },
+            {
+              "text": "覆盖 Browser Use、FastMCP、LightRAG 三个固定快照；工作台12项测试与 SIGKILL 后新进程恢复通过，LightRAG 锁文件升级已提交正式 PR。",
+              "claims": [
+                "dependency-workbench",
+                "lightrag-pr"
+              ]
+            }
+          ],
+          "result": {
+            "text": "工作台是确定性证据流程；既有模型接入另列。不宣称模型自主完成升级、漏洞全部清零或已获发布批准。",
+            "claims": [
+              "dependency-workbench",
+              "dependency-scans"
+            ]
+          },
+          "links": [
+            {
+              "label": "工作台与恢复证据",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/dependency-workbench.md"
+            },
+            {
+              "label": "实际升级候选",
+              "url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/lightrag-dependency-upgrade.md"
+            }
+          ]
+        }
+      ],
+      "contribution": {
+        "title": "DeepTutor - MCP 工具分页发现修复",
+        "text": "统一 MCP 连接/probe 分页，覆盖空页、过滤、游标循环、后页错误与超时；真实 SDK/HTTP 同组10项：原版9失败，修复全部通过。",
+        "status": "正式提交 PR #2930，尚未合并；相关服务器验证不代替完整上游 CI。",
+        "claims": [
+          "deeptutor-pr"
+        ],
+        "url": "https://github.com/HKUDS/DeepTutor/pull/2930",
+        "evidence_url": "https://github.com/1137423918/AgentReliabilityLab/blob/c045ca766c379a1a81447b67d75e619ad88517d3/docs/deeptutor-mcp-pagination.md"
+      }
+    }
+  ]
+}
