@@ -1,0 +1,273 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;; style-src &#x27;sha256-sj6G8xtOMpMFW1GCoZUpjPHj0qUvX06fKhgOVllcjf8=&#x27;; script-src &#x27;sha256-vOkRSggvM6fe3C5Jn0rCxUeiyHzSTFKcC4OTzknJ4/o=&#x27;; connect-src &#x27;none&#x27;; object-src &#x27;none&#x27;"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="referrer" content="no-referrer">
+<title>论文引用核查 · Agent Lab</title><style>
+:root{color-scheme:light;--ink:#203b3b;--muted:#5a6c6b;--line:#dbe3df;--paper:#fff;--accent:#155e57}
+*{box-sizing:border-box}body{margin:0;background:#f4f6f2;color:var(--ink);font:16px/1.7 system-ui,-apple-system,"Noto Sans CJK SC",sans-serif}
+main,header,footer{max-width:1080px;margin:auto;padding:28px}header{padding-top:50px;padding-bottom:14px}
+.eyebrow{color:var(--accent);font-size:12px;font-weight:750;letter-spacing:.15em;margin:0 0 12px}h1{font-size:clamp(28px,5vw,42px);line-height:1.25;letter-spacing:-.03em;margin:0 0 14px}
+.lead{max-width:760px;color:var(--muted);margin:0}.overview{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 14px}.metric{padding:10px 16px;border:1px solid var(--line);border-radius:12px;background:#fff;font-size:14px}.metric strong{font-size:21px;margin-right:7px}
+.notice{border-left:3px solid #c6a76a;padding:9px 15px;background:#faf5e9;color:#67532e;font-size:14px}.toolbar{display:flex;align-items:end;flex-wrap:wrap;gap:12px;padding:20px 0}.field{display:flex;flex-direction:column;gap:5px;font-size:13px;font-weight:650}.search{flex:1;min-width:220px}
+input,select,button{font:inherit;color:var(--ink);border:1px solid #bdcbc5;border-radius:8px;background:#fff;padding:10px 12px;min-height:44px}input{width:100%}button{cursor:pointer;font-size:14px;font-weight:650}button:hover{background:#edf3ef}input:focus-visible,select:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #7aaba2;outline-offset:3px}
+.result-count{font-size:14px;color:var(--muted);margin:0 0 14px}.cards{display:grid;gap:20px}.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px;min-width:0}.card-top{display:flex;align-items:center;justify-content:space-between;gap:12px}.number{font-size:12px;font-weight:750;color:var(--muted);letter-spacing:.08em}.badge{font-size:12px;font-weight:700;border-radius:20px;padding:3px 10px;white-space:nowrap;background:#e4f1eb;color:#215b47}.unfinished .badge{background:#fff0db;color:#825719}.error .badge{background:#f9e7e5;color:#93433b}
+h2{font-size:20px;line-height:1.55;margin:14px 0 16px;overflow-wrap:anywhere}.answer{white-space:pre-wrap;margin:0 0 18px;overflow-wrap:anywhere}.answer-label{font-size:12px;color:var(--muted);margin-bottom:7px}.diagnostics{padding-left:22px;color:#825719;font-size:14px}.refs{border-top:1px solid var(--line);padding-top:16px}.refs h3{font-size:13px;margin:0 0 10px;color:var(--muted)}.refs ul{list-style:none;padding:0;margin:0;display:grid;gap:12px}.refs li{padding:12px 14px;background:#f6f8f5;border-radius:9px;overflow-wrap:anywhere}.ref-label{font-weight:750;font-size:12px;margin-right:8px}a{color:#155e57;text-underline-offset:3px}.location{color:var(--muted);font-size:13px;margin-top:4px}details{font-size:13px;margin-top:16px;color:var(--muted)}summary{cursor:pointer}dl{display:grid;grid-template-columns:90px 1fr;gap:8px 12px;margin-bottom:0}dt{font-weight:650}dd{margin:0;min-width:0;overflow-wrap:anywhere}code{font-family:ui-monospace,monospace;font-size:12px;overflow-wrap:anywhere}
+#empty{border:1px dashed #bdcbc5;border-radius:12px;padding:35px;text-align:center;color:var(--muted)}[hidden]{display:none!important}.enhanced-only{display:none}html.enhanced .enhanced-only{display:flex}footer{font-size:12px;color:var(--muted);padding-top:8px;padding-bottom:40px}
+@media(max-width:600px){main,header,footer{padding-left:18px;padding-right:18px}header{padding-top:30px}.toolbar{align-items:stretch}.field{flex:1;min-width:140px}.search{flex-basis:100%}.card{padding:18px}.metric{padding:8px 12px}.overview{gap:7px}h2{font-size:18px}dl{grid-template-columns:74px 1fr}}
+@media print{body{background:#fff;font-size:11pt}main,header,footer{max-width:none;padding:10px 0}header{padding-top:0}.toolbar,.download-note{display:none!important}.card{break-inside:avoid;border-radius:0;margin-bottom:12px}.overview{margin:12px 0}.metric{padding:3px 8px}.refs li{background:#fff;padding:4px 0}details{display:block}details>*{display:block}summary{display:none}h1{font-size:24pt}}
+
+header,main,footer{max-width:1320px}.review-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:24px;margin-bottom:24px;min-width:0}
+.review-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px}.review-grid .card{border:0;padding:0;border-radius:0}.source-column{border-left:1px solid var(--line);padding-left:24px;min-width:0}.source-column h3{font-size:15px;margin:0 0 12px}.passage{padding:16px;background:#f5f8f3;border:1px solid #e0e7dc;border-radius:10px;margin-bottom:14px}.passage h4{margin:0 0 6px;font-size:14px}.passage blockquote{margin:12px 0;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.7 system-ui,sans-serif}.passage code{display:block;color:var(--muted);font-size:11px}.review-controls{border-top:1px solid var(--line);margin-top:20px;padding-top:18px;gap:14px;align-items:start;flex-wrap:wrap}.note-field{flex:1;min-width:220px}.review-controls textarea{width:100%;min-height:86px;font:inherit;font-size:14px;line-height:1.5;padding:10px;border:1px solid #bdcbc5;border-radius:8px;resize:vertical}textarea:focus-visible{outline:3px solid #7aaba2;outline-offset:3px}.review-controls select{min-width:145px}.review-summary{font-size:14px;color:var(--muted)}.review-item[data-decision="needs_changes"]{border-color:#c3954f}.review-item[data-decision="checked"]{border-color:#659c86}input[type=file]{max-width:300px;font-size:13px}#feedback{min-height:26px;font-size:14px;color:#215b47}#feedback[data-error="true"]{color:#93433b}.print-annotation{display:none;white-space:pre-wrap;overflow-wrap:anywhere}
+@media(max-width:760px){.review-grid{grid-template-columns:1fr;gap:20px}.source-column{border-left:0;border-top:1px solid var(--line);padding:20px 0 0}.review-item{padding:18px}.note-field{flex-basis:100%;min-width:0}.toolbar>*{max-width:100%}}
+@media print{.review-controls{display:none!important}.print-annotation{display:block}.review-grid{display:block}.review-item{break-inside:auto;border-radius:0}.source-column{border:0;padding:12px 0}.passage{break-inside:avoid}#feedback{display:none}}
+</style></head><body>
+<header><p class="eyebrow">AGENT LAB / SOURCE REVIEW</p><h1>让回答，与原文并排。</h1>
+<p class="lead">核对已保存的回答与实际读取的原文片段，记录需要修改的地方。原文按当时资料版本回读；核查页不调用模型，也不修改原答案。</p>
+<p class="notice">此文件包含问题、回答和论文原文片段，分享前请检查全部内容。“标记已核对”是操作者声明，不是自动语义判断或身份认证。</p></header>
+<main><div class="toolbar enhanced-only"><label class="field search" for="query">搜索问题、回答、原文或备注<input id="query" type="search" autocomplete="off" placeholder="例如：实体、索引、需要补充"></label>
+<label class="field" for="status">核查状态<select id="status"><option value="all">全部记录</option><option value="pending">待核对</option><option value="checked">标记已核对</option><option value="needs_changes">需修改</option><option value="unavailable">无可核对的提交</option></select></label><button id="reset" type="button">清除筛选</button></div>
+<div class="toolbar enhanced-only"><label class="field" for="reviewer">核查人（选填）<input id="reviewer" type="text" autocomplete="off" placeholder="自行填写显示名称"></label><button id="save-notes" type="button">下载全部核查备注</button><label class="field" for="load-notes">导入核查备注<input id="load-notes" type="file" accept=".json,application/json"></label><button id="print" type="button">打印当前结果</button></div>
+<p id="feedback" role="status" aria-live="polite"></p><p id="result-count" class="review-summary" role="status" aria-live="polite">共 3 项记录</p>
+<noscript><p>未启用JavaScript，原回答和引用原文仍可阅读；编辑、保存和导入标注不可用。</p></noscript>
+<section class="review-item" data-entry-id="efad1c62e3285b715f92e58213519e8102298595aef83f388661a92e68ffa964"><div class="review-grid"><div><article class="card submitted" data-status="submitted" aria-labelledby="question-1">
+<div class="card-top"><span class="number">READING 01</span><span class="badge">已提交</span></div>
+<div class="searchable">
+<h2 id="question-1">中断后如何继续已提交的任务？（脚本化演示）</h2>
+<div class="answer-label">已保存的模型回答 · 未自动验证陈述正确性</div>
+<p class="answer">Restore the committed checkpoint.</p>
+<section class="refs" aria-label="论文与原文引用"><h3>实际读取的来源</h3><ul>
+<li><span class="ref-label">r1</span><a href="https://example.com/paper-v1" target="_blank" rel="noopener noreferrer">Owned report fixture</a><div class="location">原文第1–1行 · 当前资料版本 · 打开来源需联网</div><details><summary>查看引用标识与文件哈希</summary><dl><dt>引用标识</dt><dd><code>dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42:438d4adbac2df9855ce9cda824597f23d791fb6480ff7a30b893f557bf31a391</code></dd><dt>原文SHA256</dt><dd><code>db39e1f1bcdffe781380836729b3d1b859a3dd034b292c51c2a7fbb2fc58bd41</code></dd></dl></details></li>
+</ul></section>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>submitted</code></dd>
+<dt>生成请求</dt><dd>3 / 3；完整回复3；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42</code></dd>
+<dt>模型</dt><dd>scripted-fixture</dd></dl></details>
+</article></div><aside class="source-column" aria-label="引用原文"><h3>引用原文对照</h3>
+<section class="passage"><h4>r1 · Owned report fixture</h4>
+<div class="location">原文第1–1行 · 字符 0–52</div>
+<blockquote>Restore the committed checkpoint after interruption.</blockquote>
+<code>片段 SHA256 503834ecb00e6cd5ca2cdb51e4cb454a16f539ec4334004861d2404a26846b11</code></section>
+</aside></div><div class="review-controls enhanced-only"><label class="field" for="decision-1">你的核查标记<select class="decision" id="decision-1"><option value="pending">待核对</option><option value="checked">标记已核对</option><option value="needs_changes">需修改</option></select></label><label class="field note-field" for="notes-1">核查备注<textarea id="notes-1" aria-label="第1项核查备注" placeholder="例如：哪句解释还需补充、哪个引用不能支持该陈述。"></textarea></label></div><p class="print-annotation"></p></section>
+<section class="review-item" data-entry-id="0f6d024a218f0ec26a55e2965918182887fc26af6556b707ad8b818cec793277"><div class="review-grid"><div><article class="card unfinished" data-status="unfinished" aria-labelledby="question-2">
+<div class="card-top"><span class="number">READING 02</span><span class="badge">未完成</span></div>
+<div class="searchable">
+<h2 id="question-2">未完成任务如何展示？（脚本化演示）</h2>
+<p class="answer">未形成已接受的最终回答。原运行状态及原因保留如下。</p>
+<ul class="diagnostics">
+<li>最后一次提交的回答为空。</li>
+<li>声明证据不足时仍附带了引用，未满足提交要求。</li>
+<li>应用拒收了最后一次提交。</li>
+</ul>
+</div>
+<details class="usage"><summary>查看原运行状态与用量</summary><dl>
+<dt>原状态</dt><dd><code>turn_limit</code></dd>
+<dt>生成请求</dt><dd>3 / 3；完整回复3；未保存完整回复0（仍占用原额度）</dd>
+<dt>资料版本</dt><dd><code>dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42</code></dd>
+<dt>模型</dt><dd>scripted-fixture</dd></dl></details>
+</article></div><aside class="source-column" aria-label="引用原文"><h3>引用原文对照</h3>
+<p>本项没有可展示的已接受引用原文。保留原运行状态，不补写答案或证明资料覆盖。</p>
+</aside></div><div class="review-controls enhanced-only"><label class="field" for="decision-2">你的核查标记<select class="decision" id="decision-2" disabled><option value="unavailable">无可核对的提交</option></select></label><label class="field note-field" for="notes-2">核查备注<textarea id="notes-2" aria-label="第2项核查备注" placeholder="例如：哪句解释还需补充、哪个引用不能支持该陈述。"></textarea></label></div><p class="print-annotation"></p></section>
+<section class="review-item" data-entry-id="69d7ed4b9871bfdc0c7760ad88fcf87ff8e90049288189b2394649ad203843b7"><div class="review-grid"><div><article class="card error" data-status="error" aria-labelledby="question-3">
+<div class="card-top"><span class="number">READING 03</span><span class="badge">导出异常</span></div>
+<div class="searchable">
+<h2 id="question-3">运行记录不可用</h2>
+<p class="answer">运行记录或来源无法核对，未导出该项回答。</p>
+<ul class="diagnostics">
+<li>运行记录或归档来源缺失、不一致，或尚未关闭，无法导出该项。</li>
+</ul>
+</div>
+</article></div><aside class="source-column" aria-label="引用原文"><h3>引用原文对照</h3>
+<p>本项没有可展示的已接受引用原文。保留原运行状态，不补写答案或证明资料覆盖。</p>
+</aside></div><div class="review-controls enhanced-only"><label class="field" for="decision-3">你的核查标记<select class="decision" id="decision-3" disabled><option value="unavailable">无可核对的提交</option></select></label><label class="field note-field" for="notes-3">核查备注<textarea id="notes-3" aria-label="第3项核查备注" placeholder="例如：哪句解释还需补充、哪个引用不能支持该陈述。"></textarea></label></div><p class="print-annotation"></p></section><p id="empty" hidden>没有匹配的记录。可清除筛选。</p></main>
+<footer><p>备注只保留在当前页面内存中。下载后可在同一核查页导入；不同回答或来源版本的文件不会混入。筛选仅改变显示，导出备注始终覆盖全部记录。</p><p>离线原文对照无需联网；点击论文标题才打开在线来源。没有保存浏览器存储或上传内容。</p></footer>
+<pre id="bundle-data" hidden>{
+  &quot;version&quot;: 1,
+  &quot;scope&quot;: &quot;Owned synthetic source and scripted replies for UI demonstration; not real model evaluation or reviewer judgment.&quot;,
+  &quot;semantic_entailment_checked&quot;: false,
+  &quot;entries&quot;: [
+    {
+      &quot;entry_id&quot;: &quot;efad1c62e3285b715f92e58213519e8102298595aef83f388661a92e68ffa964&quot;,
+      &quot;answer_sha256&quot;: &quot;85c49eec04352d91a163af8f888ee04a31e6a1c87612d1d0d3564a0ec4bd06da&quot;,
+      &quot;reviewable&quot;: true,
+      &quot;run&quot;: {
+        &quot;run_id&quot;: &quot;6943934ed618fcfea0025f132be0bf2229a324b01b32759da8ffb48e2921e1db&quot;,
+        &quot;question&quot;: &quot;中断后如何继续已提交的任务？（脚本化演示）&quot;,
+        &quot;export_status&quot;: &quot;ready&quot;,
+        &quot;recorded_status&quot;: &quot;submitted&quot;,
+        &quot;model&quot;: &quot;scripted-fixture&quot;,
+        &quot;source_generation&quot;: &quot;dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42&quot;,
+        &quot;answer&quot;: &quot;Restore the committed checkpoint.&quot;,
+        &quot;model_submission_status&quot;: &quot;supported&quot;,
+        &quot;references&quot;: [
+          {
+            &quot;citation_id&quot;: &quot;dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42:438d4adbac2df9855ce9cda824597f23d791fb6480ff7a30b893f557bf31a391&quot;,
+            &quot;generation&quot;: &quot;dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42&quot;,
+            &quot;is_current_generation&quot;: true,
+            &quot;source_id&quot;: &quot;paper&quot;,
+            &quot;title&quot;: &quot;Owned report fixture&quot;,
+            &quot;source_kind&quot;: &quot;fixture&quot;,
+            &quot;source_url&quot;: &quot;https://example.com/paper-v1&quot;,
+            &quot;source_sha256&quot;: &quot;db39e1f1bcdffe781380836729b3d1b859a3dd034b292c51c2a7fbb2fc58bd41&quot;,
+            &quot;line_start&quot;: 1,
+            &quot;line_end&quot;: 1,
+            &quot;char_start&quot;: 0,
+            &quot;char_end&quot;: 52,
+            &quot;ref&quot;: &quot;r1&quot;
+          }
+        ],
+        &quot;diagnostics&quot;: [],
+        &quot;requests&quot;: {
+          &quot;reserved&quot;: 3,
+          &quot;saved_complete&quot;: 3,
+          &quot;without_saved_complete_response&quot;: 0,
+          &quot;limit&quot;: 3
+        },
+        &quot;semantic_entailment_checked&quot;: false
+      },
+      &quot;passages&quot;: [
+        {
+          &quot;ref&quot;: &quot;r1&quot;,
+          &quot;citation_id&quot;: &quot;dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42:438d4adbac2df9855ce9cda824597f23d791fb6480ff7a30b893f557bf31a391&quot;,
+          &quot;excerpt&quot;: &quot;Restore the committed checkpoint after interruption.&quot;,
+          &quot;excerpt_sha256&quot;: &quot;503834ecb00e6cd5ca2cdb51e4cb454a16f539ec4334004861d2404a26846b11&quot;
+        }
+      ],
+      &quot;evidence_error&quot;: null
+    },
+    {
+      &quot;entry_id&quot;: &quot;0f6d024a218f0ec26a55e2965918182887fc26af6556b707ad8b818cec793277&quot;,
+      &quot;answer_sha256&quot;: &quot;74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b&quot;,
+      &quot;reviewable&quot;: false,
+      &quot;run&quot;: {
+        &quot;run_id&quot;: &quot;6d0589335f792857ab8004d7ca2981533c67941251c04bb62aa9d0d44e46ee0d&quot;,
+        &quot;question&quot;: &quot;未完成任务如何展示？（脚本化演示）&quot;,
+        &quot;export_status&quot;: &quot;ready&quot;,
+        &quot;recorded_status&quot;: &quot;turn_limit&quot;,
+        &quot;model&quot;: &quot;scripted-fixture&quot;,
+        &quot;source_generation&quot;: &quot;dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42&quot;,
+        &quot;answer&quot;: null,
+        &quot;model_submission_status&quot;: null,
+        &quot;references&quot;: [],
+        &quot;diagnostics&quot;: [
+          &quot;empty_answer&quot;,
+          &quot;insufficient_evidence_with_citations&quot;,
+          &quot;submission_rejected&quot;
+        ],
+        &quot;requests&quot;: {
+          &quot;reserved&quot;: 3,
+          &quot;saved_complete&quot;: 3,
+          &quot;without_saved_complete_response&quot;: 0,
+          &quot;limit&quot;: 3
+        },
+        &quot;semantic_entailment_checked&quot;: false
+      },
+      &quot;passages&quot;: [],
+      &quot;evidence_error&quot;: null
+    },
+    {
+      &quot;entry_id&quot;: &quot;69d7ed4b9871bfdc0c7760ad88fcf87ff8e90049288189b2394649ad203843b7&quot;,
+      &quot;answer_sha256&quot;: &quot;74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b&quot;,
+      &quot;reviewable&quot;: false,
+      &quot;run&quot;: {
+        &quot;export_status&quot;: &quot;error&quot;,
+        &quot;recorded_status&quot;: null,
+        &quot;answer&quot;: null,
+        &quot;references&quot;: [],
+        &quot;diagnostics&quot;: [
+          &quot;artifact_or_source_unavailable&quot;
+        ]
+      },
+      &quot;passages&quot;: [],
+      &quot;evidence_error&quot;: null
+    }
+  ],
+  &quot;bundle_sha256&quot;: &quot;855da508a5912902425b88800eaab0d921b36bfd084f83d37fdf3756cf7e3874&quot;
+}
+</pre><script>
+"use strict";
+const bundle = JSON.parse(document.getElementById("bundle-data").textContent);
+const items = Array.from(document.querySelectorAll(".review-item"));
+const reviewer = document.getElementById("reviewer");
+const query = document.getElementById("query");
+const status = document.getElementById("status");
+const feedback = document.getElementById("feedback");
+function message(text, error = false) { feedback.textContent = text; feedback.dataset.error = String(error); }
+function length(text) { return Array.from(text).length; }
+function keys(value, names) {
+  return value !== null && typeof value === "object" && !Array.isArray(value) &&
+    Object.keys(value).length === names.length && names.every(key => Object.hasOwn(value, key));
+}
+function validate(value) {
+  if (!keys(value, ["version", "bundle_sha256", "reviewer", "entries"]) || value.version !== 1 || value.bundle_sha256 !== bundle.bundle_sha256)
+    throw new Error("备注不属于这份回答与资料版本，请打开对应核查页。");
+  if (typeof value.reviewer !== "string" || length(value.reviewer) > 120 || !Array.isArray(value.entries) || value.entries.length !== bundle.entries.length)
+    throw new Error("核查人名称或记录数量无效。");
+  const expected = new Map(bundle.entries.map(entry => [entry.entry_id, entry]));
+  const seen = new Map();
+  for (const row of value.entries) {
+    if (!keys(row, ["entry_id", "answer_sha256", "decision", "notes"]) || !expected.has(row.entry_id) || seen.has(row.entry_id))
+      throw new Error("备注含未知、重复或缺少的记录。");
+    const entry = expected.get(row.entry_id);
+    const choices = entry.reviewable ? ["pending", "checked", "needs_changes"] : ["unavailable"];
+    if (row.answer_sha256 !== entry.answer_sha256 || !choices.includes(row.decision) || typeof row.notes !== "string" || length(row.notes) > 1000)
+      throw new Error("回答标识、核查状态或备注长度无效。");
+    seen.set(row.entry_id, row);
+  }
+  return bundle.entries.map(entry => seen.get(entry.entry_id));
+}
+function snapshot() {
+  const value = {version: 1, bundle_sha256: bundle.bundle_sha256, reviewer: reviewer.value,
+    entries: items.map((item, index) => ({entry_id: bundle.entries[index].entry_id,
+      answer_sha256: bundle.entries[index].answer_sha256,
+      decision: item.querySelector(".decision").value, notes: item.querySelector("textarea").value}))};
+  validate(value);
+  return value;
+}
+function refresh() {
+  const needle = query.value.normalize("NFKC").trim().toLocaleLowerCase();
+  let visible = 0, checked = 0, changes = 0, pending = 0;
+  for (const item of items) {
+    const decision = item.querySelector(".decision").value;
+    item.dataset.decision = decision;
+    item.querySelector(".print-annotation").textContent = "核查标记：" + item.querySelector(".decision").selectedOptions[0].textContent + "\n核查备注：" + item.querySelector("textarea").value;
+    checked += Number(decision === "checked"); changes += Number(decision === "needs_changes"); pending += Number(decision === "pending");
+    const text = (item.querySelector(".review-grid").textContent + " " + item.querySelector("textarea").value).normalize("NFKC").toLocaleLowerCase();
+    item.hidden = !(status.value === "all" || decision === status.value) || !text.includes(needle);
+    visible += Number(!item.hidden);
+  }
+  document.getElementById("result-count").textContent = `显示 ${visible} / ${items.length} 项 · 待核对 ${pending} · 标记已核对 ${checked} · 需修改 ${changes}`;
+  document.getElementById("empty").hidden = visible !== 0;
+}
+for (const item of items) {
+  item.querySelector(".decision").addEventListener("change", refresh);
+  item.querySelector("textarea").addEventListener("input", refresh);
+}
+query.addEventListener("input", refresh); status.addEventListener("change", refresh);
+document.getElementById("reset").addEventListener("click", () => {query.value = ""; status.value = "all"; refresh();});
+document.getElementById("print").addEventListener("click", () => window.print());
+document.getElementById("save-notes").addEventListener("click", () => {
+  try {
+    const text = JSON.stringify(snapshot(), null, 2) + "\n";
+    const url = URL.createObjectURL(new Blob([text], {type: "application/json;charset=utf-8"}));
+    const link = document.createElement("a"); link.href = url; link.download = "review-notes.json";
+    document.body.append(link); link.click(); link.remove(); setTimeout(() => URL.revokeObjectURL(url), 1000);
+    message("已下载全部记录的核查备注。重新打开页面后，可导入该文件继续。");
+  } catch (error) { message(error.message, true); }
+});
+document.getElementById("load-notes").addEventListener("change", async event => {
+  const file = event.target.files[0];
+  if (!file) return;
+  try {
+    if (file.size > 1048576) throw new Error("备注文件不能超过 1MiB。");
+    const value = JSON.parse(await file.text());
+    const rows = validate(value); // Validate the whole file before changing any control.
+    rows.forEach((row, index) => {
+      items[index].querySelector(".decision").value = row.decision;
+      items[index].querySelector("textarea").value = row.notes;
+    });
+    reviewer.value = value.reviewer; refresh(); message("已导入核查备注，原模型回答保持不变。");
+  } catch (error) { message(error.message, true); }
+  finally { event.target.value = ""; }
+});
+refresh(); document.documentElement.classList.add("enhanced");
+</script></body></html>

@@ -1,0 +1,17 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "eb6ae8f8c8668713a09d77f01e46002f13d8a2d22ed2b7f53f866a9123406bdc",
+  "phases": [
+    {
+      "name": "source-browser-review-interactions",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.135,
+      "peak_owned_RSS_bytes": 758984704
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 16.644,
+  "original_private_report_sha256": "7c32226b2cb959d21ae23cf9d08aa0ecd9cc8562688ba409751e7beb0810f18a"
+}

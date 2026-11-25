@@ -1,0 +1,20 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": "source-browser-review-interactions"
+  },
+  "protocol_sha256": "309b678cc9846b8305b3e39e23592daec85f92ca90e0e4c5e061e94deba2cde6",
+  "phases": [
+    {
+      "name": "source-browser-review-interactions",
+      "exit_code": 1,
+      "guard": null,
+      "wall_seconds": 2.655,
+      "peak_owned_RSS_bytes": 578719744
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 15.412,
+  "original_private_report_sha256": "3b88912c91682e35a3734796e1fb1286d75d620bd7016cec9c6f3d9fac5e4c3b"
+}

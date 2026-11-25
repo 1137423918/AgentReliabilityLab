@@ -1,0 +1,85 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "069e8b8f78fe0adb40d3fe841767a7ba135bca210ea95b4ea405da1f578101f4",
+      "bytes": 3767
+    },
+    "application.json": {
+      "sha256": "c948ce5ed1de85f17f5cfa5892ef061e6a781a9fd4fa849fec576f11eca112e9",
+      "bytes": 651
+    },
+    "browser.json": {
+      "sha256": "9ae8725b22f7a2a18436976044dc2389088dbd9c5f8e9cbdd917fc6f0d0476b9",
+      "bytes": 1539
+    },
+    "failures.json": {
+      "sha256": "6c4521776e37a0858e34a15ac0b04c353b45c7f7b971299f31f7deec683291c3",
+      "bytes": 760
+    },
+    "logs/browser-v3/source-browser-review-interactions.log": {
+      "sha256": "ed0a62e22ba0bc9fdd2324c10a5d584c74ab9b77bb544909025e667ed5cae328",
+      "bytes": 2666
+    },
+    "logs/browser-v4/source-browser-review-interactions.log": {
+      "sha256": "98ef1a304c63c1d76028f219504e5dacffcd9d09c494caae8155fdf03e0e1e6f",
+      "bytes": 1403
+    },
+    "logs/controls-v1/source-four-stopped-real-runs.log": {
+      "sha256": "8b72201fef4e7c7ff3feb9ae70c1a64626504043fca61a8fcfc213b91b72ae29",
+      "bytes": 597
+    },
+    "logs/controls-v1/source-new-review-controls.log": {
+      "sha256": "1945571204e5997adf8344eaf6ccb272c5cc077124cf7b42d7520636ea9269c1",
+      "bytes": 2216
+    },
+    "logs/controls-v1/source-owned-demo.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "operators/browser-v2.json": {
+      "sha256": "50ea45094a349cf53b097644d4e81d775a4378d5b31a4f4ec3b75ff6ef054656",
+      "bytes": 344
+    },
+    "operators/browser-v3.json": {
+      "sha256": "3a7b508638cc68b96bf57fcae8e963334a108d29f05f7e3e8635b65122ccc67a",
+      "bytes": 557
+    },
+    "operators/browser-v4.json": {
+      "sha256": "d5c9dab75d89e9e5f1de71de34ac8f4266b5cc70a22df5ee61ada87654463a7e",
+      "bytes": 474
+    },
+    "operators/controls-v1.json": {
+      "sha256": "2cd940a5ec045a7febf1044927fe3b38b30ed1e72abeb4d9be98c72d4bd4a90e",
+      "bytes": 960
+    },
+    "private-archive-receipt.json": {
+      "sha256": "dafadc0b0f1d8a31bc584bc35f189618392a48f180dd564011254c8ab264cb90",
+      "bytes": 743
+    },
+    "public-demo-files.json": {
+      "sha256": "099db3241585242791afe008026dd1dc153dee503e4ba9523f40065134febf08",
+      "bytes": 785
+    },
+    "runtime.json": {
+      "sha256": "6cb185e9cb2c4cd0331b7ff5ec13a4f4b02f0dd5392b0324135c8212e5bfa6fb",
+      "bytes": 490
+    },
+    "screenshots/desktop.png": {
+      "sha256": "49a51e1c8c8db7b48f964fa3f4b8031d0ef84853cfc68470cb15f97880c164c2",
+      "bytes": 282511
+    },
+    "screenshots/mobile.png": {
+      "sha256": "aea697756c7167f0319303740db463ed653801a506a0a91213f4c2af32cd4217",
+      "bytes": 262539
+    },
+    "source-proof.json": {
+      "sha256": "a3fdc770cba4444b61aea15ace93af9aefc0e894b87261d7f7799741614ff01d",
+      "bytes": 674
+    },
+    "visual-qa.json": {
+      "sha256": "6f38dd846e288b028b2eaf760eb05608f9eb1e1b71e197d2e4239329077719e2",
+      "bytes": 688
+    }
+  },
+  "scope": "New offline review workflow; source hashes, normalized completed CPU checks and retained failures, only owned-demo screenshots. Real paper excerpts remain private."
+}

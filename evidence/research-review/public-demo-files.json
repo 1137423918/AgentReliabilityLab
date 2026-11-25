@@ -1,0 +1,26 @@
+{
+  "files": {
+    "source-review.html": {
+      "sha256": "c76e1dde80746ebaf0768d5cbb1ff920931edb1d01537183d6e638e446b588ee",
+      "bytes": 25629
+    },
+    "README.md": {
+      "sha256": "f18df5a987a44f5a7f1af134bd6d606d41538c1254eb4b756f1cc876abf3604a",
+      "bytes": 1115
+    },
+    "source-review.json": {
+      "sha256": "a942d218fc85a4760ce392a505e4b307a299570747f3182dfbe213302316f024",
+      "bytes": 4030
+    },
+    "review-notes.json": {
+      "sha256": "6addef18857af0a64a411a027554384555c94eaa36af0940c7dd44c1b0e8b4bd",
+      "bytes": 862
+    },
+    "review-manifest.json": {
+      "sha256": "d737a7eddfb85b7977ac25a126bfc1d071141d3cbce7bbc2a6fc9e503e0a6733",
+      "bytes": 436
+    }
+  },
+  "owned_scripted_data_only": true,
+  "real_source_excerpts_not_public": true
+}

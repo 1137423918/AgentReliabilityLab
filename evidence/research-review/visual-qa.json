@@ -1,0 +1,15 @@
+{
+  "visual_QA_by": "Codex visual inspection, not independent human review",
+  "desktop": {
+    "file": "desktop.png",
+    "sha256": "49a51e1c8c8db7b48f964fa3f4b8031d0ef84853cfc68470cb15f97880c164c2",
+    "observed": "1320px: readable two-column original/source comparison, notes and three distinct record states; no observed overflow"
+  },
+  "mobile": {
+    "file": "mobile.png",
+    "sha256": "aea697756c7167f0319303740db463ed653801a506a0a91213f4c2af32cd4217",
+    "observed": "390px: readable single-column source/answer/notes, wrapped fingerprints and usable controls; no observed overflow"
+  },
+  "only_owned_scripted_demo": true,
+  "actual_paper_text_not_public_screenshot": true
+}

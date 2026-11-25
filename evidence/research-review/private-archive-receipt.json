@@ -1,0 +1,20 @@
+{
+  "relative_path": "studies/research-review-stage93-20261125",
+  "manifest_sha256": "7777a55915540bc575b8ef7fb19ed76254e8cbd2572200179663bd136fd57b8d",
+  "files": 67,
+  "bytes": 1286001,
+  "all_four_profiles_terminal_owned_zero": true,
+  "two_failed_browser_profiles_retained": true,
+  "new_backend_controls": 10,
+  "new_browser_checks": 14,
+  "real_stopped_runs": 4,
+  "exact_private_source_passages": 6,
+  "real_annotations_all_pending_or_unavailable": true,
+  "no_new_model_quality_grade": true,
+  "original_inputs_and_old_closed_ledgers_archives_unchanged": true,
+  "no_environment_browser_fonts_or_weights_duplicated": true,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "GPU_used": false,
+  "wall_seconds": 13.087
+}

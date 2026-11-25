@@ -1,0 +1,103 @@
+{
+  "version": 1,
+  "scope": "Owned synthetic source and scripted replies for UI demonstration; not real model evaluation or reviewer judgment.",
+  "semantic_entailment_checked": false,
+  "entries": [
+    {
+      "entry_id": "efad1c62e3285b715f92e58213519e8102298595aef83f388661a92e68ffa964",
+      "answer_sha256": "85c49eec04352d91a163af8f888ee04a31e6a1c87612d1d0d3564a0ec4bd06da",
+      "reviewable": true,
+      "run": {
+        "run_id": "6943934ed618fcfea0025f132be0bf2229a324b01b32759da8ffb48e2921e1db",
+        "question": "中断后如何继续已提交的任务？（脚本化演示）",
+        "export_status": "ready",
+        "recorded_status": "submitted",
+        "model": "scripted-fixture",
+        "source_generation": "dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42",
+        "answer": "Restore the committed checkpoint.",
+        "model_submission_status": "supported",
+        "references": [
+          {
+            "citation_id": "dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42:438d4adbac2df9855ce9cda824597f23d791fb6480ff7a30b893f557bf31a391",
+            "generation": "dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42",
+            "is_current_generation": true,
+            "source_id": "paper",
+            "title": "Owned report fixture",
+            "source_kind": "fixture",
+            "source_url": "https://example.com/paper-v1",
+            "source_sha256": "db39e1f1bcdffe781380836729b3d1b859a3dd034b292c51c2a7fbb2fc58bd41",
+            "line_start": 1,
+            "line_end": 1,
+            "char_start": 0,
+            "char_end": 52,
+            "ref": "r1"
+          }
+        ],
+        "diagnostics": [],
+        "requests": {
+          "reserved": 3,
+          "saved_complete": 3,
+          "without_saved_complete_response": 0,
+          "limit": 3
+        },
+        "semantic_entailment_checked": false
+      },
+      "passages": [
+        {
+          "ref": "r1",
+          "citation_id": "dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42:438d4adbac2df9855ce9cda824597f23d791fb6480ff7a30b893f557bf31a391",
+          "excerpt": "Restore the committed checkpoint after interruption.",
+          "excerpt_sha256": "503834ecb00e6cd5ca2cdb51e4cb454a16f539ec4334004861d2404a26846b11"
+        }
+      ],
+      "evidence_error": null
+    },
+    {
+      "entry_id": "0f6d024a218f0ec26a55e2965918182887fc26af6556b707ad8b818cec793277",
+      "answer_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reviewable": false,
+      "run": {
+        "run_id": "6d0589335f792857ab8004d7ca2981533c67941251c04bb62aa9d0d44e46ee0d",
+        "question": "未完成任务如何展示？（脚本化演示）",
+        "export_status": "ready",
+        "recorded_status": "turn_limit",
+        "model": "scripted-fixture",
+        "source_generation": "dfe50a2b4e7973e1c19177bc292bdf2b1bb13c652933358f7118ceb88900fe42",
+        "answer": null,
+        "model_submission_status": null,
+        "references": [],
+        "diagnostics": [
+          "empty_answer",
+          "insufficient_evidence_with_citations",
+          "submission_rejected"
+        ],
+        "requests": {
+          "reserved": 3,
+          "saved_complete": 3,
+          "without_saved_complete_response": 0,
+          "limit": 3
+        },
+        "semantic_entailment_checked": false
+      },
+      "passages": [],
+      "evidence_error": null
+    },
+    {
+      "entry_id": "69d7ed4b9871bfdc0c7760ad88fcf87ff8e90049288189b2394649ad203843b7",
+      "answer_sha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "reviewable": false,
+      "run": {
+        "export_status": "error",
+        "recorded_status": null,
+        "answer": null,
+        "references": [],
+        "diagnostics": [
+          "artifact_or_source_unavailable"
+        ]
+      },
+      "passages": [],
+      "evidence_error": null
+    }
+  ],
+  "bundle_sha256": "855da508a5912902425b88800eaab0d921b36bfd084f83d37fdf3756cf7e3874"
+}

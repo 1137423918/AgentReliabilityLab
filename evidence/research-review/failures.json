@@ -1,0 +1,8 @@
+{
+  "unused_browser_v1_static_packet": "Not uploaded or executed; asset receipt keys/path assumptions caught before launch. Not an executed failure.",
+  "browser_v2": "Prephase stopped before any browser invocation: binary basename was chrome-headless-shell, not headless_shell; reused exact existing binary after actual path/hash verification.",
+  "browser_v3": "Actual UI actions began but Playwright string wait_for_function was blocked by the page strictCSP; driver waits changed to locator assertions. Page CSP/feature/backend source stayed unchanged.",
+  "browser_v4": "Final14checks passed; historical failed run is not counted as an additional14cases.",
+  "models_or_old_qa_retried": false,
+  "old9report5view16assistant961retrieval_not_rerun": true
+}

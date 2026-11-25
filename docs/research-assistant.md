@@ -68,3 +68,7 @@ extras/research-assistant/.venv/bin/python -m agent_lab.research_assistant \
 [来源复核](../evidence/research-assistant/source-review.json)由助手结合提取文本和四个实际PDF页面完成，不是独立人工或盲评。首题的简要定义有LightRAG第4页支持，第8页是补充讨论；比较题的核心描述有LightRAG第3页和MiniRAG第1页支持，但未完整解释图边及文本关联，“简单高效”是论文的定性表述，本项目没有测量对应性能收益。资料缺失题虽选择`insufficient_evidence`，却给出空回答并附无关论文引用，被同一校验器拒收；因此不宣传可靠拒答能力。CPU生成每题约3–4分钟，当前没有低延迟服务或生产部署证据。
 
 [迭代与失败记录](../evidence/research-assistant/README.md)保留首轮超时、缓存版/指定函数版未提交，以及参数适配版仅1/3通过的原始结果。最终JSON Schema步骤解决了结构约束问题，没有替模型补充回答或引用；不同版本不混算为独立任务，也不根据这些非隔离计时比较宣传缓存提速。
+
+## 提交后的来源核查
+
+[离线引用核查页](research-source-review.md)将已保存回答与历史版本原文并排展示，允许记录需要修改的解释并下载/导入备注。标注独立于模型提交状态，不补答旧题或当作新的质量成绩。普通阅读报告继续不含原文片段。

@@ -1,0 +1,38 @@
+{
+  "terminal": true,
+  "ready": true,
+  "protocol_sha256": "6f880b8c3cabba58590a57ec6f3efaba34822dbd6d11db54adef347535f8fa04",
+  "phases": [
+    {
+      "name": "source-runtime-identity",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 0.572,
+      "peak_owned_RSS_bytes": 7929856
+    },
+    {
+      "name": "source-new-review-controls",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 5.101,
+      "peak_owned_RSS_bytes": 140574720
+    },
+    {
+      "name": "source-four-stopped-real-runs",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 5.78,
+      "peak_owned_RSS_bytes": 59891712
+    },
+    {
+      "name": "source-owned-demo",
+      "exit_code": 0,
+      "guard": null,
+      "wall_seconds": 3.162,
+      "peak_owned_RSS_bytes": 222035968
+    }
+  ],
+  "owned_after": 0,
+  "wall_seconds": 27.749,
+  "original_private_report_sha256": "d6b5492040b75d6fad4f65e96e1401a3b67501831c35740f649cd05432d44764"
+}

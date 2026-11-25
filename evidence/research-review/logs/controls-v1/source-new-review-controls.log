@@ -1,0 +1,16 @@
+test_cli_prepares_then_validates_notes_without_model_or_source_mutation (__main__.SourceReview.test_cli_prepares_then_validates_notes_without_model_or_source_mutation) ... Executing <Task pending name='Task-2' coro=<SourceReview.test_cli_prepares_then_validates_notes_without_model_or_source_mutation() running at <isolated-root>/source/tests/test_research_review.py:169> wait_for=<Future pending cb=[Task.task_wakeup()] created at <server-user>/anaconda3/lib/python3.11/asyncio/base_events.py:427> cb=[_run_until_complete_cb() at <server-user>/anaconda3/lib/python3.11/asyncio/base_events.py:180] created at <server-user>/anaconda3/lib/python3.11/asyncio/runners.py:100> took 0.626 seconds
+ok
+test_exact_passage_from_real_checkpoint_without_network_or_new_encoding (__main__.SourceReview.test_exact_passage_from_real_checkpoint_without_network_or_new_encoding) ... ok
+test_historical_passage_survives_a_new_active_source_generation (__main__.SourceReview.test_historical_passage_survives_a_new_active_source_generation) ... ok
+test_hostile_content_is_text_and_scripts_are_CSP_hash_bound (__main__.SourceReview.test_hostile_content_is_text_and_scripts_are_CSP_hash_bound) ... ok
+test_notes_schema_and_unicode_limits_are_enforced (__main__.SourceReview.test_notes_schema_and_unicode_limits_are_enforced) ... ok
+test_reordered_unicode_notes_roundtrip_without_changing_original_results (__main__.SourceReview.test_reordered_unicode_notes_roundtrip_without_changing_original_results) ... ok
+test_repeatable_private_outputs_and_manifest_cover_notes_and_view (__main__.SourceReview.test_repeatable_private_outputs_and_manifest_cover_notes_and_view) ... ok
+test_stale_bundle_answer_and_entry_mixups_are_rejected (__main__.SourceReview.test_stale_bundle_answer_and_entry_mixups_are_rejected) ... ok
+test_tampered_archived_source_is_unavailable_without_a_fabricated_passage (__main__.SourceReview.test_tampered_archived_source_is_unavailable_without_a_fabricated_passage) ... ok
+test_unfinished_and_missing_runs_cannot_be_marked_checked (__main__.SourceReview.test_unfinished_and_missing_runs_cannot_be_marked_checked) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.324s
+
+OK

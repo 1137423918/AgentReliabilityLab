@@ -1,0 +1,23 @@
+{
+  "ready": true,
+  "real_stopped_runs": 4,
+  "source_passages": 6,
+  "recorded_statuses_preserved": [
+    "submitted",
+    "submitted",
+    "turn_limit",
+    "submitted"
+  ],
+  "reviewable": 3,
+  "real_annotations_all_pending_or_unavailable": true,
+  "historical_and_current_source_versions_read": true,
+  "repeat_outputs_exact": true,
+  "original_runs_and_store_unchanged": true,
+  "new_generation_requests": 0,
+  "new_embedding_forwards": 0,
+  "network_connection_attempts": 0,
+  "GPU_used": false,
+  "model_modules_not_loaded": true,
+  "bundle_sha256": "3a627689e10fd3566a24085ea1e84de4de3ebab1030ab978b2a457c847ea254b",
+  "wall_seconds": 1.13
+}

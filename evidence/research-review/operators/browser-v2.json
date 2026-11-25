@@ -1,0 +1,12 @@
+{
+  "terminal": true,
+  "error": {
+    "type": "AssertionError",
+    "message": ""
+  },
+  "protocol_sha256": "7f5fb4d3738b0ce5b2e80602f2f5eb042ba4cc8cbd74dd5e1afbb6b646335de7",
+  "phases": [],
+  "owned_after": 0,
+  "wall_seconds": 10.087,
+  "original_private_report_sha256": "083a5908de6100b21ed36711e91b5cdb4d256564da79380927209e9cb80f3918"
+}

@@ -318,3 +318,8 @@ python3 -m unittest discover -s tests -v
 ## Stage92 · DeepTutor MCP分页正式贡献
 
 正式提交[DeepTutor #2930](https://github.com/HKUDS/DeepTutor/pull/2930)，固定dev源与真实SDK/HTTP同组10项原版9失败、修复全通过；完整MCP192/API28/注册授权31项通过。本次3文件hooks及实际提交干净工作区检查通过，整仓precommit原版与候选同样失败于上游SVG最后换行，明确保留。九配置终态/owned0、新增模型/嵌入/GPU0，六个失败配置保留；[完整证据](../evidence/deeptutor-mcp-pagination/README.md)。
+
+
+## Stage93 · 研究助手离线引用核查与可恢复备注
+
+新增仓库级核查CLI/单文件页面，按历史版本读取真实引用片段；操作者备注绑定bundle/回答/来源，可下载、重新导入继续。新增10项后端控制/14项浏览器检查通过，4个停止运行/6条PDF引用保留原状态与待核对标记，不生成、重评或伪造人审。两种浏览器准备/测试脚本失败保留，4实际配置全部终态owned0、GPU0；[操作与边界](research-source-review.md)。
